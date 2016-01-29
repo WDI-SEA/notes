@@ -1,4 +1,9 @@
-My Awesome Book
-=======
+![Seattle and the Olympic Mountains by Brian Hague on 500px.com](https://drscdn.500px.org/photo/134493425/m%3D900/f16538c0cf8632e88f50eb219b305723)
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+
+#WDI Seattle
+
+Welcome to GA Seattle! This is the work-in-progress notes repository for our Web Development Immersive. You can view the content in a more searchable/friendly format on Gitbook:
+
+https://wdi_sea.gitbooks.io/notes/content
