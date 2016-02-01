@@ -1,9 +1,0 @@
-[submodule "js-jquery/js-primitives"]
-	path = js-jquery/js-primitives
-	url = git@github.com:WDI-SEA/js-primitives.git
-[submodule "other-topics/internet-fundamentals"]
-	path = other-topics/internet-fundamentals
-	url = git@github.com:WDI-SEA/internet-fundamentals.git
-[submodule "workflow/intro-git"]
-	path = workflow/intro-git
-	url = git@github.com:WDI-SEA/intro-git.git
