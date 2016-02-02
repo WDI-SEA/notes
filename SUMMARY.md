@@ -43,6 +43,8 @@
     * [Auth in Practice](05-express/express-auth/practice/readme.md)
   * [Testing with Mocha and Chai](05-express/express-mocha-testing/readme.md)
   * [Websockets with Socket.io](05-express/express-socket-io/readme.md)
+* [Deployment and Config](00-config-deployment/readme.md)
+  * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
 * [Projects](11-projects/readme.md)
   * [Project 1](11-projects/project-1/readme.md)
   * [Project 2](11-projects/project-2/readme.md)
