@@ -75,11 +75,11 @@ This statement specifies the markup rules for the page. There are other DOCTYPEs
 
 You won't need to worry about the other document types for now, so make sure to always use `<!DOCTYPE html>` at the top of a HTML document.
 
-### The `<html></html>` tags
+### The ```<html></html>``` tags
 
 These tags tell the browser we're beginning a HTML document. Put everything inside these tags.
 
-### The `<head>` tags
+### The ```<head>``` tags
 
 The `<head></head>` tags is where hidden information about the document goes. This includes metadata, the title of the webpage (which appears in the browser), links to CSS and possibly JavaScript files. The head goes at the top of the page, and is declared only once.
 
@@ -89,7 +89,7 @@ Metadata is data (information) about data. The <meta> tag provides metadata abou
 
 Some common meta tags you will see are charset, content, author, and description (for SEO).
 
-### The <body> tags
+### The ```<body>``` tags
 
 The `<body></body>` tags denote the content of the document. This content is rendered and displayed in the browser.
 
@@ -226,7 +226,7 @@ The last semi-colon can be omitted but it's optional.
 
 #### Internal Style Sheets
 
-If a _single page_ has a unique style, you could use an internal style sheet - these are defined and written in your HTML using the `<style>`` element, inside the head section of an HTML page:
+If a _single page_ has a unique style, you could use an internal style sheet - these are defined and written in your HTML using the `<style>` element, inside the head section of an HTML page:
 
 ```html
  <!DOCTYPE>
