@@ -1,6 +1,4 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
-# More Databases
+# Advanced SQL
 
 ## Objectives
 * Utilize different ways to filter data in the WHERE clause
