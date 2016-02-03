@@ -51,7 +51,7 @@
   * [Organization and APIs](05-express/express-apis/01readme.md)
     * [Organizing an Express App](05-express/express-apis/02organization.md)
     * [APIs with Express](05-express/express-apis/03apis.md)
-  * [Express CRUD](05-express/express-ajax-crud/readme.md)
+  * [Full RESTful Routing](05-express/express-ajax-crud/readme.md)
   * [Sequelize](05-express/express-sequelize/readme.md)
     * [1:M Relationships](05-express/express-1-to-many/readme.md)
     * [M:M Relationships](05-express/express-many-to-many/readme.md)
