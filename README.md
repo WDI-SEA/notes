@@ -8,3 +8,7 @@ Welcome to GA Seattle! This is the work-in-progress notes repository for our Web
 https://wdi_sea.gitbooks.io/notes/content/
 
 ![GA Logo](./_assets/ga_cog.png)
+
+##Directory
+
+Coming soon
