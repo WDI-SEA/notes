@@ -1,33 +1,4 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
-# Prototypes + Prototypal Inheritance
-
-##Objectives
-
-* Use prototypal inheritance to group shared properties even further
-* Understand the process of calling parent classes from a constructor.
-* Utilize various JavaScript methods in combination with prototypal inheritance.
-* Explore the next generation of inheritance in JavaScript using ES6 classes.
-
-## Review
-
-We mentioned in the last lesson that a prototype was the building block of an object and that when we create a new class, we can attach attributes and methods to the prototype (as a better alternative to adding them in the constructor function to save memory).
-
-
-### Review of a Constructor and Prototype In JS
-
-In javascript we don't have classes, so we use constructor functions and prototypes to create them.
-```js
-function Person(name){
-	this.name = name
-}
-
-Person.prototype.greet = function(){
-	return "Hello, my name is " + this.name;
-};
-```
-
-## Inheritance
+#Prototypal Inheritance
 
 ### What is Inheritance, and why do we want to use it?
 
@@ -38,50 +9,50 @@ For example, there are many types of boats in the world, but all of them have pr
 **The repetitive way**
 ```js
 function Sailboat(length, width, sails) {
-	this.length = length;
-	this.width = width;
-	this.sails = sails;
+  this.length = length;
+  this.width = width;
+  this.sails = sails;
 }
 
 function Steamboat(length, width, smokeStacks) {
-	this.length = length;
-	this.width = width;
-	this.smokeStacks = smokeStacks;
+  this.length = length;
+  this.width = width;
+  this.smokeStacks = smokeStacks;
 }
 
 function Motorboat(length, width, motors) {
-	this.length = length;
-	this.width = width;
-	this.motors = motors;
+  this.length = length;
+  this.width = width;
+  this.motors = motors;
 }
 ```
 
 **The inheritance way**
 ```js
 function Boat(length, width) {
-	this.length = length;
-	this.width = width;
+  this.length = length;
+  this.width = width;
 }
 
 function Sailboat(length, width, sails) {
-	Boat.call(this, length, width);
-	this.sails = sails;
+  Boat.call(this, length, width);
+  this.sails = sails;
 }
 Sailboat.prototype = Object.create(Boat.prototype);
 Sailboat.prototype.constructor = Sailboat;
 
 
 function Steamboat(length, width, smokeStacks) {
-	Boat.call(this, length, width);
-	this.smokeStacks = smokeStacks;
+  Boat.call(this, length, width);
+  this.smokeStacks = smokeStacks;
 }
 Steamboat.prototype = Object.create(Boat.prototype);
 Steamboat.prototype.constructor = Steamboat;
 
 
 function Motorboat(length, width, motors) {
-	Boat.call(this, length, width);
-	this.motors = motors;
+  Boat.call(this, length, width);
+  this.motors = motors;
 }
 Motorboat.prototype = Object.create(Boat.prototype);
 Motorboat.prototype.constructor = Motorboat;
@@ -90,7 +61,7 @@ Motorboat.prototype.constructor = Motorboat;
 By using the inheritance method, not only do we group shared properties into another object, but we can attach functions to the superclass's object's prototype, and now all boats have that function!
 ```js
 Boat.prototype.getDimensions = function() {
-	console.log("This boat has a width of " + this.width + " and a length of " + this.length);
+  console.log("This boat has a width of " + this.width + " and a length of " + this.length);
 }
 ```
 
@@ -116,16 +87,16 @@ Inheritance is done in a few steps
 Given the following example let's create a Student class that inherits from Person.
 ```js
 function Person(name){
-	this.name = name
+  this.name = name
 }
 
 Person.prototype.greet = function(){
-	return "Hello, my name is " + this.name;
+  return "Hello, my name is " + this.name;
 };
 
 function Student(name, course){
-	Person.call(this, name);
-	this.course = course;
+  Person.call(this, name);
+  this.course = course;
 };
 
 Student.prototype = Object.create(Person.prototype);
@@ -146,7 +117,7 @@ Example 1:
 
 ```js
 var getAge = function(friend) {
-	return friend.age;
+  return friend.age;
 }
 
 var john = { name: "John", age: 21 };
@@ -161,7 +132,7 @@ rewritten using `this`
 
 ```js
 var getAge = function() {
-	return this.age;
+  return this.age;
 }
 
 var john = { name: "John", age: 21 };
@@ -176,7 +147,7 @@ Example 2:
 
 ```js
 var setAge = function(friend, newAge) {
-	friend.age = newAge;
+  friend.age = newAge;
 }
 
 var john = { name: "John", age: 21 };
@@ -187,7 +158,7 @@ rewritten using `this`
 
 ```js
 var setAge = function(newAge) {
-	this.age = newAge;
+  this.age = newAge;
 }
 
 var john = { name: "John", age: 21 };
@@ -202,17 +173,17 @@ Let's talk about using `call` or `apply` to set the `this` context for a functio
 
 ```js
 function Person(name){
-	this.name = name;
-	this.friends = [];
+  this.name = name;
+  this.friends = [];
 }
 
 Person.prototype.addFriend = function(name){
-	this.friends.push(new Person(name));
+  this.friends.push(new Person(name));
 };
 
 function Student(name){
-	// masks all the constructor properties including name (as the second parameter)
-	Person.call(this, name);
+  // masks all the constructor properties including name (as the second parameter)
+  Person.call(this, name);
 };
 
 Student.prototype = Object.create(Person.prototype);
@@ -229,7 +200,7 @@ Example 1
 
 ```js
 var taco = {
-	food: "taco"
+  food: "taco"
 }
 
 taco.hasOwnProperty(food); // returns an error
@@ -240,16 +211,16 @@ Example 2 with inheritance
 
 ```js
 function Person(name){
-	this.name = name
+  this.name = name
 }
 
 Person.prototype.greet = function(){
-	return "Hello, my name is " + this.name;
+  return "Hello, my name is " + this.name;
 };
 
 function Student(name, course){
-	Person.call(this, name);
-	this.course = course;
+  Person.call(this, name);
+  this.course = course;
 };
 
 Student.prototype = Object.create(Person.prototype);
@@ -280,16 +251,16 @@ Example 2 with inheritance
 
 ```js
 function Person(name){
-	this.name = name
+  this.name = name
 }
 
 Person.prototype.greet = function(){
-	return "Hello, my name is " + this.name;
+  return "Hello, my name is " + this.name;
 };
 
 function Student(name, course){
-	Person.call(this, name);
-	this.course = course;
+  Person.call(this, name);
+  this.course = course;
 };
 
 Student.prototype = Object.create(Person.prototype);
@@ -331,30 +302,3 @@ You can read more about the difference between isPrototypeOf and isInstanceOf [h
 [http://geekabyte.blogspot.com/2013/03/difference-between-protoype-and-proto.html](http://geekabyte.blogspot.com/2013/03/difference-between-protoype-and-proto.html)
 
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance)
-
-## Inheritance with ES6 and Babel
-
-Other languages, such as C++ and Java, handle inheritance in a different way. Most OOP languages follow a class pattern, which contains the constructor and any methods shared across objects, as opposed to attaching methods to the prototype.
-
-ES6, short for ECMAScript 6, is the latest update coming to JavaScript. ES6 provides a different way for implementing constructors and inheritance. An example is shown below. See resources such as [this one](http://javascriptplayground.com/blog/2014/07/introduction-to-es6-classes-tutorial/) for more details.
-
-```js
-class Person {
-	constructor(name) {
-		this.name = name;
-	}
-
-	greet() {
-		return "Hello, my name is " + this.name;
-	}
-}
-
-class Student extends Person {
-	constructor(name, course) {
-		super(name);
-		this.course = course;
-	}
-}
-```
-
-Note that the parent/superclass constructor is called using the `super` keyword. Also, since ES6 isn't implemented across all platforms, this code won't work in many browsers. In order to write ES6 code now while still supporting older systems, we can use [Babel](https://babeljs.io/) to compile this code into ES5-friendly code.

@@ -6,3 +6,9 @@ Used to describe actions that do not occur at  regular intervals. In the context
 
 #Synchronous
 Used to describe actions that occur at regular intervals. In the context of JavaScript and Ruby, synchronous code runs and finishes before moving on to the next task.
+
+#TDD
+See Test-driven development
+
+#Test-driven development
+A development workflow that involves creating tests for a feature that initially fail, then writing code to make the tests pass.
