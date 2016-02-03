@@ -1,4 +1,4 @@
-﻿![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
+![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
 # Javascript Primitives
 
@@ -27,38 +27,40 @@
 
 Comments come in two forms
 
-  * line comments
+### Line comments
 
-   ```js
-   // descriptive stuff
-   ```
-  * multiline comments
+```js
+// descriptive stuff
+```
+### Multi-line comments
 
-  ```js
-  /**
-    These
-    are
-    comments on
-    many lines
-  */
+```js
+/**
+  These
+  are
+  comments on
+  many lines
+*/
 
-  ```
+```
+
 ## Numbers
 
 Numbers are one of the *types* of **values** we want to be able to interact and play with in JS.
 
-* Integers
+### Integers
 
-  ```
-   ..., -1,0, 2, 3, 4, 5, ...
-  ```
-* Floats (or Decimal numbers)
+```
+ ..., -1, 0, 2, 3, 4, 5, ...
+```
 
-  ```
-   2.718, 3.14, .5, .25, etc
-  ```
+### Floats (or Decimal numbers)
 
-In JS these are the same **type** of object, which it calls *Numbers*, so if you know floats and integers don not go looking for them.
+```
+ 2.718, 3.14, .5, .25, etc
+```
+
+In JS these are both the same **type** of object, which it calls *Numbers*.
 
 This can infrequently cause problems!
 
