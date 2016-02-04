@@ -77,7 +77,7 @@ var Person = function(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.fullName = function() {
-    return ("Hello" + firstName + " " + lastName);
+    return ("Hello " + this.firstName + " " + this.lastName);
   }
 }
 
@@ -87,10 +87,12 @@ function Person(firstName, lastName) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.fullName = function() {
-    return ("Hello" + firstName + " " + lastName);
+    return ("Hello " + this.firstName + " " + this.lastName);
   }
 }
 ```
+
+**Think about it:** What would happen if we didn't use `this` inside the `.fullName` function above?
 
 What's the difference between these two? In short, The difference is that `var Person = function() {}` is defined at run-time (which means that if we were to call it before defining it we would get an error), whereas `function Person() {}` is defined at parse-time (which means that if we were to call it before defining it we would **not** get an error).
 
