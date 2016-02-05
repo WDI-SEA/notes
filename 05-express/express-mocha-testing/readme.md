@@ -7,6 +7,12 @@
 * Describe the importance of testing your code programmatically
 * Use describe and assertion functions to do basic testing
 
+## IMPORTANT NOTE
+
+This lesson includes starter code. Fork and clone here to follow along:
+
+https://github.com/WDI-SEA/mocha-chai-starter
+
 ## Mocha, Chai And Javascript Testing
 
 We've now created several Express applications. All these apps cover a single topic, so most of the time, they are quite small. But when you create a larger application, the codebase will become bigger and more complex every time you add some features. At some point, adding code in file A will break features in file B, and to avoid these "side-effects", we need to test our app.
