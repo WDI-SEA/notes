@@ -82,7 +82,8 @@ The `<body></body>` tags denote the content of the document. This content is ren
 
 HTML provides for us two 'empty' containers to store whatever content we want. One is a div (block element) and the other is a span (inline element)
 
-[Example](http://codepen.io/anon/pen/MwryBv)
+<p data-height="388" data-theme-id="0" data-slug-hash="qbJREg" data-default-tab="result" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/qbJREg/'>Divs vs Spans</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ### Text Tags
 
