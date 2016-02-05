@@ -82,9 +82,7 @@ The `<body></body>` tags denote the content of the document. This content is ren
 
 HTML provides for us two 'empty' containers to store whatever content we want. One is a div (block element) and the other is a span (inline element)
 
-**Example**
-
-<a class="jsbin-embed" href="http://jsbin.com/zuyilo/1/embed?html,output">JS Bin on jsbin.com</a><script src="http://static.jsbin.com/js/embed.min.js?3.35.9"></script>
+[Example](http://codepen.io/anon/pen/MwryBv)
 
 ### Text Tags
 
