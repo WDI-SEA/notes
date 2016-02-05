@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 # Agile Development, Wireframes, and User Stories
 
 ### Objectives

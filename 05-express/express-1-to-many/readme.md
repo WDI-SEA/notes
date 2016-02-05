@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 #Sequelize - 1 to Many Relationships
 
 ##Objectives

@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 #Interview Prep
 
 (Partially from https://github.com/h5bp/Front-end-Developer-Interview-Questions)

@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 # Sorting Algorithms
 
 This week, we've gone over the following sorts:

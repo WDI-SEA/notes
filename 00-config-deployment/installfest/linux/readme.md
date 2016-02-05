@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 #Ubuntu install instructions
 
 **TIP:** Use `CTRL+SHIFT+V` to paste into terminal

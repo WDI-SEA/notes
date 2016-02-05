@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 # Test-Driven Development with Rspec
 
 ##Objectives

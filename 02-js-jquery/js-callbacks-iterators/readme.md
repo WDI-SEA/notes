@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 #Functional Programming
 
 Programming with functions! Weren't we already doing that? Well yes, but we can use functions more heavily, especially in place of loops.

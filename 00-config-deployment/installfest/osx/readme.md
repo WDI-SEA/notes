@@ -1,5 +1,3 @@
-![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
-
 #WDI Seattle Install Fest
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
