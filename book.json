@@ -2,5 +2,5 @@
     "structure": {
         "readme": "README.md"
     },
-    "plugins": ["toggle-chapters"]
+    "plugins": ["toggle-chapters", "codeblock-disable-glossary"]
 }
