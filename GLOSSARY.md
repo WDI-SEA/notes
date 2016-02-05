@@ -12,3 +12,12 @@ See Test-driven development
 
 #Test-driven development
 A development workflow that involves creating tests for a feature that initially fail, then writing code to make the tests pass.
+
+#Namespace
+A container used to organize various objects.
+
+#Closure
+An inner function that has access to the outer (enclosing) function's variables. In JavaScript, closures allow the ability to control access to data.
+
+#Singleton
+A design pattern where there's only one instance of a class/pattern.
