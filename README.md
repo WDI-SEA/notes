@@ -130,3 +130,17 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1104]: https://github.com/WDI-SEA/express-daily-planet-ajax
 [1105]: https://github.com/WDI-SEA/link-shortener
 [1106]: 11-projects/project-2/readme.md
+
+###Ruby on Rails
+
+| Topic | Assignments |
+| ----- | ----------- |
+| [Intro to Ruby][201] | Ruby Exercises <br><br> Ruby Challenges |
+| [Ruby Classes][202] | Superheroes |
+| [Ruby Testing with Rspec][204] | Testing Mailboxes and Trees |
+| [Ruby Inheritance][203] | Rio Grande |
+
+[201]: 06-ruby-rails/ruby-intro/readme.md
+[202]: 06-ruby-rails/ruby-classes/readme.md
+[203]: 06-ruby-rails/ruby-inheritance/readme.md
+[204]: 06-ruby-rails/ruby-rspec/readme.md

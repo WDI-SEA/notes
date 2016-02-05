@@ -62,7 +62,6 @@ If you're looking to add a unique style for a single HTML element, you can use a
 To use inline styles, add the style attribute to the relevant tag. The style attribute can contain any CSS property. The example shows us changing the HTML body's background to red:
 
 ```html
-
  <!DOCTYPE>
  <html>
 	 <head>
@@ -82,12 +81,11 @@ Inline CSS has a lot of downsides, though, so try to avoid using it on your proj
 
 Style sheets can be written in your HTML (internal) or in a separate CSS file (external).  Whatever style sheet you use, the CSS syntax is the same. We build our CSS with a selector - usually the name of the HTML tag, a specific class of elements, or an element with a unique ID:
 
-```css
+```
 selector {
 	property_1: value_1;
 	property_2: value_2;
 }
-
 ```
 
 Do not forget the curly brackets or the semi-colon after the value!
