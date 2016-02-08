@@ -20,7 +20,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Intro to WDI][8] <br><br> [Internet Fundamentals][1] | [Internet Lab][1000] |
 | [Command Line][2] <br><br> [Intro to Git][3] | [Command Line Murder Mystery][1001] |
 | [HTML][5] <br><br> [CSS Selectors][6] | [Selectors Animal-Style][1005]  |
-| [CSS Box Model and Positioning][9] | |
+| [CSS Box Model and Positioning][9] | [Recreate Instagram][1023] |
 | [JavaScript Primitives][4] | [Primitives Exercises][1003]  |
 | [JavaScript Control Flow][7] | [Control Flow Problems][1004] <br><br> [Google Shopping][1002] |
 | [JavaScript Functions][10] | [Functions Problem Set][1007] <br><br> [Google Shopping Functions][1006] |
@@ -87,6 +87,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1020]: https://github.com/WDI-SEA/oop-prototype-car
 [1021]: https://github.com/WDI-SEA/oop-inheritance-car
 [1022]: 11-projects/project-1/readme.md
+[1023]: https://github.com/WDI-SEA/css-positioning
 
 
 ###NodeJS/Express

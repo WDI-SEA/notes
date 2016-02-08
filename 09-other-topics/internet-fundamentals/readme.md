@@ -9,7 +9,13 @@
 - Breakdown the components of a URL: protocol, subdomain, domain, extension, resources
 - Identify and describe the most common HTTP request/response headers and the information associated with each
 
-## Intro - Server, Client, Request, HTTP
+##How the Internet Works in 5 Minutes
+
+<iframe width="100%" height="590" src="https://www.youtube.com/embed/7_LPdttKXPc" frameborder="0" allowfullscreen></iframe>
+
+https://www.youtube.com/watch?v=7_LPdttKXPc
+
+## Server, Client, Request, HTTP
 
 The internet as you know comes down to requests and responses - you send information out to the web, and based on the info you send, you get information back.
 
