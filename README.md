@@ -99,10 +99,10 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Intro to SQL][103] | |
 | [Advanced SQL][104] | [Apartment Lab][1102] <br><br> [Booktown][1103] |
 | [Full RESTful Routing w/AJAX][105] | [Daily Planet with AJAX][1104] |
-| [Express with Databases via Sequelize][106] | [Link Shortener][1105] <br><br> OMDB with Favorites |
+| [Express with Databases via Sequelize][106] | [Link Shortener][1105] <br><br> [OMDB with Favorites][1107] |
 | [Deploy Node to Heroku][107] | |
-| [Sequelize 1:M][108] | OMDB Comments |
-| [Sequelize M:M][109] | OMDB Tags |
+| [Sequelize 1:M][108] | [OMDB Comments][1108] |
+| [Sequelize M:M][109] | [OMDB Tags][1109] |
 | [Express Authentication Theory (Research/Code)][110] | |
 | [Express Authentication Practice (Codealong)][111] | |
 | [Express Testing with Mocha and Chai][112] | - |
@@ -131,6 +131,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1104]: https://github.com/WDI-SEA/express-daily-planet-ajax
 [1105]: https://github.com/WDI-SEA/link-shortener
 [1106]: 11-projects/project-2/readme.md
+[1107]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part2-favorites.md
+[1108]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part3-comments.md
+[1109]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part4-tags.md
 
 ###Ruby on Rails
 
