@@ -69,7 +69,7 @@ app.get('/', function(req, res){
 
 then we need to update our `index.ejs` to use a templating variable.
 
-**index.js**
+**index.ejs**
 ```html
 <!DOCTYPE html>
 <html>
