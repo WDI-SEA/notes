@@ -110,6 +110,7 @@
     * [Sublime Packages](00-config-deployment/installfest/sublime-packages/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node/Express](00-config-deployment/deploy-node/readme.md)
+  * [Foreman (Environment Variables)](00-config-deployment/foreman/readme.md)
 * [Data Structures and Algorithms](08-cs/readme.md)
   * [Problem Solving - Array Flatten](08-cs/teaser-js-array-flatten/readme.md)
   * [Binary Search](08-cs/teaser-ruby-binary-search/readme.md)

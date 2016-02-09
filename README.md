@@ -95,7 +95,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Topic | Assignments |
 | ----- | ----------- |
 | [Intro to Express][101] | [Daily Planet][1100] |
-| [Organization and APIs][102] | [OMDB Movie Search][1101] |
+| [Organization and APIs][102] <br><br> [Foreman][114] | [OMDB Movie Search][1101] |
 | [Intro to SQL][103] | |
 | [Advanced SQL][104] | [Apartment Lab][1102] <br><br> [Booktown][1103] |
 | [Full RESTful Routing w/AJAX][105] | [Daily Planet with AJAX][1104] |
@@ -124,6 +124,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [111]: 05-express/express-auth/practice/readme.md
 [112]: 05-express/express-mocha-testing/readme.md
 [113]: https://github.com/WDI-SEA/mocha-chai-starter
+[114]: 00-config-deployment/foreman/readme.md
 
 [1100]: https://github.com/WDI-SEA/express-daily-planet
 [1101]: https://github.com/WDI-SEA/express-apis-omdb
