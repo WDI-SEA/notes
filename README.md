@@ -105,7 +105,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Sequelize M:M][109] | [OMDB Tags][1109] |
 | [Express Authentication Theory (Research/Code)][110] | |
 | [Express Authentication Practice (Codealong)][111] | |
-| [Express Testing with Mocha and Chai][112] | - |
+| [Express Testing with Mocha and Chai][112] | [Starter code][113] |
 
 | Projects |
 | -------- |
@@ -123,6 +123,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [110]: 05-express/express-auth/theory/readme.md
 [111]: 05-express/express-auth/practice/readme.md
 [112]: 05-express/express-mocha-testing/readme.md
+[113]: https://github.com/WDI-SEA/mocha-chai-starter
 
 [1100]: https://github.com/WDI-SEA/express-daily-planet
 [1101]: https://github.com/WDI-SEA/express-apis-omdb
