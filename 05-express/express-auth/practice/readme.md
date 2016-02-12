@@ -1,6 +1,9 @@
-#Authentication applied
+#Auth in Practice
 
-##How to add users to an app
+##Objectives
+
+* Understand and synthesize concepts of different Node components
+* Use flash messages for one-time user notifications
 
 1. Create a user table (see sequelize lesson)
   * attributes / columns
@@ -86,7 +89,7 @@ res.redirect('/');
 We can retrive the message using `req.flash()` and pass that message in to the view. Once you call `req.flash()` to retrieve the messages they are deleted from the session automatically so they are only displayed once.
 
 ```js
-res.render('main/index',{alerts:req.flash()});
+res.render('main/index', {alerts: req.flash()});
 ```
 
 **display messages**
