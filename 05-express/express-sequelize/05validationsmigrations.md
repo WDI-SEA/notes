@@ -3,7 +3,7 @@
 Sequelize has a bunch of validations we can add to our models to ensure that our data has met certain criteria before add it to our database. To include validations in your model, wrap them in a validate object. An examples of this is validating an email address (making sure it has a @ etc. as well as ensuring that it is never null):
 
 Read more about diffrent types of validations
-http://docs.sequelizejs.com/en/latest/docs/models/#model-validations
+http://docs.sequelizejs.com/en/latest/docs/models-definition/#validations
 
 **models/user.js**
 ```js
