@@ -9,7 +9,9 @@
 
 ## Introduction
 
-When we have finished developing a version of our app, we might want to put it on the internet for other people to see.
+When we have finished developing a version of our app, we likely want to put it on the internet for other people to see.
+
+You can use our Taco CRUD app for deployment. https://github.com/WDI-SEA/tacoapp
 
 ### Localhost
 
@@ -70,6 +72,7 @@ We'll have the ability to create free applications using Heroku, but with limita
   * in terminal type `echo "web: node index.js" >> Procfile`
 
 * In your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
+
 ```js
 app.listen(process.env.PORT || 3000)
 ```
@@ -85,6 +88,7 @@ git init
 ```
 
 * Create a Heroku app via the command line
+
 ```
 heroku apps:create sitename
 ```
@@ -94,6 +98,7 @@ Where `sitename` is the name of your app. This will create a url like: `http://s
 * Commit and push all your data at this point (`git push`).
 
 * To push to Heroku, enter the following command
+
 ```
 git push heroku master
 ```
@@ -159,3 +164,27 @@ heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
   * Save a local version of `sequelize-cli` to the `package.json` file
   * Push application to Heroku
   * Run migrations on Heroku
+
+
+##Resources
+
+For all resources Heroku-related, check out the documentation on Heroku's website.
+
+https://devcenter.heroku.com/articles/getting-started-with-nodejs
+
+Some interesting (and free) addons you can add to your app:
+
+* [New Relic](https://elements.heroku.com/addons/newrelic)
+  * Application monitoring
+* [Papertrail](https://elements.heroku.com/addons/papertrail)
+  * Logging management
+* [Loader.io](https://elements.heroku.com/addons/loaderio)
+  * Load testing for web applications
+* [Deploy Hooks](https://elements.heroku.com/addons/deployhooks)
+  * Send messages to Slack, Email, or an HTTP endpoint on deployment
+* [Heroku Scheduler](https://elements.heroku.com/addons/scheduler)
+  * Schedule tasks, similar to `cron`
+* [Mailgun](https://elements.heroku.com/addons/mailgun)
+  * API for sending emails
+* [Cloudinary](https://elements.heroku.com/addons/cloudinary)
+  * API for image uploads and delivery
