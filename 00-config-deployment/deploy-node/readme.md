@@ -81,11 +81,7 @@ This ensures that when we set the PORT config variable, Heroku will run on it in
 
 * Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies so whenever you install anything with npm make sure to use `--save`. You can always check your package.json to see if you are missing anything.
 
-* Before you create your app in Heroku, be sure you've initialized a git repository in your project directory:
-
-```
-git init
-```
+* Before you create your app in Heroku, be sure your project is being tracked via a git repository.
 
 * Create a Heroku app via the command line
 
