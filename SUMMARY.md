@@ -145,5 +145,4 @@
   * [Project 3](11-projects/project-3/readme.md)
   * [Project 4](11-projects/project-4/readme.md)
   * [Past Projects](11-projects/past-projects/readme.md)
-  * [Tic Tac Toe](https://github.com/WDI-SEA/tic-tac-toe)
   * [Interview Questions](11-projects/interview-questions/readme.md)

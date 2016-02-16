@@ -58,7 +58,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [15]: 02-js-jquery/jquery-ajax/readme.md
 [16]: 03-html-css/css-responsive-design/readme.md
 [17]: 03-html-css/css-bootstrap/readme.md
-[18]: 09-other-topics/user-stories/wireframing/readme.md
+[18]: 09-other-topics/user-stories-wireframing/readme.md
 [19]: 02-js-jquery/js-prototypes/01readme.md
 [20]: 02-js-jquery/js-tdd-intro/readme.md
 [21]: 02-js-jquery/js-scopes/readme.md
@@ -83,7 +83,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1016]: https://github.com/WDI-SEA/jquery-ajax
 [1017]: https://github.com/WDI-SEA/ajax-reddit-slideshow
 [1018]: https://github.com/WDI-SEA/bootstrap-mockups
-[1019]: 09-other-topics/user-stories/wireframing/exercise.md
+[1019]: 09-other-topics/user-stories-wireframing/exercise.md
 [1020]: https://github.com/WDI-SEA/oop-prototype-car
 [1021]: https://github.com/WDI-SEA/oop-inheritance-car
 [1022]: 11-projects/project-1/readme.md
@@ -107,9 +107,13 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Express Authentication Practice (Codealong)][111] | |
 | [Express Testing with Mocha and Chai][112] | [Starter code][113] |
 
-| Projects |
+| Projects and Additional Topics |
 | -------- |
 | [Project 2][1106] |
+| [oAuth][115] |
+| [Realtime with Socket.io][117] |
+| [Geocoding/Maps][116] |
+| [Image Uploads with Cloudinary][118] |
 
 [101]: 05-express/express-intro/01readme.md
 [102]: 05-express/express-apis/01readme.md
@@ -125,6 +129,10 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [112]: 05-express/express-mocha-testing/readme.md
 [113]: https://github.com/WDI-SEA/mocha-chai-starter
 [114]: 00-config-deployment/foreman/readme.md
+[115]: 05-express/additional-topics/express-oauth/readme.md
+[116]: 05-express/additional-topics/express-geocode/readme.md
+[117]: 05-express/express-socket-io/readme.md
+[118]: 05-express/additional-topics/express-cloudinary/readme.md
 
 [1100]: https://github.com/WDI-SEA/express-daily-planet
 [1101]: https://github.com/WDI-SEA/express-apis-omdb
@@ -145,8 +153,36 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Ruby Classes][202] | Superheroes |
 | [Ruby Testing with Rspec][204] | Testing Mailboxes and Trees |
 | [Ruby Inheritance][203] | Rio Grande |
+| [Intro to Rails][205] | The SLU Bog |
+| [APIs with Rest-Client][206] | |
+| [Rails Asset Pipeline][207] | |
+| [Rails Auth/1:M][208] | Link Board |
+| [Rails M:M][209] | Bog Tags |
+| [Polymorphic Associations][210] | Link Board Comments |
+
+| Projects and Additional Topics |
+| -------- |
+| [Project 3][1200] |
+| [Group Collaboration][215] |
+| [oAuth][211] |
+| [Mailers][212] |
+| [Image Uploads with Cloudinary][213] |
+| [Static Site Generators (Jekyll)][214] |
 
 [201]: 06-ruby-rails/ruby-intro/readme.md
 [202]: 06-ruby-rails/ruby-classes/readme.md
 [203]: 06-ruby-rails/ruby-inheritance/readme.md
 [204]: 06-ruby-rails/ruby-rspec/readme.md
+[205]: 06-ruby-rails/rails-intro/readme.md
+[206]: 06-ruby-rails/rails-apis/readme.md
+[207]: 06-ruby-rails/rails-assets-frontend/readme.md
+[208]: 06-ruby-rails/rails-auth-1-M/readme.md
+[209]: 06-ruby-rails/rails-M-M/readme.md
+[210]: 06-ruby-rails/rails-polymorphism/readme.md
+[211]: 06-ruby-rails/additional-topics/rails-oauth/readme.md
+[212]: 06-ruby-rails/additional-topics/rails-mailers/readme.md
+[213]: 06-ruby-rails/additional-topics/rails-cloudinary/readme.md
+[214]: 06-ruby-rails/additional-topics/ruby-jekyll/readme.md
+[215]: 01-workflow/group-collab/01readme.md
+
+[1200]: 11-projects/project-3/readme.md
