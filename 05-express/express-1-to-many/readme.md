@@ -11,6 +11,8 @@ Today we're going to cover how to setup a one to many relationship, using more t
 
 ##Getting Started
 
+Creating a blog.
+
 ```
 npm init
 
@@ -41,16 +43,20 @@ sequelize model:create --name post --attributes title:string,content:text,author
 
 The following lines need to be inserted into the author and post models respectively in the `associate` function. The comment line is where you will insert it.
 
-Insert into **models/author.js**
+Insert into **models/author.js**, inside the `associate` function
 
 ```js
-models.author.hasMany(models.post);
+associate: function(models) {
+  models.author.hasMany(models.post);
+}
 ```
 
-Insert into **models/post.js**
+Insert into **models/post.js**, inside the `associate` function
 
 ```js
-models.post.belongsTo(models.author);
+associate: function(models) {
+  models.post.belongsTo(models.author);
+}
 ```
 
 Finally, let's run create all the necessary tables from our models by migrating the database.
@@ -113,7 +119,7 @@ Sequeize supports "eager loading", meaning it can load all of the posts for us i
 db.author.findAll({
   include: [db.post]
 }).then(function(authors){
-  // do something with authors here
   // authors will have a .posts key with an array of posts
+  console.log(author.posts);
 });
 ```

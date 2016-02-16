@@ -5,20 +5,19 @@
 * Create a join table and utilize it in a many-to-many relationship
 * Use Sequelize's helper methods to add relationships between two different models.
 
-
-If we wanted to expand our models to include a many to many relationship, it requires a certain naming scheme.
-
-We will be expanding our data model, to include
+If we wanted to expand our models to include a many to many relationship, we can use a many to many relationship via a join table. We will be expanding our data model to include authors, posts, and tags.
 
 **Very Important** Name - your models `singular`
 
-`sequelize model:create --name author --attributes name:string`
+```
+sequelize model:create --name author --attributes name:string
 
-`sequelize model:create --name post --attributes title:string,body:string,authorId:integer`
+sequelize model:create --name post --attributes title:string,body:string,authorId:integer
 
-`sequelize model:create --name tag --attributes name:string`
+sequelize model:create --name tag --attributes name:string
+```
 
-**Very Important** Name your join tables as two plural models combined, such as `tacosburritos`
+**Very Important** Name your join tables as two plural models combined, such as `tacosBurritos`
 
 `sequelize model:create --name postsTags --attributes postId:integer,tagId:integer`
 
@@ -53,7 +52,7 @@ associate: function(models) {
 
 ##Examples
 
-###Find or create an Author, create an associated post.
+###Create a post attached to an author
 
 There are some helper functions that get generated automatically when you want to create a related item:
 
@@ -62,7 +61,6 @@ db.author.findOrCreate({where: {name: "Brian"}}).spread(function(author, created
   author.createPost({title: "taco", body: "burrito"}).then(function(post) {
   });
 });
-
 ```
 
 ###Add a unique tag to a Post.
@@ -73,7 +71,7 @@ Secondly, we must attach a post to the tags, using some built in helpers.
 
 Some ORM has capabilities to do a bulk create on an object associations, but that kind of logic is not built in Sequelize.
 
-```
+```js
 db.author.findOrCreate({where: {name: "Brian"}}).spread(function(author,created){
   author.createPost({title: "newTaco", content: "burrito"}).then(function(post) {
     db.tag.findOrCreate({where: {name: "xyzasdf"}}).spread(function(tag, created) {
@@ -93,7 +91,7 @@ Sequelize generates helper functions that allow you to get related items. For in
 ```js
 db.tag.find({where: {name: "xyzasdf"}}).then(function(tag) {
   tag.getPosts().then(function(posts) {
-    console.log("These posts are tagged with "+tag.name+":");
+    console.log("These posts are tagged with " + tag.name + ":");
     posts.forEach(function(post) {
       console.log("Post title: " + post.title);
     });
