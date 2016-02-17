@@ -2,108 +2,44 @@
 
 ##Objectives
 
-* Understand and synthesize concepts of different Node components
+* Understand different Node packages separately
+* Incorporate multiple packages into a working authentication setup
 * Use flash messages for one-time user notifications
 
-1. Create a user table (see sequelize lesson)
-  * attributes / columns
-    * e-mail
-    * password
-    * name
-2. Create a sign up form (GET /auth/signup)
-  * should have form fields for each column listed above
-3. Create a signup POST route
-  * route: POST /auth/signup
+###Note
+
+This codealong relies heavily on an app that's been scaffolded with signup and login routes. Please fork and clone here: https://github.com/WDI-SEA/express-auth
+
+##Getting Started
+
+A basic application with no database has been provided to you, with the following routes:
+
+* `GET /` - home page
+* `GET /secret` - a page we should keep secret (but is currently visible)
+* `GET /auth/login` - a login form
+* `POST /auth/login` - the route where our login form data will be sent to
+* `GET /auth/signup` - a user signup form
+* `POST /auth/signup` - the route where our user signup data will be sent to
+
+Currently, the POST routes send back the form data to the browser. We'll be modifying this application to provide full, secure authentication.
+
+###Laundry List
+
+1. Create a user model, to store the user's name, email, and password
+2. Test the user model
+3. Add functionality to the signup POST route (`POST /auth/signup`)
   * Check if e-mail already registered
     * Creates new user if not registered
-    * Tells user they are already registered otherwise
-  * ENCRYPTS PASSWORD!!!!! (use before create)
-4. Create a login form (GET /auth/login)
-5. Set up sessions middleware
-6. Create a login POST route (does login)
-  * route: POST /auth/login
-  * Checks e-mail / password against database
-  * Logs user in (create session)
-7. Create a GET /auth/logout route (clears the session)
-8. Create getUser() method (as middleware)
+  * HASH THE PASSWORD
+    * We'll use `bcrypt` and a `beforeCreate` hook
+    * We'll also add password validations
+4. Set up sessions middleware, so we can remember that users are logged in
+5. Add functionality to the login POST route (`POST /auth/login`)
+  * Create a function to check if the password matches
+  * Check e-mail / password against database
+    * Log in the user if valid (create a session)
+6. Create a GET /auth/logout route (clears the session)
+7. Create getUser() method (as middleware)
 
 
-##Requirements to install
-
-* [express-session](https://www.npmjs.com/package/express-session) - handles session storage
-* [bcrypt](https://www.npmjs.com/package/bcrypt) - used to encrypt passwords
-* [body parser](https://www.npmjs.com/package/body-parser) - parse form data from signup, login form, etc
-
-
-##Using sessions
-
-First you need to install `express-session` through npm then you can load the middleware like this...
-
-```js
-app.use(session({
-  secret:'dsalkfjasdflkjgdfblknbadiadsnkl',
-  resave: false,
-  saveUninitialized: true
-}));
-```
-
-Once the middleware is loaded you can simply get / set data in `req.session` and it will be preserved between requests.
-
-Do this in one route to set the value
-
-```js
-req.session.whatever="hello!!!";
-```
-
-in any subsequent route you can retrive the value like this
-
-```js
-console.log(req.session.whatever);
-//outputs: "hello!!!"
-```
-
-##Peripheral concept - Flash Messages
-
-Flash messages are temporary (one-shot) messages used to display an error or info to the user. The messages are typically stored in the session which allows us to redirect the user to a new page and display the error after redirect.
-
-In express we use a middleware called [connect-flash](https://www.npmjs.com/package/connect-flash) to handle flash messages.
-
-connect-flash requires session so you must load the [express-session](https://www.npmjs.com/package/express-sessions) middleware first if you want to pass flash messages between pages..
-
-**load flash middleware**
-
-```js
-var flash = require('connect-flash');
-app.use(flash());
-```
-
-**setting flash message**
-
-```js
-req.flash('danger','You must be logged in to access that page.');
-res.redirect('/');
-```
-
-**retrive message**
-
-We can retrive the message using `req.flash()` and pass that message in to the view. Once you call `req.flash()` to retrieve the messages they are deleted from the session automatically so they are only displayed once.
-
-```js
-res.render('main/index', {alerts: req.flash()});
-```
-
-**display messages**
-
-Once we pass the alerts through to the view we can display using code like this.
-
-This code loops through each type of message and then each message of that type and uses the message type (key) to add it as class. If you use the bootstrap alert classes (danger,warning,info,success) this will display appropriately colored alerts by default.
-
-```js
-<% if(typeof alerts !== 'undefined'){ %>
-    <% for(key in alerts){ %>
-        <% alerts[key].forEach(function(thisMsg){ %>
-            <div class="alert alert-<%= key %>"><%= thisMsg %></div>
-        <% }); %>
-    <% } %>
-<% } %>
-```
+**Before getting started, fork/clone the starter app, install packages, and make sure the app works**
