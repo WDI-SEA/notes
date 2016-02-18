@@ -176,13 +176,14 @@ For this test, we need to:
 1. Create a new object by sending a `POST` request
 2. Verify that a new object has been "saved" by requesting the index route
 
-For this, we will use `before` blocks. A `before` block will be executed for every `it` function is called inside a `describe` block.
+For this, we will use `before` blocks. A `before` block will be executed one time before your tests are run. It's good if there's any setup that needs to be done before your tests.
 
 Add this inside the new `describe` block:
 
 ```js
 before(function(done) {
   request(app).post("/candies")
+  .type("form")
   .send({
     id: 5,
     name: "Lollipop",
