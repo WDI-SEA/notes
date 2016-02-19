@@ -151,5 +151,6 @@
   * [Project 4](11-projects/project-4/readme.md)
   * [Past Projects](11-projects/past-projects/readme.md)
   * [Interview Questions](11-projects/interview-questions/readme.md)
+  * [Portfolio](11-projects/portfolio/readme.md)
 * [Resources](12-resources/readme.md)
   * [APIs and Data](12-resources/apis.md)
