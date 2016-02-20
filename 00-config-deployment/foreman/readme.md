@@ -53,9 +53,23 @@ Then, in order to `load` these variables into the environment, we can run `forem
 foreman run nodemon
 ```
 
+To access these variables in a Node app, we can use the following syntax:
+
+```js
+console.log(process.env.SECRET_KEY);
+console.log(process.env.OTHER_TOKEN);
+```
+
 For a Rails app, we'd run:
 
 ```bash
 foreman run rails s
+```
+
+To access these variables in a Rails app, we can use the following syntax:
+
+```rb
+puts ENV['SECRET_KEY']
+puts ENV['OTHER_TOKEN']
 ```
 
