@@ -6,15 +6,9 @@
 * Set up websockets on the server side
 * Use jQuery to update the client side
 
-### Preparation
-
-* Create an Express app
-* Configure an application to use middleware, nodemon, and ejs
-* Write jQuery that updates the DOM
-
 ###Starter Code
 
-Access the starter code here: https://github.com/WDI-SEA/socket-io-starter
+Access the starter code for the codealong here: https://github.com/WDI-SEA/socket-io-starter
 
 ## Web basics recap
 
@@ -36,6 +30,7 @@ WebSockets solves all this. It maintains an open connection from Server <-> Clie
 
 Unlike HTTP requests, once a connection is established with websockets, you don't get continuous meta data like types, user-agents, cookies, dates, etc.
 
+![Websockets](./sockets.png)
 
 ## Installing WebSockets
 

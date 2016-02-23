@@ -15,9 +15,12 @@
 "Seattle, WA" -> **geocode** -> {lat: 47.6062095, lng: -122.3320708}
 
 ### Using Geocoder
-First lets install the package into our project.
+First lets install the package into a new folder. Note that we'll be using Google's geocoder API.
 
 ```
+mkdir geocode_example
+cd geocode_example
+
 npm init
 npm install --save geocoder
 ```
@@ -36,7 +39,7 @@ geocoder.geocode("Space Needle", function(err, data) {
 Lets create a model where that we can use to setup some map content.
 
 ```
-npm install --save pg pg-hstore sequelize
+npm install --save sequelize pg pg-hstore
 
 sequelize init
 sequelize model:create --name place --attributes name:string,address:string,lat:float,lng:float
@@ -46,7 +49,7 @@ We have added fields for latitude and longitude. We've added them to our
 model, because we will be using the `geocoder` npm model to have the
 fields automatically fillled in when creating new entries.
 
-Geocoder will be used on our model, we need to include it on the model.
+Geocoder will be used on our model, we need to include it on the `place.js` model.
 
 ```js
 var geocoder = require('geocoder');
@@ -54,23 +57,20 @@ var geocoder = require('geocoder');
 
 and add a hook below `classmethods`
 
-
 ```js
 hooks: {
   beforeCreate: function(place, options, fn) {
-    geocoder.geocode(place.address, function(err,data) {
-      if (err) { fn(err, null); }
+    geocoder.geocode(place.address, function(err, data) {
+      if (err) return fn(err, null);
       place.lat = data.results[0].geometry.location.lat;
       place.lng = data.results[0].geometry.location.lng;
-      fn(null,place)
-    })
+      fn(null, place);
+    });
   }
 }
 ```
 
-Once your database configuration is setup, run database migrations. Then,
-let's create a simple Express app with a form for inputting a place and
-address.
+Once your database configuration is setup, run database migrations. Then, let's create a simple Express app with a form for inputting a place and address.
 
 ##Using Google Maps
 Google Maps is the most popular mapping app on the web. We'll be using it to display points on a map.
