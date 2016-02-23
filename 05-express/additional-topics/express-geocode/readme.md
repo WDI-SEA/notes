@@ -6,6 +6,10 @@
 * Utilize geocoding with a geocoder and Sequelize hooks
 * Use Google Maps to add geocoordinates to a map.
 
+##Starter Code
+
+We'll be using the starter code here (fork and clone): https://github.com/WDI-SEA/express-geocode-maps-example
+
 ## Geocoding Addresses
 
 **What is geocoding?** - The process of converting a description of a place to geographic coordinates.
@@ -15,17 +19,15 @@
 "Seattle, WA" -> **geocode** -> {lat: 47.6062095, lng: -122.3320708}
 
 ### Using Geocoder
-First lets install the package into a new folder. Note that we'll be using Google's geocoder API.
+First lets install the package into our starter code. Note that we'll be using Google's geocoder API.
 
 ```
-mkdir geocode_example
-cd geocode_example
-
-npm init
 npm install --save geocoder
 ```
 
-### Try this in a separate file:
+### Try this in a separate file
+
+We'll use this code in a file called `mapTest.js`
 
 ```js
 var geocoder = require('geocoder');
@@ -34,28 +36,21 @@ geocoder.geocode("Space Needle", function(err, data) {
 });
 ```
 
+Note that once we type a location, the geocoder will lookup and give us coordinates for the location.
+
 ### Geocoding with a database model
 
-Lets create a model where that we can use to setup some map content.
+In the starter code, we have a model called **place** that has a name, address, lat (latitude), and lng (longitutde) attributes.
 
-```
-npm install --save sequelize pg pg-hstore
+If we want to take an address a user typed in, then determine the coordinates for the address, we can generate the coordinates using the `geocoder` library and a Sequelize `beforeCreate` hook. Let's try that in `place.js`.
 
-sequelize init
-sequelize model:create --name place --attributes name:string,address:string,lat:float,lng:float
-```
-
-We have added fields for latitude and longitude. We've added them to our
-model, because we will be using the `geocoder` npm model to have the
-fields automatically fillled in when creating new entries.
-
-Geocoder will be used on our model, we need to include it on the `place.js` model.
+At the top of the **place** model, import the geocoder.
 
 ```js
 var geocoder = require('geocoder');
 ```
 
-and add a hook below `classmethods`
+Then, add a hook below the `classmethods` object
 
 ```js
 hooks: {
@@ -70,25 +65,28 @@ hooks: {
 }
 ```
 
-Once your database configuration is setup, run database migrations. Then, let's create a simple Express app with a form for inputting a place and address.
+Now, try starting the app and entering a name/address. The geocoder will take the address and attempt to find the geocoordinates for the address. Check in the database to see if these results are generated.
+
 
 ##Using Google Maps
-Google Maps is the most popular mapping app on the web. We'll be using it to display points on a map.
+Google Maps is the most popular mapping app on the web. We'll be using it to display places on a map. In order to do so, we need **geocoordinates** of the places, which we already set up!
 
 ### Getting an API key
 You'll need a Google/Gmail account first before setting up the API key. Once you've got that, head to the [Google developers console](https://console.developers.google.com/). From there, click on "Use Google APIs". You'll see a bunch of links to various APIs, and the only ones you care about right now are the Maps APIs.
 
 The two APIs you need to enable are the Google Maps JavaScript API, and the Google Maps Embed API. You might want to use the Google Maps Places API eventually, so go ahead and enable that too.
 
-###Add a map div
+###Adding a map div
 
-In the page you want to embed a map in, set up a div like this:
+We already set up a map div in the `index.ejs` template, along with some CSS to set up the height. Take a look in order to familarize yourself. The CSS is important because if the div has no height, the map won't display.
+
+**index.ejs***
 
 ```html
 <div id='map'></div>
 ```
 
-and set a height in your css...
+**style.css**
 
 ```css
 #map {
@@ -96,35 +94,49 @@ and set a height in your css...
 }
 ```
 
-And that's really all you need. The map will automatically scale to the size of the container you give it.
-
 ### Link to Google Maps
 
-In order to use Google Maps, you need to link to the maps script.
-
-You can find a walkthrough for including the Google Map script tag [here](https://developers.google.com/maps/documentation/javascript/tutorial).
+In order to use Google Maps, you need to link to the maps script, along with the API key. These API keys are special browser keys, which don't need to be private (and can't be private, since everything on the front end is visible).
 
 ### Add a Map Script
-Notice that the URL for the Maps script includes a parameter besides your API key called "callback".
 
-`https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&<b>callback=initMap</b>`
+Here's an example of adding the map script. Alternatively, you can find a walkthrough for including the Google Map script tag [here](https://developers.google.com/maps/documentation/javascript/tutorial). They also help out with automatically pasting your API key.
 
-This parameter defines the callback that's used when the Maps API script is finished loading.
+Let's add the script in **index.ejs** before our custom script.
+
+```html
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<key here>&callback=initMap">
+</script>
+```
+
+Note that there's a **callback** at the end of the script. This parameter defines the function that's called when the Maps API script is finished loading.
 
 **REMEMBER TO CHANGE OUT THE KEY PARAMETER WITH YOU API KEY BEFORE CONTINUING**
 
-Since the API key is front-end facing, and only really used for usage metrics, you don't need to be hide it. That said, it's good practice to include the key as an environment varaible, so that you can switch keys if they are expired or get reset.
+Again, since the API key is front-end facing, and only really used for usage metrics, you don't need to be hide it. That said, it's good practice to include the key as an environment varaible, so that you can switch keys if they are expired or get reset.
 
-`https://maps.googleapis.com/maps/api/js?key=<%= process.env.YOUR_API_KEY %>&<b>callback=initMap</b>`
+**Example:** 
 
-Now, let's define our `initMap` callback
+```html
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=<%= process.env.API_KEY_NAME %>&callback=initMap">
+</script>
+```
+
+Now, let's define our `initMap` callback inside **script.js**. We'll be doing a series of operations inside this function.
+
+* Creating a map attached to **map**, including a center point and zoom level
+* If the browser supports geolocation, we'll ask the user their location and recenter the map if possible
+* Add markers to the map by iterating across the array of markers (currently empty, but we'll fill the array soon)
+  * Also, we'll bind a popup to each marker, displaying the location's name
 
 ```js
 var initMap = function() {
 
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -34.397, lng: 150.644},
-    zoom: 8
+    zoom: 10
   });
 
   // if brower support available, ask user for location data and set the map view
@@ -138,16 +150,16 @@ var initMap = function() {
   // for each marker passed through, add it to the map with a popup
   markers.forEach(function(marker) {
     console.log(marker);
-    var latLng = new google.maps.LatLng(marker.lat, marker.lng);
+    var position = new google.maps.LatLng(marker.lat, marker.lng);
     var googleMarker = new google.maps.Marker({
-      position: latlng,
+      position: position,
       title: marker.name,
       map: map
     });
     // Bind a popup to the marker
     googleMarker.addListener("click", function() {
       var infoWindow = new google.maps.InfoWindow({content: "<h3>"+marker.name+"</h3>"});
-      infoWindow.open(map, marker);
+      infoWindow.open(map, googleMarker);
     });
   });
 };
@@ -156,19 +168,19 @@ var initMap = function() {
 **IMPORTANT NOTES**
 
 * It's important that you remember the async and defer attributes on the Google Maps script tag. This will wait until the page has loaded to start loading the Google Maps script.
-* `initMap` is distinct from the document ready event. According to this Stack Overflow post...
+* `initMap` is distinct from the document ready event. According to this Stack Overflow post, deferred scripts *may* execute before jQuery's `$(document).ready()` function.
 
 http://stackoverflow.com/questions/8638551/script-defer-and-document-ready
 
-...deferred scripts will execute before jQuery's docready, but you can't be totally sure of that.
+###Setting up markers
 
-###On your route that needs a map
+Lastly, we need to get markers from our database and display them on the map. In order to do so, we'll add a `script` tag on the `index.ejs` template to show render points to the page. Note that it's **very** important to do this on a EJS template, otherwise, we can't use the EJS template tags.
 
-Add a `script` tag to show render points to the page.
+**In index.ejs** before all the other scripts:
 
 ```html
 <script>
-  var myPoints = <%- JSON.stringify(places) %>;
+  var markers = <%- JSON.stringify(places) %>;
 </script>
 ```
 
