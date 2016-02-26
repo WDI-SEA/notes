@@ -21,7 +21,7 @@ Further reading: [The Philosophy of Ruby](http://www.artima.com/intv/ruby.html)
 
 While Ruby is a general purpose language that can be used for many purposes, we'll be applying it to a web development framework called Rails. We learned JavaScript first because it's the only language that runs natively in browsers, and we'll be utilizing some JavaScript for our front-end code, while utilizing Ruby for our back-end code.
 
-You'll also find that while Ruby is not a functional language, its object-oriented capabilities and clean syntax provide different strengths as a language. The widely used Rails framework also provides an opinionated development workflow, which can lead to faster development.
+You'll also find that while Ruby is a functional language, functions cannot be passed into other functions (functions are not first-class citizens). However, its object-oriented capabilities and clean syntax provide different strengths as a language. The widely used Rails framework also provides an opinionated development workflow, which can lead to faster development.
 
 ## Comments
 
@@ -45,12 +45,12 @@ In Ruby, multiline comments exist, but we generally use line comments with hasht
 
 ## Variables
 
-Local variables start with a lowercase letter. No `var` necessary (like in JS).
+Local variables start with a lowercase letter. No `var` necessary.
 
 ```rb
 my_variable = 5
 puts my_variable
-=> 5
+#=> 5
 ```
 
 ##Constants
@@ -59,16 +59,6 @@ Mostly, we're able to change what a variable's holding if we so choose – const
 
 ```ruby
 SOME_CONSTANT = "donuts"
-#=> "donuts"
-
-def some_method
-  SOME_CONSTANT
-end
-
-SOME_CONSTANT
-#=> "donuts"
-
-some_method
 #=> "donuts"
 
 SOME_CONSTANT = "awesome"
@@ -83,8 +73,7 @@ Note that if we try to reassign a constant, the reassignment still succeeds! All
 Just as Javascript uses undefined or null, ruby uses `nil`
 
 ```rb
-an_undefined_variable == nil
-=> true
+my_bank_account = nil
 ```
 
 ### Booleans
@@ -111,18 +100,53 @@ A primative datatype used to represent a string of characters
 .upcase
 .downcase
 .sub
+.gsub
+.capitalize
+```
+
+#### Examples
+```rb
+person = 'instructor'
+
+person.split('')
+#=> ["i", "n", "s", "t", "r", "u", "c", "t", "o", "r"]
+
+person.index('tr')
+#=> 3
+
+person.upcase
+#=> "INSTRUCTOR"
+
+person.downcase
+#=> "instructor"
+
+person.sub('r', 'a')
+#=> "instauctor"
+# note that only the first character is replaced
+
+person.sub('r', 'a')
+#=> "instauctoa"
+# note that all character instances are replaced
+
+person.capitalize
+#=> "Instructor"
+
+person.reverse
+#=> "rotcurtsni"
+
+person.length
+#=> 10
 ```
 
 ## Operators
-### Comparators
 
 ```rb
 +
 -
 /
 *
-**
-%
+** #exponent
+% #modulo
 
 +=
 -=
@@ -137,6 +161,8 @@ A primative datatype used to represent a string of characters
 &&
 ```
 
+Note that Ruby has a `===` operator, but no `!==` operator. In fact, the operator means something different in Ruby. We'll touch on this when we get to ranges. You can use the `.equal?` function as an identity operator.
+
 ### Arrays
 An indexed arrangement of objects
 
@@ -144,11 +170,11 @@ An indexed arrangement of objects
 
 ```rb
 arr = [1,2,3]
-=> [1,2,3]
+#=> [1,2,3]
 arr1 = Array.new([4,5,6])
-=> [4,5,6]
+#=> [4,5,6]
 arr2 = Array.new(3, true)
-=> [true, true, true]
+#=> [true, true, true]
 ```
 
 #### Array Methods
@@ -179,8 +205,14 @@ lettersWorkToo = ('a'..'z')
 *typecasting in action*
 
 ```rb
-rang1.to_a
+anotherRange.to_a
 => [1,2,3,4,5,6,7,8,9]
+```
+
+*Using === to determine if an element is within a range or set*
+```rb
+anotherRange === 3
+#=> true
 ```
 
 ###Symbols

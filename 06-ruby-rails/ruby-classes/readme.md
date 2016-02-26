@@ -23,36 +23,44 @@ class Person
 end
 ```
 
-This defines a **class** definition of a `Person`. The *class* keyword denotes the *begining* of a class Definition.
+This defines a **class** definition of a `Person`. The *class* keyword denotes the *begining* of a class definition.
 
 To create a new *instance* of our *class* we write the following:
 
 ```rb
-Person.new()
+Person.new
 ```
 
 A particular instance of a *class* is a called an **object**. In general, languages that use *objects* as a primary means of *data abstraction* are said to be **Object Oriented Programming** (OOP) languages.
 
 
-### An Object By Any Other Name Is Just As Sweet
+### Objects
 
 What is an **object** in ruby? Basically everything that isn't a keyword.
 
 However, this can cause you some headaches if you're not careful.
 
-
 Imagine we had the following
 
 ```rb
-> arr_1 = [1,2,3]
-> arr_2 = arr_1
-> arr_1 << 4
-=> [1,2,3,4]
-> arr_2
-=> [1,2,3,4]
+arr1 = [1,2,3]
+arr2 = arr1
+arr1 << 4
+#=> [1,2,3,4]
+arr2
+#=> [1,2,3,4]
 ```
 
-Wow, the second array completely changed. That's because `arr_2` was a reference.
+Wow, the second array completely changed. That's because `arr2` was a reference to `arr1`. Both variables represented the same **object**. The way around this is to copy the object.
+
+```rb
+arr1 = [1,2,3]
+arr2 = Array.new(arr1)
+arr1 << 4
+#=> [1,2,3,4]
+arr2
+#=> [1,2,3]
+```
 
 ### Initialize and instance variables
 
@@ -135,14 +143,13 @@ class Person
   def name=(other)
     @name = other
   end
-  ...
 end
 ```
 
 We can now *get* and *set* the name of a person using the  methods we created for `@name`.
 
 ```ruby
-person  = Person.new("Samantha")
+person = Person.new("Samantha")
 person.name
 
 => "Samantha"
@@ -153,8 +160,7 @@ person.name
 => "Sam"
 ```
 
-### attr_reader, attr_writer, attr_accessor
-
+### Getters and Setters, the Ruby way
 
 In ruby, the practice of creating a *getter* method is so common there is a shorthand that can be used at the top of a class definition called `attr_reader`.
 
@@ -170,7 +176,6 @@ class Person
   def name=(other)
     @name = other
   end
-  ...
 end
 ```
 
@@ -185,8 +190,6 @@ class Person
   def initialize(name)
     @name = name
   end
-
-  ...
 end
 ```
 
@@ -194,24 +197,54 @@ Moreover, we have a shorthand for telling our class to create both a *getter* an
 
 ```ruby
 class Person
-
   attr_accessor :name
 
   def initialize(name)
     @name = name
   end
-  ...
 end
 ```
 
 
-### self, class methods, and  class_variables (@@)
+### Class and self
 
-Let's first create a variable associated with our class using the `@@var_name` designates a class variable. Then we can access it with a class method using `self.method_name`.
+We just created instance variables, which have different values depending on the object instance. Class variables share the same value across the entire class. Also, we don't need to create an instance in order to access class variables.
+
+Let's first create a variable associated with our class. Using the syntax `@@var_name` designates a class variable.
 
 ```ruby
 class Person
+  attr_accessor :name
+  @@population = 0
 
+  def initialize(name)
+    @name = name
+    @@population += 1
+  end
+end
+```
+
+We can access the value without creating any people.
+
+```rb
+Person.population
+#=> 0
+```
+
+
+If we create a few people, we see the following
+
+```rb
+Person.new("John")
+Person.new("Jane")
+Person.population
+#=> 2
+```
+
+What about class methods? We can also create a method that belongs to a class.
+```ruby
+class Person
+  attr_accessor :name
   @@population = 0
 
   def initialize(name)
@@ -219,37 +252,13 @@ class Person
     @@population += 1
   end
 
-  def self.population
-    @@population
+  def self.print_population
+    puts "There are #{self.population} people"
   end
 end
 ```
 
-
-If we create a few new people we see the following
-
-```ruby
-Person.new("John")
-Person.new("Jane")
-Person.population
-
-=> 2
-```
-
-In most cases, inside an instance method, self refers to the Object, but when used in the context of a method name it refers to the *class* itself`.
-
-You could also say
-
-```rb
-class Person
-  ...
-  def Person.population
-    @@population
-  end
-end
-```
-
-but this has the unfortunate problem of rename each method when you rename the class.
+In most cases, inside an instance method, self refers to the object, but when used in the context of a method name, self refers to the *class* itself`.
 
 Also, note that `self` can be used in instance methods to refer to particular *object* in use, i.e. `self.var_name` instead of `@var_name`.
 
@@ -277,56 +286,61 @@ person1.name
 => "John"
 ```
 
-We can change this using the `private` keyword and passing it a symbol, which will privatize the corresponding methods.
+We can change this using the `private` keyword. Everything under the private keyword is private to outside users. Only the instance methods can use the getter and setter.
 
 ```rb
 class Person
-  attr_accessor :name
-
   def initialize(name)
     @name = name
   end
 
-  private :name, :name=
+  private
+
+  attr_accessor :name
 end
 ```
 
-We can also add to the list of private methods by defining new methods below the `private` keyword
+We can also add private methods by defining new methods below the `private` keyword
 
 ```ruby
 class Person
-  attr_accessor :name
 
   def initialize(name)
     @name = name
   end
 
   private
-    def make_call
-      puts "Calling friends"
-    end
+
+  attr_accessor :name
+  
+  def make_call
+    puts "Calling friends"
+  end
 end
 ```
 
-or use a mixture of both
+Note that we can create a **public** method that calls a **private method**, because we are within the class.
 
 ```ruby
 class Person
-  attr_accessor :name
 
   def initialize(name)
     @name = name
   end
 
-  private :name=
+  def call
+    make_call if name
+  end
 
   private
-    def make_call
-      puts "calling friends"
-    end
+  
+  attr_accessor :name
+  
+  def make_call
+    puts "Calling friends"
+  end
 end
 ```
-
 
 ### Chainable methods
 
@@ -334,7 +348,6 @@ What if I wanted to create a class that had **chainable** methods calling many m
 
 ```ruby
 class Person
-
   def initialize(name)
     @name = name
   end
@@ -353,7 +366,6 @@ class Person
   def farewell
     puts "Farewell, #{@other}"
   end
-
 end
 ```
 
@@ -364,14 +376,13 @@ Trying to do
 person1 = Person.new("john")
 person1.greet.thank.farewell
 
-=> nil has no method `thank`
+#=> NoMethodError: undefined method `thank' for nil:NilClass
 ```
 
 to achieve this we have to return a reference to the object after each method
 
 ```ruby
 class Person
-
   def initialize(name)
     @name = name
   end
@@ -393,6 +404,5 @@ class Person
     puts "Farewell, #{@other}"
     self
   end
-
 end
 ```

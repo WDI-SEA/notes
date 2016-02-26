@@ -101,8 +101,6 @@ git push heroku master
 
 * In terminal after you deploy your app, type in `heroku ps:scale web=1`
   * this will scale a dyno up
-* If there are no errors, check out your app by going to the url provided at the end of the push or type in `heroku open`
-
 
 ## Connect a DB with Sequelize
 
@@ -132,7 +130,7 @@ git push heroku master
 
 * To migrate our live database we need a local version of `sequelize-cli` module in our package json. Add it by running `npm install sequelize-cli --save`
 
-* Add and commit your changes using `git commit -am "adding production db"` and then push your changes to heroku using `git push heroku master`
+* Add and commit your changes to git, then push your changes to heroku using `git push heroku master`
 
 * Now run your migrations by typing in terminal `heroku run node_modules/.bin/sequelize db:migrate` and you should have all your tables set up in a heroku hosted database
 
