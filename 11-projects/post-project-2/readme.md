@@ -33,7 +33,7 @@ Have a proper about section on the page, along with a link to the Github reposit
 ##Ruby
 We will be returning to Ruby when we get back. But before then, you can check out these resources before we deep dive into when we get back. To get ready, we're going to re-do the Google Shopping assignment using Ruby. 
 
-Link to Google Shopping: https://github.com/WDI-SEA/google-products-ruby
+Link to Google Shopping: https://github.com/WDI-SEA/google-shopping-ruby
 
 ###Ruby Resources
 
