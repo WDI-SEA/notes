@@ -114,6 +114,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Realtime with Socket.io][117] |
 | [Geocoding/Maps][116] |
 | [Image Uploads with Cloudinary][118] |
+| [Post Project 2][1110]
 
 [101]: 05-express/express-intro/01readme.md
 [102]: 05-express/express-apis/01readme.md
@@ -144,16 +145,17 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1107]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part2-favorites.md
 [1108]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part3-comments.md
 [1109]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part4-tags.md
+[1110]: 11-projects/post-project-2/readme.md
 
 ###Ruby on Rails
 
 | Topic | Assignments |
 | ----- | ----------- |
-| [Intro to Ruby][201] | Ruby Exercises <br><br> Ruby Challenges |
-| [Ruby Classes][202] | Superheroes |
-| [Ruby Testing with Rspec][204] | Testing Mailboxes and Trees |
-| [Ruby Inheritance][203] | Rio Grande |
-| [Intro to Rails][205] | The SLU Bog |
+| [Intro to Ruby][201] | [Ruby Exercises][1201] <br><br> [Ruby Challenges][1202] |
+| [Ruby Classes][202] | [Ruby Classes][1203] |
+| [Ruby Testing with Rspec][204] | [Rspec Testing][1204] |
+| [Ruby Inheritance][203] | [Rio Grande][1205] |
+| [Intro to Rails][205] | [The SLU Bog][1206] |
 | [APIs with Rest-Client][206] | |
 | [Rails Asset Pipeline][207] | |
 | [Rails Auth/1:M][208] | Link Board |
@@ -186,3 +188,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [215]: 01-workflow/group-collab/01readme.md
 
 [1200]: 11-projects/project-3/readme.md
+[1201]: https://github.com/WDI-SEA/ruby-exercises
+[1202]: https://github.com/WDI-SEA/ruby-challenges
+[1203]: https://github.com/WDI-SEA/ruby-classes
+[1204]: https://github.com/WDI-SEA/rspec-testing
+[1205]: https://github.com/WDI-SEA/ruby-rio-grande
+[1206]: https://github.com/WDI-SEA/slu-bog

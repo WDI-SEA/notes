@@ -150,6 +150,7 @@
   * [Project 3](11-projects/project-3/readme.md)
   * [Project 4](11-projects/project-4/readme.md)
   * [Past Projects](11-projects/past-projects/readme.md)
+  * [Post Project 2](11-projects/post-project-2/readme.md)
   * [Interview Questions](11-projects/interview-questions/readme.md)
   * [Portfolio](11-projects/portfolio/readme.md)
 * [Resources](12-resources/readme.md)
