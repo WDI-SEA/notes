@@ -124,7 +124,7 @@ person.sub('r', 'a')
 #=> "instauctor"
 # note that only the first character is replaced
 
-person.sub('r', 'a')
+person.gsub('r', 'a')
 #=> "instauctoa"
 # note that all character instances are replaced
 
