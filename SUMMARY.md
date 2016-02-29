@@ -96,6 +96,7 @@
   * [APIs with Rails](06-ruby-rails/rails-apis/readme.md)
   * [Asset Pipeline](06-ruby-rails/rails-assets-frontend/readme.md)
   * [Rails Auth and 1-M](06-ruby-rails/rails-auth-1-M/readme.md)
+    * [Auth Components](06-ruby-rails/rails-auth-1-M/components.md)
   * [Rails M:M](06-ruby-rails/rails-M-M/readme.md)
   * [ActiveRecord Polymorphism](06-ruby-rails/rails-polymorphism/readme.md)
   * [Additional Topics](06-ruby-rails/additional-topics/readme.md)

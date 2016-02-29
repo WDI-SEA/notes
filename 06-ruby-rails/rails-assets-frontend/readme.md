@@ -1,4 +1,4 @@
-#Assets and Frontend in Rails
+#Asset Pipeline and Frontend in Rails
 
 ##Objectives
 
@@ -33,7 +33,7 @@ For example, if we had a file called `importantScript.js` in our javascripts dir
 
 ##Stylesheets
 
-Rails uses sass which is a preprocessor for css that allows us to use some additonal features that standard css doesn't support. These files end with the `.scss` file extension and are processed on the server (backend) before they are sent to the user/browser as plain css.
+Rails uses SASS, which is a preprocessor for css that allows us to use some additonal features that standard css doesn't support. These files end with the `.scss` file extension and are processed on the server (backend) before they are sent to the user/browser as plain css.
 
 Just like with javascript rails will auto-load any css or scss file that are in `app/assets/stylesheets`.
 

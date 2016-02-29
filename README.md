@@ -157,19 +157,22 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Ruby Inheritance][203] | [Rio Grande][1205] |
 | [Intro to Rails][205] | [The SLU Bog][1206] |
 | [APIs with Rest-Client][206] | |
+| [Data Scraping with Nokogiri][216] | [Nokogiri CLI Tool][1207] |
 | [Rails Asset Pipeline][207] | |
-| [Rails Auth/1:M][208] | Link Board |
-| [Rails M:M][209] | Bog Tags |
-| [Polymorphic Associations][210] | Link Board Comments |
+| [Rails Auth/1:M][208] | [Link Board][1209] |
+| [Rails M:M][209] | [SLU Bog Tags][1211] |
+| [Polymorphic Associations][210] | [Link Board Comments][1210] |
 
 | Projects and Additional Topics |
 | -------- |
+| [Front End Hackathon][1208] |
 | [Project 3][1200] |
 | [Group Collaboration][215] |
 | [oAuth][211] |
 | [Mailers][212] |
 | [Image Uploads with Cloudinary][213] |
 | [Static Site Generators (Jekyll)][214] |
+| [JS/jQuery Review][1212] |
 
 [201]: 06-ruby-rails/ruby-intro/readme.md
 [202]: 06-ruby-rails/ruby-classes/readme.md
@@ -186,6 +189,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [213]: 06-ruby-rails/additional-topics/rails-cloudinary/readme.md
 [214]: 06-ruby-rails/additional-topics/ruby-jekyll/readme.md
 [215]: 01-workflow/group-collab/01readme.md
+[216]: 06-ruby-rails/ruby-data-scraping/readme.md
 
 [1200]: 11-projects/project-3/readme.md
 [1201]: https://github.com/WDI-SEA/ruby-exercises
@@ -194,3 +198,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1204]: https://github.com/WDI-SEA/rspec-testing
 [1205]: https://github.com/WDI-SEA/ruby-rio-grande
 [1206]: https://github.com/WDI-SEA/slu-bog
+[1207]: https://github.com/WDI-SEA/nokogiri-cli-tool
+[1208]: https://github.com/WDI-SEA/front-end-hackathon
+[1209]: https://github.com/WDI-SEA/link-board
+[1210]: https://github.com/WDI-SEA/link-board/blob/master/part2.md
+[1211]: https://github.com/WDI-SEA/slu-bog/blob/master/part2.md
+[1212]: https://github.com/WDI-SEA/js-jquery-review
