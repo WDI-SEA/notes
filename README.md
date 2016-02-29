@@ -204,3 +204,37 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1210]: https://github.com/WDI-SEA/link-board/blob/master/part2.md
 [1211]: https://github.com/WDI-SEA/slu-bog/blob/master/part2.md
 [1212]: https://github.com/WDI-SEA/js-jquery-review
+
+
+###AngularJS 1.x and APIs
+
+| Topic | Assignments |
+| ----- | ----------- |
+| [Intro to Angular][301] | [Angular Calculator][1300] |
+| [Directives and Filters][302] | [Fruits and Veggies][1301] |
+| [Animation with ngAnimate][303] | |
+| [Bootstrap Directives][304] | |
+| [$http][305] | [Angular Bootstrap Modals][1302] <br><br> [Reddit Dashboard][1303] |
+
+
+###Computer Science
+
+| Topic | Assignments |
+| ----- | ----------- |
+| | |
+
+| Projects and Additional Topics |
+| -------- |
+| [Project 4][1304] |
+
+[301]: 07-angular/angular-intro/readme.md
+[302]: 07-angular/angular-directives-filters/readme.md
+[303]: 07-angular/angular-animation/readme.md
+[304]: 07-angular/angular-bootstrap-directives/readme.md
+[305]: 07-angular/angular-http/readme.md
+
+[1300]: https://github.com/WDI-SEA/angular-calculator
+[1301]: https://github.com/WDI-SEA/fruits-and-veggies
+[1302]: 07-angular/angular-http/modals.md
+[1303]: https://github.com/WDI-SEA/angular-reddit-dashboard
+[1304]: 11-projects/project-4/readme.md
