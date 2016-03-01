@@ -32,10 +32,10 @@ Basic creation of an app is very simple:
 rails new name_of_the_app
 ```
 
-If we want to use a different database (ie postgres) we need to specify it using the -d flag followed by the database name. By default, Rails uses SQLite, which is unideal for most web applications. Also, the `-T` flag disables the creation of tests, which causes the project to be less cluttered if we're not using tests. While Rspec can be used in conjunction with Rails, we'll focus only on creating applications with no tests.
+If we want to use a different database (ie postgres) we need to specify it using the -d flag followed by the database name. By default, Rails uses SQLite, which is unideal for most web applications. While Rspec can be used in conjunction with Rails, we'll focus only on creating applications with no tests.
 
 ```
-rails new name_of_the_app -T -d postgresql
+rails new name_of_the_app -d postgresql
 ```
 
 Hopefully this is obvious, but replace `name_of_the_app` with the name of your project. Also, running this command will automatically create a new folder, so it's unnecessary to create another folder for a Rails project.
@@ -43,7 +43,7 @@ Hopefully this is obvious, but replace `name_of_the_app` with the name of your p
 If you've already created a folder though, you can initialize the app in a current directory by running:
 
 ```
-rails new ./ -T -d postgresql
+rails new ./ -d postgresql
 ```
 
 ***SPECIAL NOTE FOR UBUNTU/DEBIAN USERS***
