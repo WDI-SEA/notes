@@ -107,7 +107,7 @@ Having created an *instance variable* in our object, we might want to *read* tha
 ```ruby
 class Person
 
-  def intialize(name)
+  def initialize(name)
     @name = name
   end
 
