@@ -152,6 +152,8 @@ brew install rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.zshrc
 echo 'eval "$(rbenv init -)"' >> ~/.zshrc
 source ~/.zshrc
+
+sudo chown -R $USER ~/.rbenv
 ```
 
 ###Configuring rbenv
@@ -177,7 +179,6 @@ sudo gem update
 sudo gem install rails
 ```
 You may need to press "yes" for various entries
-
 
 #Verify your installation
 

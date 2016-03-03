@@ -134,6 +134,8 @@ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-buil
 echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.zshrc
 exec $SHELL
 
+sudo chown -R $USER ~/.rbenv
+
 rbenv install 2.2.2
 ```
 
