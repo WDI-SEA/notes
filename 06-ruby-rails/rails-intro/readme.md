@@ -32,7 +32,7 @@ Basic creation of an app is very simple:
 rails new name_of_the_app
 ```
 
-If we want to use a different database (ie postgres) we need to specify it using the -d flag followed by the database name. By default, Rails uses SQLite, which is unideal for most web applications. While Rspec can be used in conjunction with Rails, we'll focus only on creating applications with no tests.
+If we want to use a different database (ie postgres) we need to specify it using the -d flag followed by the database name. By default, Rails uses SQLite, which is unideal for most web applications. We'll specify postgresql for our apps.
 
 ```
 rails new name_of_the_app -d postgresql
