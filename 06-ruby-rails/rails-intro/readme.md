@@ -78,6 +78,31 @@ To set up an app we can run `bundle install` which will download and install any
 
 **Note:** After the server is running you'll need to restart it if you add any additionaly gems before they will be loaded.
 
+##Database config
+
+The configuration for the database can be found in `(Your project name)/config/database.yml` This is where you can find the name of your database, and change databse options.
+
+***NOTE FOR UBUNTU/DEBIAN USERS***
+
+You might need to specify the host, user and password as well. Just add
+
+```yml
+host: localhost
+user: (YOUR USERNAME HERE!)
+password: (YOUR DATABASE PASSWORD HERE!)
+```
+
+to database.yml.
+
+After all this, just type
+
+```
+rake db:create
+```
+
+into the command line to create your database.
+
+
 ##Start a server
 
 To start the server we just type
@@ -96,15 +121,7 @@ This will start a server on port 3000.
 
 Since we're using postgres, we'll need a database for our application. By default, the development database Rails looks for is called `name_of_the_app_development`. You can verify the name by looking in **app/config/database.yml**. You'll want to create this database using the command `rake db:create` so that Rails can find the database. Include the username and password as well, if your local database has a username and password.
 
-***NOTE FOR UBUNTU/DEBIAN USERS***
 
-You might need to specify the host as well. Just add
-
-```yml
-host: localhost
-```
-
-to database.yml above your username and password.
 
 ##Generators
 
@@ -448,3 +465,4 @@ edit_tweet_path(tweet)
 * [Rails Routing](http://guides.rubyonrails.org/routing.html)
 * [Form Helpers](http://guides.rubyonrails.org/form_helpers.html)
 * [Rails api guide](http://api.rubyonrails.org/)
+
