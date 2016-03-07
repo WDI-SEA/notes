@@ -46,7 +46,7 @@ Now that we have `has_secure_password`, Rails gives out a password setter.
 ###Add Validations for User
 
 ```rb
-validates_presence_of :password, on: :create
+validates :password, presence: true, on: :create
 ```
 
 ###Let's test a real user
@@ -73,12 +73,12 @@ class User < ActiveRecord::Base
   presence: true,
   uniqueness: {case_sensitive: false}
 
-  validates_presence_of :password, on: :create
+  validates :password, presence: true, on: :create
 
   has_secure_password
 
   def self.authenticate email, password
-      User.find_by_email(email).try(:authenticate, password)
+    User.find_by_email(email).try(:authenticate, password)
   end
 end
 ```
@@ -97,6 +97,7 @@ add actions `create` and `destroy`
 ```rb
 get "login" => "sessions#new"
 post "login" => "sessions#create"
+delete "logout" => "sessions#destroy"
 ```
 
 ### Lets generate a form
@@ -128,6 +129,12 @@ def create
     flash[:danger] = "Credentials Invalid!!"
     redirect_to login_path
   end
+end
+
+def destroy
+  session[:user_id] = nil
+  flash[:success] = "User logged out!!"
+  redirect_to root_path
 end
 
 private
