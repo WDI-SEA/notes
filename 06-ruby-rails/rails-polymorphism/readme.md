@@ -6,48 +6,51 @@
 * Use the Rails model generator to generate a polymorphic model
 * Implement polymorphic associations
 
+##What are Polymorphic Associations?
+
+To understand what polymorphic associations are, let's understand the first word, `polymorphism`.
+
+> In object-oriented programming, polymorphism is the provision of a single interface to entities of different types.
+
+In the context of Rails models, polymorphic associations allow a **single model** to reference **multiple models** via an association.
+
 Sometimes a model needs to be able to reference multiple models. For example, a model to hold a vote could belong to a post and a comment (like on Reddit). While we could organize our models to include an id for each model, like this:
 
-| Vote       |
-| :--------- |
-| user_id    |
-| value      |
-| post_id    |
-| comment_id |
+* Vote
+  * user_id
+  * value
+  * post_id
+  * comment_id
 
 ...this model has a couple key issues.
 
-1. A vote ideally only belongs to a post or comment. Therefore, if the vote belonged to a post, the comment attribute would be set to NULL. This is a waste of space!
-2. If we wanted a vote to reference another model (such as a user), we'd have to add another column for the model. This results in having to create another migration, and now the problem we had in issue #1 is multiplied.
+1. A vote ideally only belongs to a post or comment, not both at once. Therefore, if the vote belonged to a post, the comment attribute would be set to NULL. This is a waste of space!
+2. If we wanted a vote to reference another model (such as a message), we'd have to add another column for the model. This results in having to create another migration, and now the problem we had in issue #1 is multiplied.
 
 Polymorphism solves this problem by abstracting the the "multiple models" into two columns.
 
-| Vote         |
-| :----------- |
-| user_id      |
-| value        |
-| votable_id   |
-| votable_type |
+* Vote
+  * user_id
+  * value
+  * votable_type
+  * votable_id
 
-Instead of giving the model attribute a specific name, we store the id and name of the model as attributes. Now, `votable_type` can be any model we choose, and `votable_id` will be the `id` of the `votable_type`. Here's some examples:
+Instead of giving the model attribute a specific name, we store the name of the model and the id as attributes. Now, `votable_type` can be any model we choose, and `votable_id` will be the `id` of the `votable_type`. Here's some examples:
 
-| Vote: 1       | Vote: 2  |
-| :------------ | :----- |
-| user_id: 3    | user_id: 9 |
-| value: -1     | value: 1 |
-| votable_id: 4 | votable_id: 8 |
-| votable_type: 'Post' | votable_type: 'User' |
-
-####Resources
-
-* [Rails guide - Polymorphic Models](http://guides.rubyonrails.org/association_basics.html#polymorphic-associations)
-* [Rails Advanced Generators](http://railsguides.net/advanced-rails-model-generators/)
+* Vote 1
+  * user_id: 3
+  * value: -1
+  * votable_id: 4
+  * votable_type: 'Post'
+* Vote 2
+  * user_id: 9
+  * value: 1
+  * votable_id: 8
+  * votable_type: 'Comment'
 
 Let's setup a vote model in order to implement this functionality in our Link Board.
 
-##Setup models
-
-**Create model** - Terminal
+###Setup the Vote Model
 
 ```
 rails g model vote value:integer user:references votable:references{polymorphic}
@@ -57,21 +60,19 @@ Here, we're creating a model that has a value, a user that created the vote, and
 
 **Check the migration**
 
-make sure it has `polymorphic:true`
+make sure the vote migration has `polymorphic:true`
 
 ```rb
 t.references :votable, polymorphic:true, index: true
 ```
 
-**run migration** - Terminal
+**run migration**
 
 ```
 rake db:migrate
 ```
 
-Now that we're migrated, we'll be adding the associations to posts and users.
-
-First thing's first, let's double-check that the vote model has a polymorphic association:
+Now that we're migrated, we'll be adding the associations to posts and users. First thing's first, let's double-check that the vote model has a polymorphic association:
 
 **models/vote.rb**
 
@@ -133,3 +134,8 @@ User.first.ratings
 #list user votes (votes about a user)
 User.first.votes
 ```
+
+###Resources
+
+* [Rails guide - Polymorphic Models](http://guides.rubyonrails.org/association_basics.html#polymorphic-associations)
+* [Rails Advanced Generators](http://railsguides.net/advanced-rails-model-generators/)
