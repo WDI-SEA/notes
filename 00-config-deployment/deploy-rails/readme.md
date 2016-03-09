@@ -4,7 +4,7 @@
 
 * Deploy a Rails app to a production server using Heroku
 
-Deploying a rails app (like all things in rails) is simple and magical.
+Deploying a Rails app (like all things in Rails) is simple and magical.
 
 ##Prepare for deployment
 
@@ -18,15 +18,13 @@ gem 'rails_12factor', group: :production
 
 This gem takes care of producing descriptive logs and serving your assets. Based on the recommended read: [The Twelve-Factor App](http://12factor.net/). Note that this class has covered many of these principles.
 
-If your app is **running sqlite** you need to add the `pg` gem and move your sqlite gem into the development group.
-
 ####Bundle
 
-Once this is done you have to run `bundle` which will automatically update the `Gemfile.lock` which must be done before you push to Heroku.
+Once this is done you have to run `bundle` which will automatically update the `Gemfile.lock`, which must be done before you push to Heroku. Be sure to commit your changes before pushing.
 
 ##Pushing to Heroku
 
-To deploy to Heroku we need to download the [Heroku toolbelt](https://toolbelt.heroku.com/), which is a commandline tool used to interact with your heroku instance.
+If you haven't already, download the [Heroku toolbelt](https://toolbelt.heroku.com/), which is a commandline tool used to interact with your heroku instance.
 
 ####Create a heroku app
 
