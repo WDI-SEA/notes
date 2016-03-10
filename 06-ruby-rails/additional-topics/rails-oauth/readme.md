@@ -6,6 +6,11 @@
 * Use a third-party gem in order to implement authentication strategies
 * Use environment variables to hide sensitive data when implementing OmniAuth strategies
 
+
+##Starter Code
+
+This lesson uses starter code, provided here: https://github.com/WDI-SEA/oh-auth-example
+
 ##Review
 
 For a review of OAuth, look back at our experience using OAuth with Passport in Express
