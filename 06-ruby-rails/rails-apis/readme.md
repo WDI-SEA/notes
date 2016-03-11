@@ -36,7 +36,7 @@ Many web APIs work similarly to a Rails app. They support CRUD actions via a RES
 
 * [rest-client](https://github.com/rest-client/rest-client)
   * great for simple requests
-* [typheous](https://github.com/typhoeus/typhoeus)
+* [typhoeus](https://github.com/typhoeus/typhoeus)
   * great for sending multiple requests in parallel
 
 ### Implementing a Public API with iTunes
