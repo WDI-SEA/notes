@@ -34,7 +34,7 @@ Install `letter_opener` to view emails in the browser. Add the gem to your gem f
 
 ```rb
 group :development do
-	gem 'letter_opener'
+  gem 'letter_opener'
 end
 ```
 
@@ -47,7 +47,7 @@ config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
 
 Now emails should appear in the browser. Right? Right. Try testing it by running `rails c` and call the mailer:
 
-```
+```rb
 # in rails console
 UserMailer.password_reset.deliver_now
 ```
@@ -75,7 +75,7 @@ rails g controller passwords new edit
 
 In **views/passwords/new.html.erb**
 
-```html
+```erb
 <h1>Reset Password</h1>
 
 <%= bootstrap_form_tag url: reset_path do |f| %>
@@ -140,7 +140,7 @@ Make sure to alter the views as well.
 
 In **app/views/user_mailer/password_reset.html.erb**
 
-```html
+```erb
 <h1>Reset Password</h1>
 
 <p>
@@ -174,7 +174,7 @@ end
 
 In **views/passwords/edit.html.erb**
 
-```html
+```erb
 <h1>Enter New Password</h1>
 
 <%= bootstrap_form_tag url: reset_code_path(@code), method: :put do |f| %>
