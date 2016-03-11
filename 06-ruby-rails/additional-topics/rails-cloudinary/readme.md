@@ -1,15 +1,16 @@
-#Cloudinary upload
+#Cloudinary Uploads
 
-This will outline how to setup rails to upload files to cloudinary.
+##Objectives
 
+* Use Cloudinary to upload images in Rails.
 
 ##Basic file uploads
 
-In rails basic file uploads are very simple using the standard form helper or bootstrap form helper.
+In Rails, file uploads can be done via the standard form helper or bootstrap form helper.
 
 ####View
 
-```
+```rb
 <%= form_for @person do |f| %>
   <%= f.text_field :name %>
   <%= f.file_field :picture %>
@@ -27,74 +28,64 @@ The value in that param will be a UploadFile object which has several methods we
 
 [Details about UploadedFile object](http://api.rubyonrails.org/classes/ActionDispatch/Http/UploadedFile.html)
 
-
 ##Cloudinary
 
-####Set up the Heroku addon
-
-Make sure your project is a heroku project (run `heroku create` before you do this) and you can add the cloudinary addon
+Cloudinary can be setup by either adding it via a Heroku addon...
 
 ```
 heroku addons:create cloudinary
 ```
 
-This will sign you up for a free cloudinary account and should create a config value with the cloudinary credentials (remember to add addons you need to have a credit card number on file).
+This will sign you up for a free cloudinary account and should create a config value with the cloudinary credentials. Or signup on Cloudinary's website and grab the config value from the Cloudinary dashboard.
 
-It will look something like this.
+http://cloudinary.com/
 
-```
-heroku config
-
-CLOUDINARY_URL: cloudinary://xxxxx:xxxxx@xxxxxxx
-```
-
-To test locally you'll need to copy this information in to your .env file (just replace the ": " with an "=" symbol like this
-
-**.env** file
+Either way, your config value should look like this in your .env file:
 
 ```
 CLOUDINARY_URL=cloudinary://xxxxx:xxxxx@xxxxxxx
 ```
 
-(note make sure you copy the whole thing if the data is word-wrapped in terminal it's easy to miss part of the string when copying it)
-
-
 ####Setting up the gem
 
-All you have to do to set this up is add the gem to the `Gemfile`. The gem automatically looks for the `CLOUDINARY_URL` env variable so as long as you have your .env file set up correctly it will "just work™".
+Add the `cloudinary` gem to your Gemfile. The gem automatically looks for the `CLOUDINARY_URL` environment variable. As long as you have your .env file set up correctly, it will "just work™".
+
+In **Gemfile**
 
 ```
 gem 'cloudinary'
 ```
 
+Run `bundle install` as well.
+
 ####Processing the upload
 
 The `Cloudinary::Uploader.upload` method is used to upload a file. All we have to pass in to it is the path to the image that was uploaded to the server.
 
-The method returns a hash with some various information about the upload including file size, dimensions, format, url, and public\_id. The public\_id is what we need to store to display the image in the future.
+The method returns a hash with some various information about the upload including file size, dimensions, format, url, and public_id. The `public_id` is what we need to store to display the image in the future.
 
-```
+```rb
 uploaded_file = params[:person][:picture].path
 cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
 
-render json: cloudnary_file
-
 #store this public_id value to the database
 #cloudnary_file['public_id']
+
+render json: cloudnary_file
 ```
 
 ####Displaying the image
 
-To display the image we just need to use the cl\_image\_tag helper and pass it the (previously stored) public\_id. This works exactly like the standard image\_tag helper, but loads images from cloudinary instead of images in the assets folder.
+To display the image we just need to use the `cl_image_tag` helper and pass it the (previously stored) `public_id`. This works exactly like the standard `image_tag` helper, but loads images from Cloudinary instead of images in the assets folder.
 
 
-```
+```erb
 <%= cl_image_tag(@person.picture) %>
 ```
 
 You can also pass in settings for width, height, etc to manipulate the image on the fly.
 
-```
+```erb
 <%= cl_image_tag(@person.picture,
       :width => 400, :height => 400,
       :crop => :fill, :gravity => :face)
@@ -105,7 +96,7 @@ You can also pass in settings for width, height, etc to manipulate the image on 
 ##Additional Resources
 
 
-* [cloudinary rails docs](http://cloudinary.com/documentation/rails_integration)
-* [cloudinary image manipulation](http://cloudinary.com/documentation/image_transformations)
+* [Cloudinary Rails docs](http://cloudinary.com/documentation/rails_integration)
+* [Cloudinary image manipulation](http://cloudinary.com/documentation/image_transformations)
 * [Rails file field form helper](http://guides.rubyonrails.org/form_helpers.html#uploading-files)
 * [Details about UploadedFile object](http://api.rubyonrails.org/classes/ActionDispatch/Http/UploadedFile.html)
