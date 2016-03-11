@@ -106,6 +106,8 @@
     * [Jekyll](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
 * [AngularJS 1.x](07-angular/readme.md)
   * [Intro to AngularJS](07-angular/angular-intro/readme.md)
+    * [Components and SPA](07-angular/angular-intro/components-spa.md)
+    * [Create an Angular App](07-angular/angular-intro/create-angular-app.md)
   * [Angular Directives and Filters](07-angular/angular-directives-filters/readme.md)
   * [Angular Animation](07-angular/angular-animation/readme.md)
   * [Angular Bootstrap Directives](07-angular/angular-bootstrap-directives/readme.md)
