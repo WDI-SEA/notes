@@ -112,7 +112,6 @@
   * [Angular Animation](07-angular/angular-animation/readme.md)
   * [Angular Bootstrap Directives](07-angular/angular-bootstrap-directives/readme.md)
   * [Angular $http](07-angular/angular-http/readme.md)
-    * [Angular Bootstrap Modals](07-angular/angular-http/modals.md)
   * [Angular Services](07-angular/angular-services/readme.md)
   * [Angular Routing](07-angular/angular-routing/readme.md)
   * [Angular + Express](07-angular/angular-express/readme.md)
