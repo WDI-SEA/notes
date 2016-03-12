@@ -214,7 +214,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Directives and Filters][302] | [Fruits and Veggies][1301] |
 | [Animation with ngAnimate][303] | |
 | [Bootstrap Directives][304] | |
-| [$http][305] | [Angular Bootstrap Modals][1302] <br><br> [Reddit Dashboard][1303] |
+| [$http][305] | [(DEPRECATED) Reddit Dashboard][1303] <br><br> [Giphy Search][1302] |
 
 
 ###Computer Science
@@ -235,6 +235,6 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
-[1302]: 07-angular/angular-http/modals.md
+[1302]: https://github.com/WDI-SEA/angular-giphy
 [1303]: https://github.com/WDI-SEA/angular-reddit-dashboard
 [1304]: 11-projects/project-4/readme.md
