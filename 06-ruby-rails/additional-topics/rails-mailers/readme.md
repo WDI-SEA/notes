@@ -163,7 +163,8 @@ end
 
 def update
   user = User.find_by_reset_code(params[:code])
-  if user && params[:password]
+  valid_code = user.expires_at > Time.now.utc
+  if user && valid_code && params[:password]
     user.update(password: params[:password], reset_code: nil, expires_at: nil)
     flash[:success] = 'Reset successful, login!'
     redirect_to login_path
