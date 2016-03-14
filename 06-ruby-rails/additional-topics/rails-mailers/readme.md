@@ -8,6 +8,8 @@
 
 ##Getting Started
 
+https://github.com/WDI-SEA/rails-password-reset
+
 Use this starter code in order to have an app with user authentication. We'll be building upon this app in order to add the ability to reset passwords.
 
 ##What are Action Mailers?
