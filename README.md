@@ -224,6 +224,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Topic | Assignments |
 | ----- | ----------- |
 | Recursion/Problem Solving | [Array Challenge][1308] |
+| Binary Search <br><br> [Algorithm Complexity][308] | [Auto Guess][1309] |
 
 | Projects and Additional Topics |
 | -------- |
@@ -238,6 +239,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [305]: 07-angular/angular-http/readme.md
 [306]: 07-angular/angular-services/readme.md
 [307]: 07-angular/angular-routing/readme.md
+[308]: 08-cs/cs-algorithm-complexity/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
@@ -248,3 +250,4 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1306]: http://codepen.io/bhague1281/pen/EKyMVz
 [1307]: http://codepen.io/bhague1281/pen/aNZPrq
 [1308]: 08-cs/teaser-js-array-flatten/readme.md
+[1309]: 08-cs/teaser-ruby-binary-search/readme.md
