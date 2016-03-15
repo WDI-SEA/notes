@@ -217,7 +217,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [$http][305] | [(DEPRECATED) Reddit Dashboard][1303] <br><br> [Giphy Search][1302] |
 | [Angular Services][306] | |
 | [Angular Routing (UI Router)][307] | [Route Those Views][1305] |
-
+| [Intro to MongoDB][309] <br><br> [Mongoose][310] |  |
+| [JSON Web Tokens][311] | [RESTful API][1310] |
 
 ###Computer Science
 
@@ -240,6 +241,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [306]: 07-angular/angular-services/readme.md
 [307]: 07-angular/angular-routing/readme.md
 [308]: 08-cs/cs-algorithm-complexity/readme.md
+[309]: 04-databases/mongo-intro/readme.md
+[310]: 05-express/express-mongoose/readme.md
+[311]: 05-express/express-jwt/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
@@ -251,3 +255,4 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1307]: http://codepen.io/bhague1281/pen/aNZPrq
 [1308]: 08-cs/teaser-js-array-flatten/readme.md
 [1309]: 08-cs/teaser-ruby-binary-search/readme.md
+[1310]: https://github.com/WDI-SEA/restful-api
