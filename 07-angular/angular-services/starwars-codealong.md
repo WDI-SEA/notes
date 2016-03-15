@@ -18,8 +18,8 @@ Setup the HTML page with the usual tags.
 First thing's first, let's add the correct dependencies inside the `head` tags. Additionally, add Bootstrap if you wish.
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-resource.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
 <script src="js/app.js"></script>
 ```
 
@@ -28,9 +28,9 @@ Note that in order to use `$resource`, we need to include an additional dependen
 In `app.js`:
 
 ```js
-var app = angular.module('StarWarsApp', ['ngResource']);
+angular.module('StarWarsApp', ['ngResource'])
 
-app.controller('FilmsCtrl', ['$scope', function($scope) {
+.controller('FilmsCtrl', ['$scope', function($scope) {
 
 }]);
 ```
@@ -46,13 +46,13 @@ We'll create this service in the same file for now.
 In `app.js`, we'll create a factory and inject it into the controller.
 
 ```js
-var app = angular.module('StarWarsApp', ['ngResource']);
+angular.module('StarWarsApp', ['ngResource'])
 
-app.factory('Films', ['$resource', function($resource) {
+.factory('Films', ['$resource', function($resource) {
   return $resource('http://swapi.co/api/films/:id');
-}]);
+}])
 
-app.controller('FilmsCtrl', ['$scope', 'Films', function($scope, Films) {
+.controller('FilmsCtrl', ['$scope', 'Films', function($scope, Films) {
   console.log(Films);
 }]);
 ```
@@ -85,7 +85,19 @@ In `index.html`:
 </div>
 ```
 
-**Try it:** Use the `get` method from the Films service to retrieve the second film (id of 2).
+But wait! You'll notice that an error appears when you reload the page. That's because `$resource` assumes that the `query` function will return an **array**, but the Star Wars API returns an **object**. Luckily, we can customize the service with our own functions. Let's modify the service like so:
+
+```js
+.factory('Films', ['$resource', function($resource) {
+  return $resource('http://swapi.co/api/films/:id', {}, {
+    query: {isArray: false}
+  });
+}])
+```
+
+This will return a resource with a modified query method.
+
+**Try it:** Use the `get` method from the Films service to retrieve the second film (id of 2). If you're not sure how to pass the film id in, consult the documentation for `$resource`.
 
 ###Why use a Service?
 
