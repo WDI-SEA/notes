@@ -50,8 +50,8 @@ Create a file in the `public` folder called `index.html`, and for now, put some 
   <head>
     <meta charset="utf-8">
     <title>Airplanes</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
     <script src="app/app.js"></script>
   </head>
   <body>

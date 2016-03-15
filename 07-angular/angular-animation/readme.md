@@ -11,10 +11,10 @@ Angular supports animations on enter, leave, and move. This is achieved by loadi
 
 Read the [ngAnimate Documentation](https://docs.angularjs.org/api/ngAnimate)
 
-Load `angular-animate.min.js` from the [AngularJS CDN](https://cdnjs.com/libraries/angular.js/1.4.8) using a `<script>` tag. Place this in the `<head></head>` tags.
+Load `angular-animate.js` using a `<script>` tag. Place this in the `<head></head>` tags.
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-animate.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.js"></script>
 ```
 
 Inject the `ngAnimate` dependency into your module.

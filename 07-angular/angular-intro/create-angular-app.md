@@ -12,7 +12,7 @@ First, let's get Angular from [Google's CDN](https://developers.google.com/speed
  <head>
    <meta charset="utf-8">
    <title>Intro to Angular</title>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
  </head>
 ```
 
