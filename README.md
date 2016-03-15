@@ -226,6 +226,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | ----- | ----------- |
 | Recursion/Problem Solving | [Array Challenge][1308] |
 | Binary Search <br><br> [Algorithm Complexity][308] | [Auto Guess][1309] |
+| [Stacks and Queues][312] | [Bracket Matching][1311] |
 
 | Projects and Additional Topics |
 | -------- |
@@ -244,6 +245,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [309]: 04-databases/mongo-intro/readme.md
 [310]: 05-express/express-mongoose/readme.md
 [311]: 05-express/express-jwt/readme.md
+[312]: 08-cs/cs-stacks-queues/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
@@ -256,3 +258,4 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1308]: 08-cs/teaser-js-array-flatten/readme.md
 [1309]: 08-cs/teaser-ruby-binary-search/readme.md
 [1310]: https://github.com/WDI-SEA/restful-api
+[1311]: 08-cs/cs-ruby-bracket-stacks/readme.md

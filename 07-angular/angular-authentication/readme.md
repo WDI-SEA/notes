@@ -128,18 +128,6 @@ In `public/app/services.js`, let's create our service.
     * `.atob` will decode base-64 encoded content (which is what the JWT token is stored as)
     * Items in the token are period-delimited. `token.split('.')[1]` will return the payload (second item)
 
-In order for `isLoggedIn()` to work on the navbar, we're going to attach it to `$rootScope` in order for it to work. Note that this isn't always recommended, but we'll use it since we're attaching functionality, not data.
-
-In `public/app/app.js`:
-
-```js
-app.run(['$rootScope', 'Auth', function($rootScope, Auth) {
-  $rootScope.isLoggedIn = function() {
-    return Auth.isLoggedIn.apply(Auth);
-  };
-}]);
-```
-
 ###Testing the Authentication Service
 
 Let's test the authentication service by adding functionality to **signup**, **login**, and **logout** routes.
