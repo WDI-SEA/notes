@@ -215,26 +215,36 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Animation with ngAnimate][303] | |
 | [Bootstrap Directives][304] | |
 | [$http][305] | [(DEPRECATED) Reddit Dashboard][1303] <br><br> [Giphy Search][1302] |
+| [Angular Services][306] | |
+| [Angular Routing (UI Router)][307] | [Route Those Views][1305] |
 
 
 ###Computer Science
 
 | Topic | Assignments |
 | ----- | ----------- |
-| | |
+| Recursion/Problem Solving | [Array Challenge][1308] |
 
 | Projects and Additional Topics |
 | -------- |
 | [Project 4][1304] |
+| [ES6 Variables and Strings][1306] |
+| [ES6 Arrow Functions][1307] |
 
 [301]: 07-angular/angular-intro/readme.md
 [302]: 07-angular/angular-directives-filters/readme.md
 [303]: 07-angular/angular-animation/readme.md
 [304]: 07-angular/angular-bootstrap-directives/readme.md
 [305]: 07-angular/angular-http/readme.md
+[306]: 07-angular/angular-services/readme.md
+[307]: 07-angular/angular-routing/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
 [1302]: https://github.com/WDI-SEA/angular-giphy
 [1303]: https://github.com/WDI-SEA/angular-reddit-dashboard
 [1304]: 11-projects/project-4/readme.md
+[1305]: https://github.com/WDI-SEA/angular-route-those-views
+[1306]: http://codepen.io/bhague1281/pen/EKyMVz
+[1307]: http://codepen.io/bhague1281/pen/aNZPrq
+[1308]: 08-cs/teaser-js-array-flatten/readme.md
