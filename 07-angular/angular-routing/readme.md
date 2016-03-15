@@ -7,9 +7,9 @@
 * Retrieve route params from within a controller
 * Compare hashbang mode to HTML5 mode when configuring the router
 
-##Refactoring the Doughnut App
+##Refactoring the Star Wars App
 
-We already refactored the doughnut app for you. Take a look at the starter code and see how everything is now organized.
+We already refactored the Star Wars app for you. Take a look at the starter code and see how everything is now organized.
 
 * app
   * app.js
@@ -22,9 +22,9 @@ In more complex apps, we may even create folders for controllers and services, a
 
 Also, note that we inject dependencies needed for each module. Specifically, we:
 
-* inject **ngResource** into DoughnutServices
-* inject **DoughnutServices** into DoughnutCtrls
-* inject **DoughnutCtrls** and **DoughnutServices** into DoughnutApp
+* inject **ngResource** into StarWarsServices
+* inject **StarWarsServices** into StarWarsCtrls
+* inject **StarWarsCtrls** into StarWarsApp
 
 Whew! That's a lot of dependency injection. While beyond the scope of our Angular unit, injecting dependencies makes testing in Angular easier, because we can **mock** different dependencies if needed by defining test dependencies (this would be very useful for "faking" API calls).
 
@@ -45,7 +45,7 @@ You'll probably notice that this is a dependency, and it'll need to be injected 
 In `app/app.js`:
 
 ```js
-var app = angular.module('DoughnutApp', ['DoughnutServices', 'DoughnutCtrls', 'ngRoute']);
+var app = angular.module('StarWarsApp', ['StarWarsCtrls', 'ngRoute']);
 ```
 
 And lastly, we'll need a way to switch out templates and controllers on our index page. For now, let's replace the contents of `<body></body>` with the following:
@@ -62,12 +62,13 @@ In `index.html`:
 
 `ng-view` will help complement our routes by including the template and controller of the current route. Whenever a route changes, the contents of `ng-view` are replaced with the new template and controller.
 
-But we need routes! And controllers! And views! We already have the controller, so let's set up the view. In `app/views`, we'll create a template called `index.html` to list out all the doughnuts.
+But we need routes! And controllers! And views! We already have the controller, so let's set up the view. In `app/views`, we'll create a template called `index.html` to list out all the films.
 
 ```html
-<h1>Doughnuts</h1>
-<div class="well" ng-repeat="doughnut in doughnuts">
-  <h2>{{doughnut.style}} - <small>{{doughnut.flavor}}</small></h2>
+<h1>Star Wars</h1>
+<div class="well" ng-repeat="film in films">
+  <h2>{{film.title}}</h2>
+  <p>{{film.opening_crawl}}</p>
 </div>
 ```
 
@@ -81,7 +82,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $routeProvider
   .when('/', {
     templateUrl: 'views/index.html',
-    controller: 'DoughnutCtrl'
+    controller: 'FilmsCtrl'
   });
 
   $locationProvider.html5Mode(false).hashPrefix('!');
@@ -96,7 +97,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
   $routeProvider
   .when('/', {
     templateUrl: 'views/index.html',
-    controller: 'DoughnutCtrl'
+    controller: 'FilmsCtrl'
   })
   .when('/about', {
     templateUrl: 'views/about.html'
@@ -134,33 +135,34 @@ See this [StackOverflow response](http://stackoverflow.com/questions/31778324/an
 Passing URL parameters with angular routes is similar to routes in Express or Rails. First we define a route with a parameter.
 
 ```js
-.when('/doughnuts/:id', {
-  templateUrl: 'views/doughnutShow.html',
-  controller: 'DoughnutShowCtrl'
+.when('/films/:id', {
+  templateUrl: 'views/filmShow.html',
+  controller: 'FilmShowCtrl'
 })
 ```
 
 Then, we can access the parameter in the controller using `$routeParams` (which must be injected into the controller). So let's add another controller in `controllers.js` for getting a specific doughnut.
 
 ```js
-.controller('DoughnutShowCtrl', ['$scope', '$routeParams', 'Doughnut', function($scope, $routeParams, Doughnut) {
-  $scope.doughnut = {};
+.controller('FilmShowCtrl', ['$scope', '$routeParams', 'Films', function($scope, $routeParams, Films) {
+  $scope.film = {};
 
-  Doughnut.get({id: $routeParams.id}, function success(data) {
-    $scope.doughnut = data;
+  Films.get({id: $routeParams.id}, function success(data) {
+    $scope.film = data;
   }, function error(data) {
     console.log(data);
   });
 }]);
 ```
 
-Now we need a `doughnutShow.html` file in the `views` folder:
+Now we need a `filmShow.html` file in the `views` folder:
 
 ```html
-<h1>{{doughnut.style}}</h1>
+<h1>{{film.title}}</h1>
 
 <div class="well">
-  {{doughnut.flavor}}
+  <p>{{film.opening_crawl}}</p>
+  <small>Release date: {{film.release_date}}</small>
 </div>
 
 <a href="/#!/" class="btn btn-primary">&larr; Back</a>
@@ -169,12 +171,12 @@ Now we need a `doughnutShow.html` file in the `views` folder:
 ...andddddd we need to add links to `views/index.html`
 
 ```html
-<h1>Doughnuts</h1>
+<h1>Star Wars</h1>
 
 <a href="/#!/about">About Page</a>
 
-<div class="well" ng-repeat="doughnut in doughnuts">
-  <h2><a ng-href="/#!/doughnuts/{{doughnut.id}}">{{doughnut.style}}</a> - <small>{{doughnut.flavor}}</small></h2>
+<div class="well" ng-repeat="film in films">
+  <h2><a ng-href="/#!/films/{{film.id}}">{{film.title}}</a></h2>
 </div>
 ```
 
@@ -185,11 +187,11 @@ Now we need a `doughnutShow.html` file in the `views` folder:
 You can also cause the angular router to navigate to a new route using `$location` (another service).
 
 ```js
-.controller('DoughnutCtrl', ['$scope', '$location', 'Doughnut', function($scope, $location, Doughnut) {
-  // $scope.doughnuts = [];
+.controller('FilmsCtrl', ['$scope', '$location', 'Films', function($scope, $location, Films) {
+  // $scope.films = [];
   //
-  // Doughnut.query(function success(data) {
-  //   $scope.doughnuts = data;
+  // Films.query(function success(data) {
+  //   $scope.films = data;
   // }, function error(data) {
   //   console.log(data);
   // });
