@@ -39,7 +39,7 @@ Make sure to add `ng-app` and `ng-controller` directives to `index.html` and tes
 
 ###Creating a Film Service
 
-Now, we're going to create a service for accessing Star Wars films using the factory recipe. This service will provide an object we can inject into controllers, and it'll provide functions for interacting with the Doughnut API.
+Now, we're going to create a service for accessing Star Wars films using the factory recipe. This service will provide an object we can inject into controllers, and it'll provide functions for interacting with the Star Wars API.
 
 We'll create this service in the same file for now.
 
