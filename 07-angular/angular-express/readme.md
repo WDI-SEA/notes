@@ -18,7 +18,9 @@ As a quick review, let's write on the board what we've learned about Angular. He
 * What are all the different ways to modularized components?
 * What directives have we used?
 
-##Everything Express
+##Everything Express (Starter Code)
+
+https://github.com/WDI-SEA/fly-on-angular
 
 Take a look at the starter code and set up the Express app. Make sure your Mongo server is running and all dependencies are installed. This app provides an API for one model.
 
@@ -51,11 +53,11 @@ Create a file in the `public` folder called `index.html`, and for now, put some 
     <meta charset="utf-8">
     <title>Airplanes</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-route.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.18/angular-ui-router.js"></script>
     <script src="app/app.js"></script>
   </head>
-  <body>
-    <h1>Airplanes</h1>
+  <body ng-app="AirplaneApp">
+    <h1>Airplane App</h1>
   </body>
 </html>
 ```
@@ -77,14 +79,18 @@ As far as the app is concerned, we can now create an app in the `public/app` fol
 In `app/app.js`:
 
 ```js
-var app = angular.module('AirplaneApp', ['ngRoute']);
+angular.module('AirplaneApp', ['ui.router'])
 
-app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-  $routeProvider
-  .when('/', {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $urlRouterProvider.otherwise('/404');
+
+  $stateProvider
+  .state('airplanes', {
+    url: '/',
     templateUrl: 'app/views/airplanes.html'
   })
-  .otherwise({
+  .state('404', {
+    url: '/404',
     templateUrl: 'app/views/404.html'
   });
 
@@ -92,12 +98,12 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 }]);
 ```
 
-Make a couple views so that we have valid pages, and replace the body of `index.html` with `<ng-view></ng-view>` tags.
+Make a couple views so that we have valid pages, and replace the body of `index.html` with `<div ui-view></div>` tags.
 
 ```html
-<body>
+<body ng-app="AirplaneApp">
   <div class="container">
-    <ng-view></ng-view>
+    <div ui-view></div>
   </div>
 </body>
 ```
