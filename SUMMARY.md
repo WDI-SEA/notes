@@ -116,7 +116,7 @@
   * [Angular Services](07-angular/angular-services/readme.md)
     * [Service Recipes](07-angular/angular-services/recipes.md)
     * [ngResource](07-angular/angular-services/ngresource.md)
-    * [Doughnuts Codealong](07-angular/angular-services/doughnuts-codealong.md)
+    * [Star Wars Codealong](07-angular/angular-services/starwars-codealong.md)
   * [Angular Routing](07-angular/angular-routing/readme.md)
   * [Angular + Express](07-angular/angular-express/readme.md)
   * [Angular Authentication](07-angular/angular-authentication/readme.md)

@@ -1,18 +1,17 @@
-#Doughnut App
+#Star Wars App
 
 ##Getting Started
 
-Create a new folder called `doughnutapp` with the following folders and files:
+Create a new folder called `starwarsapp` with the following folders and files:
 
 ```
-- doughnutapp
+- starwarsapp
   - js
     - app.js
   - index.html
 ```
 
 Setup the HTML page with the usual tags.
-
 
 ###Adding Dependencies
 
@@ -29,48 +28,48 @@ Note that in order to use `$resource`, we need to include an additional dependen
 In `app.js`:
 
 ```js
-var app = angular.module('DoughnutApp', ['ngResource']);
+var app = angular.module('StarWarsApp', ['ngResource']);
 
-app.controller('DoughnutCtrl', ['$scope', function($scope) {
+app.controller('FilmsCtrl', ['$scope', function($scope) {
 
 }]);
 ```
 
 Make sure to add `ng-app` and `ng-controller` directives to `index.html` and test the app before continuing.
 
-###Creating a Doughnut Service
+###Creating a Film Service
 
-Now, we're going to create a service using the factory recipe. This service will provide an object we can inject into controllers, and it'll provide functions for interacting with the Doughnut API.
+Now, we're going to create a service for accessing Star Wars films using the factory recipe. This service will provide an object we can inject into controllers, and it'll provide functions for interacting with the Doughnut API.
 
 We'll create this service in the same file for now.
 
 In `app.js`, we'll create a factory and inject it into the controller.
 
 ```js
-var app = angular.module('DoughnutApp', ['ngResource']);
+var app = angular.module('StarWarsApp', ['ngResource']);
 
-app.factory('Doughnut', ['$resource', function($resource) {
-  return $resource('http://api.doughnuts.ga/doughnuts/:id');
+app.factory('Films', ['$resource', function($resource) {
+  return $resource('http://swapi.co/api/films/:id');
 }]);
 
-app.controller('DoughnutCtrl', ['$scope', 'Doughnut', function($scope, Doughnut) {
-  console.log(Doughnut);
+app.controller('FilmsCtrl', ['$scope', 'Films', function($scope, Films) {
+  console.log(Films);
 }]);
 ```
 
-When we refresh the page, the contents of the Doughnut service should be logged to the browser console.
+When we refresh the page, the contents of the Films service should be logged to the browser console.
 
-###Using the Doughnut service
+###Using the Films service
 
-In order to use the Doughnut service, we can call `get`, `query`, `save`, and `remove` from the controller.
+In order to use the Films service, we can call `get` and `query` from the controller. If we had a complete RESTful service, we could also call `save` and `remove`.
 
 In `app.js`:
 
 ```js
-app.controller('DoughnutCtrl', ['$scope', 'Doughnut', function($scope, Doughnut) {
-  $scope.doughnuts = [];
-  Doughnut.query(function success(data) {
-    $scope.doughnuts = data;
+app.controller('FilmsCtrl', ['$scope', 'Films', function($scope, Films) {
+  $scope.films = [];
+  Films.query(function success(data) {
+    $scope.films = data;
   }, function error(data) {
     console.log(data);
   });
@@ -80,22 +79,23 @@ app.controller('DoughnutCtrl', ['$scope', 'Doughnut', function($scope, Doughnut)
 In `index.html`:
 
 ```html
-<div class="well" ng-repeat="doughnut in doughnuts">
-  {{doughnut.style}} - {{doughnut.flavor}}
+<div class="well" ng-repeat="film in films">
+  <h2>{{film.title}}</h2>
+  <p>{{film.opening_crawl}}</p>
 </div>
 ```
 
-**Try it:** Use the `get` method from the Doughnut service to retrieve the second doughnut (id of 2).
+**Try it:** Use the `get` method from the Films service to retrieve the second film (id of 2).
 
 ###Why use a Service?
 
 You may be wondering why we're using a service for a one-line resource. Usually, resources are more complex and can be customized as you see fit. Take a look at the [documentation for $resource](https://docs.angularjs.org/api/ngResource/service/$resource) and see what can be customized. Even if we didn't add additional customizations, the service allows many controllers to access the resource as a singleton.
 
-Here's a trivial example of customizing our Doughnut resource, by specifying different function names.
+Here's a trivial example of customizing our Films resource, by specifying different function names.
 
 ```js
-app.factory('Doughnut', ['$resource', function($resource) {
-  return $resource('http://api.doughnuts.ga/doughnuts/:id', {}, {
+app.factory('Films', ['$resource', function($resource) {
+  return $resource('http://swapi.co/api/films/:id', {}, {
     all: {method: 'GET', cache: false, isArray: true},
     get: {method: 'GET', cache: false, isArray: false},
     save: {method: 'POST', cache: false, isArray: false},
@@ -111,4 +111,4 @@ Note that we set `isArray` to true for the GET all endpoint. We also set the `ca
 
 We've used services when working with `$http` and Bootstrap modals, and we just made our own. By doing so, we've isolated business logic out of our controllers, so that they can focus mainly on initializing and manipulating data.
 
-Later, we'll add routing to this Doughnut app and implement all of the CRUD functions.
+Later, we'll add routing to this Star Wars app and implement all of the CRUD functions.
