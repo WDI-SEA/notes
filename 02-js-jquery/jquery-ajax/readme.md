@@ -73,9 +73,9 @@ console.log('Just fired AJAX request!');
 What order will the `console.log` statements appear?
 
 
-##Storing Data
+##Using Data
 
-What if we want to store data from an AJAX request? We'll need to keep **scope** in mind, which is the concept of **where** variables exist.
+What if we want to use data from an AJAX request? We'll need to keep **scope** in mind, which is the concept of **where** variables exist.
 
 **Global variables** are variables that are visible throughout the program, and thus have **global scope**
 
@@ -100,18 +100,16 @@ console.log(posts);
 
 ```
 
-**This code runs because `posts` is declared in global scope, and exists throughout the entire program.** Note that we didn't have to use `var` inside the function, since we already declared the variable.
+**This code runs because `posts` is declared in the same scope as data.**
 
 ```js
-var posts = {};
 
 $.get('https://www.reddit.com/search.json', {
   q: 'kittens'
 }).done(function(data) {
   posts = data;
+  console.log(posts);
 });
-
-console.log(posts);
 
 // Output
 // > Object {kind: "Listing", data: Object}
