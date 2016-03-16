@@ -219,6 +219,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Angular Routing (UI Router)][307] | [Route Those Views][1305] |
 | [Intro to MongoDB][309] <br><br> [Mongoose][310] |  |
 | [JSON Web Tokens][311] | [RESTful API][1310] |
+| [Angular + Express][313] <br><br> [Starter Code][314] | |
 
 ###Computer Science
 
@@ -246,6 +247,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [310]: 05-express/express-mongoose/readme.md
 [311]: 05-express/express-jwt/readme.md
 [312]: 08-cs/cs-stacks-queues/readme.md
+[313]: 07-angular/angular-express/readme.md
+[314]: https://github.com/WDI-SEA/fly-on-angular
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
