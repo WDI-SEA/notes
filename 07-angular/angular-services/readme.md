@@ -12,9 +12,8 @@ Each web application you build with Angular is composed of objects that collabor
 When you inject a dependency into a module, e.g.
 
 ```javascript
-angular.module("DoughnutApp", ['ui.bootstrap']);
+angular.module("StarWarsApp", ['ui.bootstrap']);
 ```
 
 The injector service needs to know how it should insert these objects. It does this by using **recipes**.
 
-Now that we've shown that example, let's create a service to provide a resource. Specifically, we'll be using the Doughnut API. http://api.doughnuts.ga/
