@@ -133,7 +133,7 @@
   * [Installfest](00-config-deployment/installfest/readme.md)
     * [Mac OSX](00-config-deployment/installfest/osx/readme.md)
     * [Linux](00-config-deployment/installfest/linux/readme.md)
-    * [Linux](00-config-deployment/git-configuration/readme.md)
+    * [Git Configuration](00-config-deployment/git-configuration/readme.md)
     * [Sublime Packages](00-config-deployment/installfest/sublime-packages/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node/Express](00-config-deployment/deploy-node/readme.md)
