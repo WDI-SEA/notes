@@ -132,6 +132,19 @@ Your sublime editor will popup with configuration settings, at the bottom of the
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 ```
 
+While we're here, add these two functions to make it easier to access, change and refresh our ZSH configuration file in the future.
+
+```
+function zedit() {
+  subl ~/.zshrc
+}
+
+function zrefresh() {
+  echo "Refreshing your ZSH configuration."
+  source ~/.zshrc
+}
+```
+
 Save the file, close Sublime, and restart your terminal.
 
 Type `which psql` at which point should display
