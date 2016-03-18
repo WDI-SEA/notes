@@ -32,3 +32,7 @@ The best way to understand how linked lists work is to make one! Let's do so in 
 * If the `@head` is a `Node`, then we have some items in our list. But we want to insert the node to the end of the list, ideally. This can be done by taking a look at `@head`
   * If `@head.next` points to a Node (isn't `nil`), then we can "traverse" the list until we reach the end, perhaps with a loop
   * If `@head.next` is nil, then we're at the end of the list. But we're adding another item, so set `@head.next` to the `Node` we're adding to the list.
+
+4. Create another method on the `LinkedList` called `to_s` in order to print the list to the console.
+
+**BONUS:** Inserting nodes will take longer as the linked list becomes longer. To alleviate this, add a `@tail` instance variable so we can access the end of the list in constant time.
