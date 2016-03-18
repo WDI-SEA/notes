@@ -31,6 +31,10 @@ Lastly, once authentication is working, we'll talk about adding a service for al
 
 ###Ensuring Endpoints are protected
 
+####Starter Code
+
+https://github.com/WDI-SEA/angular-recipes
+
 Take a look at the starter code, which has an Express API and Angular app for creating and viewing **secret recipes** (such as the Krabby Patty secret formula, or Coca-cola formula). The API looks like this:
 
 * Users
@@ -46,7 +50,7 @@ Take a look at the starter code, which has an Express API and Angular app for cr
 * Auth
   * POST /api/auth
 
-Our models are set up to include password encryption and JWT token generation at the `/api/auth` endpoint. Try running the app and verify that you can create, view, and delete secret recipes.
+Our models are set up to include password hashing and JWT token generation at the `/api/auth` endpoint. Try running the app and verify that you can create, view, and delete secret recipes.
 
 Our goal is to **lock down** these recipes so nobody can steal them. First, let's secure the endpoints by uncommenting these lines in `index.js`:
 
@@ -213,6 +217,7 @@ In `public/app/controllers.js`, alter the `NavCtrl` to contain the following:
 //...
 
 .controller('NavCtrl', ['$scope', 'Auth', function($scope, Auth) {
+  $scope.Auth = Auth;
   $scope.logout = function() {
     Auth.removeToken();
     console.log('My token:', Auth.getToken());
@@ -222,7 +227,19 @@ In `public/app/controllers.js`, alter the `NavCtrl` to contain the following:
 //...
 ```
 
-Again, we're injecting the `Auth` service in order to remove the token.
+Again, we're injecting the `Auth` service in order to remove the token. Also, we're assigning the `Auth` service to the controller's scope, which will allow us to call all of the service's functions. Let's modify the `navbar.html` template to reflect this.
+
+In **public/app/views/navbar.html**
+
+```html
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="/signup" ng-hide="Auth.isLoggedIn()">Signup</a></li>
+    <li><a href="/login" ng-hide="Auth.isLoggedIn()">Login</a></li>
+    <li><a ng-click="logout()" ng-show="Auth.isLoggedIn()">Logout</a></li>
+  </ul>
+</div>
+```
 
 ###Sending Tokens on Each Request
 
@@ -273,9 +290,42 @@ To test and see if this configuration works, try logging in and see if you can g
 
 We didn't use the `currentUser` function in our `Auth` service, but it's a great way to get the current user's data without making another request to the server, since it's already encoded in the token. This is also why we ensured that the password wasn't sent back to the server, since the hash could have been decoded and visible!
 
+###Making Queries to other APIs
+
+It's possible for an application to query multiple different APIs, such as a Node backend, a weather API, and a recipe API. In that case, we need to **alter our AuthInterceptor** so it doesn't send our authentication data to these other APIs! Not only would that be unwise in terms of security, but applications often give error messages when invalid tokens are passed.
+
+We can adjust the `AuthInterceptor` by having a blacklist/whitelist of endpoints. Here's an example of `AuthInterceptor` with a blacklist.
+
+```js
+//...
+
+.factory('AuthInterceptor', ['Auth', function(Auth) {
+  // if querying other APIs, add URLs to this array
+  var excludedEndpoints = [
+    'https://swapi.co/api/films'
+  ];
+
+  return {
+    request: function(config) {
+      var token = Auth.getToken();
+      var excludedEndpoint = excludedEndpoints.indexOf(config.url) > -1;
+      if (token && !excludedEndpoint) {
+        config.headers = config.headers || {};
+        config.headers.Authorization = 'Bearer ' + token;
+      }
+      return config;
+    }
+  }
+}])
+```
+
+Note that for a whitelist, we'd have to account for URLs that match a particular **pattern**, like `/api/recipes/1`, `/api/recipes/2`, etc. This would be a good application of regular expressions.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
 ###Making Alerts
 
-Now that authentication has been set up, what about those cool Bootstrap alerts? Since authentication involves going from **controller to controller**, we'll need yet another **service** in order to add Bootstrap modals to our page. Here's an example service:
+Now that authentication has been set up, what about those cool Bootstrap alerts? Since authentication involves going from **controller to controller**, we'll need yet another **service** in order to add Bootstrap modals to our page. Here's an example service.
 
 ```js
 //..
@@ -309,4 +359,8 @@ Remember IIFEs (Immediately-Invoked Function Expressions)? In a sense, this fact
 
 Because `Alerts` is a service, a singleton, and able to be injected into controllers, `Alerts` will be our app-wide container for storing alerts.
 
-**Try it:** Using the `Alerts` service provided above, incorporate alerts into the Secret Recipes app. Additionally, try to add **ng-show** and **ng-hide** directives for the links in the navbar.
+**Let's try together:** Using the `Alerts` service provided above, incorporate alerts into the Secret Recipes app. Additionally, try to add **ng-show** and **ng-hide** directives for the links in the navbar. You'll need to keep a few things in mind:
+
+* How will an alert be added after signup, login, and logout?
+* How will the alerts be displayed? (May benefit to make an Alerts controller with a template, similar to the `NavCtrl`)
+* Can we use UI Bootstrap to provide additional functionality?
