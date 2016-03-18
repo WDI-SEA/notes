@@ -17,6 +17,9 @@ If linked lists are multiple objects linked together, ideally we need a couple d
 
 ![http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif](http://www.lisha.ufsc.br/teaching/sce/ine6511-2003-2/work/gp/lists_files/image001.gif)
 
+#### Wait, why not use arrays instead?
+
+In lower level languages, arrays are allocatd in **blocks.** Therefore, arrays are static in size and can only hold a specific data type. Linked lists store data in the **heap,** meaning that the data can be stored in an unorganized manner. Since each node points to the next one, it's still possible to maintain the list structure.
 
 ## Getting Started
 
@@ -24,15 +27,17 @@ The best way to understand how linked lists work is to make one! Let's do so in 
 
 1. Start by creating a `Node` Class. We will have attributes to represent the data (let's call this `data`) and the reference to the next Node (let's call this `next`).
 
-2. Create a `LinkedList` class. This class will have one value `@head`. Initialize this to `nil` for now. We have an empty list!
+2. Create a `LinkedList` class. This class will have two values, `@head` and `@tail`. These will represent the beginning and end of the list. Initialize both to `nil` for now. We have an empty list!
 
-3. Now for incorporating the two classes together. Create a method on the `LinkedList` class called `insert_node`. The challenge is to add an item to this list. This can be done by creating a new `Node`, then doing the following:
+3. Now for incorporating the two classes together. Create a method on the `LinkedList` class called `insert_front`. The challenge is to add an item to the beginning of the list. This can be done by creating a new `Node`, then doing the following:
 
-* If the `@head` is `nil`, set the `@head` to the newly created `Node`. This newly created `Node` doesn't have a `next` reference, because it's the only item left!
-* If the `@head` is a `Node`, then we have some items in our list. But we want to insert the node to the end of the list, ideally. This can be done by taking a look at `@head`
-  * If `@head.next` points to a Node (isn't `nil`), then we can "traverse" the list until we reach the end, perhaps with a loop
-  * If `@head.next` is nil, then we're at the end of the list. But we're adding another item, so set `@head.next` to the `Node` we're adding to the list.
+* Store the value of `@head` into a temp variable
+* Set the `@head` to the newly created `Node`. Note that currently, its `next` reference is `nil`.
+* Think about what we would need to do if we're adding a new item to the beginning of a linked list. Consult the diagram (hint: we'll have to do something with the new node's `next` reference)
+* Lastly, handle the special case of the `@tail`. `@tail` should always be the last `Node` in the linked list.
 
-4. Create another method on the `LinkedList` called `to_s` in order to print the list to the console.
+4. Create another method on the `LinkedList` or `Node` called `to_s` in order to print the list to the console.
 
-**BONUS:** Inserting nodes will take longer as the linked list becomes longer. To alleviate this, add a `@tail` instance variable so we can access the end of the list in constant time.
+**BONUS:** Create an `insert_end` method to add nodes to the end of the list.
+
+**SUPER BONUS:** Create a more versatile `insert` method to add a node anywhere in the linked list, providing an index for the new item.

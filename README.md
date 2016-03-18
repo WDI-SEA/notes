@@ -229,7 +229,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Recursion/Problem Solving | [Array Challenge][1308] |
 | Binary Search <br><br> [Algorithm Complexity][308] | [Auto Guess][1309] |
 | [Stacks and Queues][312] | [Bracket Matching][1311] |
-| Linked Lists | [Singly Linked List][317] |
+| Linked Lists | [Singly Linked List][317] <br><br> [Linked List Methods][318] |
 
 | Projects and Additional Topics |
 | -------- |
@@ -255,6 +255,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [315]: 07-angular/angular-authentication/readme.md
 [316]: https://github.com/WDI-SEA/angular-recipes
 [317]: 08-cs/cs-linked-list/readme.md
+[318]: 08-cs/cs-ruby-linked-list-2/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
