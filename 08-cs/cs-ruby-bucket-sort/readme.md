@@ -1,6 +1,6 @@
 ##Bucket Sort Challenge: Sorting Papers
 
-We need to create an algorithm that can take a list of letter grades and determine how many items there are with each grade.
+Create an algorithm that can take an array of letter grades and determine how many papers there are of each grade.
 
 
 **Example Input:**
@@ -18,8 +18,6 @@ C - 3
 D - 1
 F - 1
 ```
-
-
 
 You must solve this problem using **RUBY**.
 
