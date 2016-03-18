@@ -220,6 +220,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Intro to MongoDB][309] <br><br> [Mongoose][310] |  |
 | [JSON Web Tokens][311] | [RESTful API][1310] |
 | [Angular + Express][313] <br><br> [Starter Code][314] | |
+| [Angular Authentication][315] | [Starter Code][316] |
 
 ###Computer Science
 
@@ -228,10 +229,12 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Recursion/Problem Solving | [Array Challenge][1308] |
 | Binary Search <br><br> [Algorithm Complexity][308] | [Auto Guess][1309] |
 | [Stacks and Queues][312] | [Bracket Matching][1311] |
+| Linked Lists | [Singly Linked List][317] |
 
 | Projects and Additional Topics |
 | -------- |
 | [Project 4][1304] |
+| [MEAN Hackathon][1312] |
 | [ES6 Variables and Strings][1306] |
 | [ES6 Arrow Functions][1307] |
 
@@ -249,6 +252,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [312]: 08-cs/cs-stacks-queues/readme.md
 [313]: 07-angular/angular-express/readme.md
 [314]: https://github.com/WDI-SEA/fly-on-angular
+[315]: 07-angular/angular-authentication/readme.md
+[316]: https://github.com/WDI-SEA/angular-recipes
+[317]: 08-cs/cs-linked-list/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
@@ -262,3 +268,4 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1309]: 08-cs/teaser-ruby-binary-search/readme.md
 [1310]: https://github.com/WDI-SEA/restful-api
 [1311]: 08-cs/cs-ruby-bracket-stacks/readme.md
+[1312]: 11-projects/mean-hackathon/readme.md
