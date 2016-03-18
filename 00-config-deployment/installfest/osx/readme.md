@@ -132,7 +132,7 @@ Your sublime editor will popup with configuration settings, at the bottom of the
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 ```
 
-While we're here, add these two functions to make it easier to access, change and refresh our ZSH configuration file in the future.
+While we're here, add these two functions to make it easier to access, change and refresh our ZSH configuration file in the future. Copy and paste these to the end of the file.
 
 ```
 function zedit() {
