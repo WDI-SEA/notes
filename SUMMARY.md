@@ -170,7 +170,6 @@
   * [MEAN Hackathon](11-projects/mean-hackathon/readme.md)
     * [Part 1: APIs](11-projects/mean-hackathon/api.md)
     * [Part 2: Angular](11-projects/mean-hackathon/angular.md)
-  * [Interview Questions](11-projects/interview-questions/readme.md)
   * [Portfolio](11-projects/portfolio/readme.md)
 * [Resources](12-resources/readme.md)
   * [APIs and Data](12-resources/apis.md)

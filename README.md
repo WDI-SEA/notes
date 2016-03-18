@@ -221,6 +221,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [JSON Web Tokens][311] | [RESTful API][1310] |
 | [Angular + Express][313] <br><br> [Starter Code][314] | |
 | [Angular Authentication][315] | [Starter Code][316] |
+| [Custom Filters][319] | [Creating Filters][1313] |
+| [Custom Directives][320] | [Creating Directives][1314] |
 
 ###Computer Science
 
@@ -235,6 +237,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | -------- |
 | [Project 4][1304] |
 | [MEAN Hackathon][1312] |
+| [Interview Questions][1315]
 | [ES6 Variables and Strings][1306] |
 | [ES6 Arrow Functions][1307] |
 
@@ -256,6 +259,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [316]: https://github.com/WDI-SEA/angular-recipes
 [317]: 08-cs/cs-linked-list/readme.md
 [318]: 08-cs/cs-ruby-linked-list-2/readme.md
+[319]: 07-angular/angular-custom-filters/readme.md
+[320]: 07-angular/angular-custom-directives/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
@@ -270,3 +275,6 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1310]: https://github.com/WDI-SEA/restful-api
 [1311]: 08-cs/cs-ruby-bracket-stacks/readme.md
 [1312]: 11-projects/mean-hackathon/readme.md
+[1313]: https://github.com/WDI-SEA/angular-filters
+[1314]: https://github.com/WDI-SEA/angular-directives
+[1315]: https://github.com/WDI-SEA/interview-questions
