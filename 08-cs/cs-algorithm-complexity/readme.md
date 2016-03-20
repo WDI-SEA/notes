@@ -74,28 +74,28 @@ An algorithm that is O(log(n)), is said to be "Big O of log n" or **logarithmic*
 ####Example
 
 ```
-function binarySearch(search) {
-    var min = 0;
-    var max = this.length - 1;
-    var index;
-    var elem;
- 
-    while (min <= max) {
-        index = (min +  max) / 2 | 0;
-        elem = this[index];
- 
-        if (elem < search) {
-            min = index + 1;
-        }
-        else if (elem > search) {
-            max = index - 1;
-        }
-        else {
-            return index;
-        }
+function binarySearch(arr, search) {
+  var min = 0;
+  var max = arr.length - 1;
+  var index;
+  var elem;
+
+  while (min <= max) {
+    index = Math.floor((min + max) / 2);
+    elem = arr[index];
+
+    if (elem < search) {
+      min = index + 1;
     }
- 
-    return -1;
+    else if (elem > search) {
+      max = index - 1;
+    }
+    else {
+      return index;
+    }
+  }
+
+  return -1;
 }
 ```
 
