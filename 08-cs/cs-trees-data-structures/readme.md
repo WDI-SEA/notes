@@ -56,7 +56,29 @@ s3 = Set.new(['taco', 3])
 s1.intersect? s2
 # => false
 s1.intersect? s3
+# => true
+
+s1.disjoint? s2
+# => true
+s1.disjoint? s3
+# => false
+
+# set operations
+
+# union
+s1 + s2
+# => #<Set: {1, 2, 3, 9, 5}>
+
+# difference
+s1 - s3
+# => #<Set: {1, 2}> 
+
+# intersection
+s1 & s3
+# => #<Set: {3}>
 ```
+
+[Ruby Documentation for Sets](http://ruby-doc.org/stdlib-2.3.0/libdoc/set/rdoc/Set.html)
 
 ## Graphs
 
@@ -65,7 +87,9 @@ If we remove even more restrictions from trees, we end up with graphs, which are
 ![Undirected graph](https://computersciencesource.files.wordpress.com/2010/05/dfs_1.png)
 ![Directed graph](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Directed_acyclic_graph_2.svg/305px-Directed_acyclic_graph_2.svg.png)
 
-Graphs can be directed (a path that has direction) or undirected. Graphs are essential in applications such as Facebook or Twitter, where showing relationships between users and groups is essential.
+Graphs can be directed (a path that has direction) or undirected. Graphs are essential in applications such as Facebook or Twitter, where showing relationships between users and groups is essential across large applications. Other applications include maze solving and mutual friend finding, which can be implemented via the following graph searches.
+
+[RGL: Ruby library for graphs](https://github.com/monora/rgl)
 
 ### Searching
 
