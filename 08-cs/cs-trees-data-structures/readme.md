@@ -8,7 +8,7 @@ Trees consist of a top node, called the **root** of the tree, linking to **child
 
 ![A tree](http://poj.org/images/1330_1.jpg)
 
-So what's the point? Trees are used in many areas of computer science, including syntax parsers (determines if your parentheses and functions are correct).
+So what's the point? Trees are used in many areas of computer science, including syntax parsers (determines if your parentheses and functions are correct). They're also used in practical applications, such as nested comments.
 
 ### Binary Search Trees
 
@@ -33,6 +33,30 @@ Tries are a special type of tree, usually implemented with strings as the data, 
 ![Trie](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/400px-Trie_example.svg.png)
 
 They're usually used for quick lookups, generally autocomplete fields and IP address lookups.
+
+### Sets
+
+A **set** is a data type that is often implemented with a tree, but can be implemented with various other data structures. Sets are collections of items that are **unordered** and **contain no duplicates.** In Ruby and JavaScript, sets are provided as `Set`. Here are some examples in Ruby:
+
+```rb
+# must be required
+require 'set'
+
+s1 = Set.new([1, 2, 3])
+# => #<Set: {1, 2, 3}>
+
+# sets must have unique items, they're also unordered
+s2 = Set.new([9, 5, 5, 5, 5])
+# => #<Set: {9, 5}>
+
+s3 = Set.new(['taco', 3])
+# => #<Set: {"taco", 3}>
+
+# sets have different methods to determine if they share/don't share elements
+s1.intersect? s2
+# => false
+s1.intersect? s3
+```
 
 ## Graphs
 

@@ -2,7 +2,6 @@
 
 Create an algorithm that can take an array of letter grades and determine how many papers there are of each grade.
 
-
 **Example Input:**
 
 ```ruby

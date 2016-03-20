@@ -1,8 +1,8 @@
 # Quicksort
 
-The idea of quicksort is to take an array and divide it into partitions. As a result, we get 3 partitions.
+The idea of quicksort is similar to merge sort, but we'll be using **partitioning** instead of a merge function. The idea is to take an array and divide it into 3 partitions.
 
-1. The bottom partition, which should contain numbers lower than the pivot.
+1. The bottom partition, which should contain numbers lower than a number we call the **pivot**.
 2. The top partition, which should contain numbers higher than the pivot.
 3. The pivot (a single element).
 
@@ -80,3 +80,39 @@ else
 	puts 'Noooo, the sort failed!'
 end
 ```
+
+##Starter Code (with partition)
+
+```rb
+# define algorithm here (you'll need lo and hi for the beginning/endpoints on the recursive call)
+def quicksort(arr, lo, hi)
+
+end
+
+# partition function (selects a pivot and sorts into partitions)
+def partition(arr, lo, hi)
+  pivot = arr[hi]
+
+  left = lo
+  for element in (lo...hi)
+    if arr[element] <= pivot
+      arr[left], arr[element] = arr[element], arr[left]
+      left += 1
+    end
+  end
+
+  arr[left], arr[hi] = arr[hi], arr[left]
+  return left
+end
+
+# testing quicksort
+test = (1..10).to_a.shuffle
+quicksort(test, 0, test.length-1)
+
+if test == (1..10).to_a
+  puts 'The sort worked!'
+else
+  puts 'Noooo, the sort failed!'
+end
+```
+

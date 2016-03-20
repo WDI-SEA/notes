@@ -2,16 +2,34 @@
 
 All of these components must be done in **Ruby**
 
+##What is Merge Sort?
+
+Merge sort is a sorting algorithm that's **recursive** (the function calls itself) and uses a **merge** function to combine two sorted arrays. But wait, if we have an array like this...
+
+```
+my_arr = [5, 3, 7, 2]
+```
+
+...how do we get two sorted arrays out of that? The key is **recursion**, which we'll use to obtain a base case.
+
+Merge sort works by splitting the array in half over and over again, until we're left with single-element arrays. By definition, an array with a single element is sorted, so we can call **merge** on two arrays with one element each. Here's a diagram of how this may occur.
+
+![Merge Sort Diagram](http://shawnjanas.com/wp-content/uploads/2011/06/mergesort.jpg)
+
+An implementation of merge sort should split an array in half recursively, until we're left with single-element arrays. Then, we can start merging them back until the array is finally sorted.
+
+Let's try to implement this, but one step at a time.
+
 ##Part 1 - Create Merge
 
-First create a method called `merge` that can combine two sorted arrays and keep them in sorted order. We did this in JavaScript, so feel free to look back at that problem.
+First create a method called `merge` that can combine two sorted arrays and keep them in sorted order. We did this in JavaScript previously, so feel free to look back at that problem.
 
 **Example**
 
 ```rb
 # input arrays
-a1 = [2,4,6,8]
-a2 = [1,3,5,7]
+a1 = [2, 4, 6, 8]
+a2 = [1, 3, 5, 7]
 
 a3 = merge(a1, a2)
 # a3 is now [1, 2, 3, 4, 5, 6, 7, 8]
@@ -60,3 +78,10 @@ a = [1]
 #larger array
 a = (0..100000).to_a.shuffle
 ```
+
+##Resources
+
+If you need help getting started with the idea of merge sort, check out the following resources:
+
+* [Khan Academy: Merge Sort Overview](https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/overview-of-merge-sort)
+* [Merge Sort Pseudocode and Visualization](http://www.sorting-algorithms.com/merge-sort)
