@@ -232,6 +232,14 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Binary Search <br><br> [Algorithm Complexity][308] | [Auto Guess][1309] |
 | [Stacks and Queues][312] | [Bracket Matching][1311] |
 | Linked Lists | [Singly Linked List][317] <br><br> [Linked List Methods][318] |
+| Bucket Sort | [Bucket Sort: Sorting Papers][321] |
+| [Bubble Sort][322] | |
+| [Merge Sort][323] | |
+| [Quick Sort][324] | |
+| [Sorting Wrapup][325] | |
+| [Hashmaps][326] | |
+| [Trees and Other Topics][327] | N/A |
+
 
 | Projects and Additional Topics |
 | -------- |
@@ -261,6 +269,13 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [318]: 08-cs/cs-ruby-linked-list-2/readme.md
 [319]: 07-angular/angular-custom-filters/readme.md
 [320]: 07-angular/angular-custom-directives/readme.md
+[321]: 08-cs/cs-ruby-bucket-sort/readme.md
+[322]: 08-cs/cs-ruby-bubble-sort/readme.md
+[323]: 08-cs/cs-ruby-mergesort/readme.md
+[324]: 08-cs/cs-ruby-quicksort/readme.md
+[325]: 08-cs/cs-sorting/readme.md
+[326]: 08-cs/cs-hashmaps/readme.md
+[327]: 08-cs/cs-trees-data-structures/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
