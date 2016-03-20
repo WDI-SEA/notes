@@ -29,6 +29,10 @@ Let's see if we can make something similar, wrapped up in our own custom HTML el
 
 ##Cards Against Assembly
 
+####Starter Code
+
+https://github.com/WDI-SEA/cards-against-assembly
+
 Take five minutes and inspect our starter code. You'll see a pretty normal Angular app, and since we're repeating using those cards, and there's a few consistent tags we're repeating every time we render a card, we're going to experiment with making those cards a custom-defined directive.
 
 <img width="965" alt="Cards Against Assembly" src="https://cloud.githubusercontent.com/assets/25366/9666972/05a2f348-522e-11e5-8f6c-7c503032eff4.png">
