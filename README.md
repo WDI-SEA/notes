@@ -224,6 +224,12 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Custom Filters][319] | [Creating Filters][1313] |
 | [Custom Directives][320] | [Creating Directives][1314] |
 
+###ReactJS
+
+| Topic | Assignments |
+| ----- | ----------- |
+| [Intro to ReactJS][328] | [React Stopwatch][1316] |
+
 ###Computer Science
 
 | Topic | Assignments |
@@ -276,6 +282,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [325]: 08-cs/cs-sorting/readme.md
 [326]: 08-cs/cs-hashmaps/readme.md
 [327]: 08-cs/cs-trees-data-structures/readme.md
+[328]: 10-react/react-intro/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
@@ -293,3 +300,4 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1313]: https://github.com/WDI-SEA/angular-filters
 [1314]: https://github.com/WDI-SEA/angular-directives
 [1315]: https://github.com/WDI-SEA/interview-questions
+[1316]: https://github.com/WDI-SEA/react-stopwatch
