@@ -19,7 +19,7 @@ What's the fastest and slowest sites you can ping?
 University servers are usually hosted on their actual campuses. Use university servers to estimate how long it takes requests to travel around the world. Look up the distance between cities and calculate miles / time in milliseconds to calculate how fast these requests travel.
 
 ```
-$ ping washington.edu
+$ ping washington.edu # 4 miles away from GA campus
 PING washington.edu (128.95.155.134): 56 data bytes
 64 bytes from 128.95.155.134: icmp_seq=0 ttl=54 time=6.478 ms
 64 bytes from 128.95.155.134: icmp_seq=1 ttl=54 time=8.162 ms
@@ -29,7 +29,7 @@ PING washington.edu (128.95.155.134): 56 data bytes
 3 packets transmitted, 3 packets received, 0.0% packet loss
 round-trip min/avg/max/stddev = 6.478/7.189/8.162/0.712 ms
 
-$ ping stanford.edu
+$ ping stanford.edu # 700 miles from Seattle
 PING stanford.edu (171.67.215.200): 56 data bytes
 64 bytes from 171.67.215.200: icmp_seq=0 ttl=247 time=26.922 ms
 64 bytes from 171.67.215.200: icmp_seq=1 ttl=247 time=28.804 ms
@@ -37,9 +37,15 @@ PING stanford.edu (171.67.215.200): 56 data bytes
 64 bytes from 171.67.215.200: icmp_seq=3 ttl=247 time=26.987 ms
 ^C
 
-$ ping london.ac.uk
-$ ping sydney.edu.au
-$ ping u-tokyo.ac.jp
+$ ping www.cam.ac.uk # 4,757 miles from Seattle
+$ ping sydney.edu.au # 4,787 miles from Seattle, in the other direction!
+$ ping www.u-tokyo.ac.jp # 7,757 miles from Seattle
+```
+
+Ping this specific IP address and see how long it takes the server to respond. Google this IP to find out what makes it unique. Be sure to use the Google homepage. IP addresses are hard to quick-search from your browser's location bar!
+
+```
+$ ping 127.0.0.1
 ```
 
 #### Experiment with the traceroute command to see how internet traffic flows between your computer and servers:
