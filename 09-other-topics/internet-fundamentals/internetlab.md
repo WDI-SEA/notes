@@ -37,9 +37,9 @@ PING stanford.edu (171.67.215.200): 56 data bytes
 64 bytes from 171.67.215.200: icmp_seq=3 ttl=247 time=26.987 ms
 ^C
 
-$ london.ac.uk
+$ ping london.ac.uk
 $ ping sydney.edu.au
-$ u-tokyo.ac.jp
+$ ping u-tokyo.ac.jp
 ```
 
 #### Experiment with the traceroute command to see how internet traffic flows between your computer and servers:
