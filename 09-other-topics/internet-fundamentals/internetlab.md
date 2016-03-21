@@ -11,6 +11,25 @@
 - T/F: Every HTTP request has a domain and a path.
 - T/F: Email uses the HTTP Protocol.
 
+#### Experiment with the traceroute command to see how internet traffic flows between your computer and servers:
+
+```
+$ traceroute washington.edu
+traceroute: Warning: washington.edu has multiple addresses; using 128.95.155.135
+traceroute to washington.edu (128.95.155.135), 64 hops max, 52 byte packets
+ 1  10.1.4.1 (10.1.4.1)  2.372 ms  2.008 ms  1.976 ms
+ 2  209.63.143.50 (209.63.143.50)  4.526 ms  4.797 ms  4.356 ms
+ 3  209.63.101.2 (209.63.101.2)  6.384 ms  5.994 ms
+    209.63.101.6 (209.63.101.6)  6.123 ms
+ 4  six.tr-cps.internet2.edu (206.81.80.77)  11.866 ms  5.300 ms  5.357 ms
+ 5  ae-1.80.rtr.seat.net.internet2.edu (64.57.20.212)  4.118 ms  6.208 ms  4.382 ms
+ 6  198.71.47.6 (198.71.47.6)  4.226 ms  6.278 ms  6.259 ms
+ 7  ae0--4000.icar-sttl1-1.infra.pnw-gigapop.net (209.124.188.132)  6.270 ms  9.782 ms  9.148 ms
+ 8  ae0--4000.uwbr-ads-1.infra.washington.edu (209.124.188.133)  8.508 ms  5.471 ms  5.914 ms
+ 9  * * *
+10  * * * (ignore asterisks and press CTRL+C to quit)
+```
+
 #### Experiment with cURL and send requests to various web pages. Here are some useful flags you can use:
 ```
 # -I returns the response headers only
