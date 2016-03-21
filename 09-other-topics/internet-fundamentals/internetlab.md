@@ -37,9 +37,9 @@ PING stanford.edu (171.67.215.200): 56 data bytes
 64 bytes from 171.67.215.200: icmp_seq=3 ttl=247 time=26.987 ms
 ^C
 
-$ ping www.cam.ac.uk # 4,757 miles from Seattle
-$ ping sydney.edu.au # 4,787 miles from Seattle, in the other direction!
-$ ping www.u-tokyo.ac.jp # 7,757 miles from Seattle
+$ ping www.cam.ac.uk # Cambridge University in London: 4,757 miles from Seattle
+$ ping www.u-tokyo.ac.jp # The University of Tokyo: 4,787 miles from Seattle, in the other direction!
+$ ping sydney.edu.au # The University of Sydney in Australia: 7,757 miles from Seattle
 ```
 
 Ping this specific IP address and see how long it takes the server to respond. Google this IP to find out what makes it unique. Be sure to use the Google homepage. IP addresses are hard to quick-search from your browser's location bar!
