@@ -229,6 +229,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Topic | Assignments |
 | ----- | ----------- |
 | [Intro to ReactJS][328] | [React Stopwatch][1316] |
+| [React with Gulp and Browserify][329] | |
 
 ###Computer Science
 
@@ -283,6 +284,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [326]: 08-cs/cs-hashmaps/readme.md
 [327]: 08-cs/cs-trees-data-structures/readme.md
 [328]: 10-react/react-intro/readme.md
+[329]: 10-react/react-gulp-browserify/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
