@@ -169,6 +169,7 @@
     * [Internet Lab](09-other-topics/internet-fundamentals/internetlab.md)
   * [User Stories and Wireframing](09-other-topics/user-stories-wireframing/readme.md)
     * [Wireframing Exercise: Build an Idea](09-other-topics/user-stories-wireframing/exercise.md)
+  * [Post WDI](09-other-topics/post-wdi/readme.md)
 * [Projects](11-projects/readme.md)
   * [Project 1](11-projects/project-1/readme.md)
   * [Project 2](11-projects/project-2/readme.md)
