@@ -51,7 +51,7 @@ Create a file called `.babelrc` in the root of the project directory, and create
 }
 ```
 
-This preset will tell Babel to transpile using the React preset.
+This preset will tell Babel to transpile using the React preset. Note that this is **IMPORTANT** when working with Babel, and the presets may vary depending on the type of application being developed.
 
 ##Creating a Gulpfile
 
