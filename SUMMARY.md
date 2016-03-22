@@ -138,6 +138,8 @@
     * [OMDB Router](10-react/react-router/omdb-router.md)
     * [OMDB Search](10-react/react-router/omdb-search.md)
     * [Additional Resources](10-react/react-router/additional-resources.md)
+  * [React Animations](10-react/react-animations/readme.md)
+    * [CSS Animations](10-react/react-animations/css-animations.md)
 * [Deployment and Config](00-config-deployment/readme.md)
   * [Installfest](00-config-deployment/installfest/readme.md)
     * [Mac OSX](00-config-deployment/installfest/osx/readme.md)

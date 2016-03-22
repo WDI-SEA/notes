@@ -231,6 +231,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Intro to ReactJS][328] | [React Stopwatch][1316] |
 | [React with Gulp and Browserify][329] | |
 | [React Router][330] <br><br> [Starter Code][331] | [React Yearbook][1317] |
+| [React Animations][332] <br><br> | |
+
 
 ###Computer Science
 
@@ -288,6 +290,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [329]: 10-react/react-gulp-browserify/readme.md
 [330]: 10-react/react-router/readme.md
 [331]: https://github.com/WDI-SEA/react-omdb
+[332]: 10-react/react-animations/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
