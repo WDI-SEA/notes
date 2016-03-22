@@ -110,6 +110,12 @@ Before CSS became mainstream, websites were designed using tables. Although they
 * `<thead></thead>` - create the head of the table (newer tag). No matter where this is located, whatever is in it will be the first row
 * `<tfoot></tfoot>` - create the foot of the table (newer tag). No matter where this is located, whatever is in it will be the last row
 
+### Practice Creating Tables
+
+Clone the repo and open instructions.html in your browser. Edit the basic data provided in skeleton.html to create a webpage that looks like the solution picture shown in the instructions.
+
+https://github.com/WDI-SEA/html_top_ten_movies_table
+
 ### Images and Links
 
 <p data-height="268" data-theme-id="0" data-slug-hash="NxOdgv" data-default-tab="html" data-user="bhague1281" class='codepen'>See the Pen <a href='http://codepen.io/bhague1281/pen/NxOdgv/'>Images and Links</a> by Brian Hague (<a href='http://codepen.io/bhague1281'>@bhague1281</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
