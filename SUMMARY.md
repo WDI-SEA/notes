@@ -125,6 +125,7 @@
   * [Angular Routing](07-angular/angular-routing/readme.md)
   * [Angular + Express](07-angular/angular-express/readme.md)
   * [Angular Authentication](07-angular/angular-authentication/readme.md)
+    * [Additional Topics](07-angular/angular-authentication/additional-topics.md)
   * [Angular Custom Filters](07-angular/angular-custom-filters/readme.md)
   * [Angular Custom Directives](07-angular/angular-custom-directives/readme.md)
 * [ReactJS](10-react/readme.md)
