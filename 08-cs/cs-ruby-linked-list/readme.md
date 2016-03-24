@@ -25,7 +25,7 @@ In lower level languages, arrays are allocatd in **blocks.** Therefore, arrays a
 
 The best way to understand how linked lists work is to make one! Let's do so in Ruby. Here's the process.
 
-1. Start by creating a `Node` Class. We will have attributes to represent the data (let's call this `data`) and the reference to the next Node (let's call this `next`).
+1. Start by creating a `Node` Class. We will have attributes to represent the data (let's call this `@data`) and the reference to the next Node (let's call this `@next`).
 
 2. Create a `LinkedList` class. This class will have two values, `@head` and `@tail`. These will represent the beginning and end of the list. Initialize both to `nil` for now. We have an empty list!
 
