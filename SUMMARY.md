@@ -168,6 +168,7 @@
   * [Trees and Other Topics](08-cs/cs-trees-data-structures/readme.md)
 * [Assorted Topics](09-other-topics/readme.md)
   * [Intro to WDI (Course Info)](09-other-topics/intro-wdi/readme.md)
+  * [Being Successful in WDI](09-other-topics/success-in-wdi/readme.md)
   * [Internet Fundamentals](09-other-topics/internet-fundamentals/readme.md)
     * [Internet Lab](09-other-topics/internet-fundamentals/internetlab.md)
   * [User Stories and Wireframing](09-other-topics/user-stories-wireframing/readme.md)
