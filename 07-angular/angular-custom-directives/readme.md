@@ -328,30 +328,6 @@ Now if we update `cardView.html`, we can add this function to the template. Let'
 </div>
 ```
 
-Try it out! We'll be making our own Facebook `like` button and a more complex `weather` directive in the homework using these concepts.
-
-###Compile, Controller, preLink, Link
-
-There are 4 life cycle functions that you can define for a directive. It's often confusing to understand when you should use which function. Sometimes, it doesn't make much of a difference. The key is understanding the order in which these functions are triggered.
-
-Usually we'll only use `controller`, but compile, link, and pre-link are also available if we need to run code a a specific point in the life cycle.
-
-It often doesn't matter which one we use, but understanding how these functions fire on nested directives is pretty helpful.
-
-**Example**
-
-```html
-<parent-dir>
-  <child-dir>
-    <grand-child-dir></grand-child-dir>
-  </child-dir>
-</parent-dir>
-```
-
-**Execution Order**
-
-![image](diagram2.png)
-
 ## Conclusion
 * Where can you imagine using custom directives?
 * What four types of directives can you make?
