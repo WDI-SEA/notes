@@ -147,7 +147,7 @@ Now that we know how to select DOM elements, we can attach events to them:
 
 #####addEventListener
 
-What would happen if we had two different parts of our program that wanted to modify to do something when an `click` happened this can't happend with the `onclick` syntax. Hence we use the `addEventListener` syntax from here on out to allow this.
+We have different **events**, but now we need a way to attach these events to elements. The solution? Use the `addEventListener` function. This function is called on DOM elements and takes two parameters: an **event type** and a **function**. The event type refers to a "click", "mouseover", or other type of event. The function contains the code that runs when the event occurs.
 
 Also this is the style you should use often.
 
