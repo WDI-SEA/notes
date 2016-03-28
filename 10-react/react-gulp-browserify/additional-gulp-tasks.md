@@ -34,6 +34,17 @@ In order to control code quality, companies may use **code linters** in order to
 
 **Example**
 
+In the root of your project, you'll need to create a file named `.eslintrc`, which looks something like this:
+
+```js
+{
+  "extends": ["airbnb"]
+}
+```
+
+and then your `gulpfile.js` should look something like this:
+
+
 ```js
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
