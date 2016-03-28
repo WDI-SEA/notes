@@ -114,7 +114,7 @@ gulp.task('build', function() {
     extensions: ['.jsx'],
     debug: true
   })
-  .transform(babelify)
+  .transform(babelify, {presets: "react"})
   .bundle()
   .pipe(source('app.js'))
   .pipe(gulp.dest('dist'));
