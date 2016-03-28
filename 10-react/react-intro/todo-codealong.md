@@ -12,7 +12,7 @@ Make sure to fork the starter template, then write the following component:
 
 ```js
 //creating a basic component with no data, just a render function
-var MyApp = React.createClass({
+const MyApp = React.createClass({
   render: function() {
     return (
       <div className="well">
@@ -48,13 +48,13 @@ Here are some notes about our first component:
 Once components are created, we can use them as subcomponents. Let's try doing this by creating a list with list items inside.
 
 ```js
-var ListItem = React.createClass({
+const ListItem = React.createClass({
   render: function() {
     return <li>Item</li>;
   }
 });
 
-var ToDoList = React.createClass({
+const ToDoList = React.createClass({
   render: function() {
     return (
       <ul>
@@ -69,7 +69,7 @@ var ToDoList = React.createClass({
 Then, add `<ToDoList></ToDoList>` to the `render` function for `MyApp`.
 
 ```js
-var MyApp = React.createClass({
+const MyApp = React.createClass({
   render: function() {
     return (
       <div className="well">
@@ -108,13 +108,13 @@ this.props
 Let's modify the `ListItem` and `ToDoList` components to use `props`.
 
 ```js
-var ListItem = React.createClass({
+const ListItem = React.createClass({
   render: function() {
     return <li>{this.props.item}</li>;
   }
 });
 
-var ToDoList = React.createClass({
+const ToDoList = React.createClass({
   render: function() {
     return (
       <ul>
@@ -131,7 +131,7 @@ Note that we now pass `{this.props.item}` into the `render` function of `ListIte
 If we want to make this a truly extensible list, we could create an array of items, then pass them into `props` through the `ToDoList` component, then render out each item. Let's do that now.
 
 ```js
-var ToDoList = React.createClass({
+const ToDoList = React.createClass({
   render: function() {
     const todoItems = this.props.items.map(item => {
       return <ListItem item={item}></ListItem>
@@ -149,7 +149,7 @@ var ToDoList = React.createClass({
 In a React component, `state` is just another object, like `props`. The only difference is that it can only be changed through the method `setState`. The exception is setting the initial state, which is only done once when initializing a React component. In order to pass items to the `ToDoList` component and make them mutable, we'll need to set the state of `MyApp`. Let's continue refactoring our `MyApp` component to assign `toDos` through `state`.
 
 ```js
-var MyApp = React.createClass({
+const MyApp = React.createClass({
   getInitialState: function() {
     return {
       toDos: ['Mow the lawn', 'Get groceries', 'Finish WDI']
@@ -173,7 +173,7 @@ All we changed was adding a new function called `getInitialState`, which returns
 Updating state will involve calling `setState`. Let's use a simple example with a clear button in `MyApp`
 
 ```js
-var MyApp = React.createClass({
+const MyApp = React.createClass({
   getInitialState: function() {
     return {
       toDos: ['Mow the lawn', 'Get groceries', 'Finish WDI']
@@ -213,7 +213,7 @@ We'll also need **two** additional functions to represent the following changes 
 Like so:
 
 ```js
-var MyApp = React.createClass({
+const MyApp = React.createClass({
   getInitialState: function() {
     return {
       toDos: ['Mow the lawn', 'Get groceries', 'Finish WDI'],
@@ -228,7 +228,7 @@ var MyApp = React.createClass({
   },
   addItem: function(e) {
     e.preventDefault();
-    var toDos = this.state.toDos;
+    const toDos = this.state.toDos;
     toDos.push(this.state.newItem);
     this.setState({toDos: toDos, newItem: ''});
   },
@@ -266,7 +266,7 @@ In order to fix this up, let's rename `MyApp` to `ToDoApp` and create a new `MyA
 
 ```js
 //creating a basic component with no data, just a render function
-var ToDoApp = React.createClass({
+const ToDoApp = React.createClass({
   getInitialState: function() {
     return {
       toDos: ['Mow the lawn', 'Get groceries', 'Finish WDI'],
@@ -281,7 +281,7 @@ var ToDoApp = React.createClass({
   },
   addItem: function(e) {
     e.preventDefault();
-    var toDos = this.state.toDos;
+    const toDos = this.state.toDos;
     toDos.push(this.state.newItem);
     this.setState({toDos: toDos, newItem: ''});
   },
@@ -303,13 +303,13 @@ var ToDoApp = React.createClass({
   }
 });
 
-var ListItem = React.createClass({
+const ListItem = React.createClass({
   render: function() {
     return <li>{this.props.item}</li>;
   }
 });
 
-var ToDoList = React.createClass({
+const ToDoList = React.createClass({
   render: function() {
     const todoItems = this.props.items.map(item => {
       return <ListItem item={item}></ListItem>
@@ -321,7 +321,7 @@ var ToDoList = React.createClass({
   }
 });
 
-var MyApp = React.createClass({
+const MyApp = React.createClass({
   render: function() {
     return (
       <div>
