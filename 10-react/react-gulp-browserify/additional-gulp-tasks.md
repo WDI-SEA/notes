@@ -6,7 +6,7 @@ https://github.com/WDI-SEA/react-starter-basic
 
 ###gulp.watch
 
-If running `gulp` over and over again becomes annoying, you can create a `watch` task and run `gulp.watch`, which will run task(s) whenever specified files change.
+If running `gulp` over and over again becomes annoying, you can create a `watch` task and run `gulp watch`, which will run task(s) whenever specified files change.
 
 > Extra dev dependencies: none
 
