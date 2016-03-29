@@ -275,7 +275,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [314]: https://github.com/WDI-SEA/fly-on-angular
 [315]: 07-angular/angular-authentication/readme.md
 [316]: https://github.com/WDI-SEA/angular-recipes
-[317]: 08-cs/cs-linked-list/readme.md
+[317]: 08-cs/cs-ruby-linked-list/readme.md
 [318]: 08-cs/cs-ruby-linked-list-2/readme.md
 [319]: 07-angular/angular-custom-filters/readme.md
 [320]: 07-angular/angular-custom-directives/readme.md
