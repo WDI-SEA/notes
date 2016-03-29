@@ -63,6 +63,9 @@ gulp.task('build', function() {
 gulp.task('default', ['lint', 'build']);
 ```
 
+eslint will give you a lot of errors, because `eslint-config-airbnb` wants you to write es6 code, rather than JavaScript.
+
+
 ###Gulp with SASS
 
 Don't worry, SASS isn't limited to Rails. We can use the `gulp-sass` package to take SASS files and compile them to CSS.

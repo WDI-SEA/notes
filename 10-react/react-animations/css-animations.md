@@ -55,6 +55,28 @@ return (
 );
 ```
 
+Finally, we have to add the actual transitions to our CSS. Add the following to `sass/style.scss`.
+
+```css
+.listing-enter {
+  opacity: 0.01;
+}
+
+.listing-enter.listing-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.listing-leave {
+  opacity: 1;
+}
+
+.listing-leave.listing-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+```
+
 We should now have transitions for each `MusicListing` component! However, there may be an issue when searching two terms one after another. The enter transition works, but the leave transition doesn't work. We can solve this by setting the `state` in the `search` function, so that the array is cleared before we reassign the results.
 
 In `/src/components/MusicSearch.jsx`, make the following change to the `search` function.
