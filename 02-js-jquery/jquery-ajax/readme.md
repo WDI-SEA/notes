@@ -107,7 +107,7 @@ console.log(posts);
 $.get('https://www.reddit.com/search.json', {
   q: 'kittens'
 }).done(function(data) {
-  posts = data;
+  var posts = data;
   console.log(posts);
 });
 
