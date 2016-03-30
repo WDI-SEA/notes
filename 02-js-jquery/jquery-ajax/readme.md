@@ -146,8 +146,6 @@ Here are a few APIs you can use to practice AJAX calls. They either won't save c
 
 [Open Movie Database API](http://www.omdbapi.com/)
 
-[Game of Ipsum API](http://www.gameofipsum.com/api/)
-
 [Acromine acronym API](http://www.nactem.ac.uk/software/acromine/rest.html)
 
 [Pokemon API](http://pokeapi.co/)
