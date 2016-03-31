@@ -59,7 +59,7 @@ Combining the left partitions and right partitions give us:
 
 ## Implementation
 
-Quicksort is one of the more difficult sorts to implement, so a partition function is provided for you. This function partitions a section of an array and returns the pivot. Implement quicksort while meeting the following requirements:
+Quicksort is one of the more difficult sorts to implement, so a partition function is provided for you. This function partitions a section of an array and returns the array index of the pivot. Implement quicksort while meeting the following requirements:
 
 * written in Ruby
 * no built-in functions (such as sort!)
@@ -89,7 +89,7 @@ def quicksort(arr, lo, hi)
 
 end
 
-# partition function (selects a pivot and sorts into partitions)
+# partition function (selects a pivot, sorts into partitions, and returns the array index of the pivot)
 def partition(arr, lo, hi)
   pivot = arr[hi]
 
