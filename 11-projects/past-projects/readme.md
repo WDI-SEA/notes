@@ -199,7 +199,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
   * Flashcard application
 * [Samesies - Thomas](http://samesies.herokuapp.com/)
   * Ecommerce store for web design themes
-* [Moodboard - Tess](http://my-moodboard.meteor.com/)
+* [Moodboard - Tess](https://mymoodboard.herokuapp.com/)
   * Get inspiration for a project or design (ReactJS + Meteor)
 * [Feeding Seattle - Emma](https://feedingseattle.herokuapp.com/)
   * Meals for Homeless and Low-Income Individuals and Families in Seattle
