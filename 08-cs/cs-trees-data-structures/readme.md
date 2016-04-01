@@ -8,7 +8,7 @@ Trees consist of a top node, called the **root** of the tree, linking to **child
 
 ![A tree](http://poj.org/images/1330_1.jpg)
 
-So what's the point? Trees are used in many areas of computer science, including syntax parsers (determines if your parentheses and functions are correct). They're also used in practical applications, such as nested comments.
+So what's the point? Trees are used in many areas of computer science, including syntax parsers (determines if your parentheses and functions are correct). They're also used in practical applications, such as nested comments and files/directories.
 
 ### Binary Search Trees
 
@@ -16,7 +16,21 @@ The most common tree structure is known as a binary search tree. Each node has a
 
 ![BST](http://cramster-image.s3.amazonaws.com/definitions/computerscience-5-img-1.png)
 
-On average, insertion, deletion, and search take O(log(n)) with binary search trees. But there's a worst case scenario.
+Note the **mathematical benefits** of a binary tree. As we add another "level" to the tree, the number of nodes at that level doubles. Therefore, this can be represented with the equation
+
+```
+2^x = n
+```
+
+where `x` is the number of levels, and `n` is the number of nodes. Since it's likely that we know the number of nodes vs. of the number of levels, we can represent this equation with logarithms.
+
+```
+x = log(n)
+```
+
+where `x` is the number of levels, and `n` is the number of nodes.
+
+Due to the mathematical benefits above, insertion, deletion, and search take an average of O(log(n)) with binary search trees. But there's a worst case scenario.
 
 ![BST worst case](http://interactivepython.org/runestone/static/pythonds/_images/skewedTree.png)
 
@@ -32,7 +46,7 @@ Tries are a special type of tree, usually implemented with strings as the data, 
 
 ![Trie](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/400px-Trie_example.svg.png)
 
-They're usually used for quick lookups, generally autocomplete fields and IP address lookups.
+They're usually used for quick lookups, generally autocomplete fields and IP address lookups. Assuming a trie was balanced, what would be the average lookup time for a value?
 
 ### Sets
 
@@ -82,12 +96,16 @@ s1 & s3
 
 ## Graphs
 
-If we remove even more restrictions from trees, we end up with graphs, which are interconnected sets of nodes.
+If we remove even more restrictions from trees, we end up with graphs, which are interconnected sets of nodes. Each connection is called an **edge**.
 
 ![Undirected graph](https://computersciencesource.files.wordpress.com/2010/05/dfs_1.png)
 ![Directed graph](https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Directed_acyclic_graph_2.svg/305px-Directed_acyclic_graph_2.svg.png)
 
 Graphs can be directed (a path that has direction) or undirected. Graphs are essential in applications such as Facebook or Twitter, where showing relationships between users and groups is essential across large applications. Other applications include maze solving and mutual friend finding, which can be implemented via the following graph searches.
+
+Graphs are more than just nodes and edges though. Graph theory categorizes graphs by different properties, such as **bipartite**, **directed**, **undirected**, and more.
+
+Note that we can modify a linked list to be a graph. Instead of having one `next` pointer, we could have either a list or matrix that shows which edges the graph connects to.
 
 [RGL: Ruby library for graphs](https://github.com/monora/rgl)
 
@@ -125,6 +143,8 @@ If one of these encroaches on the other, we run out of memory!
 
 Ideally, this shouldn't happen, so we need to make sure that we only allocate memory when we absolutely need it. Web programmers occasionally encounter these problems, so it's good
 to have a general idea of what's going on under the hood.
+
+Also note that linked lists, graphs, trees, and any other data structure that relies on **pointers** (variables that aren't values, but memory addresses) will usually store data in the heap.
 
 ### Memory Hierarchy
 
