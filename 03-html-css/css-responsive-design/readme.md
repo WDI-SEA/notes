@@ -107,12 +107,14 @@ A potentially more useful example would be to float all list items left until a 
 
 ```css
 li {
-  float: none;
+  display: block;
+  color: blue;
 }
 
 @media (min-width: 600px) {
   li {
-    float: left;
+    display: inline-block;
+    color: red;
   }
 }
 ```

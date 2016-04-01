@@ -77,7 +77,7 @@ my_bank_account = nil
 ```
 
 ### Booleans
-A bianary representation: either `true` or `false`
+A binary representation: either `true` or `false`
 
 ```rb
 is_operating = true

@@ -107,7 +107,7 @@ console.log(posts);
 $.get('https://www.reddit.com/search.json', {
   q: 'kittens'
 }).done(function(data) {
-  posts = data;
+  var posts = data;
   console.log(posts);
 });
 
@@ -137,6 +137,55 @@ Here, we added a second promise called `.fail()`. Try running the code above by 
 
 Since the `.done()` function made a promise to the AJAX function to only run when successful, the `.done()` function does not fun, thus keeping its promise. Keep a lookout for promises implemented in the context of AJAX and other libraries.
 
+## Putting AJAX On the Page
+
+It's no fun simply logging search results to the page. Let's put content on the page!
+
+Fork this repo and pull it down to your own computer. The page has a basic search box set
+up and already includes AJAX code that will search for kittens on reddit. We need to process
+the AJAX response and create elements to add to the DOM to display the results on the page.
+
+[AJAX Reddit Search](https://github.com/WDI-SEA/ajax-reddit-search)
+
+AJAX responses are usually deeply nested objects carry lots of information. We can look at
+an API to see what the response is supposed to look like. Orrr, we can set a breakpoint
+at the point when data arrives and use our debugger to play around with the object and see
+what data comes back.
+
+The console.log() statement printing the response allows us to use our mouse to click on
+properties of the object and investigate them. Pausing the debugger at the point when
+the response arrives allows us to interact with the console when the response variable
+is in scope. We can write commands on the console to see if they work and copy and paste
+valid code back into our program.
+
+Remember, we have to ways to set breakpoints. We can write the ```debugger``` keyword
+in our program when we want the program to stop. Or, we can look at the source in Chrome's
+Developer Tools and click on a line to tell the browser to stop there.
+
+Adding a console.log() will print the response every time, and gives us a line number to
+click on. We can follow the link to the line number and clck on that line to set a
+temporary breakpoint manually.
+
+Using the ```debugger``` keyword will stop our program every time. It won't output anything
+to the console so we won't be able to see data once we're past that point of execution.
+
+Take a moment to work in groups to write the pros and cons of both console.log statements
+and using the ```debugger``` keyword.
+
+Use your debugging tools to investigate the response object and find out how to access
+the title and the url of the first result. Copy and paste parts of this line of code
+into your program so you have easy access to the important parts of your search results.
+
+![debugging view](./debugging_view.png)
+
+Consider how the ```forEach``` and ```map``` functions may be useful tools to process
+this complicated objects.
+
+Now you know how to access information you want to display on the page. Find a way
+to use and modify the provided ```addSearchResult`` function to get search results
+to display on the page.
+
+Now you're cooking with gas.
 
 ##APIs to hit
 
@@ -145,8 +194,6 @@ Here are a few APIs you can use to practice AJAX calls. They either won't save c
 [General Assembly's Doughnuts API](https://api.doughnuts.ga/)
 
 [Open Movie Database API](http://www.omdbapi.com/)
-
-[Game of Ipsum API](http://www.gameofipsum.com/api/)
 
 [Acromine acronym API](http://www.nactem.ac.uk/software/acromine/rest.html)
 
