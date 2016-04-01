@@ -13,11 +13,12 @@ a flexible and fast way of storing and retrieving data. Why is this? To find out
 
 ## Data structure basics
 
-Data structures are just collections of information, and there are three operations that you'll need to do with any data structure:
+Data structures are just collections of information, and there are four operations that you'll need to do with any data structure:
 
 * Insertion - The data structure would be useless if you couldn't add things to it.
-* Lookup - You need to be able to access items
-* deletion - You should be able to remove things from a data structure when you need to
+* Search - Finding an item when you don't initially know where it is
+* Access - Accessing an item when you know it's location
+* Deletion - You should be able to remove things from a data structure when you need to
 
 In the most basic possible data structure, an unorganized array, insertion is easy as long as you store the length of the array. Just add something to the end. Lookup is hard. In the worst case, you go through
 the entire array, and only find what you're looking for at the end. Deletion is similarly worse. You might have to go through the entire array, and then if you remove an item, you either leave gaps in your array,
