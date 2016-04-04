@@ -2,6 +2,7 @@
 * Models
   * [Data types](http://docs.sequelizejs.com/en/latest/docs/models-definition/#data-types)
   * [Validations](http://docs.sequelizejs.com/en/latest/docs/models-definition/#validations)
+  * Note that Sequelize **expects the model to be singular**, and uses a pluralizer module to determine what the pluralized model should be. If you're unsure what the pluralizer will output, use this handy app to see what the pluralized model will be. [http://plural-test.herokuapp.com/](Plural Test)
 * Querying
   * [Query usage (comparable to SELECT, INSERT, COUNT, MAX, etc.)](http://docs.sequelizejs.com/en/latest/docs/models-usage/)
   * [Destroying records (comparable to DELETE)](http://docs.sequelizejs.com/en/latest/docs/instances/#destroying-deleting-persistent-instances)
