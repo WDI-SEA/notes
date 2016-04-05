@@ -1,7 +1,7 @@
 # Hosting on Github Pages
 
 ## Objectives
-* Understand some of the benefits of hosting on Github Pages
+* Understand some of the benefits of hosting on [Github Pages](https://pages.github.com/)
 * Create a Github page using the automatic generator
 * Create a Github page manually (using your own HTML/CSS/JS)
 
