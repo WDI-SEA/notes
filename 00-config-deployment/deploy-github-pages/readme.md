@@ -18,26 +18,36 @@
 * Read more about [the game and the Italian developer, Gabriele Cirulli](https://en.wikipedia.org/wiki/2048_(video_game))
 * If you're ever bored and want to [make your own 2048](http://2048.directory/), you can fork Gabriele's game.
 
-### Setup
+### Setup Your Main Page
 
-Make sure that you have a separate Github repository for your project.
+Enable GitHub Pages in your GitHub account by creating a new specially-named repo named `username.github.io`. This repo contains HTML, JS and CSS that acts as your GitHub Pages homepage. Once you have this main repo set up you can make other repos available too.
 
-### `gh-pages` branch
+Follow instructions on [Github Pages](https://pages.github.com/) to initialize GitHub Pages in your GitHub account.
+
+1. [Create a new repository](https://github.com/new) named `username.github.io` where `username` is your GitHub username.
+2. Clone the new repo to your computer `git clone https://github.com/username/username.github.io`
+3. Change your directory to the repo `cd username.github.io`
+4. Create a simple Hello World homepage: `echo "Hello World" > index.html`
+5. Add new files, commit the change, and push the repo.
+
+```
+git add -A
+git commit -m "Initial commit"
+git push -u origin master
+```
+
+6. View the now-hosted page! http://username.github.io.
+
+### Add Another Repo to GitHub Pages
 
 Github Pages works by serving HTML/CSS/JavaScript files that live in a separate branch.
 
 Think of a branch as a separate "timeline" for your code. It can represent a set of different commits. We've been dealing with the **master** branch so far, but now we'll introduce a new branch for deployment called **gh-pages**
 
-### Creates the gh-pages branch
-
-From your project repository, make sure you're on the master branch, and then create the gh-pages branch:
-
-```
-git checkout master
-git checkout -b gh-pages
-```
-
-This creates and switches you to the `gh-pages` branch.
+1. Choose an existing repo that you want to host on GitHub Pages.
+2. Checkout that repo on your local machine.
+3. Make sure you're on the master branch: `git checkout master`
+3. Create the special gh-pages branch: `git checkout -b gh-pages`
 
 Add the files you want to deploy, if necessary:
 
