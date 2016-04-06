@@ -5,10 +5,12 @@
 Before we do anything else, let's set up a basic express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
 
 ```
+mkdir organized-express-app
+cd organized-express-app
 npm install --save express
 ```
 
-`index.js`:
+index.js:
 ```
 var express = require("express");
 app = express();
@@ -21,7 +23,7 @@ app.get("/", function(req, res) {
 app.listen(3000);
 ```
 
-`views/index.ejs`:
+views/index.ejs:
 ```
 <!DOCTYPE html>
 <html>
