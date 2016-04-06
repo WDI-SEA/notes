@@ -1,5 +1,44 @@
 #Organizing an Express App
 
+## Basic Express Setup
+
+Before we do anything else, let's set up a basic express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
+
+```
+npm install --save express
+```
+
+`index.js`:
+```
+var express = require("express");
+app = express();
+app.set('view engine', 'ejs');
+
+app.get("/", function(req, res) {
+  res.render("index", {title: "Favorite Foods", foods: ["sandwich", "corn dog"]})
+});
+
+app.listen(3000);
+```
+
+`views/index.ejs`:
+```
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Webpage</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <ul>
+      <% foods.forEach(function(food) { %>
+        <li><%= food %></li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
+```
+
 ## Layouts
 
 Another layout option is to create a layout and have a body that is replaced with content (more similar to Rails, with a predetermined header/footer). In order to do this, another module must be installed.
