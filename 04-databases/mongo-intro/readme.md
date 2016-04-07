@@ -10,8 +10,8 @@
 
 ###Administration Interface
 
-In PostgreSQL, we used an administration interface (PG Commander) to easily interact with our database. There are also administration interfaces for MongoDB. Here is a handy link that lists a few:
-
-https://docs.mongodb.org/ecosystem/tools/administration-interfaces/
+In PostgreSQL, we used an administration interface (PG Commander) to easily interact with our database.
 
 For OSX users, we recommend [MongoHub](https://github.com/jeromelebel/MongoHub-Mac)
+
+For Linux users, we recommend the free edition of [Robomongo](https://robomongo.org/)
