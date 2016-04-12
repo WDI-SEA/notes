@@ -103,3 +103,42 @@ app.listen(3000);
 * After getting the response back, we need to **parse** the body using `JSON.parse`. Otherwise, we'll be treating the body as a string instead of an object.
 * It's very important to call `res.send` in the correct place (the request callback)
   * Try putting `res.send` outside of the `request` function two lines down. You'll get an error!
+
+### Creating UI From JSON
+Requests allows us to get data, but it's not displayed very pretty. Let's build a template to display the data.
+
+Create a file `views/results.ejs` to display all of the results:
+
+```html
+<!DOCTYPE>
+<html>
+  <head>
+    <title>Star Wars</title>
+  </head>
+  <body>
+    <h1>Star Wars</h1>
+    <% results.forEach(function(result) { %>
+      <% include ../partials/result %>
+    <% }); %>
+  </body>
+</html>
+```
+
+Create a file `partials/result.ejs` to define how each result should be displayed.
+Creating a directory called `partials` is a good way to organize sites. Create files
+that represent entire pages under `views` and place templates for small components of
+the site in the `partials` directory.
+
+
+```html
+<h2>
+  (<%= result.Year %>) <%= result.Title %>
+</h2>
+<img src="<%= result.Poster %>">
+```
+
+Render the page with the parsed results passed as a paramter:
+```js
+var dataObj = JSON.parse(body);
+res.render("results", {results: dataObj.Search});
+```
