@@ -78,7 +78,7 @@ In the root of the views folder, add a layout called `layout.ejs`
 </html>
 ```
 
-This layout will be used by all pages, and the content will be filled in where the `<%- body %>` tag is placed.
+This layout will be used by all pages, and the content will be filled in where the `<%- body %>` tag is placed. `<%- body %>` is a special tag used by `express-ejs-layouts` that cannot be renamed.
 
 Now we can create another page `animals.ejs` and see that it's content is placed in the page. We can create new pages without having to write the include statements for the header and footer.
 
