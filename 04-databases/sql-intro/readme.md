@@ -251,17 +251,6 @@ Similar to how Ruby has types of data, SQL defines types that can be stored in t
 * Timestamp
 * Boolean (True or False)
 
-## Normalization
-
-Normalization is a more advanced database design topic. The idea behind normalization is that the data in your table should not be repeated. The introduction of the [wikipedia article on normalization](http://en.wikipedia.org/wiki/Database_normalization) gives a good summary. It involves grouping data into tables so that data is not repeated redundantly.
-
-## ER Diagrams
-
-Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
-
-* [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
-* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
-
 ## Exercise Time
 
 Design a table for a movie database. Discuss a few things that a movie table may have. Choose the appropriate data type for the data. Make the CREATE TABLE command and execute it in psql. Use \dt to verify that the table was created. Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use \dt again to make sure that the table has been dropped.
@@ -368,4 +357,13 @@ We could also use compond statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
+## Normalization
 
+Normalization is a more advanced database design topic. The idea behind normalization is that the data in your table should not be repeated. The introduction of the [wikipedia article on normalization](http://en.wikipedia.org/wiki/Database_normalization) gives a good summary. It involves grouping data into tables so that data is not repeated redundantly.
+
+## ER Diagrams
+
+Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
+
+* [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
+* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
