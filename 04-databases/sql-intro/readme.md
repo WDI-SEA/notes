@@ -2,7 +2,7 @@
 
 ## Objectives
 * Understand the purpose of a database
-* Utilize PostgreSQL using the psql client
+* Connect to a PostgreSQL database using `psql`
 * Use SQL to create a database and tables
 * Use SQL to insert, select, update, and delete data
 * Understand what Primary Keys are
@@ -49,7 +49,9 @@ A database server is a computer or group of computers that is dedicated to stori
 
 # psql
 
-If you installed Postgress.app you have access to psql from the elephant icon at the top of the screen:
+Today we're using PostgreSQL, often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from. We're using a "post-Ingres" database.
+
+If you installed Postgres.app you have access to psql from the elephant icon at the top of the screen:
 
 * ![image](Postgres.png)
 
