@@ -230,6 +230,11 @@ SERIAL tells the database to automatically assign the next unused integer value 
 It provides a reference to a primary key in another table.
 
 ```sql
+CREATE TABLE courses (
+    id SERIAL PRIMARY KEY,
+    course TEXT
+);
+
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     name TEXT,
