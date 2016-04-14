@@ -163,7 +163,7 @@ in our program when we want the program to stop. Or, we can look at the source i
 Developer Tools and click on a line to tell the browser to stop there.
 
 Adding a console.log() will print the response every time, and gives us a line number to
-click on. We can follow the link to the line number and clck on that line to set a
+click on. We can follow the link to the line number and click on that line to set a
 temporary breakpoint manually.
 
 Using the ```debugger``` keyword will stop our program every time. It won't output anything
