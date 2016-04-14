@@ -158,7 +158,7 @@ the response arrives allows us to interact with the console when the response va
 is in scope. We can write commands on the console to see if they work and copy and paste
 valid code back into our program.
 
-Remember, we have to ways to set breakpoints. We can write the ```debugger``` keyword
+Remember, we have two ways to set breakpoints. We can write the ```debugger``` keyword
 in our program when we want the program to stop. Or, we can look at the source in Chrome's
 Developer Tools and click on a line to tell the browser to stop there.
 
