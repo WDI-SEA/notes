@@ -135,7 +135,7 @@ $.get('https://www.reddit.com/thispagedoesntexist').done(function(data) {
 
 Here, we added a second promise called `.fail()`. Try running the code above by pasting it into the Chrome console on https://www.reddit.com, and see what happens. Only the `.fail()` function runs, and that's because the `.fail()` function makes a promise to the AJAX function that it will only run when there's an error.
 
-Since the `.done()` function made a promise to the AJAX function to only run when successful, the `.done()` function does not fun, thus keeping its promise. Keep a lookout for promises implemented in the context of AJAX and other libraries.
+Since the `.done()` function made a promise to the AJAX function to only run when successful, the `.done()` function does not run, thus keeping its promise. Keep a lookout for promises implemented in the context of AJAX and other libraries.
 
 ## Putting AJAX On the Page
 
