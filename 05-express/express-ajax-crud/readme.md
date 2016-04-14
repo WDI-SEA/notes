@@ -19,11 +19,11 @@ Imagine we have an app that stores teams signing up for a hackathon. We would cr
 |----|----|----|----|
 | GET | /teams | index | display a list of all teams |
 | GET | /teams/new | new | return an HTML form for creating a new team |
-| POST | /teams | create | create a new taco (using form data from /teams/new) |
+| POST | /teams | create | create a new team (using form data from /teams/new) |
 | GET | /teams/:id | show | display a specific team |
 | GET | /teams/:id/edit | edit | return an HTML form for editing a team |
 | PUT | /teams/:id | update | update a specific team (using form data from /teams/:id/edit) |
-| DELETE | /teams/:id | destroy | deletes a specific taco |
+| DELETE | /teams/:id | destroy | deletes a specific team |
 
 If you are storing something beside teams you'll use this same pattern. It could be `users`, `photos`, `books`, etc, etc.
 
