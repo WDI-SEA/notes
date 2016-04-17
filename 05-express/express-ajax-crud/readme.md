@@ -12,20 +12,20 @@ Source: [wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer
 
 ##RESTful routing example
 
-If we had an app that stored tacos we would create a model called taco (a single taco and it's attributes). The data would be stored in a table called tacos (where we store many tacos). The routes would also be the plural "tacos".
+Imagine we have an app that stores teams signing up for a hackathon. We would create a model called team which would represent a single team with their name and their members. The data would be stored in a table called teams (where we store many teams). The routes would also be the plural "teams".
 
 
 | Verb | Path | Action | Used for |
 |----|----|----|----|
-| GET | /tacos | index | display a list of all tacos |
-| GET | /tacos/new | new | return an HTML form for creating a new taco |
-| POST | /tacos | create | create a new taco (using form data from /tacos/new) |
-| GET | /tacos/:id | show | display a specific taco |
-| GET | /tacos/:id/edit | edit | return an HTML form for editing a taco |
-| PUT | /tacos/:id | update | update a specific taco (using form data from /tacos/:id/edit) |
-| DELETE | /tacos/:id | destroy | deletes a specific taco |
+| GET | /teams | index | display a list of all teams |
+| GET | /teams/new | new | return an HTML form for creating a new team |
+| POST | /teams | create | create a new team (using form data from /teams/new) |
+| GET | /teams/:id | show | display a specific team |
+| GET | /teams/:id/edit | edit | return an HTML form for editing a team |
+| PUT | /teams/:id | update | update a specific team (using form data from /teams/:id/edit) |
+| DELETE | /teams/:id | destroy | deletes a specific team |
 
-If you are storing something beside tacos you'll use this same pattern. It could be `users`, `photos`, `books`, etc, etc.
+If you are storing something beside teams you'll use this same pattern. It could be `users`, `photos`, `books`, etc, etc.
 
 
 ##RESTful verbs in action
@@ -39,17 +39,17 @@ As we know any basic link will be a GET request automatically. Also, any form wi
 **Some common links**
 
 ```html
-<a href="/tacos">List all tacos</a>
+<a href="/teams">List all teams</a>
 
-<a href="/tacos/12">List taco with id of 12</a>
+<a href="/teams/12">List team with id of 12</a>
 
-<a href="/tacos/new">Add a new taco</a>
+<a href="/teams/new">Add a new team</a>
 ```
 
 **GET form**
 
 ```html
-<form action="/tacos">
+<form action="/teams">
     <input type="text" name="q">
     <input type="submit" value="search">
 </form>
@@ -59,12 +59,13 @@ As we know any basic link will be a GET request automatically. Also, any form wi
 
 A POST is typically used to **create** a new item of a specific type. Also, we know that to do a `POST` we must use a form with `method="post"`
 
-**Example: New Taco Form**
+**Example: New Team Form**
 
 ```html
-<form method="post" action="/tacos">
-    <input type="text" name="topping">
-    <input type="submit" value="Create a taco">
+<form method="post" action="/teams">
+    <input type="text" name="name">
+    <input type="text" name="members">
+    <input type="submit" value="Create a team">
 </form>
 ```
 
@@ -77,10 +78,10 @@ There is no way to initiate a DELETE action unless we use ajax.
 **HTML**
 
 ```html
-<a href="/tacos/5" class="delete-link">Delete taco 5</a>
+<a href="/teams/5" class="delete-link">Delete team 5</a>
 ```
 
-Without javascript this would link to `GET /tacos/5` which would simply display the taco at that route. However, we can use javascript to override the default behavior and send the request with the DELETE verb.
+Without javascript this would link to `GET /teams/5` which would simply display the team at that route. However, we can use javascript to override the default behavior and send the request with the DELETE verb.
 
 **jQuery / JavaScript**
 
@@ -108,13 +109,14 @@ Put should be used to update an existing item.
 **HTML**
 
 ```html
-<form action="/tacos/5" id="put-form">
-    <input type="text" name="topping">
-    <input type="submit" value="Update a taco">
+<form action="/teams/5" id="put-form">
+    <input type="text" name="name">
+    <input type="text" name="members">
+    <input type="submit" value="Update a team">
 </form>
 ```
 
-Without javascript this form would submit as a `GET` request which means it would just go to the page that displays the taco with the id of 5. Now we need to override this default behavior to initiate a `PUT` via AJAX.
+Without javascript this form would submit as a `GET` request which means it would just go to the page that displays the team with the id of 5. Now we need to override this default behavior to initiate a `PUT` via AJAX.
 
 **jQuery / JavaScript**
 
