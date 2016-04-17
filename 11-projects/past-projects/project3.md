@@ -1,4 +1,3 @@
-
 ## Project 3 (Group)
 
 These projects were built in Rails, with the exception of WDI SEA 03, which used Node
@@ -7,20 +6,20 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 
 * [Seahawk City](http://seahawkcity.com/)
   * Spot 12th man flags and events around seattle and plot them on a map.
-* [Seattle Trading Post](http://seattletradingpost.herokuapp.com/)
+* [Seattle Trading Post - Luna/Nick/Claire/Stephanie](http://seattletradingpost.herokuapp.com/)
   * A site to allow Seattle area makers to share their skills and teach eachother.
-* [Listo](http://getlisto.herokuapp.com/)
+* [Listo - Adrienne/Monsanto/Alyssa/Patrick](http://getlisto.herokuapp.com/)
   * Bored and wanna meet some strangers? Don't like people that flake out? This is the site for you.
-* [The Daily Habit](http://thedailyhabit.herokuapp.com/)
+* [The Daily Habit - Annie/Brian/Sanda](http://thedailyhabit.herokuapp.com/)
   * Have something you want to remember to do (or not do) every day? This site will remind you. It will also text your friends if you mess up.
 
 ###WDI SEA 02
 
-* [Schedulacity](http://schedulacity.herokuapp.com/)
+* [Schedulacity - Nick/Katie/Dan](http://schedulacity.herokuapp.com/)
   * Cloud based client management software that allows you to schedule sessions, track attendance, and handle communication.
-* [Memory Ln](https://memory-ln.herokuapp.com)
+* [Memory Ln - Cody/Jake/Aida](https://memory-ln.herokuapp.com)
   * Memory Ln is a fun, easy to use web app that allows you to create dynamic, animating pages to share with your friends. 
-* [Woolli](http://baby-book.herokuapp.com)
+* [Woolli - Riley/Ben/Sean/Greg](http://baby-book.herokuapp.com)
   * Woolli is an web application that allows you to commemorate your baby's progress between birth and the age of 5. It has two main features: it allows users to create a timeline to which they can add events and upload photos. It also allows users to measure their baby as it grows, charting its progress against national averages. The application was built in a Ruby/Rails MVC framework. It utilizes a variety of JavaScript libraries, including Chart, Timeline, Moment, and Bootstrap.
 * [FSTVL](http://fstvl.herokuapp.com/)
   * Your personal Conference/Festival/Convention companion. A planning app to schedule events during a festival that lets you share and compare that schedule with friends. The events are populated by Host users (festival runners).
