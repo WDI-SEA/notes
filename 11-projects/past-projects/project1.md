@@ -15,3 +15,11 @@
 * [Triple Triad - Julie](http://jsakalys.github.io/triple-triad/)
 * [Know Your Planet - Taylor](http://taylorbolin.github.io/Know-Your-Planet/)
 * [Simon - Thomas](http://thomasvaeth.com/ga-simon/)
+
+###WDI SEA 06
+
+* [The Tale of Sir Dubus - Mark](http://abelmark.github.io/RPGSite/)
+* [Particle Game - Rachel](http://nepios.github.io/particle_game/)
+* [Asana - Navya](http://navyayvan.github.io/Asana/)
+* [Pokemon Memory, Nic Cage Edition - Cassie](http://cassicakes.github.io/project1/)
+* [State Facts - Evan](http://evwilkin.github.io/state_facts_game/)

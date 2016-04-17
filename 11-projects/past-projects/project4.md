@@ -66,3 +66,18 @@
   * Meals for Homeless and Low-Income Individuals and Families in Seattle
 * [Weather you Run - Paloma](http://weatheryourun.herokuapp.com/)
   * Track your runs and get weather information
+
+###WDI SEA 06
+
+* [Patient Passport - Michael](https://patientpassport.herokuapp.com/)
+  * Easily find hospital appointments
+* [Trail Blazer - Alexa](http://trailblazer1.herokuapp.com/)
+  * Your next hiking adventure awaits
+* [The Wizards Unicorn](https://thewizardsunicorn.herokuapp.com/)
+  * A voice controlled text adventure game
+* [Hash Rocket - Cassie](https://hashrocketmusic.herokuapp.com/)
+  * Keep track of your favorite bands, and find new ones
+* [DevDash - Evan](https://devdash.herokuapp.com/)
+  * A project dashboard created by a developer for developers
+* [Beervana - Derek/Jonathan](http://drinkbeervana.herokuapp.com/)
+  * Learn to brew beer, as well as search for beers and breweries

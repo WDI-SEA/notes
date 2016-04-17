@@ -48,3 +48,14 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
   * AirBnb for parking
 * [Ultimate True American - Emma/Tess/Yahya](http://ultimate-true-american.herokuapp.com/)
   * Drinking game based on the game from New Girl
+
+###WDI SEA 06
+
+* [Rainy Day - Kathy/Katlyn/Neth/Scott](https://rainydayapp.herokuapp.com/)
+  * Because when it pours, you'll need something fun to do
+* [ReadMe - Ethan/Rachel/Ella/Michael](http://clubreadme.herokuapp.com/)
+  * A place for book lovers to get together and talk about books
+* [Bankly - Mark/Audrey/Evan/Alexa](https://mybankly.herokuapp.com/)
+  * Visualize your spending across multiple budgets
+* [Contigo - Cassie/Navya/Derek/Jonathan](https://contigo.herokuapp.com/)
+  * Make ride sharing easy with by fostering community and carpooling

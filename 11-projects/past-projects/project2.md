@@ -65,3 +65,14 @@
   * Organize and archive Instagram photos
 * [You Are Pizza - Thomas](http://www.youarepizza.com/)
   * Find pizza near you
+
+###WDI SEA 06
+
+* [Seattle Showdown - Michael](https://seattleshowdown.herokuapp.com/)
+  * Stay on top of the latest concerts in and around Seattle
+* [The Whiskey Stone - Scott](https://whiskymatch.herokuapp.com/)
+  * Browse delicious Scottish single malt whiskies
+* [AdventureTo - Evan](https://adventureto.herokuapp.com/)
+  * Wishlists and inspiration for your next adventures
+* [PhoFinder - Audrey](https://phofinder.herokuapp.com/)
+  * Find the best vietnamese restaurants in your area for all your pho lovin' needs.
