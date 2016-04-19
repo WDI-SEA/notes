@@ -137,7 +137,7 @@ These guidelines and suggestions should provide a baseline for creating a portfo
 
 ##Additional Resources
 
-* [Static site generator lesson (Jekyll)](06-ruby-rails/ruby-jekyll/readme.md)
+* [Static site generator lesson (Jekyll)](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
 * [FontAwesome icons (for social icons)](https://fortawesome.github.io/Font-Awesome/icons/)
 * [Animate.css (simple CSS animations)](https://daneden.github.io/animate.css/)
 * [jQuery Smooth Scrolling](https://github.com/kswedberg/jquery-smooth-scroll)
