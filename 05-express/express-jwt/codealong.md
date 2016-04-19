@@ -94,7 +94,7 @@ That's it.
 
 We're going to put our auth route/endpoint right in `index.js`. You could (and probably should later) extract it out, so that `index.js` doesn't become cluttered.
 
-onsidering we're _creating_ a token, we'll be using the `POST` HTTP verb.
+Considering we're _creating_ a token, we'll be using the `POST` HTTP verb.
 
 ```js
 //index.js
