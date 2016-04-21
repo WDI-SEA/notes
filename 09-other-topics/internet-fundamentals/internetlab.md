@@ -11,15 +11,19 @@
 - T/F: Every HTTP request has a domain and a path.
 - T/F: Email uses the HTTP Protocol.
 
-#### Use the ping command to see how long it takes for servers to respond to your computer:
+#### Use the `ping` command to see how long it takes for servers to respond to your computer:
 
-Try to find servers that respond quickly, and find some that take longer to respond.
-What's the fastest and slowest sites you can ping?
+All requests sent from your computer must travel across the internet, going through various servers, in order to make the delivery. Using the `ping` command in the terminal window, try to find servers that respond quickly, and find some that take longer to respond. Hit `CTRL + C` if you need to exit `ping`. **What are the fastest and slowest sites you can ping?**
 
-University servers are usually hosted on their actual campuses. Use university servers to estimate how long it takes requests to travel around the world. Look up the distance between cities and calculate miles / time in milliseconds to calculate how fast these requests travel.
+> University servers are usually hosted on their actual campuses. Use university servers to estimate how long it takes requests to travel around the world. Look up the distance between cities and calculate miles / time in milliseconds to calculate how fast these requests travel.
 
 ```
-$ ping washington.edu # 4 miles away from GA campus
+# 4 miles away from GA campus
+ping washington.edu
+```
+
+#####Sample Output
+```
 PING washington.edu (128.95.155.134): 56 data bytes
 64 bytes from 128.95.155.134: icmp_seq=0 ttl=54 time=6.478 ms
 64 bytes from 128.95.155.134: icmp_seq=1 ttl=54 time=8.162 ms
@@ -46,13 +50,18 @@ $ ping www.hbc.ac.za # Helderberg College in Cape Town, South Africa: 10,217 mil
 Ping this specific IP address and see how long it takes the server to respond. Google this IP to find out what makes it unique. Be sure to use the Google homepage. IP addresses are hard to quick-search from your browser's location bar!
 
 ```
-$ ping 127.0.0.1
+ping 127.0.0.1
 ```
 
 #### Experiment with the traceroute command to see how internet traffic flows between your computer and servers:
 
 ```
-$ traceroute washington.edu
+# the traceroute command will show which servers routed the traffic
+traceroute washington.edu
+```
+
+#####Sample Output
+```
 traceroute: Warning: washington.edu has multiple addresses; using 128.95.155.135
 traceroute to washington.edu (128.95.155.135), 64 hops max, 52 byte packets
  1  10.1.4.1 (10.1.4.1)  2.372 ms  2.008 ms  1.976 ms
@@ -69,20 +78,32 @@ traceroute to washington.edu (128.95.155.135), 64 hops max, 52 byte packets
 ```
 
 #### Experiment with cURL and send requests to various web pages. Here are some useful flags you can use:
+
+
+#####Headers flag
 ```
 # -I returns the response headers only
 curl -I http://www.google.com
+```
 
+#####Sample Output
+```
 HTTP/1.1 200 OK
 Date: Sun, 27 Sep 2015 02:28:12 GMT
 Expires: -1
 Cache-Control: private, max-age=0
 Content-Type: text/html; charset=ISO-8859-1
 ...
+```
 
-
+#####Verbose mode
+```
 # -v is verbose mode and returns the entire request and response (along with some additional info)
 curl -v http://www.google.com
+```
+
+#####Sample Output
+```
 * Rebuilt URL to: http://www.google.com/
 *   Trying 2607:f8b0:400a:806::2004...
 * Connected to www.google.com (2607:f8b0:400a:806::2004) port 80 (#0)
