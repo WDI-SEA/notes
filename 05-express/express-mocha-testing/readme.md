@@ -57,17 +57,17 @@ Now that we're configured, let's set up our file and folder structure. All the t
 mkdir test
 ```
 
-Then we will write the tests inside a file called `candiesTests.js`:
+Then we will write the tests inside a file called `candies-tests.js`:
 
 ```bash
-touch test/candiesTests.js
+touch test/candies-tests.js
 ```
 
 > Note: Explain that because our tests will request the application through HTTP, students have to make sure they are running the app while running the tests
 
 #### Let's write some tests
 
-Open the file `candies_tests.js`. We now need to require some dependencies at the top of this file:
+Open the file `candiesTests.js`. We now need to require some dependencies at the top of this file:
 
 ```js
 var should = require("chai").should();
@@ -213,7 +213,7 @@ Run the `mocha` command in the terminal, you should now have four passing tests!
 
 Add tests to the suite:
 
-1. Write a test that make sure the object returned when you call show with a specific ID contains the right fields.
+1. Write a test that make sure the object returned from `/candies/1` (or any id) contains the right fields.
 2. Write a test that ensure an object is deleted from the array candies when you call delete.
 3. Write a test that ensure a property is updated when you call `PUT /candies/:id/edit`
 
