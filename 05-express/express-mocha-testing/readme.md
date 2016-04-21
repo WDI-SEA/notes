@@ -63,8 +63,6 @@ Then we will write the tests inside a file called `candies-tests.js`:
 touch test/candies-tests.js
 ```
 
-> Note: Explain that because our tests will request the application through HTTP, students have to make sure they are running the app while running the tests
-
 #### Let's write some tests
 
 Open the file `candiesTests.js`. We now need to require some dependencies at the top of this file:
@@ -98,6 +96,17 @@ describe("Candies", function() {
 Now go in the command line and type `mocha` from the root of the project. You should get a message saying that you have 1 test passing.
 
 Congrats, your test is passing!
+
+> Note: You may see an error saying "Address already in use. This means nodemon is running your server somewhere else when your
+tests also try to start the server. Either kill your nodemon server, or add this code around `app.listen()` to prevent your server
+from starting twice:
+
+```js
+ // prevent the app from starting twice if tests are running.
+ if(!module.parent) {
+   app.listen(3000);
+ }
+```
 
 Every block of code that starts with `it()` represents a test.
 
