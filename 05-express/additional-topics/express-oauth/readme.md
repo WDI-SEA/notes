@@ -34,6 +34,10 @@ After our app is given the okay, Facebook sends back an **access token**. With t
 
 ###Starting Point
 
+Here's some code to get you started:
+
+https://github.com/WDI-SEA/oauth-facebook-example
+
 For OAuth, we'll assume that you've gone through the authentication lecture, and are familiar with sessions, bcrypt, and flash messages in Express. The starter code is an application with signup/login routes and a page that can only be accessed when logged in. Take a look at the application and verify that it works (you'll have to go through the usual motions, like installing the npm modules, creating/migrating the database, etc.).
 
 We'll be using the following modules as we add Passport and two strategies: Local and Facebook. Install the following modules:
