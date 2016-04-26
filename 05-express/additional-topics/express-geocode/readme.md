@@ -72,7 +72,9 @@ Now, try starting the app and entering a name/address. The geocoder will take th
 Google Maps is the most popular mapping app on the web. We'll be using it to display places on a map. In order to do so, we need **geocoordinates** of the places, which we already set up!
 
 ### Getting an API key
-You'll need a Google/Gmail account first before setting up the API key. Once you've got that, head to the [Google developers console](https://console.developers.google.com/). From there, click on "Use Google APIs". You'll see a bunch of links to various APIs, and the only ones you care about right now are the Maps APIs.
+You'll need a Google/Gmail account first before setting up the API key. Once you've got that, head to the [Google developers console](https://console.developers.google.com/). You'll see a bunch of links to various APIs, and the only ones you care about right now are the Maps APIs.
+
+Click on "Google Maps JavaScript API." Click "Enable." Use the API Manager pane on the left to navigate to "Credentials." Select "API Key" from the "Create credentials" drop down menu. Choose "Browser Key." Name the key something like "Google Maps Browser Key" and leave the referrers field blank. Now you have a key. Add it to your .env file.
 
 The two APIs you need to enable are the Google Maps JavaScript API, and the Google Maps Embed API. You might want to use the Google Maps Places API eventually, so go ahead and enable that too.
 
