@@ -181,6 +181,8 @@ $(function() {
 });
 ```
 
+Notice there's no URL provided to io(), since it defaults to trying to connect to the host that serves the page.
+
 We use one of the reserved events ('connect') to log out the fact we are connected, and then, we hook up to the _tweets_ channel and start logging out what is received.
 
 This is great! We now have own tweets streaming but only to the console. Let's get it on the page with some jQuery.
