@@ -74,7 +74,7 @@ This can infrequently cause problems!
 2 + 2 * 3
 ```
 
-How would you get the 2+2 to execute before the * 3? In other words, how would you change this expression to get 12?
+How would you get the `2 + 2` to execute before the `* 3`? In other words, how would you change this expression to get 12?
 
 ## Strings
 
@@ -82,16 +82,20 @@ Strings are collections of letters and symbols known as **Characters**, and we u
 
 ```js
 "John"
-"Jane"
+'Jane'
 ```
 
 ### Exercise
 
-You can use operators on strings too! Try typing "John" + "Jane". How would you keep this from looking weird? This is called String concatenation
+You can use operators on strings too! Try typing `"John" + "Jane"`. This is called String concatenation
 
 ### Tangent: Type coercion
 
-Try this: "1" + 1
+Try this...
+
+```js
+"1" + 1
+```
 
 Without removing the quotes, how would you get this to equal 2?
 
@@ -104,25 +108,15 @@ true
 false
 ```
 
-### Exercise
-
-! is the negation operator. !true = false, and !false = true.
-
-Experiment and see what happens when you use ! with other datatypes.
-
-== is an equality operator. See what happens when you enter 1 == 1. Try 1 == 2.
-
-Try typing (1 == 1) + 1. What do you think will happen?
-
-!= is an inequality operator. Try typing 1 != 1.
-
 ## Operator Review
 
-- + (add)
-- - (subtract)
-- * (multiply)
-- / (divide)
-- % (modulus)
+```
++ (add)
+- (subtract)
+* (multiply)
+/ (divide)
+% (modulus)
+```
 
 
 ### Special Number Operators
@@ -133,30 +127,33 @@ Javascript can be a little cheap with the number of operations it allows you to 
 
 ```js
 // 3^2 becomes
-Math.pow(3,2)
-=> 4
+Math.pow(3,2);
+// => 4
+
 // 2^4 becomes
-Math.pow(2,4)
-=> 16
+Math.pow(2,4);
+// => 16
 ```
 * Taking a square root
 
 ```js
 // √(4) becomes
-Math.sqrt(4)
-=> 2
+Math.sqrt(4);
+// => 2
 ```
+
 * Need a `random` number? Then use `Math.random`.
 
 ```js
 // The following only returns a random decimal
-Math.random()
-=> .229375290430
+Math.random();
+// => .229375290430
+
 /**
   The following will return a
   random number between 0 and 10
 */
-Math.random()*10
+Math.random() * 10;
 ```
 
 * Since Numbers can be **Floats** or **Integers** we often want to get rid of remaining decimal places, which can be done using `Math.floor`.
@@ -164,9 +161,10 @@ Math.random()*10
 ```js
 // Remove the decimal
 Math.floor(3.14)
-=> 3
+// => 3
+
 Math.floor(3.9999)
-=> 3
+// => 3
 ```
 
 ## Variables
@@ -177,14 +175,10 @@ Having made some expressions it becomes evident we want to store these values.
 var myNumber = 1;
 // or also
 
-var myString = "Greetings y'all!"
+var myString = "Greetings y'all!";
 ```
 
 The main note to make here is that these variables should always have the `var` keyword and use `camelCase`
-
-### Exercise
-
-Take a number, X. How would you force a second number, Y to have the same sign, (positive or negative) as X?
 
 
 ## Objects Everywhere
@@ -197,17 +191,25 @@ In JavaScript, almost everything is an object (primitive types are the exception
 
 ```js
 myNumber.toString()
-=> "1"
+// => "1"
 ```
 
 ### Common String / Number methods
 
 * Numbers
-  * `.toString`, `.toFixed`, `parseInt`, `parseFloat`
+  * `.toString()` - converts a number to a string
+  * `.toFixed()`, - converts a number to a fixed string representation
+    * More info: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
+  * `parseInt('33')` - converts a string to an integer
+  * `parseFloat('3.1')` - converts a string to a floating point number
 * Strings
-  * `.split`, `.indexOf`, `.toUpperCase`, `.toLowerCase`, `.replace`
+  * `.split('')` - converts a string into an array split in a provided character
+  * `.indexOf('s')` - returns the index of the first appearance of a provided string
+  * `.toUpperCase()` - converts a string to all caps
+  * `.toLowerCase()` - converts a string to all lowercase
+  * `.replace('old', 'new')` - replaces the first appearance of a string with a new string
 
-Calling on an object vs. passing in an argument.
+Note that most of these functions are called on an object, while functions like `parseInt()` and `parseFloat()` only take in arguments.
 
 ### Arrays
 
@@ -220,20 +222,21 @@ Arrays are great for:
 * Enumerating data, i.e. using an index to find them.
 * Quickly reordering data
 
-```
+```js
 var friends = ['Moe', 'Larry', 'Curly'];
-=> ['Moe', 'Larry', 'Curly']
+// => ['Moe', 'Larry', 'Curly']
 ```
 
 Items in an array are stored in sequential order, and indexed starting at `0` and ending at `length - 1`.
 
-```
+```js
 // First friend
 var firstFriend = friends[0];
- => 'Moe'
+// => 'Moe'
+
 // Get the last friend
 var lastFriend = friends[2]
-=> 'Curly'
+// => 'Curly'
 ```
 
 ### Group Exercise
@@ -243,27 +246,35 @@ Grab the person next to you. One person, create a variable that equals a comma d
 ```js
 var favorites = "noodles,bread,cheese,filet mignon";
 ```
+
 Have the second person turn that string into an array, then the first person should ask the second what their third favorite food is.
 
 ### Array Methods
 
-`.pop`, `.push`, `.shift`, `.unshift`, `.concat`, `.slice`, `splice`, `.reverse`, `.sort`, `.join`
+* `.pop()` - remove and return the last element in an array
+* `.push('element')` - add an element to the end of an array
+* `.shift()` - remove and return the first element in an array
+* `.unshift(3)` - add an element to the beginning of an array
+* `.concat([1, 2])` - concatenate two arrays together
+* `.slice(1, 3)` - return a copy of a portion of an array
+* `.splice()` - alter an array by adding or removing elements
+  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+* `.reverse()` - reverse the array
+* `.sort()` - sort the elements in an array
+* `.join(' ')` - take an array and join the elements together as a string
 
 
 ### Objects
 
 Why use objects to store `key` and `value` pairs? They are like arrays except that data is not stored in any sorted order and keys do not have to numbered indexes.
 
-
-#### creating
-
+#### Creating
 
 ```js
 var friend = {firstName: "Jane", lastName: "Doe"}
 ```
 
-#### accessing
-
+#### Accessing
 
 ```js
 friend.firstName
@@ -275,32 +286,31 @@ friend['lastName']
 
 ### Exercise
 
-
-1.) How would you represent the following using an object? Then update John's address to `1234 Park ln`.
+1.) How would you represent the following using an object?
 
 ````js
 John, Doe, 36, 1234 Park st.
 ````
+
 **(Hint: think in terms of firstname, lastname, age, address)**
 
+2.) Once you've represented the above as an object, update John's address to `1234 Park ln`.
 
-2.) Using a combination of Objects and Array, how would you represent the following:
+3.) Using a combination of Objects and Array, how would you represent the following data:
 
-
-```js
-  Moe, Doe, 31, 1234 Park st.
-  Larry, Doe, 36, 1234 Spark st.
-  Curly, Doe, 36, 1239 Park st.
-  Jane, Doe, 32, 1239 Spark st.
-  Emma, Doe, 34, 1235 Spark st.
-  Elizabeth, Doe, 36, 1234 Park st.
-  Elinor, Doe, 35, 1230 Park st.
-  Mary, Doe, 31, 1231 Park st.
-  Darcy, Doe, 32, 1224 Park st.
-  Grey, Doe, 34, 1214 Park st.
-  Lydia, Doe, 30, 1294 Park st.
-  Harriet, Doe, 32, 1324 Park st.
-
+```
+Moe, Doe, 31, 1234 Park st.
+Larry, Doe, 36, 1234 Spark st.
+Curly, Doe, 36, 1239 Park st.
+Jane, Doe, 32, 1239 Spark st.
+Emma, Doe, 34, 1235 Spark st.
+Elizabeth, Doe, 36, 1234 Park st.
+Elinor, Doe, 35, 1230 Park st.
+Mary, Doe, 31, 1231 Park st.
+Darcy, Doe, 32, 1224 Park st.
+Grey, Doe, 34, 1214 Park st.
+Lydia, Doe, 30, 1294 Park st.
+Harriet, Doe, 32, 1324 Park st.
 ```
 
 ### Reference

@@ -1,20 +1,12 @@
 # CSS Box Model and Positioning
 
 ### Objectives
-*After this lesson, students will be able to:*
 
-- Describe the difference between block, inline, and inline-block elements
-- Adjust element spacing using padding and margin
-- Create floating elements to position content removed from the standard document flow
-- Explain the difference between and use cases of static, relative, fixed, & absolute positioning
-- Create a page with multicolumn layout
-
-### Preparation
-*Before this lesson, students should already be able to:*
-
-- Write basic CSS
-- Write basic HTML
-- Use the chrome console
+* Describe the difference between block, inline, and inline-block elements
+* Adjust element spacing using padding and margin
+* Create floating elements to position content removed from the standard document flow
+* Explain the difference between and use cases of static, relative, fixed, & absolute positioning
+* Create a page with multicolumn layout
 
 ## An Intro to The Box Model (5 mins)
 
@@ -29,10 +21,10 @@ With CSS properties and values, it is possible to apply specific styles to each 
 
 Let's write some HTML we can come back to and use to visualize what we're talking about.
 
-- Create an new directory called `box-model-work`
-- Create html page called `index.html` with an externally linked css stylesheet called `main.css`
-- Inside your html page create a "container" div holding four divs within.
-- Inside our CSS page, make the container a 500px gray square containing 100px squares within that are red, blue, green, and black.
+* Create an new directory called `box-model-work`
+* Create html page called `index.html` with an externally linked css stylesheet called `main.css`
+* Inside your html page create a "container" div holding four divs within.
+* Inside our CSS page, make the container a 500px gray square containing 100px squares within that are red, blue, green, and black.
 
 Looking at the html:
 
@@ -40,10 +32,10 @@ Looking at the html:
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
 <div id="container">
-    <div id="square1"></div>
-    <div id="square2"></div>
-    <div id="square3"></div>
-    <div id="square4"></div>
+  <div id="square1"></div>
+  <div id="square2"></div>
+  <div id="square3"></div>
+  <div id="square4"></div>
 </div>
 ```
 
@@ -51,29 +43,33 @@ And the CSS:
 
 ```css
 #container {
-    height: 500px;
-    width: 500px;
-    background-color: gray;
+  height: 500px;
+  width: 500px;
+  background-color: gray;
 }
+
 #square1 {
-    background-color: red;
-    height: 100px;
-    width: 100px;
+  background-color: red;
+  height: 100px;
+  width: 100px;
 }
+
 #square2 {
-    background-color: blue;
-    height: 100px;
-    width: 100px;
+  background-color: blue;
+  height: 100px;
+  width: 100px;
 }
+
 #square3 {
-    background-color: green;
-    height: 100px;
-    width: 100px;
+  background-color: green;
+  height: 100px;
+  width: 100px;
 }
+
 #square4 {
-    background-color: black;
-    height: 100px;
-    width: 100px;
+  background-color: black;
+  height: 100px;
+  width: 100px;
 }
 ```
 
@@ -84,11 +80,13 @@ How about if we drop this code into our CSS file:
 
 ```css
 * {
-    border: 1px solid red !important;
+  border: 1px solid red !important;
 }
 ```
 
-Notice the body, the container, and each of the divs are surrounded by a red border.  Peak at the styles tab on the right and scroll all the way to the bottom.  You'll notice boxes within boxes - madness!
+Notice the body, the container, and each of the divs are surrounded by a red border. Peak at the styles tab on the right and scroll all the way to the bottom. You'll notice boxes within boxes - madness!
+
+You'll also notice that using either of these selectors, the wildcard `*` and the `!important` property, can be very dangerous. In fact, you'll want to use these as sparsely as possible, if at all.
 
 ## The Box Model and its components - Intro (10 mins)
 
@@ -131,7 +129,6 @@ div {
   margin-bottom: /*some value*/
   margin-left: /*some-value*/
 }
-
 ```
 
 You can also set an element's margins all at once: you just start from the top margin and go around clockwise (going from top to right to bottom to left). For instance,
@@ -188,10 +185,10 @@ Padding becomes more apparent when we have "stuff" inside the box. If we're talk
 ```html
 <div id="container">
   <p>Hi there!</p>
-    <div id="square1"></div>
-    <div id="square2"></div>
-    <div id="square3"></div>
-    <div id="square4"></div>
+  <div id="square1"></div>
+  <div id="square2"></div>
+  <div id="square3"></div>
+  <div id="square4"></div>
 </div>
 ```
 
@@ -228,38 +225,37 @@ To illustrate this, if we had this HTML:
 
 ```html
 <div class="inline">
-    <div class="inline">Content</div>
-    <div class="inline">Content</div>
-    <div class="inline">Content</div>
+  <div class="inline">Content</div>
+  <div class="inline">Content</div>
+  <div class="inline">Content</div>
 </div>
 
 <div class="block">
-    <div class="block">Content</div>
-    <div class="block">Content</div>
-    <div class="block">Content</div>
+  <div class="block">Content</div>
+  <div class="block">Content</div>
+  <div class="block">Content</div>
 </div>
 
 <div class="inline-block">
-    <div class="inline-block">Content</div>
-    <div class="inline-block">Content</div>
-    <div class="inline-block">Content</div>
+  <div class="inline-block">Content</div>
+  <div class="inline-block">Content</div>
+  <div class="inline-block">Content</div>
 </div>
-
 ```
 
 With this CSS:
 
 ```css
 .inline {
-display: inline;
+  display: inline;
 }
 
 .block {
-display: block;
+  display: block;
 }
 
 .inline-block {
-display: inline-block;
+  display: inline-block;
 }
 ```
 
@@ -291,12 +287,12 @@ Declaring `position:relative` allows you to position the element top, bottom, le
 
 ```css
 #square1 {
-    background-color: red;
-    height: 100px;
-    width: 100px;
-    position:relative;
-    top: 0;
-    left: 40px;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  position:relative;
+  top: 0;
+  left: 40px;
 }
 ```
 
@@ -312,10 +308,10 @@ If we revisit our squares from earlier in class:
 
 ```css
 #container {
-background-color: gray;
-    position: static;
-    height: 500px;
-    width: 500px;
+  background-color: gray;
+  position: static;
+  height: 500px;
+  width: 500px;
 }
 ```
 
@@ -329,12 +325,12 @@ Try it out:
 
 ```css
 #square2 {
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    background-color: blue;
-    top: 0;
-    left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  background-color: blue;
+  top: 0;
+  left: 0;
 }
 ```
 
@@ -345,12 +341,12 @@ Specifying `position:absolute` _removes the element from the document_ and place
 
 ```css
 #square1 {
-    background-color: red;
-    height: 100px;
-    width: 100px;
-    position:absolute;
-    top: 0;
-    right: 0;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  position:absolute;
+  top: 0;
+  right: 0;
 }
 ```
 
@@ -362,12 +358,12 @@ Declaring `position:relative` allows you to position the element top, bottom, le
 
 ```css
 #square1 {
-    background-color: red;
-    height: 100px;
-    width: 100px;
-    position:relative;
-    top: 0;
-    left: 40px;
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  position:relative;
+  top: 0;
+  left: 40px;
 }
 ```
 
@@ -402,26 +398,28 @@ So, without clears, change the heights of square1 and square2 to 200px and absol
 
 ```css
 #container {
-    background-color: gray;
-    position: relative;
-    height: 500px;
-    width: 500px;
+  background-color: gray;
+  position: relative;
+  height: 500px;
+  width: 500px;
 }
+
 #square1 {
-    background-color: red;
-    height: 200px;
-    width: 100px;
-    position:absolute;
-    top: 0;
-    right: 0;
+  background-color: red;
+  height: 200px;
+  width: 100px;
+  position:absolute;
+  top: 0;
+  right: 0;
 }
+
 #square2 {
-    background-color: blue;
-    height: 200px;
-    width: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
+  background-color: blue;
+  height: 200px;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 ```
 
@@ -433,20 +431,21 @@ We can reveal those missing divs by declaring their absolute position in the bot
 
 ```css
 #square3 {
-    background-color: green;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+  background-color: green;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
+
 #square4 {
-    background-color: black;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
+  background-color: black;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 ```
 
@@ -461,15 +460,13 @@ Now, let's venture back to our html page and add this text after the closing tag
 Your html should like this:
 
 ```html
-
-    <div id="container">
-        <div id="square1"></div>
-        <div id="square2"></div>
-        (4 paragraphs of ipsum)
-        <div id="square3"></div>
-        <div id="square4"></div>
-    </div>
-
+<div id="container">
+  <div id="square1"></div>
+  <div id="square2"></div>
+  (4 paragraphs of ipsum)
+  <div id="square3"></div>
+  <div id="square4"></div>
+</div>
 ```
 
 As expected our text falls behind our absolute positioned columns? Now lets make our elements aware of each other with floats.
@@ -478,10 +475,10 @@ Back in our CSS remove the absolute positioning from our "square2" div and repla
 
 ```css
 #square2 {
-    background-color: blue;
-    height: 200px;
-    width: 100px;
-    float: left;
+  background-color: blue;
+  height: 200px;
+  width: 100px;
+  float: left;
 }
 ```
 
@@ -498,9 +495,9 @@ Lets go back to our CSS and change our "square2" div's positioning from float:le
 
 ## Conclusion (5 mins)
 
-- Compare the elements of The Box Model - margin, border, padding, content.
-- How do floats work with clears to create a multicolumn layout?
-- Compare inline-block, block, and inline.
+* Compare the elements of The Box Model - margin, border, padding, content.
+* How do floats work with clears to create a multicolumn layout?
+* Compare inline-block, block, and inline.
 
 # Useful Links
 
