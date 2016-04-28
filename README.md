@@ -3,7 +3,7 @@
 ![Seattle and the Olympic Mountains by Brian Hague on 500px.com](https://drscdn.500px.org/photo/134493425/m%3D900/f16538c0cf8632e88f50eb219b305723)
 
 
-Welcome to GA Seattle! This is the work-in-progress notes repository for our Web Development Immersive. You can view the content in a more searchable/friendly format on Gitbook:
+Welcome to GA Seattle! This is the notes repository for our Web Development Immersive. You can view the content in a more searchable/friendly format on Gitbook:
 
 https://wdi_sea.gitbooks.io/notes/content/
 
@@ -256,8 +256,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Project 4][1304] |
 | [MEAN Hackathon][1312] |
 | [Interview Questions][1315]
-| [ES6 Variables and Strings][1306] |
-| [ES6 Arrow Functions][1307] |
+| [ES6 Variables and Strings (Codepen)][1306] |
+| [ES6 Arrow Functions (Codepen)][1307] |
 
 [301]: 07-angular/angular-intro/readme.md
 [302]: 07-angular/angular-directives-filters/readme.md
