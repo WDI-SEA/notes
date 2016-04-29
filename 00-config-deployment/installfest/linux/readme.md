@@ -156,19 +156,9 @@ Save the file, close Sublime, and restart your terminal.
 sudo apt-get install pgadmin3
 ```
 
-##Testing setup
+### Testing Postgres Setup
 
 Quit terminal and reopen it before testing.
-
-###Node
-
-```
-
-node -v
-
-npm -v
-
-```
 
 ###Postgres
 
