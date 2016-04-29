@@ -27,7 +27,8 @@ Open up terminal, and paste the following command to install Homebrew. You might
 ```
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-You may be prompted to installed xcode command line tools. When prompted, click and install through that, and you're homebrew installation will continue.
+
+You may be prompted to installed XCode command line tools. When prompted, click and install through that, and you're homebrew installation will continue.
 
 After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
 
@@ -79,7 +80,6 @@ To finish up your installation, run this command to allow for global installatio
 
 ```
 sudo chown -R $USER /usr/local/lib
-
 ```
 
 
@@ -93,6 +93,7 @@ It is a pretty typical installation for an app, but we need to add a shortcut so
 ```
 ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
 ```
+
 Restart terminal, and you should be able to open a folder to edit by typing `subl .`
 
 
@@ -109,15 +110,10 @@ curl -L http://install.ohmyz.sh | sh
 
 Restart Terminal, and you should see a brand new and colorful command prompt.
 
-##iTerm
-For those running, mac, download iterm2, a better featured terminal.
-[iterm2](http://iterm2.com/downloads.html)
+## Postgres
 
-Drag and drop into your Applications folder.
-
-
-##Postgres.app
-We will be using a relational database called Postgres for Node and Rails portion our class. Download
+### Postgres.app
+We will be using a relational database called Postgres for Node and Rails portion our class.
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
@@ -126,6 +122,7 @@ If you have successfully configured zsh and sublime, the following command shoul
 ```
 subl ~/.zshrc
 ```
+
 Your sublime editor will popup with configuration settings, at the bottom of the file append
 
 ```
@@ -153,6 +150,7 @@ Type `which psql` at which point should display
 /Applications/Postgres.app/Contents/Versions/9.5/bin/psql
 ```
 
+###Install Postgres GUI
 
 #Installing Ruby
 
