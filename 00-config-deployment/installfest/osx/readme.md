@@ -203,6 +203,11 @@ Make sure to restart your terminal and then run each of these commands. Finally 
 rails -v
 ruby -v
 
+which ruby
+which rails
+which bundle
+which gem
+
 node -v
 npm -v
 
