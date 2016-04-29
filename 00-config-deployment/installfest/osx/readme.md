@@ -152,6 +152,10 @@ Type `which psql` at which point should display
 
 ###Install Postgres GUI
 
+We'll be using **Postico**. Install here:
+
+https://eggerapps.at/postico/
+
 #Installing Ruby
 
 ###Install rbenv
