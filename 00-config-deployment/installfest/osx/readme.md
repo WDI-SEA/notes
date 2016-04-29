@@ -195,7 +195,7 @@ sudo gem install rails
 ```
 You may need to press "yes" for various entries
 
-#Verify your installation
+##Verify your installation
 
 Make sure to restart your terminal and then run each of these commands. Finally call someone over to validate your installation is correct.
 
