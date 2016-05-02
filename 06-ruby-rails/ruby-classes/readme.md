@@ -221,10 +221,14 @@ class Person
     @name = name
     @@population += 1
   end
+  
+  def self.population
+    @@population
+  end
 end
 ```
 
-We can access the value without creating any people.
+We have to create a method on the class to make the class variable accessible. Now we can access the value without creating any people.
 
 ```rb
 Person.population
