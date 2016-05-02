@@ -216,6 +216,7 @@ Let's first create a variable associated with our class. Using the syntax `@@var
 class Person
   attr_accessor :name
   @@population = 0
+  @@zip_code = 98101 # downtown Seattle
 
   def initialize(name)
     @name = name
@@ -225,14 +226,41 @@ class Person
   def self.population
     @@population
   end
+  
+  def self.zip_code
+    @@zip_code
+  end
+  
+  def self.zip_code=(new_zip)
+    @@zip_code = new_zip
+  end
 end
 ```
 
 We have to create a method on the class to make the class variable accessible. Now we can access the value without creating any people.
 
 ```rb
-Person.population
-#=> 0
+puts "Population: #{Person.population}"
+puts
+
+batman = Person.new("Bruce Wayne")
+superman = Person.new("Clark Kent")
+Person.print_population
+puts
+
+# we can access the population and zip code directly
+puts "Population: #{Person.population}"
+puts "Zip Code: #{Person.zip_code}"
+puts
+
+# no one should be allowed to redefine the population
+# there is no setter defined for population. this will crash.
+# Person.population = 8
+
+# however, the zip code can totally be updated!
+Person.zip_code = 98122 # capitol hill
+
+puts Person.print_population
 ```
 
 
