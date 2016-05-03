@@ -60,6 +60,75 @@ Note from the example above...
   * When you invoke the `super` method with arguments, Ruby sends a message to the parent of the current object, asking it to invoke a method of the same name as the method invoking super.
 * Once we inherit from another class, we can access methods and properties from the parent. In the case of this `Square` class, we also overrode the functionality of the `print_shape` method.
 
+### Binding to an interactive console with `pry`
+
+You can use pry to halt the execution of your program and start an interactive console. This is a great debugging tool.
+
+Create a few rectangles and a square at the end of your file. Write `pry.binding` to stop the program after the shapes
+are created. 
+
+```ruby
+r1 = Rectangle.new(3, 4)
+r2 = Rectangle.new(4, 7)
+s1 = Square.new(3)
+
+# halt the program just after the shapes are created
+pry.binding
+```
+
+Now you can type expressions into the console and have them evaluated. Your console will look like this. Typing `r1` and `r2`
+shows the type of objects that exist in those variables. Typing `r1.get_area` executes the function and prints the
+result. 
+
+```ruby
+[1] pry(main)> r1
+=> #<Rectangle:0x007fe85311f6f0 @height=4, @width=3>
+[2] pry(main)> r2
+=> #<Rectangle:0x007fe85311f6c8 @height=7, @width=4>
+[3] pry(main)> r1.get_area
+=> 12
+```
+Having access to a console like this is a great way to explore ruby with new pieces of code to make sure they work.
+Type things into the interactive console to figure out how you could calculate the area of a circle: Pi r squared.
+
+Here's an example of me using the interactive console to try to find out how ruby's math module works, and where the
+value of Pi lives within it. Notice that it's totally ok to cause errors! The interactive console just prompts you
+to try again.
+
+```
+# is it called MATH?
+[10] pry(main)> MATH
+NameError: uninitialized constant MATH
+from (pry):10:in `<main>'
+
+# is it called math?
+[11] pry(main)> math
+NameError: undefined local variable or method `math' for main:Object
+from (pry):11:in `<main>'
+
+# finally found the proper Math object
+[12] pry(main)> Math
+=> Math
+
+# where the heck does Pi exist?
+[13] pry(main)> Math.pi
+NoMethodError: undefined method `pi' for Math:Module
+from (pry):13:in `<main>'
+
+[14] pry(main)> Math.PI
+NoMethodError: undefined method `PI' for Math:Module
+from (pry):14:in `<main>'
+
+[15] pry(main)> Math.Pi
+NoMethodError: undefined method `Pi' for Math:Module
+from (pry):15:in `<main>'
+
+# hmm, I remember seeing this strange syntax.. there Pi is!!
+[16] pry(main)> Math::PI
+=> 3.141592653589793
+```
+
+
 ### A Guide through Animals
 
 ```rb
