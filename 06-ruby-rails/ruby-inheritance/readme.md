@@ -176,3 +176,5 @@ end
 
 ####Exercise
 Create a Mammal class, Cat class, and Dog class. Have Cat and Dog inherit from Mammal. Include some attributes for each class and a method for mammal.
+
+Make cats fall asleep when they're fed tuna. Make dogs fall asleep when they're fed a bone. 
