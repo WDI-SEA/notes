@@ -160,8 +160,6 @@ sudo apt-get install pgadmin3
 
 Quit terminal and reopen it before testing.
 
-###Postgres
-
 **Start Server**
 
 ```
@@ -182,8 +180,7 @@ Should enter psql terminal and have no error.
 \q
 ```
 
-
-#Installing Ruby on Rails
+##Installing Ruby on Rails
 
 ####Install dependencies
 
