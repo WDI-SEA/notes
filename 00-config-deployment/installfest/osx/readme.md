@@ -97,7 +97,8 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 Restart terminal, and you should be able to open a folder to edit by typing `subl .`
 
 
-##ZSH
+##Install Oh My ZSH
+
 Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
 
 We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
@@ -156,7 +157,7 @@ We'll be using **Postico**. Install here:
 
 https://eggerapps.at/postico/
 
-#Installing Ruby
+#Installing Ruby on Rails
 
 ###Install rbenv
 rbenv lets us change ruby verions on the fly, useful for working with diffrent versions.
