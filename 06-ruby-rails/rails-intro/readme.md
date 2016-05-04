@@ -4,7 +4,7 @@
 
 * Identify and describe the principles of Rails
 * Use Rails generators to create an app with models and controllers.
-* Use embedded Ruby in Rails templates
+* Use embeddedp Ruby in Rails templates
 * Utilize the Active Record ORM to manipulate data
 
 ##Principles of Rails
@@ -244,7 +244,7 @@ This could would output the following HTML:
 
 This HTML is then sent to the user's web browser to be rendered.
 
-##Pasing data from controllers to views
+##Passing data from controllers to views
 
 **Inside a controller action**
 
