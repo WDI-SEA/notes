@@ -4,7 +4,7 @@
 
 * Identify and describe the principles of Rails
 * Use Rails generators to create an app with models and controllers.
-* Use embeddedp Ruby in Rails templates
+* Use embedded Ruby in Rails templates
 * Utilize the Active Record ORM to manipulate data
 
 ##Principles of Rails
