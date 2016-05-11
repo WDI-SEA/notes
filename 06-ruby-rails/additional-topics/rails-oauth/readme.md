@@ -67,17 +67,18 @@ After updating the Gemfile, remember to run `bundle`.
 
 ###Init OmniAuth
 
-Create a new file in config folder of the Rails application called `omniauth.rb`
+Create a new file called `omniauth.rb` in the `config/initializers` folder of the Rails application
 
 ```
 config/initializers/omniauth.rb
 ```
 
-Add an initializer for each strategy/provider you want to support.
+Add an initializer for each strategy/provider you want to support. We're accessing
+properties of the ENV object, which we'll set up with a `.env` file.
 
 ```rb
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, ENV['FACEBOOK_KEY'], ENV['FACEBOOK_SECRET']
+  provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
 end
 ```
 
@@ -140,9 +141,11 @@ The callback method will perform the following operation:
 class AuthController < ApplicationController
 
   def callback
+    # access the provided user info provided by the OAuth provider
     provider_user = request.env['omniauth.auth']
 
-    #find create a user
+    # use provided user info to find or create the user in our own database
+    # this populates fields for the user model we created
     user = User.find_or_create_by(provider_id: provider_user['uid'], provider: params[:provider]) do |u|
       u.provider_hash = provider_user['credentials']['token']
       u.name = provider_user['info']['name']
@@ -168,7 +171,8 @@ end
 
 > [What is request.env?](http://blogofchirag.blogspot.com/2008/09/variables-in-request-env-ruby-on-rails.html)
 
-Lastly, make sure to setup your `@current_user` variable inside the `ApplicationController`. We included a `before_action` for you.
+Lastly, make sure to setup your `@current_user` variable inside the `ApplicationController` and
+run `before_action :current_user` in any controller that depends on having the user logged in.
 
 ```rb
 class ApplicationController < ActionController::Base
@@ -178,6 +182,16 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||= User.find_by_id(session[:user_id])
+  end
+end
+```
+
+`controllers/main_controller.rb`
+```rb
+class MainController < ApplicationController
+  before_action :current_user
+
+  def index
   end
 end
 ```
