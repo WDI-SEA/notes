@@ -56,6 +56,18 @@ If successful, group members should receive the change in their forks.
 
 Practice making changes by creating new branches, switching to them, and making commits. Note that the git master should also be working in a separate branch, as not to pollute the `master` branch. Keep it sacred!
 
+### Sample Practice App
+
+Work in your project groups to create a group home page. The homepage should have a main page
+showing a picture for each person in the team with their name. Additionally, the practice app
+should have a page for each person on the team. Clicking on someone's name or picture should
+lead to a page with a short bio for the team member.
+
+Work as a team to decide how the project will be set up. Will you create a simple static HTML page,
+or will you create a node app, or will you use Ruby on Rails? Everyone will work on their own
+bio pages individually. Each team member should add their own link to their bio page on the home
+page. Practice branching, merging and resolving merge conflicts.
+
 ###Merging Changes
 
 Once group members have made some changes in separate branches, push those changes to Github, then try making pull requests on Github.
