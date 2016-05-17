@@ -244,7 +244,7 @@ This could would output the following HTML:
 
 This HTML is then sent to the user's web browser to be rendered.
 
-##Pasing data from controllers to views
+##Passing data from controllers to views
 
 **Inside a controller action**
 
