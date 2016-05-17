@@ -58,7 +58,7 @@ Github is the "Server Computer".
 
 A word about folder management.
 
-Recommendation: Create "Code" folder in your home directory. This is the place for all source code that you create at GA (projects, labs, homework). Let's talk about folder structure.
+Recommendation: Create "Code" folder in your home directory. This is the place for all source code that you create at GA (projects, labs, assignments). Let's talk about folder structure.
 
 Options:
 

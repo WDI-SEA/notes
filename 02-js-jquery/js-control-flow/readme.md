@@ -171,7 +171,7 @@ if (course === "uxdi") {
 } else if (course === "fewd") {
   console.log("Hello, Front-End Developer");
 } else if (course === "wdi") {
-  console.log("Hello, Immersed Student")
+  console.log("Hello, Immersed Developer")
 } else {
   console.log("Who are you?")
 }
