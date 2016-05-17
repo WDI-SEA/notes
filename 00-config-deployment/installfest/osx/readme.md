@@ -18,6 +18,10 @@ We will be using slack to communicate throughout the course. You should've recei
 
 [Download Slack](https://slack.com/downloads)
 
+##GArnet
+
+We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.
+
 ##Homebrew
 
 Homebrew is a package manager that we will use to install various command line tools in our class.
