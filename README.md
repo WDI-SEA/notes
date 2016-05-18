@@ -40,7 +40,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 
 | Topic | Assignments |
 | ----- | ----------- |
-| [Intro to WDI][8] <br><br> [Internet Fundamentals][1] | [Internet Lab][1000] |
+| [Internet Fundamentals][1] | [Internet Lab][1000] |
 | [Command Line][2] <br><br> [Intro to Git][3] | [Command Line Murder Mystery][1001] |
 | [HTML][5] <br><br> [CSS Selectors][6] | [Selectors Animal-Style][1005]  |
 | [CSS Box Model and Positioning][9] | [Recreate Instagram][1023] |
@@ -71,7 +71,6 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [5]: 03-html-css/html-review/readme.md
 [6]: 03-html-css/css-selectors/readme.md
 [7]: 02-js-jquery/js-control-flow/readme.md
-[8]: 09-other-topics/intro-wdi/readme.md
 [9]: 03-html-css/css-box-model/readme.md
 [10]: 02-js-jquery/js-functions/readme.md
 [11]: 02-js-jquery/js-dom-events/readme.md
