@@ -187,6 +187,27 @@ Should enter psql terminal and have no error.
 \q
 ```
 
+## Installing MongoDB
+
+Follow the official installation instructions on MongoDB.com:
+
+https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/#install-mongodb
+
+###Testing the MongoDB server
+
+```
+#Start the MongoDB server
+mongod
+```
+
+Press `control-c` to stop the server.
+
+###Install MongoDB GUI
+
+We'll be using **RoboMongo**. Install here:
+
+https://robomongo.org/
+
 ##Installing Ruby on Rails
 
 ####Install dependencies

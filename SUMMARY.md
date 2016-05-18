@@ -46,7 +46,6 @@
   * [Advanced SQL](04-databases/sql-advanced/readme.md)
   * [MongoDB](04-databases/mongo-intro/readme.md)
     * [Intro to NoSQL](04-databases/mongo-intro/intro-nosql.md)
-    * [MongoDB Installation](04-databases/mongo-intro/installation.md)
     * [CRUD in MongoDB](04-databases/mongo-intro/crud.md)
     * [Data Modeling](04-databases/mongo-intro/data-modeling.md)
 * [Node/Express](05-express/readme.md)

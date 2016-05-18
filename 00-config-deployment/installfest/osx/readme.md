@@ -87,8 +87,8 @@ sudo chown -R $USER /usr/local/lib
 ```
 
 
-##Sublime 3
-We'll be running **Sublime 3**, not Sublime 2 as our text editor of choice.
+##Sublime Text 3
+We'll be running **Sublime Text 3**, not Sublime Text 2 as our text editor of choice.
 
 Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
 
@@ -164,7 +164,39 @@ We'll be using **Postico**. Install here:
 
 https://eggerapps.at/postico/
 
-#Installing Ruby on Rails
+## Installing MongoDB
+
+```
+#Install MongoDB
+brew install mongodb
+
+#make data directory
+sudo mkdir -p /data/db
+
+#get your user name
+whoami
+
+#set data directory permissions (replacing USERNAME with the result from whoami above)
+sudo chown -R USERNAME:wheel /data
+```
+
+###Testing the MongoDB server
+
+```
+#Start the MongoDB server
+mongod
+```
+
+Press `control-c` to stop the server.
+
+###Install MongoDB GUI
+
+We'll be using **RoboMongo**. Install here:
+
+https://robomongo.org/
+
+
+##Installing Ruby on Rails
 
 ###Install rbenv
 rbenv lets us change ruby verions on the fly, useful for working with diffrent versions.
