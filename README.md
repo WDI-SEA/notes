@@ -9,9 +9,32 @@ https://wdi_sea.gitbooks.io/notes/content/
 
 ![GA Logo](./_assets/ga_cog.png)
 
+##Setting up the Notes locally
+
+* Fork this repository
+* Clone your fork to your development machine
+* Setup a remote for your fork
+  * Run `git remote add upstream git@github.com:WDI-SEA/notes.git`
+* Install the Gitbook CLI tool by running `npm install -g gitbook-cli`
+* Preview the Gitbook by running `gitbook serve`
+
+##Contributing to the Notes
+
+* All contributions can be done via pull requests
+* Recommended process:
+  * Make changes in your forked repository (use a separate branch)
+  * Create a pull request and be sure to be very explicit about the changes you've made
+  * Ask someone on the WDI team to look at your pull request
+
 ##Directory
 
 But wait, there's more! Notes are organized by topic, but there's a suggested order to go through the notes, complete with assignments.
+
+###Prework
+
+* [GA Dash](https://dash.generalassemb.ly/)
+* [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
+* [FreeCodeCamp](http://www.freecodecamp.com/)
 
 ###Front End Development
 
