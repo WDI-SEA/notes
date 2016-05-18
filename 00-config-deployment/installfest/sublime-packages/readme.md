@@ -1,5 +1,23 @@
 #Sublime Setup
 
+## Setting up User Settings
+
+* Open Sublime Text
+* Go to `Sublime Text -> Preferences -> Settings - User`
+* Replace the file with the settings object below:
+
+```
+{
+  "rulers":
+  [
+    80
+  ],
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "scroll_past_end": true
+}
+```
+
 ## Setting up Package Control in Sublime Text
 
 * Open Sublime Text
@@ -21,17 +39,19 @@
 
 * ColorPicker (pick colors by typing `COMMAND + SHIFT + c`, handy for CSS)
 * Color Highlighter (visually displays colors for hex/rgb values)
+* EditorConfig (reads configuration files for your editor)
+* GitGutter (shows git additions/deletions)
 * Terminal (launch a terminal window from a folder on the sidebar)
 * BracketHighlighter (highlight brackets and tabs)
 * Bootstrap 3 Snippets (tab snippets for Bootstrap 3 elements)
-* CodeFormatter (format your HTML/CSS/JS like a boss)
-* 1Self (tracks your coding activity)
 * EJS (syntax definition, we'll use this when working with Node)
 * Sass (syntax definition, we'll use this when working with Rails)
+* Babel (syntax definition, we'll use this when working with React)
+* JSX (syntax definition, we'll use this when working with React)
 
 Feel free to install any others, and we'll install others throughout the course.
 
-### Creating a Snippet
+### Creating a Snippet (Optional)
 
 We'll use a lot of snippets when working with Bootstrap, and you can make your own as well.
 
