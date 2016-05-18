@@ -294,7 +294,7 @@ Would you look at that? Our own custom directive - a reusable, semantic HTML com
 
 ##Before we continue... additional topics
 
-Your homework will involve making directives with more functionality than just a card. In order to provide additional functionality, the `controller` property is incredibly useful for creating a separate controller for the entire directive.
+Your assignment will involve making directives with more functionality than just a card. In order to provide additional functionality, the `controller` property is incredibly useful for creating a separate controller for the entire directive.
 
 Example:
 

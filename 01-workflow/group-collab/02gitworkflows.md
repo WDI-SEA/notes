@@ -4,7 +4,7 @@ So far, we've been using git to save versions of our work, which is one of git's
 
 [Different Workflows](https://www.atlassian.com/git/tutorials/comparing-workflows)
 
-We'll be focusing our time on the Forking Workflow. We've actually been using this workflow all along to a lesser degree, when submitting homework.
+We'll be focusing our time on the Forking Workflow. We've actually been using this workflow all along to a lesser degree, when submitting assignments.
 
 ![Forking](http://i.stack.imgur.com/iYdhN.png)
 
