@@ -4,7 +4,7 @@
     * [The Terminal](01-workflow/command-line/02intro-terminal.md)
     * [Filesystem Navigation](01-workflow/command-line/03navigating.md)
     * [File Manipulation](01-workflow/command-line/04file-manipulation.md)
-    * [Review/Resources](01-workflow/command-line/05review.md)
+    * [Additional Topics](01-workflow/command-line/05additional-topics.md)
   * [Intro to Git](01-workflow/intro-git/readme.md)
     * [Git Recipes](01-workflow/git-recipes/readme.md)
   * [Group Collaboration](01-workflow/group-collab/01readme.md)

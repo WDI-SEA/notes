@@ -12,6 +12,7 @@ Although they technically mean slightly different things, the following terms ar
 *  Shell
 *  bash ('Bourne-Again shell')
 *  Command Line
+*  CLI (Command Line Interface)
 *  Text Terminal
 *  DOS Prompt (on windows machines)
 *  SSH (on remote machines)
@@ -20,9 +21,3 @@ Although they technically mean slightly different things, the following terms ar
 *  ksh
 *  sh
 *  [UNIX Shell](http://en.wikipedia.org/wiki/Unix_shell)
-
-##Opening the Terminal
-**Follow Along:**
-
-1. In the top right of the screen click the Magnifying Glass icon to bring up 'Spotlight' and type 'Terminal'
-2. Once Terminal starts locate the icon in the doc and select `Options -> Keep In Dock` so that it's always handy

@@ -4,7 +4,7 @@
 
 * Define what a terminal window is
 * Identify commands used for navigating directories
-* Identify commands used for manipulating files (moving, copying, editing, removing)
+* Use commands to manipulate files (moving, copying, editing, removing)
 * Distinguish between absolute and relative paths
 * Apply commands towards everyday problems and workflows
 
