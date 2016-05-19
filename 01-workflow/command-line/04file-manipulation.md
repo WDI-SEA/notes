@@ -1,39 +1,38 @@
-#File Manipulation
+# File Manipulation
 
-##Making Directories
+## Common File Manipulation Commands
 
-Now that we know how to move around, it's time to make some changes. We can make directories with the `mkdir` command. Look at `man mkdir`. What's the format of the command for making a directory?
+* `mkdir` - make a directory
+* `touch` - make a file
+* `mv` - move a file/directory
+* `cp` - copy a file/directory
+* `rm` - remove a file/directory
+* `sort` - sort text files
+* `grep` - search text files
+* `echo` - write text to standard output
+* `cat` - read and concatenate files
+* `>` - redirect output to a file
+* `>>` - redirect and append output to a file
+* `|` - pipe output to another command
 
-    MKDIR(1)                  BSD General Commands Manual                 MKDIR(1)
+## `mkdir` - Make a directory
 
-    NAME
-         mkdir -- make directories
+Make a directory using `mkdir`, which accepts the name of the new directory as an argument. Note that when naming directories, using hyphens or underscores is recommended when separating words (don't use spaces).
 
-    SYNOPSIS
-         mkdir [-pv] [-m mode] directory_name ...
-
-    DESCRIPTION
-         The mkdir utility creates the directories named as operands, in the order specified, using
-         mode rwxrwxrwx (0777) as modified by the current umask(2).
-
-**Operands** (or arguments or parameters) are what comes after a command, so we write `mkdir living_room` to make a new room, where we will keep our couches. Keep your directory names lowercase in almost every case. Separating words with underscores is called snake_case.
-
-**Try This**
-
-    ~ cd ~
-
-    ~ mkdir living_room
-
-What command can you use to see the results of you handywork?
-
-###Adding and Editing Files
+```
+mkdir living_room
+```
 
 Let's `cd` into our new `living_room`  Look around with `ls`, and `ls -la`.  What do you see?
 
-**Exercise**
-I want my living room to have a bookshelf full of books.  Let's make a file that lists all of our books. Open Sublime Text and make a new file called `books.txt`
+## `touch` - Create a file
 
-`subl books.txt`
+Creating a file can be done by using the `touch` command. Then, the file can be opened in Sublime Text for editing.
+
+```
+touch books.txt
+subl books.txt
+```
 
 Add a few books, copy and paste the section below so we all have some books in common, and save the file.  Make sure the books you add are in the same format: `<author_given_name>, <author_last_name>:<title>`.
 
@@ -53,107 +52,112 @@ Mill, John Stuart:On Liberty
 Bunyan, John:Saved by Grace
 ```
 
-Now try `ls -la` again.  Do you see the `books.txt` file?  Look at the contents with `cat`.
+Now try `ls -la` again.  Do you see the `books.txt` file?
 
-###File Permissions
-The column on the left e.g.: `-rwxr-xr-x` displays the files' permissions. That is whether or not you can read, write or execute the file. These permissions can be set for the owner, group, or all users. The display also includes the type of file `d` for directory, `l` for link, `-` for files
+## `cat` - Reading and concatenating files
 
-Here's a tutorial on file permissions, if you're interested in unpacking that column: [http://en.flossmanuals.net/command-line/permissions/](http://en.flossmanuals.net/command-line/permissions/)
+A quick way to read files without opening Sublime is by using `cat`.
 
-###echo and Redirection
-**Try This**
+```
+cat books.txt
+```
 
-  `echo "This bookshelf flexes under the weight of the books it holds."`
+If we had another file, we could provide additional filenames as arguments in order to concatenate files together.
 
-`echo` is a command that just echoes (outputs) what we give to it as arguments (same as operands). Now we want to put that line in a file called `bookshelf.txt`.
+```
+cat books.txt schedule.txt
+```
 
-**Try This**
+## `echo` - Writing text to standard output
 
-  `echo "This bookshelf flexes under the weight of the books it holds" > bookshelf.txt`
+`echo` is a command that echoes (outputs) what we give to it as arguments.
 
-Using the closing angle bracket `>` in this way is called redirection. Every command that we run in the shell has an input, an output, an error output, and arguments/operands. We are saying: "Run `echo` with this string as an operand, and take the output and put it in a new file called bookshelf." Try running `ls` again, and `cat` our new file.
+```
+echo "This bookshelf flexes under the weight of the books it holds."
+```
 
-Two angle brackets `>>` works similarly, but it appends the string to the end of the file:
+At first glance, it seems too simple. Why would we need this command? Well every command that we run in the terminal has an input, an output, an error output, and arguments/options. Since `echo` produces output, we can *change* where this output will go!
 
-**Try This**
+## `>` and `>>` - File Redirection
 
-  `echo "It does not break, it does its job admirably" >> bookshelf.txt`
+Let's try redirecting the output from `echo` to a file.
+
+```
+echo "This bookshelf flexes under the weight of the books it holds" > bookshelf.txt
+```
+
+Using the closing angle bracket `>` in this way is called redirection. We are saying:
+
+* Run `echo` with this string as an argument
+* Take the output, and put it in a new file called `bookshelf.txt`.
+
+Try running `ls` again, and `cat` our new file.
+
+Two angle brackets `>>` works similarly, but it **appends** the string to the end of the file.
+
+```
+echo "It does not break, it does its job admirably" >> bookshelf.txt
+```
 
 Try `cat bookshelf.txt` to see the result
 
-**Exercise:** What's the difference between `cat` and `echo`?
+## `|` - Piping
 
+Let's look back at `books.txt`. Look at the file contents. Notice that the list of books is unsorted. We need to organize this using the `sort` command.
 
-###Piping
+We can use the `|` character to **pipe** output into another command, specifically the `sort` command. This is different from file redirection because we're directing output to the input of a command, not a file.
 
-Let's look back at our books. Read out the file. Notice that the list of books is unsorted! We need to organize this using the `sort` command.
+```
+cat books.txt | sort
+```
 
-Try `cat books.txt`, and `cat books.txt | sort`. The character `|` is called the pipe. We take the output from `cat books.txt` and send it through a pipe to `sort`. The output of `cat books.txt` becomes the input of `sort`. Now send the output of `sort` to a file:
+Note that if we look at `books.txt`, nothing changed. We read the contents of `books.txt` and piped the contents into sort, but the output was never saved. Luckily, we can combine piping with file redirection.
 
-**Try This**
-
-  `cat books.txt | sort`
-
-**Try This**
-
-  `cat books.txt | sort > sorted_books.txt`
+```
+cat books.txt | sort > sorted_books.txt
+```
 
 Look around again to see how the room has changed.
 
+## `grep` - Searching files
+
 There are dozens of powerful tools we can leverage using pipes. One of the ones you'll be using the most is `grep`.
 
-**Try This**
+```
+cat books.txt | grep Mil
+```
 
-  `cat books.txt | grep Mil`
-
-See how we filtered out just the lines that contain Mil? Try grepping for something else.
+See how we filtered out just the lines that contain Mil? Try grepping for something else. There are also additional options that can be passed to both `sort` and `grep`.
 
 > Adapted from [http://en.flossmanuals.net/command-line/piping/](http://en.flossmanuals.net/command-line/piping/)
 
-
-###Moving
+## `mv` - Moving files
 
 Now that we have our books sorted, we really don't need our unsorted list of books. `mv` stands for move, and that's how we move files and folders from place to place.
 
-**Try This**
+```
+mv sorted_books.txt books.txt
+```
 
-  `mv sorted_books.txt books.txt`
+## `cp` - Copying files
 
-Look around and see how the room has changed.
+To copy files, we use the `cp` command. Let's try adding a second bookshelf.
 
-## Copying
-To copy files, we use the `cp` command. Extrapolate from the way we used `mv` to copy the file `bookshelf.txt` to add a file `second_bookshelf.txt`.
+```
+cp bookshelf.txt second_bookshelf.txt
+```
 
-**Try This**
-
-  `cp bookshelf.txt second_bookshelf.txt`
+Note that if we copy a folder, we'll need to use an additional option, `-r`.
 
 ## Removing
-`rm` is short for remove.  Use `rm` to remove the `second_bookshelf.txt` file we just created with `cp`.
 
-**Try This**
+To remove files, we use the `rm` command. Let's go back and remove that second bookshelf.
 
-  `rm second_bookshelf.txt`
+```
+rm second_bookshelf.txt
+```
 
-**Important Note:** This does not send files to the trash can or recycle bin. Your files are gone forever, so be careful when using this command!
+Note that if we remove a folder, we'll need to use an additional option, `-r` and sometimes `-f`.
 
-**Bonus:** `cp` and `rm` do not work on directories. What flag would be needed to remove a directory?
+**IMPORTANT NOTE:** This does not send files to the trash can or recycle bin. Your files are **gone forever**, so be careful when using this command!
 
-###Filename Wildcards
-
-Sometimes we want to refer to a bunch of similar files, to do this we can use wildcards. The most common wildcard to use is `*` usually along with a file extension:
-
-**Try This**
-
-  `ls -la *.txt`
-
-For more ideas go here: [How to Use Wildcards](http://www.linfo.org/wildcard.html)
-
-###Mini Review - File Maniuplation
-
-* `mkdir`
-* editing files
-* echo
-* redirection `>` and `>>`
-* piping
-* moving, copying and removing
