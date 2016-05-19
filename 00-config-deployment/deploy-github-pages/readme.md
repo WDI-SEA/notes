@@ -20,7 +20,7 @@
 
 ### Setup Your Main Page
 
-Enable GitHub Pages in your GitHub account by creating a new specially-named repo named `username.github.io`. This repo contains HTML, JS and CSS that acts as your GitHub Pages homepage. Once you have this main repo set up you can make other repos available too.
+We'll start by creating a site at `username.github.io`. This repo contains HTML, JS and CSS that acts as your GitHub Pages homepage. Note that this is really handy for creating a portfolio, and you can even buy and setup a custom domain later.
 
 Follow instructions on [Github Pages](https://pages.github.com/) to initialize GitHub Pages in your GitHub account.
 
@@ -38,11 +38,13 @@ git push -u origin master
 
 6. View the now-hosted page! http://username.github.io.
 
-### Add Another Repo to GitHub Pages
+Any changes made to your homepage can be done directly in the `master` branch.
+
+### Using other repos with GitHub Pages
 
 Github Pages works by serving HTML/CSS/JavaScript files that live in a separate branch.
 
-Think of a branch as a separate "timeline" for your code. It can represent a set of different commits. We've been dealing with the **master** branch so far, but now we'll introduce a new branch for deployment called **gh-pages**
+Think of a branch as a separate "timeline" for your code. It can represent a set of different commits. We've been dealing with the **master** branch so far, but now we'll introduce a new branch for deployment called **gh-pages**. This branch is necessary to deploy to Github Pages, with the exception of your homepage.
 
 1. Choose an existing repo that you want to host on GitHub Pages.
 2. Checkout that repo on your local machine.
@@ -69,7 +71,7 @@ Now go to your page at `http://[your Github user name].github.io/[repo name]`
 
 ### Deploying subsequent changes to Github Pages
 
-When working on your project, your changes are committed to the `master` branch. But your public site lives on a separate branch, `gh-pages`. So if you want changes to be displayed live, you'll have to merge the changes made in `master` to `gh-pages`.
+When working on your project, your changes are committed to the `master` branch. On your homepage, changes are also committed to the `master` branch. But in any other repo other than your homepage, your public site needs to live on a separate branch, `gh-pages`. So if you want changes to be displayed live, you'll have to merge the changes made in `master` to `gh-pages`.
 
 Let's say I made two commits on `master` and I'm ready to deploy those changes. First, checkout the `gh-pages` branch.
 
@@ -83,7 +85,7 @@ Then merge the changes from `master`.
 git merge master
 ```
 
-Once you run the `merge` command, vim (a text editor) may pop up. Just type `:q` and then `ENTER`.
+Once you run the `merge` command, a text editor may pop up. Verify the commit message and save the file.
 
 Awesome, now push your local changes up to Github by running `git push`
 
