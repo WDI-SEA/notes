@@ -220,6 +220,13 @@ What is our recursive case?
 Remember your return statements! The final solution should bubble up from
 the deeper recursive calls!
 
+isPalindrome("") // true
+isPalindrome("a") // true
+isPalindrome("ab") // false
+isPalindrome("abba") // true
+isPalindrome("catdog") // false
+isPalindrome("tacocat") // true
+
 ```js
 function isPalindrome(ss) {
   if (ss.length < 2) {
@@ -234,9 +241,92 @@ function isPalindrome(ss) {
       return false;
     } else {
       // get the middle of the string
-      var middle = ss.substr(1, ss.length - 1);
+      var middle = ss.substr(1, ss.length - 2);
       return isPalindrome(middle);
     }
   }
 }
 ```
+
+## Practice Problems
+
+### Pretty Print
+Write a function called `prettyPrint` that accepts a complex object and prints out
+all of it's properties and all of its values. The object can have objects nested
+inside of it.
+
+Make the function accept two parameters: `prettyPrint(oo, indent)`.
+`oo` is the object that's currently being iterated over.
+`indent` is a string representing the current level of indentation.
+Whenever you make a recursive call increase the level of indentation by
+adding two spaces to indent:
+
+```js
+prettyPrint(newOO, indent + '  ');
+```
+
+
+It's useful to know how to detect actual key/value objects in JavaScript:
+
+```js
+typeof [] // "object"
+typeof {} // "object"
+
+[].constructor == Array // true
+[].constructor == Object // false
+({}).constructor == Object // true
+```
+
+Expected Output:
+
+```js
+o1 = {a: 1, b: 2};
+o2 = {a: 1, b: 2, c: {name: "Bruce Wayne", occupation: "Hero"}, d: 4};
+o3 = {a: 1, b: 2, c: {name: "Bruce Wayne", occupation: "Hero", friends: {spiderman: {name: "Peter Parker"}, superman: {name: "Clark Kent"}}}, d: 4};
+
+prettyPrint(o1)
+a: 1
+b: 2
+
+prettyPrint(o1)
+a: 1
+b: 2
+c:
+  name: Bruce Wayne
+  occupation: Hero
+d: 4
+
+prettyPrint(o3)
+a: 1
+b: 2
+c:
+  name: Bruce Wayne
+    occupation: Hero
+    friends:
+      spiderman:
+        name: Peter Parker
+      superman:
+        name: Clark Kent
+d: 4
+```
+
+Solution:
+
+```js
+function prettyPrint(oo, indent) {
+  indent = indent || "";
+
+  for (var key in oo) {
+    var value = oo[key];
+    // if the value at the key is complex then recurse
+    if (value.constructor === Object) {
+      console.log(indent + key + ":");
+      prettyPrint(value, indent + "  ");
+    } else {
+      // otherwise, do the simple base case and just print it out.
+      console.log(indent + key + ":", value);
+    }
+  }
+}
+```
+
