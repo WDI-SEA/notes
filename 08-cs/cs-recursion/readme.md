@@ -10,10 +10,14 @@
 * See classic recursion problems
 * Write your own recursive functions
 
+## Joke Dictionary Definition
+**Recursion:** see definition of recursion
+
 ## Define Recursion
 
 Today we're going to explore a topic called **recursion**. According to Wikipedia
-recursion is "the process of repeating items in a self-similar way."
+recursion is "the process of repeating items in a self-similar way." In programming
+recursion basically means, "a function that calls itself."
 
 Here's some pictures that we could say are **recursive** and exhibit properties
 of **recursion**:
@@ -21,9 +25,6 @@ of **recursion**:
 ![Mona Lisa holding her own painting](recursion_mona_lisa.jpg)
 ![Hulk Hogan's beard growing his own face](recursion_hulk_hogan.jpg)
 ![Droste branding](recursion_droste.jpg)
-
-## Joke Dictionary Definition
-**Recursion:** see definition of recursion
 
 ## Let's Pretend We Are Each A Recursive Function
 
