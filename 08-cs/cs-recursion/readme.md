@@ -22,6 +22,9 @@ of **recursion**:
 ![Hulk Hogan's beard growing his own face](recursion_hulk_hogan.jpg)
 ![Droste branding](recursion_droste.jpg)
 
+## Joke Dictionary Definition
+**Recursion:** see definition of recursion
+
 ## Let's Pretend We Are Each A Recursive Function
 
 How can we count how many people are sitting directly behind one person in this
