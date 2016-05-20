@@ -60,18 +60,9 @@ small amount of code and have it perform extremely powerful computations.
 
 ## A Useless Recursive Function
 
-In programming recursion refers to a function that calls itself. We know that
-functions can call functions. We call functions from inside other functions all
-the time. Functions are a useful way for us to seperate functionality in our
-programs and reuse code in many places. Functions are great!
-
-The fact that a function can call itself though is not so obvious.
-It turns out that it's completely syntactically
-and run-time logically legal for a function to call itself. 
-
-Here is one function that does absolutely nothing useful. This function shows
-us that it's possible to call a function within itself. And it shows us the
-danger of infinite recursion!
+We know that functions can call other functions. It's not so obvious that
+functions can actually call themselves too. Let's look at one function that
+calls itself and consider what it does.
 
 * What will be the output of this function?
 * When will this program stop running?
@@ -96,9 +87,8 @@ In practice, the function will eventually crash.
 Your computer will run out of memory and you'll see an error message
 saying something like, "stack overflow exception" or "maximum call stack exceeded."
 
-This function is admitedly useless. This function is only here to prove that
-it's possible to call a function from inside itself, and to show the danger
-of a function that calls itself forver.
+This function is only here to prove that it's possible to call a function from
+inside itself, and to show the danger of a function that calls itself forver.
 
 Recursion gets much better than this useless example. It's possible to write
 recursive functions in such a way that we can write very robust, expressive code.
