@@ -250,6 +250,39 @@ function isPalindrome(ss) {
 
 ## Practice Problems
 
+### Fibonacci
+
+Write a recursive function called `fib` that accepts a number `N` greater
+than zero and returns the `Nth` fibonacci number:
+
+```js
+fib(-1) // 0
+fib(0) // 0
+fib(1) // 1
+fib(2) // 1
+fib(3) // 2
+fib(4) // 3
+fib(5) // 5
+fib(6) // 8
+fib(7) // 13
+```
+
+### Reverse String
+
+Write a recursive function called `reverse` that accepts a string and returns
+a reversed string.
+
+```js
+reverse("") // ""
+reverse("a") // "a"
+reverse("ab") // "ba"
+reverse("computer") "retupmoc"
+reverse("abcdefghijklmnopqrstuvwxyz") // "zyxwvutsrqponmlkjihgfedcba"
+reverse(reverse("computer")) // "computer"
+```
+
+Is `reverse(reverse("computer"))` considered recursive? Why or why not?
+
 ### Pretty Print
 Write a function called `prettyPrint` that accepts a complex object and prints out
 all of it's properties and all of its values. The object can have objects nested
@@ -323,7 +356,40 @@ c:
 d: 4
 ```
 
-Solution:
+
+### Reverse String Solution
+```js
+function reverse(ss) {
+  if (ss.length == 0) {
+    return "";
+  } else if (ss.length == 1) {
+    return ss;
+  } else {
+    var last = ss[ss.length - 1];
+    var beginning = ss.substr(0, ss.length - 1);
+    return last + reverse(beginning);
+  }
+}
+```
+
+
+### Fibonacci Solution
+```js
+function fib(n) {
+  if (n <= 0) {
+    return 0;
+  } else if (n == 1) {
+    return 1;
+  } else if (n == 2) {
+    return 1;
+  } else if (n > 2) {
+    return fib(n - 1) + fib(n - 2);
+  }
+}
+```
+
+
+### Pretty Print Solution
 
 ```js
 function prettyPrint(oo, indent) {
