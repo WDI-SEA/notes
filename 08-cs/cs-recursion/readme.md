@@ -108,13 +108,17 @@ Recursive functions are comprised of the following components:
 * the **base case**, and
 * the **recursive case**.
 
+Recursive functions usually follow this pattern. They detect and handle the base
+case first, otherwise they perform one small piece of the problem and then recurse:
+
 ```js
-function recurse(arg) {
-  if (baseCase) {
-    // do base case stuff
+function recurse(n) {
+  // check for base case
+  if (n <= 0) {
+    return 0;
   } else {
-    // do recursive case stuff
-    return recurse(newArg);
+    // otherwise do a small amount of work and call the function again
+    return 1 + recurse(n - 1);
   }
 }
 ```
