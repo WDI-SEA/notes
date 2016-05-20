@@ -13,7 +13,7 @@
 ## Joke Dictionary Definition
 **Recursion:** see definition of recursion
 
-## Define Recursion
+## What is it?
 
 Today we're going to explore a topic called **recursion**. According to Wikipedia
 recursion is "the process of repeating items in a self-similar way." In programming
