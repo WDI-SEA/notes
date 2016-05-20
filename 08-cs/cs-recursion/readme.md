@@ -108,7 +108,7 @@ Recursive functions are comprised of the following components:
 * the **base case**, and
 * the **recursive case**.
 
-```
+```js
 function recurse(arg) {
   if (baseCase) {
     // do base case stuff
@@ -127,7 +127,7 @@ writing what the program should return for the most obvious of examples.
 If you're writing a function that computes the sum of numbers in a list
 the base case is probably:
 
-```
+```js
 if (list.length === 0) {
   return 0;
 }
@@ -151,7 +151,7 @@ sum of numbers from 0 to N.
 
 What is the base case?
 
-```
+```js
 if (n < 0) {
   return 0;
 }
@@ -159,7 +159,7 @@ if (n < 0) {
 
 What is the recursive case?
 
-```
+```js
 if (n > 0) {
   // man, I wish we had a function that computed the sum of 0..N
   return n + ???
@@ -169,7 +169,7 @@ if (n > 0) {
 Oh wait!! We've already defined a function that sums all numbers!
 Take a step and take the leap of faith. Call the function again!
 
-```
+```js
 function sum(n) {
   if (n < 0) {
     return 0;
@@ -182,7 +182,7 @@ function sum(n) {
 Wait, this doesn't work. Remember to `return` the value that comes back
 from the recursive call.
 
-```
+```js
 function sum(n) {
   if (n < 0) {
     return 0;
@@ -222,7 +222,7 @@ What is our recursive case?
 Remember your return statements! The final solution should bubble up from
 the deeper recursive calls!
 
-```
+```js
 function isPalindrome(ss) {
   if (ss.length < 2) {
     return true;
