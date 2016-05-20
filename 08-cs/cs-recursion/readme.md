@@ -258,6 +258,19 @@ inside of it.
 Make the function accept two parameters: `prettyPrint(oo, indent)`.
 `oo` is the object that's currently being iterated over.
 `indent` is a string representing the current level of indentation.
+
+Here's a piece of code that will allow you to call `prettyPrint` without
+having to pass in an empty string each time you indent:
+
+```js
+function prettyPrint(oo, indent) {
+  indent = indent || "";
+
+  // write your solution here
+}
+
+```
+
 Whenever you make a recursive call increase the level of indentation by
 adding two spaces to indent:
 
@@ -284,11 +297,11 @@ o1 = {a: 1, b: 2};
 o2 = {a: 1, b: 2, c: {name: "Bruce Wayne", occupation: "Hero"}, d: 4};
 o3 = {a: 1, b: 2, c: {name: "Bruce Wayne", occupation: "Hero", friends: {spiderman: {name: "Peter Parker"}, superman: {name: "Clark Kent"}}}, d: 4};
 
-prettyPrint(o1)
+prettyPrint(o1, "")
 a: 1
 b: 2
 
-prettyPrint(o1)
+prettyPrint(o1, "")
 a: 1
 b: 2
 c:
@@ -296,7 +309,7 @@ c:
   occupation: Hero
 d: 4
 
-prettyPrint(o3)
+prettyPrint(o3, "")
 a: 1
 b: 2
 c:
