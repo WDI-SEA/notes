@@ -161,7 +161,7 @@ What is the recursive case?
 
 ```js
 if (n > 0) {
-  // man, I wish we had a function that computed the sum of 0..N
+  // man, I wish we had a function that computed the sum of 0..N-1
   return n + ???
 }
 ```
