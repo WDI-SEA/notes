@@ -155,6 +155,7 @@
   * [Foreman (Environment Variables)](00-config-deployment/foreman/readme.md)
 * [Data Structures and Algorithms](08-cs/readme.md)
   * [Problem Solving - Array Flatten](08-cs/teaser-js-array-flatten/readme.md)
+  * [Binary Search](08-cs/cs-recursion/readme.md)
   * [Binary Search](08-cs/teaser-ruby-binary-search/readme.md)
   * [Algorithm Complexity](08-cs/cs-algorithm-complexity/readme.md)
   * [Stacks and Queues](08-cs/cs-stacks-queues/readme.md)
