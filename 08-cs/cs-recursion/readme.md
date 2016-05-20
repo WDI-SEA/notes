@@ -6,8 +6,8 @@
 * Identify the two parts of a recursive function:
   * Write base case
   * Write recursive case
+* Write a recursive function
 * See classic recursion problems
-* Review best practices
 * Write your own recursive functions
 
 ## Define Recursion
