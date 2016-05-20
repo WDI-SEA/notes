@@ -308,7 +308,11 @@ Whenever you make a recursive call increase the level of indentation by
 adding two spaces to indent:
 
 ```js
-prettyPrint(newOO, indent + '  ');
+function prettyPrint(oo, indent) {
+  // ...
+  prettyPrint(newOO, indent + '  ');
+  // ...
+}
 ```
 
 
