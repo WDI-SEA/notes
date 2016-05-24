@@ -66,7 +66,7 @@ you're in the directory with `index.html` in it.
 ```
 python -m SimpleHTTPServer 8000
 ```
-Now navigate to http://localhost:8000 and you should see you site there.
+Now navigate to http://localhost:8000 and you should see your site there with the navbar loading correctly.
 
 ### Utilizing Angular Directives
 
