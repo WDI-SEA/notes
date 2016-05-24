@@ -10,7 +10,7 @@ Note that "absolutely positioned" elements ignore the float property as they are
 
 Floated elements remain a part of the flow of the web page. This is distinctly different than page elements that use absolute positioning.
 
-There are four valid values for the float property. `left` and `right` float elements those directions, respectively. `none` (the default) ensures the element will not float and "inherit" which will assume the float value from that elements parent element.
+There are four valid values for the float property. `left` and `right` float elements those directions, respectively. `none` (the default) ensures the element will not float and `inherit` which will assume the float value from that element's parent element.
 
 #### Clear
 
