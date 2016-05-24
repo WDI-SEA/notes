@@ -18,15 +18,12 @@ But what do these different layers mean, and how are they relating to one anothe
 
 * **Margin** - clears an area around the border; the margin does not have a background color, it is completely transparent
   * The margin is **outside the element**
-
 * **Border** - a border that goes around the padding and content; the border is affected by the background color of the box
-  * The margin is **inside the element**
-
+  * The border is **inside the element**
 * **Padding** - clears an area around the content; the space between the content and the border; the padding is affected by the background color of the box
-  * The margin is **inside the element**
-
+  * The padding is **inside the element**
 * **Content** - The content of the box, where text and images appear
-  * The margin is **inside the element**
+  * The content is **inside the element**
 
 ---
 
