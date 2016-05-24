@@ -60,6 +60,14 @@ Inside `index.html`:
 
 Lastly, if we try to render this page, there will be a cross origin error. So make sure to run a local HTTP server to load the partial (you should have a `srv` alias setup for this).
 
+If you don't have a `srv` alias set up, then run this command manually. Make sure
+you're in the directory with `index.html` in it.
+
+```
+python -m SimpleHTTPServer 8000
+```
+Now navigate to http://localhost:8000 and you should see you site there.
+
 ### Utilizing Angular Directives
 
 Playing around with the navigation bar, you may notice that the "hamburger icon" dropdown does not work in mobile view. In order to utilize this, we'll have to add directives to create the **collapse** effect.
