@@ -9,6 +9,21 @@
 
 Angular supports animations on enter, leave, and move. This is achieved by loading the ngAnimate module, which will automatically add the ng-enter/ng-leave/ng-move classes to your object when it is added/removed.
 
+Animations are only attached to elements that have the following directives:
+
+| Directive       | Supported Animations                                                       |
+|-----------------|----------------------------------------------------------------------------|
+| ngRepeat        | enter, leave and move                                                      |
+| ngView          | enter and leave                                                            |
+| ngInclude       | enter and leave                                                            |
+| ngSwitch        | enter and leave                                                            |
+| ngIf            | enter and leave                                                            |
+| ngClass         | add and remove (the CSS class(es) present)                                 |
+| ngShow & ngHide | add and remove (the ng-hide class value)                                   |
+| form & ngModel  | add and remove (dirty, pristine, valid, invalid & all other validations)   |
+| ngMessages      | add and remove (ng-active & ng-inactive)                                   |
+| ngMessage       | enter and leave                                                            |
+
 Read the [ngAnimate Documentation](https://docs.angularjs.org/api/ngAnimate)
 
 Load `angular-animate.js` using a `<script>` tag. Place this in the `<head></head>` tags.
@@ -46,28 +61,41 @@ To add an animation to an item simply add a class to that item and define a css 
 }
 ```
 
+Documentation can be found [here](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions).
+
 ### Examples
 
-These are CSS transitions. Documentation can be found [here](https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Using_CSS_transitions).
+Here's an example of a div that has the ng-if directive. The div will only appear if `$scope.bool` is `true`.
+This div has the class `fade` so it will fade in and out as the ng-if directive adds and removes the div
+from the page.
+
+```html
+<div ng-if="bool" class="fade">
+   Fade me in out
+</div>
+<button ng-click="bool=true">Fade In!</button>
+<button ng-click="bool=false">Fade Out!</button>
+```
 
 ```css
-.item.ng-enter, .item.ng-move {
-  transition: 0.5s linear all;
-  opacity: 0;
+/* The starting CSS styles for the enter animation */
+.fade.ng-enter {
+    transition:0.5s linear all;
+      opacity:0;
 }
 
-.item.ng-leave {
-  transition: 0.5s linear all;
-  opacity: 1;
+/* The finishing CSS styles for the enter animation */
+.fade.ng-enter.ng-enter-active {
+    opacity:1;
 }
 
-.item.ng-enter.ng-enter-active,
-.item.ng-move.ng-move-active {
-  opacity: 1;
+/* now the element will fade out before it is removed from the DOM */
+.fade.ng-leave {
+    transition:0.5s linear all;
+      opacity:1;
 }
-
-.item.ng-leave.ng-leave-active {
-  opacity: 0;
+.fade.ng-leave.ng-leave-active {
+    opacity:0;
 }
 ```
 
