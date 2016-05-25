@@ -51,7 +51,7 @@ You might find your self having to re-authenticate GIT every time you work on yo
 ##Node
 
 ```
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 
 sudo apt-get install -y build-essential nodejs
 ```
