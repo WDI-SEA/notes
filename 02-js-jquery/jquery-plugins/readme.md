@@ -40,4 +40,5 @@ Once jQuery UI is included on the page, jQuery is *extended*, meaning jQuery UI 
 $('.item').draggable();
 ```
 
-[Here's an example on Codepen](http://codepen.io/bhague1281/pen/YwLXMV)
+<p data-height="665" data-theme-id="0" data-slug-hash="YwLXMV" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/YwLXMV/">jQuery UI Examples</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
