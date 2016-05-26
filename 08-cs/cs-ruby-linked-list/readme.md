@@ -45,7 +45,7 @@ loops here because Linked Lists don't have a length property. Instead of iterati
 `for` a certain number of times, we simply iterate `while` our `current` pointer is
 not `nil`.
 
-Createa a local variable called `current` that starts off pointing to the list's
+Create a a local variable called `current` that starts off pointing to the list's
 root node. Inside the loop you can do two things:
 
 1. access the value of the current node at `current.data`
