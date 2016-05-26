@@ -1,6 +1,6 @@
 {
     "structure": {
-        "readme": "README.md"
+        "readme": "readme.md"
     },
     "plugins": ["toggle-chapters", "codeblock-disable-glossary"]
 }
