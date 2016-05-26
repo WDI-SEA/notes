@@ -58,13 +58,5 @@ class LinkedList
   def to_s
     @head.to_s
   end
-
-  def get_center
-    #code solution for center here
-  end
-
-  def reverse
-    #bonus - code solution for reverse here
-  end
 end
 ```
