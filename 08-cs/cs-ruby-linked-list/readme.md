@@ -38,6 +38,33 @@ The best way to understand how linked lists work is to make one! Let's do so in 
 
 4. Create another method on the `LinkedList` or `Node` called `to_s` in order to print the list to the console.
 
+## Iterating Over Linked Lists
+
+Use while loops to iterate over a linked lists. While loops are better than for
+loops here because Linked Lists don't have a length property. Instead of iterating
+`for` a certain number of times, we simply iterate `while` our `current` pointer is
+not `nil`.
+
+Createa a local variable called `current` that starts off pointing to the list's
+root node. Inside the loop you can do two things:
+
+1. access the value of the current node at `current.data`
+2. point the current variable to the next item with `current = current.next`
+
+```ruby
+list = LinkedList.new
+list.insert_front 23
+list.insert_front 82
+list.insert_front 33
+list.insert_front 97
+
+current = list.root
+while current.next != nil
+	puts current.data
+	current = current.next
+end
+```
+
 **BONUS:** Create an `insert_end` method to add nodes to the end of the list.
 
 **SUPER BONUS:** Create a more versatile `insert` method to add a node anywhere in the linked list, providing an index for the new item.

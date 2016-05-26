@@ -1,6 +1,8 @@
-#Linked List Methods Challenge
+# Linked List Advanced Exercises
 
 Use the Linked List included in this document to implement the following methods.
+These methods are hard! Once you master these exercises you'll be an expert at
+Linked Lists.
 
 ####Find center
 
