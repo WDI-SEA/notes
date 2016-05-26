@@ -99,7 +99,7 @@ This will return a resource with a modified query method.
 
 **Try it:** Use the `get` method from the Films service to retrieve the second film (id of 2). If you're not sure how to pass the film id in, consult the documentation for `$resource`.
 
-###Why use a Service?
+### Why use a Service?
 
 You may be wondering why we're using a service for a one-line resource. Usually, resources are more complex and can be customized as you see fit. Take a look at the [documentation for $resource](https://docs.angularjs.org/api/ngResource/service/$resource) and see what can be customized. Even if we didn't add additional customizations, the service allows many controllers to access the resource as a singleton.
 
@@ -117,10 +117,91 @@ app.factory('Films', ['$resource', function($resource) {
 }]);
 ```
 
-Note that we set `isArray` to true for the GET all endpoint. We also set the `cache` to false, but it could be set to true for performance improvements. We also may want to customize the `all` endpoint in the future, if we want to limit results (imagine getting all Facebook users when calling `.all`).
+Note that we set `isArray` to true for the GET all endpoint.
+We also set the `cache` to false, but it could be set to true for performance improvements.
+We also may want to customize the `all` endpoint in the future, if we want to limit results
+(imagine getting all Facebook users when calling `.all`).
 
 ##Conclusion
 
 We've used services when working with `$http` and Bootstrap modals, and we just made our own. By doing so, we've isolated business logic out of our controllers, so that they can focus mainly on initializing and manipulating data.
 
 Later, we'll add routing to this Star Wars app and implement all of the CRUD functions.
+
+## Solution Code
+
+index.html:
+
+```html
+<!DOCTYPE html>
+<html ng-app="StarWarsApp">
+<head>
+  <title>Star Wars App</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+</head>
+<body ng-controller="HomeCtrl">
+  <div>
+    <input type="integer" ng-model="movieId">
+    <button ng-click="getMovie(movieId)">Get</button>
+    <button ng-click="getAll()">All</button>
+  </div>
+
+  <div ng-if="loading">
+    loading...
+  </div>
+
+  <div ng-if="!loading" ng-repeat="film in films">
+    <h1>{{film.title}}</h1>
+    <p>{{film.opening_crawl}}</p>
+  </div>
+</body>
+</html>
+```
+
+js/app.js:
+
+```js
+var app = angular.module("StarWarsApp", ['ngResource']);
+
+app.factory('FilmsFactory', ['$resource', function($resource) {
+  // use the colon syntax to specify the id parameter in the url.
+  var url = 'http://swapi.co/api/films/:id';
+
+  // configure the resource to get the first movie by default.
+  var defaultParams = {id: 1};
+
+  return $resource(url, defaultParams, {
+    // overwrite the defaultParams when getting all movies.
+    all: {params: {id: undefined}, isArray: false},
+    get: {isArray: false}
+  });
+}]);
+
+app.controller('HomeCtrl', ['$scope', 'FilmsFactory', function($scope, FilmsFactory){
+  $scope.movieId = 1;
+  $scope.films = [];
+  $scope.loading = false;
+
+  $scope.getAll = function() {
+    $scope.loading = true;
+    FilmsFactory.all(function success(data) {
+      $scope.films = data.results;
+      $scope.loading = false;
+    }, function error(data) {
+      console.log("error");
+    });
+  };
+
+  $scope.getMovie = function(id) {
+    $scope.loading = true;
+    FilmsFactory.get({id: id}, function success(data) {
+      $scope.films = [data];
+      $scope.loading = false;
+    }, function error(data) {
+      console.log("error");
+    });
+  };
+}]);
+```
