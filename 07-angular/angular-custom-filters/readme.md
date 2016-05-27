@@ -140,6 +140,32 @@ More info: [Angular Docs - Filters](https://docs.angularjs.org/guide/filter)
 
 ### Exercises
 
+### nth
+
+Create a filter called 'nth' that accepts a number and adds the proper
+suffix to it, like 1st, 2nd, 3rd, 4th and so on. Zero should show as 0th.
+
+Sample input:
+
+```
+<ul>
+  <li ng-repeat="i in [1,2,3,4]">
+    {{i | nth}} place
+  </li>
+</ul>
+```
+
+Sample output:
+
+```
+1st place
+2nd place
+3rd place
+4th place
+```
+
+#### pluralize
+
 Create a filter called 'pluralize' that accepts accepts a list length
 as an input and accepts two other parameters:
 
@@ -178,7 +204,7 @@ The filter should output the following text to the page for different input:
 23 octopi spotted today.
 ```
 
-### filesize
+#### filesize
 
 Create a filter called `filesize` that accepts a number representing the number
 of kilobytes in a file and returns a string with a human-readable size description in
@@ -211,7 +237,7 @@ The filter should output the following list on the page:
 1.25 GB
 ```
 
-### primes
+#### primes
 
 Create filter called `primes` that accepts a list of numbers and returns a new
 list containing only prime numbers:
@@ -234,7 +260,7 @@ The filter should output the following list on the page:
 17
 ```
 
-### ago
+#### ago
 
 Create a filter called `ago` that accepts a timestamp string and returns a string
 representing how long ago the timestamp occurred.
