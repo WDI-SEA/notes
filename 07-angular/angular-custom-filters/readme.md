@@ -211,14 +211,14 @@ The filter should output the following list on the page:
 1.25 GB
 ```
 
-### isPrime
+### primes
 
-Create filter called `isPrime` that accepts a list of numbers and returns a new
+Create filter called `primes` that accepts a list of numbers and returns a new
 list containing only prime numbers:
 
 ```html
-<ul ng-repeat="num in [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] | isPrime">
-  <li>{{num}}<li>
+<ul ng-repeat="num in [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] | primes">
+  <li>{{num}}</li>
 </ul>
 ```
 
