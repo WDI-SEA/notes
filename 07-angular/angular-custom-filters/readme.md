@@ -178,6 +178,39 @@ The filter should output the following text to the page for different input:
 23 octopi spotted today.
 ```
 
+### filesize
+
+Create a filter called `filesize` that accepts a number representing the number
+of kilobytes in a file and returns a string with a human-readable size description in
+the following units:
+
+* bytes
+* KB - kilobytes (1024 bytes)
+* MB - megabytes (1024 kilobytes)
+* GB - gigabytes (1024 megabytes)
+
+The filter should accept an optional parameter **precision** that defaults to
+2 that represents how many digits to show after the decimal place if the filesize
+if larger than one megabyte. Refer to
+[MDN toFixed() documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed)
+for details.
+
+```
+<ul ng-repeat="bytes in [123, 1024, 1536, 1048576, 1310720]">
+  {{ bytes | filesize: 2}}
+</ul>
+```
+
+The filter should output the following list on the page:
+
+```
+123 KB
+1.00 MB
+1.50 MB
+1.00 GB
+1.25 GB
+```
+
 ### isPrime
 
 Create filter called `isPrime` that accepts a list of numbers and returns a new
@@ -189,12 +222,14 @@ list containing only prime numbers:
 </ul>
 ```
 
-The filter should output the following on the page:
+The filter should output the following list on the page:
 
-* 2
-* 3
-* 5
-* 7
-* 11
-* 13
-* 17
+```
+2
+3
+5
+7
+11
+13
+17
+```
