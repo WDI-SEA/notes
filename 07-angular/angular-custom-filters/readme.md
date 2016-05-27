@@ -137,3 +137,64 @@ $scope.someText = 'This is some text';
 ```
 
 More info: [Angular Docs - Filters](https://docs.angularjs.org/guide/filter)
+
+### Exercises
+
+Create a filter called 'pluralize' that accepts accepts a list length
+as an input and accepts two other parameters:
+
+* **length** - a number representing a quantity
+* **singular** - a string to show if the length is 1
+* **plural** - a string to show if the length is not 1
+
+The filter should return the **singular** string if the input length
+is exactly equal to one. Otherwise, it should return the plural string.
+
+The **plural** string is an optional parameter. Detect if it is passed to the
+filter. If **plural** is not passed to the filter then append the letter `"s"`
+to the **singular** string.
+
+```html
+<div class="inbox">
+  {{planes.length}} new {{ planes.length | pluralize: "message"}}
+</div>
+
+<div class="zoo">
+  {{octopus.length}} {{ planes.length | pluralize: "octupus":"octopi"}} spotted today.
+</div>
+```
+
+The filter should output the following text to the page for different input:
+
+```
+0 new messages
+1 new message
+12 new messages
+```
+
+```
+0 octopi spotted today.
+1 octopus spotted today.
+23 octopi spotted today.
+```
+
+### isPrime
+
+Create filter called `isPrime` that accepts a list of numbers and returns a new
+list containing only prime numbers:
+
+```html
+<ul ng-repeat="num in [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17] | isPrime">
+  <li>{{num}}<li>
+</ul>
+```
+
+The filter should output the following on the page:
+
+* 2
+* 3
+* 5
+* 7
+* 11
+* 13
+* 17
