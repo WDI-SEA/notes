@@ -13,11 +13,11 @@ A little while back, a couple wonderful folks at Twitter created a front end fra
 
 ### How to include it
 
-You can include Bootstrap multiple ways, the easiest to start is a CDN and the most practical as you build more robust applications is to use something like Bower (or a gem when we get to rails)
+You can include Bootstrap multiple ways, the easiest to start is a CDN. As we continue to use Rails and more robust tooling, we can also use package managers like `npm`. Our current setup won't support this, but we'll use it in time!
 
 1. CDN (content delivery network - someone else hosts the library/framework and you access it via a URL)
 2. Include the actual CSS and JS files - great for offline development
-3. Bower - a package manager for your front end dependencies (written by some Twitter people also!)
+3. Package manager (`npm`, Ruby gem)
 
 ### Start with a container
 
