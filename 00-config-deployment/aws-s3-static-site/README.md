@@ -1,14 +1,14 @@
 # Static site with S3
 
 ### Objectives
-*After this lesson, students will be able to:*
+*After this lesson, developers will be able to:*
 
 - Describe S3 storage usages
 - Utilize S3 to store files and host website and Route53 for domain routing
 - Create and upload static content for a website
 
 ### Preparation
-*Before this lesson, students should already be able to:*
+*Before this lesson, developers should already be able to:*
 
 - Describe the difference between static and dynamic websites
 - Write HTML, CSS, JS to build a functioning website
