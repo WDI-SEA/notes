@@ -1,13 +1,13 @@
 # Amazon Web Services - Elastic Beanstalk
 
 ### Objectives
-*After this lesson, students will be able to:*
+*After this lesson, developers will be able to:*
 
 - Describe AWS Elastic Beanstalk
 - Build a web app and deploy to EB
 
 ### Preparation
-*Before this lesson, students should already be able to:*
+*Before this lesson, developers should already be able to:*
 
 - Build a functioning full-stack application
 - Explain what a virtual server is
