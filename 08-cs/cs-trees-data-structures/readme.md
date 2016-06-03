@@ -70,6 +70,11 @@ for this tree:
        6   12
 ```
 
+## Practice Problems
+
+1. write a function that counts the total number of nodes in the tree.
+2. write a function that finds the minimum value in a tree.
+
 ### Binary Search Trees
 
 The most common tree structure is known as a binary search tree. Each node has
