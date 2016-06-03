@@ -2,7 +2,7 @@
 
 ### Objectives
 
-* Explain the basics of Agile methodologies and why it's used
+* Explain the basics of Agile methods and why it's used
 * Describe user stories and how they are different than to-dos
 * Practice creating user stories for an example app
 
