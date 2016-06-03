@@ -10,19 +10,86 @@ Trees consist of a top node, called the **root** of the tree, linking to **child
 
 So what's the point? Trees are used in many areas of computer science, including syntax parsers (determines if your parentheses and functions are correct). They're also used in practical applications, such as nested comments and files/directories.
 
+## Implementation
+
+Trees are built out of two classes: a `Tree` class and a `TreeNode` class.
+This is similar to how Linked Lists are built. Linked Lists have a `ListNode` with
+a propery for `data` and a property `next` to point to the next node in the list.
+
+A `TreeNode` has a property to store `data`, and `left` and `right` properties to
+store references to branches off the current node off to the left and right.
+
+The `Tree` class defines one node called the `root` node which represents the top of the tree.
+The `root` property points to an instance of a `TreeNode`. The `Tree` class also houses useful
+methods for adding nodes, removing nodes, and printing out the entire tree.
+
+See [tree.rb](tree.rb) for an actual implementation of TreeNode and Tree classes in Ruby.
+
+## Traversing Trees
+
+We can use for loops to iterate over arrays. Arrays have a definite length and
+all of the indexes are sequential.
+
+We can iterate Linked Lists using while loops. We can set a pointer to the first
+node and keep stepping to the next `next` node until there's no next node left.
+Linked Lists are still a linear data structure.
+
+Trees are harder to iterate over. Each Tree Node splits into two more, on it's
+left and right side. There's no one straight path through a tree. How could we
+iterate through a tree?
+
+The answer. Is Recursion. For each Tree Node we can print out it's `data`, then
+print out the date for it's left and right side. Traversing a tree looks like this:
+
+```ruby
+def inOrderTraverse(node)
+  if node != nil
+    puts node.data
+    traverse(node.left)
+    traverse(node.right)
+  end
+end
+```
+
+Notice that there are different orders we can traverse the tree in.
+
+in-order traverse: print node.data, recurse left, recurse right.
+
+pre-order traverse: recurse left, print node.data, recurse right.
+
+post-order traverse: recurse right, print node.data, recurse left.
+
+Practice writing down the in-order, pre-order and post-order traversals
+for this tree:
+
+```txt
+       4
+      / \
+     1   8
+        / \
+       6   12
+```
+
 ### Binary Search Trees
 
-The most common tree structure is known as a binary search tree. Each node has at most two children, and they provide a way to order elements. When inserting values, the value goes to the left child if less than the root node, and to the right child if greater than the root node.
+The most common tree structure is known as a binary search tree. Each node has
+at most two children, and they provide a way to order elements. When inserting values,
+the value goes to the left child if less than the root node, and to the right child
+if greater than the root node.
 
 ![BST](http://cramster-image.s3.amazonaws.com/definitions/computerscience-5-img-1.png)
 
-Note the **mathematical benefits** of a binary tree. As we add another "level" to the tree, the number of nodes at that level doubles. Therefore, this can be represented with the equation
+Note the **mathematical benefits** of a binary tree. As we add another "level" to
+the tree, the number of nodes at that level doubles. Therefore, this can be represented
+with the equation
 
 ```
 2^x = n
 ```
 
-where `x` is the number of levels, and `n` is the number of nodes. Since it's likely that we know the number of nodes vs. of the number of levels, we can represent this equation with logarithms.
+where `x` is the number of levels, and `n` is the number of nodes. Since it's likely
+that we know the number of nodes vs. of the number of levels, we can represent this
+equation with logarithms.
 
 ```
 x = log(n)
