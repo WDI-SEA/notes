@@ -2,13 +2,13 @@
 
 ### Objectives
 
-* Explain the basics of Agile methodologies and why it's used
+* Explain the basics of Agile methods and why it's used
 * Describe user stories and how they are different than to-dos
 * Practice creating user stories for an example app
 
 # Agile Development, Wireframes, and User Stories
 
-## Agile vs. Waterfall
+## Agile and Waterfall
 
 #### Waterfall
 
@@ -18,7 +18,7 @@ _The waterfall model is a sequential design process, used in software developmen
 
 Waterfall is a good example of a linear methodology. It has it's own benefits:
 
-* simple,  easy to understand and use.
+* simple, easy to understand and use.
 * easy to manage due to the rigidity of the model -- each phase has specific deliverables and a review process
 * phases are processed, completed one at a time, and do not overlap
 * works well for smaller projects where requirements are very well understood
@@ -38,15 +38,17 @@ This was a formal "proclamation" of key values and principles for approaching so
 * **Customer collaboration over contract negotiation:** requirements cannot be fully collected at the beginning of the software development cycle, therefore continuous customer or stakeholder involvement is very important
 * **Responding to change over following a plan:** agile methods are focused on quick responses to change and continuous development
 
+However, keep in mind that *not all of these values are beneficial for all projects*. For example, freelancers will usually want a set plan and contract in place in order to prevent **scope creep**.
+
 The core principles of agile development remain the same:
 
 * Iterative, incremental and evolutionary
 * Efficient and face-to-face communication
 * Very short feedback loop and adaptation cycle
 * Quality focus
-* Adaptive vs. predictive
-* Iterative vs. waterfall
-* Code vs. documentation
+* Adaptive over predictive
+* Iterative over waterfall
+* Code over documentation
 
 
 #### Agile practices
@@ -71,8 +73,6 @@ _Agile development is supported by a bundle of concrete practices suggested by t
 * **User personas** are used in user-centered design and marketing. They can be described as fictional characters created to represent the different user types that might use a site, brand, or product in a similar way. Marketers may use personas together with market segmentation, where the qualitative personas are constructed to be representative of specific segments.
 
 * **User story** is a description consisting of one or more sentences in the everyday or business language of the end user or user of a system that captures what a user does or needs to do as part of his or her job function. User stories are used with agile software development methodologies as the basis for defining the functions a business system must provide, and to facilitate requirements management. It captures the 'who', 'what' and 'why' of a requirement in a simple, concise way, often limited in detail by what can be hand-written on a small paper notecard.
-
-* **Velocity tracking** is the act of measuring said velocity. The velocity is calculated by counting the number of units of work completed in a certain interval, the length of which is determined at the start of the project. [Pivotal Tracker](http://www.pivotaltracker.com/)
 
 * **Wireframes** A website wireframe, also known as a **page schematic** or **screen blueprint**, is a visual guide that represents the **skeletal framework** of a **website**.
 
@@ -107,10 +107,9 @@ Wireframes focus on:
 
 * [draw.io](http://www.draw.io)
 * [balsamiq.com](http://www.balsamiq.com)
-* [moqups.com](http://www.moqups.com)
-* [framebox.org](http://www.framebox.org)
 * [InvisionApp](http://www.invisionapp.com/)
 * [MarvelApp](https://marvelapp.com/)
+* Writing utensils (markers, pens, pencils)
 
 ## User Stories
 
