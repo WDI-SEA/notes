@@ -50,6 +50,8 @@
     * [Resources](02-js-jquery/js-inheritance/05resources.md)
   * [Additional Topics](02-js-jquery/additional-topics/readme.md)
     * [AJAX w/JSON and Localstorage](02-js-jquery/additional-topics/ajax-localstorage/readme.md)
+      * [AJAX w/JSON](02-js-jquery/additional-topics/ajax-localstorage/02ajax.md)
+      * [Local Storage](02-js-jquery/additional-topics/ajax-localstorage/03localstorage.md)
     * [Async module](02-js-jquery/js-async/readme.md)
     * [Data Scraping](02-js-jquery/js-data-scraping/readme.md)
 * [jQuery](02-js-jquery/jquery.md)
