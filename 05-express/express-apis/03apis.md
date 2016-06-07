@@ -142,3 +142,8 @@ Render the page with the parsed results passed as a paramter:
 var dataObj = JSON.parse(body);
 res.render("results", {results: dataObj.Search});
 ```
+
+##Additional Topics
+
+* [API Information](../../12-resources/apis.md)
+* [Using APIs with Client/Secret Keys (Foreman)](../../00-config-deployment/foreman/readme.md)
