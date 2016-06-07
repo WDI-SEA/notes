@@ -104,15 +104,15 @@ request to (in this example) `/animals/1`
 ```js
 //express index route for animals (lists all animals)
 app.get('/animals/:idx', function(req, res){
-    // get animals
-    var animals = fs.readFileSync('./data.json');
-    animals = JSON.parse(animals);
+  // get animals
+  var animals = fs.readFileSync('./data.json');
+  animals = JSON.parse(animals);
 
-    //get array index from url parameter
-    var animalIndex = parseInt(req.params.idx);
+  //get array index from url parameter
+  var animalIndex = parseInt(req.params.idx);
 
-    //render page with data of the specified animal
-    res.render('animals/show', {myAnimal: animals[animalIndex]});
+  //render page with data of the specified animal
+  res.render('animals/show', {myAnimal: animals[animalIndex]});
 });
 ```
 
