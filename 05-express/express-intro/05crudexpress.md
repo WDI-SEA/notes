@@ -64,7 +64,7 @@ Index is a route (URL) that lists all items of a specific type. It is a GET requ
 var fs = require('fs');
 
 // Express index route for animals (lists all animals)
-app.get('/animals', function(req, res){
+app.get('/animals', function(req, res) {
   var animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
   res.render('animals/index', {myAnimals: animals});
@@ -103,7 +103,7 @@ request to (in this example) `/animals/1`
 
 ```js
 //express index route for animals (lists all animals)
-app.get('/animals/:idx', function(req, res){
+app.get('/animals/:idx', function(req, res) {
   // get animals
   var animals = fs.readFileSync('./data.json');
   animals = JSON.parse(animals);
@@ -138,10 +138,14 @@ To create an item (animal in this example) we need to make a POST to the url `/a
 
 **frontend - form html**
 ```html
-<form method="post" action="/animals">
+<form method="POST" action="/animals">
+  <label for="animalType">Type</label>
   <input type="text" name="type">
-  <input type="text" name="name">
-  <input type="submit">
+
+  <label for="animalName">Name</label>
+  <input id="animalName" type="text" name="name">
+
+  <input id="animalType" type="submit">
 </form>
 ```
 
@@ -168,10 +172,6 @@ app.set('view engine', 'ejs');
 
 // tell your app to use the module
 app.use(bodyParser.urlencoded({extended: false}));
-
-app.get('/', function(req, res){
-  res.render('index', {name: "Sterling Archer"});
-});
 ```
 
 Note that we set an attribute `extended` to `false` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
@@ -219,6 +219,41 @@ app.post('/animals', function(req, res) {
 
   //redirect to the GET /animals route (index)
   res.redirect('/animals');
+});
+```
+
+####Additional: Show / Read (GET) with a Form
+
+There may be instances where you need to GET animals, but you don't want them all. A good example is filtering animals with a specific name via a search bar.
+
+In these cases, you don't want to use a POST action, because POST is reserved for creating new resources. Instead, we can create another form with a GET method, and read the data via a **querystring**.
+
+**Animals index page**
+
+```html
+<form method="GET" action="/animals">
+  <label for="nameFilter">Filter by Name</label>
+  <input id="nameFilter" type="text" name="nameFilter">
+  <input type="submit">
+</form>
+```
+
+Note that this form will submit to the same page. We'll need to see if there's a querystring, then filter the animals if one is present.
+
+```js
+app.get('/animals', function(req, res){
+  var animals = fs.readFileSync('./data.json');
+  animals = JSON.parse(animals);
+
+  var nameFilter = req.query.nameFilter;
+
+  if (nameFilter) {
+    animals = animals.filter(function(animal) {
+      return animal.name.toLowerCase() === nameFilter.toLowerCase();
+    });
+  }
+
+  res.render('animals/index', {myAnimals: animals});
 });
 ```
 
