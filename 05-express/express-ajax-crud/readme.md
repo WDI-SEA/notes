@@ -105,7 +105,7 @@ Without JavaScript this form would submit as a `GET` request which means it woul
 **jQuery / JavaScript**
 
 ```js
-$('.put-form').on('submit', function(){
+$('.put-form').on('submit', function(e) {
   e.preventDefault();
   var teamElement = $(this);
   var teamUrl = teamElement.attr('action');
@@ -142,3 +142,7 @@ app.put('/teams/:name', function(req, res) {
   res.send({message: 'success'});
 });
 ```
+
+Here's an example repository.
+
+https://github.com/WDI-SEA/hackathon-teams
