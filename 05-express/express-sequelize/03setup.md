@@ -16,16 +16,10 @@ Let's build our first app using Sequelize! First we need to create a node app an
 Create a new folder and add an index.js and .gitignore and initialize the repository
 
 ```
-mkdir sequelize_app
-cd sequelize_app
+mkdir userapp
+cd userapp
 npm init
 touch index.js
-touch .gitignore
-```
-
-Add the node_modules folder to our .gitignore
-
-```
 echo "node_modules" >> .gitignore
 ```
 
@@ -36,8 +30,9 @@ npm install --save express ejs body-parser pg pg-hstore sequelize
 ```
 
 Create a database and initialize a sequelize project
+
 ```
-createdb sequelize_app
+createdb userapp
 sequelize init
 ```
 
@@ -49,23 +44,24 @@ Let's start in the config folder and open up the config.json file. This file con
 
 We have three settings, one for development (what we will use now), test (for testing our code), and production (when we deploy our app on AWS/Heroku).
 
-Let's change the config.json so it looks like this (we will not be using the test or production environments, so just ignore those for now).
+Let's change the config.json so it looks like this.
 
 **config/config.json**
+
 ```js
 {
   "development": {
-    "database": "sequelize_app",
+    "database": "userapp",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "sequelize_app",
+    "database": "userapp",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "database_production",
+    "database": "userapp",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
@@ -94,6 +90,7 @@ If you want to make changes to your model after generating it - all you have to 
 This will generate the following migration
 
 **migrations/*-create-user.js**
+
 ```js
 "use strict";
 module.exports = {
