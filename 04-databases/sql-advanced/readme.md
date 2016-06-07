@@ -3,6 +3,7 @@
 ## Objectives
 * Utilize different ways to filter data in the WHERE clause
 * Understand the uses of advanced queries like subqueries and joins
+* Be able to normalize a database structure
 
 ## Selecting specific data
 
@@ -130,5 +131,91 @@ WHERE rating = (
 );
 ```
 
+## Normalization
+
+The idea behind normalization is that the data should not be repeated. The rules of normalization are called "Normal Forms". There's technically 6 forms, but the first three are the most important.
+
+### First Normal Form (1NF):
+
+1. Each **column name** must be unique.
+2. Each **column value** must be a single value.
+3. Each **row** must be unique.
+4. There are **no repeating groups**.
+
+Additionally:
+- Choose a primary key
+
+Reminder:
+- A primary key is ***unique, not null, and unchangeable***. A primary key can either be a single column or combination of columns.
+
+| Student | Age | Subject |
+|---------|-----|---------|
+| Adam | 15 | Biology, Maths |
+| Alex  | 14 | Maths |
+| Stuart | 17 | Maths |
+
+vs
 
 
+| Student | Age | Subject |
+|---------|-----|---------|
+| Adam | 15 | Biology |
+| Adam | 15 | Maths |
+| Alex  | 14 | Maths |
+| Stuart | 17 | Maths |
+
+### Second Normal Form (2NF):
+
+1. Table is in 1NF.
+2. All non-primary-key columns are fully dependent on the primary key.
+
+With our 1NF table from above, if Student is our primary key, Subject does not depend on the Student for its existence. Biology does not require Adam for its existence. In this case, Subject should be moved to a new table.
+
+| Student | Age |
+|---------|-----|
+| Adam | 15 |
+| Alex | 14 |
+| Stuart | 17 |
+
+And...
+
+| Student | Subject |
+|---------|---------|
+| Adam | Biology |
+| Adam | Maths |
+| Alex | Maths |
+| Stuart | Maths |
+
+### Third Normal Form (3NF):
+
+1. Table is in 1NF and 2NF.
+2. Non-primary-key columns do not depend on other non-primary-key columns.
+
+The number of enrolled students in a course depend on the Subject, not the student.
+
+| Student | Subject | Enrolled |
+|---------|---------|---------|
+| Adam | Biology | 3 |
+| Adam | Maths | 5 |
+| Alex | Maths | 5 |
+| Stuart | Maths | 5 |
+
+vs
+
+| Student | Subject |
+|---------|---------|
+| Adam | Biology |
+| Adam | Maths |
+| Alex | Maths |
+| Stuart | Maths |
+
+And
+
+| Subject | Enrolled |
+|---------|---------|
+| Biology | 3 |
+| Maths | 5 |
+
+### 3.5NF, 4NF, and 5NF
+
+Not as important and are more difficult to explain, but basically come as a consequence of thinking logically about your database design. Basically don't repeat data (foreign keys to other tables don't count as that is not the data itself). Think about the relationships between your pieces of data and set up your 1:M/M:1 and M:M relationships with appropriate columns or join tables.
