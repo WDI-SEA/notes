@@ -86,7 +86,7 @@ INSERT INTO books (name) VALUES ('Book 3'), ('Book 4');
 SELECT * FROM authors
 JOIN books
     ON authors.author_id = books.author_id
-ORDER BY a.author_id ASC;
+ORDER BY authors.author_id ASC;
 ```
 
 - Replace the 'JOIN' above with a Left/Right/Full/Inner/Cross Join in the query above and see what the results are.
