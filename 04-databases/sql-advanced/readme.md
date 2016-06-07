@@ -49,6 +49,21 @@ GROUP BY rating;
 
 ![SQL Joins](http://www.dofactory.com/Images/sql-joins.png)
 
+### Inner Join
+- Produces only the results from both tables that match the join condition.
+
+### Full Join
+- Produces all the results from both tables regardless of whether or not there is any row in either table that matches the join condition. 
+
+### Left Join
+- Produces all results from the left table regardless of whether or not there is a matching row in the right table and only results from the right table that have a matching row from the left table based on the join condition.
+
+### Right Join
+- ***Opposite*** of a **Left Join**: Produces all results from the right table regardless of whether or not there is a matching row in the left table and only results from the left table that have a matching row in the right table based on the join condition.
+
+### Cross Join
+- Produces a **cartesian product** of both joined tables (all rows in the left table match all rows in the right table, giving NxM results). There is **NO** join condition for a cross join.
+
 
 ```sql
 CREATE TABLE authors (
@@ -62,21 +77,19 @@ CREATE TABLE books (
 	author_id INTEGER
 );
 
-INSERT INTO authors (name) VALUES ('Elie');
-INSERT INTO authors (name) VALUES ('Bob');
-INSERT INTO authors (name) VALUES ('Mary');
+INSERT INTO authors (name) VALUES ('Elie'), ('Bob'), ('Mary');
 
-INSERT INTO books (name, author_id) VALUES ('Book 1', 1);
-INSERT INTO books (name, author_id) VALUES ('Book 2', 2);
-INSERT INTO books (name, author_id) VALUES ('Book 3', 3);
-INSERT INTO books (name) VALUES ('Book 4');
+INSERT INTO books (name, author_id) VALUES ('Book 1', 1), ('Book 2', 2);
+INSERT INTO books (name) VALUES ('Book 3'), ('Book 4');
 
 
-SELECT * FROM authors a
-JOIN books b
-ON a.author_id = b.author_id
+SELECT * FROM authors
+JOIN books
+    ON authors.author_id = books.author_id
 ORDER BY a.author_id ASC;
 ```
+
+- Replace the 'JOIN' above with a Left/Right/Full/Inner/Cross Join in the query above and see what the results are.
 
 ## Alter Table Command
 
@@ -219,3 +232,5 @@ And
 ### 3.5NF, 4NF, and 5NF
 
 Not as important and are more difficult to explain, but basically come as a consequence of thinking logically about your database design. Basically don't repeat data (foreign keys to other tables don't count as that is not the data itself). Think about the relationships between your pieces of data and set up your 1:M/M:1 and M:M relationships with appropriate columns or join tables.
+
+See also: http://www.slideshare.net/kosalgeek/database-normalization-1nf-2nf-3nf-bcnf-4nf-5nf
