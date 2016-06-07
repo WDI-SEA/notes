@@ -2,18 +2,22 @@
 
 ## Basic Express Setup
 
-Before we do anything else, let's set up a basic express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
+Before we do anything else, let's set up a basic Express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
 
 ```
 mkdir organized-express-app
 cd organized-express-app
+npm init
 npm install --save express ejs
+touch index.js
 ```
 
-index.js:
-```
+**index.js:**
+
+```js
 var express = require("express");
 var app = express();
+
 app.set('view engine', 'ejs');
 
 app.get("/", function(req, res) {
@@ -23,8 +27,9 @@ app.get("/", function(req, res) {
 app.listen(3000);
 ```
 
-views/index.ejs:
-```
+**views/index.ejs:**
+
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,7 +40,7 @@ views/index.ejs:
     <ul>
       <% foods.forEach(function(food) { %>
         <li><%= food %></li>
-      <% }) %>
+      <% }); %>
     </ul>
   </body>
 </html>
@@ -50,19 +55,24 @@ Instead, we can create a layout that has a special place for our page content. W
 ### Example
 
 **Step 1:**
-Install `express-ejs-layouts` via
+
+Install `express-ejs-layouts` via npm
+
 ```
 npm install --save express-ejs-layouts
 ```
 
 **Step 2:**
+
 Require the module and add it to the app.
+
 ```js
 var ejsLayouts = require("express-ejs-layouts");
 app.use(ejsLayouts);
 ```
 
 **Step 3:**
+
 In the root of the views folder, add a layout called `layout.ejs`
 
 **layout.ejs**
@@ -91,6 +101,7 @@ app.get("/animals", function(req, res) {
 ```
 
 And we create a new file `views/animals.ejs`:
+
 ```html
 <h1><%= title %></h1>
 <ul>
@@ -124,12 +135,14 @@ Add a simple navigation list to the to of the layout page so there's a link to e
 We have been placing all routes into `index.js` when creating a Node/Express app, but this can get cumbersome when dealing with many routes. The solution is to separate routes into separate files and attach the routes to the Express router.
 
 **index.js**
+
 ```js
 var peopleCtrl = require("./controllers/people")
 app.use("/people", peopleCtrl);
 ```
 
 **controllers/people.js**
+
 ```js
 var express = require("express");
 var router = express.Router();
@@ -140,3 +153,5 @@ router.get("/", function(req, res) {
 
 module.exports = router;
 ```
+
+Note that the routes should be defined *relative* to the definition in `app.use`. For example, the route defined above in `controllers/people.js` will be `http://localhost:3000/people`.
