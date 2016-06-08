@@ -234,3 +234,80 @@ And
 Not as important and are more difficult to explain, but basically come as a consequence of thinking logically about your database design. Basically don't repeat data (foreign keys to other tables don't count as that is not the data itself). Think about the relationships between your pieces of data and set up your 1:M/M:1 and M:M relationships with appropriate columns or join tables.
 
 See also: http://www.slideshare.net/kosalgeek/database-normalization-1nf-2nf-3nf-bcnf-4nf-5nf
+
+### Aliases
+
+Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query. This is useful for creating shorthand names for tables when using table prefixes, renaming columns, or differentiating tables when you join the same table more than once in a query (eliminating ambiguity).
+
+####
+```sql
+SELECT
+    users.userID AS 'id',
+    users.username AS 'name'
+FROM users;
+```
+
+--
+
+```sql
+SELECT * FROM authors a
+    INNER JOIN books b
+        ON a.author_id = b.author_id
+ORDER BY a.author_id ASC;
+```
+
+--
+
+```sql
+SELECT * FROM crew
+    LEFT JOIN users photographer
+        ON crew.fk_photographer = photographer.userID
+    LEFT JOIN users director
+        ON crew.fk_director = director.userID
+    LEFT JOIN users model
+        ON crew.fk_model = model.userID
+ORDER BY crew.crewID ASC;
+```
+
+### Conditionals
+
+#### CASE Statement
+The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
+
+```sql
+SELECT
+    CASE users.age
+        WHEN 0 THEN 'baby'
+        WHEN 15 THEN 'teen'
+        ELSE 'adult'
+    END CASE AS 'age'
+FROM users;
+```
+
+--
+
+```sql
+SELECT
+    CASE
+        WHEN users.age < 13 THEN 'preteen'
+        WHEN users.age < 20 THEN 'teen'
+        ELSE 'adult'
+    END CASE AS 'UserAge'
+FROM users;
+```
+
+#### IF Statement
+
+CASE statements, as in programming, are just another way of structuring some if/then/else logic. In SQL we also have IF/ELSIF/ELSE statements.
+
+```sql
+SELECT
+    IF users.age < 13 THEN
+        'preteen'
+    ELSIF users.age < 20 THEN
+        'teen'
+    ELSE
+        'adult'
+    END IF AS 'UserAge'
+FROM users;
+```
