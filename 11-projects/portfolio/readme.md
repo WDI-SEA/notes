@@ -3,8 +3,16 @@
 ##Objectives
 
 * Use front end development skills to produce an aesthetically pleasing portfolio.
-* Showcase 4+ projects from WDI and beyond.
+* Showcase 3+ projects from WDI and beyond.
 * Market yourself to recruiters, hiring managers, and other individuals in the tech community.
+
+##Due Date
+
+**Portfolio and minimum requirements are end of week 11.** You will present on this day.
+
+##WARNING
+
+If you do not meet all minimum requirements by the due date, you will no longer qualify for Outcomes support.
 
 ###Creating a portfolio
 
@@ -23,7 +31,7 @@ Before beginning the design and coding phase of your portfolio, you'll want to i
 * An elevator pitch for yourself
   * This should be an "About Me" section that describes your background and experience
 * Projects
-  * 4+ projects
+  * 3+ projects (you'll add your final project after the cohort)
   * Each project should have a...
     * title
     * list of technologies used
@@ -31,12 +39,13 @@ Before beginning the design and coding phase of your portfolio, you'll want to i
     * link to the Github repo
     * link to the deployed site itself
 * Resume
+  * Two downloadable versions: 1 PDF, 1 plain-text version
 * Contact information
-  * Phone number
   * Email address
   * Github link
   * LinkedIn link
   * Additional social media links
+  * Phone number (optional)
 
 ###Optional
 
@@ -134,6 +143,11 @@ These guidelines and suggestions should provide a baseline for creating a portfo
 * [Rodrigo Carballo (Squarespace)](http://rodrigocarballo.squarespace.com)
 * [Thomas Vaeth (Jekyll)](http://thomasvaeth.com/)
 * [Julie Sakalys (Angular)](http://juliesakalys.com)
+
+## [Insert Excuse Here]
+
+Whatever you’ve got, run with it. If you’re not proud of your portfolio, work on it. Don’t blame anyone for any work that you aren’t proud of. Talk about your past work and past work relationships in a positive light. Don’t speak poorly of yourself. Talk about yourself in a positive light, as well. Get it done. Get hired.
+
 
 ##Additional Resources
 
