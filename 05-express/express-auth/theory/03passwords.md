@@ -10,18 +10,18 @@ To use bcrypt in node we need to install / use the bcrypt npm module.
 npm install bcrypt --save
 ```
 
-**Encrypt (hash) password**
+**Hash password**
 
 ```js
 //example
-bcrypt.hash("myPassword", 10, function(err, hash) {
-  //hash = encrypted password (using salt)
+bcrypt.hash('myPassword', 10, function(err, hash) {
+  //hash = hashed password (using salt)
 });
 ```
 
 **bcrypt.hash() takes 3 parameters**
 
-* Password to encrypt -- self explanitory
+* Password to hash -- self explanitory
 * Rounds -- Number of rounds of processing when generating the salt. The higher the number the more secure the hash.
 * Callback function (called when the hashing completes)
 
