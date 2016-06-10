@@ -51,17 +51,17 @@ Let's change the config.json so it looks like this.
 ```js
 {
   "development": {
-    "database": "userapp",
+    "database": "userapp_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "database": "userapp",
+    "database": "userapp_test",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "database": "userapp",
+    "database": "userapp_production",
     "host": "127.0.0.1",
     "dialect": "postgres"
   }
