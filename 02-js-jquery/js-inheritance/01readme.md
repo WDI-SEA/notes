@@ -13,7 +13,9 @@ We mentioned in the prototypes lesson that a prototype is the building block of 
 
 ### Review of a Constructor and Prototype In JS
 
-In javascript we don't have classes, so we use constructor functions and prototypes to create them.
+In JavaScript we don't have classes, so we use constructor functions to act as "blueprints" for creating objects. We can attach properties to a constructor's **prototype**, which are shared across all constructor instances.
+
+Note that neither Person instance actually has a `greet` property. We'll be diving into how `greet` would be resolved through prototypal inheritance.
 
 ```js
 function Person(name) {
@@ -21,6 +23,12 @@ function Person(name) {
 }
 
 Person.prototype.greet = function() {
-	return "Hello, my name is " + this.name;
+	return 'Hello, my name is ' + this.name;
 };
+
+var brian = new Person('Brian');
+var paul = new Person('Paul');
+
+brian.greet(); // Hello, my name is Brian
+paul.greet(); // Hello, my name is Paul
 ```
