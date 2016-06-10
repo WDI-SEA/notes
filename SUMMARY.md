@@ -216,3 +216,4 @@
   * [Portfolio](11-projects/portfolio/readme.md)
 * [Resources](12-resources/readme.md)
   * [APIs and Data](12-resources/apis.md)
+  * [Tech Websites](12-resources/techsites.md)
