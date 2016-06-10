@@ -10,6 +10,8 @@
 
 This codealong relies heavily on an app that's been scaffolded with signup and login routes. Once we're done, you should have a starting point for your project. Due to this, we won't be forking the repo, but instead cloning the repo and performing the following:
 
+* Removing the `.git` folder
+* Reinitializing your git repo by running `git init` and adding your project's remote to the repo
 * Renaming the databases from `express_auth` to `yourprojectname`
 * Renaming the `package.json` file to include your project name
 * Changing the `README.md` to reflect your project
@@ -21,7 +23,7 @@ This codealong relies heavily on an app that's been scaffolded with signup and l
 We have provided a starting scaffold with the following routes.
 
 * `GET /` - home page
-* `GET /protected` - a page we should show only to logged in users (but is currently visible)
+* `GET /profile` - a page we should show only to logged in users (but is currently visible)
 * `GET /auth/login` - a login form
 * `GET /auth/signup` - a user signup form
 

@@ -2,10 +2,19 @@
 
 We'll need to...
 
-1. Create the user model
-2. Validate the user's name, email, and password
-3. Hash the user's password before saving it to the database
-4. Create methods to validate passwords and protect the password data
+1. Install an additional dependency: `bcrypt`
+2. Create the user model
+3. Validate the user's name, email, and password
+4. Hash the user's password before saving it to the database
+5. Create methods to validate passwords and protect the password data
+
+## Installing bcrypt
+
+In order to hash passwords, we'll need to install `bcrypt`.
+
+```
+npm install --save bcrypt
+```
 
 ## Creating the user model
 
@@ -32,6 +41,8 @@ Now that we have a user, we want to limit the values we can assign to a user's n
 In order to do this, we can use Sequelize validations. Note that by adding a `msg` within each validation, we'll be able to give a user-friendly message if a validation fails. This will be handled in our routes later.
 
 [Sequelize Validation Documentation](http://docs.sequelizejs.com/en/latest/docs/models-definition/#validations)
+
+**models/user.js**
 
 ```js
 {
@@ -81,12 +92,22 @@ Currently, we're saving user passwords as plain text. This is bad! Very bad!
 
 Therefore, we need to hash the password before it ever reaches the database. We can use a `beforeCreate` hook to do this automatically on every model's creation.
 
+**models/user.js**
+
 ```js
+// at the very top, require bcrypt
+var bcrypt = require('bcrypt');
+
+// ...
 {
+  // ...
   hooks: {
     beforeCreate: function(createdUser, options, cb) {
+      // hash the password
       var hash = bcrypt.hashSync(createdUser.password, 10);
+      // store the hash as the user's password
       createdUser.password = hash;
+      // continue to save the user, with no errors
       cb(null, createdUser);
     }
   },
@@ -119,15 +140,20 @@ In order to perform these actions, we'll create two methods that can be called o
   user.toJSON(); // returns { name: 'Brian', email: 'bh@ga.co' }
   ```
 
+**models/user.js**
+
 ```js
 {
   classMethods: {},
   instanceMethods: {
     validPassword: function(password) {
+      // return if the password matches the hash
       return bcrypt.compareSync(password, this.password);
     },
     toJSON: function() {
+      // get the user's JSON data
       var jsonUser = this.get();
+      // delete the password from the JSON data, and return
       delete jsonUser.password;
       return jsonUser;
     }
