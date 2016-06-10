@@ -68,38 +68,24 @@ db.user.findAll().then(function(users) {
 ### Update
 
 ```js
-// method 1
-
-db.user.find({
-  where: { firstName: 'Brian' }
+db.user.update({
+  lastName: 'Taco'
+}, {
+  where: {
+    firstName: 'Brian'
+  }
 }).then(function(user) {
-  user.lastName = 'Taco';
-  user.save().then(function() {
-    // do something when done saving
-  });
-});
-
-// method 2
-db.user.find({
-  where: { firstName: 'Brian' }
-}).then(function(user) {
-  user.updateAttributes({
-    firstName: 'Taco'
-  }).then(function() {
-    // do something when done saving
-  });
+  // do something when done updating
 });
 ```
 
 ### Delete (destroy)
 
 ```js
-db.user.find({
+db.user.destroy({
   where: { firstName: 'Brian' }
-}).then(function(user) {
-  user.destroy().then(function() {
-    // do something when done deleting
-  });
+}).then(function() {
+  // do something when done deleting
 });
 ```
 
