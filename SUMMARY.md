@@ -217,3 +217,6 @@
 * [Resources](12-resources/readme.md)
   * [APIs and Data](12-resources/apis.md)
   * [Tech Websites](12-resources/techsites.md)
+  * [PostgreSQL Cheat Sheet](12-resources/sqlcheatsheet.md)
+  * [Sequelize Cheat Sheet](12-resources/sequelizecheatsheet.md)
+  * [Database Administration](12-resources/dbadmin.md)
