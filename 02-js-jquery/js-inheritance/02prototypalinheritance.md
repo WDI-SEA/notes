@@ -61,7 +61,7 @@ Motorboat.prototype.constructor = Motorboat;
 By using the inheritance method, not only do we group shared properties into another object, but we can attach functions to the superclass's object's prototype, and now all boats have that function!
 ```js
 Boat.prototype.getDimensions = function() {
-  console.log("This boat has a width of " + this.width + " and a length of " + this.length);
+  console.log('This boat has a width of ' + this.width + ' and a length of ' + this.length);
 }
 ```
 
@@ -78,23 +78,25 @@ We have previously mentioned that objects can inherit properties and methods fro
 
 Inheritance is done in a few steps
 
-1. In the subclass (the child class that will get methods and properties from its parent), call the superclass (also known as parent class) using `call`
+1. In the subclass (the child class that will get methods and properties from its parent), call the superclass (also known as parent class) using `call`. We'll pass along `this`, which is initially an empty object, and let the superclass take care of attaching properties.
 
-2. Set the prototype of the subclass to a new instance of the superclass
+2. Set the prototype of the subclass to a new instance of the superclass. This connects the subclass and superclass as "links" in the prototype chain.
 
-3. Set the constructor of the subclass equal to it's constructor function (which was overwritten when the prototype was set to the superclass)
+3. Set the constructor of the subclass equal to it's constructor function (which was overwritten when the prototype was set to the superclass).
 
-Given the following example let's create a Student class that inherits from Person.
+Why do we reset the constructor? See [this](http://stackoverflow.com/questions/8453887/why-is-it-necessary-to-set-the-prototype-constructor) answer.
+
+Given the following example, let's create a Student class that inherits from Person.
 ```js
-function Person(name){
+function Person(name) {
   this.name = name
 }
 
-Person.prototype.greet = function(){
-  return "Hello, my name is " + this.name;
+Person.prototype.greet = function() {
+  return 'Hello, my name is ' + this.name;
 };
 
-function Student(name, course){
+function Student(name, course) {
   Person.call(this, name);
   this.course = course;
 };
@@ -103,7 +105,6 @@ Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 ```
 
-Why do we reset the constructor? See [this](http://stackoverflow.com/questions/8453887/why-is-it-necessary-to-set-the-prototype-constructor) answer.
 
 Why do we use `call` when calling the parent class? Why not just run `Person(name)`?
 

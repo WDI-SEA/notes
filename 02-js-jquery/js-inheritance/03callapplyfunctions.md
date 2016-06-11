@@ -9,9 +9,9 @@ Call and apply are two functions that allow us to change what `this` represents.
 ```js
 var getAge = function(friend) {
   return friend.age;
-}
+};
 
-var john = { name: "John", age: 21 };
+var john = { name: 'John', age: 21 };
 getAge(john);
 ```
 
@@ -20,9 +20,9 @@ rewritten using `call`
 ```js
 var getAge = function() {
   return this.age;
-}
+};
 
-var john = { name: "John", age: 21 };
+var john = { name: 'John', age: 21 };
 getAge.call(john);
 ```
 
@@ -31,10 +31,10 @@ getAge.call(john);
 ```js
 var setAge = function(friend, newAge) {
   friend.age = newAge;
-}
+};
 
-var john = { name: "John", age: 21 };
-setAge(john, 35)
+var john = { name: 'John', age: 21 };
+setAge(john, 35);
 ```
 
 rewritten using `call`
@@ -42,10 +42,10 @@ rewritten using `call`
 ```js
 var setAge = function(newAge) {
   this.age = newAge;
-}
+};
 
-var john = { name: "John", age: 21 };
-setAge.call(john, 35)
+var john = { name: 'John', age: 21 };
+setAge.call(john, 35);
 ```
 
 ### `apply`
@@ -57,10 +57,10 @@ Going back to Example 2, here's what it would look like with `apply`.
 ```js
 var setAge = function(newAge) {
   this.age = newAge;
-}
+};
 
-var john = { name: "John", age: 21 };
-setAge.apply(john, [35])
+var john = { name: 'John', age: 21 };
+setAge.apply(john, [35]);
 ```
 
 ### Calling on a solution
@@ -68,23 +68,31 @@ setAge.apply(john, [35])
 Let's talk about using `call` or `apply` to set the `this` context for a function before it is run.
 
 ```js
-function Person(name){
+function Person(name) {
   this.name = name;
   this.friends = [];
 }
 
-Person.prototype.addFriend = function(name){
+Person.prototype.addFriend = function(name) {
   this.friends.push(new Person(name));
 };
 
-function Student(name){
+function Student(name, course) {
   // masks all the constructor properties including name (as the second parameter)
   Person.call(this, name);
-};
+  this.course = course;
+
+  // If we wanted to, we could also use .apply like so:
+  // Person.apply(this, [name]);
+}
 
 Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 ```
+
+The code above is why we forgo talking about `this` until now. In the context of event listener callbacks, `this` refers to the DOM element that trigged the event. But here, `this` can *really be anything you want it to be*.
+
+Still confused? [Understanding `this` once and for all](https://journeyintojavascript.quora.com/understanding-this-once-and-for-all)
 
 ## Useful methods when working with inheritance
 
@@ -96,38 +104,38 @@ Example 1
 
 ```js
 var taco = {
-  food: "taco"
+  food: 'taco'
 }
 
 taco.hasOwnProperty(food); // returns an error
-taco.hasOwnProperty("food"); // returns true
+taco.hasOwnProperty('food'); // returns true
 ```
 
 Example 2 with inheritance
 
 ```js
-function Person(name){
+function Person(name) {
   this.name = name
 }
 
-Person.prototype.greet = function(){
-  return "Hello, my name is " + this.name;
+Person.prototype.greet = function() {
+  return 'Hello, my name is ' + this.name;
 };
 
-function Student(name, course){
+function Student(name, course) {
   Person.call(this, name);
   this.course = course;
-};
+}
 
 Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 
-var p = new Person("Bob");
-var s = new Student("Tom", "WDI");
+var person = new Person('Bob');
+var student = new Student('Tom', 'WDI');
 
-p.hasOwnProperty("name"); //returns true
-s.hasOwnProperty("course"); //returns true
-s.hasOwnProperty("name"); //returns true
+person.hasOwnProperty('name'); //returns true
+student.hasOwnProperty('course'); //returns true
+student.hasOwnProperty('name'); //returns true
 ```
 
 ### `instanceof`
@@ -139,31 +147,31 @@ This method is a bit more common, and the syntax looks like this:
 Example 1:
 
 ```js
-var obj = {};
+var color1 = {};
 color1 instanceof Object; // returns true
 ```
 
 Example 2 with inheritance
 
 ```js
-function Person(name){
+function Person(name) {
   this.name = name
 }
 
-Person.prototype.greet = function(){
-  return "Hello, my name is " + this.name;
+Person.prototype.greet = function() {
+  return 'Hello, my name is ' + this.name;
 };
 
-function Student(name, course){
+function Student(name, course) {
   Person.call(this, name);
   this.course = course;
-};
+}
 
 Student.prototype = Object.create(Person.prototype);
 Student.prototype.constructor = Student;
 
-var p = new Person("Bob");
-var s = new Student("Tom", "WDI");
+var p = new Person('Bob');
+var s = new Student('Tom', 'WDI');
 
 s instanceof Person //returns true
 p instanceof Student //returns false
@@ -183,8 +191,8 @@ Object.prototype.isPrototypeOf(objectInstance);
 Example:
 
 ```js
-var p = new Person("Bob");
-var s = new Student("Tom", "WDI");
+var p = new Person('Bob');
+var s = new Student('Tom', 'WDI');
 
 Person.prototype.isPrototypeOf(s); // returns true
 Student.prototype.isPrototypeOf(p); // returns false

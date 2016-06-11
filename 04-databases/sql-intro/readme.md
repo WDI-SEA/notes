@@ -373,10 +373,6 @@ We could also use compond statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
-## Normalization
-
-Normalization is a more advanced database design topic. The idea behind normalization is that the data in your table should not be repeated. The introduction of the [wikipedia article on normalization](http://en.wikipedia.org/wiki/Database_normalization) gives a good summary. It involves grouping data into tables so that data is not repeated redundantly.
-
 ## ER Diagrams
 
 Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
