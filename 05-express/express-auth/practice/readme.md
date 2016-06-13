@@ -8,38 +8,47 @@
 
 ###Note
 
-This codealong relies heavily on an app that's been scaffolded with signup and login routes. Please fork and clone here: https://github.com/WDI-SEA/express-auth
+This codealong relies heavily on an app that's been scaffolded with signup and login routes. Once we're done, you should have a starting point for your project. Due to this, we won't be forking the repo, but instead cloning the repo and performing the following:
+
+* Removing the `.git` folder
+* Reinitializing your git repo by running `git init` and adding your project's remote to the repo
+* Renaming the databases from `express_auth` to `yourprojectname`
+* Renaming the `package.json` file to include your project name
+* Changing the `README.md` to reflect your project
+
+**Repo Link:** https://github.com/WDI-SEA/express-authentication
 
 ##Getting Started
 
-A basic application with no database has been provided to you, with the following routes:
+We have provided a starting scaffold with the following routes.
 
 * `GET /` - home page
-* `GET /secret` - a page we should keep secret (but is currently visible)
+* `GET /profile` - a page we should show only to logged in users (but is currently visible)
 * `GET /auth/login` - a login form
-* `POST /auth/login` - the route where our login form data will be sent to
 * `GET /auth/signup` - a user signup form
-* `POST /auth/signup` - the route where our user signup data will be sent to
 
-Currently, the POST routes send back the form data to the browser. We'll be modifying this application to provide full, secure authentication.
+Dependencies such as express, ejs, and sequelize are included in this app. Follow the instructions provided in order to setup the application.
+
+##Test-Driven Development
+
+This project is also setup with tests for the authentication functionality we'll be implementing. We'll go one step at a time and make all the tests pass.
+
+* Run `npm test` to run all tests
+* Run `NODE_ENV=test node_modules/mocha/bin/mocha tests/fileName.js` to run a specific file
 
 ###Laundry List
 
-1. Create a user model, to store the user's name, email, and password
-2. Test the user model
-3. Add functionality to the signup POST route (`POST /auth/signup`)
+1. Create a user model to store the user's name, email, and password, complete with validations
+2. Create functions to hash the user's password, validate the password, and protect the password
+3. Add functionality to have users sign up for an account
   * Check if e-mail already registered
     * Creates new user if not registered
-  * HASH THE PASSWORD
-    * We'll use `bcrypt` and a `beforeCreate` hook
-    * We'll also add password validations
+  * Redirects back to the signup page if errors occur
 4. Set up sessions middleware, so we can remember that users are logged in
-5. Add functionality to the login POST route (`POST /auth/login`)
-  * Create a function to check if the password matches
-  * Check e-mail / password against database
-    * Log in the user if valid (create a session)
-6. Create a GET /auth/logout route (clears the session)
-7. Create getUser() method (as middleware)
-
-
-**Before getting started, fork/clone the starter app, install packages, and make sure the app works**
+5. Add functionality to have users log in
+  * Setup Passport configuration
+    * Retrieving and saving users
+    * Verifying if a user's email and password are correct
+6. Add functionality to have users log out
+7. Create middleware for protecting pages
+8. Add flash messages as Bootstrap alerts

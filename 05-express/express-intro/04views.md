@@ -2,7 +2,7 @@
 
 ### Views
 
-Fistly, we cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client. It would be much more efficient to store them in files. Let's make a folder, `/views`, and create an `index.html` page inside.
+First, we cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client. It would be much more efficient to store them in files. Let's make a folder, `/views`, and create an `index.html` page inside.
 
 ```html
 <!DOCTYPE html>
@@ -20,17 +20,19 @@ Let's modify the `index.js` to send this file via `.sendFile`. In order to use t
 
 **index.js**
 ```js
-var express = require('express'),
-    app = express();
+var express = require('express');
+var path = require('path');
+var app = express();
 
 // this sets a static directory for the views
-app.use(express.static(__dirname + '/views'));
+app.use(express.static(path.join(__dirname, 'views')));
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   // use sendFile to render the index page
   res.sendFile('index.html');
 });
 
+app.listen(3000);
 ```
 
 ### Templating with ejs
@@ -55,16 +57,17 @@ Also, rename the .html file to a .ejs file. We'll see that the `.ejs` extension 
 Templating with variables means we can pass in an object to the `.render` function and access those variables inside the ejs template.
 
 **index.js**
-```
-var express = require('express'),
-    app = express();
+```js
+var express = require('express');
+var app = express();
 
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.render('index', {name: "Sterling Archer"});
 });
 
+app.listen(3000);
 ```
 
 then we need to update our `index.ejs` to use a templating variable.
@@ -82,7 +85,12 @@ then we need to update our `index.ejs` to use a templating variable.
 </html>
 ```
 
-The JavaScript being embedded is enclosed by the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be printed to the screen.
+The JavaScript being embedded is enclosed by the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be printed to the screen. We can also use the following signs to tell EJS to parse code in different ways:
+
+* `<- name %>` will print out the expression without escaping HTML
+  * If the name was `"<span>Sterling Archer</span>"`, then the `<span>` elements won't be escaped.
+* `<% name %>` will not print out the expression, but it will execute it
+  * Handy for `if` statements and loops
 
 This doesn't only apply to primitive variables. We can even include variable declarations and iterators using ejs.
 

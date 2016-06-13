@@ -27,4 +27,4 @@ hooks: {
 
 ```
 
-For authentication we can use beforeCreate hook to automatically encrypt a users password before it is created (AKA before the data is inserted into the database).
+We can use beforeCreate hook to automatically hash a users password before it is created (AKA before the data is inserted into the database).

@@ -5,7 +5,11 @@ in order to access them in your app.
 
 ```js
 var db = require("./models");
-db.user.create({ firstName: 'Brian', lastName: 'Hague', age: 99 }).then(function(data) {
+db.user.create({
+  firstName: 'Brian',
+  lastName: 'Hague',
+  age: 99
+}).then(function(data) {
   // you can now access the newly created task via the variable data
 });
 ```
@@ -15,7 +19,11 @@ db.user.create({ firstName: 'Brian', lastName: 'Hague', age: 99 }).then(function
 ### Create
 
 ```js
-db.user.create({ firstName: 'Brian', lastName: 'Hague', age: 99 }).then(function(data) {
+db.user.create({
+  firstName: 'Brian',
+  lastName: 'Hague',
+  age: 99
+}).then(function(data) {
   // you can now access the newly created task via the variable data
 });
 ```
@@ -23,21 +31,27 @@ db.user.create({ firstName: 'Brian', lastName: 'Hague', age: 99 }).then(function
 ### Read One
 
 ```js
-db.user.find({where: {id: 2}}).then(function(user) {
+db.user.find({
+  where: {id: 2}
+}).then(function(user) {
   // user will be an instance of User and stores the content of the table entry with id 2. if such an entry is not defined you will get null
 });
 ```
 
 ### Find or Create
 
-The method findOrCreate can be used to check if a certain element is already existing in the database. If that is the case the method will result in a respective instance. If the element does not yet exist, it will be created.
+The method findOrCreate can be used to check if a certain element is already existing in the database. If that is the case the method will result in a respective instance. If the element does not yet exist, it will be created with the provided attributes (a combination of `where` and `defaults`)
 
 ```js
-db.user
-  .findOrCreate({where: { firstName: 'Brian' }})
-  .spread(function(user, created) {
-    console.log(user); // returns info about the user
-  });
+db.user.findOrCreate({
+  where: {
+    firstName: 'Brian',
+    lastName: 'Smith'
+  },
+  defaults: { age: 88 }
+}).spread(function(user, created) {
+  console.log(user); // returns info about the user
+});
 ```
 
 ### Find All
@@ -54,26 +68,24 @@ db.user.findAll().then(function(users) {
 ### Update
 
 ```js
-// method 1
-
-db.user.find({ where: { firstName: 'Brian' } }).then(function(user){
-  user.lastName = 'Taco';
-  user.save().then(function() {});
-});
-
-// method 2
-db.user.find({ where: { firstName: 'Brian' } }).then(function(user){
-  user.updateAttributes({
-    firstName: 'Taco'
-  }).then(function() {});
+db.user.update({
+  lastName: 'Taco'
+}, {
+  where: {
+    firstName: 'Brian'
+  }
+}).then(function(user) {
+  // do something when done updating
 });
 ```
 
 ### Delete (destroy)
 
 ```js
-db.user.find({ where: { firstName: 'Brian' } }).then(function(user){
-  user.destroy().then(function() {});
+db.user.destroy({
+  where: { firstName: 'Brian' }
+}).then(function() {
+  // do something when done deleting
 });
 ```
 
@@ -99,11 +111,11 @@ in a `findOrCreate`, a callback will return back an array, instead of a single o
 
 
 ```js
-db.user
-  .findOrCreate({ firstName: 'Brian' })
-  .spread(function(user, created) {
-    console.log(user); // returns info about the user
-  });
+db.user.findOrCreate({
+  where: { firstName: 'Brian' }
+}).spread(function(user, created) {
+  console.log(user); // returns info about the user
+});
 ```
 
 ##Sequelize Promises
@@ -126,8 +138,10 @@ In a common situation of finding first, then creating. `findOrCreate` is a usefu
 Using the `.spread` method will let you use those array values as individual parameters in a similar syntax to what you were using earlier.
 
 ```js
-db.author.findOrCreate({where: {name: "Brian"}}).spread(function(author, created) {
+db.author.findOrCreate({
+  where: {name: "Brian"}
+}).spread(function(author, created) {
   console.log(author.get());
   console.log(created);
-})
+});
 ```

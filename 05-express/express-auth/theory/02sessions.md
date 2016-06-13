@@ -32,13 +32,11 @@ app.use(session({
 
 The initialization funciton above `session()` takes an object containing some options:
 
-* **secret** - a unique string used to help prevent tampering. You should change this string to some random characters or words. It doesn't really matter what you type here as long as it's unqiue to your app. Generally, this should also be an environment variable.
-* **resave** - forces re-saving of the session. This used to be optional, but now Express throws a warning if you leave it out.
-* **saveUninitialized** - stores the session even if we haven't stored any values to it yet. This is also an item that is now required and used to be optional.
+* **secret** - a unique string used to sign a cookie and prevent tampering. You should change this string to some random characters or words. It doesn't really matter what you type here as long as it's unqiue to your app. Generally, this should also be an environment variable.
+* **resave** - forces re-saving of the session, even if nothing has changed.
+* **saveUninitialized** - stores the session, even if we haven't stored any values to it yet.
 
-Both of the last 2 values are kinda like the extended:false on body parser. Don't worry too much about them at this time as they really don't make any difference in the way you'll be using sessions.
-
-Once the session middleware is installed you can read / write sessions using the `req.session` object.
+Once the session middleware is installed, you can read/write sessions using the `req.session` object.
 
 ```js
 req.session.lastPage = '/myPage';
@@ -52,4 +50,4 @@ console.log(req.session.lastPage);
 //outputs: /myPage
 ```
 
-Each value in `req.session` will be unique to the user accessing the page.
+Each value in `req.session` will be unique to the user accessing the page. The server will know the difference between users by reading each user's cookie.
