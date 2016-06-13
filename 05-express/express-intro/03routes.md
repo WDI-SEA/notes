@@ -43,7 +43,7 @@ Each route is called on our Express app, and takes a URL pattern and a callback 
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.send('hello brian');
 });
 
@@ -58,7 +58,7 @@ By putting a colon before a string in our route, we can create routes with diffe
 var express = require('express');
 var app = express();
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
   res.send('hello brian');
 });
 

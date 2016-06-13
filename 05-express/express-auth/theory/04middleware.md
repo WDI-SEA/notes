@@ -13,7 +13,7 @@ We've already used 3rd party Express middleware and we can create our own.
 var bodyParser = require('body-parser');
 
 //tell express to "use" it as a middleware
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 ```
 
 **Creating our own middleware**
@@ -29,8 +29,8 @@ We can modify each of these parameters and the modification will be reflected in
 **Example**
 
 ```js
-app.use(function (req, res, next) {
-  req.getParamNames = function(){
+app.use(function(req, res, next) {
+  req.getParamNames = function() {
     return Object.keys(req.params);
   }
   next();
@@ -38,7 +38,7 @@ app.use(function (req, res, next) {
 
 // ...later on in your code...
 
-app.get('/sum/:x/:y',function(req,res){
+app.get('/sum/:x/:y', function(req, res) {
   res.send(req.getParamNames());
 });
 //outputs: ['x','y']
