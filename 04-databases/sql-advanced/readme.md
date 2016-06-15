@@ -280,7 +280,7 @@ SELECT
         WHEN 0 THEN 'baby'
         WHEN 15 THEN 'teen'
         ELSE 'adult'
-    END CASE AS 'age'
+    END AS 'age'
 FROM users;
 ```
 
@@ -292,22 +292,6 @@ SELECT
         WHEN users.age < 13 THEN 'preteen'
         WHEN users.age < 20 THEN 'teen'
         ELSE 'adult'
-    END CASE AS 'UserAge'
-FROM users;
-```
-
-#### IF Statement
-
-CASE statements, as in programming, are just another way of structuring some if/then/else logic. In SQL we also have IF/ELSIF/ELSE statements.
-
-```sql
-SELECT
-    IF users.age < 13 THEN
-        'preteen'
-    ELSIF users.age < 20 THEN
-        'teen'
-    ELSE
-        'adult'
-    END IF AS 'UserAge'
+    END AS 'UserAge'
 FROM users;
 ```
