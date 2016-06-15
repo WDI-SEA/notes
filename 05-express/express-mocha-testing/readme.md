@@ -13,19 +13,13 @@ https://github.com/WDI-SEA/mocha-chai-starter
 
 ## Mocha, Chai And Javascript Testing
 
-We've now created several Express applications. All these apps cover a single topic, so most of the time, they are quite small. But when you create a larger application, the codebase will become bigger and more complex every time you add some features. At some point, adding code in file A will break features in file B, and to avoid these "side-effects", we need to test our app.
+We've now created several Express applications. All these apps cover a single topic, so most of the time, they are quite small. But when you create a larger application, the codebase will become bigger and more complex every time you add some features. At some point, adding code in `file A` will break features in `file B`, and to avoid these "side-effects", we need to test our app.
 
 To do so in Node, we will use two libraries: one to run the tests and a second one to run the assertions.
 
 Mocha will be our testing framework. From the Mocha Website:
 
 _"Mocha is a feature-rich JavaScript test framework running on Node.js and the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases."_
-
-
-For assertions, we will use Chai. From the Chai website:
-
-_"Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework."_
-
 
 To be able to make HTTP requests inside tests, we will use a framework called `supertest`.
 
@@ -68,7 +62,6 @@ touch test/candies-tests.js
 Open the file `candiesTests.js`. We now need to require some dependencies at the top of this file:
 
 ```js
-var should = require("chai").should();
 var expect = require("chai").expect;
 var request = require("supertest");
 var app = require("../index");
@@ -102,10 +95,10 @@ tests also try to start the server. Either kill your nodemon server, or add this
 from starting twice:
 
 ```js
- // prevent the app from starting twice if tests are running.
- if(!module.parent) {
-   app.listen(3000);
- }
+// prevent the app from starting twice if tests are running.
+if (!module.parent) {
+  app.listen(3000);
+}
 ```
 
 Every block of code that starts with `it()` represents a test.

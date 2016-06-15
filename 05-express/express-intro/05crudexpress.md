@@ -15,7 +15,7 @@ So if you were CRUDing Animals the route would be `/animals` and the following r
 | GET | /animals | Index (Read) | lists all animals |
 | GET | /animals/1 | Show (Read) | list information about a specific animal (id = 1) |
 | POST | /animals | Create | creates an animal with the POST payload data |
-| UPDATE | /animals/1 | Update | updates the data for a specific animal (id = 1) |
+| PUT | /animals/1 | Update | updates the data for a specific animal (id = 1) |
 | DELETE | /animals/1 | Delete (Destroy) | deletes the animal with the specified id (1) |
 
 [Read more on wiki](http://en.wikipedia.org/wiki/Representational_state_transfer)

@@ -59,10 +59,11 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Scopes][21] | |
 | [JavaScript Inheritance][22] | [Body Shop 2][1021] |
 
-| Projects |
+| Projects and Additional Topics |
 | -------- |
 | [Tic Tac Toe][1010] |
 | [Project 1][1022] |
+| [Code Review][1025] |
 
 [1]: 09-other-topics/internet-fundamentals/readme.md
 [2]: 01-workflow/command-line/01readme.md
@@ -111,6 +112,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1022]: 11-projects/project-1/readme.md
 [1023]: https://github.com/WDI-SEA/css-positioning
 [1024]: https://github.com/WDI-SEA/css-airbnb
+[1025]: https://github.com/WDI-SEA/code-review
 
 
 ###NodeJS/Express
@@ -119,16 +121,16 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | ----- | ----------- |
 | [Intro to Express][101] | [Daily Planet][1100] |
 | [Organization and APIs][102] <br><br> [Foreman][114] | [OMDB Movie Search][1101] |
-| [Intro to SQL][103] | |
-| [Advanced SQL][104] | [Apartment Lab][1102] <br><br> [Booktown][1103] |
-| [Full RESTful Routing w/AJAX][105] | [Daily Planet with AJAX][1104] |
-| [Express with Databases via Sequelize][106] | [Link Shortener][1105] <br><br> [OMDB with Favorites][1107] |
-| [Deploy Node to Heroku][107] | |
-| [Sequelize 1:M][108] | [OMDB Comments][1108] |
+| [Intro to SQL][103] | [Apartment Lab][1102] |
+| [Advanced SQL][104] | [Booktown][1103] |
+| [Full RESTful Routing w/AJAX][105] | [Hackathon Teams][1111] <br><br> [Daily Planet with AJAX (old)][1104] |
+| [Express with Databases via Sequelize][106] | [Pokedex][1107] <br><br> [Link Shortener][1105] |
+| [Sequelize 1:M][108] | [Comments w/BlogPulse][1108] |
 | [Sequelize M:M][109] | [OMDB Tags][1109] |
-| [Express Authentication Theory (Research/Code)][110] | |
-| [Express Authentication Practice (Codealong)][111] | |
 | [Express Testing with Mocha and Chai][112] | [Starter code][113] |
+| [Express Authentication Theory (Research/Code)][110] | |
+| [Express Authentication Practice (Codealong)][111] | [Starter Template][1112] |
+| [Deploy Node to Heroku][107] | [Example App][1113] |
 
 | Projects and Additional Topics |
 | -------- |
@@ -165,10 +167,13 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1104]: https://github.com/WDI-SEA/express-daily-planet-ajax
 [1105]: https://github.com/WDI-SEA/link-shortener
 [1106]: 11-projects/project-2/readme.md
-[1107]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part2-favorites.md
-[1108]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part3-comments.md
+[1107]: https://github.com/WDI-SEA/express-pokedex
+[1108]: https://github.com/WDI-SEA/express-blogpulse
 [1109]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part4-tags.md
 [1110]: 11-projects/post-project-2/readme.md
+[1111]: https://github.com/WDI-SEA/hackathon-teams
+[1112]: https://github.com/WDI-SEA/express-authentication
+[1113]: https://github.com/WDI-SEA/tacoapp
 
 ###Ruby on Rails
 
