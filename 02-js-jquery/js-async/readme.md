@@ -7,7 +7,7 @@
 
 ##What is Async?
 
-Async is a JavaScript module available for Node.js and the browser. It provides a set of utilities for working with functions asynchronously. We'll be focusing our attention to Async's control flow functions, mainly `series`, `parallel`, and `waterfall`.
+Async is a JavaScript module available for Node.js and the browser. It provides a set of utilities for working with functions asynchronously. We'll be focusing our attention to Async's control flow functions, mainly `series`, `parallel`, `concat`, and `waterfall`.
 
 ##Why Use Async?
 
@@ -138,7 +138,7 @@ async.waterfall([fn1, fn2, fn3], function(err, results) {
 
 ###Concat
 
-Lastly, `.concat` allows you to pass in an array of values and an iterator (instead of passing in an array of functions). This allows functions to be more reusable, as in the instance of making requests.
+Lastly, `.concat` allows you to pass in an array of values and an iterator (instead of passing in an array of functions). This allows functions to be more reusable, as in the instance of making requests. These functions occur in parallel.
 
 ```js
 var async = require('async');
@@ -161,6 +161,59 @@ var getFirstTitle = function(url, callback) {
 async.concat(urlsToGet, getFirstTitle, function(err, results) {
   console.log(results);
 });
+```
+
+### Concat Example 2: Seattle Neighborhoods
+
+For those who created the Seattle neighborhoods scraper, we didn't forget about you! Here's an example that takes the neighborhood data we scraped and retrieves the description for each Seattle neighborhood. Comments are provided, so take a moment and decipher the code.
+
+```js
+// importing modules
+var request = require('request');
+var cheerio = require('cheerio');
+var async = require('async');
+
+// make a request to the Visit Seattle and scrape neighorhood names and links
+request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, data) {
+  var $ = cheerio.load(data);
+
+  // scrape neighborhood names and links, and store as an array of objects
+  var neighborhoods = $('.text-medium-small').map(function(index, element) {
+    return {
+      name: $(element).text(),
+      link: $(element).closest('a').attr('href')
+    };
+  }).get();
+
+  // pass the neighborhood data to fetchDescriptions
+  fetchDescriptions(neighborhoods);
+});
+
+// this function takes neighborhood data and requests descriptions from each link
+function fetchDescriptions(neighborhoodData) {
+  // using async.parallel to retrieve data from all neighborhoods at once
+  async.concat(neighborhoodData, getNeighborhoodDescription, function(err, results) {
+    // here are the neighborhoods with descrptions. Let's print them out
+    results.forEach(function(result) {
+      console.log(result.name);
+      console.log(result.description);
+      console.log('----------------');
+    });
+  });
+}
+
+// this function runs for each neighborhood link. We'll go and scrape a descrption
+function getNeighborhoodDescription(neighborhood, cb) {
+  request(neighborhood.link, function(error, response, data) {
+    var $ = cheerio.load(data);
+
+    // get the first paragraph (the description) and store in the neighborhood object
+    neighborhood.description = $('p').first().text();
+
+    // return the appended neighborhood object to the async.concat call
+    cb(null, neighborhood);
+  });
+}
 ```
 
 ##Wrapup
