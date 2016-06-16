@@ -3,24 +3,23 @@
 ##Objectives
 
 * Describe OAuth and its purpose
-* Use Passport strategies for authentication
+* Use Passport strategies for oAuth authorization
 
 ## What is OAuth?
 
-You see many sites with buttons that allow for users to sign up with their Facebook or Twitter credentials.  OAuth makes all this possible.  
+You see many sites with buttons that allow for users to sign up with their Facebook or Twitter credentials. OAuth makes all this possible.  
 
-[OAuth](https://en.wikipedia.org/wiki/OAuth) is an agreed-upon set of standards for logging in through a third party service. It involves:
+[OAuth](https://en.wikipedia.org/wiki/OAuth) is an agreed-upon set of standards for authorization with a third party service. It involves:
 
 1. Leaving a website
 2. Authenticating with the third party
-3. Then the third party will redirect the user back to the original website with, among other things, an authentication token that can be persisted and used to request more information later.
+3. Then the third party will redirect the user back to the original website with, among other things, an access token that can be persisted and used to request more information later.
 
 Since OAuth is a set of standards that are universally accepted, there's a whole bunch of libraries we can use to make this happen - like [Passport](http://passportjs.org/)
 
 ![facebook-login](https://cloud.githubusercontent.com/assets/40461/9360397/e49b15be-468d-11e5-8b88-3757ca6cbcac.png)
 
-
-You probably know this as "Login with Facebook": you click on "Login with Facebook", you're redirected to Facebook's application, and then you get back to your site.  As a developer, one benefit is your application gets a whole bunch of information it can use - or persist - later on, from Facebook. A downside for the users is that in order to login, they're giving a lot of data to the requesting application. Developers and companies love this, though, because they can use all this data.
+You probably know this as "Login with Facebook": you click on "Login with Facebook", you're redirected to Facebook's application, and then you get back to your site. As a developer, one benefit is your application gets a whole bunch of information it can use - or persist - later on, from Facebook. A downside for the users is that in order to login, they're giving a lot of data to the requesting application. Developers and companies love this, though, because they can use all this data.
 
 #### How it works
 
@@ -30,337 +29,165 @@ A visitor of our website clicks **Login with Facebook**, and leaves our original
 
 As a Facebook user, when you login, you pass in two important pieces of information to Facebook: the **app ID** and the **app secret** that identifies the application requesting the information.
 
-After our app is given the okay, Facebook sends back an **access token**. With that access token, Facebook can identify users of our application as real Facebook users. These access tokens only last so long, usually expiring after a week or so, but with this access token we can call out to Facebook, if we want, and get Facebook data associated with that Facebook user.
+After our app is given the OK, Facebook sends back an **access token**. With that access token, Facebook can identify users of our application as real Facebook users. These access tokens only last so long, usually expiring after a week or so, but with this access token we can call out to Facebook, if we want, and get Facebook data associated with that Facebook user.
+
+**IMPORTANT NOTE:** OAuth is an *authorization standard*, which is not the same as authentication. Authentication occurs when you're redirected to Facebook. Authorization occurs when you receive the access token *after* authentication.
 
 ###Starting Point
 
-Here's some code to get you started:
+We'll be working off a functioning Express authentication example, which you can find finished here:
 
-https://github.com/WDI-SEA/oauth-facebook-example
+https://github.com/WDI-SEA/express-authentication/tree/brian-finished
 
-For OAuth, we'll assume that you've gone through the authentication lecture, and are familiar with sessions, bcrypt, and flash messages in Express. The starter code is an application with signup/login routes and a page that can only be accessed when logged in. Take a look at the application and verify that it works (you'll have to go through the usual motions, like installing the npm modules, creating/migrating the database, etc.).
+For OAuth, we'll assume that you've gone through the authentication lecture, and are familiar with sessions, bcrypt, and flash messages in Express.
 
-We'll be using the following modules as we add Passport and two strategies: Local and Facebook. Install the following modules:
+####Create Facebook app
 
-* passport
-  * a npm module for implementing OAuth using multiple different providers
-* passport-local
-  * a Passport strategy for local authentication (We'll modify our current application to use this. Note that this does not use OAuth)
-* passport-facebook
-  * a Passport strategy for Facebook authentication (using OAuth)
+To get started we need to go to the facebook developer portal and create an app [https://developers.facebook.com/](https://developers.facebook.com/). Follow the instructions to create an app, and ensure you enable the following configurations:
 
-####Load/Initialize passport
+* Add the **Facebook Login** product
+  * Enable **Client OAuth Login**
+  * Add `http://localhost:3000/auth/callback/facebook` to **Valid OAuth redirect URIs**
 
-add to the top of **index.js**
+Once you get signed up, add your app id and secret to your `.env` file. We'll also add a variable for our site URL, which will be used in the Passport configuration.
 
-```js
-var passport = require('passport');
+```
+FACEBOOK_APP_ID=insertkeyhere
+FACEBOOK_APP_SECRET=insertkeyhere
+BASE_URL=http://localhost:3000
 ```
 
-Load middleware
+####Add providers model
 
-```js
-app.use(passport.initialize());
-app.use(passport.session());
+OAuth uses an access token that is sent back from the provider to authorize the user. We need to store that token along with the user's identifier from Facebook. We'll need to create a migration to our existing user in order to add these additional columns.
+
+```bash
+sequelize migration:create --name addFacebookIdAndToken
 ```
 
-####Serialization functions
-
-You need to define how passport should keep track of users. This will store the user id in the session and re-query the database for the other info as needed. It uses the sequelize `.get()` method to get a clean user object.
+Add the following to your migration in **migrations/*-addFacebookIdAndToken.js**
 
 ```js
-passport.serializeUser(function(user, done) {
-  done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done) {
-  db.user.findById(id).then(function(user) {
-    done(null, user.get());
-  }).catch(done);
-});
-```
-
-**Note:** Since passport utilizes a lot of callback functions, we can organize these functions into a configuration file. If done, your code will look something like this:
-
-**index.js**
-```js
-var strategies = require('./config/strategies');
-
-passport.serializeUser(strategies.serializeUser);
-passport.deserializeUser(strategies.deserializeUser);
-```
-
-**config/strategies.js**
-```js
-var db = require('../models');
+'use strict';
 
 module.exports = {
-  serializeUser: function(user, done) {
-    done(null, user.id);
+  up: function (queryInterface, Sequelize) {
+    // add facebookId and facebookToken as columns
+    return queryInterface.addColumn('users', 'facebookId', Sequelize.STRING).then(function() {
+      return queryInterface.addColumn('users', 'facebookToken', Sequelize.STRING);
+    });
   },
-  deserializeUser: function(id, done) {
-    db.user.find(id).then(function(user) {
-      done(null, user.get());
-    }).catch(done);
+
+  down: function (queryInterface, Sequelize) {
+    // remove facebookToken and facebookId as columns
+    return queryInterface.removeColumn('users', 'facebookToken').then(function() {
+      return queryInterface.removeColumn('users', 'facebookId');
+    });
   }
 };
 ```
 
-##Local Authentication (email / password)
-
-You can use passport for basic authentication (email / password). Usually, if you are allowing for login via oAuth you'll want to provide e-mail/password as an alternative unless your product hinges on the oAuth connection.
-
-source: [passport docs](http://passportjs.org/guide/username-password/)
-
-####Setup proccess
-
-* install `passport-local` (already done in starter code)
-* Setup user model (already done in starter code)
-* Require strategy
-* Setup middleware strategy
-
-##Setup User Model
-
-To prepare for using passport, the user model needs to be able to encrypt and check the password. This is done via a `beforeCreate` hook, which is already in the starter code.
-
-####Check password
-
-To check the password we will add an instance method to the model called `checkPassword()`. This method will be availble on every insance of a user. Note that this varies from the `authenticate` class method, which belongs specifically to the `user` model (no instance).
-
-```js
-instanceMethods: {
-  checkPassword: function(password, callback) {
-    if(password && this.password){
-      bcrypt.compare(password, this.password, callback);
-    } else {
-      callback(null, false);
-    }
-  }
-}
-```
-
-If you'd like, the other `authenticate` class method can be deleted once we implement the local strategy.
-
-##Add LocalStrategy middleware
-
-We already installed `passport-local` via npm, so now let's require it near the top of index.js
-
-```js
-var LocalStrategy = require('passport-local').Strategy;
-```
-
-Then the local strategy using needs to be set up as middleware and we have to add code inside of its callback to use Sequelize to check the e-mail/password.
-
-The logic for this strategy:
-
-* Specify the username field as the first parameter
-* Specify the function needed to authenticate the user
-  * Find the user and check its password
-    * if valid with no errors, return the user in the callback
-    * if invalid/errors, return the error in the callback
-
-Note that this strategy can be separated into a config file like the serialize/unserialize functions.
-
-```js
-passport.use(new LocalStrategy({
-    usernameField: 'email'
-  },
-  function(email, password, done) {
-    db.user.find({where: {email: email}}).then(function(user) {
-      if (user) {
-        user.checkPassword(password, function(err, result) {
-          if (err) return done(err);
-          if (result) {
-            done(null, user.get());
-          } else {
-            done(null, false, {message: 'Invalid password'});
-          }
-        });
-      } else {
-        done(null, false, {message: 'Unknown user'});
-      }
-    });
-  }
-));
-```
-
-Once the strategy is configured, we can use it in the controllers to authenticate users.
-
-####Handling login action
-
-Set up a login post route (replacing the old one) by requiring passport and using its `authenticate` function to authenticate the user
-
-The logic we use:
-
-* authenticate the user using the local strategy
-  * if the user is successfully authenticated, login the user and redirect after success
-  * if the user is not authenticated, redirect back to the login page
-
-**controllers/auth.js**
-
-```js
-router.post('/login',function(req,res){
-  passport.authenticate('local', function(err, user, info) {
-    if (user) {
-      req.login(user, function(err) {
-        if (err) throw err;
-        req.flash('success', 'You are now logged in.');
-        res.redirect('/');
-      });
-    } else {
-      req.flash('danger', 'Error');
-      res.redirect('/auth/login');
-    }
-  })(req, res);
-});
-```
-
-####Adding logout
-
-To log users out you simply need to call `req.logout()` in your logout route and then redirect them to the home page. You may also want to add a flash message.
-
-**controllers/auth.js**
-
-```js
-router.get('/logout', function(req, res) {
-  req.logout();
-  req.flash('info', 'You have been logged out.');
-  res.redirect('/');
-});
-```
-
-####Checking authentication
-
-Passport adds a function `req.isAuthenticated()` to check if the user is logged in. It will return a boolean true or false.
-
-Passport also adds `req.user` which will contain the user object created in the `deserializeUser` method (defined above). This will be the user object.
-
-##Facebook oAuth
-
-Setting up passport to handle OAuth login for any social network is roughly the same. As an example, we're going to walk through setting up Facebook login.
-
-####Setup proccess
-
-* Create Facebook app
-* Add providers model
-* Install passport-facebook
-* Load strategy requirement
-* Setup middleware strategy
-
-####Create Facebook app
-
-To get started we need to go to the facebook developer portal and create an app [https://developers.facebook.com/](https://developers.facebook.com/).
-
-Once you get signed up add your tokens to your `.env` file.
-
-####Add providers model
-
-oAuth uses a token that is sent back from the provider (Facebook, etc) to authenticate the user. We need to store that token along with the user data. This COULD be done as a column in the user table, but generally it is done by creating another model so each user HAS MANY providers (Facebook, Twitter, etc.) which allows for flexibility in adding additional providers in the future and keeps access
+Lastly, run this migration.
 
 ```bash
-sequelize model:create --name provider --attributes pid:string,token:string,type:string,userId:integer
-
 sequelize db:migrate
 ```
 
-Then create a one to many relationship between users and providers in the association section of the models.
+####Setup Passport Facebook
 
-```js
-//provider model
-models.provider.belongsTo(models.user);
+To setup the passport middleware, install the following module.
 
-//user model
-models.user.hasMany(models.provider);
+```bash
+npm install passport-facebook
 ```
 
-####Require facebook strategy
+####Configuring passport-facebook
+
+You'll want to configure your Passport Facebook module within **config/ppConfig.js**. This is a lot of code, so we'll explain the logic using comments.
 
 ```js
+// at the very top, require the passport-facebook strategy
 var FacebookStrategy = require('passport-facebook').Strategy;
-```
 
-####Setup middleware strategy
-
-OAuth requires an absolute callback url. To make this adapt between development and production environments we need to create an environment variable to store the base url for our app.
-
-in **.env**
-
-```
-BASE_URL=http://localhost:3000
-```
-
-Then we can initlize our strategy (note that this is a lot of code!)
-
-The logic behind this strategy:
-
-* Specify configuration as the first parameter (API keys, callback URL, profile fields to access)
-* Specify the function needed to signup the user with Facebook
-  * see if a Facebook provider exists for the user
-    * if a provider exists, save the new access token and exit
-    * if a provider doesn't exist, create a new provider with the email from Facebook
-      * if there's already a user with the email as a user, exit with an error message
-      * if the user's email is unique, create a new provider for this new user, and exit
-
-```js
+/*
+ * Below the LocalStrategy, setup passport to use the FacebookStrategy.
+ * We'll need to pass along the app id, app secret, and callback URL from
+ * environment variables. We'll also want to define the fields we're
+ * getting from Facebook, and enabling proof, which tells Facebook to
+ * check the client secret in order to verify our server
+ */
 passport.use(new FacebookStrategy({
-    clientID: process.env.FACEBOOK_APP_ID,
-    clientSecret: process.env.FACEBOOK_APP_SECRET,
-    callbackURL: process.env.BASE_URL + '/auth/callback/facebook',
-    profileFields: ['email', 'displayName']
-  },
-  function(accessToken, refreshToken, profile, done) {
-    db.provider.find({
-      where: {
-        pid: profile.id,
-        type: profile.provider
-      },
-      include: [db.user]
-    }).then(function(provider) {
-      if (provider && provider.user) {
-        provider.token = accessToken;
-        provider.save().then(function() {
-          done(null, provider.user.get());
-        });
-      } else {
-        var email = profile.emails[0].value;
-        db.user.findOrCreate({
-          where: {email: email},
-          defaults: {name: profile.displayName}
-        }).spread(function(user, created) {
-          if (created) {
-            user.createProvider({
-              pid: profile.id,
-              token: accessToken,
-              type: profile.provider
-            }).then(function() {
-              done(null, user.get());
-            })
-          } else {
-            done(null, false, {message: 'You already signed up with this email address. Please login'});
-          }
-        });
-      }
-    });
-  }
-));
+  clientID: process.env.FACEBOOK_APP_ID,
+  clientSecret: process.env.FACEBOOK_APP_SECRET,
+  callbackURL: process.env.APP_URL + '/auth/facebook/callback',
+  profileFields: ['id', 'email', 'displayName'],
+  enableProof: true
+}, function(accessToken, refreshToken, profile, cb) {
+  /*
+   * This function we're inside will be called once our user is authenticated
+   * by Facebook. We can access our token and profile, as well as run a callback
+   * function that accepts an error and a user
+   */
+
+  // pull the email from the user's Facebook profile, if it exists
+  var email = profile.emails ? profile.emails[0].value : null;
+
+  // see if the user exists in the database by email
+  db.user.find({
+    where: { email: email },
+  }).then(function(existingUser) {
+    // if the user exists already, link their existing account with their Facebook
+    if (existingUser) {
+      existingUser.update({
+        facebookId: profile.id,
+        facebookToken: accessToken
+      }).then(function(updatedUser) {
+        cb(null, existingUser);
+      }).catch(cb);
+    } else {
+      // if the user doesn't exist, findOrCreate the user on the user's Facebook id
+      db.user.findOrCreate({
+        where: { facebookId: profile.id },
+        defaults: {
+          facebookToken: accessToken,
+          name: profile.displayName,
+          email: email
+        }
+      }).spread(function(user, created) {
+        // if the user is created, we're done
+        if (created) {
+          return cb(null, user);
+        } else {
+          // if the user wasn't created, they exist. Update their access token
+          user.facebookToken = accessToken;
+          user.save().then(function() {
+            cb(null, user);
+          }).catch(cb);
+        }
+      }).catch(cb);
+    }
+  }).catch(cb)
+}));
 ```
 
 [profileFields documentation](https://developers.facebook.com/docs/graph-api/reference/user)
 
-####Setup login route
+####Setup authentication routes
 
-Using URL parameters, we can create a versatile login route that will work for facebook or any future oAuth strategies.
+In **controllers/auth.js**, we can use `passport.authenticate` to setup two Facebook authentication routes. The first route will redirect the user to Facebook for authentication (`GET /auth/facebook`). The second route is the *callback route* that will be called by Facebook, once the user is authenticated.
 
 ```js
-router.get('/login/:provider', function(req, res) {
-  passport.authenticate(
-    req.params.provider,
-    {scope: ['public_profile', 'email']}
-  )(req, res);
-});
-```
+router.get('/facebook', passport.authenticate('facebook', {
+  scope: ['public_profile', 'email']
+}));
 
-This will trigger the passport facebook module which will redirect the user to facebook and get their permission. Once they agree to allow access they will be redirected back to our callback route which we will create next.
+router.get('/facebook/callback', passport.authenticate('facebook', {
+  successRedirect: '/',
+  failureRedirect: '/auth/login',
+  failureFlash: 'An error occurred, please try later',
+  successFlash: 'You have logged in with Facebook'
+}));
+```
 
 **Scope**
 
@@ -368,32 +195,21 @@ The scope is how we ask for additional access to the user's facebook account. To
 
 More info: [Facebook scope documentation](https://developers.facebook.com/docs/facebook-login/permissions/v2.3)
 
-####Setup callback route
+####Adding Facebook Login Functionality
 
-We also need to create a callback route. This is where facebook will redirect the user after they have agreed to give our app permission to access their facebook account info.
+In order to login via Facebook, the last piece in the puzzle is a button to access `GET /auth/facebook`.
 
-Again, we will use URL parameters to make this work for any oAuth strategy.
+Add the following to the bottom of **auth/login.ejs**, outside the form.
 
-```js
-router.get('/callback/:provider', function(req, res) {
-  passport.authenticate(req.params.provider, function(err, user, info) {
-    if (err) throw err;
-    if (user) {
-      req.login(user, function(err) {
-        if (err) throw err;
-        req.flash('success', 'You are now logged in with ' + req.params.provider);
-        res.redirect('/');
-      });
-    } else {
-      req.flash('danger', 'Error');
-      res.redirect('/auth/login');
-    }
-  })(req, res);
-});
+```html
+<a href="/auth/facebook" class="btn btn-primary">
+  Login via Facebook
+</a>
 ```
 
-The majority of the code is identical to the LocalStrategy login code we added earlier. Again, this can be DRY'd up by separating these functions into a separate configuration file.
+## Notes when testing
 
-####Logout
-
-Logout for oAuth uses the exact same code as LocalStrategy so no changes are needed. We just have to call `req.logout()` which will invalidate the user's session.
+* Ensure that your app is running using `foreman`.
+* Try testing login under various conditions.
+* For more security, you can choose to delete the `facebookToken` when converting the user to JSON.
+* You may run into issues with Facebook authentication. Be patient and debug if encountered.
