@@ -6,9 +6,12 @@
 * Set up websockets on the server side
 * Use jQuery to update the client side
 
-###Starter Code
+###Getting Started
 
-Access the starter code for the codealong here: https://github.com/WDI-SEA/socket-io-starter
+**NOTE: There are two options for this lesson**
+
+1. Access the starter code for the codealong here: https://github.com/WDI-SEA/socket-io-starter
+2. Follow the Socket.io chat example, which illustrates sending and receiving messages on both the client and server: http://socket.io/get-started/chat/
 
 ## Web basics recap
 
