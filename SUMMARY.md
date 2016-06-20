@@ -107,7 +107,7 @@
     * [Codealong](05-express/express-jwt/codealong.md)
   * [Additional Topics](05-express/additional-topics/readme.md)
     * [oAuth](05-express/additional-topics/express-oauth/readme.md)
-    * [Geocoding](05-express/additional-topics/express-geocode/readme.md)
+    * [Geocoding and Google Maps](05-express/additional-topics/express-geocode/readme.md)
     * [Cloudinary](05-express/additional-topics/express-cloudinary/readme.md)
     * [Websockets with Socket.io](05-express/express-socket-io/readme.md)
 * [Ruby](06-ruby-rails/ruby.md)

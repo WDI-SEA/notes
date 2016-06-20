@@ -1,4 +1,4 @@
-#Geocoding with Node and Google Maps
+#Geocoding and Google Maps
 
 ## Objectives
 
@@ -12,7 +12,7 @@ We'll be using the starter code here (fork and clone): https://github.com/WDI-SE
 
 ## Geocoding Addresses
 
-**What is geocoding?** - The process of converting a description of a place to geographic coordinates.
+**What is geocoding?** - The process of converting a description of a place to geographic coordinates. The relationship between the description and the place is a *mapping* (no pun intended).
 
 ### Example:
 
@@ -31,7 +31,7 @@ We'll use this code in a file called `mapTest.js`
 
 ```js
 var geocoder = require('geocoder');
-geocoder.geocode("Space Needle", function(err, data) {
+geocoder.geocode('Space Needle', function(err, data) {
   console.log(data.results[0].geometry.location);
 });
 ```
@@ -54,12 +54,12 @@ Then, add a hook below the `classmethods` object
 
 ```js
 hooks: {
-  beforeCreate: function(place, options, fn) {
+  beforeCreate: function(place, options, cb) {
     geocoder.geocode(place.address, function(err, data) {
-      if (err) return fn(err, null);
+      if (err) return cb(err, null);
       place.lat = data.results[0].geometry.location.lat;
       place.lng = data.results[0].geometry.location.lng;
-      fn(null, place);
+      cb(null, place);
     });
   }
 }
@@ -85,7 +85,7 @@ We already set up a map div in the `index.ejs` template, along with some CSS to 
 **index.ejs***
 
 ```html
-<div id='map'></div>
+<div id="map"></div>
 ```
 
 **style.css**
@@ -144,7 +144,10 @@ var initMap = function() {
   // if brower support available, ask user for location data and set the map view
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      var initialLocation = new google.maps.LatLng(
+        position.coords.latitude,
+        position.coords.longitude
+      );
       map.setCenter(initialLocation);
     });
   }
@@ -159,8 +162,10 @@ var initMap = function() {
       map: map
     });
     // Bind a popup to the marker
-    googleMarker.addListener("click", function() {
-      var infoWindow = new google.maps.InfoWindow({content: "<h3>"+marker.name+"</h3>"});
+    googleMarker.addListener('click', function() {
+      var infoWindow = new google.maps.InfoWindow({
+        content: '<h3>' + marker.name + '</h3>'
+      });
       infoWindow.open(map, googleMarker);
     });
   });
@@ -170,7 +175,7 @@ var initMap = function() {
 **IMPORTANT NOTES**
 
 * It's important that you remember the async and defer attributes on the Google Maps script tag. This will wait until the page has loaded to start loading the Google Maps script.
-* `initMap` is distinct from the document ready event. According to this Stack Overflow post, deferred scripts *may* execute before jQuery's `$(document).ready()` function.
+* `initMap` is distinct from the `$(document).ready()` event. According to this Stack Overflow post, deferred scripts will execute before jQuery's `$(document).ready()` function.
 
 http://stackoverflow.com/questions/8638551/script-defer-and-document-ready
 
