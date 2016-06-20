@@ -192,3 +192,7 @@ app.get('/profile', isLoggedIn, function(req, res) {
 ## Conclusion
 
 Congrats, you have a working application with user authentication and authorization! To ensure all components are working, run `foreman run npm test` to verify all tests pass.
+
+See the finished OAuth example here:
+
+https://github.com/WDI-SEA/express-authentication/tree/brian-oauth

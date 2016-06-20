@@ -7,47 +7,57 @@
 
 ## IMPORTANT NOTE
 
-This lesson includes starter code. Fork and clone here to follow along:
+These concepts can be applied to any Express app. We'll be using our Taco app in this example, but feel free to use another.
 
-https://github.com/WDI-SEA/mocha-chai-starter
+https://github.com/WDI-SEA/tacoapp
 
 ## Mocha, Chai And Javascript Testing
 
-We've now created several Express applications. All these apps cover a single topic, so most of the time, they are quite small. But when you create a larger application, the codebase will become bigger and more complex every time you add some features. At some point, adding code in file A will break features in file B, and to avoid these "side-effects", we need to test our app.
+We've now created several Express applications. All these apps cover a single topic, so most of the time, they are quite small. But with most apps, the codebase will become bigger and more complex every time you add some features. At some point, adding code in `file A` will break features in `file B`, and to avoid these "side-effects", we need to test our app.
 
-To do so in Node, we will use two libraries: one to run the tests and a second one to run the assertions.
+To do so in Node, we will use two libraries: one to run the tests and a second one to run the assertions. Previously, we used the `assert` module to compare expected vs. actual results. However, we can use a different module called `chai` in order to create more readable assertions.
 
-Mocha will be our testing framework. From the Mocha Website:
+In addition to Chai, Mocha will be our testing framework. From the Mocha Website:
 
 _"Mocha is a feature-rich JavaScript test framework running on Node.js and the browser, making asynchronous testing simple and fun. Mocha tests run serially, allowing for flexible and accurate reporting, while mapping uncaught exceptions to the correct test cases."_
 
-
-For assertions, we will use Chai. From the Chai website:
-
-_"Chai is a BDD / TDD assertion library for node and the browser that can be delightfully paired with any javascript testing framework."_
-
-
 To be able to make HTTP requests inside tests, we will use a framework called `supertest`.
 
-## Let's Test! Codealong
+## Let's Test!
 
 ### Setting up the app
 
-Open the starter code provided and take a few minutes to explore the code and the routes being defined.
+Open the app provided and take a few minutes to explore the code and the routes being defined.
 
 To test this app, we need to install a couple of dependencies.
 
-First, let's install mocha, and we will install this package globally using `-g`:
+First, let's install Mocha. We will install this globally only once, for convenience. Mocha is a command-line tool that can be run anywhere.
 
 ```bash
 npm install -g mocha
 ```
 
-Then we will install chai and supertest using --save-dev
+Then we will install Chai, Supertest, and Mocha again using --save-dev
 
 ```bash
-npm install chai supertest --save-dev
+npm install chai supertest mocha --save-dev
 ```
+
+**NOTE:** Saving Mocha as a development dependency does two things. First, we'll only have these tools in development environments. Second, we won't be relying on a user installing Mocha using the `-g` flag, thus guaranteeing that Mocha is installed. This will be handy for creating our own test scripts. Speaking of which...
+
+#### Creating a test script
+
+In order to run our tests by simply typing `npm test`, let's add a test script to `package.json`:
+
+**package.json**
+
+```
+"scripts": {
+  "test": "NODE_ENV=test node_modules/mocha/bin/mocha"
+},
+```
+
+The script above will set the Node environment to `test`, which is very useful for handling test databases, as we'll see shortly. The next command runs Mocha from the project's `node_modules` folder. Super!
 
 #### Files and Folders
 
@@ -57,43 +67,44 @@ Now that we're configured, let's set up our file and folder structure. All the t
 mkdir test
 ```
 
-Then we will write the tests inside a file called `candies-tests.js`:
+Then we will write the tests inside a file called `index.tests.js`:
 
 ```bash
-touch test/candies-tests.js
+touch test/index.tests.js
 ```
 
 #### Let's write some tests
 
-Open the file `candiesTests.js`. We now need to require some dependencies at the top of this file:
+Open the file `index.tests.js`. We now need to require some dependencies at the top of this file:
 
 ```js
-var should = require("chai").should();
-var expect = require("chai").expect;
-var request = require("supertest");
-var app = require("../index");
+var expect = require('chai').expect;
+var request = require('supertest');
+var app = require('../index');
 ```
 
-All the tests need to be inside a `describe` function.  We will use one describe block per route:
+The code above imports Chai's `expect` assertions, as well as Supertest and our application.
+
+All the tests need to be inside a `describe` function. `describe` functions are used to group tests. We can nest as many as we want. In our case, we'll use one `describe` block for our root route.
 
 ```js
-describe("GET /candies", function() {
+describe('GET /', function() {
   //tests will be written inside this function
 });
 ```
 
-First, we will write a test to make sure that a request to the index path `/candies` returns a http status 200:
+First, we will write a test to make sure that a request to `GET /` returns a HTTP status 200:
 
 ```js
-describe("Candies", function() {
-  it("should return a 200 response", function(done) {
-    request(app).get("/candies")
+describe('GET /', function() {
+  it('should return a 200 response', function(done) {
+    request(app).get('/')
     .expect(200, done);
   });
 });
 ```
 
-Now go in the command line and type `mocha` from the root of the project. You should get a message saying that you have 1 test passing.
+Now go in the command line and type `npm test`. You should get a message saying that you have 1 test passing.
 
 Congrats, your test is passing!
 
@@ -102,130 +113,118 @@ tests also try to start the server. Either kill your nodemon server, or add this
 from starting twice:
 
 ```js
- // prevent the app from starting twice if tests are running.
- if(!module.parent) {
-   app.listen(3000);
- }
+// prevent the app from starting twice if tests are running.
+if (!module.parent) {
+  app.listen(3000);
+}
 ```
 
 Every block of code that starts with `it()` represents a test.
 
-The `callback` represents a function that Mocha will pass to the code so that the next test will be executed only when the current is finished and the `done` function is called - this allows tests to be executed once at a time.
+The callback represents a function that Mocha will pass to the code so that the next test will be executed only when the current is finished and the `done` function is called - this allows tests to be executed once at a time.
 
-Now, let's verify the content of the response by looking at the data sent back by hitting the `/candies` endpoint:
+## Verifying Tacos
 
-```js
-[
-  {
-    id: 1,
-    name: "Chewing Gum",
-    color: "Red"
-  },
-  {
-    id: 2,
-    name: "Pez",
-    color: "Green"
-  },
-  {
-    id: 3,
-    name: "Marshmallow",
-    color: "Pink"
-  },
-  {
-    id: 4,
-    name: "Candy Stick",
-    color: "Blue"
-  },
-  {
-    id: 5,
-    name: "test",
-    color: "brown"
-  }
-]
+Next, let's test the `tacos.js` controller. This presents a challenge due to Sequelize. However, as long as we have a test database, setting the `NODE_ENV` to `test` will use the test databse instead of the development database.
 
+#### Setting up the database
+
+The taco app should have a test database defined in `config/config.json`. Double-check that this is the case.
+
+The test database is used when the `NODE_ENV` environment variable is set to `test`. This is done in our test script, now all we need is a test database. Let's create it (disregard migrations for now).
+
+```bash
+createdb tacos_test
 ```
 
-We can write a test that verifies the response is an array:
+#### before() and Sequelize
+
+In order to ensure our test environment is consistent every time, we need to recreate and remigrate the database every time our tests are run. Mocha provides a couple handy functions that allow code to be executed before all or each-and-every test. These functions are `before()` and `beforeEach()`. We'll use `beforeEach()` to "sync" the test database before running all the tests.
+
+Let's create these tests in a separate file called **tacos.tests.js**
 
 ```js
-it("should return an array", function(done) {
-  request(app).get("/candies")
-  .end(function(error, response) {
-    expect(response.body).to.be.an('array');
-    done();
-  });
-});
-```
+var expect = require('chai').expect;
+var request = require('supertest');
+var app = require('../index');
+var db = require('../models');
 
-We can write another test that verifies the presence of a field in the response:
-
-```js
-it("should return an object that have a field called 'name' ", function(done) {
-  request(app).get("/candies")
-  .end(function(error, response) {
-    expect(response.body[0]).to.have.property('name');
-    done();
-  });
-});
-```
-
-
-We can also send data to the server and test the behavior - in our case, we want to make sure that when we post some JSON to `/candies`, a new object is added to the array candies.
-
-Because we are going to test another route, lets add another describe block:
-
-```js
-describe("POST /candies", function() {
-
-});
-```
-
-For this test, we need to:
-
-1. Create a new object by sending a `POST` request
-2. Verify that a new object has been "saved" by requesting the index route
-
-For this, we will use `before` blocks. A `before` block will be executed one time before your tests are run. It's good if there's any setup that needs to be done before your tests.
-
-Add this inside the new `describe` block:
-
-```js
 before(function(done) {
-  request(app).post("/candies")
-  .type("form")
-  .send({
-    id: 5,
-    name: "Lollipop",
-    color: "Red"
-  }).end(done);
-});
-```
-
-This code will be called for every test we will add into the current `describe` block.
-
-Now, we can verify that calling "POST" will add an object to candies:
-
-```js
-it("should add a candy object to the collection candies and return it", function(done) {
-  request(app).get("/candies")
-  .end(function(error, response) {
-    expect(response.body.length).to.equal(5);
+  db.sequelize.sync({ force: true }).then(function() {
     done();
   });
 });
 ```
 
-Run the `mocha` command in the terminal, you should now have four passing tests!
+We're importing Chai, Supertest, our application, as well as the models. Before all the tests, we want to run a function attached to `db.sequelize` called `sync`, and set the `force` property. This will take care of database setup and migrations for our tests.
 
+#### GET /tacos
+
+Testing `GET /tacos` will be similar as before.
+
+```js
+describe('GET /tacos', function() {
+  it('should return a 200 response', function(done) {
+    request(app).get('/tacos')
+    .expect(200, done);
+  });
+});
+```
+
+#### POST /tacos
+
+Testing `POST /tacos` will require sending form data, as well as verifying that a redirect occurred after the data was saved. We'll use the following functions to check these behaviors:
+
+* `.type()` - sets the type of data we can send to the app
+* `.send()` - accepts the data to send to the app
+
+Additionally, we can check if `Location` in the response is set to `/tacos`, which is the route that the redirect should take us to.
+
+```js
+describe('POST /tacos', function() {
+  it('should create and redirect to /tacos after posting a valid taco', function(done) {
+    request(app).post('/tacos')
+    .type('form')
+    .send({
+      name: 'Cheesy Gordita Crunch',
+      amount: 6000
+    })
+    .expect('Location', '/tacos')
+    .expect(302, done);
+  });
+});
+```
+
+#### DELETE /tacos/:id
+
+Testing `DELETE /tacos/:id` will not only require checking the status code, but also checking if the response has a message property with a value of "success". This will involve direct access to the response, which can be accessed through `supertest` using the `.end()` function.
+
+```js
+describe('DELETE /tacos/:id', function() {
+  it('should return a 200 response on deleting a valid taco', function(done) {
+    request(app).delete('/tacos/1')
+    .end(function(err, response) {
+      expect(response.statusCode).to.equal(200);
+      expect(response.body).to.have.property('msg');
+      expect(response.body.msg).to.equal('success');
+      done();
+    });
+  });
+});
+```
+
+Note how the `expect` assertions have additional functions that can be called, which make the lines read as if written in plain English. These types of tests fall under **Behavior-Driven Development**. BDD is an extension of TDD, and it's a testing process that revolves around testing and debugging specific behaviors. Many frameworks can be used to implement BDD. [Here's a great post with more information about TDD vs. BDD](https://www.toptal.com/freelance/your-boss-won-t-appreciate-tdd-try-bdd)
 
 ## Independent Practice
 
 Add tests to the suite:
 
-1. Write a test that make sure the object returned from `/candies/1` (or any id) contains the right fields.
-2. Write a test that ensure an object is deleted from the array candies when you call delete.
-3. Write a test that ensure a property is updated when you call `PUT /candies/:id/edit`
-
+1. Write an additional test for `DELETE /tacos/:id` to test deleting a taco that does not exist. Remember to think about the results you should *expect*, then write the tests to reflect those behaviors.
+2. Write a set of tests for `PUT /tacos/:id`
+3. Write tests for the remaining routes:
+  * `GET /tacos/new`
+  * `GET /tacos/:id/edit`
+  * `GET /tacos/:id`
 
 ## Conclusion
 

@@ -157,3 +157,17 @@ module.exports = function(sequelize, DataTypes) {
 ## What is this "associate" thing in my model?
 
 In this function, we specify any relations/associations (one to one, one to many or many to many) between our models (hasMany or belongsTo). We'll discuss this more, but always remember, the association goes in the model and the foreign keys go in the migration.
+
+## Running the migration
+
+To run the migration, use the following command.
+
+```
+sequelize db:migrate
+```
+
+If you need to undo the last migration, this command will undo the last migration that was applied to the database.
+
+```
+sequelize db:migrate:undo
+```
