@@ -295,3 +295,54 @@ SELECT
     END AS 'UserAge'
 FROM users;
 ```
+
+### Unions
+
+Unions are the compilation of one or more disparate SQL queries that have the same columns. These are helpful when doing data aggregation that requires multiple SQL statements with different sets of joins and where clauses, but that return the same type of data.
+
+Note: Unioned SQL statements MUST have the exact same columns (matching names) in the exact same order.
+
+In the example below, I want all users and the number of photographs taken that they have "been a part of". In my first query I'm selecting photographers. In my second I'm selecting directors. In my third I'm selecting editors. But I want everything to display as just individual users with a 'role' column that I've manually set.
+
+```sql
+SELECT
+	users.id,
+	users.name,
+    'Photographer' AS 'role',
+	COUNT(photos.id) AS 'photoCount'
+FROM photoShoots
+	INNER JOIN users
+		ON photoShoots.fk_photographerUserId = users.id
+	INNER JOIN photos
+		ON photoShoots.id = photos.fk_photoShootsId
+GROUP BY users.id, users.name
+
+UNION
+
+SELECT
+	users.id,
+	users.name,
+    'Director' AS 'role',
+	COUNT(photos.id) AS 'photoCount'
+FROM photoShoots
+	INNER JOIN users
+		ON photoShoots.fk_directorUserId = users.id
+	INNER JOIN photos
+		ON photoShoots.id = photos.fk_photoShootsId
+GROUP BY users.id, users.name
+
+UNION
+
+SELECT
+	users.id,
+	users.name,
+	'Editor' AS 'role',
+	COUNT(photos.id) AS 'photoCount'
+FROM photoShoots
+	INNER JOIN users
+		ON photoShoots.fk_editorUserId = users.id
+	INNER JOIN photos
+		ON photoShoots.id = photos.fk_photoShootsId
+GROUP BY users.id, users.name;
+    
+```
