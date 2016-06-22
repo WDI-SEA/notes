@@ -78,7 +78,7 @@ To use gon (just like any other gem) we need to add it to our `GemFile`. After a
 **in GemFile**
 
 ```ruby
-gem 'gon`
+gem 'gon'
 ```
 
 Then we need to add a tag inside of our `<head>` tag that will load the backend values as javascript so we can use them in our frontend.
@@ -99,9 +99,9 @@ gon is very simple to use. It exposes a varible called `gon` the controller. `go
 
 ```ruby
 def index
-    gon.something="hello"
-    gon.people = ['Lenny','Brian','Daniel']
-    gon.tasks = Task.all
+  gon.something = "hello"
+  gon.people = ['Lenny', 'Brian', 'Daniel']
+  gon.tasks = Task.all
 end
 ```
 
@@ -133,10 +133,10 @@ console.log(gon.taco);
 This would throw an error because `gon` is undefined. To avoid this problem we just need to check it using `typeof`.
 
 ```javascript
-if(typeof gon != 'undefined'){
-    console.log('taco is', gon.taco);
-}else{
-    console.log('there is no gon (or taco)');
+if (typeof gon !== 'undefined') {
+  console.log('taco is', gon.taco);
+} else {
+  console.log('there is no gon (or taco)');
 }
 ```
 

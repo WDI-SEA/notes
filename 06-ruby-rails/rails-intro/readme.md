@@ -28,13 +28,13 @@ More info about rails: [http://rubyonrails.org/](http://rubyonrails.org/)
 
 Basic creation of an app is very simple:
 
-```
+```bash
 rails new name_of_the_app
 ```
 
 If we want to use a different database (ie postgres) we need to specify it using the -d flag followed by the database name. By default, Rails uses SQLite, which is unideal for most web applications. We'll specify postgresql for our apps.
 
-```
+```bash
 rails new name_of_the_app -d postgresql
 ```
 
@@ -42,7 +42,7 @@ Hopefully this is obvious, but replace `name_of_the_app` with the name of your p
 
 If you've already created a folder though, you can initialize the app in a current directory by running:
 
-```
+```bash
 rails new ./ -d postgresql
 ```
 
@@ -50,7 +50,7 @@ rails new ./ -d postgresql
 
 You might need to install libpq-dev and build-essential:
 
-```
+```bash
 sudo apt-get install libpq-dev build-essential
 ```
 
@@ -86,7 +86,7 @@ The configuration for the database can be found in `(Your project name)/config/d
 
 You might need to specify the host, user and password as well. Just add
 
-```yml
+```yaml
 host: localhost
 user: (YOUR USERNAME HERE!)
 password: (YOUR DATABASE PASSWORD HERE!)
@@ -96,7 +96,7 @@ to database.yml.
 
 After all this, just type
 
-```
+```bash
 rake db:create
 ```
 
@@ -107,13 +107,13 @@ into the command line to create your database.
 
 To start the server we just type
 
-```
+```bash
 rails server
-````
+```
 
 Or the equivalent but shorter...
 
-```
+```bash
 rails s
 ```
 
@@ -127,7 +127,7 @@ Since we're using postgres, we'll need a database for our application. By defaul
 
 Rails includes a few generators which are command line tools used to create files for us. This automates the repetitive task of creating some of the more common files we'll need to make when builing a rails app. To run a generator we type `rails generate` or...
 
-```
+```bash
 rails g
 ```
 
@@ -149,13 +149,13 @@ More info: [rails guides - commandline tools](http://guides.rubyonrails.org/comm
 
 To create a controller we use the controller generator:
 
-```
+```bash
 rails g controller main
 ```
 
 This will create a controller called "MainController" in the file `app/controllers/main_controller.rb`. To create actions we simply define methods inside of the controller like this.
 
-```rb
+```ruby
 class MainController < ApplicationController
 
   def index
@@ -169,7 +169,7 @@ end
 
 **Note:** You'll find that having to write `index`, `show`, `edit`, and other actions will become tedious. Instead, you can define the actions to the generator and Rails will make them for you.
 
-```
+```bash
 rails g controller main index about
 ```
 
@@ -185,19 +185,19 @@ Routes are contained in the `config/routes.rb` file.
 
 To list all routes you can run the following command:
 
-```
+```bash
 rake routes
 ```
 
 **config/routes.rb**
-```rb
+```ruby
   get 'main/index'
   get 'main/about'
 ```
 
 While these routes are fine, we're going to change them around a bit.
 
-```rb
+```ruby
   root 'main#index'
   get 'about' => 'main#about'
 ```
@@ -248,7 +248,7 @@ This HTML is then sent to the user's web browser to be rendered.
 
 **Inside a controller action**
 
-```rb
+```ruby
 def index
   @taco = "Hello instance taco!"
   @array = [1,2,3]
@@ -320,16 +320,20 @@ The rails interactive console can be loaded to test code and interact with our r
 
 **Basic Examples**
 
-```rb
+```ruby
 Tweet.all # lists all tweets
-Tweet.create content: 'This is my first tweet', username: 'Brian'
-Tweet.create content: 'Rails make development so fast!', username: 'EveryStartup'
+Tweet.create(content: 'This is my first tweet', username: 'Brian')
+# alternative create syntax, using a create block
+Tweet.create do |t|
+  content = 'Rails make development so fast!'
+  username = 'EveryStartup'
+end
 Tweet.all
 Tweet.first
 Tweet.last
-Tweet.where username: 'Brian'
+Tweet.where(username: 'Brian')
 
-t = Tweet.find 1
+t = Tweet.find(1)
 t.username = 'Josh'
 t.save
 
@@ -338,7 +342,7 @@ t.username = 'Daniel'
 t.content = 'Hello this is a tweet too'
 t.save
 
-Tweet.where username: ['Daniel', 'Josh']
+Tweet.where(username: ['Daniel', 'Josh'])
 
 Tweet.count
 Tweet.all
@@ -352,7 +356,7 @@ In **config/routes.rb**, commented out are several different methods to create r
 
 **config/routes.rb**
 
-```rb
+```ruby
 resources :tweets
 ```
 
@@ -360,7 +364,7 @@ Using `resources :tweets` will make a set of RESTful routes with a base URL of `
 
 Note that the routes will also include default controller actions. While we can override these, we'll be fighting against the Rails opinions if we do. So let's make a controller to reflect these actions.
 
-```
+```bash
 rails g controller tweets index create new edit show update destroy
 ```
 
@@ -368,14 +372,14 @@ Note that the model is singular, the controllers/routes are plural. **VERY IMPOR
 
 In **controllers/tweets_controller.rb**
 
-```rb
+```ruby
 class TweetsController < ApplicationController
   def index
     @tweets = Tweet.all
   end
 
   def create
-    Tweet.create tweet_params
+    Tweet.create(tweet_params)
     redirect_to tweets_path
   end
 
@@ -384,17 +388,17 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @tweet = Tweet.find params[:id]
+    @tweet = Tweet.find(params[:id])
   end
 
   def show
-    @tweet = Tweet.find params[:id]
+    @tweet = Tweet.find(params[:id])
     # render json: params
   end
 
   def update
-    t = Tweet.find params[:id]
-    t.update tweet_params
+    t = Tweet.find(params[:id])
+    t.update(tweet_params)
     redirect_to tweets_path
   end
 
@@ -415,7 +419,7 @@ end
 
 Rails provides a lot of helper methods, most handily `link_to` and `form_for`, as well as methods that produce the links.
 
-```rb
+```ruby
 # link helpers
 tweets_path
 tweet_path(tweet)
