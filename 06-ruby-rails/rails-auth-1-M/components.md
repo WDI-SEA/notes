@@ -1,6 +1,6 @@
 #Components of Authentication
 
-Authentication is a farily complex topic, but like most complex topics it can be broken down into smaller parts.
+Authentication is a fairly complex topic, but like most complex topics it can be broken down into smaller parts.
 
 ##ActiveRecord validations
 
@@ -16,6 +16,6 @@ Authentication is a farily complex topic, but like most complex topics it can be
 
 ##has\_secure\_password
 
-* What is has\_secure\_password?
+* What is `has_secure_password`?
 * How does it work (in rails)?
 

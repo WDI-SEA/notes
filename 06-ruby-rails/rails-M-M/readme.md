@@ -15,18 +15,18 @@ Today we'll add tags to the bog app using a many to many relationship.
 ##What we need
 
 * Models
-    * Tag
-    * Creature
-    * Creatures_Tags (join table)
+  * Tag
+  * Creature
+  * Creatures_Tags (join table)
 * Association
-    * tag <-> creatures_tags <-> creature
-    * creature `has_and_belongs_to_many` tags
-    * tag `has_and_belongs_to_many` creatures
+  * tag <-> creatures_tags <-> creature
+  * creature `has_and_belongs_to_many` tags
+  * tag `has_and_belongs_to_many` creatures
 * Views
-    * creatures#edit - add/remove tags checkboxes
-    * creatures#new - add/remove tags checkboxes
-    * tag#show
-        * list all creatures with a specific tag
+  * creatures#edit - add/remove tags checkboxes
+  * creatures#new - add/remove tags checkboxes
+  * tag#show
+    * list all creatures with a specific tag
 
 ##Generating models
 
@@ -49,7 +49,9 @@ rails g model creatures_tags creature:references tag:references --force-plural
 ```
 
 # IMPORTANT
-The two models **must** be plural and in alphabetical order, else chaos will ensue. Also, `--force-plural` is needed so that the table will never be pluralized.
+The join table with the two models **must** be plural and in alphabetical order if you want to follow the Rails convention. Also, `--force-plural` is needed so that the table will never be pluralized.
+
+Note that if you want to name your join table something different, you can specify your own join model with `through:`
 
 ##Setting up associations
 
@@ -57,13 +59,13 @@ When you do `:references` it automatically creates the `belongs_to` relations on
 
 **models/creature.rb**
 
-```rb
+```ruby
 has_and_belongs_to_many :tags
 ```
 
 **models/tag.rb**
 
-```rb
+```ruby
 has_and_belongs_to_many :creatures
 ```
 
@@ -72,7 +74,7 @@ When creating the M:M associations, the name of the model is pluralized when add
 
 ##Adding tags
 
-```rb
+```ruby
 # assume the following:
 creature = Creature.first
 tag = Tag.first
@@ -83,7 +85,7 @@ creature.tags << tag
 
 ##Removing tags
 
-```rb
+```ruby
 # assume the following:
 creature = Creature.first
 tag = Tag.first
@@ -124,7 +126,7 @@ Tag.first.creatures
 
 **Advanced Examples / chaining**
 
-```rb
+```ruby
 #All creatures of the first tag of the first creature
 Creature.first.tags.first.creatures
 ```
@@ -141,29 +143,20 @@ Creature.first.tags.first.creatures
 3. `:id` refers to the value of the checkbox
 4. `:name` refers to the label of the checkbox
 
+That's it! As far as assigning the tags in the controller, we can modify the `Creature` model to accept the `tag_ids` array like so:
 
-Save checkbox selections in controllers. Iterate through the array of checkboxes and push each one to the creature's tags, if valid. Example:
-
-```rb
-def update
-  creature = Creature.find params[:id]
-  creature.update creature_params
-  update_tags creature
-  redirect_to creatures_path
+```ruby
+def creature_params
+  params.require(:creature).permit(:name, :description, :tag_ids => [])
 end
+```
 
-...
+In order for the tags to be assigned automatically, we can add the `accepts_nested_attributes_for` method to the `Creature` model. You'll also want to add `inverse_of:` to the creature's tag association, in order to run any validations that may be on the `Tag` model.
 
-private
-
-...
-
-def update_tags creature
-  tags = params[:creature][:tag_ids]
-  creature.tags.clear  #needed in the case that checkboxes are unselected
-  tags.each do |id|
-    creature.tags << Tag.find(id) unless id.blank? #push each tag, making sure the id exists
-  end
+```ruby
+class Creature < ActiveRecord::Base
+  has_and_belongs_to_many :tags, inverse_of: :creature
+  accepts_nested_attributes_for :tags
 end
 ```
 

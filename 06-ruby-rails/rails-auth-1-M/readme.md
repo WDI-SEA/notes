@@ -27,7 +27,7 @@ rake db:migrate
 
 **app/models/user.rb**
 
-```rb
+```ruby
 validates :email,
 presence: true,
 uniqueness: {case_sensitive: false}
@@ -45,13 +45,13 @@ Now that we have `has_secure_password`, Rails gives out a password setter.
 
 ###Add Validations for User
 
-```rb
+```ruby
 validates :password, presence: true, on: :create
 ```
 
 ###Let's test a real user
 
-```rb
+```ruby
 User.find_by_email("paul@gmail.com").try(:authenticate, "123")
 ```
 
@@ -59,15 +59,15 @@ This is nifty, but long, we can add a Class method that will return true or fals
 
 ###Add a helper method to the class
 
-```rb
-def self.authenticate email, password
+```ruby
+def self.authenticate(email, password)
   User.find_by_email(email).try(:authenticate, password)
 end
 ```
 
 ###The finished User model
 
-```rb
+```ruby
 class User < ActiveRecord::Base
   validates :email,
   presence: true,
@@ -77,7 +77,7 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
-  def self.authenticate email, password
+  def self.authenticate(email, password)
     User.find_by_email(email).try(:authenticate, password)
   end
 end
@@ -94,7 +94,7 @@ add actions `create` and `destroy`
 
 ###Lets create some routes
 
-```rb
+```ruby
 get "login" => "sessions#new"
 post "login" => "sessions#create"
 delete "logout" => "sessions#destroy"
@@ -117,7 +117,7 @@ Wait, why are we using the symbol? [See this StackOverflow answer](http://stacko
 ###Authenticate
 Authenticate the user on `sessions#create`
 
-```rb
+```ruby
 def create
   @user = User.authenticate user_params[:email], user_params[:password]
 
@@ -146,7 +146,7 @@ end
 
 ###Add current User capabilities
 
-```rb
+```ruby
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -204,7 +204,7 @@ rails g model pet name user:references
 
 This will make the following migration, which will include a userId in the pet model.
 
-```rb
+```ruby
 class CreatePets < ActiveRecord::Migration
   def change
     create_table :pets do |t|
@@ -224,17 +224,17 @@ rake db:migrate
 ```
 
 **models/user.rb**
-```rb
+```ruby
 class User < ActiveRecord::Base
-  # ...
-
   has_many :pet
+  
+  # ...
 end
 
 ```
 
 **models/pet.rb**
-```rb
+```ruby
 class Pet < ActiveRecord::Base
   belongs_to :user
 end
@@ -242,7 +242,7 @@ end
 
 Now try testing in the Rails console
 
-```rb
+```ruby
 User.first.pet
 
 User.first.pet.create name: 'Fido'

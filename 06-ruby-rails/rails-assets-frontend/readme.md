@@ -142,16 +142,16 @@ if (typeof gon !== 'undefined') {
 
 ##AJAX
 
-We can use jQuery to send AJAX calls to our server the same way we did it with other servers before. Of course, we also need to handle the backend code to make the server respond to the request apporpirately.
+We can use jQuery to send AJAX calls to our server the same way we did it with other servers before. Of course, we also need to handle the back-end code to make the server respond to the request appropriately.
 
 ####AJAX Delete Example
 
-Sometimes we want to perform actions without reloading the page. There are many AJAX strategies this is just one of them.
+Sometimes we want to perform actions without reloading the page. There are many AJAX strategies, but this is the "Rails way".
 
 **In our view (erb)**
 
 ```html
-<%= link_to 'delete', task, :class=>'js-delete-btn' %>
+<%= link_to 'delete', task, :class => 'js-delete-btn' %>
 ```
 
 If we are doing anything that is using rails' built-in resource routing it is in our best interest to use the `link_to` helper to determine the delete url. We can simply add a class to this link which we can use in JS to override it's behavior.
@@ -182,7 +182,7 @@ Notice that we're loading the URL from the href attribute of the link tag (allow
 
 **In our controller (ruby)**
 
-```rails
+```ruby
 def destroy
   result = Task.destroy params[:id]
   # redirect_to :tasks

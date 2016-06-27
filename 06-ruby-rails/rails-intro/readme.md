@@ -9,22 +9,22 @@
 
 ##Principles of Rails
 
-1. **DRY** - keep your code DRY and use concice, conistent code.
-2. **Convention over configuration** - Rails is built using sensible defaults which speeds development and means that there is less code to maintain.
+1. **DRY** - keep your code DRY and use concise, consistent code.
+2. **Convention over configuration** - Rails is built using sensible defaults, which speeds development and means that there is less code to maintain.
 
-Rails uses (and for the most part, forces you to adhere to) an **MVC** architecture. We used MVC when created Express applications.
+Rails uses (and for the most part, forces you to adhere to) an **MVC** architecture. We used MVC when creating Express applications.
 
 **Model** - The model refers to the data objects that we use. It's the object oriented approach to design. The data in our database will be the most common type of object that we'll put there.
 
-**View** - The view is the Presentation layer. It's what the user sees and interacts with, essentially the web pages. The HTML, CSS, and frontend JavaScript.
+**View** - The view is the Presentation layer. It's what the user sees and interacts with, essentially the web pages. The HTML, CSS, and front-end JavaScript.
 
 **Controller** - The controller will make decisions based on the request and then control what happens in response. It controls the interaction with our models and with our views.
 
 ![MVC Diagram](http://elibildner.files.wordpress.com/2012/06/screen-shot-2012-06-05-at-2-12-18-am.png)
 
-More info about rails: [http://rubyonrails.org/](http://rubyonrails.org/)
+More info about Rails: [http://rubyonrails.org/](http://rubyonrails.org/)
 
-### How to create a rails project
+### How to create a Rails project
 
 Basic creation of an app is very simple:
 
@@ -76,32 +76,27 @@ The first thing that you need to know is that there are two files that matter to
 
 To set up an app we can run `bundle install` which will download and install any gems listed in the `GemFile`.
 
-**Note:** After the server is running you'll need to restart it if you add any additionaly gems before they will be loaded.
+**Note:** After the server is running you'll need to restart it if you add any additionally gems before they will be loaded.
 
 ##Database config
 
-The configuration for the database can be found in `(Your project name)/config/database.yml` This is where you can find the name of your database, and change databse options.
+The configuration for the database can be found in `(Your project name)/config/database.yml` This is where you can find the name of your database, and change database options.
 
 ***NOTE FOR UBUNTU/DEBIAN USERS***
 
-You might need to specify the host, user and password as well. Just add
+You might need to specify the host, user and password as well. Just add the following to `config/database.yml`.
 
 ```yaml
 host: localhost
-user: (YOUR USERNAME HERE!)
-password: (YOUR DATABASE PASSWORD HERE!)
+user: YOUR USERNAME HERE
+password: YOUR DATABASE PASSWORD HERE
 ```
 
-to database.yml.
-
-After all this, just type
+After all this, type the following to create your database.
 
 ```bash
 rake db:create
 ```
-
-into the command line to create your database.
-
 
 ##Start a server
 
@@ -121,11 +116,9 @@ This will start a server on port 3000.
 
 Since we're using postgres, we'll need a database for our application. By default, the development database Rails looks for is called `name_of_the_app_development`. You can verify the name by looking in **app/config/database.yml**. You'll want to create this database using the command `rake db:create` so that Rails can find the database. Include the username and password as well, if your local database has a username and password.
 
-
-
 ##Generators
 
-Rails includes a few generators which are command line tools used to create files for us. This automates the repetitive task of creating some of the more common files we'll need to make when builing a rails app. To run a generator we type `rails generate` or...
+Rails includes a few generators which are command line tools used to create files for us. This automates the repetitive task of creating some of the more common files we'll need to make when building a rails app. To run a generator we type `rails generate` or...
 
 ```bash
 rails g
@@ -133,19 +126,19 @@ rails g
 
 ...for short
 
-The two that we will be using regularlly are:
+The two that we will be using regularly are:
 
 * `rails g controller controller_name` - create a controller
 * `rails g model model_name` - create a model
 
 We will touch on actual usage of both of these later.
 
-More info: [rails guides - commandline tools](http://guides.rubyonrails.org/command_line.html#rails-generate)
+More info: [Rails guides - command-line tools](http://guides.rubyonrails.org/command_line.html#rails-generate)
 
 
 ##Create a controller
 
-`Controllers` and the `actions` contained within are the starting point for the backend code that will be executed when a user visits a particular page/URL.
+`controllers` and the `actions` contained within are the starting point for the back-end code that will be executed when a user visits a particular page/URL.
 
 To create a controller we use the controller generator:
 
