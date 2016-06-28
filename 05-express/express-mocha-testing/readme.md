@@ -119,6 +119,12 @@ if (!module.parent) {
 }
 ```
 
+> If you see an error saying "TypeError: app.address is not a function", the following line needs to be added at the end of your main javascript file:
+
+```js
+ module.exports = app;
+```
+
 Every block of code that starts with `it()` represents a test.
 
 The callback represents a function that Mocha will pass to the code so that the next test will be executed only when the current is finished and the `done` function is called - this allows tests to be executed once at a time.
