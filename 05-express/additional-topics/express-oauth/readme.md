@@ -43,7 +43,7 @@ For OAuth, we'll assume that you've gone through the authentication lecture, and
 
 ####Create Facebook app
 
-To get started we need to go to the facebook developer portal and create an app [https://developers.facebook.com/](https://developers.facebook.com/). Follow the instructions to create an app, and ensure you enable the following configurations:
+To get started we need to go to the Facebook developer portal and create an app [https://developers.facebook.com/](https://developers.facebook.com/). Follow the instructions to create an app, and ensure you enable the following configurations:
 
 * Add the **Facebook Login** product
   * Enable **Client OAuth Login**
@@ -57,7 +57,7 @@ FACEBOOK_APP_SECRET=insertkeyhere
 BASE_URL=http://localhost:3000
 ```
 
-####Add providers model
+####Add Facebook attributes
 
 OAuth uses an access token that is sent back from the provider to authorize the user. We need to store that token along with the user's identifier from Facebook. We'll need to create a migration to our existing user in order to add these additional columns.
 
@@ -136,8 +136,8 @@ passport.use(new FacebookStrategy({
   db.user.find({
     where: { email: email },
   }).then(function(existingUser) {
-    // if the user exists already, link their existing account with their Facebook
-    if (existingUser) {
+    // if the user with a valid email exists already, link their existing account with their Facebook.
+    if (existingUser && email) {
       existingUser.update({
         facebookId: profile.id,
         facebookToken: accessToken
