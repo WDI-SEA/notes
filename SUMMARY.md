@@ -126,6 +126,7 @@
   * [ActiveRecord Polymorphism](06-ruby-rails/rails-polymorphism/readme.md)
   * [Additional Topics](06-ruby-rails/additional-topics/readme.md)
     * [oAuth](06-ruby-rails/additional-topics/rails-oauth/readme.md)
+    * [SASS](06-ruby-rails/additional-topics/sass/readme.md)
     * [Rails Mailers](06-ruby-rails/additional-topics/rails-mailers/readme.md)
     * [Cloudinary](06-ruby-rails/additional-topics/rails-cloudinary/readme.md)
     * [Jekyll](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
