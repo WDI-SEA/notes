@@ -105,7 +105,7 @@ def set_password_reset
   end
   # set the expiration date with some handy date methods
   self.expires_at = 4.hours.from_now
-  self.save!
+  self.save
 end
 ```
   
@@ -134,7 +134,7 @@ Alter the action in **app/mailers/user_mailer.rb**
 ```ruby
 def password_reset(user)
   @user = user
-  mail to: user.email, subject: 'Password Reset'
+  mail(to: user.email, subject: 'Password Reset')
 end
 ```
 

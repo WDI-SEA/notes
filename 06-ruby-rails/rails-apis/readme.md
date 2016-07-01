@@ -59,26 +59,4 @@ Of course, test along the way. Otherwise, you're living in the...
 
 ## APIs w/keys in Rails
 
-Some APIs require keys. Storing and retrieving the keys is similar to what we did in Node, using `foreman` and a `.env` file.
-
-### Storing Keys
-
-Use a `.env`. Key-value pairs, no quotes. Just as before.
-
-```
-SECRET=somethingsupersecret
-```
-
-**Go to the root of your project and add `.env` to your `.gitignore` file.
-
-### Accessing Stored Keys
-
-Console:
-```
-> foreman run rails c
-```
-
-To run our server:
-```
-> foreman run rails s
-```
+See [Environment Variables with Foreman](../../00-config-deployment/foreman/readme.md)

@@ -76,7 +76,7 @@ config/initializers/omniauth.rb
 Add an initializer for each strategy/provider you want to support. We're accessing
 properties of the ENV object, which we'll set up with a `.env` file.
 
-```rb
+```ruby
 Rails.application.config.middleware.use OmniAuth::Builder do
   provider :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_SECRET']
 end
@@ -116,7 +116,7 @@ Let's set these routes up.
 
 **add to `config/routes.rb`**
 
-```rb
+```ruby
 get 'auth/logout' => 'auth#logout'
 get 'auth/failure' => 'auth#failure'
 get 'auth/:provider/callback' => 'auth#callback'
@@ -137,7 +137,7 @@ The callback method will perform the following operation:
 * Redirect
 
 
-```rb
+```ruby
 class AuthController < ApplicationController
 
   def callback
@@ -163,7 +163,7 @@ class AuthController < ApplicationController
 
   def failure
     #TODO: display error page
-    render plain: "this is a failure"
+    render plain: 'this is a failure'
   end
 
 end
@@ -174,7 +174,7 @@ end
 Lastly, make sure to setup your `@current_user` variable inside the `ApplicationController` and
 run `before_action :current_user` in any controller that depends on having the user logged in.
 
-```rb
+```ruby
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -187,7 +187,8 @@ end
 ```
 
 `controllers/main_controller.rb`
-```rb
+
+```ruby
 class MainController < ApplicationController
   before_action :current_user
 
