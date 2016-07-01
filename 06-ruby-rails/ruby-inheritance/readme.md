@@ -23,7 +23,7 @@ Inheritance is used to indicate that one class will get most or all of its featu
 
 ###Example
 
-```rb
+```ruby
 class Rectangle
 
   def initialize(l, w)
@@ -131,7 +131,7 @@ from (pry):15:in `<main>'
 
 ### A Guide through Animals
 
-```rb
+```ruby
 class Animal
 
   def initialize(kind)

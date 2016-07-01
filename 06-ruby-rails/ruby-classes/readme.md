@@ -27,7 +27,7 @@ This defines a **class** definition of a `Person`. The *class* keyword denotes t
 
 To create a new *instance* of our *class* we write the following:
 
-```rb
+```ruby
 Person.new
 ```
 
@@ -42,7 +42,7 @@ However, this can cause you some headaches if you're not careful.
 
 Imagine we had the following
 
-```rb
+```ruby
 arr1 = [1,2,3]
 arr2 = arr1
 arr1 << 4
@@ -53,7 +53,7 @@ arr2
 
 Wow, the second array completely changed. That's because `arr2` was a reference to `arr1`. Both variables represented the same **object**. The way around this is to copy the object.
 
-```rb
+```ruby
 arr1 = [1,2,3]
 arr2 = Array.new(arr1)
 arr1 << 4
@@ -66,7 +66,7 @@ arr2
 
 In our class definition we can make use of an *initialize* method, which is run when a *new* instance of the class is created.
 
-```rb
+```ruby
 class Person
   def initialize
     puts "A new person was created"
@@ -77,7 +77,7 @@ end
 
 We can also make use of **instance variables** that are defined for each particular object and are available throughout other *methods* in the object. These variables are prefixed by an *@* symbol, i.e. `@my_var`.
 
-```rb
+```ruby
 class Person
 
   def initialize(name)
@@ -97,7 +97,7 @@ Now, when we create a new *Person* we are required to specify the `name` of the 
 person = Person.new("John")
 person.greet
 
-=> Hello! My name is John.
+# => Hello! My name is John.
 ```
 
 ### Getters and Setters
@@ -124,7 +124,7 @@ Now we can *read* or *get*  the *name* outside the object.
 person = Person.new("Jane")
 person.name
 
-=> "Jane"
+# => "Jane"
 ```
 
 Similarly, we may need to *change* or *set* an instance variable from outside the object, so we create a method called a **setter method**.
@@ -151,13 +151,11 @@ We can now *get* and *set* the name of a person using the  methods we created fo
 ```ruby
 person = Person.new("Samantha")
 person.name
-
-=> "Samantha"
+# => "Samantha"
 
 person.name = "Sam"
 person.name
-
-=> "Sam"
+# => "Sam"
 ```
 
 ### Getters and Setters, the Ruby way
@@ -239,19 +237,16 @@ end
 
 We have to create a method on the class to make the class variable accessible. Now we can access the value without creating any people.
 
-```rb
+```ruby
 puts "Population: #{Person.population}"
-puts
 
 batman = Person.new("Bruce Wayne")
 superman = Person.new("Clark Kent")
 Person.print_population
-puts
 
 # we can access the population and zip code directly
 puts "Population: #{Person.population}"
 puts "Zip Code: #{Person.zip_code}"
-puts
 
 # no one should be allowed to redefine the population
 # there is no setter defined for population. this will crash.
@@ -266,7 +261,7 @@ puts Person.print_population
 
 If we create a few people, we see the following
 
-```rb
+```ruby
 Person.new("John")
 Person.new("Jane")
 Person.population
@@ -299,7 +294,7 @@ Also, note that `self` can be used in instance methods to refer to particular *o
 
 If we create a class `Person` with a name attribute and use `attr_accessor` to create the getters and setters as follows
 
-```rb
+```ruby
 class Person
   attr_accessor :name
 
@@ -311,16 +306,16 @@ end
 
 then anyone can read and access `Person#name`.
 
-```rb
+```ruby
 person1 = Person.new("John")
 person1.name
 
-=> "John"
+# => "John"
 ```
 
 We can change this using the `private` keyword. Everything under the private keyword is private to outside users. Only the instance methods can use the getter and setter.
 
-```rb
+```ruby
 class Person
   def initialize(name)
     @name = name

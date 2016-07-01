@@ -22,7 +22,7 @@ Test-driven development (TDD) is a software development process that relies on t
 
 Rspec is the testing framework we are going to be using for Ruby (including Rails). To get started:
 
-```
+```bash
 gem install rspec
 ```
 
@@ -30,7 +30,7 @@ gem install rspec
 
 Once you have successfully installed rspec, create a new project:
 
-```
+```bash
 rspec --init 
 # (this will create a .rspec and spec/spec_helper.rb file)
 ```

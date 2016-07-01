@@ -34,7 +34,7 @@ These mailers can be called from the console, but in development, we need to set
 
 Install `letter_opener` to view emails in the browser. Add the gem to your gem file in the development group.
 
-```rb
+```ruby
 group :development do
   gem 'letter_opener'
 end
@@ -42,14 +42,14 @@ end
 
 Configure `letter_opener` by going to your configuration and adding this line to your `config/environments/development.rb`. While we're at it, we'll also configure the email URLs (which must be done manually).
 
-```rb
+```ruby
 config.action_mailer.delivery_method = :letter_opener
 config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
 ```
 
 Now emails should appear in the browser. Right? Right. Try testing it by running `rails c` and call the mailer:
 
-```rb
+```ruby
 # in rails console
 UserMailer.password_reset.deliver_now
 ```
@@ -60,7 +60,7 @@ Now that we've verified the functionality of `letter_opener` and our mailer, let
 
 In **routes.rb**
 
-```rb
+```ruby
 get 'reset' => 'passwords#new'
 post 'reset' => 'passwords#create'
 get 'reset/:code' => 'passwords#edit', as: :reset_code
@@ -96,7 +96,7 @@ Note that `Add<Attributes>To<Table Name>` will create the migration we need. All
 
 Let's also add a method to our `User` model to set the password reset functionality. We'll do this by generating a reset code, setting an expiration date, and saving the user.
 
-```rb
+```ruby
 def set_password_reset
   # this will ensure users with duplicate codes
   self.reset_code = loop do 
@@ -105,7 +105,7 @@ def set_password_reset
   end
   # set the expiration date with some handy date methods
   self.expires_at = 4.hours.from_now
-  self.save!
+  self.save
 end
 ```
   
@@ -113,7 +113,7 @@ end
 
 Make sure that we can find the user and set a reset code if found.
 
-```rb
+```ruby
 def create
   user = User.find_by_email(params[:email])
   if user
@@ -131,10 +131,10 @@ Lastly, we need to alter our mailer so it accepts a user and prints out the righ
 
 Alter the action in **app/mailers/user_mailer.rb**
 
-```rb
+```ruby
 def password_reset(user)
   @user = user
-  mail to: user.email, subject: 'Password Reset'
+  mail(to: user.email, subject: 'Password Reset')
 end
 ```
 
@@ -156,7 +156,7 @@ But what about the reset? Now we need an edit form and update action to handle t
 
 In **passwords_controller.rb**
 
-```rb
+```ruby
 def edit
   @code = params[:code]
 end
