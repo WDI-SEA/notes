@@ -189,10 +189,36 @@ app.get('/profile', isLoggedIn, function(req, res) {
 > 
 > **GET /profile - should return a 200 response if logged in**
 
-## Conclusion
+## Conclusion and CSRF
 
 Congrats, you have a working application with user authentication and authorization! To ensure all components are working, run `foreman run npm test` to verify all tests pass.
 
 See the finished OAuth example here:
 
 https://github.com/WDI-SEA/express-authentication/tree/brian-oauth
+
+#### Additional: Cross-Site Request Forgeries
+
+Something we did not cover in this walk-through, which is part of the [OWASP Top 10 Web Application Security Flaws](http://www.veracode.com/directory/owasp-top-10) is **Cross-Site Request Forgeries (CSRF)**. 
+
+CSRF is a security flaw where a third-party site attempts to make a request to your site with your site's session cookie. For example, if I'm logged into Reddit, I could come across a link that looks like this:
+
+```html
+<a href="http://www.reddit.com/accounts.php?action=delete">Delete account. Are you sure?</a>
+```
+
+But what if I was in a comment section, and someone decided to disguise this link?
+
+```html
+<a href="http://www.reddit.com/accounts.php?action=delete">Free subscription!</a>
+```
+
+This would delete my account! To prevent this forgery, we can generate a unique token on the server that must be sent with this delete request, then verify the token on the server.
+
+```html
+<a href="http://www.reddit.com/accounts.php?action=delete&csrf_token=aGIe3Sl8a9FlsdLkJVZ">Free subscription!</a>
+```
+
+For time's sake, we won't be implementing this together. However, there's an Express module called [csurf](https://github.com/expressjs/csurf) that can be used to protect against CSRF attacks via tokens. Feel free to look at the examples and implement this on your own. When working in Rails, this functionality will be included automatically.
+
+Another note, this protection does not apply to APIs. APIs should use a key instead.
