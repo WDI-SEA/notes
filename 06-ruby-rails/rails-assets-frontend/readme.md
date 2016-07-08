@@ -140,6 +140,43 @@ if (typeof gon !== 'undefined') {
 }
 ```
 
+##AJAX in Rails
+
+As an alternative to using `gon`, AJAX calls in Rails can be done if you have a controller action that returns JSON data. Here's an example. Let's assume this controller action can be accessed via the route `GET /names`.
+
+```ruby
+class NamesController < ApplicationController
+  def names
+    names = Name.all
+    render json: names
+  end
+end
+```
+
+When accessing `GET /names`, the response will contain JSON data.
+
+In order to access this route via AJAX, we can create a JavaScript file that accesses this route. We'll need to account for Turbolinks on the page by encapsulating the AJAX call inside an event called `ready page:load`.
+
+```js
+$(document).on('ready page:load', function() {
+  $.get('/names').done(function(data) {
+    console.log(data);
+  });
+});
+```
+
+This AJAX call can be triggered on form submission or button click by encapsulating the call within an event listener function. Example:
+
+```js
+$(document).on('ready page:load', function() {
+  $('#button').click(function() {
+    $.get('/names').done(function(data) {
+      console.log(data);
+    });
+  });
+});
+```
+
 ##Additional Reading
 
 * [Rails Guides - Assets Pipeline](http://guides.rubyonrails.org/asset_pipeline.html)
