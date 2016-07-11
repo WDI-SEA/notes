@@ -46,7 +46,7 @@ Now that we have `has_secure_password`, Rails gives out a password setter.
 ###Add Validations for User
 
 ```ruby
-validates :password, presence: true, on: :create
+validates :password, length: { in: 8..72 }, on: :create
 ```
 
 ###Let's test a real user
@@ -55,13 +55,13 @@ validates :password, presence: true, on: :create
 User.find_by_email('paul@gmail.com').try(:authenticate, '123')
 ```
 
-This is nifty, but long. We can add a class method that will return true or false
+This is nifty, but long. We can add a class method that will return true or false, based on the params from the controller.
 
 ###Add a helper method to the class
 
 ```ruby
-def self.authenticate(email, password)
-  User.find_by_email(email).try(:authenticate, password)
+def self.authenticate(params)
+  User.find_by_email(params[:email]).try(:authenticate, params[:password])
 end
 ```
 
@@ -73,12 +73,14 @@ class User < ActiveRecord::Base
   presence: true,
   uniqueness: {case_sensitive: false}
 
-  validates :password, presence: true, on: :create
+  validates :password,
+  length: { in: 8..72 },
+  on: :create
 
   has_secure_password
 
-  def self.authenticate(email, password)
-    User.find_by_email(email).try(:authenticate, password)
+  def self.authenticate(params)
+    User.find_by_email(params[:email]).try(:authenticate, params[:password])
   end
 end
 ```
@@ -106,9 +108,9 @@ delete "logout" => "sessions#destroy"
 <h1>Login</h1>
 
 <%= form_for :user do |f| %>
-  <%= f.text_field :email, placeholder: "Enter your email" %>
-  <%= f.password_field :password, placeholder: "Enter your password"%>
-  <%= f.submit "Login"%>
+  <%= f.email_field :email, placeholder: "Enter your email" %>
+  <%= f.password_field :password, placeholder: "Enter your password" %>
+  <%= f.submit "Login" %>
 <% end %>
 ```
 
@@ -119,10 +121,10 @@ Authenticate the user on `sessions#create`
 
 ```ruby
 def create
-  @user = User.authenticate user_params[:email], user_params[:password]
+  user = User.authenticate(user_params)
 
-  if @user
-    session[:user_id] = @user.id
+  if user
+    session[:user_id] = user.id
     flash[:success] = "User logged in!!"
     redirect_to root_path
   else
@@ -152,7 +154,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def is_authenticated?
+  def is_authenticated
     unless current_user
       flash[:danger] = "Credentials Invalid!!"
       redirect_to login_path
@@ -190,7 +192,7 @@ With a partial at **app/views/partials/_flash.html.erb**
 
 ###Protect a controller
 
-`before_action :is_authenticated?` on the controller you want to protect
+`before_action :is_authenticated` on the controller you want to protect
 
 `@current_user` is now visible to all pages because the `current_user` function is invoked
 
@@ -226,11 +228,10 @@ rake db:migrate
 **models/user.rb**
 ```ruby
 class User < ActiveRecord::Base
-  has_many :pet
+  has_many :pets
   
   # ...
 end
-
 ```
 
 **models/pet.rb**
@@ -243,9 +244,9 @@ end
 Now try testing in the Rails console
 
 ```ruby
-User.first.pet
+User.first.pets
 
-User.first.pet.create(name: 'Fido')
+User.first.pets.create(name: 'Fido')
 
 Pet.all
 
