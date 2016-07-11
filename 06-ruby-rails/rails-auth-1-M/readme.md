@@ -35,7 +35,7 @@ uniqueness: {case_sensitive: false}
 
 Note that we're only checking for presence and uniqueness of the email. Use [this gem](https://github.com/balexand/email_validator) if you'd like to actually validate the email address contents.
 
-##Add password encryption
+##Add password hashing
 
 * Add `has_secure_password` to the user model
 * uncomment `gem 'bcrypt'` on your Gemfile and run the bundler
@@ -52,10 +52,10 @@ validates :password, presence: true, on: :create
 ###Let's test a real user
 
 ```ruby
-User.find_by_email("paul@gmail.com").try(:authenticate, "123")
+User.find_by_email('paul@gmail.com').try(:authenticate, '123')
 ```
 
-This is nifty, but long, we can add a Class method that will return true or false
+This is nifty, but long. We can add a class method that will return true or false
 
 ###Add a helper method to the class
 
@@ -245,7 +245,7 @@ Now try testing in the Rails console
 ```ruby
 User.first.pet
 
-User.first.pet.create name: 'Fido'
+User.first.pet.create(name: 'Fido')
 
 Pet.all
 
