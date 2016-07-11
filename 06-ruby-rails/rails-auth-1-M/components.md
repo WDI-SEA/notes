@@ -17,5 +17,5 @@ Authentication is a fairly complex topic, but like most complex topics it can be
 ##has\_secure\_password
 
 * What is `has_secure_password`?
-* How does it work (in rails)?
+* How does it work (in Rails)?
 
