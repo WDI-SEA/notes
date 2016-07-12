@@ -36,6 +36,12 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 * [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
 * [FreeCodeCamp](http://www.freecodecamp.com/)
 
+###Templates
+
+* [Front-end Template](https://github.com/WDI-SEA/TEMPLATE-js)
+* [Express Template](https://github.com/WDI-SEA/TEMPLATE-express)
+* [Express Authentication Template](https://github.com/WDI-SEA/express-authentication)
+
 ###Front End Development
 
 | Topic | Assignments |
@@ -126,7 +132,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Full RESTful Routing w/AJAX][105] | [Hackathon Teams][1111] <br><br> [Daily Planet with AJAX (old)][1104] |
 | [Express with Databases via Sequelize][106] | [Pokedex][1107] <br><br> [Link Shortener][1105] |
 | [Sequelize 1:M][108] | [Comments w/BlogPulse][1108] |
-| [Sequelize M:M][109] | [OMDB Tags][1109] |
+| [Sequelize M:M][109] | [Project Organizer][1109] |
 | [Express Testing with Mocha and Chai][112] | [Starter code][113] |
 | [Express Authentication Theory (Research/Code)][110] | |
 | [Express Authentication Practice (Codealong)][111] | [Starter Template][1112] |
@@ -139,7 +145,8 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Realtime with Socket.io][117] |
 | [Geocoding/Maps][116] |
 | [Image Uploads with Cloudinary][118] |
-| [Post Project 2][1110]
+| [Post Project 2][1110] |
+| [Code Review][1025] |
 
 [101]: 05-express/express-intro/01readme.md
 [102]: 05-express/express-apis/01readme.md
@@ -169,7 +176,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1106]: 11-projects/project-2/readme.md
 [1107]: https://github.com/WDI-SEA/express-pokedex
 [1108]: https://github.com/WDI-SEA/express-blogpulse
-[1109]: https://github.com/WDI-SEA/express-apis-omdb/blob/master/part4-tags.md
+[1109]: https://github.com/WDI-SEA/express-project-organizer
 [1110]: 11-projects/post-project-2/readme.md
 [1111]: https://github.com/WDI-SEA/hackathon-teams
 [1112]: https://github.com/WDI-SEA/express-authentication
@@ -180,15 +187,15 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Topic | Assignments |
 | ----- | ----------- |
 | [Intro to Ruby][201] | [Ruby Exercises][1201] <br><br> [Ruby Challenges][1202] |
-| [Ruby Classes][202] | [Ruby Classes][1203] |
+| [Ruby Classes][202] |  |
 | [Ruby Testing with Rspec][204] | [Rspec Testing][1204] |
 | [Ruby Inheritance][203] | [Rio Grande][1205] |
-| [Intro to Rails][205] | [The SLU Bog][1206] |
+| [Intro to Rails][205] | [National Parks][1206] |
 | [APIs with Rest-Client][206] | |
 | [Data Scraping with Nokogiri][216] | [Nokogiri CLI Tool][1207] |
 | [Rails Asset Pipeline][207] | |
 | [Rails Auth/1:M][208] | [Link Board][1209] |
-| [Rails M:M][209] | [SLU Bog Tags][1211] |
+| [Rails M:M][209] | [National Parks Part 2: Rangers][1211] |
 | [Polymorphic Associations][210] | [Link Board Comments][1210] |
 
 | Projects and Additional Topics |
@@ -225,12 +232,12 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1203]: https://github.com/WDI-SEA/ruby-classes
 [1204]: https://github.com/WDI-SEA/rspec-testing
 [1205]: https://github.com/WDI-SEA/ruby-rio-grande
-[1206]: https://github.com/WDI-SEA/slu-bog
+[1206]: https://github.com/WDI-SEA/rails-national-parks
 [1207]: https://github.com/WDI-SEA/nokogiri-cli-tool
 [1208]: https://github.com/WDI-SEA/front-end-hackathon
 [1209]: https://github.com/WDI-SEA/link-board
 [1210]: https://github.com/WDI-SEA/link-board/blob/master/part2.md
-[1211]: https://github.com/WDI-SEA/slu-bog/blob/master/part2.md
+[1211]: https://github.com/WDI-SEA/rails-national-parks/blob/master/part2.md
 [1212]: https://github.com/WDI-SEA/js-jquery-review
 
 
@@ -338,3 +345,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1315]: https://github.com/WDI-SEA/interview-questions
 [1316]: https://github.com/WDI-SEA/react-stopwatch
 [1317]: https://github.com/WDI-SEA/react-yearbook
+
+---
+
+## Licensing
+1. All content is licensed under a CC-BY-NC-SA 4.0 license.
+2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.

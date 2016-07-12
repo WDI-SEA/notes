@@ -27,7 +27,7 @@ rake db:migrate
 
 **app/models/user.rb**
 
-```rb
+```ruby
 validates :email,
 presence: true,
 uniqueness: {case_sensitive: false}
@@ -35,7 +35,7 @@ uniqueness: {case_sensitive: false}
 
 Note that we're only checking for presence and uniqueness of the email. Use [this gem](https://github.com/balexand/email_validator) if you'd like to actually validate the email address contents.
 
-##Add password encryption
+##Add password hashing
 
 * Add `has_secure_password` to the user model
 * uncomment `gem 'bcrypt'` on your Gemfile and run the bundler
@@ -45,40 +45,42 @@ Now that we have `has_secure_password`, Rails gives out a password setter.
 
 ###Add Validations for User
 
-```rb
-validates :password, presence: true, on: :create
+```ruby
+validates :password, length: { in: 8..72 }, on: :create
 ```
 
 ###Let's test a real user
 
-```rb
-User.find_by_email("paul@gmail.com").try(:authenticate, "123")
+```ruby
+User.find_by_email('paul@gmail.com').try(:authenticate, '123')
 ```
 
-This is nifty, but long, we can add a Class method that will return true or false
+This is nifty, but long. We can add a class method that will return true or false, based on the params from the controller.
 
 ###Add a helper method to the class
 
-```rb
-def self.authenticate email, password
-  User.find_by_email(email).try(:authenticate, password)
+```ruby
+def self.authenticate(params)
+  User.find_by_email(params[:email]).try(:authenticate, params[:password])
 end
 ```
 
 ###The finished User model
 
-```rb
+```ruby
 class User < ActiveRecord::Base
   validates :email,
   presence: true,
   uniqueness: {case_sensitive: false}
 
-  validates :password, presence: true, on: :create
+  validates :password,
+  length: { in: 8..72 },
+  on: :create
 
   has_secure_password
 
-  def self.authenticate email, password
-    User.find_by_email(email).try(:authenticate, password)
+  def self.authenticate(params)
+    User.find_by_email(params[:email]).try(:authenticate, params[:password])
   end
 end
 ```
@@ -94,7 +96,7 @@ add actions `create` and `destroy`
 
 ###Lets create some routes
 
-```rb
+```ruby
 get "login" => "sessions#new"
 post "login" => "sessions#create"
 delete "logout" => "sessions#destroy"
@@ -106,9 +108,9 @@ delete "logout" => "sessions#destroy"
 <h1>Login</h1>
 
 <%= form_for :user do |f| %>
-  <%= f.text_field :email, placeholder: "Enter your email" %>
-  <%= f.password_field :password, placeholder: "Enter your password"%>
-  <%= f.submit "Login"%>
+  <%= f.email_field :email, placeholder: "Enter your email" %>
+  <%= f.password_field :password, placeholder: "Enter your password" %>
+  <%= f.submit "Login" %>
 <% end %>
 ```
 
@@ -117,12 +119,12 @@ Wait, why are we using the symbol? [See this StackOverflow answer](http://stacko
 ###Authenticate
 Authenticate the user on `sessions#create`
 
-```rb
+```ruby
 def create
-  @user = User.authenticate user_params[:email], user_params[:password]
+  user = User.authenticate(user_params)
 
-  if @user
-    session[:user_id] = @user.id
+  if user
+    session[:user_id] = user.id
     flash[:success] = "User logged in!!"
     redirect_to root_path
   else
@@ -146,13 +148,13 @@ end
 
 ###Add current User capabilities
 
-```rb
+```ruby
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  def is_authenticated?
+  def is_authenticated
     unless current_user
       flash[:danger] = "Credentials Invalid!!"
       redirect_to login_path
@@ -190,7 +192,7 @@ With a partial at **app/views/partials/_flash.html.erb**
 
 ###Protect a controller
 
-`before_action :is_authenticated?` on the controller you want to protect
+`before_action :is_authenticated` on the controller you want to protect
 
 `@current_user` is now visible to all pages because the `current_user` function is invoked
 
@@ -204,7 +206,7 @@ rails g model pet name user:references
 
 This will make the following migration, which will include a userId in the pet model.
 
-```rb
+```ruby
 class CreatePets < ActiveRecord::Migration
   def change
     create_table :pets do |t|
@@ -224,17 +226,16 @@ rake db:migrate
 ```
 
 **models/user.rb**
-```rb
+```ruby
 class User < ActiveRecord::Base
+  has_many :pets
+  
   # ...
-
-  has_many :pet
 end
-
 ```
 
 **models/pet.rb**
-```rb
+```ruby
 class Pet < ActiveRecord::Base
   belongs_to :user
 end
@@ -242,10 +243,10 @@ end
 
 Now try testing in the Rails console
 
-```rb
-User.first.pet
+```ruby
+User.first.pets
 
-User.first.pet.create name: 'Fido'
+User.first.pets.create(name: 'Fido')
 
 Pet.all
 

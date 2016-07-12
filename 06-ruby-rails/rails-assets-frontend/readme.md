@@ -1,28 +1,27 @@
-#Asset Pipeline and Frontend in Rails
+#Asset Pipeline and Front-end in Rails
 
 ##Objectives
 
-* Incorporate JavaScript, CSS, images, and other static files into a Rails application
+* Incorporate JavaScript, CSS, SCSS, images, and other static files into a Rails application
 * Understand the Asset Pipeline
 * Utilize helper methods/tags for including static resources
-* Use `gon` to pass data to the frontend
-* Incorporate AJAX into a Rails application
+* Use `gon` to pass data to the front-end
 
-We can work with JavaScript, CSS, and images in Rails just like we did in our frontend only projects. Rails uses the concept of an Asset pipeline to handle pre-processing and loading of static assets.
+We can work with JavaScript, CSS, and images in Rails just like we did in our front-end only projects. Rails uses the concept of an Asset Pipeline to handle pre-processing and loading of static assets. The "Rails way" is to put all of your assets (JavaScript, CSS/SASS, images) in the `assets` folder. Just do it!
 
-##Javascripts
+##JavaScript
 
-To load javascript files in rails we simply create `.js` files in the `app/assets/javascripts` directory and rails will automatically load them in the head of the page using `<script>` tags.
+To load JavaScript files in Rails we simply create `.js` files in the `app/assets/javascripts` directory and Rails will automatically load them in the head of the page using `<script>` tags. 
 
-To adjust the load order we just the `//=` lines at the bottom of `application.js`
+To adjust the load order, we can add the scripts along with the `//=` lines at the bottom of `application.js`
 
 ####application.js
 
-application.js is used to load other javascript files and allows us to change the load order of the files. You *CAN* put javascript code directly in that file
+application.js is used to load other JavaScript files and allows us to change the load order of the files. You *CAN* put JavaScript code directly in this file. But it's best practice to avoid this and use separate files as before.
 
-At the bottom of application.js there are a few lines that look like comments and start with `//=` these are used to specify which files to load and in what order. The last line (`//= require_tree .`) loads all of the files in the javascripts directory that aren't loaded explicitly above.
+At the bottom of `application.js` there are a few lines that look like comments and start with `//=` these are used to specify which files to load and in what order. The last line (`//= require_tree .`) loads all of the files in the `javascripts` directory that aren't loaded explicitly above.
 
-For example, if we had a file called `importantScript.js` in our javascripts directory and we needed it to be loaded first we could simply do something like this...
+For example, if we had a file called `importantScript.js` in our `javascripts` directory and we needed it to be loaded first we could simply do something like this...
 
 ```js
 //= require 'importantScript.js'
@@ -33,12 +32,13 @@ For example, if we had a file called `importantScript.js` in our javascripts dir
 
 ##Stylesheets
 
-Rails uses SASS, which is a preprocessor for css that allows us to use some additonal features that standard css doesn't support. These files end with the `.scss` file extension and are processed on the server (backend) before they are sent to the user/browser as plain css.
+Rails uses SASS, which is a preprocessor for CSS that allows us to use some additional features that standard CSS doesn't support. These files end with the `.scss` file extension and are processed on the server (back-end) before they are sent to the user/browser as plain CSS.
 
-Just like with javascript rails will auto-load any css or scss file that are in `app/assets/stylesheets`.
+Learn SASS here: [SASS](../additional-topics/sass/readme.md)
 
-Also, similar to javascript we can adjust the load order by editing the bottom off `application.css`, and again we should avoid putting css directly in this file.
+Just like with JavaScript, Rails will auto-load any CSS or SCSS file that are in `app/assets/stylesheets`.
 
+Also, similar to JavaScript we can adjust the load order by editing the bottom of `application.css`, and again we should avoid putting CSS directly in this file.
 
 ##Images
 
@@ -52,14 +52,14 @@ If we have a file `app/assets/images/pic.jpg` we can display it in an erb file l
 <%= image_tag 'pic.jpg' %>
 ```
 
-We can also get a string of the image url/path by calling `image_url` or `image_path`.
+We can also get a string of the image URL/path by calling `image_url` or `image_path`.
 
-####Images in css (using sass/scss)
+####Images in CSS (using SCSS)
 
-We also have access to a `image_url` helper method in `scss` (sass) files. It will be used in place of the standard css `url('/path/to/image.jpg')` format.
+We also have access to a `image_url` helper method in `scss` files. It will be used in place of the standard css `url('/path/to/image.jpg')` format.
 
 ```css
-.some-class{
+.some-class {
   background-image: image_url('pic.jpg');
 }
 ```
@@ -67,18 +67,18 @@ We also have access to a `image_url` helper method in `scss` (sass) files. It wi
 **NOTE:** make sure the file is named `scss` and not just `css`. The `css` files are served to the browser as-is (no pre-processing), but `scss` are run through the sass pre-proccessor first which will run the `image_url` method and insert the correct image path.
 
 
-##Passing data to the frontend (gon)
+##Passing data to the front-end (gon)
 
-We can pass data from a controller to frontend javascript using a gem called "gon" which allows us to easily pass any data from the backend to the frontend.
+We can pass data from a controller to front-end JavaScript using a gem called "gon" which allows us to easily pass any data from the back-end to the front-end.
 
 ####gon setup
 
-To use gon (just like any other gem) we need to add it to our `GemFile`. After adding it remember to run `bundle` and then restart your server with `rails s`
+To use gon (just like any other gem) we need to add it to our `GemFile`. After adding it remember to run `bundle install` and then restart your server with `rails s`
 
 **in GemFile**
 
 ```ruby
-gem 'gon`
+gem 'gon'
 ```
 
 Then we need to add a tag inside of our `<head>` tag that will load the backend values as javascript so we can use them in our frontend.
@@ -93,15 +93,15 @@ Be sure to add this line BEFORE  `javascript_include_tag` that way the variables
 
 ####Using gon
 
-gon is very simple to use. It exposes a varible called `gon` the controller. `gon` is a hash that we can add any values to and they will be available on the frontend automatically.
+gon is very simple to use. It exposes a variable called `gon` the controller. `gon` is a hash that we can add any values to and they will be available on the front-end automatically.
 
 **In controller**
 
 ```ruby
 def index
-    gon.something="hello"
-    gon.people = ['Lenny','Brian','Daniel']
-    gon.tasks = Task.all
+  gon.something = "hello"
+  gon.people = ['Lenny', 'Brian', 'Daniel']
+  gon.tasks = Task.all
 end
 ```
 
@@ -112,7 +112,7 @@ console.log(gon.something);
 //outputs: "hello"
 
 console.log(gon.people);
-//output: ['Lenny','Brian','Daniel']
+//output: ['Lenny', 'Brian', 'Daniel']
 
 console.log(gon.tasks);
 //outputs: an array of objects for all tasks in the database
@@ -120,9 +120,9 @@ console.log(gon.tasks);
 
 ####Pitfalls
 
-There is only one major "gotcha" with gon and that is that gon won't be defined in javascript unless you assign somethign to it in the controller.
+There is only one major "gotcha" with `gon` and that is that `gon` won't be defined in JavaScript unless you assign something to it in the controller.
 
-Assume we didn't assign any values to gon in the controller...
+Assume we didn't assign any values to `gon` in the controller...
 
 **in JS**
 
@@ -133,72 +133,49 @@ console.log(gon.taco);
 This would throw an error because `gon` is undefined. To avoid this problem we just need to check it using `typeof`.
 
 ```javascript
-if(typeof gon != 'undefined'){
-    console.log('taco is', gon.taco);
-}else{
-    console.log('there is no gon (or taco)');
+if (typeof gon !== 'undefined') {
+  console.log('taco is', gon.taco);
+} else {
+  console.log('there is no gon (or taco)');
 }
 ```
 
-##AJAX
+##AJAX in Rails
 
-We can use jQuery to send AJAX calls to our server the same way we did it with other servers before. Of course, we also need to handle the backend code to make the server respond to the request apporpirately.
+As an alternative to using `gon`, AJAX calls in Rails can be done if you have a controller action that returns JSON data. Here's an example. Let's assume this controller action can be accessed via the route `GET /names`.
 
-####AJAX Delete Example
-
-Sometimes we want to perform actions without reloading the page. There are many AJAX strategies this is just one of them.
-
-**In our view (erb)**
-
-```html
-<%= link_to 'delete', task, :class=>'js-delete-btn' %>
-```
-
-If we are doing anything that is using rails' built-in resource routing it is in our best interest to use the `link_to` helper to determine the delete url. We can simply add a class to this link which we can use in JS to override it's behavior.
-
-
-**In our JS file**
-
-```javascript
-$('.js-delete-btn').on('click',function(e){
-    e.preventDefault();
-    var btn=$(this);
-    $.ajax({
-      url:  btn.attr('href'),
-      method:'DELETE',
-      dataType:'json'
-    }).done(function(data){
-      if(data){
-        btn.closest('tr').remove();
-      }
-    })
-});
-```
-
-Next, we listen for the click event, prevent it from doig it's default action (navigating to a url), make an AJAX call to the server, and then modify the view (through jQuery).
-
-Notice that we're loading the URL from the href attribute of the link tag (allowing the rails `link_to` tag to tell us the url)
-
-
-**In our controller (ruby)**
-
-```rails
-def destroy
-  result = Task.destroy params[:id]
-  # redirect_to :tasks
-  respond_to do |format|
-    format.html {redirect_to :tasks}
-    format.json {render json: result}
+```ruby
+class NamesController < ApplicationController
+  def names
+    names = Name.all
+    render json: names
   end
 end
 ```
 
-In our controller we need to use the `respond_to` method to tell rails to respond differently to different types of requests.
+When accessing `GET /names`, the response will contain JSON data.
 
-In this example we...
-* redirect to the tasks index page for regular (html) requests.
-* return json data for AJAX requests (which will be received by the `.done(function(data){ ... });` function in javascript.
+In order to access this route via AJAX, we can create a JavaScript file that accesses this route. We'll need to account for Turbolinks on the page by encapsulating the AJAX call inside an event called `ready page:load`.
 
+```js
+$(document).on('ready page:load', function() {
+  $.get('/names').done(function(data) {
+    console.log(data);
+  });
+});
+```
+
+This AJAX call can be triggered on form submission or button click by encapsulating the call within an event listener function. Example:
+
+```js
+$(document).on('ready page:load', function() {
+  $('#button').click(function() {
+    $.get('/names').done(function(data) {
+      console.log(data);
+    });
+  });
+});
+```
 
 ##Additional Reading
 
@@ -206,4 +183,3 @@ In this example we...
 * [Rails API - Asset Tag Helpers](http://api.rubyonrails.org/classes/ActionView/Helpers/AssetTagHelper.html)
 * [SASS documentation](http://sass-lang.com/documentation/file.SASS_REFERENCE.html)
 * [gon gem](https://github.com/gazay/gon)
-* [jQuery Docs - AJAX](http://api.jquery.com/jquery.ajax/)
