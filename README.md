@@ -345,3 +345,9 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1315]: https://github.com/WDI-SEA/interview-questions
 [1316]: https://github.com/WDI-SEA/react-stopwatch
 [1317]: https://github.com/WDI-SEA/react-yearbook
+
+---
+
+## Licensing
+1. All content is licensed under a CC-BY-NC-SA 4.0 license.
+2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
