@@ -114,7 +114,7 @@ rails s
 
 This will start a server on port 3000.
 
-Since we're using PostgreSQL, we'll need a database for our application. By default, the development database Rails looks for is called `name_of_the_app_development`. You can verify the name by looking in **app/config/database.yml**. Include the username and password as well, if your local database has a username and password.
+Since we're using PostgreSQL, we'll need a database for our application. By default, the development database Rails looks for is called `name_of_the_app_development`. You can verify the name by looking in **(your project name)/config/database.yml**. Include the username and password as well, if your local database has a username and password.
 
 You'll want to create this database using the command `rake db:create` so that Rails can find the database. This automatically creates your databases.
 
