@@ -3,7 +3,7 @@
 ## Objectives
 
 * Review the purposes of APIs and why we call them on a server
-* Use `rest-client` to interact with an API
+* Use `httparty` to interact with an API
 * Use `foreman` to load API keys from a `.env file`
 
 ## What is an API?
@@ -34,7 +34,7 @@ Many web APIs work similarly to a Rails app. They support CRUD actions via a RES
 
 ### Clients for sending requests
 
-* [rest-client](https://github.com/rest-client/rest-client)
+* [httparty](https://github.com/jnunemaker/httparty)
   * great for simple requests
 * [typhoeus](https://github.com/typhoeus/typhoeus)
   * great for sending multiple requests in parallel
@@ -49,7 +49,7 @@ Example call: https://itunes.apple.com/search?term=arcade%20fire
   * setup database
 * create a new controller with index and show methods
 * setup routes
-* add the `'rest-client'` gem.
+* add the `'httparty'` gem.
 * on index, create a form for submitting a query
 * on show, make a request to the API and show results
 
