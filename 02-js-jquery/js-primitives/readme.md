@@ -101,7 +101,7 @@ Without removing the quotes, how would you get this to equal 2?
 
 ## Booleans
 
-Strings are a type that can only have one of two values: true or false.
+Booleans are a type that can only have one of two values: true or false.
 
 ```js
 true
