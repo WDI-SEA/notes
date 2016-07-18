@@ -186,3 +186,73 @@ In **views/passwords/edit.html.erb**
 <% end %>
 ```
 
+###Sendmail
+
+If you would like to test actually sending mail from your local machine, you can use a binary included with MacOSX/Linux called `sendmail`. In order to set up sendmail, you will need to set up some additional configuration in your project.
+
+In your `config/environments/` folder, there are three environments files which are used for configuration depending on your current environment (dev/test for your machine or prod for deployment on, say, Heroku).
+
+For now, we'll just edit the `development.rb` file. Append the following within the do block:
+
+```rb
+  config.action_mailer.delivery_method = :sendmail
+  # Defaults to:
+  # config.action_mailer.sendmail_settings = {
+  #   location: '/usr/sbin/sendmail',
+  #   arguments: '-i -t'
+  # }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_options = {from: 'no-reply@example.com'}
+```
+
+You can see there are some additional parameters you can change, along with some comments on where the sendmail binary should be located, but the main gist of this config is the first line where we specify the sendmail binary as how our machine will send mail.
+
+Simply calling `UserMailer.password_reset.deliver_now` will fire off an email to the address provided! Be sure to configure your from email address in `app/mailes/application_mailer.rb`.
+
+###Heroku
+
+Sendmail, however, is not present on Heroku and you will need to use some external service for sending mail. [More information can be found here.](https://devcenter.heroku.com/articles/smtp)
+
+###Additional Notes
+
+If you look in your console when you send an email, you'll notice a couple things. Sending the basic pre-generated email will display something like the following:
+
+```
+Sent mail to test@example.com (36.1ms)
+Date: Wed, 13 Jul 2016 16:32:31 -0700
+From: test@example.com
+To: test@example.com
+Message-ID: <5786cf8fe5adc_4fb3fed92d1901091979@my-macbook.local.mail>
+Subject: test subject
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5786cf8fe4ad1_4fb3fed92d1901091861";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5786cf8fe4ad1_4fb3fed92d1901091861
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+UserMailer#test_email
+
+Hi, find me in app/views/user_mailer/test_email.text.erb
+
+----==_mimepart_5786cf8fe4ad1_4fb3fed92d1901091861
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<h1>UserMailer#test_email</h1>
+
+<p>
+  Hi, find me in app/views/user_mailer/test_email.html.erb
+</p>
+
+----==_mimepart_5786cf8fe4ad1_4fb3fed92d1901091861--
+```
+
+Notice how the email has _both_ the plaintext and html sections? This is so the email client itself can determine what to display to the client. So if you edit your email, be sure to edit both the html and plain text file!
