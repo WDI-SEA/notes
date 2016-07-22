@@ -3,6 +3,7 @@
 ##Objectives
 
 * Use $http to access an API resource
+* Use $scope.$watch to observe model changes
 
 ##What is $http?
 
@@ -58,7 +59,7 @@ $scope.searchTerm = '';
 
 $scope.search = function() {
   var req = {
-    url: "http://www.omdbapi.com",
+    url: 'http://www.omdbapi.com',
     method: 'GET',
     params: {
       s: $scope.searchTerm,
@@ -109,3 +110,18 @@ Printing them out requires `ng-repeat` in `index.html`
 You'll see that each `movie` is an object. Take a few minutes and clean this up so each **well** displays the title and poster of each movie.
 
 **Related:** Use `ng-src` when including Angular markup in an image link. It's a common problem that pops up. [Link to the ngSrc documentation.](https://docs.angularjs.org/api/ng/directive/ngSrc)
+
+##$watch
+
+So far, we've been having our views update when changes are made to the model. What if we want to "listen" to our model and have our controller react to changes? We can use `$watch` in order to observe and react to model changes. For example, maybe we want the movie search to happen when the user changes the `searchTerm` value.
+
+```js
+// attaching a $watch function to $scope, defining two values:
+// 1. The value to watch
+// 2. A function that runs when the value changes, with the new and old values
+$scope.$watch('searchTerm', function(newVal, oldVal) {
+  // perform the search here
+});
+```
+
+Note that this works for expressions, but not collections (like objects and arrays). For objects and arrays, you can take advantage of `$watchGroup` and `$watchCollection`. [Documentation is here.](https://docs.angularjs.org/api/ng/type/$rootScope.Scope)
