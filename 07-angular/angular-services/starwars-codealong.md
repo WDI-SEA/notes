@@ -23,7 +23,7 @@ First thing's first, let's add the correct dependencies inside the `head` tags. 
 <script src="js/app.js"></script>
 ```
 
-Note that in order to use `$resource`, we need to include an additional dependency. We'll also need to inject `ngResource` into our app.
+Note that in order to use `$resource`, we need to include an additional script. We'll also need to inject the dependency (named `ngResource`) into our app.
 
 In `app.js`:
 
@@ -90,7 +90,7 @@ But wait! You'll notice that an error appears when you reload the page. That's b
 ```js
 .factory('Films', ['$resource', function($resource) {
   return $resource('http://swapi.co/api/films/:id', {}, {
-    query: {isArray: false}
+    query: { isArray: false }
   });
 }])
 ```
@@ -108,16 +108,16 @@ Here's a trivial example of customizing our Films resource, by specifying differ
 ```js
 app.factory('Films', ['$resource', function($resource) {
   return $resource('http://swapi.co/api/films/:id', {}, {
-    all: {method: 'GET', cache: false, isArray: true},
-    get: {method: 'GET', cache: false, isArray: false},
-    save: {method: 'POST', cache: false, isArray: false},
-    update: {method: 'PUT', cache: false, isArray: false},
-    delete: {method: 'DELETE', cache: false, isArray: false}
+    all: { method: 'GET', cache: false, isArray: false },
+    get: { method: 'GET', cache: false, isArray: false },
+    save: { method: 'POST', cache: false, isArray: false },
+    update: { method: 'PUT', cache: false, isArray: false },
+    delete: { method: 'DELETE', cache: false, isArray: false }
   });
 }]);
 ```
 
-Note that we set `isArray` to true for the GET all endpoint.
+Note that for a lot of APIs, `isArray` will be set to true for the GET all endpoint. This isn't the case for the Star Wars API.
 We also set the `cache` to false, but it could be set to true for performance improvements.
 We also may want to customize the `all` endpoint in the future, if we want to limit results
 (imagine getting all Facebook users when calling `.all`).
@@ -128,7 +128,9 @@ We've used services when working with `$http` and Bootstrap modals, and we just 
 
 Later, we'll add routing to this Star Wars app and implement all of the CRUD functions.
 
-## Solution Code
+## Finished Code (Example)
+
+Here's some example finished code. This will likely not match yours, but try playing around with the example and see if you can pull other resources from the Star Wars API!
 
 index.html:
 
@@ -149,7 +151,7 @@ index.html:
   </div>
 
   <div ng-if="loading">
-    loading...
+    Loading...
   </div>
 
   <div ng-if="!loading" ng-repeat="film in films">
@@ -163,19 +165,15 @@ index.html:
 js/app.js:
 
 ```js
-var app = angular.module("StarWarsApp", ['ngResource']);
+var app = angular.module('StarWarsApp', ['ngResource']);
 
 app.factory('FilmsFactory', ['$resource', function($resource) {
   // use the colon syntax to specify the id parameter in the url.
   var url = 'http://swapi.co/api/films/:id';
 
-  // configure the resource to get the first movie by default.
-  var defaultParams = {id: 1};
-
-  return $resource(url, defaultParams, {
-    // overwrite the defaultParams when getting all movies.
-    all: {params: {id: undefined}, isArray: false},
-    get: {isArray: false}
+  return $resource(url, {}, {
+    // overwrite the isArray value when querying for movies
+    query: { isArray: false }
   });
 }]);
 
@@ -186,21 +184,24 @@ app.controller('HomeCtrl', ['$scope', 'FilmsFactory', function($scope, FilmsFact
 
   $scope.getAll = function() {
     $scope.loading = true;
-    FilmsFactory.all(function success(data) {
+    FilmsFactory.query(function success(data) {
       $scope.films = data.results;
       $scope.loading = false;
     }, function error(data) {
-      console.log("error");
+      console.log('error');
+      $scope.loading = false;
     });
   };
 
   $scope.getMovie = function(id) {
     $scope.loading = true;
-    FilmsFactory.get({id: id}, function success(data) {
+    FilmsFactory.get({ id: id }, function success(data) {
+      // placing data in an array in order for ng-repeat to work on a single movie
       $scope.films = [data];
       $scope.loading = false;
     }, function error(data) {
-      console.log("error");
+      console.log('error');
+      $scope.loading = false;
     });
   };
 }]);
