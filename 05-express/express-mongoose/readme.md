@@ -8,15 +8,9 @@
 * Reference other documents in an instance of a model
 * Work with embedded and referenced documents with Mongoose
 
-## Using MongoDB with Node
+## MongoDB + Mongoose
 
-NodeJS and MongoDB work really well together. To handle HTTP requests and read from or send data to MongoDB, Mongoose is the most common Node.js ORM to manipulate data using MongoDB: CRUD functionality is something that is necessary in almost most every application, as we still have to create, read, update, and delete data.
-
-Since we'll be able to use JSON across our application - with Mongo and Node - using JavaScript in our application is much easier. The MEAN stack - Mongo, Express, Angular, and Node - is becoming increasingly popular because of this.
-
-### What Is Mongoose?
-
-Mongoose is an object modeling package - think ORM for Node; this gives us the MongoDB CRUD commands.
+MongoDB is a document database for storing data. We can access MongoDB through Node by using an ORM called Mongoose. It's similar to other ORMs, but involves a little more setup.
 
 ## Setting up Mongoose in your app
 
@@ -27,7 +21,7 @@ mkdir family-tree
 cd family-tree
 
 # setup npm
-npm init
+npm init --yes
 
 # install dependencies
 npm install --save express body-parser
@@ -39,12 +33,12 @@ touch index.js
 To use Mongoose in your Node app:
 
 ```bash
-$ npm install --save mongoose
+npm install --save mongoose
 ```
 
 With the package installed, lets use it - open index.js and setup your app:
 
-```javascript
+```js
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -62,16 +56,13 @@ app.get('/', function(req, res) {
 app.listen(3000);
 ```
 
-You can now execute all the mongoDB commands over the database `family-tree`.
-
+You can now execute all the mongoDB commands over the database `family-tree`, which will be created if it doesn't exist.
 
 ## Working with Models
 
 #### Defining a Model
 
-We must build a Mongoose Model before we can use any of our new CRUD operations; think of the models as constructors we define, documents we can persist to and request from our database. Just like a `schema.rb` file, our Mongoose Schema is what we'll use to define our document attributes. Think about it like this: a document is the equivalent of a record/row in a relational database; only here, our attributes - or columns - are flexible.
-
-One large different from Rails/Sinatra: we can define methods in our Mongoose schema!
+Like the ORMs we've worked with previously, Mongoose allows us to define models, complete with attributes, validations, and middleware (known as hooks in Sequelize, or callbacks in ActiveRecord). Let's make a model.
 
 From within our family-tree app:
 
@@ -82,40 +73,34 @@ touch models/user.js
 
 Now let's add:
 
-```javascript
+```js
 var mongoose = require('mongoose');
 
 // create a schema
 var userSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   email: { type: String, required: true, unique: true },
   meta: {
     age: Number,
-    website: String,
-    address: String,
-    country: String,
+    website: String
   }
 });
 ```
 
-MongoDB is schemaless, meaning: all the documents in a collection can have different fields, but for the purpose of a web app, often containing validations, it's better to use a schema that will cast and validate each type.
+MongoDB is schemaless, meaning: all the documents in a collection can have different fields, but for the purpose of a web app, often containing validations, we can still use a schema will cast and validate each type. Also note that we can have nested structures in a Mongoose model.
 
 At the moment we only have the schema, representing the structure of the data we want to use. To save some data, we will need to make this file a Mongoose model and export it:
 
-```javascript
+```js
 //in users.js
 var mongoose = require('mongoose');
 
 var userSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   email: { type: String, required: true, unique: true },
   meta: {
     age: Number,
-    website: String,
-    address: String,
-    country: String,
+    website: String
   }
 });
 
@@ -142,23 +127,20 @@ Also, notice we create the Mongoose Model with `mongoose.model`. Remember, we ca
 
 #### Creating Custom Methods
 
-When defining a schema, you can add custom methods and call these methods on the models.  You can even overwrite the default Mongoose document methods. Let's write a `sayHello` function under our schema:
+When defining a schema, you can add custom methods and call these methods on the models. These are instance methods. Let's write a `sayHello` function under our schema:
 
-```javascript
+```js
 var userSchema = new mongoose.Schema({
-  firstName: String,
-  lastName: String,
+  name: String,
   email: { type: String, required: true, unique: true },
   meta: {
     age: Number,
-    website: String,
-    address: String,
-    country: String,
+    website: String
   }
 });
 
 userSchema.methods.sayHello = function() {
-  return "Hi " + this.firstName;
+  return "Hi " + this.name;
 };
 
 var User = mongoose.model('User', userSchema);
@@ -173,9 +155,11 @@ var User = require('./models/user');
 
 // create a new user called Chris
 var chris = new User({
-  firstName: 'Chris',
-  meta:{
-    age: 27
+  name: 'Chris',
+  email: 'chris@gmail.com',
+  meta: {
+    age: 27,
+    website: 'http://chris.me'
   }
 });
 
@@ -184,7 +168,7 @@ app.get('/', function(req, res) {
 });
 ```
 
-Now run the app with `nodemon index.js` to see the result!
+Now run the app with `nodemon index.js` to see the result! You can define class methods in a similar manner by attaching the method to `.statics` instead of `.methods`
 
 ## Interacting with MongoDB's CRUD
 
@@ -192,78 +176,74 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 
 #### Create
 
-We'll create two users using the User method from before, along with the default save method from Mongoose:
+We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
 
-```javscript
-// in index.js
-
+```js
 var newUser = User({
-  firstName: 'bob',
+  name: 'bob',
   email: 'bob@gmail.com'
 });
 
 // save the user
 newUser.save(function(err) {
-  if (err) console.log(err);
+  if (err) return console.log(err);
   console.log('User created!');
 });
 
-var newUser2 = User({
-  first_name: 'brian',
-  email: 'brian@gmail.com'
-});
-
-// save the user
-newUser2.save(function(err) {
-  if (err) console.log(err);
-  console.log('User created!');
-});
-```
-
-#### What about Read?
-
-Just like ActiveRecord, we can use the JavaScript equivalent of `.all`, `.find_by_`, and `.find` to get a hold of what we're looking for.
-
-Inside `index.js` let's add:
-
-```javscript
-// Find All
-app.get('/users', function(req, res) {
-  User.find({}, function(err, users) {
-    if (err) return res.send(err);
-    res.send(users);
-  });
-});
-```
-
-...and just like `.find_by_` in ActiveRecord, you'll get the first record that matches the attributes defined, but in Mongoose, it's `.find`:
-
-```javascript
-//Find One
-app.get('/users/:fName', function(req, res) {
-  User.find({ firstName: req.params.fName }, function(err, user) {
-    if (err) return res.send(err);
-    res.send(user);
-  });
-});
-```
-
-There's also `.findById`:
-
-```javascript
-// get a user with ID of 1
-User.findById('5654c4f06d80d4d95c69654a', function(err, user) {
-  if (err) console.log(err);
+// create and save a user
+User.create({ name: 'Emily', email: 'em@i.ly' }, function(err, user) {
+  if (err) return console.log(err);
   console.log(user);
 });
 ```
 
+There is no "find or create" in Mongoose.
+
+#### What about Read?
+
+We can find multiple model instances by using the `.find` function, which accepts an object of conditions. There's also `.findOne` and `.findById` available.
+
+```js
+// Find All
+User.find({}, function(err, users) {
+  if (err) return res.send(err);
+  res.send(users);
+});
+
+// Find only one user
+User.findOne({}, function(err, users) {
+  if (err) return res.send(err);
+  res.send(users);
+});
+
+// Find by email
+User.find({ email: req.params.email }, function(err, users) {
+  if (err) return res.send(err);
+  res.send(user);
+});
+
+// Find by id
+User.findById(req.params.id, function(err, users) {
+  if (err) return res.send(err);
+  res.send(user);
+});
+```
+
+Note that in the `.find` function, you can also use MongoDB queries such as `$gt`, `$lt`, `$in`, and others. Alternatively, there's a new `.where` syntax that can be used as well. [Documentation on Model.where can be found here](http://mongoosejs.com/docs/api.html#model_Model.where)
+
 #### Update
 
-For update, you can do it in one of two ways (that are super easy!) - using `.findByIdAndUpdate()` or `.findOneAndUpdate()`:
+Models can be updated in a few different ways - using `.update()`, `.findByIdAndUpdate()`, or `.findOneAndUpdate()`:
 
-```javascript
-User.findOneAndUpdate({ firstName: 'brian' }, { meta: { age: 26 } }, function(err, user) {
+```js
+// updates all matching documents
+User.update({ name: 'brian' }, { meta: { age: 26 } }, function(err, user) {
+  if (err) console.log(err);
+  console.log(user);
+});
+
+// updates one match only
+User.findOneAndUpdate({ name: 'brian' }, { meta: { age: 26 } }, function(err, user) {
   if (err) console.log(err);
   console.log(user);
 });
@@ -271,11 +251,17 @@ User.findOneAndUpdate({ firstName: 'brian' }, { meta: { age: 26 } }, function(er
 
 #### Destroy
 
-Mongoose gives you two easy methods to delete documents - `findByIdAndRemove()`and `.findOneAndRemove()`.
+Models can be removed in a few different ways - using `.remove()`, `findByIdAndRemove()`, and `.findOneAndRemove()`.
 
 ```javascript
-// find the user with id 4
-User.findOneAndRemove({ firstName: 'brian' }, function(err) {
+// find all users with the name Brian and remove them
+User.remove({ name: 'brian' }, function(err) {
+  if (err) console.log(err);
+  console.log('Users deleted!');
+});
+
+// find the user with id 4 and remove it
+User.findOneAndRemove({ name: 'brian' }, function(err) {
   if (err) console.log(err);
   console.log('User deleted!');
 });
@@ -283,138 +269,82 @@ User.findOneAndRemove({ firstName: 'brian' }, function(err) {
 
 ## Independent Practice
 
-Using the code we just wrote and the [official Mongoose Models docs](http://mongoosejs.com/docs/models.html). Add three routes to your Express app.
+Using the code we just wrote and the [official Mongoose Models docs](http://mongoosejs.com/docs/models.html), add three routes to your Express app.
 
 - `GET users/`, this will return all the documents
 - `POST users/`, given some arguments in the url, this method will create a `user` record.
 - `DELETE users/:id`, will remove the document corresponding to the collection
 
+## Sub-documents (MongoDB embedded documents)
 
-## What are embedded documents?
-
-Embedded documents are just what they sound like: documents with their own schemas nested in other documents. They take of the form of objects within an array.  You can think of this as a sort of `has_many` relationship - the context to use embedded documents is data entities need to be used/viewed in context of another.
-
-The nested schema are equipped with all the same features as your models: defaults, validators, middleware, and even error handling, as they are tied to the save() error callback; and Mongoose can work with embedded documents by default.
-
+Sub-documents are just what they sound like: documents with their own schemas nested in other documents. They take of the form of objects within an array.  You can think of this as a sort of `has_many` relationship - the context to use embedded documents is data entities need to be used/viewed in context of another.
 
 Let's look at these two schemas below - we can embed `childSchema` into the property `children`:
 
 ```javascript
-var childSchema = new Schema({ name: 'string' });
+var childSchema = new mongoose.Schema({ name: 'string' });
 
-var parentSchema = new Schema({
+var parentSchema = new mongoose.Schema({
   children: [childSchema]
-})
+});
 
 var Parent = mongoose.model('Parent', parentSchema);
-var parent = new Parent({ children: [{ name: 'Matt' }, { name: 'Sarah' }] })
-parent.children[0].name = 'Matthew';
-parent.save(function(err) {
-  if (err) console.log(err);
-  console.log('New Parent!');
+
+Parent.create({ children: [
+  { name: 'Matt' },
+  { name: 'Sarah' }
+]}, function(err, parent) {
+  if (err) return console.log(err);
+  console.log(parent);
 });
 ```
-
-Or from mongoDB official docs, we can look at this example with Patron and Address models:
-
-```javascript
-{
-   _id: "joe",
-   name: "Joe Bookreader"
-}
-
-{
-   patron_id: "joe",
-   street: "123 Fake Street",
-   city: "Faketon",
-   state: "MA",
-   zip: "12345"
-}
-
-{
-   patron_id: "joe",
-   street: "1 Some Other Street",
-   city: "Boston",
-   state: "MA",
-   zip: "12345"
-}
-```
-The address documents make two references to the Joe Bookreader object, so instead we can:
-
-```javascript
-{
-   _id: "joe",
-   name: "Joe Bookreader",
-   addresses: [
-                {
-                  street: "123 Fake Street",
-                  city: "Faketon",
-                  state: "MA",
-                  zip: "12345"
-                },
-                {
-                  street: "1 Some Other Street",
-                  city: "Boston",
-                  state: "MA",
-                  zip: "12345"
-                }
-              ]
- }
- ```
-
-Note that sub-documents do not save individually, only with the highest-level document; in this case, the addresses are saved with the Joe Bookreader Patron document.
 
 #### Finding a sub-document
 
-All documents in Mongoose have an  `_id`.  Look above at our Patron example.  Joe Bookreader has an `_id` of 'joe'. DocumentArrays have a special `id` method for looking up a document by its `_id`.
+All documents in Mongoose have an `_id`, including sub-documents. Using the example above, we can find a specific sub-document from the array by using the `.id` function on the key we want to search.
 
-```javascript
-// in our first example
+```js
+// in our first example, this should return one of the sub-documents
 var doc = parent.children.id(idYouAreLookingFor);
-
-// in the second example
-var doc = patron.addresses.id(idYouAreLookingFor)
 ```
 
-#### Adding and Removing sub-docs
+#### Adding and Removing sub-documents
 
-Remember Ruby methods like `pop`, `push`, or the `<<` operator?  We'll, Mongoose comes with MongooseArray methods like as `push`, `unshift`, `addToSet`, and others.  And just like adding them, we can remove them with `remove()`
+Mongoose sub-document collections are arrays, and therefore contain methods like as `.push()`, `.pop()`, and `.unshift()`.
 
-Using code from the official docs, we can see how these are used:
+```js
+parent.children.push({ name: 'Ester' }); // pushes Ester
+parent.children.pop(); // pops Ester
+```
 
-```javascript
-var Parent = mongoose.model('Parent');
-var parent = new Parent;
+**Note that these functions don't save the instance, so you'll need to call `.save()` manually afterwards.**
 
-// create a child
-parent.children.push({ name: 'Liesl' });
-var subdoc = parent.children[0];
-console.log(subdoc) // { _id: '501d86090d371bab2c0341c5', name: 'Liesl' }
-subdoc.isNew; // true
+## Population (MongoDB document references)
 
-parent.save(function (err) {
-  if (err) return handleError(err)
-  console.log('Success!');
+Storing references to other documents involves defining a specific model to reference, as well as the type of what's being stored. For example, referring to a User in a Book model would involve referencing the User model, as well as storing the user's `ObjectId`.
+
+```js
+var Schema = mongoose.Schema;
+
+var bookSchema = Schema({
+  author: { type: Schema.Types.ObjectId, ref: 'User' },
+  title: String
 });
 
-//remove
+var Book = mongoose.model('Book', bookSchema);
 
-var doc = parent.children.id(idYouAreLookingFor).remove();
-parent.save(function (err) {
-  if (err) return handleError(err);
-  console.log('the sub-doc was removed')
+// creating a book and storing an author's id
+Book.create({ title: 'Fahrenheit 451', author: author._id }, function(err, book) {
+  // access book here
 });
-
 ```
 
-Sub-docs may also be created without adding them to the array by using the create method of MongooseArrays.
+However, if we query for a book, the author's information won't automatically populate. The query would give back the `ObjectId` only! In order to populate the model's data, we can use the `.populate()` function after the query, as well as use `.exec()` to execute the callback function.
 
-```javascript
-var newdoc = parent.children.create({ name: 'Aaron' });
+```js
+Book.findOne({ title: 'Fahrenheit 451' })
+.populate('author')
+.exec(function(err, book) {
+  // access book with author data here
+});
 ```
-
-## Conclusion
-Mongoose is just a bridge to use MongoDB inside a NodeJS environment. There are a lot of options when creating a schema with Mongoose, we've just seen a few for the moment.
-
-- How does Mongoose compare to ActiveRecord?
-- How does the schema in Mongoose/Mongo/Express compare to Rails?
