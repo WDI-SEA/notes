@@ -71,7 +71,7 @@ Implementing the above scenario is as simple as assigning a _bankAccount_ docume
 > db.people.insert({
     name: "Miguel",
     age: 46,
-    bankAccount: db.people.findOne()._id
+    bankAccount: db.bankAccounts.findOne()._id
 })
 ```
 
