@@ -65,3 +65,7 @@ After creating the mLab addon, you'll be able to access an environment variable 
 ```js
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/mydbname');
 ```
+
+## Connecting to a mLab instance using Robomongo/Mongohub (or similar)
+
+In order to view the contents of your MongoDB database using a GUI client like Robomongo, you can use the `MONGODB_URI`. This URI contains the connection information and credentials needed to connect.
