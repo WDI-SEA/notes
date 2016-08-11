@@ -2,5 +2,10 @@
     "structure": {
         "readme": "readme.md"
     },
-    "plugins": ["toggle-chapters", "codeblock-disable-glossary"]
+    "plugins": ["toggle-chapters", "codeblock-disable-glossary", "ga"],
+    "pluginsConfig": {
+        "ga": {
+            "token": "UA-82310977-1"
+        }
+    }
 }
