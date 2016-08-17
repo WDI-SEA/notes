@@ -48,6 +48,7 @@
     * [Call, Apply, and other Functions](02-js-jquery/js-inheritance/03callapplyfunctions.md)
     * [ES6 Inheritance](02-js-jquery/js-inheritance/04es6classes.md)
     * [Resources](02-js-jquery/js-inheritance/05resources.md)
+  * [Custom Node Modules](02-js-jquery/js-custom-node-module/readme.md)
   * [Additional Topics](02-js-jquery/additional-topics/readme.md)
     * [AJAX w/JSON and Localstorage](02-js-jquery/additional-topics/ajax-localstorage/readme.md)
       * [AJAX w/JSON](02-js-jquery/additional-topics/ajax-localstorage/02ajax.md)
