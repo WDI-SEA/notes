@@ -37,6 +37,7 @@
     * [Additional Topics](02-js-jquery/js-control-flow/05additional.md)
   * [Functions](02-js-jquery/js-functions/readme.md)
   * [DOM and Events](02-js-jquery/js-dom-events/readme.md)
+  * [DOM Manipulation](02-js-jquery/js-dom-manipulation/readme.md)
   * [Callbacks and Iterators](02-js-jquery/js-callbacks-iterators/readme.md)
   * [OOP with Prototypes](02-js-jquery/js-prototypes/01readme.md)
     * [Constructors](02-js-jquery/js-prototypes/02constructors.md)
