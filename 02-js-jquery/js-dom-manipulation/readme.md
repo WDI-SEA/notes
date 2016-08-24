@@ -203,7 +203,7 @@ just use set `.innerHTML` equal to strings.
   var now = new Date();
   var timestamp = now.getHour() + ":" + now.getMinutes();
 
-  var message = I'm hacking into the mainframe now. You better be ready.
+  var message = "I'm hacking into the mainframe now. You better be ready."
 
   var container = document.getElementById("some-container");
   container.innerHTML = "<div class='chat-message'>" +
