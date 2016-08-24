@@ -186,6 +186,10 @@ just use set `.innerHTML` equal to strings.
   content on your page. Using `.textContent` guarantees strings will only
   appear as text.
 
+  Imagine if someone posted this as their status on Facebook and Facebook
+  rendered it with `.innerHTML`. If status appeared in your page you
+  would be redirected to an evil website!
+
   ```html
   <script>
   window.location = "http://evil.com";
@@ -195,6 +199,10 @@ just use set `.innerHTML` equal to strings.
   functions and parameters. These lines get long, and it's easy to confuse
   when to use necessary single-quotes or double-quotes to make attributes
   in HTML tags render correctly.
+
+  As elements become more complex innerHTML becomes hairier to use and you'll
+  find that creating elements as described here offers more modularity and
+  fine-grain control over how things are added to the page.
 
   It totally works, but I'm telling you, I promise, it gets nasty!
 
@@ -222,11 +230,6 @@ just use set `.innerHTML` equal to strings.
 
   The browser spends more time manually computing how to interpret string
   content added via `.innerHTML`.
-
-As elements become more complex innerHTML becomes hairier to use and you'll
-find that creating elements as described here offers more modularity and
-fine-grain control over how things are added to the page.
-
 
 ## Destroying DOM Elements
 
