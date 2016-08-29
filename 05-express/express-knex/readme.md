@@ -59,3 +59,39 @@ If you'll note that the raw query contains question marks and and the second fun
 
 Also to note, the backtick ( \` ) is a special multiline string delimiter that has been introduced in ES6. Node has already implemented its functionality and since SQL queries can be quite long, we want our SQL query to be written out over multiple lines to make it easier to read. (Note: You *cannot* use the backtick in front-end JS yet.)
 
+### Using Routes and Middleware
+
+If you'll notice, we make a connection to our Postgres database when we require knex. In order to prevent making a new connection to the database in every route or having to re-type the connection info in every route file, let's attach our knex instance to the request object that is passed through to each of our middleware functions and routes. That way we can use our single database connection anywhere.
+
+```javascript
+// index.js
+var express = require('express');
+var app = express();
+var knex = require('knex')({ ... });
+
+// custom middleware that attaches our already-existing 
+// postgres connection to our request object and passes
+// it on to future routes
+app.use(function(req, next) {
+	req.db = knex;
+	next();
+});
+
+app.use('/custom', require('/routes/myroute'));
+
+
+// routes/myroute.js
+var express = require('express');
+var router = express.Router();
+
+router.get('/', function(req, res) {
+	req.db.raw(`
+		SELECT * FROM sometable
+		WHERE ...
+	`, [...]).then(function(data) {
+	
+	});
+});
+
+module.exports = router;
+```
