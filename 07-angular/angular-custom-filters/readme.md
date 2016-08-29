@@ -166,7 +166,7 @@ Sample output:
 
 #### pluralize
 
-Create a filter called 'pluralize' that accepts accepts a list length
+Assume you have an array of objects. Create a filter called 'pluralize' that accepts accepts a list length
 as an input and accepts two other parameters:
 
 * **length** - a number representing a quantity
