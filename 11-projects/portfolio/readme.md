@@ -40,6 +40,7 @@ Before beginning the design and coding phase of your portfolio, you'll want to i
     * link to the deployed site itself
 * Resume
   * Two downloadable versions: 1 PDF, 1 plain-text version
+  * A separate section where users can click and view your resume
 * Contact information
   * Email address
   * Github link
