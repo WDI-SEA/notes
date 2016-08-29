@@ -57,5 +57,5 @@ knex.raw(`
 
 If you'll note that the raw query contains question marks and and the second function parameter to `knex.raw()` is an array of values. When working with SQL you should **ALWAYS** avoid putting values directly into your query. This opens you up to what is called a SQL Injection Attack where users can manipulate your database and queries at will. Instead, using the question marks and an array of values to substitute in place of those question marks, database modules can safely insert data into your queries without opening yourself to injection attacks. This is known as "prepared statements".
 
-Also to note, the backtick ( \` ) is a special multiline string delimiter that has been introduced in ES6. Node has already implemented its functionality and since SQL queries can be quite long, we want our SQL query to be written out over multiple lines to make it easier to read.
+Also to note, the backtick ( \` ) is a special multiline string delimiter that has been introduced in ES6. Node has already implemented its functionality and since SQL queries can be quite long, we want our SQL query to be written out over multiple lines to make it easier to read. (Note: You *cannot* use the backtick in front-end JS yet.)
 
