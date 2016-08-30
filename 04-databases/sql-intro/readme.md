@@ -225,25 +225,6 @@ It denotes an attribute on a table that can uniquely identify the row.
 
 SERIAL tells the database to automatically assign the next unused integer value to id whenever we insert into the database and do not specify id. In general, if you have a column that is set to SERIAL, it is a good idea to let the database assign the value for you.
 
-## What is a foreign key?
-
-It provides a reference to a primary key in another table.
-
-```sql
-CREATE TABLE courses (
-    id SERIAL PRIMARY KEY,
-    course TEXT
-);
-
-CREATE TABLE students (
-    id SERIAL PRIMARY KEY,
-    name TEXT,
-    phone VARCHAR(15),
-    email TEXT,
-    course_id INTEGER REFERENCES courses
-);
-```
-
 ## Data Types
 
 Similar to how Ruby has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
