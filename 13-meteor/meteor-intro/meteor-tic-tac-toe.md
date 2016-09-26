@@ -2,6 +2,9 @@
 
 Now that you've learned the basic structure of a Meteor app, it's time to build something a little more interesting than a ToDo app. For this deliverable you must construct a real-time tic-tac-toe game using Meteor.
 
+##Start
+Fork and clone this repo: [https://github.com/WDI-SEA/meteor-tic-tac-toe](https://github.com/WDI-SEA/meteor-tic-tac-toe)
+
 ##Requirements
 * Must have at least 1 collection to facilitate real-time functionality
 * Clean UI - Bootstrap
