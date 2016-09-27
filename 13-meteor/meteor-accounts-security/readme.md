@@ -1,4 +1,4 @@
-#Introduction to Meteor
+#Meteor Auth
 
 ##Objectives
 
