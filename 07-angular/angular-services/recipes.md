@@ -27,8 +27,8 @@ Also, because services are persistent singletons, they provide a mechanism to **
 Factory and Service are the most commonly used recipes. However, if factories and services are so similar, what's the difference? They look quite similar:
 
 ```js
-angular.service('myService', myServiceFunction);
-angular.factory('myFactory', myFactoryFunction);
+angular.service('MyService', myServiceFunction);
+angular.factory('MyFactory', myFactoryFunction);
 ```
 
 Well here's the difference:
@@ -38,7 +38,7 @@ Well here's the difference:
 Services are instantiated by the injector using the `new` keyword. Therefore, it's like a constructor, and we need to attach properties to `this`.
 
 ```js
-app.service('myService', ['$http', function($http) {
+app.service('MyService', ['$http', function($http) {
   this.get = function() {};
 }]);
 ```
@@ -48,7 +48,7 @@ app.service('myService', ['$http', function($http) {
 Factories are instantiated by being called like functions. Therefore, it's like a function, and we need to return something.
 
 ```js
-app.factory('myFactory', ['$http', function($http) {
+app.factory('MyFactory', ['$http', function($http) {
   return {
     get: function() {}
   }
@@ -56,3 +56,19 @@ app.factory('myFactory', ['$http', function($http) {
 ```
 
 For the most part, we'll use the factory. Why? **A service is called like a constructor, therefore it always returns an object** Factories give us more flexibility, because the factory can return an object, a function reference, or any value at all.
+
+**Using Factories and Services**
+Angular comes with it's own built-in services that we've already used.
+'$http' and '$scope' are services. When we build our own services we're
+creating things we can use throughout our application.
+
+Here's an example of a controller using the custom service called `MyService`
+we just created. Notice that it's brought into the controller just like
+`$scope` and `$http`.
+
+```
+app.controller('MyController', ['$scope', '$http', 'MyService',
+    function($scope, $http, MyService) {
+  MyService.get();
+}]);
+```
