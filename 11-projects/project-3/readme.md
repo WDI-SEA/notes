@@ -26,15 +26,14 @@ Your team has been put together in order to create a startup around a particular
 
 Your app must:
 
-* **Use Ruby on Rails and Active Record** to build an application
-* **Create an application using at least 2 related models**, one of which should be a user
-* Include **all major CRUD functions** for at least one of those models
-* Create your own front-end with HTML, Javascript, & jQuery
-* **Add authentication** to restrict access to appropriate users
-* **Craft thoughtful user stories together**, as a team
-* **Manage team contributions and collaboration** using a standard Git flow on Github
-* Layout and style your front-end with **clean & well-formatted CSS**, with or without a framework.
-* **Deploy your application online** so it's publically accessible
+* **Build a full-stack application** by making your own backend and your own front-end
+  * Note that if you build an app using Ionic, a backend is optional. However, look into services such as Firebase if you'd like a service for storing data.
+* **Have an interactive front-end**, preferably using a modern front-end framework
+* **Be a complete product**, which most likely means multiple relationships and CRUD functionality for at least a couple models. However, this is ultimately up to your discretion.
+* **Use a database**, whether that's one we've covered in class or one you want to learn
+* **Implement thoughtful user stories** that are significant enough to help you know which features to build and which to scrap
+* **Have a visually impressive design** to kick your portfolio up a notch and have something to wow future clients & employers
+* **Be deployed online** so it's publicly accessible
 
 
 ---
