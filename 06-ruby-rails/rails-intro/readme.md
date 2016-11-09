@@ -211,7 +211,7 @@ While these routes are fine, we're going to change them around a bit.
 
 ###More Routing Examples
 
-```ruby
+```rubyonrails
 # a single route to a single controller#action
 get 'contact' => 'main#contact'
 
@@ -223,7 +223,42 @@ get 'users/:id', to: 'users#show'
 
 # similar to above, only changing the name of the path helper
 get 'users/:id', to: 'users#show', as: 'profile'
+```
 
+###Resource Routing
+Ruby on Rails provides a convenient way to generate RESTful CRUD routes for a
+controller. Imagine you want to configure routes to create, read, update and
+delete photos. You would have to write out all of this:
+
+```rubyonrails
+get    'photos'          => 'photos#index'
+get    'photos/new'      => 'photos#new'
+post   'photos'          => 'photos#create'
+get    'photos/:id'      => 'photos#show'
+get    'photos/:id/edit' => 'photos#edit'
+put    'photos/:id'      => 'photos#update'
+delete 'photos/:id'      => 'photos#destroy'
+```
+
+Notice that this route configuration is exactly the sort of routes we've
+built up in our previous servers. This route configuration exactly follows
+the suggested route configuration for RESTful routing. It's a truly conventional
+way to set up routing.
+
+Remember Ruby on Rails' principles? One of them is, "convention over configuration."
+Whenever there's something that's common (like configuring RESTful routing)
+Ruby on Rails likes to provide shortcuts to speed up the development process,
+and shortcuts save us from making stupid errors when we're configuring things
+along the way.
+
+Ruby on Rails offers a way to declare `resources` for a controller. This
+automatically creates full RESTful routing for the controller. It will
+automatically create each of the seven routes manually configured in the
+example above.
+
+Here's some different ways you can quickly declare resources for a controller:
+
+```rubyonrails
 # resources routing, used to quickly declare RESTful routes for a resource
 resources :photos
 
@@ -531,4 +566,3 @@ Note that this is made possible by a piece of JavaScript called `rails.js` runni
 * [Rails Routing](http://guides.rubyonrails.org/routing.html)
 * [Form Helpers](http://guides.rubyonrails.org/form_helpers.html)
 * [Rails API guide](http://api.rubyonrails.org/)
-
