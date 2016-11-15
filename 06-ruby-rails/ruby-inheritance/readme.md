@@ -65,9 +65,13 @@ Note from the example above...
 You can use pry to halt the execution of your program and start an interactive console. This is a great debugging tool.
 
 Create a few rectangles and a square at the end of your file. Write `pry.binding` to stop the program after the shapes
-are created. 
+are created. You must import this `pry` library by writing `require.pry` at the top of your program.
+
+Install pry by running `gem install pry` in your terminal
 
 ```ruby
+require 'pry'
+
 r1 = Rectangle.new(3, 4)
 r2 = Rectangle.new(4, 7)
 s1 = Square.new(3)
