@@ -9,41 +9,19 @@
 - [WDI-SEA](https://github.com/wdi-sea)
 - [GA Students](https://github.com/ga-students)
 
-## Students (18 total)
-- Bright Chew
-- Celine Wong
-- Denise Lim
-- Dexter Leow
-- Eugene Oei
-- Irsyad Muhd
-- Jonathan Tan
-- Keng Hong
-- Kuan Yu Phua
-- Luke Lim
-- Mikella Seth
-- Nick Ang
-- Tang Wei
-- Tek Yong Lim
-- Victor Seah
-- Wei Ying Eng
-- Yi Hui Lee
-- Yvonne Chia
-
-## GitHub Accounts
-- [blueyoghurt](http://github.com/blueyoghurt)
-- [brightchew](http://github.com/brightchew)
-- [celinewsm](http://github.com/celinewsm)
-- [Dexterleow](http://github.com/Dexterleow)
-- [eugeneoei](http://github.com/eugeneoei)
-- [Jonalogy](https://github.com/Jonalogy/)
-- [kengste](http://github.com/kengste)
-- [leeyihui](http://github.com/leeyihui)
-- [mdchad](http://github.com/mdchad)
-- [mseth5829](http://github.com/mseth5829)
-- [nickangtc](http://github.com/nickangtc)
-- [paperplanegirl](http://github.com/paperplanegirl)
-- [phuaky](http://github.com/phuaky)
-- [tekwin88](http://github.com/tekwin88)
-- [thekneeslim](http://github.com/thekneeslim)
-- [victorxyz](http://github.com/victorxyz)
-- [weiyingx](http://github.com/weiyingx)
+## Students (13 total)
+| Name                   | GitHub                                                 |
+-----------------------------------------------------------------------------------
+| Brian Bixby            | [brianbixby](http://github.com/brianbixby)             |
+| Rachel Chen            | [Skylocke](http://github.com/Skylocke)                 |
+| Jae Choi               | [cjyjay35](http://github.com/cjyjay35)                 |
+| David Clough           | [dmclough](http://github.com/dmclough)                 |
+| Donnie Ellstrom        | [Crateros](http://github.com/Crateros)                 |
+| Congcong Li            | [weirui222](http://github.com/weirui222)               |
+| Tommy Lim              | [Tommy-Lim](http://github.com/Tommy-Lim)               |
+| Tobias Murphy          | [tmrdr](http://github.com/tmrdr)                       |
+| Ryne Schillinger       | [ryneschillinger](http://github.com/ryneschillinger)   |
+| Kunjang	Sherpa         | [SherpaGuy](http://github.com/SherpaGuy)               |
+| Robert Spears          | [Robert1GA](http://github.com/Robert1GA)               |
+| Travis Walentin        | [Agentscreech](http://github.com/Agentscreech)         |
+| Christopher Whitaker   | [1CTWgha](http://github.com/1CTWgha)                   |
