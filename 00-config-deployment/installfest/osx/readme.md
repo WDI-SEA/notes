@@ -87,8 +87,10 @@ sudo chown -R $USER /usr/local/lib
 ```
 
 
-##Sublime Text 3
-We'll be running **Sublime Text 3**, not Sublime Text 2 as our text editor of choice.
+#Sublime Text 3 and/or ATOM
+We'll be running Atom and Sublime Text 3 as our text editors of choice. You can use either or both of these.
+
+###Sublime Text 3
 
 Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
 
@@ -100,6 +102,17 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 
 Restart terminal, and you should be able to open a folder to edit by typing `subl .`
 
+###Atom
+
+Download and install Atom from [here](https://atom.io/)
+
+For a command line shortcut, run this:
+
+```
+ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
+```
+
+Now you can open a folder from your terminal by typing: `atom .`
 
 ##Install Oh My ZSH
 
@@ -122,19 +135,27 @@ We will be using a relational database called Postgres for Node and Rails portio
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
-If you have successfully configured zsh and sublime, the following command should work.
+If you have successfully configured zsh and sublime or atom, the following command should work.
 
 ```
 subl ~/.zshrc
 ```
 
-Your sublime editor will popup with configuration settings, at the bottom of the file append
+-OR-
+
+```
+atom ~/.zshrc
+```
+
+Your sublime (or Atom) editor will popup with configuration settings, at the bottom of the file append
 
 ```
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.5/bin
 ```
 
 While we're here, add these two functions and environment variables to make it easier to access, change and refresh our ZSH configuration file in the future. Copy and paste these to the end of the file.
+
+If you plan on using Sublime Text copy this:
 
 ```
 export VISUAL=subl
@@ -150,7 +171,23 @@ function zrefresh() {
 }
 ```
 
-Save the file, close Sublime, and restart your terminal.
+Otherwise, if you plan on using Atom, copy this instead:
+
+```
+export VISUAL=atom
+export EDITOR="$VISUAL"
+
+function zedit() {
+  atom ~/.zshrc
+}
+
+function zrefresh() {
+  echo "Refreshing your ZSH configuration."
+  source ~/.zshrc
+}
+```
+
+Save the file, close Sublime (or Atom), and restart your terminal.
 
 Type `which psql` at which point should display
 
@@ -253,6 +290,6 @@ npm -v
 
 git --version
 psql --version
-subl -v
+subl -v (or atom -v)
 
 ```
