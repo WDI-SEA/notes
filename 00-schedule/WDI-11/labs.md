@@ -20,18 +20,21 @@
 
 ### Week 1
 
-| Day       | Topic      | Lab                                                             |
-| ------    | -----      | --------                                                             |
+| Day       | Topic      | Lab                      |
+| ------    | -----      | --------                 |
+| Monday    | Internet   | [Internet Lab][1000]     |
+| Monday    | Command Line   | [Command Line Lecture Notes][1001] |
+
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
 | Thursday | Javascript| Javascript exercises in Class                                        |
 | Wednesday | JavaScript | Javascript exercises in Class                                       |
 | Tuesday   | CSS        | [Recreate Instagram][902]                                            | -->
-| Monday    | Internet   | [Internet Lab][1000]                                                 |
 
 <!--  links to labs -->
 
 [1000]: 03-internet/internet-lab.md
+[1001]: https://wdi_sea.gitbooks.io/notes/content/01-workflow/command-line/01readme.html
 [1004]: https://github.com/davified/js-control-flow
 [1007]: https://github.com/davified/js-functions
 [1020]: https://github.com/WDI-SEA/oop-prototype-car

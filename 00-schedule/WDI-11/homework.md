@@ -7,8 +7,8 @@ To keep your assignments neat, each piece of homework should have its own repo.
 <!-- ## Homework schedule
 
 ### Week 4
-| Day     | Topic                        | Homework                                                                  |
-| ------  | -----                        | --------                                                                  |
+| Day     | Topic                        | Homework     |
+| ------  | -----                        | --------     |
 | Tuesday | Node / Express               | No homework. |
 | Monday  | AJAX                         | No homework. |
 
@@ -28,6 +28,8 @@ To keep your assignments neat, each piece of homework should have its own repo.
 
 | Day       | Topic      | Homework                                                             |
 | ------    | -----      | --------                                                             |
+| Monday    | Terminal   | [Command Line Murder Mystery][899] |
+
 <!-- | Friday    | Javascript | [Tic Tac Toe][1010]                                                  |
 | Thursday | DOM & Events| [Temperature Converter][1009]                                        |
 | Wednesday | JavaScript | No Homework                                                          |
@@ -35,10 +37,6 @@ To keep your assignments neat, each piece of homework should have its own repo.
 | Tuesday   | CSS        | 2. [Recreate Instagram][902] |
 | Monday    | HTML       | 1. [HTML User Input Lab][901] |
 | Monday    | HTML       | 2. [HTML Top Ten Movies Lab][900] | -->
-| Monday    | Terminal   | [Command Line Murder Mystery][899]
-
-
-
 
 <!-- Links to homework -->
 [899]: https://github.com/WDI-SEA/command-line-murder-mystery

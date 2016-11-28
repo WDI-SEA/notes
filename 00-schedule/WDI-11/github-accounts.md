@@ -11,7 +11,7 @@
 
 ## Students (13 total)
 | Name                   | GitHub                                                 |
------------------------------------------------------------------------------------
+|------------------------|--------------------------------------------------------|
 | Brian Bixby            | [brianbixby](http://github.com/brianbixby)             |
 | Rachel Chen            | [Skylocke](http://github.com/Skylocke)                 |
 | Jae Choi               | [cjyjay35](http://github.com/cjyjay35)                 |
