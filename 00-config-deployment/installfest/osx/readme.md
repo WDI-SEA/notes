@@ -87,10 +87,10 @@ sudo chown -R $USER /usr/local/lib
 ```
 
 
-##Sublime Text 3 AND/OR ATOM
+#Sublime Text 3 and/or ATOM
 We'll be running Atom and Sublime Text 3 as our text editors of choice. You can use either or both of these.
 
-#Sublime Text 3
+###Sublime Text 3
 
 Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
 
@@ -102,7 +102,7 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 
 Restart terminal, and you should be able to open a folder to edit by typing `subl .`
 
-#Atom
+###Atom
 
 Download and install Atom from [here](https://atom.io/)
 
