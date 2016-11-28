@@ -4,7 +4,7 @@ Please submit the link(s) to the repo (github repository) with your homework (e.
 
 To keep your assignments neat, each piece of homework should have its own repo.
 
-## Homework schedule
+<!-- ## Homework schedule
 
 ### Week 4
 | Day     | Topic                        | Homework                                                                  |
@@ -23,24 +23,28 @@ To keep your assignments neat, each piece of homework should have its own repo.
 | Tuesday | JavaScript Iterators | [Using Iterators](https://github.com/WDI-SEA/js-callbacks-iterators) |
 | Tuesday | Javascript Callbacks, Timers | [Sim City Bomb Squad](https://github.com/ga-students/sim-city-bomb-squad) |
 | Monday | Review | Finish Tic Tac Toe! |
-
+ -->
 ### Week 1
 
 | Day       | Topic      | Homework                                                             |
 | ------    | -----      | --------                                                             |
-| Friday    | Javascript | [Tic Tac Toe][1010]                                                  |
+<!-- | Friday    | Javascript | [Tic Tac Toe][1010]                                                  |
 | Thursday | DOM & Events| [Temperature Converter][1009]                                        |
 | Wednesday | JavaScript | No Homework                                                          |
 | Tuesday   | CSS        | 1. [Recreate AirBnB][903]          |
 | Tuesday   | CSS        | 2. [Recreate Instagram][902] |
 | Monday    | HTML       | 1. [HTML User Input Lab][901] |
-| Monday    | HTML       | 2. [HTML Top Ten Movies Lab][900] |
+| Monday    | HTML       | 2. [HTML Top Ten Movies Lab][900] | -->
+| Monday    | Terminal   | [Command Line Murder Mystery][899]
+
+
 
 
 <!-- Links to homework -->
-[1010]: https://github.com/davified/tic-tac-toe
+[899]: https://github.com/WDI-SEA/command-line-murder-mystery
 [900]: https://github.com/WDI-SEA/html_top_ten_movies_table
 [901]: https://github.com/WDI-SEA/html_user_inputs
 [902]: https://github.com/ga-students/css-positioning
 [903]: https://github.com/ga-students/css-airbnb
 [1009]: https://github.com/WDI-SEA/temperature-converter-dom
+[1010]: https://github.com/davified/tic-tac-toe

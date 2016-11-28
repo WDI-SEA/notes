@@ -1,6 +1,6 @@
 ## Lab schedule
 
-### Week 4
+<!-- ### Week 4
 | Day | Topic  | Lab |
 | ----| ------ | ---- |
 | Wednesday | Node Express Server | [CRUD Newspaper Website](https://github.com/WDI-SEA/express-daily-planet)|
@@ -16,17 +16,17 @@
 | Wednesday | jQuery DOM | [jQuery Intro Lab](https://github.com/davified/jquery-intro-lab) |
 | Wednesday | DOM Manipulation | [Times Tables](https://github.com/ga-students/dom-times-table) |
 | Tuesday | Intervals | [JavaScript Clock Intervals](https://github.com/ga-students/js-clock-intervals) |
-| Monday | Git Merging | [Learn Git News Room Style](https://github.com/ga-students/learn-git-newsroom-style) |
+| Monday | Git Merging | [Learn Git News Room Style](https://github.com/ga-students/learn-git-newsroom-style) | -->
 
 ### Week 1
 
 | Day       | Topic      | Lab                                                             |
 | ------    | -----      | --------                                                             |
-| Friday    | Javascript | [Javascript Control Flow][1004] |
+<!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
 | Thursday | Javascript| Javascript exercises in Class                                        |
 | Wednesday | JavaScript | Javascript exercises in Class                                       |
-| Tuesday   | CSS        | [Recreate Instagram][902]                                            |
+| Tuesday   | CSS        | [Recreate Instagram][902]                                            | -->
 | Monday    | Internet   | [Internet Lab][1000]                                                 |
 
 <!--  links to labs -->
