@@ -28,9 +28,10 @@ To keep your assignments neat, each piece of homework should have its own repo.
  -->
 ### Week 1
 
-| Day       | Topic      | Homework                                                             |
-| ------    | -----      | --------                                                             |
-| Monday    | Terminal   | [Command Line Murder Mystery][899] |
+| Day       | Topic        | Homework                                                             |
+| ------    | -----        | --------                                                             |
+| Monday    | Terminal     | [Command Line Murder Mystery][899] |
+| Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb) |
 
 <!-- | Friday    | Javascript | [Tic Tac Toe][1010]                                                  |
 | Thursday | DOM & Events| [Temperature Converter][1009]                                        |

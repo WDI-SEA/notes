@@ -24,6 +24,8 @@
 | ------    | -----      | --------                 |
 | Monday    | Internet   | [Internet Lab][1000]     |
 | Monday    | Command Line   | [Command Line Lecture Notes][1001] |
+| Tuesday   | HTML       | [HTML User Inputs](https://github.com/WDI-SEA/html_user_inputs) |
+| Tuesday   | HTML       | [HTML Tables](https://github.com/WDI-SEA/html_user_inputs) |
 
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
