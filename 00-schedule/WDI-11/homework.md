@@ -1,8 +1,10 @@
 # Homework submission
 
+<!--
 Please submit the link(s) to the repo (github repository) with your homework (e.g. www.github.com/johndoe/css-homework) **[here](https://docs.google.com/a/generalassemb.ly/forms/d/e/1FAIpQLScytvEQulwcqb0QEHk9PwN2-_DZEJG5Qeovv_erRjiTNLDObw/viewform).**
 
 To keep your assignments neat, each piece of homework should have its own repo.
+-->
 
 <!-- ## Homework schedule
 
