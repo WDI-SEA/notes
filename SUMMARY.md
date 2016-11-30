@@ -40,6 +40,8 @@
   * [Bootstrap](03-html-css/css-bootstrap/readme.md)
 * [JavaScript](02-js-jquery/javascript.md)
   * [Primitives](02-js-jquery/js-primitives/readme.md)
+  * [Arrays](02-js-jquery/js-arrays/readme.md)
+  * [Objects](02-js-jquery/js-objects/readme.md)
   * [Conditionals and Loops](02-js-jquery/js-control-flow/readme.md)
     * [Boolean Expressions](02-js-jquery/js-control-flow/02boolean.md)
     * [Conditionals](02-js-jquery/js-control-flow/03conditionals.md)
