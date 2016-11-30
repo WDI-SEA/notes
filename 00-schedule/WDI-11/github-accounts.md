@@ -5,10 +5,6 @@
 - Brandi Williams [brandiw](https://github.com/brandiw)
 - Sean Robertson [srobertson421](https://github.com/srobertson421)
 
-## General Assembly
-- [WDI-SEA](https://github.com/wdi-sea)
-- [GA Students](https://github.com/ga-students)
-
 ## Students (13 total)
 | Name                   | GitHub                                                 |
 |------------------------|--------------------------------------------------------|
