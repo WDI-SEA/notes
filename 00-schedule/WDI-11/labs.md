@@ -8,7 +8,6 @@
 | Monday | OOP | [Prototype Body Shop][1020]|
 | Monday | AJAX | [Reddit JSON Image Search][0130]|
 
-
 ### Week 2
 
 | Day | Topic  | Lab |
@@ -26,6 +25,7 @@
 | Monday    | Command Line   | [Command Line Lecture Notes][1001] |
 | Tuesday   | HTML       | [HTML User Inputs](https://github.com/WDI-SEA/html_user_inputs) |
 | Tuesday   | HTML       | [HTML Tables](https://github.com/WDI-SEA/html_top_ten_movies_table) |
+| Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb) |
 
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
