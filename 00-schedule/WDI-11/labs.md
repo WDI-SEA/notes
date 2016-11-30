@@ -19,13 +19,14 @@
 
 ### Week 1
 
-| Day       | Topic      | Lab                      |
-| ------    | -----      | --------                 |
-| Monday    | Internet   | [Internet Lab][1000]     |
-| Monday    | Command Line   | [Command Line Lecture Notes][1001] |
-| Tuesday   | HTML       | [HTML User Inputs](https://github.com/WDI-SEA/html_user_inputs) |
-| Tuesday   | HTML       | [HTML Tables](https://github.com/WDI-SEA/html_top_ten_movies_table) |
-| Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb) |
+| Day       | Topic        | Lab                                                                 |
+| ------    | -----        | --------                                                            |
+| Monday    | Internet     | [Internet Lab][1000]                                                |
+| Monday    | Command Line | [Command Line Lecture Notes][1001]                                  |
+| Tuesday   | HTML         | [HTML User Inputs](https://github.com/WDI-SEA/html_user_inputs)     |
+| Tuesday   | HTML         | [HTML Tables](https://github.com/WDI-SEA/html_top_ten_movies_table) |
+| Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb)                 |
+| Wednesday | JavaScript   | [JavaScript Primitives](https://github.com/WDI-SEA/js-primitives)                        | 
 
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
