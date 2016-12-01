@@ -19,15 +19,16 @@
 
 ### Week 1
 
-| Day       | Topic        | Lab                                                                 |
-| ------    | -----        | --------                                                            |
-| Monday    | Internet     | [Internet Lab][1000]                                                |
-| Monday    | Command Line | [Command Line Lecture Notes][1001]                                  |
-| Tuesday   | HTML         | [HTML User Inputs](https://github.com/WDI-SEA/html_user_inputs)     |
-| Tuesday   | HTML         | [HTML Tables](https://github.com/WDI-SEA/html_top_ten_movies_table) |
-| Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb)                 |
-| Wednesday | JavaScript   | [JavaScript Control Flow](https://github.com/WDI-SEA/js-control-flow) | 
-| Wednesday | DOM Practice | [DOM Practice](https://github.com/ga-students/dom-practice) | 
+| Day       | Topic        | Lab                                                                       |
+| ------    | -----        | --------                                                                  |
+| Monday    | Internet     | [Internet Lab][1000]                                                      |
+| Monday    | Command Line | [Command Line Lecture Notes][1001]                                        |
+| Tuesday   | HTML         | [HTML User Inputs](https://github.com/WDI-SEA/html_user_inputs)           |
+| Tuesday   | HTML         | [HTML Tables](https://github.com/WDI-SEA/html_top_ten_movies_table)       |
+| Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb)                       |
+| Wednesday | JavaScript   | [JavaScript Control Flow](https://github.com/WDI-SEA/js-control-flow)     |
+| Wednesday | DOM Practice | [DOM Practice](https://github.com/ga-students/dom-practice)               |
+| Thursday  | JS Timers    | [Sim City Bomb Squad](https://github.com/ga-students/sim-city-bomb-squad) |
 
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
