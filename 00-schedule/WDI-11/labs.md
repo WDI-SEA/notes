@@ -27,6 +27,7 @@
 | Tuesday   | HTML         | [HTML Tables](https://github.com/WDI-SEA/html_top_ten_movies_table) |
 | Tuesday   | HTML and CSS | [CSS AirBnB](https://github.com/WDI-SEA/css-airbnb)                 |
 | Wednesday | JavaScript   | [JavaScript Control Flow](https://github.com/WDI-SEA/js-control-flow) | 
+| Wednesday | DOM Practice | [DOM Practice](https://github.com/ga-students/dom-practice) | 
 
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
