@@ -29,6 +29,7 @@
 | Wednesday | JavaScript   | [JavaScript Control Flow](https://github.com/WDI-SEA/js-control-flow)     |
 | Wednesday | DOM Practice | [DOM Practice](https://github.com/ga-students/dom-practice)               |
 | Thursday  | JS Timers    | [Sim City Bomb Squad](https://github.com/ga-students/sim-city-bomb-squad) |
+| Friday    | Arrays Warmup | [moreThanFour()](https://repl.it/Ee6k/1)                                  |
 
 <!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
 | Friday    | Javascript | [Javascript Functions][1007] |
