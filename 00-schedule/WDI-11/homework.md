@@ -33,7 +33,8 @@ To keep your assignments neat, each piece of homework should have its own repo.
 | Monday    | Terminal     | [Command Line Murder Mystery][899]                                                    |
 | Tuesday   | HTML and CSS | [CSS Positioning: Recreate Instagram](https://github.com/ga-students/css-positioning) |
 | Wednesday | JavaScript   | [Temperature Convertor](https://github.com/WDI-SEA/temperature-converter-dom)         |
-| Thursday  | JS Intervals | [JavaScript Clock Intervals](https://github.com/ga-students/js-clock-intervals)         |
+| Thursday  | JS Intervals | [JavaScript Clock Intervals](https://github.com/ga-students/js-clock-intervals)       |
+| Friday    | Tic Tac Toe  | [Tic Tac Toe](https://github.com/WDI-SEA/tic-tac-toe)                                 |
 
 <!-- | Friday    | Javascript | [Tic Tac Toe][1010]                                                  |
 | Thursday | DOM & Events| [Temperature Converter][1009]                                        |
