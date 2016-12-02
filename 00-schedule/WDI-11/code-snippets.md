@@ -1,5 +1,12 @@
 # Code Snippets From Lecture
 
+### Arrays and For Loops
+- printing and array with fencepost commas: <https://repl.it/Eegy/10>
+- get maximum value: <https://repl.it/Eehp/1>
+- getEvenNumbers: <https://repl.it/Ee6k/41>
+- isAscending: <https://repl.it/Eeqy/22>
+- isUnique: <https://repl.it/Eer8/3>
+
 ### Function Declarations
 - Two function syntaxes: <https://repl.it/Ed0a/4>
 - Stomping on function names: <https://repl.it/Ed0b/2>
