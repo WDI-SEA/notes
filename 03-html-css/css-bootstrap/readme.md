@@ -195,10 +195,25 @@ Bootstrap can also do some nifty things for you with it's JavaScript plugins. Th
 
 ##Bootstrap Snippets
 
-Sublime has a feature called "snippets" it allows you to use shortcuts to type frequently used commands. There are some built in and there are packages that contain collections of them that you can install.
+Most text editor have a feature called "snippets" that allow you to use shortcuts to type
+frequently used commands. There are some built in and there are packages that contain collections
+of them that you can install.
 
-One built-in snippet we've been using is `html` you go to a .html file type `html` and hit tab and get a basic HTML page template.
+One built-in snippet we've been using is `html` you go to a .html file type `html` and hit tab and
+get a basic HTML page template.
 
+Let's make sure we have snippets to generate a basic HTML page template, and
+a snippet to bring in reference to Bootstrap files.
+
+### Atom
+Open a new file, and save it as `index.html` to make sure it's an HTML file.
+Type `html` and press tab. The editor should automatically fill in a basic
+HTML page for you.
+
+Try typing `bootcdn` and press tab. It should fill in a fill `<link>` tag
+referring to a Bootstrap CSS file hosted somewhere.
+
+### Sublime Text
 There is a bootstrap snippet package that you can install by loading sublime and...
 
 * press `CMD+SHIFT+P`
@@ -208,7 +223,8 @@ There is a bootstrap snippet package that you can install by loading sublime and
 * type `bootstrap`
 * select `Bootstrap 3 Snippets`
 
-Once this is installed you can do a bunch of great stuff including loading the bootstrap cdn by typing `bs3-cdn` (inside the `<head>` tag) and hitting tab.
+Once this is installed you can do a bunch of great stuff including loading the bootstrap cdn by
+typing `bs3-cdn` (inside the `<head>` tag) and hitting tab.
 
 You can also do:
 
