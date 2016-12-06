@@ -199,21 +199,24 @@ Most text editor have a feature called "snippets" that allow you to use shortcut
 frequently used commands. There are some built in and there are packages that contain collections
 of them that you can install.
 
+### Atom
+Install Bootstrap 3 package on the command line with the atom package manager:
+
+```
+apm install atom-bootstrap3
+```
+
+Now you've got lots of handy snippets installed. Open a new file that has a `.html`
+extension so the snippets will be activated. Type `html-` and you'll see several
+options. Choose "Basic HTML Template" and you'll see an entire page appear!
+
+### Sublime Text
 One built-in snippet we've been using is `html` you go to a .html file type `html` and hit tab and
 get a basic HTML page template.
 
 Let's make sure we have snippets to generate a basic HTML page template, and
 a snippet to bring in reference to Bootstrap files.
 
-### Atom
-Open a new file, and save it as `index.html` to make sure it's an HTML file.
-Type `html` and press tab. The editor should automatically fill in a basic
-HTML page for you.
-
-Try typing `bootcdn` and press tab. It should fill in a fill `<link>` tag
-referring to a Bootstrap CSS file hosted somewhere.
-
-### Sublime Text
 There is a bootstrap snippet package that you can install by loading sublime and...
 
 * press `CMD+SHIFT+P`
