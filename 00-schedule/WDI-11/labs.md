@@ -1,21 +1,11 @@
 ## Lab schedule
 
-<!-- ### Week 4
-| Day | Topic  | Lab |
-| ----| ------ | ---- |
-| Wednesday | Node Express Server | [CRUD Newspaper Website](https://github.com/WDI-SEA/express-daily-planet)|
-| Tuesday | Morning Exercise | [URL Encode](https://gist.github.com/geluso/5388d0a83fdfb56a4b84c98d2aad5f8b)|
-| Monday | OOP | [Prototype Body Shop][1020]|
-| Monday | AJAX | [Reddit JSON Image Search][0130]|
-
 ### Week 2
 
-| Day | Topic  | Lab |
-| ----| ------ | ---- |
-| Wednesday | jQuery DOM | [jQuery Intro Lab](https://github.com/davified/jquery-intro-lab) |
-| Wednesday | DOM Manipulation | [Times Tables](https://github.com/ga-students/dom-times-table) |
-| Tuesday | Intervals | [JavaScript Clock Intervals](https://github.com/ga-students/js-clock-intervals) |
-| Monday | Git Merging | [Learn Git News Room Style](https://github.com/ga-students/learn-git-newsroom-style) | -->
+| Day     | Topic     | Lab                                                              |
+| ----    | ------    | ----                                                             |
+| Monday  | jQuery    | [Selecting Reddit](https://github.com/WDI-SEA/selecting-reddit) |
+| Tuesday | Bootstrap | [Microsoft Mockup](https://github.com/WDI-SEA/bootstrap-mockups) |
 
 ### Week 1
 
@@ -30,12 +20,6 @@
 | Wednesday | DOM Practice | [DOM Practice](https://github.com/ga-students/dom-practice)               |
 | Thursday  | JS Timers    | [Sim City Bomb Squad](https://github.com/ga-students/sim-city-bomb-squad) |
 | Friday    | Arrays Warmup | [moreThanFour()](https://repl.it/Ee6k/1)                                  |
-
-<!-- | Friday    | Javascript | [Javascript Control Flow][1004] |
-| Friday    | Javascript | [Javascript Functions][1007] |
-| Thursday | Javascript| Javascript exercises in Class                                        |
-| Wednesday | JavaScript | Javascript exercises in Class                                       |
-| Tuesday   | CSS        | [Recreate Instagram][902]                                            | -->
 
 <!--  links to labs -->
 
