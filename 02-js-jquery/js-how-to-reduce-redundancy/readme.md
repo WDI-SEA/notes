@@ -272,25 +272,7 @@ if (state % 4 === 0) {
 
 <details>
   <summary>Click to view answer</summary>
-```js
-var letter, color;
-if (state % 4 === 0) {
-  letter = "X";
-  color = "red";
-} else if (state % 4 === 1){
-  letter = "O";
-  color = "blue";
-} else if (state % 4 === 2){
-  letter = "Z";
-  color = "yellow";
-} else if (state % 4 === 3){
-  letter = "M";
-  color = "green";
-}
-
-document.getElementById(this.id).textContent = letter;
-this.style.backgroundColor = color;
-```
+  <img src="answer1.png" />
 </details>
 
 
@@ -314,21 +296,7 @@ if (xTurn == true) {
 ```
 <details>
   <summary>Click to view answer</summary>
-```js
-if (xTurn == true) {
-	attachImage(this.id, "bacon-x.png");
-	xTurn = false;
-} else {
-	attachImage(this.id, "egg-o.png");
-	xTurn = true;
-}
-
-function attachImage(id, filename) {
-	var xImg = document.createElement("img");
-	xImg.src = "img/" + filename;
-	document.getElementById(id).append(xImg);
-}
-```
+  <img src="answer2.png" />
 </details>
 
 ### Exercise 3
@@ -349,20 +317,5 @@ for(i=0; i<3; i++){
 
 <details>
   <summary>Click to reveal answer</summary>
-```js
-for(i=0; i<3; i++){
-  if(tileStatus[i]==player & tileStatus[i+3]==player & tileStatus[i+6]==player){
-    console.log(player+" matches column!");
-    addWinClassToElement("tile" + i);
-    addWinClassToElement("tile" + (i + 3));
-    addWinClassToElement("tile" + (i + 6));
-    return true;
-  }
-}
-
-function addWinClassToElement(elementId) {
-  var element = document.getElementById(elementId);
-  element.className = element.className + " win";
-}
-```
+  <img src="answer3.png" />
 </details>
