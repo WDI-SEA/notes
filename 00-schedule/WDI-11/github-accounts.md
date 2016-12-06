@@ -5,7 +5,7 @@
 - Brandi Williams [brandiw](https://github.com/brandiw)
 - Sean Robertson [srobertson421](https://github.com/srobertson421)
 
-## Students (13 total)
+## Students (11 total)
 | Name                   | GitHub                                                 |
 |------------------------|--------------------------------------------------------|
 | Brian Bixby            | [brianbixby](http://github.com/brianbixby)             |
