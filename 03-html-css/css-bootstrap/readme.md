@@ -85,7 +85,33 @@ To align text, use these classes.
 
 ### Icons
 
-Bootstrap comes with a set of icons which can be accessed using the `<i></i>` tag. You can access these icons (here)[include bootstrap link]
+Bootstrap comes with a set of tons of icons.
+
+Here's the basic syntax to create an icon. Make an `<i>` tag and apply two classes.
+The first class is always `glyphicon` and the second class is the specific
+icon you want. Here's one where we're using the `glpyhicon-ok` class to get
+a big nice checkmark on our page:
+
+```html
+<i class="glyphicon glyphicon-ok"></i>
+```
+
+You can put icons anywhere. They look good in buttons!
+
+<img src="star-button.png" />
+
+```html
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+</button>
+```
+
+See a full list of icons in the Bootstrap documentation about
+[glyphicons](https://wdi_sea.gitbooks.io/notes/content/03-html-css/css-bootstrap/readme.html)
+
+The text below each icon shows you the two classes used to refer to it.
+
+<img src="icons.png" />
 
 ### Typography (lead, muted, warning/error/success/info, small>cite attr -> cite title = "test")
 
@@ -193,4 +219,3 @@ You can also do:
 
 
 For more uses see the [Bootstrap 3 snippet docs](https://github.com/JasonMortonNZ/bs3-sublime-plugin)
-
