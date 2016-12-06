@@ -36,6 +36,12 @@ To keep your assignments neat, each piece of homework should have its own repo.
 | Thursday  | JS Intervals | [JavaScript Clock Intervals](https://github.com/ga-students/js-clock-intervals)       |
 | Friday    | Tic Tac Toe  | [Tic Tac Toe](https://github.com/WDI-SEA/tic-tac-toe)                                 |
 
+### Week 2
+
+| Day    | Topic  | Homework |
+| --     | ---    | -----    |
+| Monday | jQuery | [To-Do App](https://github.com/WDI-SEA/jquery-todo-list)
+
 <!-- | Friday    | Javascript | [Tic Tac Toe][1010]                                                  |
 | Thursday | DOM & Events| [Temperature Converter][1009]                                        |
 | Wednesday | JavaScript | No Homework                                                          |
