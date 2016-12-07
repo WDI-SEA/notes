@@ -1,8 +1,12 @@
 # Code Snippets From Lecture
 
+### Classes
+- Simple House class example <https://repl.it/EjiB/0>
+- Point class with distanceTo method <https://repl.it/EjiG/2>
+
 ### How to Reset DOM
 Here's a repo that shows you several things:
-- how to detect which elements are clicked on. 
+- how to detect which elements are clicked on.
 - how to build a function that resets and initializes a page
 - how to attach click handlers to newly created elements
 - how to reset variables and manipulate the DOM back into
