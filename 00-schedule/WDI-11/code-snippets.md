@@ -1,5 +1,18 @@
 # Code Snippets From Lecture
 
+### How to Reset DOM
+Here's a repo that shows you several things:
+- how to detect which elements are clicked on. 
+- how to build a function that resets and initializes a page
+- how to attach click handlers to newly created elements
+- how to reset variables and manipulate the DOM back into
+  some starting state.
+
+Be sure to look at the [commit history](https://github.com/ga-students/how-to-reset-dom/commits/master)
+to see how each step was completed.
+
+<https://github.com/ga-students/how-to-reset-dom>
+
 ### Arrays and For Loops
 - printing and array with fencepost commas: <https://repl.it/Eegy/10>
 - get maximum value: <https://repl.it/Eehp/1>
