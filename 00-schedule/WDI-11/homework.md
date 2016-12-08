@@ -7,10 +7,12 @@ To keep your assignments neat, each piece of homework should have its own repo.
 -->
 
 ### Week 2
-| Day    | Topic  | Homework |
-| --     | ---    | -----    |
-| Monday | jQuery | [To-Do App](https://github.com/WDI-SEA/jquery-todo-list)
-| Tuesday| AJAX   | [Reddit Slideshow](https://github.com/WDI-SEA/ajax-reddit-slideshow)  |
+| Day       | Topic  | Homework                                                             |
+| --        | ---    | -----                                                                |
+| Monday    | jQuery | [To-Do App](https://github.com/WDI-SEA/jquery-todo-list)             |
+| Tuesday   | AJAX   | [Reddit Slideshow](https://github.com/WDI-SEA/ajax-reddit-slideshow) |
+| Wednesday | Pair Programming       | [Build a Quiz](https://github.com/brandiw/javascript-quiz)                                                                 |
+| Thursday  | JS     | [Subtitles](https://github.com/WDI-SEA/subtitle-starter-code)        |
 
 ### Week 1
 | Day       | Topic        | Homework                                                                              |
