@@ -128,6 +128,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Intro to Express][101] | [Daily Planet][1100] |
 | [Organization and APIs][102] <br><br> [Foreman][114] | [OMDB Movie Search][1101] |
 | [Intro to SQL][103] | [Apartment Lab][1102] |
+| [Intro to SQL][103] | [Carmen San Diego Lab](https://github.com/WDI-SEA/sql-carmen-san-diego)
 | [Advanced SQL][104] | [Booktown][1103] |
 | [Full RESTful Routing w/AJAX][105] | [Hackathon Teams][1111] <br><br> [Daily Planet with AJAX (old)][1104] |
 | [Express with Databases via Sequelize][106] | [Pokedex][1107] <br><br> [Link Shortener][1105] |

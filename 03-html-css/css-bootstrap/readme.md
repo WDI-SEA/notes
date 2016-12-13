@@ -85,7 +85,33 @@ To align text, use these classes.
 
 ### Icons
 
-Bootstrap comes with a set of icons which can be accessed using the `<i></i>` tag. You can access these icons (here)[include bootstrap link]
+Bootstrap comes with a set of tons of icons.
+
+Here's the basic syntax to create an icon. Make an `<i>` tag and apply two classes.
+The first class is always `glyphicon` and the second class is the specific
+icon you want. Here's one where we're using the `glpyhicon-ok` class to get
+a big nice checkmark on our page:
+
+```html
+<i class="glyphicon glyphicon-ok"></i>
+```
+
+You can put icons anywhere. They look good in buttons!
+
+<img src="star-button.png" />
+
+```html
+<button type="button" class="btn btn-default btn-lg">
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
+</button>
+```
+
+See a full list of icons in the Bootstrap documentation about
+[glyphicons](https://wdi_sea.gitbooks.io/notes/content/03-html-css/css-bootstrap/readme.html)
+
+The text below each icon shows you the two classes used to refer to it.
+
+<img src="icons.png" />
 
 ### Typography (lead, muted, warning/error/success/info, small>cite attr -> cite title = "test")
 
@@ -169,9 +195,27 @@ Bootstrap can also do some nifty things for you with it's JavaScript plugins. Th
 
 ##Bootstrap Snippets
 
-Sublime has a feature called "snippets" it allows you to use shortcuts to type frequently used commands. There are some built in and there are packages that contain collections of them that you can install.
+Most text editor have a feature called "snippets" that allow you to use shortcuts to type
+frequently used commands. There are some built in and there are packages that contain collections
+of them that you can install.
 
-One built-in snippet we've been using is `html` you go to a .html file type `html` and hit tab and get a basic HTML page template.
+### Atom
+Install Bootstrap 3 package on the command line with the atom package manager:
+
+```
+apm install atom-bootstrap3
+```
+
+Now you've got lots of handy snippets installed. Open a new file that has a `.html`
+extension so the snippets will be activated. Type `html-` and you'll see several
+options. Choose "Basic HTML Template" and you'll see an entire page appear!
+
+### Sublime Text
+One built-in snippet we've been using is `html` you go to a .html file type `html` and hit tab and
+get a basic HTML page template.
+
+Let's make sure we have snippets to generate a basic HTML page template, and
+a snippet to bring in reference to Bootstrap files.
 
 There is a bootstrap snippet package that you can install by loading sublime and...
 
@@ -182,7 +226,8 @@ There is a bootstrap snippet package that you can install by loading sublime and
 * type `bootstrap`
 * select `Bootstrap 3 Snippets`
 
-Once this is installed you can do a bunch of great stuff including loading the bootstrap cdn by typing `bs3-cdn` (inside the `<head>` tag) and hitting tab.
+Once this is installed you can do a bunch of great stuff including loading the bootstrap cdn by
+typing `bs3-cdn` (inside the `<head>` tag) and hitting tab.
 
 You can also do:
 
@@ -193,4 +238,3 @@ You can also do:
 
 
 For more uses see the [Bootstrap 3 snippet docs](https://github.com/JasonMortonNZ/bs3-sublime-plugin)
-

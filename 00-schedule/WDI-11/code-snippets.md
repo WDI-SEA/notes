@@ -1,53 +1,40 @@
 # Code Snippets From Lecture
 
-## Week 4
+### Classes
+- Simple House class example <https://repl.it/EjiB/0>
+- Point class with distanceTo method <https://repl.it/EjiG/2>
 
-### Node Express EJS Templates
+### How to Reset DOM
+Here's a repo that shows you several things:
+- how to detect which elements are clicked on.
+- how to build a function that resets and initializes a page
+- how to attach click handlers to newly created elements
+- how to reset variables and manipulate the DOM back into
+  some starting state.
 
-Here's a project all set up with basic static file serving,
-some route configruations, and some advanced ejs templates.
+Be sure to look at the [commit history](https://github.com/ga-students/how-to-reset-dom/commits/master)
+to see how each step was completed.
 
-https://github.com/ga-students/simple-node-express-ejs-template
+<https://github.com/ga-students/how-to-reset-dom>
 
-### Redit API Search
+### Arrays and For Loops
+- printing and array with fencepost commas: <https://repl.it/Eegy/10>
+- get maximum value: <https://repl.it/Eehp/1>
+- getEvenNumbers: <https://repl.it/Ee6k/41>
+- isAscending: <https://repl.it/Eeqy/22>
+- isUnique: <https://repl.it/Eer8/3>
 
-Reddit allows you to search their own content. Here's their own description of
-how the search endpoint of their API works: [Reddit Search API Documentation](https://www.reddit.com/dev/api/#GET_search)
-
-Here's how you can make a request to search their API for kittens:
-
-```
-$.get('https://www.reddit.com/search.json', {
-  q: 'kittens'
-  }).done(function(data) {
-    console.log(data);
-  });
-```
-
-## Week 3
-
-Detecting keyboard interactions, moving things: <https://repl.it/DBp4>
-
-Sorting, Reverse Sorting, and Shuffling: <https://repl.it/CzDF/0>
-
-## Week 2
-
-### Array Equality
-
-a function that returns true if two arrays are equal: <https://repl.it/Cqzr/1>
-
-### JavaScript Clock
-
-Look at the commits on the `sol` solution branch to see different
-implementations:
-
-<https://github.com/ga-students/js-clock-intervals/commits/sol>
+### Function Declarations
+- Two function syntaxes: <https://repl.it/Ed0a/4>
+- Stomping on function names: <https://repl.it/Ed0b/2>
 
 ### Intervals and Timeouts
 - a simple interval, timeout counter: <https://repl.it/CqVJ>
+- counting up with an interval: <https://repl.it/CqVJ>
+- clearInterval with setTimeout: <https://repl.it/CqV8/2>
+
 - ding, and stop ding: <https://repl.it/CqV8/2>
 - cat meowing, dog barking: <https://repl.it/CqV8/3>
-
 
 ### Scopes and Closures
 - scope example: <https://repl.it/CqS4/4>
