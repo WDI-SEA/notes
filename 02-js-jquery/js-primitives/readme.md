@@ -2,13 +2,12 @@
 
 ## Objectives
 
-* understand the history of JavaScript and its purpose as a language
-* conceptualize JavaScript variables and data structures
-* utilize primitives and operators in order to solve problems using JavaScript
-  * manipulate integers
-  * floating point decimal numbers
-  * strings
-  * booleans
+* Briefly describe the history of JavaScript and its purpose as a language
+* Define JavaScript variables and data structures
+* Utilize primitives and operators in order to solve problems using JavaScript
+  * Manipulate integers, floating point, and decimal numbers
+  * Manipulate strings
+  * Use booleans as return values, as variables, and in the context of a conditional
 
 ## History
 

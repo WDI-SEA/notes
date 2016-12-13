@@ -1,12 +1,15 @@
 #Functions
 
 ##Objectives
-* Define a function
-* Define a function with a parameter
-* Define a function that operates on two parameters
-* Understand the difference between printing and returning
-* Create functions with and without return values
-* Recognize the scope of variables inside and outside functions
+* Describe a situation where you would use:
+	- A function with a return value
+	- A function without a return value
+	- A function with a parameter
+* Describe the difference between printing and returning
+* Write a function with and without a return value
+* Write a function with a parameter
+* Write a function that operates on two or more parameters
+* Identify the scope of variables inside and outside functions
 
 ##Defining a function
 

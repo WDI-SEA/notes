@@ -3,8 +3,8 @@
 ##Objectives
 
 * Use prototypal inheritance to group shared properties even further
-* Understand the process of calling parent classes from a constructor.
 * Utilize various JavaScript methods in combination with prototypal inheritance.
+* Demonstrate ability to call parent classes from a constructor
 * Explore the next generation of inheritance in JavaScript using ES6 classes.
 
 ## Review

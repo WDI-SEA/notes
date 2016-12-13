@@ -2,7 +2,7 @@
 
 ##Objectives
 
-* Understand the benefits of altering control flow in JavaScript
+* Describe the benefits of altering control flow in JavaScript
 * Use boolean statements to return true and false values
 * Utilize if/else statements in order to skip blocks of code
 * Utilize for, for...in, and while loops to loop through data structures and repeat code

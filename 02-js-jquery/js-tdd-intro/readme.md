@@ -2,8 +2,9 @@
 
 ##Objectives
 
-* Identify the benefits and reasons for TDD.
-* Write code based on preexisting `assert` tests.
+* Identify the benefits and reasons for TDD
+* Identify how TDD fits into the Agile methodology
+* Write code based on preexisting `assert` tests
 
 ###What is Test-Driven Development (or TDD)?
 

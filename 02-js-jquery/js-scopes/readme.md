@@ -2,8 +2,8 @@
 
 ##Objectives
 
+* Describe the purpose and functionality of IIFEs
 * Use namespaces to protect data and limit global impact of objects and variables.
-* Understand the purpose and functionality of IIFEs
 * Use IIFEs to hide "private" data
 
 ---

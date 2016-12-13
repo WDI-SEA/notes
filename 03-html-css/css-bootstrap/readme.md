@@ -2,9 +2,9 @@
 
 ##Objectives
 
-* Understand what front-end CSS frameworks are
+* Define what front-end CSS frameworks are
 * Utilize a front-end grid system for mobile and desktop layout
-* Comprehend documentation and implement an unfamiliar framework
+* Demonstrate ability to read documentation and implement an unfamiliar framework
 
 
 ##Bootstrap
