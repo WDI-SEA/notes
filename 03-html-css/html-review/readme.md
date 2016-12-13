@@ -2,7 +2,11 @@
 
 ### Objectives
 
-- Construct a HTML page with common elements and attributes
+- Construct an HTML page with common elements and attributes
+- Describe what the purpose of each HTML tag is
+- Name the two HTML tags that function as containers
+- Describe what it means for an HTML element to be a 'child' of another HTML element
+- Identify the limitations of what can be done with HTML alone
 
 
 ### Cool Stuff using HTML/CSS/JavaScript

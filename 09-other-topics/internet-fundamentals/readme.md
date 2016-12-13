@@ -2,12 +2,13 @@
 
 ### Objectives
 
-- Explain the differences between a client and server
-- Explain the difference between the Internet and the World Wide Web
-- Explain the significance of an Internet Protocol (IP) address
-- Explain how data travels through the internet
+- Explain the difference between a client and server
+- Explain the difference between an HTTP request and an HTTP response.
+- Identify the difference between the Internet and the World Wide Web
+- Describe the purpose of an Internet Protocol (IP) address
+- Summarize how data travels through the internet
 - Breakdown the components of a URL: protocol, subdomain, domain, extension, resources
-- Identify and describe the most common HTTP request/response headers and the information associated with each
+- Identify the most common HTTP request/response headers
 
 ##How the Internet Works in 5 Minutes
 

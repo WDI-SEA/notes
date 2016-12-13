@@ -2,9 +2,12 @@
 
 ## Objectives
 
-* Define version control systems
+* Define what a version control system does
+* Describe why someone would want to use a version control system
+* Describe git concepts such as pulls, pushes, merges, commits in layman's terms
 * Identify main git commands to manage files
 * Distinguish bewteen local and remote repositories
+* Distinguish bewteen git and GitHub
 
 ## Motivation
 
