@@ -2,9 +2,9 @@
 
 ##Objectives
 
-* Review the components of an Express application
+* Name the components of an Express application
 * Utilize layouts and controllers in an Express app
-* Understand the purpose of using APIs on the backend.
+* Describe the purpose of using an API on the backend.
 * Create an application that uses an API and the `request` module.
 
 ## Review
