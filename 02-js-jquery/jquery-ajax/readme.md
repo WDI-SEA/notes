@@ -2,10 +2,10 @@
 
 ##Objectives
 
-* Define AJAX
+* Define AJAX and what the abbreviation stands for
 * Describe the purpose of AJAX
 * Utilize AJAX to fetch data from third-party APIs
-* Understand the place of AJAX in the request-response cycle
+* Talk about the place of AJAX in the request-response cycle
 * Describe how promises work in the context of AJAX requests
 
 Ajax (Asynchronous JavaScript and XML) is used to create asynchronous web applications. This simply means a web page that can make calls back to the server in the background.

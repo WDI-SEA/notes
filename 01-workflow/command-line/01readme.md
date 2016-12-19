@@ -3,8 +3,9 @@
 ##Objectives
 
 * Define what a terminal window is
+* Describe how to open an instance of the terminal window
 * Identify commands used for navigating directories
-* Use commands to manipulate files (moving, copying, editing, removing)
+* Use commands to manipulate files (moving, copying, editing, removing, creating)
 * Distinguish between absolute and relative paths
 * Apply commands towards everyday problems and workflows
 

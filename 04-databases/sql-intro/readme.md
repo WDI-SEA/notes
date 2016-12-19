@@ -1,11 +1,11 @@
 # Introduction To SQL and Databases
 
 ## Objectives
-* Understand the purpose of a database
+* Describe the purpose of a database
 * Connect to a PostgreSQL database using `psql`
-* Use SQL to create a database and tables
-* Use SQL to insert, select, update, and delete data
-* Understand what Primary Keys are
+* Use SQL to create a database, tables, and entries
+* Use SQL CRUD operations to insert, select, update, and delete data
+* Define the purpose of Primary and Foreign Keys
 
 ## What is a database?
 

@@ -4,9 +4,10 @@ Programming with functions! Weren't we already doing that? Well yes, but we can 
 
 ##Objectives
 
-* Use callbacks with setInterval and setTimeout
-* Understand how functions can be passed in and out of other functions
+* Use callback functions with setInterval and setTimeout
+* Demonstrate ability to pass a function as a parameter
 * Compare and contrast the four main JavaScript iterators: forEach, map, reduce, filter
+    - Name an ideal situation for each one
 * Utilize callbacks with JavaScript iterators
 
 Previously, we saw that functions can be assigned to variables. For example:

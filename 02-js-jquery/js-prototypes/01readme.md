@@ -4,7 +4,8 @@
 
 * Identify the downsides of object literal notation.
 * Use constructor pattern to create multiple object instances.
-* Understand the basic premises behind object-oriented programming with prototypes in JavaScript.
+* Discuss the basic premises behind object-oriented programming with prototypes in JavaScript.
+* Define the difference between an instance and a class (or constructor function)
 * Use constructors and prototypes to modularize code and keep code DRY.
 
 ##Object Oriented Programming

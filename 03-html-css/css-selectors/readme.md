@@ -5,6 +5,8 @@
 * Describe the syntactical and functional relationship between selectors, properties, and values
 * Style all elements of a particular HTML element on a web page
 * Describe the difference between class and id selectors
+* Describe the heirarchy (order of precedence) between tag selectors, class selectors, id selectors, and inline-styles
+* Demonstrate ability to include CSS inline, with a style tag, and from an external file
 * Apply styles to specific elements by selecting elements with classes and ids
 * Apply a set of styles to children of a specific class or tag
 

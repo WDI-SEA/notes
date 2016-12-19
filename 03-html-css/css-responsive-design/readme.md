@@ -3,7 +3,8 @@
 ##Objectives
 
 * Define responsive design
-* Understand the purposes and benefits of responsive design
+* Name a reason that it is now important to consider variable screen sizes in your site design
+* Discuss the purposes and benefits of responsive design
 * Explain the purpose of the viewport meta tag in context of responsive design
 * Utilize media queries to change a web page's layout
 * Apply styling to special cases with pseudo-classes and pseudo-elements

@@ -3,8 +3,9 @@
 ### Objectives
 
 * Describe jQuery and its purpose as a JavaScript library
-* Understand the benefits and drawbacks of using jQuery.
+* Discuss the benefits and drawbacks of using jQuery.
 * Practice using jQuery selectors
+* Discuss the benefits of minification
 
 #### What is jQuery?
 jQuery is a 3rd-party library that is intended to make front-end development tasks --- particularly those involving DOM selection and manipulation --- easier, faster, and more fun.
