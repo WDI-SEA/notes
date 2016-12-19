@@ -1,5 +1,49 @@
 # Code Snippets From Lecture
 
+### Parsing miniJSON
+<https://repl.it/Et7o/2>
+
+```js
+// In our miniature version of JSON we have these rules:
+// 1. must be one object starting and ending with {}
+// 2. keys are surrounded in double quotes.
+// 3. values are ONLY integers.
+// 4. each key-value pair is separated by a comma.
+// 5. keys and values are separated by a colon.
+// 6. no whitespace.
+var data = '{"page_loads":49,"students":11}';
+
+// This function accepts a string that follows the rule specification
+// of miniJSON defined above, and it returns a JavaScript object.
+function parseMiniJSON(json) {
+  var obj = {};
+  
+  // snip off first and last curly braces.
+  json = json.substr(1, json.length - 2);
+  
+  var keyValuePairs = json.split(',');
+  for (var i = 0; i < keyValuePairs.length; i++) {
+    var key = keyValuePairs[i].split(":")[0];
+    var val = keyValuePairs[i].split(":")[1];
+    
+    // snip off first and last double-qoutes
+    key = key.substr(1, key.length - 2);
+    
+    // convert val to actual integer.
+    val = parseInt(val, 10);
+    
+    obj[key] = val;
+  }
+  
+  return obj;
+}
+
+var result = parseMiniJSON(data);
+console.log("page loads:", result.page_loads);
+console.log("students:", result.students);
+console.log("loads per student:", result.page_loads / result.students);
+```
+
 ### Classes
 - Simple House class example <https://repl.it/EjiB/0>
 - Point class with distanceTo method <https://repl.it/EjiG/2>
