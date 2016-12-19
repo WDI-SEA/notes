@@ -1,6 +1,8 @@
 # Code Snippets From Lecture
 
 ### Parsing miniJSON
+<script src="//repl.it/embed/Et7o/65.js"></script>
+
 <https://repl.it/Et7o/2>
 
 ```js
