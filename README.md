@@ -123,21 +123,22 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 
 ###NodeJS/Express
 
-| Topic | Assignments |
-| ----- | ----------- |
-| [Intro to Express][101] | [Daily Planet][1100] |
-| [Organization and APIs][102] <br><br> [Foreman][114] | [OMDB Movie Search][1101] |
-| [Intro to SQL][103] | [Apartment Lab][1102] |
-| [Intro to SQL][103] | [Carmen San Diego Lab](https://github.com/WDI-SEA/sql-carmen-san-diego)
-| [Advanced SQL][104] | [Booktown][1103] |
-| [Full RESTful Routing w/AJAX][105] | [Hackathon Teams][1111] <br><br> [Daily Planet with AJAX (old)][1104] |
-| [Express with Databases via Sequelize][106] | [Pokedex][1107] <br><br> [Link Shortener][1105] |
-| [Sequelize 1:M][108] | [Comments w/BlogPulse][1108] |
-| [Sequelize M:M][109] | [Project Organizer][1109] |
-| [Express Testing with Mocha and Chai][112] | [Starter code][113] |
-| [Express Authentication Theory (Research/Code)][110] | |
-| [Express Authentication Practice (Codealong)][111] | [Starter Template][1112] |
-| [Deploy Node to Heroku][107] | [Example App][1113] |
+| Topic                                                | Assignments                                                             |
+| -----                                                | -----------                                                             |
+| [Intro to Express][101]                              | [Daily Planet][1100]                                                    |
+| [Organization and APIs][102] <br><br> [Foreman][114] | [OMDB Movie Search][1101]                                               |
+| [Intro to SQL][103]                                  | [Apartment Lab][1102]                                                   |
+| [Intro to SQL][103]                                  | [Carmen San Diego Lab](https://github.com/WDI-SEA/sql-carmen-san-diego)
+| [Advanced SQL][104]                                  | [Booktown][1103]                                                        |
+| [CRUD in Express](https://wdi_sea.gitbooks.io/notes/content/05-express/express-intro/05crudexpress.html) | [Cruddy Board Games](https://github.com/WDI-SEA/cruddy-board-games)
+| [Full RESTful Routing w/AJAX][105]                   | [Hackathon Teams][1111] <br><br> [Daily Planet with AJAX (old)][1104]   |
+| [Express with Databases via Sequelize][106]          | [Pokedex][1107] <br><br> [Link Shortener][1105]                         |
+| [Sequelize 1:M][108]                                 | [Comments w/BlogPulse][1108]                                            |
+| [Sequelize M:M][109]                                 | [Project Organizer][1109]                                               |
+| [Express Testing with Mocha and Chai][112]           | [Starter code][113]                                                     |
+| [Express Authentication Theory (Research/Code)][110] |                                                                         |
+| [Express Authentication Practice (Codealong)][111]   | [Starter Template][1112]                                                |
+| [Deploy Node to Heroku][107]                         | [Example App][1113]                                                     |
 
 | Projects and Additional Topics |
 | -------- |
