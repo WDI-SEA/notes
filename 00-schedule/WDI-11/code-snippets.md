@@ -1,5 +1,29 @@
 # Code Snippets From Lecture
 
+### Common Postgres / Sequelize Mistakes
+
+Watch out. When you run the `sequelize model:create` command to create a model
+you must provide the command with a singular 
+
+If you're trying to create something to keep track of Users for a site then
+sequelize will make two things:
+
+- Sequelize makes *models*: These represent one user. They're singular. A model defines all
+of the different properties that make up the thing you're trying to represent.
+- Sequelize makes a *table*: Table names are plural. A Table is where all Users
+will be stored in the database. The column names and column data types in the
+database are derived from the model definition.
+
+Models are singular. User, Book, Movie.
+Tables are plural. Users, Books, Movies.
+
+```
+sequelize model:create --name user
+  --attributes firstName:string,lastName:string,age:integer,email:string
+```
+
+
+
 ### Parsing miniJSON
 <script src="//repl.it/embed/Et7o/65.js"></script>
 
