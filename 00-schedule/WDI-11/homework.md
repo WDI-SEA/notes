@@ -10,7 +10,7 @@ To keep your assignments neat, each piece of homework should have its own repo.
 | Day     | Topic                 | Homework |
 | ---     | ---                   | -----    |
 | Monday  | SQL                   | [Apartment Database](https://github.com/WDI-SEA/apartment-database) |
-| Tuesday | CRUD, REST, Sequelize | [Daily Planet](__://github.com/WDI-SEA/express-daily-planet)         | 
+| Tuesday | CRUD, REST, Sequelize | [Daily Planet](http://github.com/WDI-SEA/express-daily-planet)         | 
 
 ### Week 2
 | Day       | Topic            | Homework                                                             |
