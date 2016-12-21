@@ -11,7 +11,7 @@ To keep your assignments neat, each piece of homework should have its own repo.
 | ---       | ___                   | -----                                                                                    |
 | Monday    | SQL                   | [Apartment Database](https://github.com/WDI-SEA/apartment-database)                      |
 | Tuesday   | CRUD, REST, Sequelize | [Daily Planet Part 1 (GET, POST)](https://github.com/WDI-SEA/express-daily-planet)       |
-| Wednesday | CRUD, REST, Sequelize | [Daily Planet Part 2(PUT, DELETE)](https://github.com/WDI-SEA/express-daily-planet-ajax)  |
+| Wednesday | CRUD, REST, Sequelize | [Daily Planet Part 2 (PUT, DELETE)](https://github.com/WDI-SEA/express-daily-planet-ajax)  |
 
 ### Week 2
 | Day       | Topic            | Homework                                                             |
