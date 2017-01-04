@@ -1,5 +1,14 @@
 ## Lab schedule
 
+### Week 5
+| Day       | Topic                 | Lab                                                           |
+| ---       | ---                   | -----                                                         |
+| Monday    | No School             | No Homework                                                   |
+| Tuesday   | 1:M Relationships     | [Blog Comments](https://github.com/WDI-SEA/express-blogpulse) |
+| Wednesday | M:M Relationships     | TBD                                                           |
+| Wednesday | Async / Data Scraping | [Node Sequelize Seeder](https://github.com/srobertson421/Node-Sequelize-Seeder)    |
+
+
 ### Week 4
 | Day     | Topic                 | Lab      |
 | ---     | ---                   | -----    |

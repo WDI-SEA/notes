@@ -6,6 +6,13 @@ Please submit the link(s) to the repo (github repository) with your homework (e.
 To keep your assignments neat, each piece of homework should have its own repo.
 -->
 
+### Week 5
+| Day       | Topic             | Homework                                                                 |
+| ---       | ___               | -----                                                                    |
+| Monday    | No Class          | No Homework                                                              |
+| Tuesday   | 1:M Relationships | [Link Shortener](https://github.com/WDI-SEA/link-shortener)              |
+| Wednesday | M:M Relationships | [Project Organize](https://github.com/WDI-SEA/express-project-organizer) |
+
 ### Week 4
 | Day       | Topic                 | Homework                                                                                  |
 | ---       | ___                   | -----                                                                                     |
