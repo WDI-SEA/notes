@@ -1,5 +1,12 @@
 #CRUD in Express
 
+##Objectives
+
+* Define what the acronym CRUD stands for
+* Name the HTTP Verb associated with each CRUD function
+* Name the two HTTP verbs that HTTP understands
+* Name the two HTTP verbs in which you must utilize AJAX to make HTTP understand them
+
 CRUD is an acronym that stands for Create, Read, Update, Destroy. These are the basic operations that you can perform on data. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action: Creatinging a user (create), Listing comments (read) to editing your profile (update), to deleting a video you uploaded on youtube (destroy).
 
 [Formal definition on wiki](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
