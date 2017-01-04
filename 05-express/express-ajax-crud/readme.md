@@ -2,7 +2,7 @@
 
 ##Objectives
 
-* Review RESTful routing
+* Describe what RESTful routing is
 * Use AJAX to implement PUT and DELETE routes
 
 >Representational State Transfer (REST) is a software architecture style consisting of guidelines and best practices for creating scalable web services. REST is a coordinated set of constraints applied to the design of components in a distributed hypermedia system that can lead to a more performant and maintainable architecture.
