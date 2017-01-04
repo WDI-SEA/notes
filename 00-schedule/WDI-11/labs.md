@@ -1,5 +1,11 @@
 ## Lab schedule
 
+### Week 4
+| Day     | Topic                 | Lab      |
+| ---     | ---                   | -----    |
+| Monday  | SQL                   | [Carmen San Diego](https://github.com/WDI-SEA/sql-carmen-san-diego)         |
+| Tuesday | CRUD, REST            | [CRUDdy Board Game Site](https://github.com/WDI-SEA/cruddy-board-games) | 
+
 ### Week 2
 
 | Day     | Topic     | Lab                                                              |
