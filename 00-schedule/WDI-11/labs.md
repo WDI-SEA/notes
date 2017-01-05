@@ -7,13 +7,16 @@
 | Tuesday   | 1:M Relationships     | [Blog Comments](https://github.com/WDI-SEA/express-blogpulse) |
 | Wednesday | M:M Relationships     | TBD                                                           |
 | Wednesday | Async / Data Scraping | [Node Sequelize Seeder](https://github.com/srobertson421/Node-Sequelize-Seeder)    |
+| Thursday  | Auth                  | [Express Authentication](https://github.com/WDI-SEA/express-authentication/tree/brian-finished) |                
+| Friday    | Testing               | [Testing Starter Code](https://github.com/WDI-SEA/mocha-chai-starter) |
+| Friday    | Testing               | [Image Uploads](https://github.com/WDI-SEA/express-cloudinary) |
 
 
 ### Week 4
 | Day     | Topic                 | Lab      |
 | ---     | ---                   | -----    |
 | Monday  | SQL                   | [Carmen San Diego](https://github.com/WDI-SEA/sql-carmen-san-diego)         |
-| Tuesday | CRUD, REST            | [CRUDdy Board Game Site](https://github.com/WDI-SEA/cruddy-board-games) | 
+| Tuesday | CRUD, REST            | [CRUDdy Board Game Site](https://github.com/WDI-SEA/cruddy-board-games) |
 
 ### Week 2
 
