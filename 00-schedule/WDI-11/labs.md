@@ -7,6 +7,7 @@
 | Tuesday   | 1:M Relationships     | [Blog Comments](https://github.com/WDI-SEA/express-blogpulse) |
 | Wednesday | M:M Relationships     | TBD                                                           |
 | Wednesday | Async / Data Scraping | [Node Sequelize Seeder](https://github.com/srobertson421/Node-Sequelize-Seeder)    |
+| Wednesday | Async / Data Scraping | [Scraping w/ Cheerio](https://github.com/WDI-SEA/async-data-scraping-cheerio-node)    |
 | Thursday  | Auth                  | [Express Authentication](https://github.com/WDI-SEA/express-authentication/tree/brian-finished) |                
 | Friday    | Testing               | [Testing Starter Code](https://github.com/WDI-SEA/mocha-chai-starter) |
 | Friday    | Testing               | [Image Uploads](https://github.com/WDI-SEA/express-cloudinary) |
