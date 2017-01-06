@@ -1,5 +1,9 @@
 # Code Snippets From Lecture
 
+# Merge Two Sorted Arrays
+
+<https://repl.it/FCY0/67>
+
 # Security Vulnerabilities Based On Measuring Time
 Here's a function that checks whether two passwords are identical. It compares
 an actual password to a login attempt character by character. There's a problem!
