@@ -27,6 +27,8 @@ function passwordCheck(attempt) {
 Repl.it: <https://repl.it/FBt4/0>
 GitHub: <https://github.com/geluso/time-attack-password-demo>
 
+<script src="//repl.it/embed/FBt4/0.js"></script>
+
 ### Common Postgres / Sequelize Mistakes
 
 Watch out. When you run the `sequelize model:create` command to create a model
