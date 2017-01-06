@@ -1,10 +1,85 @@
 # Code Snippets From Lecture
 
-# Merge Two Sorted Arrays
+## Testing Models and Using Istanbul for Code Coverage
+
+```
+npm install -g istanbul
+istanbul cover _mocha -- -R nyan
+open coverage/lcov-report/index.html
+```
+
+```js
+var expect = require('chai').expect;
+var db = require('../models');
+
+before(function(done) {
+  db.sequelize.sync({ force: true }).then(function() {
+    done();
+  });
+});
+
+describe('User Model', function() {
+  describe('Creating new users', function() {
+    it('should be able to create new users', function(done) {
+      db.user.findOrCreate({
+        where: { email: 'user@gmail.com' },
+        defaults: {
+          name: 'User Userton',
+          password: 'regularoldpassword'
+        }
+      }).spread(function(user, created) {
+        expect(created).to.equal(true);
+        expect(user.email).to.equal('user@gmail.com');
+        expect(user.name).to.equal('User Userton');
+        done();
+      });
+    });
+
+    it('should reject invalid emails', function(done) {
+      db.user.findOrCreate({
+        where: { email: 'nopenopenope' },
+        defaults: {
+          name: 'User Userton',
+          password: 'regularoldpassword'
+        }
+      }).spread(function(user, created) {
+        expect(true).to.equal(false);
+      }).catch(function(error) {
+        expect(error.message).to.equal('Validation error: Invalid email address');
+        done();
+      });
+    });
+
+    it('should prevent duplicate accounts from being created', function(done) {
+      db.user.findOrCreate({
+        where: { email: 'dupe@dupe.com' },
+        defaults: {
+          name: 'dupe',
+          password: 'dupedupe'
+        }
+      }).spread(function(user, created) {
+        expect(created).to.equal(true);
+        db.user.findOrCreate({
+          where: { email: 'dupe@dupe.com' },
+          defaults: {
+            name: 'dupe',
+            password: 'dupedupe'
+          }
+        }).spread(function(user, created) {
+          expect(created).to.equal(false);
+          done();
+        });
+      });
+    });
+  });
+});
+```
+
+## Merge Two Sorted Arrays
 
 <https://repl.it/FCY0/67>
 
-# Security Vulnerabilities Based On Measuring Time
+## Security Vulnerabilities Based On Measuring Time
 Here's a function that checks whether two passwords are identical. It compares
 an actual password to a login attempt character by character. There's a problem!
 This function returns false too soon. A malicious user can time how long it takes
