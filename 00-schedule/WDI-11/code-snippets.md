@@ -1,9 +1,36 @@
 # Code Snippets From Lecture
 
+# Security Vulnerabilities Based On Measuring Time
+Here's a function that checks whether two passwords are identical. It compares
+an actual password to a login attempt character by character. There's a problem!
+This function returns false too soon. A malicious user can time how long it takes
+to run this function and detect how far along the function got before it returned
+true or false. By running the function several times with different input a user
+can determine how much of their password was correct. The longer the function takes
+to run, the more correct the first letters in the password were, because the function
+took more time to check more letters in the attempt.
+
+See the attached GitHub repo to check out the code and run the experiment yourself.
+
+```
+function passwordCheck(attempt) {
+  var password = "SUPERSECRET";
+  for (var i = 0; i < password.length && i < attempt.length; i++) {
+    if (password[i] !== attempt[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+Repl.it: <https://repl.it/FBt4/0>
+GitHub: <https://github.com/geluso/time-attack-password-demo>
+
 ### Common Postgres / Sequelize Mistakes
 
 Watch out. When you run the `sequelize model:create` command to create a model
-you must provide the command with a singular 
+you must provide the command with a singular
 
 If you're trying to create something to keep track of Users for a site then
 sequelize will make two things:
@@ -43,24 +70,24 @@ var data = '{"page_loads":49,"students":11}';
 // of miniJSON defined above, and it returns a JavaScript object.
 function parseMiniJSON(json) {
   var obj = {};
-  
+
   // snip off first and last curly braces.
   json = json.substr(1, json.length - 2);
-  
+
   var keyValuePairs = json.split(',');
   for (var i = 0; i < keyValuePairs.length; i++) {
     var key = keyValuePairs[i].split(":")[0];
     var val = keyValuePairs[i].split(":")[1];
-    
+
     // snip off first and last double-qoutes
     key = key.substr(1, key.length - 2);
-    
+
     // convert val to actual integer.
     val = parseInt(val, 10);
-    
+
     obj[key] = val;
   }
-  
+
   return obj;
 }
 
