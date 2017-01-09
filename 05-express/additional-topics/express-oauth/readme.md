@@ -48,7 +48,7 @@ To get started we need to go to the Facebook developer portal and create an app 
 
 * Add the **Facebook Login** product
   * Enable **Client OAuth Login**
-  * Add `http://localhost:3000/auth/callback/facebook` to **Valid OAuth redirect URIs**
+  * Add `http://localhost:3000/auth/facebook/callback` to **Valid OAuth redirect URIs**
 
 Once you get signed up, add your app id and secret to your `.env` file. We'll also add a variable for our site URL, which will be used in the Passport configuration.
 
