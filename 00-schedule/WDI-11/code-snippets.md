@@ -1,9 +1,117 @@
 # Code Snippets From Lecture
 
+## Testing Models and Using Istanbul for Code Coverage
+
+```
+npm install -g istanbul
+istanbul cover _mocha -- -R nyan
+open coverage/lcov-report/index.html
+```
+
+```js
+var expect = require('chai').expect;
+var db = require('../models');
+
+before(function(done) {
+  db.sequelize.sync({ force: true }).then(function() {
+    done();
+  });
+});
+
+describe('User Model', function() {
+  describe('Creating new users', function() {
+    it('should be able to create new users', function(done) {
+      db.user.findOrCreate({
+        where: { email: 'user@gmail.com' },
+        defaults: {
+          name: 'User Userton',
+          password: 'regularoldpassword'
+        }
+      }).spread(function(user, created) {
+        expect(created).to.equal(true);
+        expect(user.email).to.equal('user@gmail.com');
+        expect(user.name).to.equal('User Userton');
+        done();
+      });
+    });
+
+    it('should reject invalid emails', function(done) {
+      db.user.findOrCreate({
+        where: { email: 'nopenopenope' },
+        defaults: {
+          name: 'User Userton',
+          password: 'regularoldpassword'
+        }
+      }).spread(function(user, created) {
+        expect(true).to.equal(false);
+      }).catch(function(error) {
+        expect(error.message).to.equal('Validation error: Invalid email address');
+        done();
+      });
+    });
+
+    it('should prevent duplicate accounts from being created', function(done) {
+      db.user.findOrCreate({
+        where: { email: 'dupe@dupe.com' },
+        defaults: {
+          name: 'dupe',
+          password: 'dupedupe'
+        }
+      }).spread(function(user, created) {
+        expect(created).to.equal(true);
+        db.user.findOrCreate({
+          where: { email: 'dupe@dupe.com' },
+          defaults: {
+            name: 'dupe',
+            password: 'dupedupe'
+          }
+        }).spread(function(user, created) {
+          expect(created).to.equal(false);
+          done();
+        });
+      });
+    });
+  });
+});
+```
+
+## Merge Two Sorted Arrays
+
+<https://repl.it/FCY0/67>
+
+## Security Vulnerabilities Based On Measuring Time
+Here's a function that checks whether two passwords are identical. It compares
+an actual password to a login attempt character by character. There's a problem!
+This function returns false too soon. A malicious user can time how long it takes
+to run this function and detect how far along the function got before it returned
+true or false. By running the function several times with different input a user
+can determine how much of their password was correct. The longer the function takes
+to run, the more correct the first letters in the password were, because the function
+took more time to check more letters in the attempt.
+
+See the attached GitHub repo to check out the code and run the experiment yourself.
+
+```
+function passwordCheck(attempt) {
+  var password = "SUPERSECRET";
+  for (var i = 0; i < password.length && i < attempt.length; i++) {
+    if (password[i] !== attempt[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+```
+Repl.it: <https://repl.it/FBt4/0>
+GitHub: <https://github.com/geluso/time-attack-password-demo>
+
+<script src="//repl.it/embed/FBt4/0.js"></script>
+
 ### Common Postgres / Sequelize Mistakes
 
 Watch out. When you run the `sequelize model:create` command to create a model
-you must provide the command with a singular 
+you must provide the command with a singular
 
 If you're trying to create something to keep track of Users for a site then
 sequelize will make two things:
@@ -43,24 +151,24 @@ var data = '{"page_loads":49,"students":11}';
 // of miniJSON defined above, and it returns a JavaScript object.
 function parseMiniJSON(json) {
   var obj = {};
-  
+
   // snip off first and last curly braces.
   json = json.substr(1, json.length - 2);
-  
+
   var keyValuePairs = json.split(',');
   for (var i = 0; i < keyValuePairs.length; i++) {
     var key = keyValuePairs[i].split(":")[0];
     var val = keyValuePairs[i].split(":")[1];
-    
+
     // snip off first and last double-qoutes
     key = key.substr(1, key.length - 2);
-    
+
     // convert val to actual integer.
     val = parseInt(val, 10);
-    
+
     obj[key] = val;
   }
-  
+
   return obj;
 }
 
