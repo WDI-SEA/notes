@@ -2,9 +2,9 @@
 
 ##Objectives
 
-* Understand different Node packages separately
 * Incorporate multiple packages into a working authentication setup
 * Use flash messages for one-time user notifications
+* Implement middleware to simplify and automate repetitive tasks
 
 ###Note
 

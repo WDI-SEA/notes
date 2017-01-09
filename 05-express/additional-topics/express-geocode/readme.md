@@ -2,7 +2,7 @@
 
 ## Objectives
 
-* Understand the reversable process of geocoding.
+* Describe the reversable process of geocoding.
 * Utilize geocoding with a geocoder and Sequelize hooks
 * Use Google Maps to add geocoordinates to a map.
 
