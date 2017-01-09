@@ -3,7 +3,7 @@
 ## Objectives
 
 * Describe the importance of testing your code programmatically
-* Use describe and assertion functions to do basic testing
+* Use describe and assertion functions to test site functionality
 
 ## IMPORTANT NOTE
 

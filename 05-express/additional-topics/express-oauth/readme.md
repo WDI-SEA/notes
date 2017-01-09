@@ -3,6 +3,7 @@
 ##Objectives
 
 * Describe OAuth and its purpose
+* Explain how OAuth and Auth are different
 * Use Passport strategies for oAuth authorization
 
 ## What is OAuth?

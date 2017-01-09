@@ -1,9 +1,9 @@
 # Heroku Deployment with Node + Sequelize 
 
 ## Objectives
-* Understand the purpose of Heroku as a Platform as a Service (PaaS)
+* Describe what Platform as a Service (PaaS) is
 * Identify other methods of deployment, and their benefits and drawbacks
-* Take a working Node/Sequelize app and deploy it to a server
+* Take a working Node/Sequelize app and deploy it to Heroku
 * Make changes to an existing deployment
 * Utilize methods for debugging server errors
 
