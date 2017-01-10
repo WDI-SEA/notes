@@ -10,7 +10,6 @@
 |------------------------|--------------------------------------------------------|
 | Brian Bixby            | [brianbixby](http://github.com/brianbixby)             |
 | Rachel Chen            | [Skylocke](http://github.com/Skylocke)                 |
-| David Clough           | [dmclough](http://github.com/dmclough)                 |
 | Donnie Ellstrom        | [Crateros](http://github.com/Crateros)                 |
 | Congcong Li            | [weirui222](http://github.com/weirui222)               |
 | Tommy Lim              | [Tommy-Lim](http://github.com/Tommy-Lim)               |
