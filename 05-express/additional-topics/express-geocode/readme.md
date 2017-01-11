@@ -31,7 +31,7 @@ We'll use this code in a file called `mapTest.js`
 
 ```js
 var geocoder = require('geocoder');
-geocoder.geocode('Space Needle', function(err, data) {
+geocoder.geocode('Seattle, WA', function(err, data) {
   console.log(data.results[0].geometry.location);
 });
 ```
