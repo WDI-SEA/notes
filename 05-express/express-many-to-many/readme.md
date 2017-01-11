@@ -62,6 +62,7 @@ Secondly, we must attach a post to the tags, using some built in helpers.
 Some ORM has capabilities to do a bulk create on an object associations, but that kind of logic is not built in Sequelize.
 
 ```js
+// First, get a reference to a post.
 db.post.findOrCreate({
   where: {
     title: "taco",
@@ -69,10 +70,14 @@ db.post.findOrCreate({
     authorName: "Brian"
   }
 }).spread(function(post, created) {
+  // Second, get a reference to a tag.
   db.tag.findOrCreate({
     where: {name: "food"}
   }).spread(function(tag, created) {
-    console.log(tag.get());
+    // Finally, use the "addModel" method to attach one model to another model.
+    post.addTag(tag).then(function(tag) {
+      console.log(tag, "added to", post);
+    });
   });
 });
 ```
