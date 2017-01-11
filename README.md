@@ -260,6 +260,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Angular Authentication][315] | [Starter Code][316] |
 | [Custom Filters][319] | [Creating Filters][1313] |
 | [Custom Directives][320] | [Creating Directives][1314] |
+| [Angular Components][333] |                             |
 
 ###ReactJS
 
@@ -328,6 +329,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [330]: 10-react/react-router/readme.md
 [331]: https://github.com/WDI-SEA/react-omdb
 [332]: 10-react/react-animations/readme.md
+[333]: 07-angular/angular-components/readme.md
 
 [1300]: https://github.com/WDI-SEA/angular-calculator
 [1301]: https://github.com/WDI-SEA/fruits-and-veggies
