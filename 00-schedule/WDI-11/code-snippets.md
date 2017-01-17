@@ -1,5 +1,19 @@
 # Code Snippets From Lecture
 
+## Detecting Changes Between Two Objects
+
+Write a function called "detectChanges" that accepts two parameters:
+an object representing old key/value pairs, and a second object representing
+new values for the keys. Your function should print out a message like
+"key newValue was oldValue" for each key that changes. If there's no difference
+between the two objects then your function should print "no changes."
+
+You may assume that each object has an identical keyset. Keys are not added
+or removed between the old and new objects.
+
+Solution: <https://repl.it/FLii/1>
+
+
 ## Testing Models and Using Istanbul for Code Coverage
 
 ```
