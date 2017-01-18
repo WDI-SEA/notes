@@ -6,6 +6,13 @@ Please submit the link(s) to the repo (github repository) with your homework (e.
 To keep your assignments neat, each piece of homework should have its own repo.
 -->
 
+### Week 7
+| Day       | Topic                 | Lab                                                           |
+| ---       | ---                   | -----                                                         |
+| Monday    | No School             | No Homework                                                   |
+| Tuesday   | Angular               | [Fruits and Veggies](https://github.com/WDI-SEA/fruits-and-veggies) |
+| Wednesday | Angular               | [Route Those Views](https://github.com/WDI-SEA/angular-route-those-views) |
+
 ### Week 5
 | Day       | Topic             | Homework                                                                 |
 | ---       | ---               | -----                                                                    |
