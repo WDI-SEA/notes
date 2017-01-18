@@ -252,9 +252,7 @@
     * [Part 1: APIs](11-projects/mean-hackathon/api.md)
     * [Part 2: Angular](11-projects/mean-hackathon/angular.md)
   * [Portfolio](11-projects/portfolio/readme.md)
-* [Web Development Trends]
-  * [2016 JavaScript Stars](https://risingstars2016.js.org/)
-  * [2016 State of JavaScript](http://stateofjs.com/)
+* [Web Development Trends](14-trends/readme.md)
 * [Resources](12-resources/readme.md)
   * [APIs and Data](12-resources/apis.md)
   * [Tech Websites](12-resources/techsites.md)
