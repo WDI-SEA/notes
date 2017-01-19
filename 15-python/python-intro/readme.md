@@ -1,27 +1,73 @@
-#Ruby Crash Course
+#Python Crash Course
 
 ##Objectives
 
-* Describe the history of the Ruby language
-* Identify fundamentals and concepts of the Ruby langauge
-* Utilize different primitive types, control structures, and methods in Ruby
+* Describe the history of the Python language
+* Identify fundamentals and concepts of the Python language
+* Utilize different primitive types, control structures, and methods in Python
+* Use the `python3` interactive shell
+* Write a program that responds to user input
 
-##Humble Origins
-Ruby is an object-oriented language suitable for writing day to day scripts as well as full-scale applications. Yukihiro Matsumoto, or "Matz", began work on Ruby back in 1993, because he wanted a language that made him productive while being fun to use. Initially popular in Japan, Ruby has been finding its way into the hearts of programmers all over the world.
+## Python History
+The Python programming language started in December 1989 as a hobby project
+for Dutch programmer Guido van Rossum. He was looking for a programming project
+to keep himself occupied during his Christmas break. It was first released in
+1991.
 
-* Ruby stylistically conforms to the **snake_case** convention
-* The [documentation](http://ruby-doc.org/) is fantastic
+Ten years later on October 16th 2000 Python 2.0 was introduced with many major
+new features and it started to gather a community dedicated to it's development.
 
-Further reading: [The Philosophy of Ruby](http://www.artima.com/intv/ruby.html)
+Python 3.0 was released on December 3rd 2008. Version 3.0 introduced many
+enhancements and unified more of the design of the language at the cost of
+making some old 2.0 code incompatible.
 
-###Yukihiro Matsumoto
-![Matz-san](http://image.gihyo.co.jp/assets/images/dev/serial/01/software_designers/0034/0034-01.JPG "Yukihiro Matsumoto")
+Python is a high-level interpreted programming language. "High level" means that
+programmers don't have to worry about things like managing memory, the langauge
+takes care of that for us. Programming languages are either *interpreted* or
+*compiled*. Compiled languages have to be run through a compiler that changes
+source code into compiled code before the program can be run. Interpreted
+languages are run on the fly. Interpreted languages are generally more playful
+and easier to experiment with because we can take small pieces of code, paste
+it into a console that interprets it and immediately evaluates it.
 
-## Why JavaScript, then Ruby?
+The bulk of JavaScript was built by one person in 10 days. JavaScript only runs
+in the browser.
 
-While Ruby is a general purpose language that can be used for many purposes, we'll be applying it to a web development framework called Rails. We learned JavaScript first because it's the only language that runs natively in browsers, and we'll be utilizing some JavaScript for our front-end code, while utilizing Ruby for our back-end code.
+Python has been built by a community of programmers over many
+years. Many people have put good thought into the design of the language. Python
+is a general purpose language that exists on your computer outside the browser.
+Python is built to handle a wide variety of tasks beyond web development. Python
+comes with a large standard library of functions that you can use to accomplish
+most any programming task you set out to do.
 
-You'll also find that while Ruby is a functional language, functions cannot be passed into other functions (functions are not first-class citizens). However, its object-oriented capabilities and clean syntax provide different strengths as a language. The widely used Rails framework also provides an opinionated development workflow, which can lead to faster development.
+The creator of Python, Guido van Rossum, still plays an active role in the
+development of the language. He has been given the title, "Benevolent Dictator
+for Life" by the Python community. He plays a central role in deciding the
+direction of Python.
+
+The Python community is continually developing the language and adding new
+features. One formal way the community drives development is through PEPs,
+Python Enhancement Proposals. These proposals are documented on <http://python.org>
+and you can read a full list of them here: <https://www.python.org/dev/peps/>.
+
+* Python stylistically conforms to the **snake_case** convention
+* The [documentation](http://python.org/) is fantastic
+
+### Guido van Rossum
+![Guido van Rossum](guido.jpg "Guido van Rossum")
+
+# Python Features and Syntax!
+JavaScript was probably your first programming language. Python is probably
+you're first look at a second programming language. Don't worry! Lots of things
+are the same! Most programming languages have things like comments, variables,
+numbers, stings, arrays, objects, functions, parameters, return values and
+classes. The difference between programming languages is they just decide to
+represent or implement these common things in different ways, or with different
+syntaxes. Although the syntax of Python is new you'll be able to reason about
+what's going on by thinking about how JavaScript does similar things.
+
+Here's the long list of how to get Python to do the things you already know how
+to do in JavaScript. Let's dive right into it.
 
 ## Comments
 
@@ -34,8 +80,8 @@ In JS, we use line and multiline comments.
 */
 ```
 
-In Ruby, multiline comments exist, but we generally use line comments with hashtags, for readability.
-```ruby
+In Python, multiline comments exist, but we generally use line comments with hashtags, for readability.
+```python
 # here is a line comment
 
 # here is a block
@@ -45,102 +91,161 @@ In Ruby, multiline comments exist, but we generally use line comments with hasht
 
 ## Variables
 
-Local variables start with a lowercase letter. No `var` necessary.
+Local variables start with a lowercase letter. No `var` necessary. Most Python
+programs choose to insert underscores between words instead of writing names in
+camelCase.
 
-```ruby
+```python
 my_variable = 5
-puts my_variable
-#=> 5
+print(my_variable)
 ```
-
-##Constants
-
-Mostly, we're able to change what a variable's holding if we so choose – constants are designed for the opposite. Constants are meant to be placeholders that never change.
-
-```ruby
-SOME_CONSTANT = 'donuts'
-#=> "donuts"
-
-SOME_CONSTANT = 'awesome'
-#=> warning: already initialized constant SOME_CONSTANT
-```
-
-Note that if we try to reassign a constant, the reassignment still succeeds! All the constant syntax does is throw an error on reassignment.
 
 ## Data Types
 
 ### Nothingness
-Just as Javascript uses undefined or null, ruby uses `nil`
+Just as Javascript uses undefined or null, Python uses `None`
 
-```ruby
-my_bank_account = nil
+```python
+my_bank_account = None
 ```
 
 ### Booleans
-A binary representation: either `true` or `false`
+A binary representation: either `True` or `False`. Capitalization matters here.
+you must write "True" and Python will not recognize "true."
 
-```ruby
-is_operating = true
-is_broken = false
+```python
+is_operating = True
+is_broken = False
 ```
 
 ### Numbers
-Datatypes used to represent a number
-* Fixnum: `23`
-* Bignum: `23238923859348534535`
-* Float: `23.23`
+There are several datatypes used to represent numbers:
+
+* int: `23`
+* float: `0.8947368421052632`
+* complex: `2+3j`
+
+Python does decimal division normally with `/` but you can force it
+to do integer division with `//`:
+```python
+15 / 5.0
+3.0
+15 / 5
+3.0
+
+15 / 6
+2.5
+15 // 6
+2
+```
+
+Complex numbers can be added to complex numbers:
+```python
+complex = 1+2j + 5 + 3j # evaluates to (6+5j)
+```
+
+Python is great at dealing with very large integers. Use `**` to
+calculate exponents. JavaScript will only approximate large numbers
+with Scientific Notation:
+
+```js
+// JavaScript
+Math.pow(2, 999)
+5.357543035931337e+300
+```
+
+```python
+# Python
+2 ** 999
+5357543035931336604742125245300009052807024058527668037218751941851755255624680612465991894078479290637973364587765734125935726428461570217992288787349287401967283887412115492710537302531185570938977091076523237491790970633699383779582771973038531457285598238843271083830214915826312193418602834034688
+```
 
 ### Strings
-A primative datatype used to represent a string of characters
+You can declare strings in Python just like in JavaScript:
 
-#### Methods
-```ruby
-.split
-.index
-.upcase
-.downcase
-.sub
-.gsub
-.capitalize
+```python
+card1 = "ace_of_spades"
+card2 = "king_of_hearts"
 ```
 
-#### Examples
-```ruby
-person = 'instructor'
+#### String Methods
+Python has some familiar String methods like `split`. Other String
+methods are under different names:
 
-person.split('')
-#=> ["i", "n", "s", "t", "r", "u", "c", "t", "o", "r"]
+```python
+"ace of spades".split(" ")
+['ace', 'of', 'spades']
 
-person.index('tr')
-#=> 3
+"abcde".split("")
 
-person.upcase
-#=> "INSTRUCTOR"
+"qqxzzz".index("x")
+2
 
-person.downcase
-#=> "instructor"
+"boo".upper()
+"BOO"
 
-person.sub('r', 'a')
-#=> "instauctor"
-# note that only the first character is replaced
+"WHY???".lower()
+"why???"
 
-person.gsub('r', 'a')
-#=> "instauctoa"
-# note that all character instances are replaced
-
-person.capitalize
-#=> "Instructor"
-
-person.reverse
-#=> "rotcurtsni"
-
-person.length
-#=> 10
+"then I went to the store I like".replace("I", "you")
+'then you went to the store you like'
 ```
 
-## Operators
+You can use the special `in` keyword to quickly find out if one string
+appears in another.
 
-```rb
+```python
+"eggs" in "green eggs and ham"
+True
+```
+
+Use the `len()` operator on a string to find it's length.
+
+```python
+len("Hawaii")
+6
+```
+
+## Ranges
+Python has a very cool syntax to select things inside a range. You can select a
+letter in a string a specific index. You can select letters between a start and
+and index. You can select letters counting backwards from the end using negative
+numbers. You can select every N letters by specifying a step size.
+
+* *str[index]* choose one letter at index
+* *str[-index]* choose letter at index counting backwards from the end.
+* *str[start:end]* get a range of letters from a start to end.
+* *str[start:end:step]* get a range of letters taking `step` sized steps between.
+* *str[:end]* omit the start index and grab letters from zero up to `end`.
+* *str[start:]* omit the end index and grab letters from `start` up to the end of the string.
+* *str[::-1]* reverses a string by going backwards with a step of -1 from start to end.
+
+```python
+# get the last letter
+"my code rulez"[-1]
+"z"
+
+"my code rulez"[3:7]
+"code"
+
+"my code rulez"[:2]
+"my"
+
+"my code rulez"[3:]
+"code rulez"
+
+"my code rulez"[::-1]
+"zelur edoc ym"
+
+# take every other letter
+"peiege eleaeteiene"[::2]
+'pig latin'
+```
+
+## Arithmetic Operators
+Python uses common operators for math.
+
+```python
 +
 -
 /
@@ -153,380 +258,228 @@ person.length
 *=
 /=
 **=
-
-==
-!=
-!
-||
-&&
 ```
 
-Note that Ruby has a `===` operator, but no `!==` operator. In fact, the operator means something different in Ruby. We'll touch on this when we get to ranges. You can use the `.equal?` function as an identity operator.
+## Logical Operators
+Python uses `==` for equality. It uses `!=` for "not equal to." It uses the literal
+words `not`, `or` and `and` instead of `!`, `||` and `&&` like JavaScript does.
 
-### Arrays
-An indexed arrangement of objects
+```
+==
+!=
+not
+or
+and
+```
+
+### Lists
+Python has arrays. Python calls it's arrays lists.
+
+Python lists can be indexed just like strings. Also, use the
+`len()` operator to find the length of a list. Python lists don't have a
+`.length` property on them.
+
+Python lists can be indexed just like Python strings. You can use negative indexes
+and select a range of values in the middle of the list.
 
 *several ways to create an array*
 
-```ruby
+```python
 arr = [1,2,3]
-#=> [1,2,3]
-arr1 = Array.new([4,5,6])
-#=> [4,5,6]
-arr2 = Array.new(3, true)
-#=> [true, true, true]
+[1,2,3]
+
+five_zeroes = [0] * 5
+[0, 0, 0, 0, 0]
+
+five_trues = [True] * 5
+[True, True, True, True, True]
+
+last_item = ["Washington", "Oregon", "California"][-1]
+"California"
+
+# generate a range from 1 to 10 and create list out of it.
+one_through_ten = list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
 #### Array Methods
 
-```ruby
-.sort
-.reverse
-.concat
-.length
-.push # (<<)
-.shuffle
-.shift
-.unshift
-.slice # (negative indicies or ranges, use ! to "splice")
-.first
-.last
-.delete
-.delete_at
-.inspect
+```python
+a = [1, 23, 12, 99, 82]
+a.sort()
+[1, 12, 23, 82, 99]
+
+# reverse the list
+a = a[::-1]
+[99, 82, 23, 12, 1]
+
+a.append(42)
+[99, 82, 23, 12, 1, 42]
+
+result = a.pop() # the first value is stored in the variable
+[82, 23, 12, 1, 42]
+
+# insert a value at a specific index
+a.insert(0, 123)
+[123, 82, 23, 12, 1, 42]
+
+a.insert(2, 66)
+[123, 82, 66, 23, 12, 1, 42]
+
+
+if 42 in a:
+  print("yup! it's in there.")
 ```
 
-#### Examples
+Fire up the interactive Python console on your terminal with `python3` or
+`ipython3` and pass list to the help function to read documentation about
+all of the methods on list.
 
-```ruby
-numbers = [4, 2, 3, 1]
-
-numbers.sort
-# => [1, 2, 3, 4]
-
-numbers.reverse
-# => [1, 3, 2, 4]
-
-numbers.concat([5, 6, 7])
-# => [4, 2, 3, 1, 5, 6, 7]
-
-numbers.length
-# => 7
-
-numbers.push(8)
-# => [4, 2, 3, 1, 5, 6, 7, 8]
-
-numbers << 9
-# => [4, 2, 3, 1, 5, 6, 7, 8, 9]
-
-numbers.shuffle
-# => output will vary
-
-numbers.shift
-# => 4
-numbers
-# => [2, 3, 1, 5, 6, 7, 8, 9]
-
-numbers.unshift(4)
-# => [4, 2, 3, 1, 5, 6, 7, 8, 9]
-
-numbers.slice(0, 2)
-# => [4, 2]
-numbers
-# => [4, 2, 3, 1, 5, 6, 7, 8, 9]
-
-numbers.slice!(0, 2)
-# => [4, 2]
-numbers
-# => [3, 1, 5, 6, 7, 8, 9]
-
-numbers.first
-# => 3
-
-numbers.last
-# => 9
-
-numbers << 'a'
-# => [3, 1, 5, 6, 7, 8, 9, "a"]
-numbers.delete('a')
-# => "a"
-numbers
-# => [3, 1, 5, 6, 7, 8, 9]
-
-numbers.delete_at(0)
-# => 3
-numbers
-# => [1, 5, 6, 7, 8, 9]
-```
-  
-### Ranges
-A set of values with a beginning and an end
-
-```ruby
-a_range = (1..10) # includes 10
-another_range = (1...10) # not including 10
-letters_range = ('a'..'z')
+```python
+help(list)
 ```
 
-*typecasting in action*
+### Dictionaries
+Python stores key-value pairs (like objects in JavaScript) in Dictionaries.
+The syntax is almost exactly like objects in JavaScript.
 
-```ruby
-another_range.to_a
-=> [1,2,3,4,5,6,7,8,9]
-```
+Anything can be used as a key. Strings are commonly used as keys. If the key is
+a string then you must surround the key in quotes when the dictionary is defined.
 
-*Using === to determine if an element is within a range or set*
-```ruby
-another_range === 3
-#=> true
-```
-
-###Symbols
-An immutable sequence of characters that represents data stored in a specific memory location. Symbols optimize memory and can help programs run faster when performing comparisons or lookups.
-
-```ruby
-country = :turkey
-food = :turkey
-
-country.object_id == food.object_id
-=> true
-
-country = 'turkey'
-food = 'turkey'
-
-country.object_id == food.object_id
-=> false
-```
-
-###Hashes
-A hash consists of unindexed key-value pairs. You may construct a hash in either of the following ways. Each will use symbols.
-
-```ruby
-dog = {
-  :name => 'Hamlet',
-  :breed => 'Pug',
-  :fav_food => 'pate'
-}
+```python
 cat = {
-  name: 'Simba',
-  breed: 'American Shorthair',
-  fav_food: 'Prosciutto'
+  "name": 'Gepetto',
+  "breed": 'American Shorthair',
+  "fav_food": 'Prosciutto'
 }
-dog[:name]
-=> 'Hamlet'
-cat[:fav_food]
-=> 'Prosciutto'
+
+cat["name"]
+'Hamlet'
+
+cat["fav_food"]
+'Prosciutto'
 ```
 
-###Mutator methods !
-Mutator methods will not just return a value, but change the object they are called on to that value. Adding ! to certain ruby methods will turn them into their mutator method counterparts.
+### Type Conversion
+You can turn one Python data type into another by passing it to type functions:
 
-*How to mutate an array*
+```python
+int("42")
+42
 
-```ruby
-arr = [7,4,5]
-arr.sort #not a mutator method
-# => [4,5,7]
-arr
-# => [7,4,5]
+str(42)
+"42"
 
-arr = [7,4,5]
-arr.sort! #the '!', aka a 'bang' will mutate the object
-# => [4,5,7]
-arr
-# => [4,5,7]
+float(42)
+42.0
+
+bool(42)
+True
+
+bool(0)
+False
+
+bool("foo")
+True
+
+bool("")
+False
 ```
 
-###Typecasting
-Typecasting is the act of altering an object's datatype
+## String Formatting
+Python has several convenient ways to format strings on the fly. You'll never
+have to bother with crazy string concatenation again. These are like small
+rendered templates.
 
-```ruby
-.to_i
-.to_s
-.to_a
-.to_f
+Place empty curly braces `{}` inside a string to refer to something that will
+be placed in the string later.
+
+```python
+template = "My name is {} and I like {}"
+template.format("Steve", "Cheese")
+'My name is Steve and I like Cheese'
 ```
 
-##Code blocks
-Sometimes called closures in other languages is a chunk of contained code. Use curly braces, `{ }` for single line blocks and `do ... end` for multiline blocks.
+The curly braces and the format function can refer to names for where values
+appear in the template, and what values are named.
 
-```ruby
-# count to 10
-10.times { puts "Hello" }
-
-x = 0
-until x > 10 do
-  puts x
-  x += 1
-end
-```
-
-##String Interpolation
-Allows one to inlcude a dynamic variable in a string. String interpolation can only be done on double-quoted strings.
-
-```ruby
-team = 'Mariners'
-puts "Go #{team}!"
-# => "Go Mariners!"
+```python
+my_message = "{state} was the {n}th state to join the union in {year}."
+my_message.format(year=1889, state="Washington State", n=42)
 ```
 
 ## Control flow
 
 * Conditionals
-```ruby
-if
-elsif
-else
-unless
+
+```python
+vip = True
+food_place = "busy"
+if (food_place == "full" and not vip):
+  print("Sorry, we have no room tonight.")
+elif (food_place == "busy" and not vip)
+  print("Please wait 10 minutes for a table.")
+else:
+  print("Welcome! Come sit down right away.")
 ```
 
 * Loops
 
-```ruby
-until
-while
-times
-for
+```python
+n = 0
+while n < 10:
+  n++
 ```
 
-* Enumerables (similar to iterators)
-
-```ruby
-each
-each_char # for strings
-each_index
-map
-select
-reduce
-```
-
-### Examples
-
-#### If/Else
-```ruby
-course = "wdi"
-if course == "uxdi"
-  puts "Hello, User Experience Designer!"
-elsif course == "fewd"
-  puts "Hello, Front-End Developer"
-elsif course == "wdi"
-  puts "Hello, Immersed Student"
-else
-  puts "Who are you?"
-end
-```
-
-#### Inline conditional
-
-```ruby
-if heroic
-  do_something_heroic
-end
-
-# is the same as
-do_something_heroic if heroic == true
-
-# is the same as
-do_something_heroic if heroic
-```
-
-#### Loops
-```ruby
-i = 0
-while i < 5 do
-  puts "i is " + i.to_s
-  i += 1
-end
-
-# is the same as
-i = 0
-until i == 5 do
-  puts "i is " + i.to_s
-  i += 1
-end
-
-# is the same as
-5.times do |i|
-  puts "i is #{i}"
-end
-
-# is the same as
-for i in (0...5) do
-  puts "i is " + i.to_s
-end
-
-
-# Will print out:
-# >i is 0
-# >i is 1
-# >i is 2
-# >i is 3
-# >i is 4
+```python
+for i in range(0, 10):
+  if i % 2 == 0:
+    print("{} is even".format(i))
+  if i % 2 == 1:
+    print("{} is odd".format(i))
 ```
 
 #### Iterating through Arrays
-```ruby
+Python for loops always act on iterators. This means they always automatically
+pull things out of a sequence and loop through those things one by one. Python
+never uses a for loop where it increments a value like `i` manually.
+
+If you want to have fine-grain control over what's happening to i, and you don't
+want to just step through everything in a sequence one by one, then you're probably
+better off using a while loop.
+
+```python
 foods = ["carrots", "kale", "beets"]
-foods.each do |vegetable|
-  puts "i like #{vegetable}"
-end
-
-# is the same as
-for veg in ["carrots", "kale", "beets"] do
-  puts "i like #{veg}"
-end
-
-# printing out indices
-foods.each_with_index do |vegetable, i|
-  puts "i like #{vegetable}, #{i}"
-end
-
-# Will _each_ print out:
-# >i like carrots
-# >i like kale
-# >i like beets
+for food in foods:
+  print("I like", food, i)
 ```
 
-#### Enumerables
+If you want access to the current index of each item then you need to pass your
+list through a function called enumerate. Enumerate takes items out of an
+iterator one by one and returns a `tuple` of the index of the item and the item
+like `(index, item)`.
 
-```ruby
-foods = ['carrots', 'kale', 'beets']
-
-# map (similar to JS map)
-foods.map do |food|
-  food * 2
-end
-# => ["carrotscarrots", "kalekale", "beetsbeets"]
-
-
-# select (similar to JS filter)
-foods.select do |food|
-  ['carrots', 'kale'].include?(food)
-end
-# => ["carrots", "kale"]
-
-# reduce (similar to JS reduce)
-numbers = [1, 2, 3, 4]
-numbers.inject do |a, b|
-  a + b
-end
-# => 10
-
-# reduce with a starting value
-numbers.reduce(10) do |a, b|
-  a + b
-end
-
-# reduce applying an operation/function via a symbol
-numbers.reduce(:+)
+```python
+print("My favorite foods:")
+foods = ["carrots", "kale", "beets"]
+for i, food in enumerate(foods):
+  print("{}. {}".format(i, food))
 ```
 
-#### Iterating through Hashes
-```ruby
-car = {wheels: 4, doors: 2, seats: 5}
-car.each do |key, num|
-  puts "my car has #{num} #{key}"
-end
+```
+My favorite foods:
+1. carrots
+2. kale
+3. beets
+```
+
+#### Iterating through Dictionaries
+For loops will automatically iterate over the keys in a dictionary:
+
+```python
+car = {"wheels": 4, "doors": 2, "seats": 5}
+for key in car:
+  print("my car has {num} {thing}".format(thing=key, num=car[key]))
 
 # Will print out:
 # my car has 4 wheels
@@ -544,121 +497,115 @@ end
 * used as values (functional programming)
 * require explicit return
 * all `params` are optional
+* no default values for optional params
+* functions can be used before they're declared
 
-### In Ruby
+### In Python
 
-* uses `def`
-* does not capture scope
-* not used as values
-* implicitly returns last evaluation
-* optional parameters must be specified
+* uses `def foo(param1, param2, city="Seattle"):`
+* may provide default values for optional parameters
+* may use one return statement to return more than one variable
+* functions must be declared before they're used
 
 #### Examples
-```ruby
-def say_hello
-  puts "Hello, World!"
-end
+```python
+def say_hello():
+  print("Hello, World!")
 
 say_hello()
-
-# is the same as
-
-def say_hello
-  puts "Hello, World!"
-end
-
-# note missing parentheses
-say_hello
 ```
 
-In Ruby, leaving the `()` off of a function call is acceptable. Since functions can't be passed as values (i.e., aren't first-class), Ruby knows that we mean to call the function, so it calls it.
-
 #### Parameters (Arguments)
-```ruby
-def say_hello(friend)
-  puts "Hello, #{friend}!"
+```python
+def say_hello(friend="Tim"):
+  print("Hello, {}!".format(friend))
 end
 
+# Any value passed to the function will be used.
+# If no value is passed for a parameter Python uses the default value
+# defined in the function.
+say_hello("Ronald")
 say_hello("Tim")
-
-# is the same as
-def say_hello(friend)
-  puts "Hello, #{friend}!"
-end
-
-# note the lack of parentheses
-say_hello "Tim"
-
-# is the same as
-def say_hello(friend='Tim')
-  puts "Hello, #{friend}!"
-end
-
-# note that there are no arguments
-say_hello
+say_hello()
 ```
 
 #### Return Values
-```ruby
-def add(num1, num2)
+```python
+def add(num1, num2):
   return num1 + num2
 end
 
-sum = add(2, 3)
-puts "2 + 3 = #{sum}"
+total = add(2, 3)
+print("2 + 3 =", total)
+```
+#### Tuples and Multiple Return Values
+Python has a datatype called a `tuple` which groups "multuple" things together.
+A tuple is a collection of multiple values wrapped in parentheses. Tuples are
+not lists. List support more operations than tuples. Tuples are immutable. Once
+one is made it never changes. You can't add or remove things from a tuple.
 
-# is the same as
-def add(num1, num2)
-  # note the lack of explicit return
-  num1 + num2
-end
+Python will automatically unpack tuples into variables if the number of variables
+on the left side of an equals sign is equal to the number of variables on the
+right hand side.
 
-sum = add(2, 3)
-puts "2 + 3 = #{sum}"
+```python
+tuple = ("Fireman", "Fire Department")
+job_title, office = tuple
 ```
 
-Ruby will automatically return the value of the last evaluated expression. This is called having "implicit returns". You are free to have an explicit return statement, but you don't have to.
+Python uses tuples to return multiple values in one return statement. Here's our
+own function called `divide_mod()` that allows us to calculate the division of
+two numbers as well as their modulus all at once!
+
+```python
+def divide_mod(numerator, denominator):
+  division = numerator // denominator
+  mod = numerator % denominator
+  return (division, mod)
+
+students = 11
+group_size = 4
+num_groups, left_over = divide_mod(students, group_size)
+msg1 = "{n} students can be divided into {m} groups of {size}"
+msg2 = "with {j} students left over."
+
+msg1 = msg1.format(n=students, m=num_groups, size=group_size)
+msg2 = msg2.format(j=left_over)
+
+print(msg1)
+print(msg2)
+```
+
+```
+11 students can be divided into 2 groups of 4
+with 3 students left over.
+```
 
 ### Input / Output
+You've already seen how `print` will output information to the screen. What if
+e want to accept user input? Let's try `input()`. Input takes a parameter where
+we can define a message to be printed as a prompt for the input:
 
-You've already seen how `puts` will output information to the screen. What if we want to accept user input? Let's try `gets`.
+```python
+def gather_input():
+  you = input("Enter your name: ")
+  friend = input("Enter a friend's name: ")
+  print("Hello, {}. {} says hi.".format(you, friend))
 
-```ruby
-puts "Enter your name:"
-you = gets
-
-puts "Enter a friend's name:"
-friend = gets
-
-puts "Hello, #{friend}. #{you} says hi."
+gather_input()
 
 # Outputs
-# Enter your name:
-# Tim
-# Enter a friend's name:
-# Bob
-# Hello, Bob
-# . Tim
-#  says hi.
+# Enter your name: Tim
+# Enter a friend's name: Bob
+# Hello, Bob. Tim says hi.
 ```
 
-That almost works as we want, but `gets` is reading in the newline
-character from when we pressed the Enter key. Generally, when reading user input we want to `chomp` the data. (See http://www.ruby-doc.org/docs/Tutorial/part_02/user_input.html)
+# Now You're Hacking!
+That's a quick introduction to only some of the things Python has to offer.
+You now have enough knowledge about Python's basic data types, functions, lists,
+dictionaries, control flow statements to try writing some programs of our own.
 
-```ruby
-puts "Enter your name:"
-you = gets.chomp
-
-puts "Enter a friend's name:"
-friend = gets.chomp
-
-puts "Hello, #{friend}. #{you} says hi."
-
-# Enter your name:
-# Tim
-# Enter a friend's name:
-# Frank
-# Hello, Frank. Tim says hi.
-```
-
-Much better. Now the unnecessary newlines are removed, thanks to `chomp`.
+Try to write a program that prompts the user for the current temperature, and
+asks them whether they've entered a Celsius or Fahrenheit temperature. Have the
+program convert their temperature from the units they provided into the other
+units.
