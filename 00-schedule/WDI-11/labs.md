@@ -7,7 +7,8 @@
 | Tuesday   | Angular               | [Ng Roulette](https://github.com/WDI-SEA/angular-ng-roulette) |
 | Tuesday   | Angular               | [Calculator](https://github.com/WDI-SEA/angular-calculator) |
 | Wednesday | Angular               | [Guessing Game](https://github.com/WDI-SEA/angular-guessing-game) |
-| Wednesday | Angular               | [OMDB Search](https://github.com/WDI-SEA/angular-omdb-http) |
+| Wednesday | Angular $http         | [OMDB Search](https://github.com/WDI-SEA/angular-omdb-http) |
+| Wednesday | Angular Routing       | [Routing Example](https://github.com/WDI-SEA/angular-routing-example) |
 
 ### Week 5
 | Day       | Topic                 | Lab                                                           |
