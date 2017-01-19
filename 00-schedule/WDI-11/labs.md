@@ -9,6 +9,7 @@
 | Wednesday | Angular               | [Guessing Game](https://github.com/WDI-SEA/angular-guessing-game) |
 | Wednesday | Angular $http         | [OMDB Search](https://github.com/WDI-SEA/angular-omdb-http) |
 | Wednesday | Angular Routing       | [Routing Example](https://github.com/WDI-SEA/angular-routing-example) |
+| Thursday  | Angular Services      | [Star Wars Service Example](https://github.com/WDI-SEA/angular-service-example) |
 
 ### Week 5
 | Day       | Topic                 | Lab                                                           |
