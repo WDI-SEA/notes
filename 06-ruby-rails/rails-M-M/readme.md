@@ -3,7 +3,7 @@
 ##Objectives
 
 * Implement many to many relationships through models in Rails
-* Understand the model ordering opinion used by Rails
+* Describe the model ordering opinion used by Rails
 * Use the `collection_check_boxes` form helper to display a collection of associated items
 
 Today we'll add rangers to the national park app using a many to many relationship.

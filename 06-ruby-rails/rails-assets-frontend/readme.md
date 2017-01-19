@@ -3,7 +3,7 @@
 ##Objectives
 
 * Incorporate JavaScript, CSS, SCSS, images, and other static files into a Rails application
-* Understand the Asset Pipeline
+* Describe the Asset Pipeline in laymans' terms
 * Utilize helper methods/tags for including static resources
 * Use `gon` to pass data to the front-end
 

@@ -2,7 +2,8 @@
 
 ##Objectives
 
-* Understand the purpose of polymorphic associations
+* Define polymorphism (in general)
+* Describe the purpose of polymorphic associations
 * Use the Rails model generator to generate a polymorphic model
 * Implement polymorphic associations
 

@@ -1,15 +1,15 @@
 # Intro to Classes
 
 ##Objectives
-* Understand difference between objects and classes
-* Understand how objects are referenced
-* Understand getters and setters
-* Understand `attr_writer`, `attr_reader`, `attr_accessor`
-* Understand instance variables and instance methods
-* Understand class variables and class methods
+* Describe difference between objects and classes
+* Demonstrate how objects are referenced
+* Use getters and setters
+* Describe the uses of `attr_writer`, `attr_reader`, `attr_accessor`
+* Define instance variables and instance methods
+* Define class variables and class methods
 * Utilize the `self` keyword
-* Understand `Private`, and `Public` methods
-* Understand method chaining in a class
+* Explain the difference between `Private` and `Public` methods
+* Describe method chaining in a class
 
 ## Class Definition of a person
 
