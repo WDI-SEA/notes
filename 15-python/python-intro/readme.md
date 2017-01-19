@@ -55,6 +55,7 @@ and you can read a full list of them here: <https://www.python.org/dev/peps/>.
 
 ### Guido van Rossum
 ![Guido van Rossum](guido.jpg "Guido van Rossum")
+Creator, and Benevolent Dictator For Life
 
 # Python Features and Syntax!
 JavaScript was probably your first programming language. Python is probably
