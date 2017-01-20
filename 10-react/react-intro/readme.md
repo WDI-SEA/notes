@@ -2,8 +2,8 @@
 
 ##Objectives
 
-* Understand the concepts of React components, props, and state
-* Understand the concepts of the virtual DOM and JSX
+* Describe the concepts of React components, props, and state
+* Explain the concepts of the virtual DOM and JSX
 * Compare and contrast ReactJS to AngularJS
 * Create your own React components
 
