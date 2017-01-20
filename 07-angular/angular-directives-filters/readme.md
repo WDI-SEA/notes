@@ -6,7 +6,7 @@
 * Use ng-if & ng-hide/ng-show to hide & show elements
 * Use ng-repeat to iterate over data
 * Use ng-submit to submit forms
-* Understand the concept of filters and how they manipulate data
+* Explain the what filters are and how they manipulate data
 
 ##Directives
 

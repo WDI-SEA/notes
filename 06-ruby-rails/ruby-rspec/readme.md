@@ -2,8 +2,9 @@
 
 ##Objectives
 
-* Review the concepts behind TDD
-* Setup rspec for running tests in Ruby
+* Name some of the concepts behind TDD
+* Describe how TDD fits into the Agile Methodology
+* Set up rspec for running tests in Ruby
 * Use a testing suite in the context of TDD
 
 ## Test-Driven Development (TDD)

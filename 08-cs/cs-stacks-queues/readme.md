@@ -2,8 +2,8 @@
 
 ##Objectives
 
-* Understand arrays in the context of lower-level languages (C++, Java)
-* Understand the concepts of LIFO and FIFO and how they apply to stacks and queues
+* Describe arrays in the context of lower-level languages (C++, Java)
+* Memorize the acronyms LIFO and FIFO and how they apply to stacks and queues
 * Use data structures to implement stacks and queues
 
 ##Memory and Arrays

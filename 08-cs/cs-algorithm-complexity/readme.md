@@ -3,7 +3,7 @@
 ##Objectives
 
 * Explain what algorithms are
-* Understand the need to analyze algorithms and their complexity in terms of time and space
+* Describe why we need to analyze algorithms and their complexity in terms of time and space
 * Explain why asymptotic behavior is observed
 * Use Big-O to explain the complexity of different algorithms
 

@@ -2,7 +2,7 @@
 
 ## Objectives
 
-* Review the concepts behind using OAuth
+* List the concepts behind using OAuth
 * Use a third-party gem in order to implement authentication strategies
 * Use environment variables to hide sensitive data when implementing OmniAuth strategies
 

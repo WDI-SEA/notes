@@ -2,7 +2,7 @@
 
 ##Objectives
 
-* Review the concept of React components
+* Describe the concept of React components
 * Identify situations where a view router is needed
 * Use `react-router` to create different pages in React
 * Configure `react-router` to utilize route parameters

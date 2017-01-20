@@ -3,7 +3,7 @@
 ##Objectives
 
 * Use the ngAnimate module to add animations to an application.
-* Understand the properties that ngAnimate adds to directives.
+* Describe the properties that ngAnimate adds to directives.
 
 ##Getting started
 
