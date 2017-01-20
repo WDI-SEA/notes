@@ -2,9 +2,9 @@
 
 ##Objectives
 
-* Understand the concepts behind Action Mailers
+* Describe in details the concepts behind Action Mailers
 * Identify situations where emails will need to be sent by your application
-* Use ActionMailers to implement a password reset system
+* Use Action Mailers to implement a password reset system
 
 ##Getting Started
 

@@ -1,7 +1,7 @@
 # API Authentication with Express - Tokens
 
 ### Objectives
-- Understand why authentication tokens are commonly used when interacting with APIs
+- Describe why authentication tokens are commonly used when interacting with APIs
 - Add a token strategy to an application
 - Authenticate a user based on their token
 

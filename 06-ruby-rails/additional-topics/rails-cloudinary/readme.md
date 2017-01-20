@@ -2,7 +2,8 @@
 
 ##Objectives
 
-* Use Cloudinary to upload images in Rails.
+* Discuss the benefits and drawbacks of using cloud-based storage
+* Use Cloudinary to upload images in Rails
 
 ##Basic file uploads
 

@@ -2,7 +2,7 @@
 
 ##Objectives
 
-* Understand the purpose and reasoning for using Angular as a frontend framework
+* Describe the purpose and reasoning for using Angular as a frontend framework
 * Create an Angular app as a self-container module
 * Bootstrap an Angular module to a HTML page
 * Utilize and load controllers
