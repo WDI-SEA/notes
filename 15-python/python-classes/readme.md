@@ -72,7 +72,7 @@ assume the `capacity` and `amount` units are all in ounces.
 
 ```python
 steves_cup = CoffeeCup(12)  # a fancy latte.
-sean_cup = CoffeeCup(16)    # gas station drip.
+seans_cup = CoffeeCup(16)    # gas station drip.
 brandis_cup = CoffeeCup(2)  # a quick espresso.
 ```
 
@@ -215,12 +215,15 @@ We'll be able to write code that references `Point.ORIGIN` by itself.
 
 Change the `distance` method to accept a reference to a second Point as an
 optional parameter. The second point parameter should have a default value
-of `Point.ORIGIN`.
+of `None`. We will write an if statement to detect when p2 is `None` and
+set it to `Point.ORIGIN` instead.
+
+It's hard to reference the `Point` class in the class definition itself because
+it hasn't finished being created yet. We'll attach `ORIGIN` to the `Point`
+class after it's defined.
 
 ```python
 class Point():
-  ORIGIN = Point()
-  
   def __init__(self, x=0, y=0):
     self.x = x
     self.y = y
@@ -228,10 +231,15 @@ class Point():
   def __str__(self):
     return "({},{})".format(self.x, self.y)
   
-  def distance(self, p2=Point.ORIGIN):
+  def distance(self, p2=None):
+    if p2 is None:
+      p2 = Point.ORIGIN
     dx = self.x - p2.x
     dy = self.y - p2.y
     return (dx ** 2 + dy ** 2) ** .5
+
+# attach ORIGIN after the Point class is defined
+Point.ORIGIN = Point()
 ```
 
 ```python
