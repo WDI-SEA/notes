@@ -2,434 +2,259 @@
 
 ##Objectives
 * Understand difference between objects and classes
-* Understand how objects are referenced
-* Understand getters and setters
-* Understand `attr_writer`, `attr_reader`, `attr_accessor`
+* Understand how classes are defined
+* Understand how objects are initialized
 * Understand instance variables and instance methods
 * Understand class variables and class methods
 * Utilize the `self` keyword
-* Understand `Private`, and `Public` methods
 * Understand method chaining in a class
 
-## Class Definition of a person
-
-Let's create our first class.
-
-**person.rb**
-
-```ruby
-class Person
-
-end
-```
-
-This defines a **class** definition of a `Person`. The *class* keyword denotes the *begining* of a class definition.
-
-To create a new *instance* of our *class* we write the following:
-
-```ruby
-Person.new
-```
-
-A particular instance of a *class* is a called an **object**. In general, languages that use *objects* as a primary means of *data abstraction* are said to be **Object Oriented Programming** (OOP) languages.
-
-
-### Objects
-
-What is an **object** in ruby? Basically everything that isn't a keyword.
-
-However, this can cause you some headaches if you're not careful.
-
-Imagine we had the following
-
-```ruby
-arr1 = [1,2,3]
-arr2 = arr1
-arr1 << 4
-#=> [1,2,3,4]
-arr2
-#=> [1,2,3,4]
-```
-
-Wow, the second array completely changed. That's because `arr2` was a reference to `arr1`. Both variables represented the same **object**. The way around this is to copy the object.
-
-```ruby
-arr1 = [1,2,3]
-arr2 = Array.new(arr1)
-arr1 << 4
-#=> [1,2,3,4]
-arr2
-#=> [1,2,3]
-```
-
-### Initialize and instance variables
-
-In our class definition we can make use of an *initialize* method, which is run when a *new* instance of the class is created.
-
-```ruby
-class Person
-  def initialize
-    puts "A new person was created"
-  end
-end
-```
-
-
-We can also make use of **instance variables** that are defined for each particular object and are available throughout other *methods* in the object. These variables are prefixed by an *@* symbol, i.e. `@my_var`.
-
-```ruby
-class Person
-
-  def initialize(name)
-    @name = name
-  end
-
-  def greet
-    puts "Hello! My name is #{@name}."
-  end
-end
-```
-
-
-Now, when we create a new *Person* we are required to specify the `name` of the person.
-
-```ruby
-person = Person.new("John")
-person.greet
-
-# => Hello! My name is John.
-```
-
-### Getters and Setters
-
-Having created an *instance variable* in our object, we might want to *read* that *outside* our object. However, we have to define a method that will act as an **interface for reading** for this variable called a **Getter Method**.
-
-```ruby
-class Person
-
-  def initialize(name)
-    @name = name
-  end
-
-  def name
-    @name
-  end
-
-end
-```
-
-Now we can *read* or *get*  the *name* outside the object.
-
-```ruby
-person = Person.new("Jane")
-person.name
-
-# => "Jane"
-```
-
-Similarly, we may need to *change* or *set* an instance variable from outside the object, so we create a method called a **setter method**.
-
-```ruby
-class Person
-
-  def initialize(name)
-    @name = name
-  end
-
-  def name
-    @name
-  end
-
-  def name=(other)
-    @name = other
-  end
-end
-```
-
-We can now *get* and *set* the name of a person using the  methods we created for `@name`.
-
-```ruby
-person = Person.new("Samantha")
-person.name
-# => "Samantha"
-
-person.name = "Sam"
-person.name
-# => "Sam"
-```
-
-### Getters and Setters, the Ruby way
-
-In ruby, the practice of creating a *getter* method is so common there is a shorthand that can be used at the top of a class definition called `attr_reader`.
-
-```ruby
-class Person
-
-  attr_reader :name
-
-  def initailize(name)
-    @name = name
-  end
-
-  def name=(other)
-    @name = other
-  end
-end
-```
-
-
-Similarly, we can do the same with the *setter* method using `attr_writer`
-
-```ruby
-class Person
-  attr_reader :name
-  attr_writer :name
-
-  def initialize(name)
-    @name = name
-  end
-end
-```
-
-Moreover, we have a shorthand for telling our class to create both a *getter* and a *setter* method called *attr_accessor*.
-
-```ruby
-class Person
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-  end
-end
-```
-
-
-### Class and self
-
-We just created instance variables, which have different values depending on the object instance. Class variables share the same value across the entire class. Also, we don't need to create an instance in order to access class variables.
-
-Let's first create a variable associated with our class. Using the syntax `@@var_name` designates a class variable.
-
-```ruby
-class Person
-  attr_accessor :name
-  @@population = 0
-  @@zip_code = 98101 # downtown Seattle
-
-  def initialize(name)
-    @name = name
-    @@population += 1
-  end
+## Resources
+Fork or clone this repo to gain access to a complete working end-product of
+the examples in this lesson:
+
+<https://github.com/WDI-SEA/python-class-examples>
+
+# Classes
+Python is an object oriented language. Object oriented languages allow us to
+create things that act like physical objects in our day-to-day lives. Every day
+we interact with objects like chairs, beverages, and CDs. These objects have
+properties that define them, and they have things we can do with them.
+
+If I were to describe the properties that make up coffee I drink I would say
+each cup of coffee I drink has a `capacity`, a current `amount`. There's also
+things I an do with each cup of coffee I drink. I can `fill` my cup. I can
+`empty` my cup. I can `drink` some of my coffee. Python classes allow us to
+model the properties of my coffee and define how I can interact with my coffee.
+
+I'm not the only person who drinks coffee. A good class definition models what
+a cup of coffee is for everyone. Then, we can use the class definition to create
+**instances** of the class so I can my coffee, Sean can have his coffee and Brandi
+can have her Coffee. Each **instance** of the coffee class can have a different
+`capacity`, and keep track of different `amounts`. Although our coffees have
+different properties the properties are affected by actions like `fill`, `empty`,
+and `drink` similarly.
+
+Here's what a Coffee class would look like in Python:
+
+```python
+class CoffeeCup():
+  def __init__(self, capacity):
+    self.capacity = capacity
+    self.amount = 0
   
-  def self.population
-    @@population
-  end
+  def fill(self):
+    self.amount = self.capacity
   
-  def self.zip_code
-    @@zip_code
-  end
+  def empty(self):
+    self.amount = 0
   
-  def self.zip_code=(new_zip)
-    @@zip_code = new_zip
-  end
-end
+  def drink(self, amount):
+    self.amount -= amount
+    if (self.amount == 0):
+      self.amount = 0
 ```
 
-We have to create a method on the class to make the class variable accessible. Now we can access the value without creating any people.
+The `CoffeeCup` is a collection of variables and methods. The variables in
+this class are `self.capacity` and `self.amount`. The methods in this class
+are `fill`, `empty`, and `drink`. The `__init__` method is a special method
+Python executes when a new cup of coffee is created.
 
-```ruby
-puts "Population: #{Person.population}"
+The `self` keyword is similar to the `this` keyword in JavaScript. The `self`
+keyword allow each instance of a `CoffeeCup` to know what it's own capacity is
+and what it's own current amount is.
 
-batman = Person.new("Bruce Wayne")
-superman = Person.new("Clark Kent")
-Person.print_population
+Create instances of a class by calling `ClassName()`. This invokes the
+`__init__` method. You can pass parameters to it too, `ClassName(param1, param2)`.
 
-# we can access the population and zip code directly
-puts "Population: #{Person.population}"
-puts "Zip Code: #{Person.zip_code}"
+Here's how Steve, Sean and Brandi could each have their own cup of coffee. Let's
+assume the `capacity` and `amount` units are all in ounces.
 
-# no one should be allowed to redefine the population
-# there is no setter defined for population. this will crash.
-# Person.population = 8
-
-# however, the zip code can totally be updated!
-Person.zip_code = 98122 # capitol hill
-
-puts Person.print_population
+```python
+steves_cup = CoffeeCup(12)  # a fancy latte.
+sean_cup = CoffeeCup(16)    # gas station drip.
+brandis_cup = CoffeeCup(2)  # a quick espresso.
 ```
 
+Each of our cups start empty and have their own capacity. Let's fill the cups,
+have everyone take a 1 ounce drink, and print the amount left in each cup.
 
-If we create a few people, we see the following
+```python
+steves_cup.fill()
+seans_cup.fill()
+brandis_cup.fill()
 
-```ruby
-Person.new("John")
-Person.new("Jane")
-Person.population
-#=> 2
+steves_cup.drink(1)
+seans_cup.drink(1)
+brandis_cup.drink(1)
+
+print(steves_cup.amount, "ounces left")
+print(seans_cup.amount, "ounces left")
+print(brandis_cup.amount, "ounces left")
 ```
 
-What about class methods? We can also create a method that belongs to a class.
-```ruby
-class Person
-  attr_accessor :name
-  @@population = 0
+That's the basics of how to create and interact with objects in Python!
 
-  def initialize(name)
-    @name = name
-    @@population += 1
-  end
+## Exercise: Create Your Own Class
+Write a `BankAccount` class.
+* Bank accounts should be created with the `kind` of account (like "savings" or "checking").
+* Each account should keep track of it's current `balance`.
+* Each account should have access to a `deposit` and a `withdraw` method.
+* Each account should start with a `balance` set to zero.
+* return the amount withdrawn, for convenience
 
-  def self.print_population
-    puts "There are #{self.population} people"
-  end
-end
-```
+Create a checking account and a savings account. Withdraw money from the savings
+account and deposit that amount into the checking account.
 
-In most cases, inside an instance method, self refers to the object, but when used in the context of a method name, self refers to the *class* itself`.
+Bonus: start each account with an additional `overdraft_fees` property that
+starts at zero. If a call to `withdraw` ends with the `balance` below zero
+then `overdraft_fees` should be incremented by twenty.
 
-Also, note that `self` can be used in instance methods to refer to particular *object* in use, i.e. `self.var_name` instead of `@var_name`.
-
-
-### Private Methods
-
-If we create a class `Person` with a name attribute and use `attr_accessor` to create the getters and setters as follows
-
-```ruby
-class Person
-  attr_accessor :name
-
-  def initialize(name)
-    @name = name
-  end
-end
-```
-
-then anyone can read and access `Person#name`.
-
-```ruby
-person1 = Person.new("John")
-person1.name
-
-# => "John"
-```
-
-We can change this using the `private` keyword. Everything under the private keyword is private to outside users. Only the instance methods can use the getter and setter.
-
-```ruby
-class Person
-  def initialize(name)
-    @name = name
-  end
-
-  private
-
-  attr_accessor :name
-end
-```
-
-We can also add private methods by defining new methods below the `private` keyword
-
-```ruby
-class Person
-
-  def initialize(name)
-    @name = name
-  end
-
-  private
-
-  attr_accessor :name
+```python
+class BankAccount():
+  def __init__(self, kind):
+    self.kind = kind
+    self.balance = 0
+    self.overdraft_fees = 0
   
-  def make_call
-    puts "Calling friends"
-  end
-end
-```
-
-Note that we can create a **public** method that calls a **private method**, because we are within the class.
-
-```ruby
-class Person
-
-  def initialize(name)
-    @name = name
-  end
-
-  def call
-    make_call if name
-  end
-
-  private
+  def deposit(self, amount):
+    self.balance += amount
   
-  attr_accessor :name
+  def withdraw(self, amount):
+    self.amount -= amount
+    if (self.amount < 0):
+      self.overdraft_fees += 20
+    return amount
+```
+
+## Default Parameters
+Python allows us to provide default values for parameters in any function we
+provide. Let's write a `Point` class that has `x` and `y` variables. If no
+`x` and `y` values are provided when a `Point` is initialized `x` and `y`
+should both default to zero.
+
+Add a method called `distance` that calculates and returns the distance between
+the current point and the origin. Use the mathematical distance formula where
+the distance between a point and the origin is defined as the square root of
+(x*x + y*y).
+
+Use Python's exponent `**` operator to calculate square root. `9 ** .5 == 3.0`
+
+```
+p0 = Point()
+p2 = Point(3, 4)
+
+print(p0.distance())
+0.0
+
+print(p2.distance())
+5.0
+```
+
+## Printing Objects
+Ever tried to have Python print an object? It's nasty. If you try to print an
+object Python will print a representation of the object where you'll see what
+type of an object it is and it will show you a number representing something
+about where the object exists in memory, which we don't care about.
+
+```python
+print(p0)
+<__main__.Point object at 0x107335630>
+```
+
+We can write a special method `__str__` that Python will call when an
+object is printed or turned in to a string. Customizing this method in our
+classes makes our programs much easier to interact with.
+
+Notice that Python goes out of it's way to improve the readability of code.
+Any method that looks like `__init__` or `__str__` with underscores has a
+special purpose in the language. Python uses the underscores to make it
+immediately clear that *this is where the magic happens!*
+
+Let's define a `__str__` method in our `Point` class that will print out
+points like we're used to seeing points. `p0` in the example above should
+appear as "(0,0)" and `p2` in the example above should appear as "(3,4)".
+
+```python
+class Point():
+  def __init__(self, x=0, y=0):
+    self.x = x
+    self.y = y
   
-  def make_call
-    puts "Calling friends"
-  end
-end
+  def __str__(self):
+    return "({},{})".format(self.x, self.y)
+  
+  def distance(self):
+    return (self.x ** 2 + self.y ** 2) ** .5
 ```
 
-### Chainable methods
+Now we can create points and when we print those objects we see something
+pretty printed instead of the garbly-goop we saw before.
 
-What if I wanted to create a class that had **chainable** methods calling many methods in one line.
+```python
+p0 = Point()
+p2 = Point(3, 4)
 
-```ruby
-class Person
-  def initialize(name)
-    @name = name
-  end
+print(p0)
+(0,0)
 
-  def greet
-    puts "Hello I am #{@name}."
-    puts "What is your name?"
-    @other = gets.chomp
-    puts "Nice to meet you, #{@other}."
-  end
-
-  def thank
-    puts "Thank you for coming."
-  end
-
-  def farewell
-    puts "Farewell, #{@other}"
-  end
-end
+print(p2)
+(3,4)
 ```
 
+## Class Variables
+In our `CoffeeCup` example and the `BankAccount` example and in our `Point`
+example each class has variables attached to the `self` property that exist
+independently for each object that's created. We can also attach variables
+to the class itself so that there's one single thing that exists for an entire
+class. These are called **class variables**.
 
-Trying to do
+For the `Point` class we'll create a class variable to represent `ORIGIN`.
+Class variables are available even without creating any instances of a class.
+We'll be able to write code that references `Point.ORIGIN` by itself.
 
-```ruby
-person1 = Person.new("john")
-person1.greet.thank.farewell
+Change the `distance` method to accept a reference to a second Point as an
+optional parameter. The second point parameter should have a default value
+of `Point.ORIGIN`.
 
-#=> NoMethodError: undefined method `thank' for nil:NilClass
+```python
+class Point():
+  ORIGIN = Point()
+  
+  def __init__(self, x=0, y=0):
+    self.x = x
+    self.y = y
+  
+  def __str__(self):
+    return "({},{})".format(self.x, self.y)
+  
+  def distance(self, p2=Point.ORIGIN):
+    dx = self.x - p2.x
+    dy = self.y - p2.y
+    return (dx ** 2 + dy ** 2) ** .5
 ```
 
-to achieve this we have to return a reference to the object after each method
+```python
+# we can access ORIGIN through the Point class.
+print(Point.ORIGIN)
+(0,0)
 
-```ruby
-class Person
-  def initialize(name)
-    @name = name
-  end
+p1 = Point(3,4)
+p2 = Point(3,19)
 
-  def greet
-    puts "Hello I am #{@name}."
-    puts "What is your name?"
-    @other = gets.chomp
-    puts "Nice to meet you, #{@other}."
-    self
-  end
+# Distance defaults to calculating how far away a Point is from ORIGIN
+p1.distance()
+5.0
 
-  def thank
-    puts "Thank you for coming."
-    self
-  end
-
-  def farewell
-    puts "Farewell, #{@other}"
-    self
-  end
-end
+# Distance will calculate the distance from one point to another if a
+# a second Point is provided as a parameter.
+p1.distance(p2)
+15.0
 ```
+
+# Final Thoughts
+Classes are an excellent example of how the Python programming language has
+benefitted from thorough design and community development. JavaScript was first
+created in 10 days by one person. Creating classes in JavaScript is a total
+pain. JavaScript is only recently gaining full-fledged, easy-to-use
+Object Oriented programming features that Python has had for a long time.
