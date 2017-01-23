@@ -127,7 +127,7 @@ In `public/app/services.js`, let's create our service.
 * `saveToken`, `getToken`, and `removeToken` manipulate `localStorage`
 * `isLoggedIn` checks to see if a token exists
 * `currentUser` returns the entire payload of the JWT token, which should include the user
-  * `var payload = JSON.parse($window.atob(token.split('.')[1]));``
+  * `var payload = JSON.parse($window.atob(token.split('.')[1]));`
     * `JSON.parse` will parse the `localStorage` string as JSON
     * `.atob` will decode base-64 encoded content (which is what the JWT token is stored as)
     * Items in the token are period-delimited. `token.split('.')[1]` will return the payload (second item)
