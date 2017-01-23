@@ -39,6 +39,31 @@ First you need to link your machine to your Heroku account - a similar process t
 
 
 ## Before Deploying
+
+###Check Your Github Repo
+
+Do you notice a folder called "node_modules"? Or your .env file with your environment variables?
+
+Oops! That's not supposed to be there! node_modules and .env should never escape from your local machine. It's going to goof up our stuff and cause errors if we leave it in there when we deploy to Heroku, so let's get rid of them!
+
+* If you don't already have a .gitignore file, create it now in the top-level
+* Make sure node_modules folder is included in .gitignore. This ensures that once we delete the node_modules folder, git won't find it again.
+* Delete the node_modules folder in your local repo (don't worry - you can get it back by running "npm install")
+* You will need to make sure git knows to remove the node_modules folder from the repo. Use the following command:
+    **git rm -r node_modules**
+* Ensure that your .env file, (if you have one) is also NOT included in your Github repo.
+    * Repeat steps to remove from git with the git rm command
+    * Add this file to .gitignore so git doesn't find it again.
+* Commit and push these changes to your Github repo!
+* Last, let's run npm install to recreate that node_modules folder.
+* Try running your app with nodemon.
+    - Does it work? Great, you're all done!
+    - Do you get an error that looks like "xyz module is not found"? This is because originally, we forgot to include the --save flag when we originally npm installed it. Run the following command for each module you're missing:
+        **npm install xyz --save**
+
+TL;DR: Don't have node_modules in your repo, you'll have a bad time. 
+
+###Get a Heroku account!
 1. Make sure you have an account with heroku: https://www.heroku.com/
 
 2. Make sure you have installed the heroku toolbelt - [https://toolbelt.heroku.com/](https://toolbelt.heroku.com/)
@@ -89,7 +114,7 @@ This ensures that when we set the PORT config variable, Heroku will run on it in
 heroku apps:create sitename
 ```
 
-Where `sitename` is the name of your app. This will create a url like: `http://sitename.herokuapp.com`
+Where `sitename` is the name of your app. This will create a url like: `http://sitename.herokuapp.com` - you'll find that you have to come up with a completely unique name.
 
 * Commit and push all your data at this point (`git push`).
 
@@ -99,10 +124,13 @@ Where `sitename` is the name of your app. This will create a url like: `http://s
 git push heroku master
 ```
 
+(You can skip this step because it's a default setting)
 * In terminal after you deploy your app, type in `heroku ps:scale web=1`
   * this will scale a dyno up
 
 ## Connect a DB with Sequelize
+
+You may notice that while you have a valid URL and the site is deployed, your site likely does not work when you visit it. This is because Heroku is not yet aware of our database and model structure. Let's make it aware.
 
 * In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:hobby-dev`
 * Set your NODE_ENV variable to 'production' by running this command in terminal: `heroku config:set NODE_ENV='production'` 
@@ -136,6 +164,12 @@ git push heroku master
 
 * Try opening your app now, `heroku open`
 
+**NOTE:**
+You may notice that the data on your local machine does not travel up to Heroku. This is by design! Generally you're not going to want your development data to affect your production data! That said, there may be times when you want to seed data. Investigate the db:seed command of the [Sequelize CLI](https://github.com/sequelize/cli).
+
+You can view your brand new database by executing the `psql` command you know and love on Heroku. Do this by typing 
+    **heroku pg:psql**
+
 ##Heroku Envionment variables
 
 In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
@@ -144,6 +178,10 @@ In order to add environment variables to github. We will run a heroku command to
 ```
 heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
 ```
+
+##Something is broken?!?!?!?!
+
+Don't panic! Type **heroku logs** to see the error and info messages from the Heroku server! Find the error and Google it if the meaning isn't readily apparent!
 
 ##Review
 * App deployment
