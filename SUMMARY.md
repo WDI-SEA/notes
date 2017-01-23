@@ -230,6 +230,7 @@
   * [Intro to Python](15-python/python-intro/readme.md)
   * [Python Classes](15-python/python-classes/readme.md)
   * [Python Class Inheritance](15-python/python-inheritance/readme.md)
+  * [Intro to Flask](15-python/flask-intro/readme.md)
 * [Assorted Topics](09-other-topics/readme.md)
   * [Intro to WDI (Course Info)](09-other-topics/intro-wdi/readme.md)
   * [Being Successful in WDI](09-other-topics/success-in-wdi/readme.md)
