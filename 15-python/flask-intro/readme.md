@@ -256,3 +256,22 @@ Here's a summary of the Unix Philosophy:
 * Write programs that do one thing and do it well.
 * Write programs to work together.
 * Write programs to handle text streams, because that is a universal interface.
+
+# Microframework vs Monolithic Framework
+In contrast, we'll also learn about another Python web framework: Django.
+Django is a "monolithic" framework that involves itself in much more in the
+configuration and operation of a web server. Whereas Flask makes zero decisions
+for you and relies on developers importing lots of Third-party libraries, Django
+comes with LOTS of tools in it's box. Django uses it's own template system,
+has it's own Object Relation Model (ORM) that it uses to interact with databases
+and even includes it's own administrative tools, that are actually really
+awesome and allow you to easily build websites where you get an administrative
+panel where you can edit entries in your database within the website.
+
+Both frameworks have their advantages. If you're looking to pop something up
+quick and light, then use Flask and follow their motto of bringing in
+dependencies, "drop by drop." If you're looking to build a site that would
+benefit from already-integrated user accounts, and batteries-included
+administrative tools, then Django might be a better choice.
+
+Happy developing.
