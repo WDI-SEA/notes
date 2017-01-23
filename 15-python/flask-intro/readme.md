@@ -238,6 +238,7 @@ to be called. Here's some popular methods:
 * delete_many
 
 Entire API: <http://api.mongodb.com/python/current/api/index.html>
+
 Collection level docs: <http://api.mongodb.com/python/current/api/pymongo/collection.html>
 
 # Last Remarks
