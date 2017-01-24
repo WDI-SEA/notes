@@ -1,5 +1,13 @@
 ## Lab schedule
 
+### Week 8
+| Day     | Topic                     | Lab                                                                |
+| ---     | ---                       | -----                                                              |
+| Monday  | Finish Mongoose Subtitles | [Class Repo](https://github.com/Tommy-Lim/ng-mongoose-subtitles)   |
+| Tuesday | JWT Angular Auth          | [JWT Authentication](https://github.com/WDI-SEA/angular-jwot-auth) |
+| Tuesday | Intro to React            | [Intro to React](https://wdi_sea.gitbooks.io/notes/content/10-react/readme.html)  |
+
+
 ### Week 7
 | Day       | Topic                 | Lab                                                           |
 | ---       | ---                   | -----                                                         |
