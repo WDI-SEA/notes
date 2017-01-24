@@ -6,7 +6,6 @@
 * Identify inheritance syntax
 * Use inheritance to reduce repetition
 * Use inheritance to model the world
-* Install `ipython`, an enhanced interactive Python REPL shell
 
 ### Review
 1. What is a method?
