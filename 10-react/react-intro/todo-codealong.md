@@ -1,50 +1,114 @@
 #Your First React Component
 
-##Setup our Workflow
+## Install create-react-app
+There's an excellent tool created by Facebook (Facebook made React) that will
+help you set up a barebones React app instantly. Let's use npm to install it
+globally so we'll always have it available in our Terminal.
 
-http://codepen.io/bhague1281/pen/JXEaeK
+```
+npm install -g create-react-app
+```
 
-In order to make our workflow smoother, we'll be using a starter template in Codepen, which provides React and an in-browser JSX/Babel compiler. Note that we'll only be creating a front end application with React.
+Now that it's installed, let's move to the directory wherever you keep all your
+code and use the tool to start a React app. Replace `my_app_name` with whatever
+you want the name your application directory.
 
-Also note that the setup we have provided is for demonstration and hobby uses only. The setup contains a JSX/Babel compiler as well as jQuery. Note that jQuery is not necessary for React to work, and JSX/Babel compiling should not be done in the browser on production sites. We will address using front-end build tools later on.
+Use npm start to start a server that will serve your new React application!
 
-Make sure to fork the starter template, then write the following component:
+```
+create-react-app my_app_name
+cd my_app_name
+atom .
+npm start
+```
+
+Notice that the tool creates a new directory named, like `my_app_name`. Move
+into that directory and start Atom. Look around and see the structure the create
+tool provided.
+
+One especially cool thing that we'll see is that this tool sets up our
+application so that the webpage automatically refreshes whenever we save any
+file in the directory. It's awesome.
+
+Open the `/src/App.js` file and change the text inside the `<h2>` tag to say
+"Welcome to my first ever React App." Save the file and watch your browser
+automatically reload.
+
+# Our First Component
+
+Add a new file in the `/src` directory called `MyComponent.jsx`. Notice that we're
+using a new file extension `.jsx` which will allow us to write HTML and JS in
+a file at the same time.
+
+Components are pieces of our application that we can define once and reuse all
+over the place. We have to use an import statement at the top of the file to
+make the file aware of React, and we have to use an export statement at the
+end of the file to make the code in this file available elsewhere in our
+application.
 
 ```js
-//creating a basic component with no data, just a render function
-const MyApp = React.createClass({
-  render: function() {
+import React, { Component } from 'react';
+
+class MyComponent extends Component {
+  render () {
     return (
       <div className="well">
         <h1>Hello</h1>
+        <p>This is my first component. It contains HTML!</p>
       </div>
     );
   }
-});
+}
 
-//insert the component into the DOM
-ReactDOM.render(<MyApp />, document.getElementById('container'));
+module.exports = MyComponent;
 ```
-
-**Side note:** You may notice when going into Codepen's debug mode that a message may appear when the app is first loaded:
-
-```
-Download the React DevTools for a better development experience: https://fb.me/react-devtools
-```
-
-It's highly recommended that you download the React DevTools. It'll make debugging components **much** easier. https://fb.me/react-devtools
 
 ###About our First Component
 
 Here are some notes about our first component:
 
 * We used `React` to create the component by calling `createClass`
-* We used `ReactDOM` to attach the component to the DOM, by defining the component as JSX and the element we wanted to attach the component to.
-* JSX syntax != HTML syntax. Note that in order to get the `well` class to appear, we needed to use the attribute `className`. Here are some [more details on JSX syntax](https://facebook.github.io/react/docs/jsx-in-depth.html)
+* JSX syntax != HTML syntax. Note that in order to get the `well` class to
+  appear, we needed to use the attribute `className`. React applies HTML classes
+  to elements using `className` to avoid conflicting with JavaScript's own
+  `class` keyword. Here are some [more details on JSX syntax](https://facebook.github.io/react/docs/jsx-in-depth.html)
 * The `render` function is what renders the component to the screen.
 
-##Nesting Components
+### Put Your Component in the App
+Go back to the `App.js`. We're going to do two things to use our new component:
+1. we have to import our component
+2. we have to place our component on the page like an HTML tag like
+  `<MyComponent />`
+3. Save the file and see your page refresh and appear with HTML defined in
+   your new component.
 
+App.js ends up looking like this:
+
+```
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+import MyComponent from './MyComponent';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <h2>Welcome to my first-ever React app!</h2>
+        </div>
+        
+        <MyComponent />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+##Nesting Components
 Once components are created, we can use them as subcomponents. Let's try doing this by creating a list with list items inside.
 
 ```js
