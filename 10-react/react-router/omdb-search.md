@@ -10,6 +10,7 @@ Let's make these changes in `src/components/OMDBSearch.jsx`
 ```js
 import React, { Component } from 'react';
 import Navbar from './Navbar';
+import MovieResult from './MovieResult';
 
 class OMDBSearch extends Component {
   constructor() {
@@ -18,9 +19,6 @@ class OMDBSearch extends Component {
       searchTerm: '',
       results: []
     };
-  }
-  getInitialState () {
-    return {searchTerm: '', results: []};
   }
   searchChange (e) {
     this.setState({searchTerm: e.target.value});
@@ -49,7 +47,17 @@ class OMDBSearch extends Component {
                  onChange={(e) => this.searchChange(e)} />
           <input type="submit" />
         </form>
+        {this.results()}
       </div>
+    );
+  }
+  
+  results() {
+    return this.state.results.map(result =>
+      <MovieResult title={result.Title}
+                   year={result.Year}
+                   poster={result.Poster}
+                   imdbID={result.imdbID} />
     );
   }
 }
@@ -71,7 +79,7 @@ After testing the code above, there should be search results appearing in the co
 To make things simpler, we're going to render the search results directly in the `OMDBSearch` component, without making a separate component. Let's modify the `render` function to do this.
 
 ```js
-render: function() {
+render () {
   const results = this.state.results.map((movie, idx) => {
     return (
       <div className="well" key={idx}>
@@ -98,16 +106,20 @@ render: function() {
 
 ###Passing imdbIDs to ShowMovie
 
-To link correctly to the `ShowMovie` components, we'll need a `react-router` module called `Link` in order to create the links. In `/src/components/OMDBSearch.jsx`, let's require the `Link` module.
+To link correctly to the `ShowMovie` components, we'll need a `react-router`
+module called `Link` in order to create the links. In
+`/src/components/OMDBSearch.jsx`, let's require the `Link` module.
 
 ```js
 const Link = require('react-router').Link;
 ```
 
-Then, we'll create the `Link` components inside of the `render` function. This will allow us to create links and pass the imdbIDs to the `ShowMovie` component.
+Then, we'll create the `Link` components inside of the `render` function. This
+will allow us to create links and pass the imdbIDs to the `ShowMovie`
+component.
 
 ```js
-render: function() {
+render () {
   const results = this.state.results.map((movie, idx) => {
     return (
       <div className="well" key={idx}>
@@ -131,11 +143,13 @@ render: function() {
 }
 ```
 
-Test the app again by searching for a movie and clicking on one of the links. We should be redirected to the `ShowMovie` component, where the imdbID is rendered to the page.
+Test the app again by searching for a movie and clicking on one of the links.
+We should be redirected to the `ShowMovie` component, where the imdbID is
+rendered to the page.
 
 ###Rendering Movie Details
-
-In order to render movie details, we'll need to fetch the data in a similar manner as `OMDBSearch`. Our workflow will look like so:
+In order to render movie details, we'll need to fetch the data in a similar
+manner as `OMDBSearch`. Our workflow will look like so:
 
 * Set the initial state of the movie to `null` while we search for the movie
   * If the movie doesn't exist, display **Loading** to the page
@@ -146,38 +160,52 @@ In order to render movie details, we'll need to fetch the data in a similar mann
 In `MovieShow`, let's add the following:
 
 ```js
-const React = require('react');
-const Link = require('react-router').Link;
+import React, { Component } from 'react';
+import Navbar from './Navbar'
 
-const ShowMovie = React.createClass({
-  getInitialState() {
-    return {movie: null};
-  },
-  componentDidMount() {
+class ShowMovie extends Component {
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      movie: null
+    }
+    
     fetch(`http://omdbapi.com/?i=${this.props.params.imdbID}`)
-      .then(response => {
-        response.json().then(data => {
-          this.setState({movie: data});
-        });
-      }).catch(error => {
-        this.setState({movie: null});
+    .then(response => {
+      console.log("got response:", response);
+      response.json().then(data => {
+        this.setState({movie: data});
       });
-  },
-  render: function() {
-    const movie = this.state.movie;
-    if (!movie) return <h1>Loading...</h1>;
+    }).catch(error => {
+      console.log("error");
+      this.setState({movie: null});
+    });
+  }
 
+  render() {
+    const movie = this.state.movie;
+    if (!movie) {
+      return <div>
+        <Navbar />
+        <h2>Loading...</h2>
+      </div>
+    }
+    
     return (
       <div>
-        <h1>{movie.Title}</h1>
-        <p>{movie.Plot}</p>
-        <Link to='/'>&larr; Back</Link>
+        <Navbar />
+        <h2>({movie.Year}) {movie.Title}</h2>
+        <img src={movie.Poster} />
+        <p>
+          {movie.Plot}
+        </p>
       </div>
     );
   }
-});
+}
 
-module.exports = ShowMovie;
+export default ShowMovie;
 ```
 
 We should now have a working movie app, complete with a **Back** button via `Link`.
