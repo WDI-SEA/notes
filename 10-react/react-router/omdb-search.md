@@ -8,16 +8,25 @@ Now to get the search feature working. We'll need a couple functions in order to
 Let's make these changes in `src/components/OMDBSearch.jsx`
 
 ```js
-const React = require('react');
+import React, { Component } from 'react';
+import Navbar from './Navbar';
 
-const OMDBSearch = React.createClass({
-  getInitialState: function() {
+class OMDBSearch extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchTerm: '',
+      results: []
+    };
+  }
+  getInitialState () {
     return {searchTerm: '', results: []};
-  },
-  searchChange: function(e) {
+  }
+  searchChange (e) {
     this.setState({searchTerm: e.target.value});
-  },
-  search: function(e) {
+  }
+  search (e) {
+    console.log("searching");
     e.preventDefault();
     fetch(`http://omdbapi.com/?s=${this.state.searchTerm}`)
       .then(response => {
@@ -28,21 +37,22 @@ const OMDBSearch = React.createClass({
       }).catch(error => {
         this.setState({results: null});
       });
-  },
-  render: function() {
+  }
+  render () {
     return (
       <div>
+        <Navbar />
         <h1>Search for Movies</h1>
-        <form onSubmit={this.search}>
+        <form onSubmit={(e) => this.search(e)}>
           <input type="text"
                  value={this.state.searchTerm}
-                 onChange={this.searchChange} />
+                 onChange={(e) => this.searchChange(e)} />
           <input type="submit" />
         </form>
       </div>
     );
   }
-});
+}
 
 module.exports = OMDBSearch;
 ```
