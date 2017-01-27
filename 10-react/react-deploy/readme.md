@@ -6,6 +6,10 @@
 * Create a fresh React app with `create-react-app`
 * Use create-react-app-buildback to deploy app to Heroku
 
+# Documentation
+https://github.com/facebookincubator/create-react-app
+https://github.com/mars/create-react-app-buildpack#quick-start
+
 # Create a React App and Deploy It
 It's very, very, very, very easy to start up a React app and deploy it to
 Heroku. Developers have created tools to automate the entire process.
