@@ -179,6 +179,7 @@
   * [Intro to React](10-react/react-intro/readme.md)
     * [Todo List Codealong](10-react/react-intro/todo-codealong.md)
     * [Additional Topics](10-react/react-intro/additional-topics.md)
+  * [Deploy React](10-react/react-deploy/readme.md)
   * [React with Gulp and Browserify](10-react/react-gulp-browserify/readme.md)
     * [Setting up Gulp](10-react/react-gulp-browserify/gulp.md)
     * [Additional Gulp Tasks](10-react/react-gulp-browserify/additional-gulp-tasks.md)
