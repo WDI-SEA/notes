@@ -1,3 +1,4 @@
+# run with `python3 linkedlist-test.py`
 import unittest
 from linkedlist import *
 
