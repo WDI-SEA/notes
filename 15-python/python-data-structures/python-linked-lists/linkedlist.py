@@ -31,6 +31,13 @@ class LinkedList:
         current = current.next
       return f'[{result}]'
       
+    def __iter__(self):
+      current = self.root
+      while current is not None:
+        yield current
+        current = current.next
+      return
+      
     def is_empty(self):
       if self.root is None:
         return True

@@ -193,4 +193,8 @@ class TestItem(unittest.TestCase):
     self.assertEqual(str(self.l3), '[1 -> 2]')
     self.assertEqual(len(self.l3), 2)
     
+  def test_for_loop(self):
+    for (i, node) in enumerate(self.l3):
+      self.assertEqual(node.data, i + 1)
+    
 unittest.main()
