@@ -8,18 +8,18 @@ class ListNode:
     
 class LinkedList:
     root = None
+    size = 0
     
     # Create a new LinkedList. The list will default to being
     # empty, or data can be passed in.
     def __init__(self, data=None):
       if data is not None:
         self.root = ListNode(data)
+        self.size = 1
         
-    def is_empty(self):
-      if self.root is None:
-        return True
-      return False
-      
+    def __len__(self):
+      return self.size
+        
     def __str__(self):
       if self.is_empty():
         return "[]"
@@ -30,6 +30,11 @@ class LinkedList:
         result += f' -> {str(current.next)}'
         current = current.next
       return f'[{result}]'
+      
+    def is_empty(self):
+      if self.root is None:
+        return True
+      return False
       
     # Insert a new piece of data at the front of the list.
     # This is O(1) because it always does a constant number of operations
@@ -42,6 +47,7 @@ class LinkedList:
       
       # if the list is empty then make the new node the root.
       if self.root is None:
+        self.size += 1
         self.root = node
         return node
         
@@ -51,6 +57,7 @@ class LinkedList:
       # pointing the new node to the root then the entire list is lost.
       node.next = self.root
       self.root = node
+      self.size += 1
       
     # Remove and return the first node in the list.
     def remove_front(self):
@@ -61,8 +68,8 @@ class LinkedList:
       node = self.root
       # make root equal to what it used to reference
       self.root = self.root.next
+      self.size -= 1
       return node
-    
       
     # Append a piece of data to the end of the list.
     # This is O(N) because it has to look at all N nodes.
@@ -72,6 +79,7 @@ class LinkedList:
       
       # if the list is empty then make the new node the root.
       if self.root is None:
+        self.size += 1
         self.root = node
         return self.root
         
@@ -84,6 +92,7 @@ class LinkedList:
         current = current.next
         
       # make the last node point to the new node.
+      self.size += 1
       current.next = node
       return node
       
@@ -96,6 +105,7 @@ class LinkedList:
       if self.root.next is None:
         node = self.root.next
         self.root = None
+        self.size -= 1
         return node
         
       # create a temporary variable and step through the list one at a time
@@ -116,6 +126,7 @@ class LinkedList:
       # make sure the node that was removed doesn't point to the rest
       # of the list anymore
       node.next = None
+      self.size -= 1
       return node
       
     # insert a new node at the specified index.
@@ -137,6 +148,7 @@ class LinkedList:
         if (count + 1 == index):
           node.next = current.next
           current.next = node
+          self.size += 1
           return True
         # increment the count at every step.
         current = current.next
@@ -160,6 +172,7 @@ class LinkedList:
         if count + 1 == index:
           node = current.next
           current.next = current.next.next
+          self.size -= 1
           return node
             
         current = current.next
