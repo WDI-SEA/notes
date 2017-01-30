@@ -5,6 +5,7 @@
 * Describe the concepts of React components, props, and state
 * Explain the concepts of the virtual DOM and JSX
 * Compare and contrast ReactJS to AngularJS
+* use `create-angular-app` to start a React App
 * Create your own React components
 
 ##How will you React?

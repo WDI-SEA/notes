@@ -289,8 +289,14 @@ and select a range of values in the middle of the list.
 arr = [1,2,3]
 [1,2,3]
 
+len(arr)
+3
+
 five_zeroes = [0] * 5
 [0, 0, 0, 0, 0]
+
+len(five_zeroes)
+5
 
 five_trues = [True] * 5
 [True, True, True, True, True]
@@ -349,7 +355,7 @@ a string then you must surround the key in quotes when the dictionary is defined
 
 ```python
 cat = {
-  "name": 'Gepetto',
+  "name": 'Hamlet',
   "breed": 'American Shorthair',
   "fav_food": 'Prosciutto'
 }
@@ -452,11 +458,11 @@ better off using a while loop.
 ```python
 foods = ["carrots", "kale", "beets"]
 for food in foods:
-  print("I like", food, i)
+  print("I like", food)
 ```
 
 If you want access to the current index of each item then you need to pass your
-list through a function called enumerate. Enumerate takes items out of an
+list through a function called `enumerate`. Enumerate takes items out of an
 iterator one by one and returns a `tuple` of the index of the item and the item
 like `(index, item)`.
 
@@ -467,11 +473,13 @@ for i, food in enumerate(foods):
   print("{}. {}".format(i, food))
 ```
 
+`i` is still zero-indexed:
+
 ```
 My favorite foods:
-1. carrots
-2. kale
-3. beets
+0. carrots
+1. kale
+2. beets
 ```
 
 #### Iterating through Dictionaries
@@ -520,7 +528,34 @@ say_hello()
 ```python
 def say_hello(friend="Tim"):
   print("Hello, {}!".format(friend))
-end
+
+def move(name, city="Seattle", state="Washington"):
+  msg = "{} is moving to {}, {}"
+  msg = msg.format(name, city, state)
+  print(msg)
+
+move("Charlie")
+"Charlie is moving to Seattle, Washington"
+
+# values passed to functions will fall in parameter order.
+# parameter default values are used if nothing is passed in at that spot.
+move("Charlie", "Tacoma")
+"Charlie is moving to Tacoma, Washington"
+
+move("Charlie", "Boise", "Idaho")
+"Charlie is moving to Boise, Idaho"
+
+# use names to specify exactly what parameters you're giving values to.
+move("Charlie", state="Oregon")
+"Charlie is moving to Seattle, Oregon"
+
+move("Charlie", city="Boise", state="Idaho")
+"Charlie is moving to Boise, Idaho"
+
+# if you're using a named parameter, then you can mix up the order!
+move("Charlie", state="Oregon", city="Portland)
+"Charlie is moving to Portland, Oregon"
+
 
 # Any value passed to the function will be used.
 # If no value is passed for a parameter Python uses the default value
@@ -534,7 +569,6 @@ say_hello()
 ```python
 def add(num1, num2):
   return num1 + num2
-end
 
 total = add(2, 3)
 print("2 + 3 =", total)

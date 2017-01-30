@@ -44,6 +44,7 @@ Your app must:
 * A **link to your hosted working app** in the URL section of your Github repo
 * A **team git repository hosted on Github**, with a link to your hosted project, and frequent commits from _every_ team member dating back to the _very beginning_ of the project.
 * **A ``readme.md`` file** with:
+    * Include a screenshot of the site in repo's README
     * Explanations of the **technologies** used
     * A couple paragraphs about the **general approach you took**
     * **Installation instructions** for any dependencies

@@ -1,5 +1,16 @@
 ## Lab schedule
 
+### Week 8
+| Day       | Topic                      | Lab                                                                                 |
+| ---       | ---                        | -----                                                                               |
+| Monday    | Finish Mongoose Subtitles  | [Class Repo](https://github.com/Tommy-Lim/ng-mongoose-subtitles)                    |
+| Tuesday   | JWT Angular Auth           | [JWT Authentication](https://github.com/WDI-SEA/angular-jwot-auth)                  |
+| Tuesday   | Intro to React             | [Intro to React](https://wdi_sea.gitbooks.io/notes/content/10-react/readme.html)    |
+| Wednesday | React Router & OMDB Search | [React Router and OMDB Search](https://github.com/WDI-SEA/react-router-omdb-search) |
+| Thursday  | React Penny Auction        | [Penny Auction Client](https://github.com/WDI-SEA/penny-auction-client-solution)    |
+| Thursday  | React Penny Auction        | [Penny Auction Server](https://github.com/WDI-SEA/penny-auction-server)    |
+
+
 ### Week 7
 | Day       | Topic                 | Lab                                                           |
 | ---       | ---                   | -----                                                         |

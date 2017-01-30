@@ -10,6 +10,17 @@
 <http://flask.pocoo.org/>
 <http://api.mongodb.com/python/current/tutorial.html>
 
+## What is Flask?
+Flask describes itself as a microframework. It comes with a small set of
+utilities that will help you define routes on a server, and send files
+back to a browser.
+
+Flask acts a lot like Express in that it imports lots of little single-use
+packages. We describe this as a "microframework." The framework relies on
+all of the little packages developers choose to pull in themselves and the
+framework just deals with allowing those packages to be used in a server
+environment easily.
+
 ## Install Flask and Create a Minimal Server
 Use your terminal's `pip3` command to install Flask for Python3.
 
