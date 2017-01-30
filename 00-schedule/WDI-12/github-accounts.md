@@ -4,16 +4,22 @@
 - Brandi Williams [brandiw](https://github.com/brandiw)
 - Steve Geluso [geluso](http://github.com/geluso)
 
-## Students (11 total)
-| Name                   | GitHub                                                 |
-|------------------------|--------------------------------------------------------|
-| Brian Bixby            | [brianbixby](http://github.com/brianbixby)             |
-| Rachel Chen            | [Skylocke](http://github.com/Skylocke)                 |
-| Donnie Ellstrom        | [Crateros](http://github.com/Crateros)                 |
-| Congcong Li            | [weirui222](http://github.com/weirui222)               |
-| Tommy Lim              | [Tommy-Lim](http://github.com/Tommy-Lim)               |
-| Tobias Murphy          | [tmrdr](http://github.com/tmrdr)                       |
-| Ryne Schillinger       | [ryneschillinger](http://github.com/ryneschillinger)   |
-| Robert Spears          | [Robert1GA](http://github.com/Robert1GA)               |
-| Travis Walentin        | [Agentscreech](http://github.com/Agentscreech)         |
-| Christopher Whitaker   | [1CTWgha](http://github.com/1CTWgha)                   |
+Link to student shuffle tool: <http://martystepp.com/shuffle>
+
+## Students (13 total)
+
+| Name                     | GitHub                                                   |
+| ------------------------ | -------------------------------------------------------- |
+| Connor Potebnya          | [cannedyeti](http://github.com/cannedyeti)               |
+| Crystal Gonzalez         | [cgnzlz22](http://github.com/cgnzlz22)                   |
+| Denise Ortega            | [dddotcom](http://github.com/dddotcom)                   |
+| Hailey Dangel            | [Hailz](http://github.com/Hailz)                         |
+| Jack Gervais             | [JRgerv](http://github.com/JRgerv)                       |
+| Joseph Martin            | [themartinsjoseph](http://github.com/themartinsjoseph)   |
+| Justin Hoang             | [jnhustin](http://github.com/jnhustin)                   |
+| Kelly Hancock            | [kellyh6](http://github.com/kellyh6)                     |
+| Kyle Richardson          | [krichdev](http://github.com/krichdev)                   |
+| Mark Woo                 | [M-Woo](http://github.com/M-Woo)                         |
+| Meng Li                  | [myjavabean](http://github.com/myjavabean)               |
+| Nicolas Vogt             | [vogtn](http://github.com/vogtn)                         |
+| Ross Wildin              | [rosswildin](http://github.com/rosswildin)               |
