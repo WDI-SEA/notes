@@ -48,9 +48,9 @@ as a function called `count` that calls itself:
 def count(person):
   var otherPerson = person.getPersonBehindMe();
   if (otherPerson === "no one"):
-    return 0;
+  return 0;
   else:
-    return 1 + count(otherPerson);
+  return 1 + count(otherPerson);
 ```
 
 Recursion allows us to write extremely expressive code! We can write a very
@@ -106,10 +106,10 @@ case first, otherwise they perform one small piece of the problem and then recur
 def recurse(n):
   # check for base case
   if (n <= 0):
-    return 0;
+  return 0;
   else:
-    # otherwise do a small amount of work and call the function again
-    return 1 + recurse(n - 1);
+  # otherwise do a small amount of work and call the function again
+  return 1 + recurse(n - 1);
 ```
 
 ## Base Cases
@@ -165,9 +165,9 @@ Take a step and take the leap of faith. Call the function again!
 ```python
 def sum(n):
   if (n < 0):
-    return 0;
+  return 0;
   else:
-    n + sum(n - 1);
+  n + sum(n - 1);
 ```
 
 Wait, this doesn't work. Remember to `return` the value that comes back
@@ -176,9 +176,9 @@ from the recursive call.
 ```python
 def sum(n):
   if (n < 0):
-    return 0;
+  return 0;
   else:
-    return n + sum(n - 1);
+  return n + sum(n - 1);
 ```
 
 ## Palindrome Practice Problem
@@ -221,9 +221,9 @@ is_palindrome("tacocat") # true
 ```python
 def is_palindrome(ss):
   if len(ss) < 2:
-      return True
+    return True
   if ss[0] != ss[-1]:
-      return False
+    return False
   return is_palindrome(ss[1:-1])
 ```
 
@@ -318,12 +318,12 @@ a: 1
 b: 2
 c:
   name: Bruce Wayne
-    occupation: Hero
-    friends:
-      spiderman:
-        name: Peter Parker
-      superman:
-        name: Clark Kent
+  occupation: Hero
+  friends:
+    spiderman:
+    name: Peter Parker
+    superman:
+    name: Clark Kent
 d: 4
 ```
 
@@ -331,21 +331,21 @@ d: 4
 ### Reverse String Solution
 ```python
 def reverse(ss):
-    if len(ss) == 0:
-        return ""
-    return ss[-1] + reverse(ss[:-1])
+  if len(ss) == 0:
+    return ""
+  return ss[-1] + reverse(ss[:-1])
 ```
 
 
 ### Fibonacci Solution
 ```python
 def fib(n):
-    if n < 0:
-        return 0
-    if n == 1 or n == 2:
-        return 1
-    else:
-        return fib(n - 1) + fib(n - 2)
+  if n < 0:
+    return 0
+  if n == 1 or n == 2:
+    return 1
+  else:
+    return fib(n - 1) + fib(n - 2)
 ```
 
 
@@ -353,16 +353,16 @@ def fib(n):
 
 ```python
 def pretty_print(dictionary, indent="  "):
-    # iterate through every key in the dictionary
-    for key in dictionary:
-        # get the value associated with the key
-        val = dictionary[key]
-        # check the type of the key to see if it's another dict
-        if isinstance(val, dict):
-            print(f"{indent}{key}:")
-            pretty_print(dictionary[key], indent + indent)
-        else:
-            # it's the val isn't a dict then just print out they key and val
-            print(f"{indent}{key}: {val}")
+  # iterate through every key in the dictionary
+  for key in dictionary:
+    # get the value associated with the key
+    val = dictionary[key]
+    # check the type of the key to see if it's another dict
+    if isinstance(val, dict):
+      print(f"{indent}{key}:")
+      pretty_print(dictionary[key], indent + indent)
+    else:
+      # it's the val isn't a dict then just print out they key and val
+      print(f"{indent}{key}: {val}")
 ```
 
