@@ -1,3 +1,28 @@
+# Linked List Beginner Exercises
+Here's some starter code for you. The starter code includes a class definition
+for a single Node in a list, and a class that keeps track of an entire list
+starting with the `root`.
+
+Exerises problems ask you to start with the list in one state and write code
+that transforms it into another state. For example, this "problem A" is asking
+you to write code to remove the first item from a list:
+
+```js
+// Problem A
+// 1 2 3
+// 2 3
+var listA = makeList([1, 2, 3]);
+console.log(listA.toString());
+```
+
+```js
+// example solution for Problem A
+listA.root = listA.root.next;
+```
+
+Try to write code to solve these problems:
+
+```js
 function Node(data) {
   this.data = data;
   this.next = undefined;
@@ -115,4 +140,4 @@ function makeList(a) {
 
   return list;
 }
-
+```
