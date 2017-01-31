@@ -106,10 +106,10 @@ case first, otherwise they perform one small piece of the problem and then recur
 def recurse(n):
   # check for base case
   if (n <= 0):
-  return 0;
+    return 0;
   else:
-  # otherwise do a small amount of work and call the function again
-  return 1 + recurse(n - 1);
+    # otherwise do a small amount of work and call the function again
+    return 1 + recurse(n - 1);
 ```
 
 ## Base Cases
@@ -123,7 +123,6 @@ the base case is probably:
 ```python
 if (list.length === 0):
   return 0;
-
 ```
 
 Writing one or more base cases that define the answer for the simplest
@@ -147,7 +146,6 @@ What is the base case?
 ```python
 if (n < 0):
   return 0;
-
 ```
 
 What is the recursive case?
@@ -156,7 +154,6 @@ What is the recursive case?
 if (n > 0):
   # man, I wish we had a function that computed the sum of 0..N-1
   return n + ???
-
 ```
 
 Oh wait!! We've already defined a function that sums all numbers!
@@ -165,9 +162,9 @@ Take a step and take the leap of faith. Call the function again!
 ```python
 def sum(n):
   if (n < 0):
-  return 0;
+   return 0;
   else:
-  n + sum(n - 1);
+    n + sum(n - 1);
 ```
 
 Wait, this doesn't work. Remember to `return` the value that comes back
@@ -176,9 +173,9 @@ from the recursive call.
 ```python
 def sum(n):
   if (n < 0):
-  return 0;
+    return 0;
   else:
-  return n + sum(n - 1);
+    return n + sum(n - 1);
 ```
 
 ## Palindrome Practice Problem
