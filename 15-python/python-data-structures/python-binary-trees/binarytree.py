@@ -88,6 +88,19 @@ class BinaryTree:
             else:
                 self.add_helper(node.right, data)
 
+    def contains(self, value):
+        return self.contains_helper(self.root, value)
+
+    def contains_helper(self, node, value):
+        if node is None:
+            return False
+        if node.data == value:
+            return True
+        if value < node.data:
+            return self.contains_helper(node.left, value)
+        if value > node.data:
+            return self.contains_helper(node.right, value)
+
 
 tree = BinaryTree()
 tree.add(12)
@@ -101,3 +114,10 @@ print(tree)
 print("  in order traversal:", tree.print_in_order())
 print(" pre order traversal:", tree.print_pre_order())
 print("post order traversal:", tree.print_post_order())
+print()
+
+print(tree.contains(12), "should be True")
+print(tree.contains(54), "should be True")
+print(tree.contains(0), "should be False")
+print(tree.contains(13), "should be False")
+print(tree.contains(99), "should be False")
