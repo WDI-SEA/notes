@@ -44,15 +44,13 @@ and the person directly behind you.
 This is an example of recursive programming. We could write our instructions
 as a function called `count` that calls itself:
 
-```js
-function count(person) { 
+```python
+def count(person):
   var otherPerson = person.getPersonBehindMe();
-  if (otherPerson === "no one") {
+  if (otherPerson === "no one"):
     return 0;
-  } else {
+  else:
     return 1 + count(otherPerson);
-  }
-}
 ```
 
 Recursion allows us to write extremely expressive code! We can write a very
@@ -67,17 +65,16 @@ calls itself and consider what it does.
 * What will be the output of this function?
 * When will this program stop running?
 
-```js
-// define the function
-function navelGazer() {
-  console.log("hmm...");
+```python
+# define the function
+def navel_gazer():
+  print("hmm...");
 
-  // make a recursive call to the function
-  navelGazer();
-}
+  # make a recursive call to the function
+  navel_gazer();
 
-// call the function
-navelGazer();
+# call the function
+navel_gazer();
 ```
 
 This function will theoretically print out "hmm..." forever.
@@ -105,16 +102,14 @@ Recursive functions are comprised of the following components:
 Recursive functions usually follow this pattern. They detect and handle the base
 case first, otherwise they perform one small piece of the problem and then recurse:
 
-```js
-function recurse(n) {
-  // check for base case
-  if (n <= 0) {
+```python
+def recurse(n):
+  # check for base case
+  if (n <= 0):
     return 0;
-  } else {
-    // otherwise do a small amount of work and call the function again
+  else:
+    # otherwise do a small amount of work and call the function again
     return 1 + recurse(n - 1);
-  }
-}
 ```
 
 ## Base Cases
@@ -125,10 +120,10 @@ writing what the program should return for the most obvious of examples.
 If you're writing a function that computes the sum of numbers in a list
 the base case is probably:
 
-```js
-if (list.length === 0) {
+```python
+if (list.length === 0):
   return 0;
-}
+
 ```
 
 Writing one or more base cases that define the answer for the simplest
@@ -149,45 +144,41 @@ sum of numbers from 0 to N.
 
 What is the base case?
 
-```js
-if (n < 0) {
+```python
+if (n < 0):
   return 0;
-}
+
 ```
 
 What is the recursive case?
 
-```js
-if (n > 0) {
-  // man, I wish we had a function that computed the sum of 0..N-1
+```python
+if (n > 0):
+  # man, I wish we had a function that computed the sum of 0..N-1
   return n + ???
-}
+
 ```
 
 Oh wait!! We've already defined a function that sums all numbers!
 Take a step and take the leap of faith. Call the function again!
 
-```js
-function sum(n) {
-  if (n < 0) {
+```python
+def sum(n):
+  if (n < 0):
     return 0;
-  } else {
+  else:
     n + sum(n - 1);
-  }
-}
 ```
 
 Wait, this doesn't work. Remember to `return` the value that comes back
 from the recursive call.
 
-```js
-function sum(n) {
-  if (n < 0) {
+```python
+def sum(n):
+  if (n < 0):
     return 0;
-  } else {
+  else:
     return n + sum(n - 1);
-  }
-}
 ```
 
 ## Palindrome Practice Problem
@@ -203,7 +194,7 @@ last letter, and the second letter is equal to the second to last letter and so
 on and so forth. An empty string is considered a palindrom. A one letter string
 is considered a palindrome.
 
-Write a function called `isPalindrome` that accepts a string and returns `true`
+Write a function called `is_palindrome` that accepts a string and returns `true`
 if the string is a palindrome, and returns `false` if the string is not.
 
 What are our base case(s)?
@@ -220,32 +211,20 @@ What is our recursive case?
 Remember your return statements! The final solution should bubble up from
 the deeper recursive calls!
 
-isPalindrome("") // true
-isPalindrome("a") // true
-isPalindrome("ab") // false
-isPalindrome("abba") // true
-isPalindrome("catdog") // false
-isPalindrome("tacocat") // true
+is_palindrome("") # true
+is_palindrome("a") # true
+is_palindrome("ab") # false
+is_palindrome("abba") # true
+is_palindrome("catdog") # false
+is_palindrome("tacocat") # true
 
-```js
-function isPalindrome(ss) {
-  if (ss.length < 2) {
-    return true;
-  } else {
-    // get the first and last letters
-    var first = ss[0];
-    var last = ss[ss.length - 1];
-
-    // compare the first and last letters.
-    if (first !== last) {
-      return false;
-    } else {
-      // get the middle of the string
-      var middle = ss.substr(1, ss.length - 2);
-      return isPalindrome(middle);
-    }
-  }
-}
+```python
+def is_palindrome(ss):
+  if len(ss) < 2:
+      return True
+  if ss[0] != ss[-1]:
+      return False
+  return is_palindrome(ss[1:-1])
 ```
 
 ## Practice Problems
@@ -255,16 +234,16 @@ function isPalindrome(ss) {
 Write a recursive function called `fib` that accepts a number `N` greater
 than zero and returns the `Nth` fibonacci number:
 
-```js
-fib(-1) // 0
-fib(0) // 0
-fib(1) // 1
-fib(2) // 1
-fib(3) // 2
-fib(4) // 3
-fib(5) // 5
-fib(6) // 8
-fib(7) // 13
+```python
+fib(-1) # 0
+fib(0) # 0
+fib(1) # 1
+fib(2) # 1
+fib(3) # 2
+fib(4) # 3
+fib(5) # 5
+fib(6) # 8
+fib(7) # 13
 ```
 
 ### Reverse String
@@ -272,73 +251,61 @@ fib(7) // 13
 Write a recursive function called `reverse` that accepts a string and returns
 a reversed string.
 
-```js
-reverse("") // ""
-reverse("a") // "a"
-reverse("ab") // "ba"
+```python
+reverse("") # ""
+reverse("a") # "a"
+reverse("ab") # "ba"
 reverse("computer") "retupmoc"
-reverse("abcdefghijklmnopqrstuvwxyz") // "zyxwvutsrqponmlkjihgfedcba"
-reverse(reverse("computer")) // "computer"
+reverse("abcdefghijklmnopqrstuvwxyz") # "zyxwvutsrqponmlkjihgfedcba"
+reverse(reverse("computer")) # "computer"
 ```
 
 Is `reverse(reverse("computer"))` considered recursive? Why or why not?
 
 ### Pretty Print
-Write a function called `prettyPrint` that accepts a complex object and prints out
-all of it's properties and all of its values. The object can have objects nested
-inside of it.
+Write a function called `pretty_print` that accepts a complex dictionary and
+prints out all of it's keys and all of its values. The dictionary can have
+dictionaries nested inside of it.
 
-Make the function accept two parameters: `prettyPrint(oo, indent)`.
-`oo` is the object that's currently being iterated over.
-`indent` is a string representing the current level of indentation.
+Make the function accept two parameters: `pretty_print(dictionary, indent)`.
 
-Here's a piece of code that will allow you to call `prettyPrint` without
-having to pass in an empty string each time you indent:
-
-```js
-function prettyPrint(oo, indent) {
-  indent = indent || "";
-
-  // write your solution here
-}
-
-```
+* `dictionary` is the dictionary that's currently being iterated over.
+* `indent` is a string representing the current level of indentation.
 
 Whenever you make a recursive call increase the level of indentation by
 adding two spaces to indent:
 
-```js
-function prettyPrint(oo, indent) {
-  // ...
-  prettyPrint(newOO, indent + '  ');
-  // ...
-}
+```python
+def pretty_print(dictionary, indent):
+  # ...
+  pretty_print(inner_dictionary, indent + '  ');
+  # ...
+
 ```
 
+It's useful to know how to detect if an object is an instance of a specific
+class in Python. Use the `isinstance` method to see if a value is an
+instance of a certain class.
 
-It's useful to know how to detect actual key/value objects in JavaScript:
-
-```js
-typeof [] // "object"
-typeof {} // "object"
-
-[].constructor == Array // true
-[].constructor == Object // false
-({}).constructor == Object // true
+```python
+isinstance(42, int) # True
+isinstance("foo", str) # True
+isinstance([], list) # True
+isinstance({}, dict) # True
 ```
 
 Expected Output:
 
-```js
-o1 = {a: 1, b: 2};
-o2 = {a: 1, b: 2, c: {name: "Bruce Wayne", occupation: "Hero"}, d: 4};
-o3 = {a: 1, b: 2, c: {name: "Bruce Wayne", occupation: "Hero", friends: {spiderman: {name: "Peter Parker"}, superman: {name: "Clark Kent"}}}, d: 4};
+```python
+o1 ={a: 1, b: 2};
+o2 ={a: 1, b: 2, c:{name: "Bruce Wayne", occupation: "Hero"}, d: 4};
+o3 ={a: 1, b: 2, c:{name: "Bruce Wayne", occupation: "Hero", friends: {spiderman: {name: "Peter Parker"}, superman: {name: "Clark Kent"}}}, d: 4};
 
-prettyPrint(o1, "")
+pretty_print(o1, "")
 a: 1
 b: 2
 
-prettyPrint(o1, "")
+pretty_print(o1, "")
 a: 1
 b: 2
 c:
@@ -346,7 +313,7 @@ c:
   occupation: Hero
 d: 4
 
-prettyPrint(o3, "")
+pretty_print(o3, "")
 a: 1
 b: 2
 c:
@@ -362,54 +329,40 @@ d: 4
 
 
 ### Reverse String Solution
-```js
-function reverse(ss) {
-  if (ss.length == 0) {
-    return "";
-  } else if (ss.length == 1) {
-    return ss;
-  } else {
-    var last = ss[ss.length - 1];
-    var beginning = ss.substr(0, ss.length - 1);
-    return last + reverse(beginning);
-  }
-}
+```python
+def reverse(ss):
+    if len(ss) == 0:
+        return ""
+    return ss[-1] + reverse(ss[:-1])
 ```
 
 
 ### Fibonacci Solution
-```js
-function fib(n) {
-  if (n <= 0) {
-    return 0;
-  } else if (n == 1) {
-    return 1;
-  } else if (n == 2) {
-    return 1;
-  } else if (n > 2) {
-    return fib(n - 1) + fib(n - 2);
-  }
-}
+```python
+def fib(n):
+    if n < 0:
+        return 0
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fib(n - 1) + fib(n - 2)
 ```
 
 
 ### Pretty Print Solution
 
-```js
-function prettyPrint(oo, indent) {
-  indent = indent || "";
-
-  for (var key in oo) {
-    var value = oo[key];
-    // if the value at the key is complex then recurse
-    if (value.constructor === Object) {
-      console.log(indent + key + ":");
-      prettyPrint(value, indent + "  ");
-    } else {
-      // otherwise, do the simple base case and just print it out.
-      console.log(indent + key + ":", value);
-    }
-  }
-}
+```python
+def pretty_print(dictionary, indent="  "):
+    # iterate through every key in the dictionary
+    for key in dictionary:
+        # get the value associated with the key
+        val = dictionary[key]
+        # check the type of the key to see if it's another dict
+        if isinstance(val, dict):
+            print(f"{indent}{key}:")
+            pretty_print(dictionary[key], indent + indent)
+        else:
+            # it's the val isn't a dict then just print out they key and val
+            print(f"{indent}{key}: {val}")
 ```
 
