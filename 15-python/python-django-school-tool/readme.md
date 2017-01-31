@@ -423,7 +423,7 @@ WDI 12 - Brandi, Jackson
 Now that we have views and models defined, let's try to hook them together so
 we can query our database, get model instances back and display them on the page.
 
-Use `pyhton3 manage.py shell` to open an interactive shell where you can practice
+Use `python3 manage.py shell` to open an interactive shell where you can practice
 using Django's built in ORM to query your database for your models. Make sure you
 have `ipython3` installed so you get the most enhanced Python shell possible.
 
