@@ -29,15 +29,15 @@ def fib(n):
 def pretty_print(dictionary, indent="  "):
   # iterate through every key in the dictionary
   for key in dictionary:
-  # get the value associated with the key
-  val = dictionary[key]
-  # check the type of the key to see if it's another dict
-  if isinstance(val, dict):
-    print(f"{indent}{key}:")
-    pretty_print(dictionary[key], indent + indent)
-  else:
-    # it's the val isn't a dict then just print out they key and val
-    print(f"{indent}{key}: {val}")
+    # get the value associated with the key
+    val = dictionary[key]
+    # check the type of the key to see if it's another dict
+    if isinstance(val, dict):
+      print(f"{indent}{key}:")
+      pretty_print(dictionary[key], indent + indent)
+    else:
+      # it's the val isn't a dict then just print out they key and val
+      print(f"{indent}{key}: {val}")
 
 print(sum(3), "should be", 6)
 print(sum(4), "should be", 10)
