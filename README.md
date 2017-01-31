@@ -242,6 +242,18 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1211]: https://github.com/WDI-SEA/rails-national-parks/blob/master/part2.md
 [1212]: https://github.com/WDI-SEA/js-jquery-review
 
+###Python
+| Topic | Assignments |
+| ----- | ----------- |
+| Intro to Python | [Intro to Python](https://github.com/WDI-SEA/intro-python) |
+| Python Exercises | [Python Exercises](https://github.com/WDI-SEA/python-exercises) |
+| Python Challenges | [Python Challenges](https://github.com/WDI-SEA/python-challenges) |
+| Python Unit Tests | [Python Unit Tests](https://github.com/WDI-SEA/python-unit-tests) |
+| Python Class Examples | [Python Class Examples](https://github.com/WDI-SEA/python-class-examples) |
+| Python Recursion | [PYthon Recursion](https://github.com/WDI-SEA/python-recursion) |
+| Python Binary Search | [PYthon Binary Search](https://github.com/WDI-SEA/python-binary-search) |
+| Python Linked Lists | [PYthon Linked Lists](https://github.com/WDI-SEA/python-linked-lists) |
+| Python Binary Trees | [PYthon Recursion](https://github.com/WDI-SEA/python-binary-trees) |
 
 ###AngularJS 1.x and APIs
 
