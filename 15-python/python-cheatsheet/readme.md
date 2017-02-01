@@ -37,7 +37,7 @@ else:
   print("click")
 ```
 
-## User Input
+### User Input
 Write programs that allow users to type in input from the terminal.
 Everything the user inputs is returned as a string. Use the `int`
 function to convert it to an integer.
@@ -49,6 +49,36 @@ count = int(count)
 
 for i in range(count):
   print(f"Hello {name}!")
+```
+
+### Multiple Variable Assignment!
+Ever have an array, or two variables and try to swap them, then find out that
+one value stomped the other? Python's got your back.
+
+Classically you would need to use a third variable as a temporary variable
+to store one value while the second value overwrites the first.
+
+```python
+foo = "ace"
+bar = "king"
+
+temp = bar
+bar = foo
+foo = temp
+```
+
+Python supports multi-variable assignment. If you have N variables on the left
+side of an equals sign, and N values on the right side then Python automatically
+unpacks the values and stores them in the two variables simultaneously.
+
+```python
+foo = "ace"
+bar = "king"
+
+foo, bar = bar, foo
+
+a = [12, 42]
+a[0], a[1] = a[1], a[0]
 ```
 
 ### Strings
