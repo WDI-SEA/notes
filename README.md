@@ -250,10 +250,12 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Python Challenges | [Python Challenges](https://github.com/WDI-SEA/python-challenges) |
 | Python Unit Tests | [Python Unit Tests](https://github.com/WDI-SEA/python-unit-tests) |
 | Python Class Examples | [Python Class Examples](https://github.com/WDI-SEA/python-class-examples) |
-| Python Recursion | [PYthon Recursion](https://github.com/WDI-SEA/python-recursion) |
-| Python Binary Search | [PYthon Binary Search](https://github.com/WDI-SEA/python-binary-search) |
-| Python Linked Lists | [PYthon Linked Lists](https://github.com/WDI-SEA/python-linked-lists) |
-| Python Binary Trees | [PYthon Recursion](https://github.com/WDI-SEA/python-binary-trees) |
+| Recursion | [Python Recursion](https://github.com/WDI-SEA/python-recursion) |
+| Binary Search | [Python Binary Search](https://github.com/WDI-SEA/python-binary-search) |
+| Linked Lists | [Python Linked Lists](https://github.com/WDI-SEA/python-linked-lists) |
+| Binary Trees | [Python Recursion](https://github.com/WDI-SEA/python-binary-trees) |
+| Graphs | [Python Graph](https://github.com/WDI-SEA/python-graph-data-structure) |
+| Sorting | [Python Sorting Algorithms](https://github.com/WDI-SEA/python-sorting-algorithms) |
 
 ###AngularJS 1.x and APIs
 
