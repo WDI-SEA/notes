@@ -230,6 +230,7 @@
   * [Trees and Other Topics](08-cs/cs-trees-data-structures/readme.md)
 * [Python](15-python/python.md)
   * [Intro to Python](15-python/python-intro/readme.md)
+  * [Python Cheatsheet](15-python/python-cheatsheet/readme.md)
   * [Unit Testing](15-python/python-unit-tests/readme.md)
   * [Python Classes](15-python/python-classes/readme.md)
   * [Python Class Inheritance](15-python/python-inheritance/readme.md)
