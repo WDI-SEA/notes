@@ -37,6 +37,20 @@ else:
   print("click")
 ```
 
+## User Input
+Write programs that allow users to type in input from the terminal.
+Everything the user inputs is returned as a string. Use the `int`
+function to convert it to an integer.
+
+```python
+name = input("What's your name? ")
+count = input("How many times shall I greet you? ")
+count = int(count)
+
+for i in range(count):
+  print(f"Hello {name}!")
+```
+
 ### Strings
 Strings have some different method names than JavaScript. Remember to use
 `len()` to find out the length of something.
@@ -180,8 +194,8 @@ will crash and you'll see an error:
 ```
 dd["invalid"]
 
----------------------------------------------------------------------------
-KeyError                                  Traceback (most recent call last)
+----------------------------------------------
+KeyError     Traceback (most recent call last)
 <ipython-input-20-2bc5d4d8169e> in <module>()
 ----> 1 dd["invalid"]
 
