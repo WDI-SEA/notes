@@ -325,6 +325,9 @@ a.append(42)
 [99, 82, 23, 12, 1, 42]
 
 result = a.pop() # the first value is stored in the variable
+
+# notice: the value is actually removed from the array
+print(a)
 [82, 23, 12, 1, 42]
 
 # insert a value at a specific index
@@ -394,13 +397,52 @@ bool("")
 False
 ```
 
-## String Formatting
-Python has several convenient ways to format strings on the fly. You'll never
+## String Interpolation
+Python has super convenient ways to format strings on the fly. You'll never
 have to bother with crazy string concatenation again. These are like small
 rendered templates.
 
-Place empty curly braces `{}` inside a string to refer to something that will
-be placed in the string later.
+Define any string with the letter `f` in front of the quotes and Python will
+treat it as a "formatted" string. Formatted strings use curly braces `{}` to
+identify where to evaluate values inside a string. The value inside the curly
+braces can be variable names, or expressions.
+
+The curly braces and the format function can refer to names for where values
+appear in the template, and what values are named.
+
+```python
+state = "Washington State"
+year = 1889
+n = 42
+my_message = f"{state} was the {n}th state to join the union in {year}."
+```
+
+Let's see format strings calling a function too!
+
+```python
+def st_nd_rd_th(n):
+  # add one to 13 because range is exclusive at the end.
+  if n in range(11, 13 + 1):
+    return "th"
+  if n % 10 == 1:
+    return "st"
+  elif n % 10 == 2:
+    return "nd"
+  elif n % 10 == 3:
+    return "rd"
+  else:
+    return "th"
+
+state = "Washington State"
+year = 1889
+n = 42
+my_message = f"{state} was the {n}{st_nd_rd_th(n)} state to join the union in {year}."
+print(my_message)
+```
+
+F-strings are awesome. There's also a `format()` function on all strings. You can
+specify empty curly braces and pass values as parameters and the parameter values
+will fall in line in the order the curly braces appear.
 
 ```python
 template = "My name is {} and I like {}"
@@ -408,12 +450,12 @@ template.format("Steve", "Cheese")
 'My name is Steve and I like Cheese'
 ```
 
-The curly braces and the format function can refer to names for where values
-appear in the template, and what values are named.
+The `format()` function an also name the curly braces and accept named parameters:
 
 ```python
-my_message = "{state} was the {n}th state to join the union in {year}."
-my_message.format(year=1889, state="Washington State", n=42)
+template = "My name is {name} and I like {food}"
+template.format(food="Cheese", name="Steve")
+'My name is Steve and I like Cheese'
 ```
 
 ## Control flow
