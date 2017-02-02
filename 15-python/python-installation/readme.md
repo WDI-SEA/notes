@@ -64,10 +64,40 @@ Here's the tools we're snaggin:
 * **Flask** - a minimalist Python web microframework, much like Express
 * **Django** - a larger Python web framework
 
+Use `brew` to install Python 3!
+
 ```
-pip install ipython
-pip install Flask
-pip install Django
+brew install python3
+```
+
+Use `pip`, a Python package installer. `pip` stands for "Pip Installs
+Packages." Programmers love recursive acronyms.
+
+Notice, there's two versions of `pip`. One installs things for Python 2
+another installs things for Python 3. Use `pip3` to be explicit. If you're
+lucky, maybe your system uses `pip` for Python 3 by default. Let's assume
+we're not lucky and always use `pip3`, to be explicit.
+
+You can verify what version of Python `pip` and `pip3` use:
+
+```
+pip --version
+pip3 --version
+```
+
+Should show these, respectively:
+
+```
+pip 9.0.1 from /Library/Python/2.7/site-packages (python 2.7)
+pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+```
+
+Ok. let's install stuff:
+
+```
+pip3 install ipython
+pip3 install Flask
+pip3 install Django
 ```
 
 Notice that `python` refers to the default system installation of Python 2,
@@ -80,6 +110,24 @@ python  --version         2.7.10
 python3 --version         3.6.0
 ipython3 --version        5.1.0
 django-admin.py version   # 1.10.5
+```
+
+Start `ipython` and verify it uses Python 3 by default. (Notice that `ipython`
+and `ipython3` are both legitimate commands. If `ipython` looks like it's using
+Python 2 then run `ipython3` to be explicit.
+
+We're looking for something like **imPython 3.6.0** at the beginning of the first
+line here when IPython starts up:
+
+```
+imPython 3.6.0 (default, Dec 24 2016, 08:01:42)
+Type "copyright", "credits" or "license" for more information.
+
+IPython 5.1.0 -- An enhanced Interactive Python.
+?         -> Introduction and overview of IPython's features.
+%quickref -> Quick reference.
+help      -> Python's own help system.
+object?   -> Details about 'object', use 'object??' for extra details.
 ```
 
 Make sure that you're version numbers are *in the ballpark* of what you see above.
