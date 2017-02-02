@@ -38,7 +38,7 @@ print "hello world!"
 
 # python 3 makes print use parenthesis, just like every other function.
 # this is a great change!
-print("hello world!"
+print("hello world!")
 ```
 
 See? Switching between the two isn't that big of a deal. For what we do. If
