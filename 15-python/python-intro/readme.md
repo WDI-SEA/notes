@@ -213,13 +213,13 @@ letter in a string a specific index. You can select letters between a start and
 and index. You can select letters counting backwards from the end using negative
 numbers. You can select every N letters by specifying a step size.
 
-* *str[index]* choose one letter at index
-* *str[-index]* choose letter at index counting backwards from the end.
-* *str[start:end]* get a range of letters from a start to end.
-* *str[start:end:step]* get a range of letters taking `step` sized steps between.
-* *str[:end]* omit the start index and grab letters from zero up to `end`.
-* *str[start:]* omit the end index and grab letters from `start` up to the end of the string.
-* *str[::-1]* reverses a string by going backwards with a step of -1 from start to end.
+* `str[index]` choose one letter at index
+* `str[-index]` choose letter at index counting backwards from the end.
+* `str[start:end]` get a range of letters from a start to end.
+* `str[start:end:step]` get a range of letters taking `step` sized steps between.
+* `str[:end]` omit the start index and grab letters from zero up to `end`.
+* `str[start:]` omit the end index and grab letters from `start` up to the end of the string.
+* `str[::-1]` reverses a string by going backwards with a step of -1 from start to end.
 
 ```python
 # get the last letter
