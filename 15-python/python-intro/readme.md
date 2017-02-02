@@ -249,10 +249,11 @@ Python uses common operators for math.
 ```python
 +
 -
-/
+/    # decimal division       4 /  3 == 1.333333
+//   # force integer division 4 // 3 == 1
 *
-** #exponent
-% #modulo
+**   # exponent  2 ** 3 == 27
+%    # modulo    17 % 5 == 2
 
 +=
 -=

@@ -229,6 +229,7 @@
   * [Hashmaps](08-cs/cs-hashmaps/readme.md)
   * [Trees and Other Topics](08-cs/cs-trees-data-structures/readme.md)
 * [Python](15-python/python.md)
+  * [Python Installation](15-python/python-installation/readme.md)
   * [Intro to Python](15-python/python-intro/readme.md)
   * [Python Cheatsheet](15-python/python-cheatsheet/readme.md)
   * [Unit Testing](15-python/python-unit-tests/readme.md)
