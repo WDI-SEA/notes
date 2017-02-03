@@ -1,4 +1,14 @@
 # Python Cheatsheet
+Here's a collection of some useful pieces of Python code. This cheatsheet
+is designed to help you quickly look up how to do common, useful things
+and hopefully it clears up confusion about problems you may run into:
+
+Also, here's a great external reference that provides an excellent list of
+tips and tricks in Python. Lots of the tips are great and you'll use right
+away. Some tips relate to advanced material or features that we won't use.
+Simply ignore anything that isn't immidiately beneficial to you.
+
+[30 Essential Python Tips and Tricks](http://www.techbeamers.com/essential-python-tips-tricks-programmers/?utm_source=mybridge&utm_medium=blog&utm_campaign=read_more#tip1)
 
 ### Numbers
 Force integer division with `//`
