@@ -248,6 +248,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Intro to Python | [Intro to Python](https://github.com/WDI-SEA/intro-python) |
 | Python Exercises | [Python Exercises](https://github.com/WDI-SEA/python-exercises) |
 | Python Challenges | [Python Challenges](https://github.com/WDI-SEA/python-challenges) |
+| Arrays and For Loops | [Convert JS to PY](https://github.com/WDI-SEA/python-arrays-and-for-loops) |
 | File Processing | [Renobet](https://github.com/geluso/renobet) |
 | Python Unit Tests | [Python Unit Tests](https://github.com/WDI-SEA/python-unit-tests) |
 | Python Class Examples | [Python Class Examples](https://github.com/WDI-SEA/python-class-examples) |
