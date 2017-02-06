@@ -678,6 +678,40 @@ gather_input()
 # Hello, Bob. Tim says hi.
 ```
 
+Notice: `input()` always returns a string value. If you want someone to enter
+a number then you should pass the value input returns through something like
+`int()` or `float()`.
+
+```python
+age = input("how old are you?")
+age = int(age)
+
+age = int(input("how old are you?"))
+```
+
+```python
+cost = input("how much was that candy bar?")
+cost = float(cost)
+
+cost = float(input("how much was that candy bar?"))
+```
+
+There's nothing special about the `int()` or `float()` functions. They try to
+convert whatever value their given to an int or a float.
+
+```
+file_data = "2007,2017,Seattle"
+moved_year, current_year, city = tupple(file_data.split(","))
+
+# Convert years from strings to ints
+moved_year = int(moved_year)
+current_year = int(current_year)
+
+diff = current_year - moved_year
+
+print("Someone moved to {city} in {moved_year} and has lived there for {diff} years."
+```
+
 # Now You're Hacking!
 That's a quick introduction to only some of the things Python has to offer.
 You now have enough knowledge about Python's basic data types, functions, lists,
