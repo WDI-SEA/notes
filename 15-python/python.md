@@ -51,7 +51,7 @@ person = {
 }
 
 print(person)
-print(person.name, "has", len(person.hobbies), "hobbies.")
+print(person["name"], "has", len(person["hobbies"]), "hobbies.")
 ```
 
 ## Negative String Indexes!!
