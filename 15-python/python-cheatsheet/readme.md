@@ -151,7 +151,7 @@ for each loop.
 ```python
 bar = [11, 42, 53, 65, 99]
 for foo in bar:
-  print(bar)
+  print(foo)
 ```
 
 Use the `enumerate` function to count the items as they pass through the
