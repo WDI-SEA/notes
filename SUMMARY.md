@@ -241,6 +241,7 @@
   * [Django Cheatsheet](15-python/python-django-cheatsheet/readme.md)
   * [Django Polls App Tutorial](https://docs.djangoproject.com/en/1.10/intro/tutorial01/)
   * [Django School Tool Tutorial](15-python/python-django-school-tool/readme.md)
+  * [Django Auth](15-python/python-django-auth/readme.md)
   * [Data Structures and Algorithms](15-python/python-data-structures/readme.md)
     * [Recursion](15-python/python-recursion/readme.md)
     * [Binary Search](15-python/python-data-structures/python-binary-search/readme.md)
