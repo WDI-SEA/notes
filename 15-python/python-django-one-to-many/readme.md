@@ -3,9 +3,12 @@ Django makes it easy to attach different types of data to your models
 that define what is saved in your database. It's easy to add integers,
 floats, dates, datetimes, short text, long text and lots of stuff.
 
-Oh, here's a link to all of the fields Django provides for models:
+Oh, here's a link to all of the fields Django provides for models, and links
+to their documentation on one-to-many and many-to-many relationships:
 
-<https://docs.djangoproject.com/en/1.10/ref/models/fields/#field-types>
+* <https://docs.djangoproject.com/en/1.10/ref/models/fields/#field-types>
+* <https://docs.djangoproject.com/en/1.10/topics/db/models/#many-to-one-relationships>
+* <https://docs.djangoproject.com/en/1.10/topics/db/models/#many-to-many-relationships>
 
 Of course, Django also has ways to hook up one-to-many and many-to-many
 relationships. Django establishes one-to-many relationships using a
