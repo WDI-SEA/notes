@@ -39,9 +39,29 @@ class Song(models.Model):
 Now that these models are defined, have Python detect the changes and use
 `manage.py` to create migrations and run them:
 
-```
+```bash
 python3 manage.py makemigrations
 python3 manage.py migrate
+```
+
+Now that relationships have been set up you can create models on the server
+and save models as fields of other models:
+
+```python
+weezer = Artist()
+weezer.name = "Weezer"
+weezer.save()
+
+album = Album()
+album.title = "Pinkerton"
+album.artist = weezer
+album.save()
+
+song = Song()
+song.title = "El Scorcho"
+song.artist = weezer
+song.album = album
+song.save()
 ```
 
 ## User Associations
