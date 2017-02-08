@@ -283,6 +283,7 @@ Now that we've got static files and a base layout and an index page all
 configured let's hook up URL routing to tell our server when it should
 show each of these things.
 
+1. Add an `index` definition in a file `schooltool/views.py`
 1. Create and configure a file called `urls.py` in schooltool
 2. Include the `schooltool.urls` file in `schooltoolsite/urls.py`
 
@@ -290,6 +291,15 @@ After you make these files you should be able to run the server
 and navigate to something like <http://localhost:8000> and see
 the website with a navbar, an h1 and "Welcome to school tool"
 as defined in the base.html and index.html files.
+
+**schooltool/views.py**
+```python
+from django.shortcuts import render
+
+def index(request):
+  return render(request, 'schooltool/index.html')
+```
+
 
 **schooltool/urls.py**
 ```python
@@ -311,6 +321,7 @@ urlpatterns = [
     url(r'^', include('schooltool.urls'))
 ]
 ```
+
 
 ## Define Models
 It's time to decide what we want our site to do. In general we want to
