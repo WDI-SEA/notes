@@ -275,6 +275,9 @@ returning the name of the final person left.
 Start counting with 1 at index zero so `josephus(["Jack", "John"], 1)` returns
 "John" because "Jack" was eliminated on the first count.
 
+Hint: put all of the names in a queue. Cycle through the names by dequeueing
+names and immediately enqueueing them, unless they should be eliminated.
+
 It may help you to start out your program printing out something like this, so
 you can see what's going on:
 
@@ -305,4 +308,10 @@ josephus(["James", "John", "Mike", "Josephus"], 3) # returns "James"
 2 James is skipped
 3 Joshephus is eliminated
 James is the only one left.
+```
+
+This long one should return "Mary".
+
+```
+josephus(["Peter", "Paul", "Mary", "Abba", "Prince", "Sting", "Beck"], 57)
 ```
