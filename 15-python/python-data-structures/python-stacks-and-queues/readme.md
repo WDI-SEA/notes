@@ -259,3 +259,50 @@ test_brackets('()')
 #returns True -- no brackets = correctly matched
 test_brackets('abc123yay')
 ```
+
+# Challenge: Josephus problem
+In the Josephus problem from antiquity, n people are in dire straits and agree
+to the following strategy to reduce the population. They arrange themselves in
+a circle (at positions numbered from 0 to n−1) and proceed around the circle,
+eliminating every `Mth` person until only one person is left. Legend has it that
+Josephus figured out where to sit to avoid being eliminated.
+
+Define a function called `josephus` that accepts a list of people's names, and
+a number `M`. Your function should simulate the population reduction strategy,
+going around in a circle and eliminating every `Mth` person and finally
+returning the name of the final person left.
+
+Start counting with 1 at index zero so `josephus(["Jack", "John"], 1)` returns
+"John" because "Jack" was eliminated on the first count.
+
+It may help you to start out your program printing out something like this, so
+you can see what's going on:
+
+```
+josephus(["James", "John", "Mike", "Josephus"], 1)
+1 James is eliminated
+1 John is eliminated
+1 Mike is eliminated
+Josephus is the only one left.
+
+josephus(["James", "John", "Mike", "Josephus"], 2) # returns "James"
+1 James is skipped
+2 John is eliminated
+1 Mike is skipped
+2 Josephus is eliminated
+1 James is skipped
+2 Mike is eiliminated
+James is the only one left.
+
+josephus(["James", "John", "Mike", "Josephus"], 3) # returns "James"
+1 James is skipped
+2 John is skipped
+3 Mike is eliminated
+1 Josephus is skipped
+2 James is skipped
+3 John is eliminated
+1 Joshephus is skipped
+2 James is skipped
+3 Joshephus is eliminated
+James is the only one left.
+```
