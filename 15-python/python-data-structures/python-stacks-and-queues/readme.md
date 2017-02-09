@@ -238,26 +238,26 @@ It should check for the following: `[ ]`,`{ }`,`( )`
 # True
 test_brackets('abc(123)')
 
-#returns False -- missing closing bracket
-test_brackets('abc(123')
-
 #returns True
 test_brackets('a[bc(123)]')
 
-#returns False -- inproperly nested
-test_brackets('a[bc(12]3)')
-
 #returns True
 test_brackets('a{b}{c(1[2]3)}')
-
-#returns False -- inproperly nested
-test_brackets('a{b}{c(1}[2]3)')
 
 #returns True
 test_brackets('()')
 
 #returns True -- no brackets = correctly matched
 test_brackets('abc123yay')
+
+#returns False -- missing closing bracket
+test_brackets('abc(123')
+
+#returns False -- inproperly nested
+test_brackets('a[bc(12]3)')
+
+#returns False -- inproperly nested
+test_brackets('a{b}{c(1}[2]3)')
 ```
 
 # Challenge: Josephus problem
