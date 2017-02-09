@@ -246,6 +246,7 @@
   * [Data Structures and Algorithms](15-python/python-data-structures/readme.md)
     * [Recursion](15-python/python-recursion/readme.md)
     * [Binary Search](15-python/python-data-structures/python-binary-search/readme.md)
+    * [Stacks and Queues](15-python/python-data-structures/python-stacks-and-queues/readme.md)
     * [Linked Lists](15-python/python-data-structures/python-linked-lists/readme.md)
     * [Binary Trees](15-python/python-data-structures/python-binary-trees/readme.md)
 * [Assorted Topics](09-other-topics/readme.md)
