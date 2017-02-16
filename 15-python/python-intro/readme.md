@@ -213,13 +213,13 @@ letter in a string a specific index. You can select letters between a start and
 and index. You can select letters counting backwards from the end using negative
 numbers. You can select every N letters by specifying a step size.
 
-* *str[index]* choose one letter at index
-* *str[-index]* choose letter at index counting backwards from the end.
-* *str[start:end]* get a range of letters from a start to end.
-* *str[start:end:step]* get a range of letters taking `step` sized steps between.
-* *str[:end]* omit the start index and grab letters from zero up to `end`.
-* *str[start:]* omit the end index and grab letters from `start` up to the end of the string.
-* *str[::-1]* reverses a string by going backwards with a step of -1 from start to end.
+* `str[index]` choose one letter at index
+* `str[-index]` choose letter at index counting backwards from the end.
+* `str[start:end]` get a range of letters from a start to end.
+* `str[start:end:step]` get a range of letters taking `step` sized steps between.
+* `str[:end]` omit the start index and grab letters from zero up to `end`.
+* `str[start:]` omit the end index and grab letters from `start` up to the end of the string.
+* `str[::-1]` reverses a string by going backwards with a step of -1 from start to end.
 
 ```python
 # get the last letter
@@ -249,10 +249,11 @@ Python uses common operators for math.
 ```python
 +
 -
-/
+/    # decimal division       4 /  3 == 1.333333
+//   # force integer division 4 // 3 == 1
 *
-** #exponent
-% #modulo
+**   # exponent  2 ** 3 == 27
+%    # modulo    17 % 5 == 2
 
 +=
 -=
@@ -324,6 +325,9 @@ a.append(42)
 [99, 82, 23, 12, 1, 42]
 
 result = a.pop() # the first value is stored in the variable
+
+# notice: the value is actually removed from the array
+print(a)
 [82, 23, 12, 1, 42]
 
 # insert a value at a specific index
@@ -393,13 +397,52 @@ bool("")
 False
 ```
 
-## String Formatting
-Python has several convenient ways to format strings on the fly. You'll never
+## String Interpolation
+Python has super convenient ways to format strings on the fly. You'll never
 have to bother with crazy string concatenation again. These are like small
 rendered templates.
 
-Place empty curly braces `{}` inside a string to refer to something that will
-be placed in the string later.
+Define any string with the letter `f` in front of the quotes and Python will
+treat it as a "formatted" string. Formatted strings use curly braces `{}` to
+identify where to evaluate values inside a string. The value inside the curly
+braces can be variable names, or expressions.
+
+The curly braces and the format function can refer to names for where values
+appear in the template, and what values are named.
+
+```python
+state = "Washington State"
+year = 1889
+n = 42
+my_message = f"{state} was the {n}th state to join the union in {year}."
+```
+
+Let's see format strings calling a function too!
+
+```python
+def st_nd_rd_th(n):
+  # add one to 13 because range is exclusive at the end.
+  if n in range(11, 13 + 1):
+    return "th"
+  if n % 10 == 1:
+    return "st"
+  elif n % 10 == 2:
+    return "nd"
+  elif n % 10 == 3:
+    return "rd"
+  else:
+    return "th"
+
+state = "Washington State"
+year = 1889
+n = 42
+my_message = f"{state} was the {n}{st_nd_rd_th(n)} state to join the union in {year}."
+print(my_message)
+```
+
+F-strings are awesome. There's also a `format()` function on all strings. You can
+specify empty curly braces and pass values as parameters and the parameter values
+will fall in line in the order the curly braces appear.
 
 ```python
 template = "My name is {} and I like {}"
@@ -407,12 +450,12 @@ template.format("Steve", "Cheese")
 'My name is Steve and I like Cheese'
 ```
 
-The curly braces and the format function can refer to names for where values
-appear in the template, and what values are named.
+The `format()` function an also name the curly braces and accept named parameters:
 
 ```python
-my_message = "{state} was the {n}th state to join the union in {year}."
-my_message.format(year=1889, state="Washington State", n=42)
+template = "My name is {name} and I like {food}"
+template.format(food="Cheese", name="Steve")
+'My name is Steve and I like Cheese'
 ```
 
 ## Control flow
@@ -633,6 +676,40 @@ gather_input()
 # Enter your name: Tim
 # Enter a friend's name: Bob
 # Hello, Bob. Tim says hi.
+```
+
+Notice: `input()` always returns a string value. If you want someone to enter
+a number then you should pass the value input returns through something like
+`int()` or `float()`.
+
+```python
+age = input("how old are you?")
+age = int(age)
+
+age = int(input("how old are you?"))
+```
+
+```python
+cost = input("how much was that candy bar?")
+cost = float(cost)
+
+cost = float(input("how much was that candy bar?"))
+```
+
+There's nothing special about the `int()` or `float()` functions. They try to
+convert whatever value their given to an int or a float.
+
+```
+file_data = "2007,2017,Seattle"
+moved_year, current_year, city = tupple(file_data.split(","))
+
+# Convert years from strings to ints
+moved_year = int(moved_year)
+current_year = int(current_year)
+
+diff = current_year - moved_year
+
+print("Someone moved to {city} in {moved_year} and has lived there for {diff} years."
 ```
 
 # Now You're Hacking!

@@ -1,5 +1,19 @@
 ## Lab schedule
 
+### Week 10
+| Day       | Topic                      | Lab                                                                                 |
+| ---       | ---                        | -----                                                                               |
+| Tuesday   | Hash Maps Worksheet | [Hash Map Worksheet](https://docs.google.com/spreadsheets/d/1ROYFEF2d3ddwMORJEvg4DdRwz4xoJIX7oWQLUohNI70/edit#gid=0)                    |
+| Tuesday   | Python Default Dict | [Python defaultdict](https://repl.it/FjPf/0)                    |
+
+### Week 10
+| Day       | Topic                      | Lab                                                                                 |
+| ---       | ---                        | -----                                                                               |
+| Monday    | Intro To Python | [Python Exercises](https://github.com/WDI-SEA/python-exercises)                    |
+| Monday    | Intro To Python | [Python Challenges](https://github.com/WDI-SEA/python-challenges)                    |
+| Monday    | Intro To Python | [Python Class Examples](https://github.com/WDI-SEA/python-class-examples)                    |
+| Tuesday   | Python Class Inheritance | [Python Unit Tests](https://github.com/WDI-SEA/python-unit-tests)                    |
+
 ### Week 8
 | Day       | Topic                      | Lab                                                                                 |
 | ---       | ---                        | -----                                                                               |

@@ -6,6 +6,12 @@ Please submit the link(s) to the repo (github repository) with your homework (e.
 To keep your assignments neat, each piece of homework should have its own repo.
 -->
 
+### Week 10
+| Day       | Topic                 | Lab                                                           |
+| ---       | ---                   | -----                                                         |
+| Monday    | Convert JS to Python  | [Arrays and for loop](https://github.com/WDI-SEA/python-arrays-and-for-loops)
+| Tuesday   | Class Inheritance     | [Bank Accounts](https://github.com/WDI-SEA/python-bank-account-inheritance)
+
 ### Week 7
 | Day       | Topic                 | Lab                                                           |
 | ---       | ---                   | -----                                                         |
