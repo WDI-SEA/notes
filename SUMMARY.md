@@ -60,6 +60,7 @@
   * [DOM and Events](02-js-jquery/js-dom-events/readme.md)
   * [DOM Manipulation](02-js-jquery/js-dom-manipulation/readme.md)
   * [Callbacks and Iterators](02-js-jquery/js-callbacks-iterators/readme.md)
+  * [HTML5 Canvas](02-js-jquery/js-canvas/readme.md)
   * [How To Reduce Redundancy](02-js-jquery/js-how-to-reduce-redundancy/readme.md)
   * [(2016) OOP with Classes](02-js-jquery/js-classes/readme.md)
   * [(1995) OOP with Prototypes](02-js-jquery/js-prototypes/01readme.md)
