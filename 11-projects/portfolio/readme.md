@@ -26,21 +26,24 @@ Before beginning the design and coding phase of your portfolio, you'll want to i
 
 ###Required
 
+* A link from your GitHub user page to your portfolio
 * A picture/headshot of yourself
   * This should be a professional picture
 * An elevator pitch for yourself
   * This should be an "About Me" section that describes your background and experience
+* Resume
+  * A clear link to your resume, above the fold
+  * Two downloadable versions: 1 PDF, 1 plain-text version
+  * A separate section where users can click and view your resume
 * Projects
   * 3+ projects (you'll add your final project after the cohort)
   * Each project should have a...
+    * working link to live demo
     * title
     * list of technologies used
     * description
     * link to the Github repo
     * link to the deployed site itself
-* Resume
-  * Two downloadable versions: 1 PDF, 1 plain-text version
-  * A separate section where users can click and view your resume
 * Contact information
   * Email address
   * Github link
