@@ -376,3 +376,53 @@ document.getElementById("clear").addEventListener("click", function(event) {
   RECTANGLES = [];
 });
 ```
+
+## Refact Draw Method Inside Rectangle Classo
+Object oriented programming allows us to:
+
+1. model data that represents what objects are
+2. define functionality that defines what objects can do
+
+Create a new function called `draw` on the Rectangle class that accepts a `ctx`
+as a parameter and has rectangles draw themselves onto the canvas with the
+`ctx` according to their own `this.x`, `this.y` and `this.size` values.
+
+After doing this we can delete the `drawRectangle` function in **main.js** and
+simply iterate through rectangles and tell them to draw themselves. It's nice
+to keep everything related to rectangles inside the one file inside the one
+class.
+
+The rectangle class provides a good pattern for us to follow if ever want to
+add more shapes or figures to this website. We can define classes for squares,
+create circles, triangles or anything else.
+
+```js
+RECTANGLES.forEach(function(rect) {
+  rect.draw(ctx);
+});
+```
+
+```js
+class Rectangle {
+  constructor(x, y, size) {
+    // these rectangles default to being 50x50px squares
+    this.size = size || 50;
+    this.x = x;
+    this.y = y;
+  }
+  
+  draw(ctx) {
+    // The ctx is like our paintbrush. Let's set the width of a line we'll draw
+    // and choose different colors for fill (the inside of shapes) and for it's
+    // stroke (a line on the border of shapes).
+    ctx.fillStyle = 'purple';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 5;
+    
+    // fill an entire rectangle
+    // then stroke around it's edges with red.
+    ctx.fillRect(this.x, this.y, this.size, this.size);
+    ctx.strokeRect(this.x, this.y, this.size, this.size);
+  }
+}
+```
