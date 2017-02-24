@@ -24,8 +24,8 @@
 | Team Members	| Project Name	| Live Site |
 |---------------|---------------|-----------|
 | Brian Bixby	| Chow	| https://brianbixbyrecipe.herokuapp.com/ |
-| Congcong Li	| Hetrix	https://hetris.herokuapp.com/ | 
-| Christopher Whitaker	| Chrome Browser History	http://chromebh.herokuapp.com/ | 
+| Congcong Li	| Hetrix	| https://hetris.herokuapp.com/ | 
+| Christopher Whitaker	| Chrome Browser History	| http://chromebh.herokuapp.com/ | 
 | Tommy Lim	| Seattle Safe Router	| https://seattle-safe-router.herokuapp.com/ | 
 | Rachel Chen	| Gube Roldberg	| http://guberoldberg.herokuapp.com/ | 
 | Robert Spears	| Doggy Walking	| http://doggywalking.herokuapp.com/ | 
