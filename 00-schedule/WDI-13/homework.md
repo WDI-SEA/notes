@@ -17,10 +17,11 @@ What did you think of this deliverable?
 
 ### Week 1
 
-| Day       | Topic        | Homework                                                                              |
-| ------    | -----        | --------                                                                              |
-| Monday    | Command Line Practice     | [Command Line Practice](https://github.com/WDI-SEA/command-line-practice) |
-| Tuesday   | Project Part 1 | TBD |
-| Wednesday | Project Part 2   | TBD         |
-| Thursday  | Project Part 3 | TBD       |
-| Friday    | Finish Project  | TBD                                 |
+| Day       | Topic                  | Homework                                                                                       |
+| ------    | -----                  | --------                                                                                       |
+| Monday    | Command Line Practice  | [Command Line Practice](https://github.com/WDI-SEA/command-line-practice)                      |
+| Tuesday   | Project Part 1         | [Monument Landing Page - 1](https://github.com/WDI-SEA/monument-landing-page/tree/master/pt-1) |
+| Wednesday | Project Part 2         | [Monument Landing Page - 2](https://github.com/WDI-SEA/monument-landing-page/tree/master/pt-2) |
+| Thursday  | Project Part 3         | [Monument Landing Page - 3](https://github.com/WDI-SEA/monument-landing-page/tree/master/pt-3) |
+| Friday    | Finish Project         | [Monument Landing Page - 4](https://github.com/WDI-SEA/monument-landing-page/tree/master/pt-4) |
+
