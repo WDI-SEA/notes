@@ -19,7 +19,7 @@ What did you think of this deliverable?
 
 | Day       | Topic        | Homework                                                                              |
 | ------    | -----        | --------                                                                              |
-| Monday    | Command Line Practice     | [Command Line Murder Mystery](https://github.com/WDI-SEA/command-line-murder-mystery) |
+| Monday    | Command Line Practice     | [Command Line Practice](https://github.com/WDI-SEA/command-line-practice) |
 | Tuesday   | Project Part 1 | TBD |
 | Wednesday | Project Part 2   | TBD         |
 | Thursday  | Project Part 3 | TBD       |
