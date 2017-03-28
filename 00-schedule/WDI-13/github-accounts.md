@@ -14,14 +14,14 @@ Link to student shuffle tool: <http://martystepp.com/shuffle>
 | Celina Gutierrez           | [celgutierrez](http://github.com/celgutierrez)                       |
 | Maria	Sevilla              | [maria-christina-sevilla](http://github.com/maria-christina-sevilla) |
 | Jade Hartman               | [jadespachie](http://github.com/jadespachie)                         |
-| Mark Goldstein             |                                                                    |
+| Mark Goldstein             | [markdgold](http://github.com/markdgold)                             |
 | Sara Kevorkian             | [sdkevorkian](http://github.com/sdkevorkian)                         |
 | Steven Keiser              | [stevenkeiser](http://github.com/stevenkeiser)                       |
 | Tim Muangkeo               | [ttmuangkeo](http://github.com/ttmuangkeo)                           |
 | Alona Corena               | [AlyonaKorena](http://github.com/AlyonaKorena)                       |
-| peter amadon               |                                                                    |
-| Bowman Neely               | [danidipinto](http://github.com/danidipinto)                         |
+| peter amadon               | [Pamadon](http://github.com/Pamadon)                                |
+| Bowman Neely               | [jblneely](http://github.com/jblneely)                         |
 | Joanna Colson              | [joannacolson](http://github.com/joannacolson)                       |
-| Andrew	Tsujimoto          |    																				                        |
+| Andrew	Tsujimoto          | [jigglor](http://github.com/jigglor)                        |
 | Emmeline	Aquino           | [emaquino44](http://github.com/emaquino44)                           |
-| Shawn Adams                |                                                                    |
+| Shawn Adams                | [buffalocheck](http://github.com/buffalocheck)                         |
