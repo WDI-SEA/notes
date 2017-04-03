@@ -15,6 +15,16 @@ What did you think of this deliverable?
 
 ```
 
+### Week 2
+
+| Day       | Topic                  | Homework                                                                                       |
+| ------    | -----                  | --------                                                                                       |
+| Monday    | JS and Pseudocode  | [JS and Pseudocode](https://github.com/WDI-SEA/js-and-pseudocode)                      |
+| Tuesday   | Arrays, Functions, and Loops         | [Arrays, Functions, and Loops](https://github.com/WDI-SEA/arrays-functions-loops) |
+| Wednesday | Objects         | [Objects](https://github.com/WDI-SEA/objects) |
+| Thursday  | Finish Racecar Lab         | X |
+| Friday    | Supermarket Website         | Pending |
+
 ### Week 1
 
 | Day       | Topic                  | Homework                                                                                       |
