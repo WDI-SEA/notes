@@ -2,13 +2,15 @@
 
 ##Objectives
 
-* Describe arrays in the context of lower-level languages (C++, Java)
+* Describe arrays in the context of lower-level languages* (C, C++)
 * Memorize the acronyms LIFO and FIFO and how they apply to stacks and queues
 * Use data structures to implement stacks and queues
 
+*Note: what we mean here is a high-level language that required you to know a lot about what was going on under the hood - not assembly or a similarly low-level language
+
 ##Memory and Arrays
 
-So far, we've used arrays in JavaScript, which act as flexible containers for storing data. However, arrays in many lower-level languages (C++, Java) do not act like this. They are fixed in length, and we need to explicitly define the size on creation.
+So far, we've used arrays in JavaScript, which act as flexible containers for storing data - like a bag of effectively infinite holding. However, arrays in many lower-level languages* do not act like this. They are fixed in length, and we need to explicitly define the size on creation. If we need to a seemingly simple task, like adding a new element, it's time to create an entirely new array of size + 1, copy the old array over, and then deallocate the other array. The other option is to create an array bigger than you need and then you may or may not use all of it. Neither are attractive options. Many times people will combine these two for a bit of middle ground.
 
 To understand why this is the case, let's look at how memory is stored in a computer.
 
