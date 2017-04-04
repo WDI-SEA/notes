@@ -25,7 +25,7 @@ What did you think of this lab?
 | ------    | -----        | --------                                                                  |
 | Monday   | Computational Thinking Lab     | [Computational Thinking Lab](https://github.com/WDI-SEA/computational-thinking-lab)             |
 | Wednesday   | Functions Lab   | [Functions Lab](https://github.com/WDI-SEA/functions-lab)       |
-| Thursday | Racer Game Lab          | [Racer Game Lab](https://github.com/WDI-SEA/racecar-game-lab)     |
+| Thursday | Racer Game Lab          | [Racer Game Lab](https://github.com/WDI-SEA/racer-game-lab)     |
 
 
 ### Week 1
