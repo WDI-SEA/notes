@@ -24,7 +24,7 @@ What did you think of this lab?
 | Day       | Topic        | Lab                                                                       |
 | ------    | -----        | --------                                                                  |
 | Monday   | Computational Thinking Lab     | [Computational Thinking Lab](https://github.com/WDI-SEA/computational-thinking-lab)             |
-| Wednesday   | Arrays and Loops Lab   | [Arrays and Loops Lab](https://github.com/WDI-SEA/arrays-loops-lab)       |
+| Tuesday   | Arrays and Loops Lab   | [Arrays and Loops Lab](https://github.com/WDI-SEA/arrays-loops-lab)       |
 | Wednesday   | Functions Lab   | [Functions Lab](https://github.com/WDI-SEA/functions-lab)       |
 | Thursday | Racer Game Lab          | [Racer Game Lab](https://github.com/WDI-SEA/racer-game-lab)     |
 
