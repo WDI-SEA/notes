@@ -28,6 +28,9 @@ test_brackets('a{b}{c(1}[2]3)')
 test_brackets('()')
 #returns true
 
+test_brackets('[]]')
+#returns false - no opening bracket to correspond with last character
+
 test_brackets('abc123yay')
 #returns true -- no brackets = correctly matched
 ```
