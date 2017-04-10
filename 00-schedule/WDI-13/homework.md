@@ -15,6 +15,13 @@ What did you think of this deliverable?
 
 ```
 
+### Week 3
+
+| Day       | Topic                  | Homework                                                                                       |
+| ------    | -----                  | --------                                                                                       |
+| Monday    | Monument Landing Page Returns  | [Monument Landing Page - 5](https://github.com/WDI-SEA/monument-landing-page/tree/master/pt-5)                      |
+| Tu-Th     | Unit 1 Project         | [About Me](https://github.com/WDI-SEA/u1-project-about-me) or [Game](https://github.com/WDI-SEA/u1-project-game) |
+
 ### Week 2
 
 | Day       | Topic                  | Homework                                                                                       |
@@ -23,7 +30,7 @@ What did you think of this deliverable?
 | Tuesday   | Arrays, Functions, and Loops         | [Arrays, Functions, and Loops](https://github.com/WDI-SEA/arrays-functions-loops) |
 | Wednesday | Objects         | [Objects](https://github.com/WDI-SEA/objects) |
 | Thursday  | Finish Racecar Lab         | X |
-| Friday    | Supermarket Website         | Pending |
+| Friday    | Shopping Cart Project         | [Shopping Cart Project](https://github.com/WDI-SEA/shopping-cart-project) |
 
 ### Week 1
 
