@@ -97,9 +97,10 @@ You may have heard people describe a sort as an "in-place" sort. This means that
 
 | Sort | Best Case | Worst Case | Space | Stable | Mechanism | Notes |
 | -----|-----------|------------|-------|--------|-----------|-------|
-| Bubble Sort | O(n) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Easiest to understand; uses swaps |
-| Selection Sort | O(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n) | Not | Comparison |  |
-| Merge Sort | O(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *In-place version exists |
-| Quick Sort | O(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
-| Insertion Sort | O(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Uses insertions |
-| Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n))
+| Bubble Sort | Ω(n) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Easiest to understand; uses swaps |
+| Selection Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n) | Not | Comparison |  |
+| Merge Sort | Ω(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *In-place version exists |
+| Quick Sort | Ω(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
+| Insertion Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Uses insertions |
+| Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n+k)) | Yes | Distribution | - |
+| Radix Sort | Ω(nk) | O(nk) | O(n+k) | Yes | Distribution | Variation of bucket sort; in place versions exist but are not stable | 
