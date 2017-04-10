@@ -45,10 +45,10 @@ When you're finished having each person sort the cards at least once, discuss wi
 
     1. How fast was this sort? Fast, slow, medium?
     2. Did you require any extra space besides the space that the cards were originally laid out in?
-    3. What effect did it have on the end result that you did not swap "ties" (e.g., a 5&hearts; and a 5&diams;)?
+    3. What effect did it have on the end result that you did not swap "ties" (e.g., a 5 of hearts and a 5 of diamonds)?
     4. How fast or slow would it be to sort cards that start out already in order?
     5. How fast or slow would it be to sort cards that start out in completely reversed order?
-    6. Hypothetically, if you wanted to sort by suits (e.g., &clubs; < &diams; < &hearts; < &spades;), and then by card value, how would your swap/comparison logic change?
+    6. Hypothetically, if you wanted to sort by suits (e.g., clubs < diams < hearts < spades), and then by card value, how would your swap/comparison logic change?
     7. Given your answers to the previous questions, hazard a guess at what this sort's stats are:
         * Best case time complexity (Big Theta)
         * Worst case time complexity (Big O)
