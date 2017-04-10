@@ -18,6 +18,13 @@ What did you think of this lab?
 
 ```
 
+### Week 3
+
+| Day       | Topic        | Lab                                                                       |
+| ------    | -----        | --------                                                                  |
+| Monday   | jQuery Selector Lab     | [jQuery Selector Lab](https://github.com/WDI-SEA/jquery-selector-lab
+)             |
+
 
 ### Week 2
 
