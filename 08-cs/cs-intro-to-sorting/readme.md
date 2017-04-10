@@ -25,7 +25,7 @@ Well, yes and no. While there are a few choice sorts you should get very familia
 
 ## Your first sort
 
-###activity
+### Group Activity
 
 Before we get into any code, let's try sorting a deck of cards by hand. 
 
@@ -98,9 +98,14 @@ You may have heard people describe a sort as an "in-place" sort. This means that
 | Sort | Best Case | Worst Case | Space | Stable | Mechanism | Notes |
 | -----|-----------|------------|-------|--------|-----------|-------|
 | Bubble Sort | Ω(n) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Easiest to understand; uses swaps |
-| Selection Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n) | Not | Comparison |  |
 | Merge Sort | Ω(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *In-place version exists |
 | Quick Sort | Ω(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
 | Insertion Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Uses insertions |
-| Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n+k)) | Yes | Distribution | - |
+| Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n+k) | Yes | Distribution | - |
 | Radix Sort | Ω(nk) | O(nk) | O(n+k) | Yes | Distribution | Variation of bucket sort; in place versions exist but are not stable | 
+
+### Additional Activity
+
+Get back into your groups of two from earlier and layout your shuffled deck of cards once more. This time, you're only going to make a swap if your smaller number will be in its final resting place. Thus, you should go through the array and find the lowest number and swap it with the first card. Then do the same thing with the second card, and so on until you're finished.
+
+After you're done, add `Selection Sort` to the table above with your best guesses about what its stats are based on your experience.
