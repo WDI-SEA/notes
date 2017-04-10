@@ -87,7 +87,7 @@ A stable sort preserves the ordering of "ties", meaning that if we started out w
 
 ## Time Complexity
 
-People care a lot about the time complexity of sorting, to the point that they study the best, worst, and average time complexity of each algorithm. You may have noticed that in an ideal scenario, (already sorted or nearly sorted) bubble sort wasn't half bad, but on average, it was really slow. The actual stats for bubble sort are O(n) for best case and O(n^2) for the worst case. For this reason, sometimes it is good to consider what sort of data you will be usually sorting and what kind of case that would be - best, worst, or average.
+People care a lot about the time complexity of sorting, to the point that they study the best, worst, and average time complexity of each algorithm. You may have noticed that in an ideal scenario, (already sorted or nearly sorted) bubble sort wasn't half bad, but on average, it was really slow. The actual stats for bubble sort are O(n) for best case and O(n<sup>2</sup>) for the worst case. For this reason, sometimes it is good to consider what sort of data you will be usually sorting and what kind of case that would be - best, worst, or average.
 
 ## Space Complexity
 
@@ -95,11 +95,11 @@ You may have heard people describe a sort as an "in-place" sort. This means that
 
 ## Okay, where's the cheatsheet?
 
-| Sort | Best Case | Worst Case | Space complexity | Stable? | Mechanism? | Notes |
-| ---------- |---------|--------|--------|---------------|-------------------|
-| Bubble Sort | O(n) | O(n^2) | O(1) | Yes | Comparison | Easiest to understand; uses swaps |
-| Selection Sort | O(n^2) | O(n^2) | O(n) | Not | Comparison |  |
+| Sort | Best Case | Worst Case | Space | Stable | Mechanism | Notes |
+| -----|-----------|------------|-------|--------|-----------|-------|
+| Bubble Sort | O(n) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Easiest to understand; uses swaps |
+| Selection Sort | O(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n) | Not | Comparison |  |
 | Merge Sort | O(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *In-place version exists |
 | Quick Sort | O(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
-| Insertion Sort | O(n<sup>2</sup>) | O(n^2) | O(1) | Yes | Comparison | Uses insertions |
+| Insertion Sort | O(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Uses insertions |
 | Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n))
