@@ -50,7 +50,7 @@ When you're finished having each person sort the cards at least once, discuss wi
     5. How fast or slow would it be to sort cards that start out in completely reversed order?
     6. Hypothetically, if you wanted to sort by suits (e.g., clubs < diams < hearts < spades), and then by card value, how would your swap/comparison logic change?
     7. Given your answers to the previous questions, hazard a guess at what this sort's stats are:
-        * Best case time complexity (Big Theta)
+        * Best case time complexity (Big Ω)
         * Worst case time complexity (Big O)
         * Space complexity? (Big O)
         * Is this a stable or unstable sort?
