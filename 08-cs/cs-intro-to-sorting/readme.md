@@ -98,14 +98,33 @@ You may have heard people describe a sort as an "in-place" sort. This means that
 | Sort | Best Case | Worst Case | Space | Stable | Mechanism | Notes |
 | -----|-----------|------------|-------|--------|-----------|-------|
 | Bubble Sort | Ω(n) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Easiest to understand; uses swaps |
-| Merge Sort | Ω(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *In-place version exists |
-| Quick Sort | Ω(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
-| Insertion Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | Uses insertions |
+| Selection Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(1) | Yes | Comparison | - |
+| Insertion Sort | Ω(n<sup>2</sup>) | O(n<sup>2</sup>) | O(n)* | Yes | Comparison | In-place version exists; Uses insertions |
 | Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n+k) | Yes | Distribution | - |
 | Radix Sort | Ω(nk) | O(nk) | O(n+k) | Yes | Distribution | Variation of bucket sort; in place versions exist but are not stable | 
+| Merge Sort | Ω(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *in-place version exists |
+| Quick Sort | Ω(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
+| Heap Sort | Ω(n log(n)) | O(n log(n)) | O(1) | No | Comparison | In-place, but not stable. Like improved selection sort |
 
-### Additional Activity
+#### Notes about table
+* Many sorts such as merge sort or insertion sort have an in-place version of the algorithm, however, these solutions may be more complex to implement or have different time complexities than the basic algorithm
+* Quick sort has stable implementations available, however the time and space complexity of this alteration of the algorithm is different.
+* Quick sort performs worst on data sets with few unique values. An implementation called [Quick3](https://www.toptal.com/developers/sorting-algorithms/quick-sort-3-way) (because it has 3-way partitions instead of 2-way) solves this issue.
 
-Get back into your groups of two from earlier and layout your shuffled deck of cards once more. This time, you're only going to make a swap if your smaller number will be in its final resting place. Thus, you should go through the array and find the lowest number and swap it with the first card. Then do the same thing with the second card, and so on until you're finished.
+### Additional Activities
+
+Get back into your groups of two from earlier and layout your shuffled deck of cards once more. 
+
+#### 1. Selection sort
+
+This time, you're only going to make a swap if your smaller number will be in its final resting place. Thus, you should go through the array and find the lowest number and swap it with the first card. Then do the same thing with the second card, and so on until you're finished.
 
 After you're done, add `Selection Sort` to the table above with your best guesses about what its stats are based on your experience.
+
+#### 2. Insertion sort
+
+You and your partner each have your own table. Start with the cards in random order on one person's table. That person takes one card from the front of the deck and then hands it to the second person. The second person organizes the card on their own table, placing each successive card in order as they come. To do this, compare the new card received to every card in on the new table until you find where it fits.
+
+After you're done, add `Insertion Sort` to the table and guess what the stats are for this sort based on your experience.
+
+
