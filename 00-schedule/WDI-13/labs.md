@@ -20,27 +20,26 @@ What did you think of this lab?
 
 ### Week 3
 
-| Day       | Topic        | Lab                                                                       |
-| ------    | -----        | --------                                                                  |
-| Monday   | jQuery Selector Lab     | [jQuery Selector Lab](https://github.com/WDI-SEA/jquery-selector-lab
-)             |
+| Day      | Lab                                                                       |
+| ------   | --------                                                                  |
+| Monday   | [jQuery Selector Lab](https://github.com/WDI-SEA/jquery-selector-lab)             |
 
 
 ### Week 2
 
-| Day       | Topic        | Lab                                                                       |
-| ------    | -----        | --------                                                                  |
-| Monday   | Computational Thinking Lab     | [Computational Thinking Lab](https://github.com/WDI-SEA/computational-thinking-lab)             |
-| Tuesday   | Arrays and Loops Lab   | [Arrays and Loops Lab](https://github.com/WDI-SEA/arrays-loops-lab)       |
-| Wednesday   | Functions Lab   | [Functions Lab](https://github.com/WDI-SEA/functions-lab)       |
-| Thursday | Racer Game Lab          | [Racer Game Lab](https://github.com/WDI-SEA/racer-game-lab)     |
+| Day        | Lab                                                                       |
+| ------     | --------                                                                  |
+| Monday     | [Computational Thinking Lab](https://github.com/WDI-SEA/computational-thinking-lab)             |
+| Tuesday    | [Arrays and Loops Lab](https://github.com/WDI-SEA/arrays-loops-lab)       |
+| Wednesday  | [Functions Lab](https://github.com/WDI-SEA/functions-lab)       |
+| Thursday   | [Racer Game Lab](https://github.com/WDI-SEA/racer-game-lab)     |
 
 
 ### Week 1
 
-| Day       | Topic        | Lab                                                                       |
-| ------    | -----        | --------                                                                  |
-| Tuesday   | HTML/CSS     | [Mockup HTML CSS](https://github.com/WDI-SEA/mockup-html-css)             |
-| Tuesday   | Git/GitHub   | [Git and GitHub](https://github.com/WDI-SEA/git-github-lab)       |
-| Wednesday | CSS          | [Design And CSS Challenge](https://github.com/WDI-SEA/design-css-challenge-lab)     |
-| Thursday  | HTML Forms   | [HTML Forms](https://github.com/WDI-SEA/html-forms-lab)               |
+| Day       | Lab                                                                       |
+| ------    | --------                                                                  |
+| Tuesday   | [Mockup HTML CSS](https://github.com/WDI-SEA/mockup-html-css)             |
+| Tuesday   | [Git and GitHub](https://github.com/WDI-SEA/git-github-lab)       |
+| Wednesday | [Design And CSS Challenge](https://github.com/WDI-SEA/design-css-challenge-lab)     |
+| Thursday  | [HTML Forms](https://github.com/WDI-SEA/html-forms-lab)               |
