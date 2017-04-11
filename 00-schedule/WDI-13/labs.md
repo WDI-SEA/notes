@@ -23,6 +23,8 @@ What did you think of this lab?
 | Day      | Lab                                                                       |
 | ------   | --------                                                                  |
 | Monday   | [jQuery Selector Lab](https://github.com/WDI-SEA/jquery-selector-lab)             |
+| Tuesday   | [jQuery Tic Tac Toe](https://github.com/WDI-SEA/jquery-tic-tac-toe)             |
+| Wednesday   | [OOP Apartments](https://github.com/WDI-SEA/oop-apartments)             |
 
 
 ### Week 2
