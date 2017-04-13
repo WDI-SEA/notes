@@ -39,7 +39,7 @@ left and right side. There's no one straight path through a tree. How could we
 iterate through a tree?
 
 The answer. Is Recursion. For each Tree Node we can print out it's `data`, then
-print out the date for it's left and right side. Traversing a tree looks like this:
+print out the data for it's left and right side. Traversing a tree looks like this:
 
 ```ruby
 def inOrderTraverse(node)
@@ -114,9 +114,9 @@ To avoid the worst case scenario of a binary search tree, there are methods to c
 
 ### Tries
 
-Tries are a special type of tree, usually implemented with strings as the data, where child nodes share a common prefix (as represented by the parent node).
+[Tries](https://en.wikipedia.org/wiki/Trie) are a special type of tree, usually implemented with strings as the data, where child nodes share a common prefix (as represented by the parent node).
 
-![Trie](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/400px-Trie_example.svg.png)
+![Trie](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/250px-Trie_example.svg.png)
 
 They're usually used for quick lookups, generally autocomplete fields and IP address lookups. Assuming a trie was balanced, what would be the average lookup time for a value?
 
