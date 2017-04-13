@@ -20,7 +20,7 @@
     * [Weekly Q&A](00-schedule/WDI-12/week-01-questions.md)
   * [WDI 13](00-schedule/WDI-13/calendar.md)
     * [Calendar](00-schedule/WDI-13/calendar.md)
-    * [Code Snippets](00-schedule/snippets.md)
+    * [Code Snippets](00-schedule/WDI-13/snippets.md)
     * [Homework](00-schedule/WDI-13/homework.md)
     * [In-Class Labs](00-schedule/WDI-13/labs.md)
     * [GitHub Accounts](00-schedule/WDI-13/github-accounts.md)
