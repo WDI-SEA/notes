@@ -229,6 +229,7 @@
     * [Sample Code](08-cs/cs-js-linked-list/01-sample-code.md)
     * [Beginner Exercises](08-cs/cs-js-linked-list/02-beginner-exercises.md)
     * [Beginner Solutions](08-cs/cs-js-linked-list/02-beginner-solutions.md)
+  * [Intro to Sorting](08-cs/cs-intro-to-sorting/readme.md)
   * [Bucket Sort](08-cs/cs-ruby-bucket-sort/readme.md)
   * [Bubble Sort](08-cs/cs-ruby-bubble-sort/readme.md)
   * [Merge Sort](08-cs/cs-ruby-mergesort/readme.md)
