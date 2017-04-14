@@ -189,6 +189,34 @@ There's a couple ways to search graphs.
 
 Exploring the graph as far as possible, then backtracking.
 
+##### Pseudocode
+
+```
+function DFS(node)
+    visit node
+    Loop through node.children
+        if child node is not visited already
+            recursive call to DFS for the child node
+        end if
+    end loop
+end function
+```
+
+##### JavaScript
+```
+var visited = [];
+DFS(root);
+
+function DFS(node){
+  visited.push(node);
+  for(var i = 0; i < node.children.length; i++){
+    if(visited.indexOf(node.children[i]) == -1){
+      DFS(node.children[i]);
+    }
+  }
+}
+```
+
 #### Breadth-First Search
 
 Exploring the graph close to the starting point, then slowly growing out.
