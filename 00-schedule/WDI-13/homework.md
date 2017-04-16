@@ -15,7 +15,16 @@ What did you think of this deliverable?
 
 ```
 
+
+- [Watch](https://www.youtube.com/watch?v=GJmFG4ffJZU)
+
 ### Week 3
+
+| Day       | Homework                                                                                       |
+| ------    | --------                                                                                       |
+| Monday    | [Apartment Database](https://github.com/WDI-SEA/apartment-database)                        |
+| Tuesday    | [Booktown](https://github.com/WDI-SEA/booktown)                        |
+
 
 | Day       | Homework                                                                                       |
 | ------    | --------                                                                                       |

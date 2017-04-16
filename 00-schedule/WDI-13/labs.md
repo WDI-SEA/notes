@@ -18,6 +18,15 @@ What did you think of this lab?
 
 ```
 
+### Week 4
+
+| Day      | Lab                                                                       |
+| ------   | --------                                                                  |
+| Monday   | [SQL Carmen Sandiego](https://github.com/WDI-SEA/sql-carmen-san-diego)     |
+| Tuesday   | [Express Daily Planet AJAX](https://github.com/WDI-SEA/express-daily-planet-ajax)     |
+
+
+
 ### Week 3
 
 | Day      | Lab                                                                       |
