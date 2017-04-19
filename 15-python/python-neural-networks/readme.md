@@ -210,7 +210,7 @@ for i in range(1000):
 print(sess.run([W, b]))
 ```
 
-Sweet! Notice it got close to the perfect values of 1 and -1 minus some 
+Sweet! Notice it got close to the perfect values of 1 and -1 minus some rounding errors.
 
 ### Neural Networks using Iris Data
 
