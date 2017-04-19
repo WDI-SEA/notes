@@ -20,7 +20,7 @@ Form groups of 2 or 3 with the people sitting closest to you. Answer the followi
 
 At the microscopic level the human brain (or any other animal's brain) is made up of [neurons](https://en.wikipedia.org/wiki/Neuron) which are highly interconnected with each other. The synapse of each neuron is where each neuron will fire or not fire. If it fires, then the connected neuron is activated.
 
-![Neuron](https://en.wikipedia.org/wiki/Dendrite#/media/File:Neuron_Hand-tuned.svg)
+![Neuron](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Neuron.svg/300px-Neuron.svg.png)
 
 The brain, as it learns, changes the weight or cost of connections, or the likelihood of the neuron actually firing. The more something works, the stronger the path to get there becomes. 
 
@@ -70,5 +70,5 @@ In order to learn some basics about TensorFlow, we'll follow the [getting starte
 
 ### Neural Networks using Iris Data
 
-For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn)
+For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn).
 
