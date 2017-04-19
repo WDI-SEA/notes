@@ -68,7 +68,43 @@ It's been a little while since math class for most of us, but as a reminder, [li
 
 In order to learn some basics about TensorFlow, we'll follow the [getting started example](https://www.tensorflow.org/get_started/get_started) on their website. In this example, we'll be using TensorFlow to model linear regression as well as calculate our loss.
 
+#### The Basics
+
+A tensor is a generic term for vector (in the mathematical sense). A tensor's `rank` is the number of dimensions. You can think of these as levels of depth in your arrays.
+
+![Ranks](Screenshot Shot Ranks.png)
+
+Let's first create a test file to play around with called `test.py`. Import TensorFlow at the top the the file. Then create a couple of constants an try printing them out.
+
+```
+import tensorflow as tf
+
+node1 = tf.constant(3.0, tf.float32)
+node2 = tf.constant(4.0) # also tf.float32 implicitly
+print(node1, node2)
+```
+
+Your output might have looked similar to this:
+
+```
+Tensor("Const:0", shape=(), dtype=float32) Tensor("Const_1:0", shape=(), dtype=float32)
+```
+
+The zero refers to the rank (see above), because a constant (also known as a scalar value) has a rank of 0. Notice also that there is no value within the Tensors. In fact, the variables are not initialized until you either explicitly run them within a session or call a function to initialize them. Let's change our code so that we create and run a session to evaluate the nodes. Replace the print statement in the code above with the following:
+
+```
+sess = tf.Session()
+print(sess.run([node1, node2]))
+```
+
+Now you should see the values printed out as you originally expected.
+
+
 ### Neural Networks using Iris Data
 
 For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn).
+
+## Further reading
+
+* [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
 
