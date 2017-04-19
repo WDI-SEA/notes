@@ -24,6 +24,8 @@ What did you think of this lab?
 | ------   | --------                                                                  |
 | Monday   | [SQL Carmen Sandiego](https://github.com/WDI-SEA/sql-carmen-san-diego)     |
 | Tuesday   | [Express Daily Planet AJAX](https://github.com/WDI-SEA/express-daily-planet-ajax)     |
+| Wednesday   | [Express APIs OMDB](https://github.com/WDI-SEA/express-apis-omdb)     |
+| Thursday   | [Link Shortener](https://github.com/WDI-SEA/link-shortener)     |
 
 
 
