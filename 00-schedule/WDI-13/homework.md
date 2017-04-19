@@ -21,7 +21,10 @@ What did you think of this deliverable?
 | Day       | Homework                                                                                       |
 | ------    | --------                                                                                       |
 | Monday    | [Apartment Database](https://github.com/WDI-SEA/apartment-database)                        |
-| Tuesday    | [Booktown](https://github.com/WDI-SEA/booktown)                        |
+| Tuesday   | [Booktown](https://github.com/WDI-SEA/booktown)                        |
+| Wednesday | [Cruddy Board Games](https://github.com/WDI-SEA/cruddy-board-games-project)                       |
+| Thursday  | RESTful Movie Theatre (wait for it...)                      |
+| Friday    | [Pokedex](https://github.com/WDI-SEA/express-pokedex)                       |
 
 ### Week 3
 
