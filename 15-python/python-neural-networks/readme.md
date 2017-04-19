@@ -72,7 +72,7 @@ In order to learn some basics about TensorFlow, we'll follow the [getting starte
 
 A tensor is a generic term for vector (in the mathematical sense). A tensor's `rank` is the number of dimensions. You can think of these as levels of depth in your arrays.
 
-![Ranks](/Screenshot Shot Ranks.png)
+![Ranks](http://res.cloudinary.com/briezh/image/upload/v1492641274/Screen_Shot_Ranks_liqan7.png)
 
 Let's first create a test file to play around with called `test.py`. Import TensorFlow at the top the the file. Then create a couple of constants an try printing them out.
 
@@ -112,6 +112,8 @@ print("sess.run(node3): ",sess.run(node3))
 # prints:
 # sess.run(node3):  7.0
 ```
+
+![Simple Add Graph](http://res.cloudinary.com/briezh/image/upload/v1492641238/Screen_Shot_2017-04-19_at_3.29.45_PM_ddbvar.png)
 
 #### Next level
 
