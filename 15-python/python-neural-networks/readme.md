@@ -72,7 +72,7 @@ In order to learn some basics about TensorFlow, we'll follow the [getting starte
 
 A tensor is a generic term for vector (in the mathematical sense). A tensor's `rank` is the number of dimensions. You can think of these as levels of depth in your arrays.
 
-![Ranks](Screenshot Shot Ranks.png)
+![Ranks](/Screenshot Shot Ranks.png)
 
 Let's first create a test file to play around with called `test.py`. Import TensorFlow at the top the the file. Then create a couple of constants an try printing them out.
 
@@ -99,6 +99,23 @@ print(sess.run([node1, node2]))
 
 Now you should see the values printed out as you originally expected.
 
+```
+[3.0, 4.0]
+```
+
+Let's get a little more complex and add our two tensor nodes together. Comment out the last line of your code (with the session.run statement) and add the following.
+
+```
+node3 = tf.add(node1, node2)
+print("sess.run(node3): ",sess.run(node3))
+
+# prints:
+# sess.run(node3):  7.0
+```
+
+#### Next level
+
+So far, our code is not terribly exciting because all of our data is hard-coded and no external input is going in.
 
 ### Neural Networks using Iris Data
 
