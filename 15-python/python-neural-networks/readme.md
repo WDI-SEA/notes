@@ -90,7 +90,7 @@ Your output might have looked similar to this:
 Tensor("Const:0", shape=(), dtype=float32) Tensor("Const_1:0", shape=(), dtype=float32)
 ```
 
-The zero refers to the rank (see above), because a constant (also known as a scalar value) has a rank of 0. Notice also that there is no value within the Tensors. In fact, the variables are not initialized until you either explicitly run them within a session or call a function to initialize them. Let's change our code so that we create and run a session to evaluate the nodes. Replace the print statement in the code above with the following:
+The zero refers to the rank (see above), because a constant (also known as a scalar value) has a rank of 0. Notice also that there is no value within the Tensors. In fact, you will not see the values until you explicitly run them within a session to evaluate them. Let's change our code so that we create and run a session to evaluate the nodes. Replace the print statement in the code above with the following:
 
 ```
 sess = tf.Session()
@@ -117,7 +117,79 @@ print("sess.run(node3): ",sess.run(node3))
 
 #### Next level
 
-So far, our code is not terribly exciting because all of our data is hard-coded and no external input is going in.
+So far, our code is not terribly exciting because all of our data is hard-coded and no external input is going in. We can accept external input by declaring placeholders. Note that a + b is a shortcut for tf.add(a, b).
+
+```
+a = tf.placeholder(tf.float32)
+b = tf.placeholder(tf.float32)
+adder_node = a + b 
+
+print(sess.run(adder_node, {a: 3, b:4.5}))
+
+# prints: 7.5
+```
+
+Now, we can actually run this on an array of input as well. Try the following:
+
+```
+print(sess.run(adder_node, {a: [1, 3, 5], b: [2, 4, 6]}))
+
+# prints: [3. 7. 11.]
+```
+
+We can do further computations on the input before printing it out, for example, if we wanted to add and then triple the value.
+
+```
+add_and_triple = adder_node * 3.
+print(sess.run(add_and_triple, {a: [1, 3, 5], b: [2, 4, 6]}))
+
+# prints: [9. 21. 33.]
+```
+
+In TensorFlow, we differentiate between placeholders and variables. Think of placeholders as representing the data coming in, and variables as trainable parameters. These are the things that your graph will adjust on each iteration.
+
+#### Back to Linear Regression
+
+Let's create a new python file called `regression.py`. In this file we'll teach our model to fit a set of data points. We're going to be guessing the values of the variables m and b in the equation for a line `mx + b` where m and b are variables, and x is the input value. Initially we'll assign random or default initial values to m and b and then we'll train it from there. Start with the following code:
+
+```
+import tensorflow as tf
+
+m = tf.Variable([.3], tf.float32)
+b = tf.Variable([-.3], tf.float32)
+x = tf.placeholder(tf.float32)
+linear_model = m * x + b
+
+init = tf.global_variables_initializer()
+sess = tf.Session()
+sess.run(init)
+print(sess.run(linear_model, {x:[1,2,3,4]}))
+
+# prints: [ 0. 0.30000001  0.60000002  0.90000004]
+```
+
+If we were to graph this data, it would look like the following:
+
+| x | y |
+|-------|-----------|
+| 1 | 0 |
+| 2 | 0.30000001 |
+| 3 | 0.60000002 |
+| 4 | 0.90000004 |
+
+![Linear Model](http://res.cloudinary.com/briezh/image/upload/v1492643860/Screen_Shot_2017-04-19_at_4.17.10_PM_ezx2qk.png)
+
+Now that we have a model, we need actual data to compare it to. Let's say the actual y values are 
+`[0, -1, -2, -3]`. Knowing that, we can now calculate our 'loss', or how far off we were from the actual values. We do this by taking the difference between each point, squaring that number, then adding all of those numbers together.
+
+| y-actual | y-calculated | difference | squared |
+|-----------|-----------|-----------|-----------|
+| 0 | 0 | 0 | 0|
+| -1 | 0.3 | -1.3 | 1.69 |
+| -2 | 0.6 | -2.6 | 6.76 |
+| -3 | 0.9 | -3.9 | 15.21 |
+
+Take the sum of all the numbers in the last column. This yields us a loss value of `23.66`. Let's now have TensorFlow calculate this number for us.
 
 ### Neural Networks using Iris Data
 
@@ -125,5 +197,6 @@ For this code-along we'll go through the example found [here](https://www.tensor
 
 ## Further reading
 
+* [Modelling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
 * [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
 
