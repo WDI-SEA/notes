@@ -189,7 +189,28 @@ Now that we have a model, we need actual data to compare it to. Let's say the ac
 | -2 | 0.6 | -2.6 | 6.76 |
 | -3 | 0.9 | -3.9 | 15.21 |
 
-Take the sum of all the numbers in the last column. This yields us a loss value of `23.66`. Let's now have TensorFlow calculate this number for us.
+Take the sum of all the numbers in the last column. This yields us a loss value of `23.66`. Let's now have TensorFlow do the heavy lifting to calculate this number for us. Add the following code to `regression.py`.
+
+```
+y = tf.placeholder(tf.float32)
+squared_deltas = tf.square(linear_model - y)
+loss = tf.reduce_sum(squared_deltas)
+print(sess.run(loss, {x:[1,2,3,4], y:[0,-1,-2,-3]}))
+```
+
+In an ideal scenario, we can tweak the values of the two variables until the loss is 0. TensorFlow provides optimizer functions that slowly tweak the values of the variables to minimize the loss. The simplest optimizer is called `gradient descent`. This is how we use it:
+
+```
+optimizer = tf.train.GradientDescentOptimizer(0.01)
+train = optimizer.minimize(loss)
+sess.run(init) # reset values to incorrect defaults.
+for i in range(1000):
+  sess.run(train, {x:[1,2,3,4], y:[0,-1,-2,-3]})
+
+print(sess.run([W, b]))
+```
+
+Sweet! Notice it got close to the perfect values of 1 and -1 minus some 
 
 ### Neural Networks using Iris Data
 
