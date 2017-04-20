@@ -253,6 +253,6 @@ Let's break this down into tasks. Also - take a deep breath - TensorFlow is goin
 
 ## Further reading
 
-* [Modelling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
+* [Modeling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
 * [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
 
