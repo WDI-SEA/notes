@@ -235,14 +235,14 @@ Get together with a partner. Take note of the ranges and averages of values you 
 
 Let's test this hypothesis. Predict the species for the following data:
 
-| sepal length | sepal width | petal length | petal width | species? |
+| sepal length | sepal width | petal length | petal width | species |
 |-----------|-----------|-----------|-----------|-----------|
 | 6.4 | 3.2 | 4.5 | 1.5 | ? |
 | 5.8 | 3.1 | 5.0 | 1.7 | ? |
 
 Keep your guesses handy - we'll train our neural network and see if it agrees.
 
-#### Where to start?!
+### Getting down to code: Where to start?!
 
 Let's break this down into tasks. Also - take a deep breath - TensorFlow is going to do the heavy lifting for us! :)
 
