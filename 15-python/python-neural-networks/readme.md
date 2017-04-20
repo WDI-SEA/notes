@@ -361,7 +361,11 @@ if __name__ == "__main__":
     main()
 ```
 
-So,`humans`, go back to your guesses. How did you do? 
+So,`humans`, go back to your guesses. How did you do?
+
+Full code is available on TensorFlow's website.
+* [Linear Regression](https://www.tensorflow.org/get_started/get_started)
+* [Neural Networks](https://www.tensorflow.org/get_started/tflearn)
 
 ## Further reading
 
