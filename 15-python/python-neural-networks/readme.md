@@ -103,6 +103,13 @@ Now you should see the values printed out as you originally expected.
 [3.0, 4.0]
 ```
 
+You may have noticed some annoying warning messages clogging up your terminal. If you would like to eliminate them, add the following to the top of the page.
+
+```
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+```
+
 Let's get a little more complex and add our two tensor nodes together. Comment out the last line of your code (with the session.run statement) and add the following.
 
 ```
@@ -214,7 +221,7 @@ Sweet! Notice it got close to the perfect values of 1 and -1 minus some rounding
 
 ### Neural Networks using Iris Data
 
-For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn).
+For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn). It uses the [iris data set](https://en.wikipedia.org/wiki/Iris_flower_data_set), which measures the length and width of petals and sepals of 3 different species of irises. Sepals in this case are the mini-petals, though on many flowers the sepals are green.
 
 ## Further reading
 
