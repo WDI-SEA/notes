@@ -259,6 +259,7 @@
     * [Stacks and Queues](15-python/python-data-structures/python-stacks-and-queues/readme.md)
     * [Linked Lists](15-python/python-data-structures/python-linked-lists/readme.md)
     * [Binary Trees](15-python/python-data-structures/python-binary-trees/readme.md)
+    * [TensorFlow & Neural Networks](15-python/python-neural-networks/readme.md)
 * [Assorted Topics](09-other-topics/readme.md)
   * [Regular Expressions](09-other-topics/regular-expressions/readme.md)
   * [Intro to WDI (Course Info)](09-other-topics/intro-wdi/readme.md)
