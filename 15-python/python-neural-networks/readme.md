@@ -221,6 +221,8 @@ Sweet! Notice it got close to the perfect values of 1 and -1 minus some rounding
 
 ### Neural Networks using Iris Data
 
+But first, [this video](https://www.youtube.com/watch?v=2FmcHiLCwTU).
+
 For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn). It uses [Fisher's iris data set](https://en.wikipedia.org/wiki/Iris_flower_data_set), which measures the length and width of petals and sepals of 3 different species of irises. Sepals in this case are the mini-petals, though on many flowers the sepals are green.
 
 ![3 Irises](http://res.cloudinary.com/briezh/image/upload/v1492655368/Screen_Shot_2017-04-19_at_7.28.34_PM_hpvksk.png)
@@ -255,4 +257,5 @@ Let's break this down into tasks. Also - take a deep breath - TensorFlow is goin
 
 * [Modeling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
 * [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
+* [Intelligence and Learning - video by Daniel Shiffman](https://www.youtube.com/watch?v=sPEEV8Xih20)
 
