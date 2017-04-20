@@ -258,4 +258,5 @@ Let's break this down into tasks. Also - take a deep breath - TensorFlow is goin
 * [Modeling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
 * [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
 * [Intelligence and Learning - video by Daniel Shiffman](https://www.youtube.com/watch?v=sPEEV8Xih20)
+* [Neural Nets in 4 minutes (using gradient descent)](https://www.youtube.com/watch?v=h3l4qz76JhQ)
 
