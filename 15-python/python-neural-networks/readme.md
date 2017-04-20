@@ -256,7 +256,7 @@ Let's break this down into tasks. Also - take a deep breath - TensorFlow is goin
 
 Here's a breakdown of the code from TensorFlow's site:
 
-1. Import necessary libraries and declare constants
+1) Import necessary libraries and declare constants
 
 ```
 from __future__ import absolute_import
@@ -277,7 +277,7 @@ IRIS_TEST = "iris_test.csv"
 IRIS_TEST_URL = "http://download.tensorflow.org/data/iris_test.csv"
 ```
 
-2. Import the iris data sets for training and testing
+2) Import the iris data sets for training and testing
 
 ```
 def main():
@@ -303,7 +303,7 @@ def main():
       features_dtype=np.float32)
 ```
 
-3. Build the neural network and train it with the training data
+3) Build the neural network and train it with the training data
 
 ```
 # Specify that all features have real-value data
@@ -325,7 +325,7 @@ def main():
   classifier.fit(input_fn=get_train_inputs, steps=2000)
 ```
 
-4. Test the accuracy of our model using the testing data set
+4) Test the accuracy of our model using the testing data set
 
 ```
  # Define the test inputs
@@ -342,7 +342,7 @@ def main():
   print("\nTest Accuracy: {0:f}\n".format(accuracy_score))
 ```
 
-5. Use the model to predict the species of our two new specimens (we'll check the answers from our activity)
+5) Use the model to predict the species of our two new specimens (we'll check the answers from our activity)
 
 ```
 # Classify two new flower samples.
