@@ -221,7 +221,35 @@ Sweet! Notice it got close to the perfect values of 1 and -1 minus some rounding
 
 ### Neural Networks using Iris Data
 
-For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn). It uses the [iris data set](https://en.wikipedia.org/wiki/Iris_flower_data_set), which measures the length and width of petals and sepals of 3 different species of irises. Sepals in this case are the mini-petals, though on many flowers the sepals are green.
+For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn). It uses [Fisher's iris data set](https://en.wikipedia.org/wiki/Iris_flower_data_set), which measures the length and width of petals and sepals of 3 different species of irises. Sepals in this case are the mini-petals, though on many flowers the sepals are green.
+
+![3 Irises](http://res.cloudinary.com/briezh/image/upload/v1492655368/Screen_Shot_2017-04-19_at_7.28.34_PM_hpvksk.png)
+
+Take a closer look at the data set
+
+![Fisher Iris Data](http://res.cloudinary.com/briezh/image/upload/v1492655164/Screen_Shot_2017-04-19_at_7.24.27_PM_sfw5yj.png)
+
+#### Mini-Activity
+
+Get together with a partner. Take note of the ranges and averages of values you see for each of the measurements for each species. If I gave you a random data set of each of the petal and sepal sizes, would you be able to form a good guess as to what the species is?
+
+Let's test this hypothesis. Predict the species for the following data:
+
+| sepal length | sepal width | petal length | petal width | species? |
+|-----------|-----------|-----------|-----------|-----------|
+| 6.4 | 3.2 | 4.5 | 1.5 | ? |
+| 5.8 | 3.1 | 5.0 | 1.7 | ? |
+
+Keep your guesses handy - we'll train our neural network and see if it agrees.
+
+#### Where to start?!
+
+Let's break this down into tasks. Also - take a deep breath - TensorFlow is going to do the heavy lifting for us! :)
+
+* Import the iris data sets for training and testing
+* Build the neural network and train it with the training data
+* Test the accuracy of our model using the testing data set
+* Use the model to predict the species of our two new specimens (we'll check the answers from our activity)
 
 ## Further reading
 
