@@ -6,7 +6,7 @@
     * [Working Solutions](#working-solutions)
     * [Code Challenges](#code-challenges)
     * [Computer Science](#computer-science)
-    * [Node.js / Express](#node.js-express)
+    * [Node.js / Express](#node-js-express)
     * [SQL](#sql)
     * [Debug](#debug)
     * [jQuery](#jquery)
@@ -55,7 +55,7 @@
 | 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
 
 
-<a id="node.js-express" name="node.js-express"></a>
+<a id="node-js-express" name="node-js-express"></a>
 ### Node.js / Express
 
 | Date | Title/Link |
