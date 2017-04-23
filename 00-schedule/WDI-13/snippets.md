@@ -26,7 +26,7 @@
 |------|------------|
 | 2017-04-21 | [cruddy-board-games-db](https://github.com/Hoten/cruddy-board-games-db) |
 | 2017-04-20 | [Link-Shortener-Solution](https://github.com/WDI-SEA/Link-Shortener-Solution) |
-| 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/open?id=0B-xVslqVnQo4bzc2eXQ5VkdpTFE) |
+| 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/file/d/0B-xVslqVnQo4bzc2eXQ5VkdpTFE/view?usp=sharing) |
 | 2017-04-19 | [cruddy-board-games-project](https://github.com/Hoten/cruddy-board-games-project) |
 | 2017-04-19 | [express-apis-omdb](https://github.com/Hoten/express-apis-omdb) |
 | 2017-04-19 | [booktown](https://github.com/Hoten/booktown) |
@@ -142,7 +142,7 @@
 | 2017-04-21 | [cruddy-board-games-db](https://github.com/Hoten/cruddy-board-games-db) |
 | 2017-04-20 | [Link-Shortener-Solution](https://github.com/WDI-SEA/Link-Shortener-Solution) |
 | 2017-04-20 | [linked lists](https://jsfiddle.net/hoten/k3sy2cs1/) |
-| 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/open?id=0B-xVslqVnQo4bzc2eXQ5VkdpTFE) |
+| 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/file/d/0B-xVslqVnQo4bzc2eXQ5VkdpTFE/view?usp=sharing) |
 | 2017-04-20 | [Node.js Tutorial For Absolute Beginners - YouTube](https://www.youtube.com/watch?v=U8XF6AFGqlc) |
 | 2017-04-20 | [CRACKING the CODING INTERVIEW - Home](http://www.crackingthecodinginterview.com) |
 | 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
