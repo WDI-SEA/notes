@@ -3,23 +3,23 @@
 ## Table Of Contents
 
 * [By Category](#by-category)
-    * [Working Solutions](#Working-Solutions)
-    * [Code Challenges](#Code-Challenges)
-    * [Computer Science](#Computer-Science)
-    * [Node.js / Express](#Node.js-/-Express)
-    * [SQL](#SQL)
-    * [Debug](#Debug)
-    * [jQuery](#jQuery)
-    * [JavaScript](#JavaScript)
-    * [HTML](#HTML)
-    * [Misc](#Misc)
+    * [Working Solutions](#working-solutions)
+    * [Code Challenges](#code-challenges)
+    * [Computer Science](#computer-science)
+    * [Node.js / Express](#node.js-express)
+    * [SQL](#sql)
+    * [Debug](#debug)
+    * [jQuery](#jquery)
+    * [JavaScript](#javascript)
+    * [HTML](#html)
+    * [Misc](#misc)
 * [By Date](#by-date)
 
 <a id="by-category" name="by-category"></a>
 ## By Category
 
 
-<a id="Working-Solutions" name="Working-Solutions"></a>
+<a id="working-solutions" name="working-solutions"></a>
 ### Working Solutions
 
 | Date | Title/Link |
@@ -34,7 +34,7 @@
 | 2017-04-18 | [Request-Express-SWAPI](https://github.com/WDI-SEA/Request-Express-SWAPI) |
 
 
-<a id="Code-Challenges" name="Code-Challenges"></a>
+<a id="code-challenges" name="code-challenges"></a>
 ### Code Challenges
 
 | Date | Title/Link |
@@ -46,7 +46,7 @@
 | 2017-04-04 | [fizzbuzz](https://repl.it/Gux1/0) |
 
 
-<a id="Computer-Science" name="Computer-Science"></a>
+<a id="computer-science" name="computer-science"></a>
 ### Computer Science
 
 | Date | Title/Link |
@@ -55,7 +55,7 @@
 | 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
 
 
-<a id="Node.js-/-Express" name="Node.js-/-Express"></a>
+<a id="node.js-express" name="node.js-express"></a>
 ### Node.js / Express
 
 | Date | Title/Link |
@@ -68,7 +68,7 @@
 | 2017-04-18 | [Node.js Tutorial - Intro to Node.js (Level 1) - YouTube](https://www.youtube.com/watch?v=GJmFG4ffJZU) |
 
 
-<a id="SQL" name="SQL"></a>
+<a id="sql" name="sql"></a>
 ### SQL
 
 | Date | Title/Link |
@@ -76,7 +76,7 @@
 | 2017-04-17 | [sql-examples](https://github.com/Hoten/sql-examples) |
 
 
-<a id="Debug" name="Debug"></a>
+<a id="debug" name="debug"></a>
 ### Debug
 
 | Date | Title/Link |
@@ -84,7 +84,7 @@
 | 2017-04-07 | [breakpoint practice](https://repl.it/HA6m/1) |
 
 
-<a id="jQuery" name="jQuery"></a>
+<a id="jquery" name="jquery"></a>
 ### jQuery
 
 | Date | Title/Link |
@@ -97,7 +97,7 @@
 | 2017-04-10 | [jQuery fadeIn fadeOut](https://jsfiddle.net/hoten/xrhx6Lyc/1/) |
 
 
-<a id="JavaScript" name="JavaScript"></a>
+<a id="javascript" name="javascript"></a>
 ### JavaScript
 
 | Date | Title/Link |
@@ -116,7 +116,7 @@
 | 2017-03-30 | [hover](https://jsfiddle.net/hoten/MBLZx/2173/) |
 
 
-<a id="HTML" name="HTML"></a>
+<a id="html" name="html"></a>
 ### HTML
 
 | Date | Title/Link |
@@ -124,7 +124,7 @@
 | 2017-04-07 | [🍕](https://repl.it/HAoC/2) |
 
 
-<a id="Misc" name="Misc"></a>
+<a id="misc" name="misc"></a>
 ### Misc
 
 | Date | Title/Link |
