@@ -3,10 +3,10 @@
 ## Table Of Contents
 
 * [By Category](#by-category)
-    * [Working Solutions](#Working%20Solutions)
-    * [Code Challenges](#Code%20Challenges)
-    * [Computer Science](#Computer%20Science)
-    * [Node.js / Express](#Node.js%20/%20Express)
+    * [Working Solutions](#Working-Solutions)
+    * [Code Challenges](#Code-Challenges)
+    * [Computer Science](#Computer-Science)
+    * [Node.js / Express](#Node.js-/-Express)
     * [SQL](#SQL)
     * [Debug](#Debug)
     * [jQuery](#jQuery)
@@ -19,7 +19,7 @@
 ## By Category
 
 
-<a id="Working%20Solutions" name="Working%20Solutions"></a>
+<a id="Working-Solutions" name="Working-Solutions"></a>
 ### Working Solutions
 
 | Date | Title/Link |
@@ -34,7 +34,7 @@
 | 2017-04-18 | [Request-Express-SWAPI](https://github.com/WDI-SEA/Request-Express-SWAPI) |
 
 
-<a id="Code%20Challenges" name="Code%20Challenges"></a>
+<a id="Code-Challenges" name="Code-Challenges"></a>
 ### Code Challenges
 
 | Date | Title/Link |
@@ -46,7 +46,7 @@
 | 2017-04-04 | [fizzbuzz](https://repl.it/Gux1/0) |
 
 
-<a id="Computer%20Science" name="Computer%20Science"></a>
+<a id="Computer-Science" name="Computer-Science"></a>
 ### Computer Science
 
 | Date | Title/Link |
@@ -55,7 +55,7 @@
 | 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
 
 
-<a id="Node.js%20/%20Express" name="Node.js%20/%20Express"></a>
+<a id="Node.js-/-Express" name="Node.js-/-Express"></a>
 ### Node.js / Express
 
 | Date | Title/Link |
