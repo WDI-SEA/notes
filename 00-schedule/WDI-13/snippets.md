@@ -1,8 +1,25 @@
 # Code Snippets
 
+## Table Of Contents
+
+1. [By Category](#by-category)
+    * [Working Solutions](#Working Solutions)
+    * [Code Challenges](#Code Challenges)
+    * [Computer Science](#Computer Science)
+    * [Node.js / Express](#Node.js / Express)
+    * [SQL](#SQL)
+    * [Debug](#Debug)
+    * [jQuery](#jQuery)
+    * [JavaScript](#JavaScript)
+    * [HTML](#HTML)
+    * [Misc](#Misc)
+2. [By Date](#by-date)
+
+<a name="by-category"></a>
 ## By Category
 
 
+<a name="Working Solutions"></a>
 ### Working Solutions
 
 | Date | Title/Link |
@@ -17,6 +34,7 @@
 | 2017-04-18 | [Request-Express-SWAPI](https://github.com/WDI-SEA/Request-Express-SWAPI) |
 
 
+<a name="Code Challenges"></a>
 ### Code Challenges
 
 | Date | Title/Link |
@@ -28,6 +46,7 @@
 | 2017-04-04 | [fizzbuzz](https://repl.it/Gux1/0) |
 
 
+<a name="Computer Science"></a>
 ### Computer Science
 
 | Date | Title/Link |
@@ -36,6 +55,7 @@
 | 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
 
 
+<a name="Node.js / Express"></a>
 ### Node.js / Express
 
 | Date | Title/Link |
@@ -48,6 +68,7 @@
 | 2017-04-18 | [Node.js Tutorial - Intro to Node.js (Level 1) - YouTube](https://www.youtube.com/watch?v=GJmFG4ffJZU) |
 
 
+<a name="SQL"></a>
 ### SQL
 
 | Date | Title/Link |
@@ -55,6 +76,7 @@
 | 2017-04-17 | [sql-examples](https://github.com/Hoten/sql-examples) |
 
 
+<a name="Debug"></a>
 ### Debug
 
 | Date | Title/Link |
@@ -62,6 +84,7 @@
 | 2017-04-07 | [breakpoint practice](https://repl.it/HA6m/1) |
 
 
+<a name="jQuery"></a>
 ### jQuery
 
 | Date | Title/Link |
@@ -74,6 +97,7 @@
 | 2017-04-10 | [jQuery fadeIn fadeOut](https://jsfiddle.net/hoten/xrhx6Lyc/1/) |
 
 
+<a name="JavaScript"></a>
 ### JavaScript
 
 | Date | Title/Link |
@@ -92,6 +116,7 @@
 | 2017-03-30 | [hover](https://jsfiddle.net/hoten/MBLZx/2173/) |
 
 
+<a name="HTML"></a>
 ### HTML
 
 | Date | Title/Link |
@@ -99,6 +124,7 @@
 | 2017-04-07 | [🍕](https://repl.it/HAoC/2) |
 
 
+<a name="Misc"></a>
 ### Misc
 
 | Date | Title/Link |
@@ -106,6 +132,7 @@
 | 2017-04-22 | [rowdy](https://github.com/Hoten/rowdy) |
 
 
+<a name="by-date"></a>
 ## By Date
 
 | Date | Title/Link |
