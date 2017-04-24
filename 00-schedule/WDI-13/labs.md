@@ -18,6 +18,13 @@ What did you think of this lab?
 
 ```
 
+### Week 5
+
+| Day      | Lab                                                                       |
+| ------   | --------                                                                  |
+| Monday   | [Geocoding](https://github.com/WDI-SEA/express-geocode-maps-exampleo)     |
+
+
 ### Week 4
 
 | Day      | Lab                                                                       |

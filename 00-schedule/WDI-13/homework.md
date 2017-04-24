@@ -15,6 +15,14 @@ What did you think of this deliverable?
 
 ```
 
+### Week 5
+
+https://github.com/WDI-SEA/express-blogpulse
+
+| Day       | Homework                                                                                       |
+| ------    | --------                                                                                       |
+| Monday    | [Express Blogpulse](https://github.com/WDI-SEA/express-blogpulse)                        |
+| Tuesday   | [Express Project Organizer](https://github.com/WDI-SEA/express-project-organizer)                        |
 
 ### Week 4
 
