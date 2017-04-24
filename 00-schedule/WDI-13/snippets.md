@@ -24,6 +24,7 @@
 
 | Date | Title/Link |
 |------|------------|
+| 2017-04-24 | [express-geocode-maps-example](https://github.com/hoten/express-geocode-maps-example) |
 | 2017-04-21 | [cruddy-board-games-db](https://github.com/Hoten/cruddy-board-games-db) |
 | 2017-04-20 | [Link-Shortener-Solution](https://github.com/WDI-SEA/Link-Shortener-Solution) |
 | 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/file/d/0B-xVslqVnQo4bzc2eXQ5VkdpTFE/view?usp=sharing) |
@@ -139,16 +140,17 @@
 
 | Date | Title/Link |
 |------|------------|
+| 2017-04-24 | [express-geocode-maps-example](https://github.com/hoten/express-geocode-maps-example) |
 | 2017-04-24 | [javascript map function](https://repl.it/HXdW/3) |
 | 2017-04-24 | [alternate color of every other letter](http://jsfiddle.net/hoten/jt2bzc3u/) |
 | 2017-04-22 | [rowdy](https://github.com/Hoten/rowdy) |
 | 2017-04-21 | [Express routing](https://expressjs.com/en/guide/routing.html) |
 | 2017-04-21 | [cruddy-board-games-db](https://github.com/Hoten/cruddy-board-games-db) |
 | 2017-04-20 | [Link-Shortener-Solution](https://github.com/WDI-SEA/Link-Shortener-Solution) |
-| 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
+| 2017-04-20 | [linked lists](https://jsfiddle.net/hoten/k3sy2cs1/) |
 | 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/file/d/0B-xVslqVnQo4bzc2eXQ5VkdpTFE/view?usp=sharing) |
 | 2017-04-20 | [CRACKING the CODING INTERVIEW - Home](http://www.crackingthecodinginterview.com) |
-| 2017-04-20 | [linked lists](https://jsfiddle.net/hoten/k3sy2cs1/) |
+| 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
 | 2017-04-20 | [Node.js Tutorial For Absolute Beginners - YouTube](https://www.youtube.com/watch?v=U8XF6AFGqlc) |
 | 2017-04-19 | [cruddy-board-games-project](https://github.com/Hoten/cruddy-board-games-project) |
 | 2017-04-19 | [express-apis-omdb](https://github.com/Hoten/express-apis-omdb) |
@@ -165,8 +167,8 @@
 | 2017-04-14 | [slick carousel](http://jsfiddle.net/hoten/Lgu4k9o6/) |
 | 2017-04-13 | [js class inheritance](https://repl.it/HHCU/2) |
 | 2017-04-13 | [longest common prefix](https://repl.it/HIh5/0) |
-| 2017-04-11 | [ajax](https://jsfiddle.net/hoten/y25uckam/) |
 | 2017-04-11 | [using an api](https://jsfiddle.net/hoten/L1kqbp4b/) |
+| 2017-04-11 | [ajax](https://jsfiddle.net/hoten/y25uckam/) |
 | 2017-04-10 | [jQuery fadeIn fadeOut](https://jsfiddle.net/hoten/xrhx6Lyc/1/) |
 | 2017-04-10 | [jQuery select by attribute value](https://jsfiddle.net/hoten/16y76a7r/3/) |
 | 2017-04-10 | [intro jQuery](https://jsfiddle.net/hoten/9dcvhh9h/1/) |
