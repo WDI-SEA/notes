@@ -55,38 +55,47 @@ Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for mo
 
 ###Traversing the DOM
 
-* Neighborhoods on the page have the class `.text-medium-small`, so we'll select those elements using Cheerio's selector syntax
+* Clicking on one of the neighborhoods displaying a hidden div with information about that 'hood.
+* Each of these divs have both 1) the name of the 'hood and 2) a link to a page detailing the neighborhood
+* Inspect that div- you'll see these hidden divs have a class `info-window-content`
+* So, we'll select those elements using Cheerio's selector syntax
 * Cheerio has its own `.map()` function, but it's slightly different in that the index comes first, then the element.
 * Cheerio has `.text()`, which we'll call to get the element's text.
 * The `.get()` function will correctly return the elements.
 
 ```js
-var neighborhoods = $('.text-medium-small').map(function(index, element) {
-  return {
-    name: $(element).text(),
-    link: $(element).closest('a').attr('href')
-  };
+var neighborhoods = $('.info-window-content').map(function(index, element) {
+    return {
+        name: $(element).find('h4').text(),
+        link: $(element).find('a').attr('href')
+    };
 }).get();
+
+console.log(neighborhoods);
+});
 
 console.log(neighborhoods);
 ```
 
 ###Final Code
+
+[cheerio-scraping-seattle-neighborhoods repo](https://github.com/WDI-SEA/cheerio-scraping-seattle-neighborhoods)
+
 ```js
 var request = require('request');
 var cheerio = require('cheerio');
 
-request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, data) {
-  var $ = cheerio.load(data);
+request('http://www.visitseattle.org/things-to-do/neighborhoods/', function(error, response, data) {
+    var $ = cheerio.load(data);
 
-  var neighborhoods = $('.text-medium-small').map(function(index, element) {
-    return {
-      name: $(element).text(),
-      link: $(element).closest('a').attr('href')
-    };
-  }).get();
+    var neighborhoods = $('.info-window-content').map(function(index, element) {
+        return {
+            name: $(element).find('h4').text(),
+            link: $(element).find('a').attr('href')
+        };
+    }).get();
 
-  console.log(neighborhoods);
+    console.log(neighborhoods);
 });
 ```
 
@@ -96,5 +105,5 @@ By scraping this site, we were able to return an array of neighborhoods, complet
 
 ## Some other resources on scraping
 
-[Scraping with Node](http://maxogden.com/scraping-with-node.html)
-[Web Scraping For Fun and Profit](https://blog.hartleybrody.com/web-scraping/)
+* [Scraping with Node](http://maxogden.com/scraping-with-node.html)
+* [Web Scraping For Fun and Profit](https://blog.hartleybrody.com/web-scraping/)
