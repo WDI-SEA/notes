@@ -24,6 +24,7 @@
 
 | Date | Title/Link |
 |------|------------|
+| 2017-04-25 | [express-blogpulse](https://github.com/hoten/express-blogpulse) |
 | 2017-04-24 | [express-geocode-maps-example](https://github.com/hoten/express-geocode-maps-example) |
 | 2017-04-21 | [cruddy-board-games-db](https://github.com/Hoten/cruddy-board-games-db) |
 | 2017-04-20 | [Link-Shortener-Solution](https://github.com/WDI-SEA/Link-Shortener-Solution) |
@@ -33,7 +34,6 @@
 | 2017-04-19 | [booktown](https://github.com/Hoten/booktown) |
 | 2017-04-19 | [Sequelize-Example](https://github.com/WDI-SEA/Sequelize-Example) |
 | 2017-04-18 | [Request-Express-SWAPI](https://github.com/WDI-SEA/Request-Express-SWAPI) |
-| 2016-06-10 | [express-blogpulse](https://github.com/WDI-SEA/express-blogpulse) |
 
 
 <a id="code-challenges" name="code-challenges"></a>
@@ -144,6 +144,7 @@
 | Date | Title/Link |
 |------|------------|
 | 2017-04-25 | [cheerio-scraping-seattle-neighborhoods](https://github.com/WDI-SEA/cheerio-scraping-seattle-neighborhoods) |
+| 2017-04-25 | [express-blogpulse](https://github.com/hoten/express-blogpulse) |
 | 2017-04-24 | [express-geocode-maps-example](https://github.com/hoten/express-geocode-maps-example) |
 | 2017-04-24 | [javascript map function](https://repl.it/HXdW/3) |
 | 2017-04-24 | [linked lists - delete](https://jsfiddle.net/hoten/wjgpubbp/) |
@@ -152,11 +153,11 @@
 | 2017-04-21 | [Express routing](https://expressjs.com/en/guide/routing.html) |
 | 2017-04-21 | [cruddy-board-games-db](https://github.com/Hoten/cruddy-board-games-db) |
 | 2017-04-20 | [Link-Shortener-Solution](https://github.com/WDI-SEA/Link-Shortener-Solution) |
-| 2017-04-20 | [linked lists](https://jsfiddle.net/hoten/k3sy2cs1/) |
-| 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/file/d/0B-xVslqVnQo4bzc2eXQ5VkdpTFE/view?usp=sharing) |
 | 2017-04-20 | [CRACKING the CODING INTERVIEW - Home](http://www.crackingthecodinginterview.com) |
-| 2017-04-20 | [Node.js Tutorial For Absolute Beginners - YouTube](https://www.youtube.com/watch?v=U8XF6AFGqlc) |
 | 2017-04-20 | [VisuAlgo - visualising data structures and algorithms through animation](https://visualgo.net/en) |
+| 2017-04-20 | [cruddy-board-games-project video](https://drive.google.com/file/d/0B-xVslqVnQo4bzc2eXQ5VkdpTFE/view?usp=sharing) |
+| 2017-04-20 | [Node.js Tutorial For Absolute Beginners - YouTube](https://www.youtube.com/watch?v=U8XF6AFGqlc) |
+| 2017-04-20 | [linked lists](https://jsfiddle.net/hoten/k3sy2cs1/) |
 | 2017-04-19 | [cruddy-board-games-project](https://github.com/Hoten/cruddy-board-games-project) |
 | 2017-04-19 | [express-apis-omdb](https://github.com/Hoten/express-apis-omdb) |
 | 2017-04-19 | [booktown](https://github.com/Hoten/booktown) |
@@ -174,11 +175,11 @@
 | 2017-04-13 | [longest common prefix](https://repl.it/HIh5/0) |
 | 2017-04-11 | [ajax](https://jsfiddle.net/hoten/y25uckam/) |
 | 2017-04-11 | [using an api](https://jsfiddle.net/hoten/L1kqbp4b/) |
-| 2017-04-10 | [jQuery select by attribute value](https://jsfiddle.net/hoten/16y76a7r/3/) |
 | 2017-04-10 | [local storage](https://jsfiddle.net/hoten/t8nhkmdk/2/) |
 | 2017-04-10 | [jQuery fadeIn fadeOut](https://jsfiddle.net/hoten/xrhx6Lyc/1/) |
-| 2017-04-10 | [prevent default](https://jsfiddle.net/hoten/jho05Le5/4/) |
 | 2017-04-10 | [intro jQuery](https://jsfiddle.net/hoten/9dcvhh9h/1/) |
+| 2017-04-10 | [prevent default](https://jsfiddle.net/hoten/jho05Le5/4/) |
+| 2017-04-10 | [jQuery select by attribute value](https://jsfiddle.net/hoten/16y76a7r/3/) |
 | 2017-04-07 | [🍕](https://repl.it/HAoC/2) |
 | 2017-04-07 | [breakpoint practice](https://repl.it/HA6m/1) |
 | 2017-04-07 | [functions as callback parameters](https://jsfiddle.net/hoten/Lrqaswnr/2/) |
@@ -191,4 +192,3 @@
 | 2017-04-04 | [fizzbuzz](https://repl.it/Gux1/0) |
 | 2017-04-04 | [intro to js arrays](https://repl.it/Guov/0) |
 | 2017-03-30 | [hover](https://jsfiddle.net/hoten/MBLZx/2173/) |
-| 2016-06-10 | [express-blogpulse](https://github.com/WDI-SEA/express-blogpulse) |
