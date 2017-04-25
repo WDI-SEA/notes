@@ -23,6 +23,7 @@ What did you think of this lab?
 | Day      | Lab                                                                       |
 | ------   | --------                                                                  |
 | Monday   | [Geocoding](https://github.com/WDI-SEA/express-geocode-maps-example)     |
+| Tuesday   | [Hood Scraping](https://github.com/WDI-SEA/hood-scraping)     |
 
 
 ### Week 4
