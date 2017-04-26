@@ -19,8 +19,11 @@ What did you think of this deliverable?
 
 | Day       | Homework                                                                                       |
 | ------    | --------                                                                                       |
-| Monday    | [Express Blogpulse](https://github.com/WDI-SEA/express-blogpulse)                        |
-| Tuesday   | [Express Project Organizer](https://github.com/WDI-SEA/express-project-organizer)                        |
+| Monday    | [Express Blogpulse](https://github.com/WDI-SEA/express-blogpulse)   |
+| Tuesday   | Finish webmd example's show pages                      |
+| Wednesday | [Express Project Organizer](https://github.com/WDI-SEA/express-project-organizer) |
+| Thursday  | Create your own auth boilerplate                      |
+| Friday    | Wireframe for project 2                       |
 
 ### Week 4
 
