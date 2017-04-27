@@ -14,6 +14,63 @@ What did you think of this deliverable?
 
 
 ```
+### Week 12
+
+Project week!
+
+
+### Week 11
+
+| Day       | Homework                                                                                       |
+| ------    | --------                                                                                       |
+| Monday    | TBD |
+| Tuesday   | TBD |
+| Wednesday | TBD |
+| Thursday  | TBD |
+| Friday    | TBD |
+
+### Week 10
+
+| Day       | Homework                                                                                       |
+| ------    | --------                                                                                       |
+| Monday    | [Ruby Challenges](https://github.com/WDI-SEA/ruby-challenges) |
+| Tuesday   | [Rails National Parks](https://github.com/WDI-SEA/rails-national-parks) |
+| Wednesday | TBD |
+| Thursday  | TBD |
+| Friday    | TBD |
+
+
+### Week 9
+
+Project week!
+
+
+### Week 8
+
+| Day       | Homework                                                                                       |
+| ------    | --------                                                                                       |
+| Monday    | Portfolio Wireframes |
+| Tuesday   | TBD |
+| Wednesday | Portfolio Deployed Link |
+| Thursday  | MEAN Hackathon |
+| Friday    | Rest Day! |
+
+
+### Week 7
+
+| Day       | Homework                                                                                       |
+| ------    | --------                                                                                       |
+| Monday    | Angular Calculator |
+| Tuesday   | Fruits & Veggies AND Giphy Search |
+| Wednesday | Star Wars App (Complete in class project) |
+| Thursday  | Group Project: Cards Against Assembly |
+| Friday    | [Fly On Angular](https://github.com/WDI-SEA/fly-on-angular) |
+
+
+### Week 6
+
+Project week!
+
 
 ### Week 5
 
