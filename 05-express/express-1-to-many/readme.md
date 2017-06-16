@@ -16,7 +16,7 @@ Creating a blog.
 ```
 npm init
 
-npm install --save express ejs pg pg-hstore sequelize
+npm install --save express ejs pg pg-hstore sequelize@3.30.4
 
 createdb blog
 
@@ -24,6 +24,13 @@ sequelize init
 ```
 
 Make sure to setup `config.json` with postgres settings.
+
+**WARNING (06/16/2017):**
+There's a new version of sequelize that doesn't work with the `sequelize-cli`
+command line tool we use.
+
+Always, always, always use `npm install --save sequelize@3.30.4` until further
+notice!
 
 ##Creating A Model
 

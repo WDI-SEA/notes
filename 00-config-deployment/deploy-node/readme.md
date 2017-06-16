@@ -1,4 +1,4 @@
-# Heroku Deployment with Node + Sequelize 
+# Heroku Deployment with Node + Sequelize
 
 ## Objectives
 * Describe what Platform as a Service (PaaS) is
@@ -61,7 +61,7 @@ Oops! That's not supposed to be there! node_modules and .env should never escape
     - Do you get an error that looks like "xyz module is not found"? This is because originally, we forgot to include the --save flag when we originally npm installed it. Run the following command for each module you're missing:
         **npm install xyz --save**
 
-TL;DR: Don't have node_modules in your repo, you'll have a bad time. 
+TL;DR: Don't have node_modules in your repo, you'll have a bad time.
 
 ###Get a Heroku account!
 1. Make sure you have an account with heroku: https://www.heroku.com/
@@ -92,8 +92,8 @@ We'll have the ability to create free applications using Heroku, but with limita
 
 * Create a `Procfile` in the root of your Node application
   * In terminal, run `touch Procfile`. Must be called with a capitol P
-  * make sure it is named "Procfile" (no extention) 
-  * make sure your Procfile is in the same folder as your index.js file) 
+  * make sure it is named "Procfile" (no extention)
+  * make sure your Procfile is in the same folder as your index.js file)
   * in terminal type `echo "web: node index.js" >> Procfile`
 
 * In your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
@@ -133,7 +133,7 @@ git push heroku master
 You may notice that while you have a valid URL and the site is deployed, your site likely does not work when you visit it. This is because Heroku is not yet aware of our database and model structure. Let's make it aware.
 
 * In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:hobby-dev`
-* Set your NODE_ENV variable to 'production' by running this command in terminal: `heroku config:set NODE_ENV='production'` 
+* Set your NODE_ENV variable to 'production' by running this command in terminal: `heroku config:set NODE_ENV='production'`
 * Make sure your production variables in `config/config.json` are set like this (pay attention to the production setting).
 
 **config/config.json**
@@ -167,8 +167,28 @@ You may notice that while you have a valid URL and the site is deployed, your si
 **NOTE:**
 You may notice that the data on your local machine does not travel up to Heroku. This is by design! Generally you're not going to want your development data to affect your production data! That said, there may be times when you want to seed data. Investigate the db:seed command of the [Sequelize CLI](https://github.com/sequelize/cli).
 
-You can view your brand new database by executing the `psql` command you know and love on Heroku. Do this by typing 
+You can view your brand new database by executing the `psql` command you know and love on Heroku. Do this by typing
     **heroku pg:psql**
+    
+**WARNING (06/16/2017):**
+Be aware that `sequelize-cli` does not currently support `sequelize@4.0.0`.
+Sequelize version 4.0.0 is a new version that introduces breaking changes.
+The last working version of `sequelize` is `sequalize@3.30.4`. Make sure you're
+not using `sequelize` version 4.0.0 by looking at `package.json` and seeing what
+version of `sequelize` is listed in the dependencies.
+
+The problem with the new version has to do with creating 1:M or M:M associations.
+Sequelize 4.0.0 does not create associations in the same way it used to up to
+version 3.30.4. The association methods like `addModel` won't work any more.
+
+You'll see this error message if you're experiencing this problem.
+
+```
+Unhandled rejection TypeError: album.addSong is not a function
+```
+
+Always, always, always use `npm install --save sequelize@3.30.4` until further
+notice!
 
 ##Heroku Envionment variables
 
