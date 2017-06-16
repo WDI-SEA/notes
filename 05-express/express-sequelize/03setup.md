@@ -26,7 +26,7 @@ echo "node_modules" >> .gitignore
 Add/save dependencies (sequelize needs pg for Postgres and pg-hstore for JSON serialization)
 
 ```
-npm install --save express ejs body-parser pg pg-hstore sequelize
+npm install --save express ejs body-parser pg pg-hstore sequelize@3.30.4
 ```
 
 Create a database and initialize a sequelize project
@@ -35,6 +35,13 @@ Create a database and initialize a sequelize project
 createdb userapp
 sequelize init
 ```
+
+**WARNING (06/16/2017):**
+There's a new version of sequelize that doesn't work with the `sequelize-cli`
+command line tool we use.
+
+Always, always, always use `npm install --save sequelize@3.30.4` until further
+notice!
 
 ### Setup part 3 - config.json, models and migrations:
 
