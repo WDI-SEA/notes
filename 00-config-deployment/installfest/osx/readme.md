@@ -61,12 +61,13 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
-####Setting up SSH Key
+#### Setting up SSH Key
+
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
-##Node
+## Node
 
 To install Node
 ```
@@ -262,7 +263,7 @@ rbenv install 2.4.1
 rbenv global 2.4.1
 ```
 
-###Install Rails
+### Install Rails
 
 ```
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
@@ -276,7 +277,7 @@ sudo gem install rails
 ```
 You may need to press "yes" for various entries
 
-##Verify your installation
+## Verify your installation
 
 Make sure to restart your terminal and then run each of these commands. Finally call someone over to validate your installation is correct.
 

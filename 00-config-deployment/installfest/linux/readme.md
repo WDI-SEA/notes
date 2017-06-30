@@ -45,7 +45,8 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
-####Setting up SSH Key
+#### Setting up SSH Key
+
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
@@ -264,7 +265,7 @@ gem install rails
 (the last step will take a while)
 
 
-#Verify your installation
+## Verify your installation
 
 Run each of these commands and then call someone over to validate your installation is correct.
 
