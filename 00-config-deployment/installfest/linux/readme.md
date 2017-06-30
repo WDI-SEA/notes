@@ -1,4 +1,4 @@
-#Ubuntu install instructions
+# Ubuntu install instructions
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
@@ -14,19 +14,19 @@ For the first portion of the class, we'll be working exclusively inside of the b
 
 **TIP:** Use `CTRL+SHIFT+V` to paste into terminal
 
-##Slack
+## Slack
 
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
 
-##GArnet
+## GArnet
 
 ~~We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.~~
 
 GA Seattle isn't currently using this system - your homework progress and attendance will be reported to you regularly by your instructor and is also available on request.
 
-##GIT
+## GIT
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
 
 To install GIT
@@ -34,7 +34,7 @@ To install GIT
 sudo apt-get install git-all
 ```
 
-####Configuring GIT
+#### Configuring GIT
 
 Using your email credentials for GIT, run these commands with your user and email configured.
 
@@ -50,7 +50,7 @@ You might find your self having to re-authenticate GIT every time you work on yo
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
-##Node
+## Node
 
 ```
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -73,7 +73,7 @@ To finish up your installation, run this command to allow for global installatio
 sudo chown -R $USER /usr/local/lib
 ```
 
-##Sublime 3
+## Sublime 3
 We'll be running **Sublime 3**, not Sublime 2 as our text editor of choice.
 
 Install via the package manager
@@ -86,7 +86,7 @@ sudo apt-get install sublime-text-installer
 
 If the above does not work, try installing via Sublime's website: [http://www.sublimetext.com/3](http://www.sublimetext.com/3) Download the `.deb` file and run it to install.
 
-##Install Oh My ZSH
+## Install Oh My ZSH
 
 Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
 
@@ -128,7 +128,7 @@ sudo -u postgres psql postgres
 Choose an easy to remember password then type `\quit` to exit psql. MAKE SURE YOU REMEMBER THIS PASSWORD YOU WILL NEED IT LATER.
 
 
-###Create a Postgres Alias
+### Create a Postgres Alias
 
 To make it easier to start postgres we're going to create a couple aliases. Edit your zshrc file by typing `subl ~/.zshrc` add these lines to the bottom of the file:
 
@@ -159,7 +159,7 @@ function zrefresh() {
 
 Save the file, close Sublime, and restart your terminal.
 
-###Install Postgres GUI
+### Install Postgres GUI
 
 ```
 sudo apt-get install pgadmin3
@@ -195,7 +195,7 @@ Follow the official installation instructions on MongoDB.com:
 
 https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/#install-mongodb
 
-###Testing the MongoDB server
+### Testing the MongoDB server
 
 ```
 #Start the MongoDB server
@@ -204,22 +204,22 @@ mongod
 
 Press `control-c` to stop the server.
 
-###Install MongoDB GUI
+### Install MongoDB GUI
 
 We'll be using **RoboMongo**. Install here:
 
 https://robomongo.org/
 
-##Installing Ruby on Rails
+## Installing Ruby on Rails
 
-####Install dependencies
+#### Install dependencies
 
 ```
 sudo apt-get update
 sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
 ```
 
-###Install rbenv / ruby
+### Install rbenv / ruby
 
 rbenv lets us change ruby verions on the fly, useful for working with diffrent rails apps.
 
@@ -250,7 +250,7 @@ rbenv global 2.4.0
 ruby -v
 ```
 
-####Install Rails
+#### Install Rails
 
 Before moving on close and reopen terminal.
 

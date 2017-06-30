@@ -1,4 +1,4 @@
-#Sublime Setup
+# Sublime Setup
 
 ## Setting up User Settings
 
