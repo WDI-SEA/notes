@@ -51,6 +51,8 @@
 
 Feel free to install any others, and we'll install others throughout the course.
 
+__Important Note: It is not recommended that you install anything that auto-formats or "prettifies" your code. These are generally hindersome to beginners for learning basic indentation and often are not built well which ends up causing a lot of errors. Do not use these!__
+
 ### Creating a Snippet (Optional)
 
 We'll use a lot of snippets when working with Bootstrap, and you can make your own as well.

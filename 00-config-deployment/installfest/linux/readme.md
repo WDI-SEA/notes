@@ -22,7 +22,9 @@ We will be using slack to communicate throughout the course. You should've recei
 
 ##GArnet
 
-We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.
+~~We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.~~
+
+GA Seattle isn't currently using this system - your homework progress and attendance will be reported to you regularly by your instructor and is also available on request.
 
 ##GIT
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
@@ -221,6 +223,8 @@ sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libread
 
 rbenv lets us change ruby verions on the fly, useful for working with diffrent rails apps.
 
+__Note: New versions of Ruby and Rails are coming out all the time - check with your instructor that the version listed here is still correct. If you need to install multiple versions of Ruby, it may be easier to use the [RVM - Ruby Version Manager](https://rvm.io/rvm/install#basic-install) which is described in detail under the osx section of this install instructions.__
+
 ```
 cd ~
 git clone git://github.com/sstephenson/rbenv.git .rbenv
@@ -234,7 +238,7 @@ exec $SHELL
 
 sudo chown -R $USER ~/.rbenv
 
-rbenv install 2.2.2
+rbenv install 2.4.0
 ```
 
 (last step above will take a LONG time)
@@ -242,7 +246,7 @@ rbenv install 2.2.2
 **Set ruby version and check that it worked**
 
 ```
-rbenv global 2.2.2
+rbenv global 2.4.0
 ruby -v
 ```
 

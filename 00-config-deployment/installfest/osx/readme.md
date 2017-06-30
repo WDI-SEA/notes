@@ -20,7 +20,9 @@ We will be using slack to communicate throughout the course. You should've recei
 
 ##GArnet
 
-We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.
+~~We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.~~
+
+GA Seattle isn't currently using this system - your homework progress and attendance will be reported to you regularly by your instructor and is also available on request.
 
 ##Homebrew
 
@@ -249,13 +251,15 @@ sudo chown -R $USER ~/.rbenv
 ```
 
 ###Configuring rbenv
+__Note: new versions of Ruby and Rails are released regularly. Check with your instructor whether the versions listed below is appropriate__
+
 ```
 brew update
 
 brew install ruby-build
 
-rbenv install 2.2.2
-rbenv global 2.2.2
+rbenv install 2.4.1
+rbenv global 2.4.1
 ```
 
 ###Install Rails
@@ -293,3 +297,40 @@ psql --version
 subl -v (or atom -v)
 
 ```
+
+### Overwriting an existing Ruby installation
+
+You may already have an old version of Ruby installed. In this case, it may be easiest to update your Ruby version with [RVM - Ruby Version Manager](https://rvm.io/rvm/install#basic-install). The stable option will install RVM with the latest stable (tested and approved) version of Ruby.
+
+```
+\curl -sSL https://get.rvm.io | bash -s stable --ruby
+```
+
+### RVM Cheat Sheet
+Now that you have RVM, some useful commands it can perform:
+
+```
+rvm list known
+```
+
+This lists all known versions of Ruby 
+
+```
+rvm install X.X
+```
+
+Install version X.X of Ruby (where you replace the X's with the appropriate version number you would like to install).
+
+```
+rvm use X.X
+```
+
+If you have multiple versions of Ruby, you must tell your computer which one to use as the primary or default version.
+
+```
+rvm use X.X --default
+```
+
+This does the same as the above command, but additionally sets this version of Ruby as the default for any new shells you might use.
+
+Refer to [RVM documentation](https://rvm.io/) for any further RVM questions.
