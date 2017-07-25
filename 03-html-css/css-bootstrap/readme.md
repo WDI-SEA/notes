@@ -107,7 +107,7 @@ You can put icons anywhere. They look good in buttons!
 ```
 
 See a full list of icons in the Bootstrap documentation about
-[glyphicons](https://wdi_sea.gitbooks.io/notes/content/03-html-css/css-bootstrap/readme.html)
+[glyphicons](http://getbootstrap.com/components/)
 
 The text below each icon shows you the two classes used to refer to it.
 

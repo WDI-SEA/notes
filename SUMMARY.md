@@ -183,7 +183,7 @@
   * [Angular Components](07-angular/angular-components/readme.md)
   * [Angular Custom Filters](07-angular/angular-custom-filters/readme.md)
   * [Angular Custom Directives](07-angular/angular-custom-directives/readme.md)
-* [ReactJS](10-react/readme.md)
+* [(Archived) ReactJS](10-react/readme.md)
   * [Intro to React](10-react/react-intro/readme.md)
     * [Todo List Codealong](10-react/react-intro/todo-codealong.md)
     * [Additional Topics](10-react/react-intro/additional-topics.md)

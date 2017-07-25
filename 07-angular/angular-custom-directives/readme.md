@@ -1,4 +1,6 @@
-#Custom Directives
+# Custom Directives
+
+__Warning: This content is considered archived as .directive is no longer used - this changed between versions Angular 1.4 and 1.5. There is a somewhat updated version of the lab described here that can be found on [GitHub](https://github.com/brandiw/cards-against-assembly). Both this project and this page are on our list to be refactored for Angular 1.5+.__
 
 ## Objectives
 * Describe the different types of custom directives available

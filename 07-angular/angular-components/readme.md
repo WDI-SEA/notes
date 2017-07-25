@@ -1,6 +1,6 @@
-#Angular Components
+# Angular Components
 
-##Objectives
+## Objectives
 
 * Discuss where angular components come from
 * Discuss controllerAs syntax
@@ -10,7 +10,7 @@ Up to this point we've been mainly utilizing controllers and directives to displ
 
 To make our angular app more compatible with future releases and front-end methodologies we're going to utilize the **component** feature that was added to angular 1.5.
 
-##Beginnings
+## Beginnings
 
 Angular components grew out of a need for a structured way of creating modularized UI elements with separated scope. But wait, you might think, isn't that what a **directive** is for?
 
@@ -20,7 +20,7 @@ This led the people at Google to implement a new feature in Angular 1.5 that wou
 
 [John Papa's Angular Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md)
 
-##controllerAs syntax
+## controllerAs syntax
 
 So far we have been building controllers and directives with the **$scope** service that Angular gives us. Much like this:
 
