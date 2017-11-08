@@ -4,7 +4,11 @@ We can write CSS for our websites, but the longer we do so, the more a pattern e
 
 ## Your task
 
-Pick two front-end frameworks and answer the following questions for each of them.
+Pick two front-end frameworks and answer the following questions for each of them. 
+
+### Not sure where to start?
+
+You can pick one of the popular frameworks such as Bootstrap, Materialize, Foundation, PureCSS, etc., or get adventurous and [checkout some frameworks others enjoy.](http://www.cssnewbie.com/12-awesome-css-frameworks-for-your-next-project)
 
 **CSS FRAMEWORK 1:**
 
