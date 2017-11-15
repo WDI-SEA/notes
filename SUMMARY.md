@@ -167,7 +167,7 @@
     * [Rails Mailers](06-ruby-rails/additional-topics/rails-mailers/readme.md)
     * [Cloudinary](06-ruby-rails/additional-topics/rails-cloudinary/readme.md)
     * [Jekyll](06-ruby-rails/additional-topics/ruby-jekyll/readme.md)
-* [AngularJS 1.x](07-angular/readme.md)
+* [AngularJS](07-angular/readme.md)
   * [Intro to AngularJS](07-angular/angular-intro/readme.md)
     * [Components and SPA](07-angular/angular-intro/components-spa.md)
     * [Create an Angular App](07-angular/angular-intro/create-angular-app.md)
