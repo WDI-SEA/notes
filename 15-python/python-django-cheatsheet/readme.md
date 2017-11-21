@@ -1,7 +1,7 @@
 # Django Cheatsheet
 As much as Python and Django strive to be readable and strive to configure
 things "explicitly" rather than "implicitly" there's still a lot of code
-we have to remember out of thing air. This cheatsheet aims to help you there.
+we have to remember out of thin air. This cheatsheet aims to help you there.
 
 We try to put good stuff in this cheatsheet but it doesn't have everything!
 Refer to this repo to see a fully-fleshed out Django app:
