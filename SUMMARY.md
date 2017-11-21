@@ -150,6 +150,7 @@
     * [Websockets with Socket.io](05-express/express-socket-io/readme.md)
 * [Ruby](06-ruby-rails/ruby.md)
   * [Intro to Ruby](06-ruby-rails/ruby-intro/readme.md)
+  * [Ruby Exercises](06-ruby-rails/ruby-exercises/readme.md)
   * [Ruby Classes](06-ruby-rails/ruby-classes/readme.md)
   * [Ruby Testing with Rspec](06-ruby-rails/ruby-rspec/readme.md)
   * [Ruby Inheritance](06-ruby-rails/ruby-inheritance/readme.md)
