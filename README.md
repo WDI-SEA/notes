@@ -278,7 +278,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Custom Directives][320] | [Creating Directives][1314] |
 | [Angular Components][333] |                             |
 
-###ReactJS
+### ReactJS (Newer content available - contact Seattle WDI team)
 
 | Topic | Assignments |
 | ----- | ----------- |
