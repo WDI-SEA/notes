@@ -1,4 +1,4 @@
-#WDI Seattle
+# WDI Seattle
 
 ![Seattle and the Olympic Mountains by Brian Hague on 500px.com](https://drscdn.500px.org/photo/134493425/m%3D900/f16538c0cf8632e88f50eb219b305723)
 
@@ -9,7 +9,7 @@ https://wdi_sea.gitbooks.io/notes/content/
 
 ![GA Logo](./_assets/ga_cog.png)
 
-##Setting up the Notes locally
+## Setting up the Notes locally
 
 * Fork this repository
 * Clone your fork to your development machine
@@ -18,7 +18,7 @@ https://wdi_sea.gitbooks.io/notes/content/
 * Install the Gitbook CLI tool by running `npm install -g gitbook-cli`
 * Preview the Gitbook by running `gitbook serve`
 
-##Contributing to the Notes
+## Contributing to the Notes
 
 * All contributions can be done via pull requests
 * Recommended process:
@@ -26,23 +26,23 @@ https://wdi_sea.gitbooks.io/notes/content/
   * Create a pull request and be sure to be very explicit about the changes you've made
   * Ask someone on the WDI team to look at your pull request
 
-##Directory
+## Directory
 
 But wait, there's more! Notes are organized by topic, but there's a suggested order to go through the notes, complete with assignments.
 
-###Prework
+### Prework
 
 * [GA Dash](https://dash.generalassemb.ly/)
 * [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
 * [FreeCodeCamp](http://www.freecodecamp.com/)
 
-###Templates
+### Templates
 
 * [Front-end Template](https://github.com/WDI-SEA/TEMPLATE-js)
 * [Express Template](https://github.com/WDI-SEA/TEMPLATE-express)
 * [Express Authentication Template](https://github.com/WDI-SEA/express-authentication)
 
-###Front End Development
+### Front End Development
 
 | Topic | Assignments |
 | ----- | ----------- |
@@ -121,7 +121,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1025]: https://github.com/WDI-SEA/code-review
 
 
-###NodeJS/Express
+### NodeJS/Express
 
 | Topic                                                | Assignments                                                             |
 | -----                                                | -----------                                                             |
@@ -184,7 +184,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1112]: https://github.com/WDI-SEA/express-authentication
 [1113]: https://github.com/WDI-SEA/tacoapp
 
-###Ruby on Rails
+### Ruby on Rails
 
 | Topic | Assignments |
 | ----- | ----------- |
@@ -242,7 +242,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1211]: https://github.com/WDI-SEA/rails-national-parks/blob/master/part2.md
 [1212]: https://github.com/WDI-SEA/js-jquery-review
 
-###Python
+### Python
 | Topic | Assignments |
 | ----- | ----------- |
 | Intro to Python | [Intro to Python](https://github.com/WDI-SEA/intro-python) |
@@ -259,7 +259,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | Graphs | [Python Graph](https://github.com/WDI-SEA/python-graph-data-structure) |
 | Sorting | [Python Sorting Algorithms](https://github.com/WDI-SEA/python-sorting-algorithms) |
 
-###AngularJS 1.x and APIs
+### AngularJS 1.x and APIs
 
 | Topic | Assignments |
 | ----- | ----------- |
@@ -288,7 +288,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [React Animations][332] <br><br> | |
 
 
-###Computer Science
+### Computer Science
 
 | Topic | Assignments |
 | ----- | ----------- |
