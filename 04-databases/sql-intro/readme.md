@@ -122,10 +122,9 @@ Once we connect, our command prompt should look similar to this: ```testdb=#```
 
 List our tables:
 ```
-\dt
+\list
 ```
-
-This shows a list of all the tables that are found in the database we are currently connected to.
+to list all tables in a database `\dt`a
 
 
 ### CREATE-ing a Table
