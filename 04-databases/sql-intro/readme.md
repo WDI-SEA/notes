@@ -122,7 +122,7 @@ Once we connect, our command prompt should look similar to this: ```testdb=#```
 
 List our tables:
 ```
-\list
+\dt
 ```
 to list all tables in a database `\dt`a
 
