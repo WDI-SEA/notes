@@ -2,6 +2,7 @@
 * [Schedule](00-schedule/WDI-16/calendar.md)
   * [WDI 17](00-schedule/WDI-17/readme.md)
     * [Calendar](00-schedule/WDI-17/readme.md)
+    * [Github Repos](00-schedule/WDI-17/github_projects.md)
   * [WDI 16](00-schedule/WDI-16/calendar.md)
     * [Calendar](00-schedule/WDI-16/calendar.md)
     * [Github Repos](00-schedule/WDI-16/github_projects.md)
