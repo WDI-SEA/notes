@@ -1,4 +1,4 @@
-#OAuth with OmniAuth
+# OAuth with OmniAuth
 
 ## Objectives
 
@@ -7,23 +7,23 @@
 * Use environment variables to hide sensitive data when implementing OmniAuth strategies
 
 
-##Starter Code
+## Starter Code
 
 This lesson uses starter code, provided here: https://github.com/WDI-SEA/oh-auth-example
 
-##Review
+## Review
 
 For a review of OAuth, look back at our experience using OAuth with Passport in Express
 
 ![OAuth from Oracle](https://docs.oracle.com/cd/E50612_01/doc.11122/oauth_guide/content/images/oauth/oauth_overview.png)
 
-##Setting Up OAuth
+## Setting Up OAuth
 
 In this example, a sample application is setup for you, with a main controller and an index page. Look at the structure of the application and **understand the components.**
 
 Now, we're going to setup the user model we'll need for this app.
 
-###Generate the user model
+### Generate the user model
 
 ```
 rails g model user provider provider_id provider_hash email name
@@ -34,14 +34,14 @@ rails g model user provider provider_id provider_hash email name
 
 Note that in this example, we're only providing OAuth for one provider. If we wanted to support multiple providers, we would need a separate `provider` model with a one-to-many association with the user.
 
-###Create the database and table
+### Create the database and table
 
 ```
 rake db:create
 rake db:migrate
 ```
 
-###Quickly test your model
+### Quickly test your model
 
 Make sure your user can be queried.
 
@@ -50,7 +50,7 @@ rails c
 User.all
 ```
 
-####Add OmniAuth
+#### Add OmniAuth
 
 Similar to how Passport had a core package and different "strategies" to implement, Rails has a gem called OmniAuth with different strategies to implement. Note that in this case, OmniAuth is used as middleware. So let's install the gems we need!
 
@@ -84,7 +84,7 @@ end
 
 Any additional providers would go under the `OmniAuth::Builder` block.
 
-##Create apps with providers
+## Create apps with providers
 
 Now you need to go to Facebook and create an app. This will allow you to get the key/secret for each service which you can set in your environment variable. When using Facebook, don't forget to set the **Site URL** in settings as `http://localhost:3000`
 
@@ -126,7 +126,7 @@ Now that we have routes, we can create the `auth` controller and start implement
 
 Note that since we're still using session authentication, the logout method be nearly the same. The failure method, for now, will just render an error message as text. Therefore, we really need to worry about the implementation of the `callback` method.
 
-###Callback method
+### Callback method
 
 The callback method will perform the following operation:
 
@@ -199,7 +199,7 @@ end
 
 Now test your code and verify that you can login.
 
-##Conclusion
+## Conclusion
 
 Adding OAuth via OmniAuth to your application is similar to implementing Passport with Express. A summary of the steps we took:
 
