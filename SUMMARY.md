@@ -243,6 +243,7 @@
   * [Bubble Sort](08-cs/cs-ruby-bubble-sort/readme.md)
   * [Merge Sort](08-cs/cs-ruby-mergesort/readme.md)
   * [Quick Sort](08-cs/cs-ruby-quicksort/readme.md)
+  * [Heap Sort](08-cs/cs-heap-sort/readme.md)
   * [Sorting Wrapup](08-cs/cs-sorting/readme.md)
   * [Hashmaps](08-cs/cs-hashmaps/readme.md)
   * [Trees and Other Topics](08-cs/cs-trees-data-structures/readme.md)
