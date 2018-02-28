@@ -32,30 +32,29 @@ The pseudocode for the algorithm goes like this:
 Heapsort(Arr)
     BuildHeap(Arr)
     for i in range Arr size down to 1
-        swap(A[1], A[i])
+        swap(Arr[1], Arr[i])
         NewSize = reduce size by one
-        Heapify(A, NewSize, 1)
+        Heapify(Arr, NewSize, 1)
 
 BuildHeap(Arr)
     n = Arr size
     for i in floor(n/2) down to 0
         Heapify(Arr, n, i AKA the RootIndex)
 
-Heapify(A as array, i as int, n as int)
+Heapify(Arr, i, size)
+    max = i
     left = 2i
     right = 2i+1
 
-    if (left <= n) and (A[left] > A[i])
+    if (left <= size) and (Arr[left] > Arr[max])
         max = left
-    else 
-        max = i
-
-    if (right<=n) and (A[right] > A[max])
+        
+    if (right<=size) and (Arr[right] > Arr[max])
         max = right
 
     if (max != i)
-        swap(A[i], A[max])
-        Heapify(A, max)
+        swap(Arr[i], Arr[max])
+        Heapify(Arr, max)
 ```
 
 ### Code in Python
