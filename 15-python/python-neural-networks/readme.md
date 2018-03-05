@@ -388,6 +388,7 @@ Full code is available on TensorFlow's website.
 * [Google: Machine Learning](https://www.youtube.com/watch?v=nKW8Ndu7Mjw)
 * [Neural Networks Intro](https://www.youtube.com/watch?v=DG5-UyRBQD4)
 * [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0)
+* [Visualizing Learning with TensorBoard](https://www.tensorflow.org/programmers_guide/summaries_and_tensorboard)
 * [Modeling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
 * [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
 * [Intelligence and Learning - video by Daniel Shiffman](https://www.youtube.com/watch?v=sPEEV8Xih20)
