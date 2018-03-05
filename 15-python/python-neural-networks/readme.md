@@ -1,6 +1,7 @@
-# Neural Networks and Tensor Flow
+# Neural Networks and TensorFlow
 
 ## Objectives
+* Describe different sub-fields of Artificial Intelligence
 * Describe a neural network as a high-level concept
 * Use the TensorFlow library for linear regression
 * Train a simple neural network based on an existing data set
@@ -9,10 +10,27 @@
 ## Intro activity
 
 Form groups of 2 or 3 with the people sitting closest to you. Answer the following questions together:
-* What is a neural network?
-* Why might you hear the distinction `artificial` neural network?
+* How do you define Artificial Intelligence? What kinds of tasks does an AI perform?
+* What's the difference between a weak AI and a strong AI? Name an example of a weak AI.
+* What is a neural network, and why might you hear the term `artificial` neural network?
 * In what way can a neural network be modeled on a computer?
-* What practical, real-world applications might this be used for?
+* What practical, real-world applications does this have?
+
+## What is AI?
+
+A "Strong" AI is a theoretical true intelligence. An example would be Data from Star Trek. A "Weak" AI or "Narrow" AI is a simulation of human cognition that is focused on a narrow set of topics. It appears intelligent in the domain that it's trained in and can even self-optimize or learn over time, but there is no self-awareness or consciousness present. An example of a weak AI would be Siri or an NPC in a video game.
+
+There are several domains where AI has been used, including:
+* searching or planning given a set of possible actions (for example, playing a game of chess)
+* reasoning and forming conclusions based on knowledge
+* Recognition and perception (for example, speech recognition)
+* Physical control - moving an manipulating objects (for example, robotics)
+* Natural language processing
+* Machine learning
+
+Machine learning is a subfield of AI. Machine learning is when a computer can learn without being explicitly programmed. Machine learning is generally split into 3 categories - supervised, unsupervised, and reinforcement learning. Supervised learning is the most concrete area of machine learning, so our later code-alongs will be examples of supervised learning. We'll be looking at specific inputs (x) and outputs (y), and refining those values by many repetitions. The most common types of supervised learning are regression (e.g., linear regression) and classification (e.g., categorizing into groups).
+
+In a supervised learning project, we define the output. For example, we could take a bunch of pictures of birds and tell the computer to classify them as robin, eagle, or crow. Thus, the target groups are already defined. In an unsupervised learning, we wouldn't provide the target groups, instead we would allow the algorithm to decide which pictures seem to be of the same species. Last, reinforcement learning is learning by trial and error.
 
 ## What is a neural network?
 
@@ -32,7 +50,6 @@ When we make models for a computer that mimic a biological neural network, it is
 * Classification, including pattern and sequence recognition, novelty detection and sequential decision making.
 * Data processing, including filtering, clustering, blind source separation and compression.
 * Robotics, including directing manipulators, prosthesis.
-* Control, including computer numerical control.
 
 #### ...And More
 
@@ -42,7 +59,9 @@ With the variety of problems that neural networks can be applied to, it's easy t
 
 ### Practically speaking
 
-Let's watch this video for a visual example of how an artificial neural network is modeled https://www.youtube.com/watch?v=DG5-UyRBQD4
+Let's watch a couple videos for a visual example of how an artificial neural network is modeled. First, we'll watch a short video explaining how neural networks learn. Next, we'll watch one about the practical task we'll perform using TensorFlow. 
+[Google: Machine Learning](https://www.youtube.com/watch?v=nKW8Ndu7Mjw)
+[Neural Networks Intro](https://www.youtube.com/watch?v=DG5-UyRBQD4)
 
 ## TensorFlow
 
@@ -51,10 +70,6 @@ Now that you're aware at a high-level of what artificial neural networks are use
 Run the following commands in your terminal to install TensorFlow on a Mac. If you are not using a mac, visit the [install page](https://www.tensorflow.org/install) for specific instructions.
 
 ```
-pip3 install --upgrade virtualenv 
-
-virtualenv --system-site-packages .
-
 pip3 install --upgrade tensorflow 
 ```
 
@@ -66,7 +81,7 @@ It's been a little while since math class for most of us, but as a reminder, [li
 
 ### Using TensorFlow 
 
-In order to learn some basics about TensorFlow, we'll follow the [getting started example](https://www.tensorflow.org/get_started/get_started) on their website. In this example, we'll be using TensorFlow to model linear regression as well as calculate our loss.
+In order to learn some basics about TensorFlow, we'll follow the [getting started example](https://www.tensorflow.org/get_started/get_started) on their website. In this example, we'll be using TensorFlow to model linear regression as well as calculate our loss. If calculating slopes aren't your thing, feel free to skip down to the classification example down below.
 
 #### The Basics
 
@@ -74,7 +89,7 @@ A tensor is a generic term for vector (in the mathematical sense). A tensor's `r
 
 ![Ranks](http://res.cloudinary.com/briezh/image/upload/v1492641274/Screen_Shot_Ranks_liqan7.png)
 
-Let's first create a test file to play around with called `test.py`. Import TensorFlow at the top the the file. Then create a couple of constants an try printing them out.
+Let's first create a test file to play around with called `test.py`. Import TensorFlow at the top the the file. Then create a couple of constants and try printing them out.
 
 ```
 import tensorflow as tf
@@ -219,9 +234,11 @@ print(sess.run([W, b]))
 
 Sweet! Notice it got close to the perfect values of 1 and -1 minus some rounding errors.
 
-### Neural Networks using Iris Data
+### Classification: Neural Networks using Iris Data
 
-But first, [this video](https://www.youtube.com/watch?v=2FmcHiLCwTU).
+`NOTE:` You may want to follow [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) for a simpler (and newer) example.
+
+Let's get started on a classification problem where we train a model to detect different species of irises. But first, if you want a brief overview of TensorFlow, watch [this video](https://www.youtube.com/watch?v=2FmcHiLCwTU).
 
 For this code-along we'll go through the example found [here](https://www.tensorflow.org/get_started/tflearn). It uses [Fisher's iris data set](https://en.wikipedia.org/wiki/Iris_flower_data_set), which measures the length and width of petals and sepals of 3 different species of irises. Sepals in this case are the mini-petals, though on many flowers the sepals are green.
 
@@ -367,8 +384,10 @@ Full code is available on TensorFlow's website.
 * [Linear Regression](https://www.tensorflow.org/get_started/get_started)
 * [Neural Networks](https://www.tensorflow.org/get_started/tflearn)
 
-## Further reading
-
+## References and Further reading/watching
+* [Google: Machine Learning](https://www.youtube.com/watch?v=nKW8Ndu7Mjw)
+* [Neural Networks Intro](https://www.youtube.com/watch?v=DG5-UyRBQD4)
+* [TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0)
 * [Modeling Linear Regression - Many Resources](http://www.dataschool.io/linear-regression-in-python/)
 * [Bayesian Networks](https://en.wikipedia.org/wiki/Bayesian_network)
 * [Intelligence and Learning - video by Daniel Shiffman](https://www.youtube.com/watch?v=sPEEV8Xih20)
