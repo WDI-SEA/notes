@@ -1,5 +1,5 @@
 * [Introduction](README.md)
-* [Schedule](00-schedule/WDI-18/calendar.md)
+* [Schedule](00-schedule/WDI-16/calendar.md)
   * [WDI 18](00-schedule/WDI-18/calendar.md)
     * [Calendar](00-schedule/WDI-18/calendar.md)
   * [WDI 17](00-schedule/WDI-17/readme.md)
