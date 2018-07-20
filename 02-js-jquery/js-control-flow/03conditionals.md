@@ -71,3 +71,31 @@ switch(grade) {
     break;
 }
 ```
+
+### Truthy vs. Falsey
+
+What happens if we put something other than a Boolean as the conditional in an if statement? Turns out, any value can be evaluated as true or false.
+
+Most values are truthy. In fact, there are only 6 falsey values in Javascript - can you guess them all?
+
+```js
+var person = null;
+if (person) {
+  console.log("this will not be printed");
+} else {
+  console.log("this will be printed");
+}
+var num = 0;
+if (num) {
+  console.log("this will not be printed");
+} else {
+  console.log("this will be printed");
+}
+var num = 5;
+if (num) {
+  console.log("this will be printed");
+}
+```
+
+More on this topic: 
+http://james.padolsey.com/javascript/truthy-falsey/
