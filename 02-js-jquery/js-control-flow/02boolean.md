@@ -4,7 +4,7 @@
 
 ### Assignment Operator (=)
 
-Recall single equals, or "assignment operator", which assigns values to variable. Note that there is not comparison involved in assignment statements.
+Recall the single equals, or "assignment operator", which assigns values to variable. Note that there is not comparison involved in assignment statements.
 
 ```js
 var x = 3;
