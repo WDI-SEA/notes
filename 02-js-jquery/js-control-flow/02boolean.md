@@ -55,9 +55,24 @@ The identity operator aka triple equals works exactly like the equality operator
 * "equality" implies inclusive
 * "identity implies exclusive/uniqueness
 
+#### Exercise: Venn diagram
+Draw a Venn diagram (two circles that have some overlap). Label one circle "equality ==", the other circle "identity ===", and the overlapping section will represent both. Place each of the following pairs of values into one of the three sections according to which operator will yeild a "true" output.
+
+```js
+true
+"true"
+
+5
+"5"
+
+["x"]
+"x"
+```
+What do you notice about the equality-only section?
+
 ### Additional Boolean Operators
 
-There are also ways to check if a value is greater than, less than, or not equal to another value.
+There are also ways to check if a value is greater than, greater than or equal to, less than, less thanor equal to, or not equal to another value. Note that the "not" (!) always takes the place of once set of equal bars. So, "!=" is the negation of "==" and "!==" is the negation of "===".
 
 ```js
 4 > 5
@@ -100,7 +115,7 @@ Lastly, we can combine different boolean expressions by using logic operators.
 
 We'll be using these expressions throughout the course.
 
-####Exercise
+#### Exercise
 
 What are the results of these statements?
 
