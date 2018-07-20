@@ -117,7 +117,7 @@ We'll be using these expressions throughout the course.
 
 #### Exercise
 
-What are the results of these statements?
+What are the results of these statements? Tip: Evaluate each of the expressions between the operators first, and replace them with true or false, then evaluate the entire statement.
 
 ```js
 //1
