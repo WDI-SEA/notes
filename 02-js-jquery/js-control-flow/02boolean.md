@@ -115,14 +115,18 @@ Lastly, we can combine different boolean expressions by using logic operators.
 
 We'll be using these expressions throughout the course.
 
-#### Exercise
+#### Class Exercise
 
-What are the results of these statements? Tip: Evaluate each of the expressions between the operators first, and replace them with true or false, then evaluate the entire statement.
+What is the result of this statement? Tip: Evaluate each of the expressions between the operators first, and replace them with true or false, then evaluate the entire statement.
 
 ```js
-//1
 !(5 === "5") && (6 > 5) && (1 >= 0)
+```
 
-//2
+#### PartnerExercise
+
+Turn to your partner and discuss the result of this statement:
+
+```js
 (5 < 4) || !(3 == 3) && true
 ```
