@@ -1,8 +1,18 @@
-#Boolean Expressions
+# Boolean Expressions
 
-### Equality Operator
+## = vs == vs === 
 
-The equality operator aka double equal (`==`) is used to compare two values.
+### Assignment Operator (=)
+
+Recall single equals, or "assignment operator", which assigns values to variable. Note that there is not comparison involved in assignment statements.
+
+```js
+var x = 3;
+```
+
+### Equality Operator (==)
+
+The equality operator aka double equals (`==`) is used to compare two values. In english, it translates to [blank] "is the same value as" [blank].
 
 ```js
 3 == 3
@@ -12,7 +22,7 @@ The equality operator aka double equal (`==`) is used to compare two values.
 //false
 ```
 
-The equality operator allows type cohersion which means that if you compare two values of different types you might get unexpected results.
+The equality operator allows type coercion which means that it doesn't care if the values are different types.
 
 ```js
 3 == "3"
@@ -25,9 +35,9 @@ The equality operator allows type cohersion which means that if you compare two 
 //true
 ```
 
-### Identity Operator (recommended)
+### Identity Operator (===)
 
-The identity operator aka triple quotes (`===`) works exactly like the equality operator (`==`) except it is a strict comparison operator. It does not convert types so it is more predictable and therefore the prefered method for comparision.
+The identity operator aka triple equals works exactly like the equality operator, except it cares about type! Because it is a stricter comparison, it is generally preferred over the equality operator. 
 
 ```js
 3 === 3
@@ -38,13 +48,12 @@ The identity operator aka triple quotes (`===`) works exactly like the equality 
 
 3 === "3"
 //false
-
-0 === false
-//false
-
-1 === true
-//false
 ```
+
+#### How to remember which is which:
+* increasing strictness
+* "equality" implies inclusive
+* "identity implies exclusive/uniqueness
 
 ### Additional Boolean Operators
 
