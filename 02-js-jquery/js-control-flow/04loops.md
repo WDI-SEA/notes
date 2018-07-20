@@ -93,17 +93,23 @@ for (var thing in car) {
 // > my car has 5 seats
 ```
 
-###Exercises
-
-1. Implement [Fizz Buzz](http://en.wikipedia.org/wiki/Fizz_buzz). Loop
+### Exercise
+    
+   Implement [Fizz Buzz](http://en.wikipedia.org/wiki/Fizz_buzz). Loop
    from 1 to 100.  If the number is divible by both 3 and 5, print
    "fizzbuzz". Otherwise, if the number if divisible by 3, print
    "fizz", or, if the number is divisible by 5, print "buzz". If none
    of the above are true, print the number. This is a very common
    interview question!
+   
+   Split class in half.
+   Group 1: use a for loop
+   Group 2: use a while loop
 
-2. Use a `for...in` loop to examine the `phoneBook` Object below and print
-   out the names of all the people who share the phone number "333-333-3333".
+### Popcorn Class Exercise (one student per line of code)
+
+Use a `for...in` loop to examine the `phoneBook` Object below and print
+out the names of all the people who share the phone number "333-333-3333".
 
 ```js
 var phoneBook = {
