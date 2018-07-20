@@ -72,7 +72,7 @@ What do you notice about the equality-only section?
 
 ### Additional Boolean Operators
 
-There are also ways to check if a value is greater than, greater than or equal to, less than, less thanor equal to, or not equal to another value. Note that the "not" (!) always takes the place of once set of equal bars. So, "!=" is the negation of "==" and "!==" is the negation of "===".
+There are also ways to check if a value is greater than, greater than or equal to, less than, less thanor equal to, or not equal to another value. Note that the "not" (!) always takes the place of once set of equal bars. So, "!=" is the negation of "==" and "!==" is the negation of "===", (and "!===" is just not a thing).
 
 ```js
 4 > 5
