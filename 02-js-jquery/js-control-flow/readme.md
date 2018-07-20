@@ -12,7 +12,7 @@
 
 Control flow is the order in which the computer executes statements in a script. Javascript executes top-to-bottom, _unless we alter the control flow_.
 
-**How/why would we alter the control flow?**
+**Why/how would we alter the control flow?**
 1. Skip lines of code based on a condition.
 2. Repeat lines of code when traversing a data set or just for the sake of DRY code.
 
