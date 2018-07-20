@@ -1,4 +1,4 @@
-#Loops
+# Loops
 
 #### `while`
 
@@ -22,6 +22,10 @@ while (i < 5) {
 **The parts of a while loop**
 
 ```
+while (THIS THING IS TRUE) {
+  //DO THIS
+}
+
 while (CONDITION) {
   //CODE
 }
