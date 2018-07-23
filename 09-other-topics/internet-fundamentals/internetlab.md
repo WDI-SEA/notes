@@ -7,6 +7,7 @@
 - How do clients compare to hosts?
 - Compare different HTTP status codes.
 - How does TCP ensure a reliable connection?
+- What are the main five HTTP request types?
 - Draw your own diagram of a request/response cycle and label where the following would come into play: client, host/server, URL, client-side languages, server-side languages, data
 - T/F: HTTP headers can be changed by a user before executing a request.
 - T/F: Every HTTP request has a domain and a path.
