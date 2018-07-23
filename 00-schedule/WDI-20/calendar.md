@@ -7,4 +7,5 @@
 * Course begins on July 23rd, 2018
 * Graduation Day is October 12th, 2018
 * NO CLASS ON September 2nd, 2018 (Labor Day)
-* This calendar is a *roadmap* only! Not intended for 100% accuracy!
+
+**Disclaimer:** This is not intended to be an exhaustive list of everything you will and won't do, it's just a general guideline so you know what to expect from the course! Dates and specifics are subject to change!
