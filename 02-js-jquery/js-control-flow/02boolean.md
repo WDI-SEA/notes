@@ -123,7 +123,7 @@ What is the result of this statement? Tip: Evaluate each of the expressions betw
 !(5 === "5") && (6 > 5) && (1 >= 0)
 ```
 
-#### PartnerExercise
+#### Partner Exercise
 
 Turn to your partner and discuss the result of this statement:
 
