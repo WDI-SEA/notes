@@ -16,6 +16,8 @@ Control flow is the order in which the computer executes statements in a script.
 1. Skip lines of code based on a condition.
 2. Repeat lines of code when traversing a data set or just for the sake of DRY code.
 
+**What kinds of statements do you remember from the prework that changed control flow?**
+
 **Here are some statements we can use to alter the control flow:**
 1. [if](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else)
 2. [switch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
