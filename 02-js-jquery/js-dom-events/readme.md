@@ -1,4 +1,4 @@
-#Intro to DOM and Events
+# Intro to DOM and Events
 
 ## Objectives
 * Define what DOM stands for and what it refers to
@@ -8,21 +8,28 @@
 
 ##DOM Manipulation with JavaScript
 
-**Review:** What is the DOM?
+**What is the DOM?**
 
-Go to Developer Console. Look at DOM in *Elements*, then look at the DOM in *Console*. The object 'document' represents the DOM in JavaScript. We can change the DOM, i.e. the page, by changing the **document object**.
+Document Object Model: A model of all the objects on a web page - usually represented by a tree of nodes -  that is created by the browser when a web page is loaded.
 
-Review [DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
+![DOM](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSew-BsBdRn9RadAFC2626myd4j66yaFIWzSd6nkdvN-rbg14NX)
 
-Now, inspect a few properties, for example:
+[DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
-```js
-document.URL
-document.head
-document.links (what does it return?)
-```
+**DOM manipulation**
 
-How to change the DOM? Select elements and manipulate them.
+**What**: Using Javascript we can read and/or change the DOM, i.e. make the webpage do something interesting.
+
+Examples:
+* Change or Remove HTML elements
+* Create and Add HTML elements
+* Change the CSS styles of HTML elements
+* Read & Change attributes of HTML elements (href, src, alt, etc)
+* Attach event listeners to HTML elements (click, keypress, submit, etc.)
+
+**Why**: Without DOM manipulation, web pages would just be static visuals with no changes and no interaction with the user.
+
+**How**: 
 
 **Select by tag id:**
 
