@@ -125,7 +125,7 @@ homeIcon.getAttribute("href");
 homeIcon.setAttribute("href","https://google.com");
 ```
 
-**CSS Classes**
+**CSS Selectors and Classes**
 
 Acessing, getting, setting CSS classes is slightly different than other properties.
 
@@ -166,7 +166,7 @@ homeIcon.classList.remove('my-new-class');
 homeIcon.classList.contains('my-new-class');
 ```
 
-##Events
+**Events**
 
 Now that we know how to select DOM elements, we can attach events to them:
 
@@ -180,34 +180,11 @@ Now that we know how to select DOM elements, we can attach events to them:
 
 * [List of Event Types](https://developer.mozilla.org/en-US/docs/Web/Events)
 
-#####addEventListener
-
-We have different **events**, but now we need a way to attach these events to elements. The solution? Use the `addEventListener` function. This function is called on DOM elements and takes two parameters: an **event type** and a **function**. The event type refers to a "click", "mouseover", or other type of event. The function contains the code that runs when the event occurs.
-
-Also this is the style you should use often.
+***addEventListener([event type],[function that you want to run when the event fires])***
 
 ```js
-document.getElementById("myDiv").addEventListener("click", function() {
-	//Your code here
-}
-```
-
-Events can only be attached to specific elements. Therefore, when you return a collection such as the result of `document.querySelectorAll` you **CANNOT** simply do this:
-
-```js
-document.querySelectorAll(".li").addEventListener("click", function() {
-	console.log("Click worked");
-}
-```
-
-Instead you must loop through all of the elements and attach an event to each item individually.
-
-```js
-var listItems = document.querySelectorAll(".li");
-for(var i = 0; i < listItems.length; i++){
-    listItems[i].addEventListener("click", function() {
-    	console.log("Click worked");
-    }
+homeIcon.addEventListener("click", function() {
+	console.log("HOME ICON CLICKED");
 }
 ```
 
