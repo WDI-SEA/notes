@@ -6,9 +6,7 @@
 * Add events to elements in the DOM
 * Manage scope and control logic on a page
 
-##DOM Manipulation with JavaScript
-
-**What is the DOM?**
+## What is the DOM?
 
 Document Object Model: A model of all the objects on a web page - usually represented by a tree of nodes -  that is created by the browser when a web page is loaded.
 
@@ -16,7 +14,7 @@ Document Object Model: A model of all the objects on a web page - usually repres
 
 [DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
-**DOM manipulation**
+## DOM manipulation
 
 **What**: Using Javascript we can read and/or change the DOM, i.e. make the webpage do something interesting.
 
@@ -29,52 +27,67 @@ Examples:
 
 **Why**: Without DOM manipulation, web pages would just be static visuals with no changes and no interaction with the user.
 
-**How**: 
+**How**: The *document* object represents the DOM.
 
 **Select by tag id:**
 
 ```js
-var greeting_div = document.getElementById("greeting");
+var navBar = document.getElementById("ac-globalnav");
 ```
 
-What's the greeting?
+Let's look at the styles?
 
 ```js
-greeting_div.innerHTML;
+navBar.style;
 ```
 
-Change it:
+Change the styling:
 
 ```js
-greeting_div.innerHTML = "Wow, something changed.";
+navBar.style.backgroundColor = "blue";
+navBar.style.height = "75px";
 ```
 
-Also, try `textContent` too! (you may also see this as `innerText`, but this is not supported by all browsers)
-
-Change styling:
+Let's look at the innerHTML:
 
 ```js
-greeting_div.style.backgroundColor = "yellow";
-greeting_div.style.color = "red";
-greeting_div.style.height = "100px";
+navBar.innerHTML
 ```
 
-Properties can be a getter and setter. What does this mean?
+Let's change the innerHTML:
+
+```js
+navBar.innerHTML
+```
 
 **Select by class**
 
+When we use classes to grab elements, we get an HTML collection, the contents of which we can access like an array.
 ```js
-var content_div = document.getElementsByClassName("content");
-```
-
-Change it:
-```js
-content_div.innerHTML = "I can change , too";
+var unitLinks = document.getElementsByClassName("unit-link");
+unitLinks
+unitLinks[0].style.backgroundColor = "purple";
 ```
 
 **Select by tag name**
+Like above, getElementsByTagName also returns an HTML collection.
+
 ```js
-var allListElements = document.getElementsByTagName("li")
+var headerThrees = document.getElementsByTagName("h3");
+```
+
+What if I want to do something to each h3? Since this isn't technically an array (it's an HTML collection), array methods like forEach wont work.
+
+```js
+Array.isArray(headerThrees);
+```
+
+But we can MAKE it an array!!
+
+```js
+var h3array = Array.from(headerThrees);
+Array.isArray(h3array);
+h3array.forEach(function(h){h.style.backgroundColor="yellow";});
 ```
 
 **Preferred: select using CSS selectors**
