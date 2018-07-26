@@ -102,7 +102,7 @@ document.querySelectorAll("h3").forEach(function(h3){h3.style.backgroundColor = 
 You can just grab the first element with that selector by dropping the "All".
 
 ```js
-document.querySelector("#ac-gn-firstfocus-small"); //this is the apple logo at the top
+var homeIcon = document.querySelector("#ac-gn-firstfocus-small"); //this is the apple logo at the top
 ```
 
 What if I want to change the href on this a tag?
@@ -112,17 +112,17 @@ What if I want to change the href on this a tag?
 There are 2 ways to get and set attributes of a DOM element. You can access the properties directly or use use get/setAttribute methods. It's important that you know both exist, but generally accessing the properties directly is more consistent across browsers.
 
 ```js
-//set using property
-document.querySelector("img").src = './images/beer.jpeg';
-
 //get using property
-var imgSrc = document.querySelector("img").src;
+homeIcon.href;
+
+//set using property
+homeIcon.href = "https://google.com";
 
 //get using getAttribute method
-var imgSrc = document.querySelector("img").getAttribute("src");
+homeIcon.getAttribute("href");
 
 //set using setAttribute method
-document.querySelector("img").setAttribute("src","./images/beer.jpeg")
+homeIcon.setAttribute("href","https://google.com");
 ```
 
 ##CSS Classes
