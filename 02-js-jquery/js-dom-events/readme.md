@@ -197,13 +197,3 @@ document.addEventListener('DOMContentLoaded', function() {
   //code and events go here
 });
 ```
-
-### Compare and Contrast
-
-Compare and contrast the following selectors. Why can't we use querySelector/querySelectorAll for everything?
-
-* getElementById
-* getElementsByClassName
-* getElementsByTagName
-* querySelector
-* querySelectorAll
