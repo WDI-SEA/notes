@@ -95,10 +95,17 @@ h3array.forEach(function(h){h.style.backgroundColor="yellow";});
 Get elements by tag name or class is very unspecific. You can go after specific CSS selectors, just like you would in stylesheets:
 
 ```js
-document.querySelectorAll("li");
-document.querySelectorAll("li.selected");
-document.querySelectorAll("div#essentials > ul > li");
+document.querySelectorAll("h3");
+document.querySelectorAll("h3").forEach(function(h3){h3.style.backgroundColor = "white"});
 ```
+
+You can just grab the first element with that selector by dropping the "All".
+
+```js
+document.querySelector("#ac-gn-firstfocus-small"); //this is the apple logo at the top
+```
+
+What if I want to change the href on this a tag?
 
 **Accessing and changing element attributes**
 
