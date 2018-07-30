@@ -1,29 +1,7 @@
 # jQuery - DOM Manipulation
 
 ## Installation
-jQuery is a client side library, which means we need to include it in our HTML. To do this, we have two options:
-
-* Reference jQuery from a server on the internet. CDNs (content delivery network) like [CDNJS](https://cdnjs.com/) or [Google Hosted Libraries](https://developers.google.com/speed/libraries/)
-* Download a copy of jQuery to host on your own server:
-
-[CDNJS](http://www.cdnjs.com), [Google Hosted Libraries](https://developers.google.com/speed/libraries/), and the [jQuery site](http://www.jquery.com) will all allow you to download a copy of jQuery to include in your projects.
-
-#### What's with the 'min.js' in the name of the jQuery file?
-
-If you look carefully at the filenames of the jQuery versions you download, or just look at the URL in the "src" attribute for each script tag above, you'll notice something at the end of each file name --- namely, that they end in 'min.js'. This means the JavaScript code has been minified.
-
-#### Minified? Did I read that right?
-
-Yep. You did. Minification is the process of making a JavaScript file smaller by, among other things, removing all line breaks and whitespace, reducing the length of variable and function names, and stripping out all comments. Minification can significantly reduce the size of a JavaScript file, and in turn, significantly decrease the time it takes our browsers to load the file into memory.
-
-Minified scripts can be difficult to read, so most servers that host jQuery and other libraries will also offer the original (non-minified) version of the code so developers can understand the code.
-
-#### And one more thing: 1.x vs. 2.x jQuery
-
-If you've visited code.jquery.com, you'll see that there are two major versions in development:
-  * The 1.x branch is the most cross-browser-compatible version of the jQuery core
-  * The 2.x branch, while offering some new features, is not compatible with older web browsers --- most notably, it's not compatible with Internet Explorer versions 8 and below
-
+jQuery is a client side library, which means we need to include it in our HTML. To do this, we include the CDN (content delivery network) in a script tag, which we can copy/paste. One source: [Google Hosted Libraries](https://developers.google.com/speed/libraries/) 
 
 ## DOM manipulation with jQuery
 
@@ -59,31 +37,26 @@ In this HTML:
 ```html
 <div id="myDiv">Hello world!</div>
 ```
+We can select and change html elements like so:
 
 ```js
-// vanilla JavaScript, using the browser API
-var divToManipulate = document.getElementById('myDiv');
-divToManipulate.innerHTML = "Goodbye world!";
+// vanilla JavaScript
+var myDiv = document.getElementById('myDiv');
+myDiv.innerHTML = "Goodbye world!";
+
+//jQuery
+var myDiv = $('#myDiv')
+myDiv.html("Goodbye world!");
 ```
 
-Now the code above isn't too hard to deal with, but even so, in jQuery, this is a one-liner.
+or, with chaining:
 
 ```js
+// vanilla JavaScript
+document.getElementById('myDiv').innerHTML = "Goodbye world!";
+
+//jQuery
 $('#myDiv').html("Goodbye world!");
-```
-
-If we wanted to **save our selection as a jQuery object**, the code would look like this instead:
-
-- First we select the element we want and save it as a jQuery object
-
-```js
-var taco = $('#taco');
-```
-
-- Then we use our jQuery object to perform our task
-
-```js
-taco.html("Goodbye world!");
 ```
 
 There are three things about the example above that make jQuery easier to use:
