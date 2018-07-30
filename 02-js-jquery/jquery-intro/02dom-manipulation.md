@@ -50,7 +50,7 @@ var myDiv = $('#myDiv')
 myDiv.html("Goodbye world!");
 ```
 
-#### Appending a DOM element to a web page
+#### Adding and removing DOM elements
 
 If we want to add a new DIV that provides an opinion, our vanilla JavaScript would have to be:
 
@@ -63,47 +63,18 @@ document.querySelector("body").appendChild(newDiv);
 And in jQuery, it looks like this:
 
 ```js
-$("body").append("<div>").append("Indigo should not be included in ROYGBIV");
+var newDiv = $("<div></div>").text("Indigo should not be included in ROYGBIV");
+$("body").append(newDiv);
 ```
 
-#### Adding and Removing Elements Using jQuery
-
-Sometimes in a dynamic web application, user-input is meant to trigger the addition or removal of content or functionality. Using jQuery, we can easily create new DOM elements and insert them into the DOM, or remove existing elements (and any content they contain) from the DOM.
-
-So, let's imagine we have a web page with the following content on it:
-
-```html
-<body>
-  <div id="outerContainer">
-    <div class="innerItem innerItemHeader">Enjoy some hipster ipsum:</div>
-    <div class="innerItem">
-      Aesthetic migas paleo McSweeney's, pork belly Kickstarter Echo Park sriracha keytar disrupt viral drinking vinegar fanny pack typewriter.
-    </div>
-  </div>
-</body>
-```
-
-Let's say we want to add some more hipster ipsum to the page. Something like:
-
-```html
-<div class="innerItem">
-  Farm-to-table Godard roof party bespoke, fashion axe mustache vinyl.
-</div>
-```
-
-To add this DIV, and our hipster ipsum content using jQuery, we'd do the following:
-
-Define a new DIV and assign jQuery object to $newDiv
+Say we've had a change of heart and want to rescind our previous statement. In vanilla JS:
 
 ```js
-var hipsterIsum = $('<div>');
+document.querySelector("body").removeChild(document.querySelector(".bright-div"));
+```
 
-// Add hipster ipsum content
-hipsterIsum.html("Farm-to-table Godard roof party bespoke, fashion axe mustache vinyl.");
+And in jQuery:
 
-// Set it's class to innerItem
-hipsterIsum.addClass("innerItem");
-
-// Append our new element
-$('#outerContainer').append(hipsterIsum);
+```js
+$(".bright-div").remove();
 ```
