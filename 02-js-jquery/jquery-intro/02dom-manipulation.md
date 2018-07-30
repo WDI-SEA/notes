@@ -12,7 +12,7 @@ To select an element in the DOM, we use the global jQuery function:
 $(' ')
 
 // To select a particular element by tag, you do
-$('h2') // selects all h2 elements
+$('div') // selects all div elements
 
 // To select by ID, you use the same syntax as CSS selectors
 $('#someID') // Would select the element with ID="someID"
@@ -43,66 +43,27 @@ We can select and change html elements like so:
 
 ```js
 // vanilla JavaScript
-var myDiv = document.getElementById('myDiv');
-myDiv.innerHTML = "Goodbye world!";
+document.getElementById('myDiv').innerHTML = "Goodbye world!";
 
 //jQuery
 var myDiv = $('#myDiv')
 myDiv.html("Goodbye world!");
 ```
 
-or, with chaining:
-
-```js
-// vanilla JavaScript
-document.getElementById('myDiv').innerHTML = "Goodbye world!";
-
-//jQuery
-$('#myDiv').html("Goodbye world!");
-```
-
-There are three things about the example above that make jQuery easier to use:
-  1. jQuery is using the same syntax as CSS to select elements
-  2. jQuery allows us to chain methods together to accomplish our goals (i.e., $().html(...) ), making code shorter and easier to understand
-  3. jQuery deals with any cross-browser compatibility issues, which may not seem like a big deal in this example, but which quickly become difficult to deal with as things get more complex
-
 #### Appending a DOM element to a web page
 
-If we had the following HTML page...
-
-```html
-<html>
-<body>
-
-  <div id="container"></div>
-
-</body>
-</html>
-```
-
-If we want to add a new DIV that provides a nice greeting, our vanilla JavaScript would have to be:
+If we want to add a new DIV that provides an opinion, our vanilla JavaScript would have to be:
 
 ```js
-  var myDiv = document.getElementById('container');
-  var newP = document.createElement('p');
-  newP.innerHTML = "Hello complicated, multi-step world of adding an element to the DOM!";
-  myDiv.appendChild(newP);
+var newDiv = document.createElement("div");
+newDiv.innerHTML = "Indigo should not be included in ROYGBIV";
+document.querySelector("body").appendChild(newDiv);
 ```
 
 And in jQuery, it looks like this:
 
 ```js
-  $('#container').append("<p>").append("Hello simple insertion using jQuery chaining");
-```
-
-In the jQuery code example above, we first select the DIV with `id="container"``, then we append a new paragraph element (automatically created using core jQuery selector function), and then we append the text we want to insert to the new paragraph element we just created. In effect, the new HTML looks like this after the jQuery is run:
-
-```html
-  <div id="container">
-    <p>
-      Hello simple insertion using jQuery chaining
-    </p>
-  </div>
+$("body").append("<div>").append("Indigo should not be included in ROYGBIV");
 ```
 
 #### Adding and Removing Elements Using jQuery
