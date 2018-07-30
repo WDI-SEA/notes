@@ -30,6 +30,8 @@ If you use variable assignment when doing a selection, a "jQuery" object is retu
 var paragraphs = $('p'); // Returns a jQuery object containing all <p> tags on your web page.
 ```
 
+Here is a demonstration of all the different types of jQuery selectors: https://www.w3schools.com/Jquery/trysel.asp
+
 #### Selecting a DOM element and changing it's content
 
 In this HTML:
