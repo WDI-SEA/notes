@@ -22,3 +22,9 @@ jQuery is a free, open-source, 3rd-party library that is intended to make front-
 * well-maintained, issues resolved quickly
 * designed for developers to implement complex functionality quickly and easily
 * makes css changes and javascript animation very simple
+
+#### Cons?
+
+* jQuery is much slower than vanilla javascript in many cases (it solves so many issues so it runs a LOT of code behind the scenes)
+* constantly evolving, so you need to keep up and understand a lot about how it works in order to be able to resolve any issues you encounter when implementing jQuery
+* in conclusion: good for readability, bad for debugging
