@@ -16,7 +16,7 @@ jQuery plugins require jQuery in order to work, so the script tag that pulls in 
 
 ## jQuery UI
 
-jQueryUI provides an additional library of user interactions and elements not provided by jQuery. You can find the jQuery CDN here: https://developers.google.com/speed/libraries/
+jQueryUI provides an additional library of user interactions and elements not provided by jQuery. You can find the jQuery and jQueryUI CDN here: https://developers.google.com/speed/libraries/
 
 jQuery UI also provides elements with 'themes' or styling. In order to use these styled elements (dropdowns, accordions, etc.), be sure to include the appropriate jQuery UI CSS stylesheet in the head tag as well.
 
