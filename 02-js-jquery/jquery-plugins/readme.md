@@ -22,6 +22,7 @@ jQuery UI also provides elements with 'themes' or styling. In order to use these
 
 ** go over implementing sortable in the to-do list
 ** jQuery UI according lab
+Why aren't good or approved plugins included in the standard jQuery library?
 ** build up loading example
 https://gasparesganga.com/labs/jquery-loading-overlay/#comments-and-ideas
 
