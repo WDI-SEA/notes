@@ -27,19 +27,20 @@ experience?
 ### The Web has always been responsive
 
 From the beginning, the web has been meant to be shown on a variety of
-different screens. Text wraps, floats automatically position themselves based
-on screen size, and we've had percentage sizing in CSS basically forever.
+different screens. 
+
+* Text wraps
+* Floats automatically position themselves based
+on screen size
+* percentage sizing
 
 If we go to this simple example, we see that floats reflow, depending on screen
-width:
+width. Likewise, the paragraphs remain at 50% of screen width, no matter what this screen width is.
 
 <p data-height="400" data-theme-id="0" data-slug-hash="ZOYWQJ" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/ZOYWQJ/">Float demo</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-Likewise, the paragraphs remain at 50% of screen width, no matter what this screen width is.
-
-This works to an extent, but we'd really like a few more tools for changing
-layout based on screen size.
+Basic CSS only gets us so far and can seriously restrict how we structure the layout of the page.
 
 ## Making Responsive Webpages
 
