@@ -11,6 +11,10 @@
 
 Plugins are pieces of code that someone else has written to extende jQuery's functionality. The most common plugin is jQuery UI.
 
+## Why aren't plugins just included in teh standard jQuery library?
+* extra code that you don't use just bogs down your project
+* unopinionated -> customizable
+
 ## How to implement
 jQuery plugins require jQuery in order to work, so the script tag that pulls in the plugin must come **after** the one that pulls in jQuery.
 
