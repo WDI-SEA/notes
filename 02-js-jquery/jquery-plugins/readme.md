@@ -1,39 +1,24 @@
-#jQuery Plugins
+# jQuery Plugins
 
-##Objectives
+## Objectives
 
 * Describe what jQuery plugins are used for
 * Answer the question "Why aren't good or approved plugins included in the standard jQuery library?"
 * Include and implement jQuery plugins on web pages
 * Experiment with different plugins and making custom jQuery plugins
 
-##Plugins
+## What is a Plugin?
 
-As you've come to seen, jQuery provides many useful functions to make DOM selection much easier. Instead of having to loop through arrays of DOM elements, we can perform complex selections in one line. Here's an example of using `.css()` to change all spans inside list items red.
+Plugins are pieces of code that someone else has written to extende jQuery's functionality. The most common plugin is jQuery UI.
 
-```js
-$('li span').css('color', 'red');
-```
+## How to implement
+jQuery plugins require jQuery in order to work, so the script tag that pulls in the plugin must come **after** the one that pulls in jQuery.
 
-But as you've come to discover, programmers always want more. jQuery was designed with extensibility in mind, which means we can use plugins in order to extend jQuery's functionality. The most common plugin is jQuery UI.
+## jQuery UI
 
-##jQuery UI
+jQueryUI provides an additional library of user interactions and elements not provided by jQuery. You can find the jQuery CDN here: https://developers.google.com/speed/libraries/
 
-[jQuery UI](https://jqueryui.com/)
-
-jQuery UI provides an additional library of user interactions and elements not provided by jQuery. In order to use its features, include the following script **after** jQuery.
-
-**NOTE:** jQuery UI requires jQuery in order to extend jQuery's features. This is common across jQuery plugins, so make sure to import plugins after jQuery.
-
-```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-```
-
-jQuery UI also provides elements with 'themes' or styling. In order to use these styled elements (dropdowns, accordions, etc.), be sure to include the appropriate jQuery UI CSS file as well (in `<head>`)
-
-```html
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.theme.min.css">
-```
+jQuery UI also provides elements with 'themes' or styling. In order to use these styled elements (dropdowns, accordions, etc.), be sure to include the appropriate jQuery UI CSS stylesheet in the head tag as well.
 
 Once jQuery UI is included on the page, jQuery is *extended*, meaning jQuery UI provides additional functions to jQuery. An example:
 
@@ -42,4 +27,3 @@ $('.item').draggable();
 ```
 
 <p data-height="665" data-theme-id="0" data-slug-hash="YwLXMV" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/YwLXMV/">jQuery UI Examples</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
