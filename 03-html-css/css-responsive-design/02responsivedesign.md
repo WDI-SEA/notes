@@ -38,7 +38,6 @@ If we go to this simple example, we see that floats reflow, depending on screen
 width. Likewise, the paragraphs remain at 50% of screen width, no matter what this screen width is.
 
 <p data-height="400" data-theme-id="0" data-slug-hash="ZOYWQJ" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/ZOYWQJ/">Float demo</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 Basic CSS only gets us so far and can seriously restrict how we structure the layout of the page.
 
