@@ -20,4 +20,9 @@ jQueryUI provides an additional library of user interactions and elements not pr
 
 jQuery UI also provides elements with 'themes' or styling. In order to use these styled elements (dropdowns, accordions, etc.), be sure to include the appropriate jQuery UI CSS stylesheet in the head tag as well.
 
+** go over implementing sortable in the to-do list
+** jQuery UI according lab
+** build up loading example
+https://gasparesganga.com/labs/jquery-loading-overlay/#comments-and-ideas
+
 <p data-height="665" data-theme-id="0" data-slug-hash="YwLXMV" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/YwLXMV/">jQuery UI Examples</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
