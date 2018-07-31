@@ -7,17 +7,7 @@ http://johnpolacek.github.io/scrolldeck.js/decks/responsive/
 
 ## Background
 
-### More devices
-
-Not that long ago building a successful online presence meant just ensuring
-that your website worked correctly in all the major desktop browsers. 
-
-Fast forward to today (2015) and the desktop computer is dying, more than 71%
-of the US population owns a smartphone.
-
-* **195 million** tablet devices were sold in 2013.
-* The number of active mobile devices and human beings crossed over somewhere around the [7.19 billion mark](http://www.independent.co.uk/life-style/gadgets-and-tech/news/there-are-officially-more-mobile-devices-than-people-in-the-world-9780518.html).
-* New devices like watches and activity trackers are changing the game too
+PUT STUFF HERE
 
 ### Examples of responsive sites:
 
