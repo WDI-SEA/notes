@@ -5,7 +5,7 @@
 * Describe what jQuery plugins are used for
 * Answer the question "Why aren't good or approved plugins included in the standard jQuery library?"
 * Include and implement jQuery plugins on web pages
-* Experiment with different plugins and making custom jQuery plugins
+* Experiment with different plugins
 
 ## What is a Plugin?
 
