@@ -1,41 +1,60 @@
-#Local Storage
+# Local Storage
 
 HTML5 introduced a feature called `localStorage` that allows us to store data on a local user's computer. The data is unique for a single person using a specific web site.
 
 Local storage is an object that is retained even if the browser is reloaded. We can get and set values like any other object.
 
+(pop open console on js quiz)
+
 **Set value**
 
 ```js
-localStorage.name = 'Lenny';
+localStorage.name = 'Taylor';
 ```
 
 **Get value**
 ```js
-console.log(localStorage.name);
+localStorage.name;
 ```
 
-####Using JSON stringify / parse
+Refresh page - still there!
 
-Local storage can only store strings. Therefore, we have to use `JSON.parse` and `JSON.stringify` to convert complex data types such as collections into a string and back.
+#### Using JSON stringify / parse
+
+```js
+localStorage.age = 25;
+localStorage.stoked = true;
+localStorage.obsessions = ["my dog", "Hannah Hart", "slightly-too-much makeup lewks"]
+var myFaves = {food: "oysters", number: "27", album: "Infinity On High"};
+localStorage.faves = myFaves;
+```
+
+Now let's look at the whole localStorage object
+
+```js
+localStorage
+```
+
+The localStorage is a JSON object - it can only store strings!!!
+
+Solution: JSON.parse() and JSON.stringify()
 
 [JSON MDN Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON)
 
 **stringify** - converts object to string
 
 ```js
-JSON.stringify({a:1,b:2});
-//returns a json string: '{"a":1,"b":2}'
+localStorage.faves = JSON.stringify(myFaves);
 ```
 
 **parse** - converts string to object
 
 ```javascript
-JSON.parse('{"a":1,"b":2}');
+JSON.parse(localStorage.myFaves);
 //returns a json object {a:1,b:2}
 ```
 
-####Using with JSON data
+#### Using with JSON data
 
 All we have to do now is put it together. We can store any JavaScript data structure (even highly nested objects / arrays) as a string by using `JSON.stringify` and `JSON.parse`.
 
