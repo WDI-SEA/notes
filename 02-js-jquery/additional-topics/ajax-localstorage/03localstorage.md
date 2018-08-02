@@ -51,27 +51,9 @@ localStorage.faves = JSON.stringify(myFaves);
 
 ```javascript
 JSON.parse(localStorage.myFaves);
-//returns a json object {a:1,b:2}
 ```
 
-#### Using with JSON data
-
-All we have to do now is put it together. We can store any JavaScript data structure (even highly nested objects / arrays) as a string by using `JSON.stringify` and `JSON.parse`.
-
-**Saving data**
-
-```js
-var listValues = ['taco', 'burrito', { name: 'Brian' }];
-localStorage.myList = JSON.stringify(listValues);
-```
-
-**Loading data**
-
-```js
-var listValues = JSON.parse(localStorage.myList);
-```
-
-####Preventing errors
+#### Preventing errors
 
 There is still one problem. If we run `JSON.parse` on something that isn't valid JSON, it will throw an error and prevent some of our JavaScript from running! We can avoid this by using a **try...catch** statement.
 
