@@ -133,7 +133,6 @@ List our tables:
 ```
 \dt
 ```
-to list all tables in a database `\dt`a
 
 At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
 
