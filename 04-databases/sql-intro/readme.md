@@ -93,9 +93,15 @@ There are lots of other commands which you can see with:
 ```
 \?
 ```
-Use `q` to exit the help screen
+Use `q` to exit the help screen (or any other screen that doesn't self-terminate)
 
-Note that all psql commands start with `\` except for `q`
+Note that all psql commands start with `\` except for `q`.
+
+To quite psql and return to the home terminal:
+
+```
+\q
+```
 
 ## SQL: Structured Query Language
 
