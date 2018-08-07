@@ -173,6 +173,9 @@ VALUES
 ('Bob Jones', '(415)555-5555', 'bob@example.com');
 
 ```
+Note that psql will not accept values with double quotes, only single quotes.
+
+It doesn't matter how many lines you take up to write the SQL statements because it won't run until you write it with 
 
 ### SELECT-ing Data
 
@@ -208,7 +211,7 @@ DELETE from students WHERE email = 'bobby@example.com';
 DROP TABLE students;
 ```
 
-##Database Schema Design
+## Database Schema Design
 
 For this lesson, how to design a complete database system is out of scope. We will discuss a few things here though.
 
