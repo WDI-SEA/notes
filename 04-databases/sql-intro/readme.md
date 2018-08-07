@@ -27,7 +27,7 @@ Discuss as a class. Why is it better than just writing to files?
 
 **RDBMS** (Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribut of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
 
-###Brands of Relational Databases
+### Brands of Relational Databases
 
 * Postgres
 * MySQL
@@ -245,7 +245,7 @@ Similar to how Javascript has types of data, SQL defines types that can be store
 * Integer
 * Numeric // Numbers are exact, no rounding error
 * Float // Rounding error is possible, but operations are faster than Numeric
-* Text, Varchar
+* Text, Char(set number of characters), Varchar(max number of characters)
 * Timestamp
 * Boolean (True or False)
 
