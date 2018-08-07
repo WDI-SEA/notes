@@ -69,6 +69,12 @@ List all of the available databases:
 \list
 ```
 
+Connect to one of your databases:
+
+```
+\c myDatabase
+```
+
 List all of the available tables in the current database:
 
 ```
@@ -87,12 +93,9 @@ There are lots of other commands which you can see with:
 ```
 \?
 ```
-Use `\q` to exit the help screen
+Use `q` to exit the help screen
 
-Note that all psql commands start with `\`
-
-
-At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
+Note that all psql commands start with `\` except for `q`
 
 ## SQL: Structured Query Language
 
@@ -126,6 +129,7 @@ List our tables:
 ```
 to list all tables in a database `\dt`a
 
+At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
 
 ### CREATE-ing a Table
 
