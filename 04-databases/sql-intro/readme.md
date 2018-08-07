@@ -239,7 +239,7 @@ SERIAL tells the database to automatically assign the next unused integer value 
 
 ## Data Types
 
-Similar to how Ruby has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
+Similar to how Javascript has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
 
 * Serial
 * Integer
