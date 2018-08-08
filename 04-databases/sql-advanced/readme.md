@@ -109,9 +109,9 @@ Aliases are a piece of a SQL query that allows you to temporarily rename a table
 ####
 ```sql
 SELECT
-    users.userID AS 'id',
-    users.username AS 'name'
-FROM users;
+    title AS movieName,
+    rating AS opinion
+FROM movies;
 ```
 
 --
