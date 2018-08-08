@@ -27,7 +27,7 @@ Discuss as a class. Why is it better than just writing to files?
 
 **RDBMS** (Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribut of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
 
-###Brands of Relational Databases
+### Brands of Relational Databases
 
 * Postgres
 * MySQL
@@ -69,6 +69,12 @@ List all of the available databases:
 \list
 ```
 
+Connect to one of your databases:
+
+```
+\c myDatabase
+```
+
 List all of the available tables in the current database:
 
 ```
@@ -87,12 +93,15 @@ There are lots of other commands which you can see with:
 ```
 \?
 ```
-Use `\q` to exit the help screen
+Use `q` to exit the help screen (or any other screen that doesn't self-terminate)
 
-Note that all psql commands start with `\`
+Note that all psql commands start with `\` except for `q`.
 
+To quite psql and return to the home terminal:
 
-At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
+```
+\q
+```
 
 ## SQL: Structured Query Language
 
@@ -124,8 +133,8 @@ List our tables:
 ```
 \dt
 ```
-to list all tables in a database `\dt`a
 
+At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
 
 ### CREATE-ing a Table
 
@@ -164,6 +173,9 @@ VALUES
 ('Bob Jones', '(415)555-5555', 'bob@example.com');
 
 ```
+Note that psql will not accept values with double quotes, only single quotes.
+
+It doesn't matter how many lines you take up to write the SQL statements because it won't run until you write it with 
 
 ### SELECT-ing Data
 
@@ -199,7 +211,7 @@ DELETE from students WHERE email = 'bobby@example.com';
 DROP TABLE students;
 ```
 
-##Database Schema Design
+## Database Schema Design
 
 For this lesson, how to design a complete database system is out of scope. We will discuss a few things here though.
 
@@ -227,13 +239,13 @@ SERIAL tells the database to automatically assign the next unused integer value 
 
 ## Data Types
 
-Similar to how Ruby has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
+Similar to how Javascript has types of data, SQL defines types that can be stored in the DB. Here are some common ones:
 
 * Serial
 * Integer
 * Numeric // Numbers are exact, no rounding error
 * Float // Rounding error is possible, but operations are faster than Numeric
-* Text, Varchar
+* Text, Char(set number of characters), Varchar(max number of characters)
 * Timestamp
 * Boolean (True or False)
 

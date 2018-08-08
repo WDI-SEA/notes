@@ -1,24 +1,26 @@
 # jQuery - Styles
 
-You can do more than select elements and modify content. You can also create or update CSS style attributes in jQuery using the .css() method
+jQuery allows us to change the style of DOM elements with .css([property],[value]);
 
 ```js
 $("#myDiv").css("color", "red");
 ```
 
-Or, if we have a bunch of elements that all have the same class (in this example, it's class="myClass"), we can use the class selector to modify the color of all of them at once:
+We can change several elements at once too:
 
 ```js
-$(".myClass").css("color", "blue");
+$("div").css("background", "yellow");
 ```
 
 But that seems kind of boring. I mean, what if we want to do something with less hard-coding using jQuery.
 
 ```js
+//returns a random value 0-255;
 var randColorValue = function() {
   return Math.floor( Math.random() * 255 );
 }
 
+//assigns a random color value to three different variables and returns a proper rgb value
 var randColor = function() {
   var red = randColorValue();
   var green = randColorValue();
@@ -27,5 +29,5 @@ var randColor = function() {
   return "rgb(" + red + "," + green + "," + blue + ")";
 }
 
-$(".myClass").css("color", randColor());
+$("#myDiv").css("color", randColor());
 ```
