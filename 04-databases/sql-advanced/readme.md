@@ -33,6 +33,8 @@ Not equal - `<>`
 
 ## GROUP BY
 
+"In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
+
 We use an aggregate function to get the total count of movies in a table.
 ```sql
 SELECT COUNT(*) FROM movies;
