@@ -40,7 +40,7 @@ We use an aggregate function to get the total count of movies in a table.
 SELECT COUNT(*) FROM movies;
 ```
 
-What about getting the count of something more specific in movies, such as the count of each rating?
+What about getting the count of something more specific in movies, such as the count of each rating? This query will only return a different number from the above query if there exist movies in the table that don't have a value in the rating column.
 ```sql
 SELECT COUNT(rating) FROM movies;
 ```
