@@ -85,7 +85,7 @@ Aliases are a piece of a SQL query that allows you to temporarily rename a table
 SELECT country, avg(salary) AS avgSal FROM customer GROUP BY country;
 ```
 
-## Alter Table Command
+### Alter Table Command
 
 ```sql
 ALTER TABLE customer ADD COLUMN date DATE;
@@ -104,46 +104,45 @@ CREATE TABLE merch_order (
 );
 ```
 
-## Nested queries
+### Nested queries
 
-What if I want to do something very specific, but I need to get groups of results? For example:
-
-1. Get titles of movies with the highest ratings.
-2. Get titles of movies with the lowest ratings.
+What if I want to get names of customers with the highest salary.
 
 Let's try it using WHERE
 
 ```sql
-SELECT title FROM movies
-WHERE rating = MAX(rating);
+SELECT name, salary FROM customer
+WHERE salary = MAX(salary);
 ```
 
 That will give us an error, because MAX is an aggregate function and can't be used in WHERE.
 
-Solution: Nested queries.
-
-```sql
-SELECT MAX(rating) FROM movies;
-```
-
 This will return the maximum rating, which we need to feed into WHERE.
 
 ```sql
-SELECT title FROM movies
-WHERE rating = (
-	SELECT MAX(rating) FROM movies
+SELECT name, salary FROM customer
+WHERE salary = (
+	SELECT MAX(salary) FROM customer
 );
 ```
 
-####
+### Conditionals
+
+#### CASE Statement
+The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
+
 ```sql
-SELECT
-    title AS movieName,
-    rating AS opinion
-FROM movies;
+SELECT name,
+	age, 
+		CASE WHEN age<25
+		THEN 'young adult'
+		ELSE 'adult' 
+		END AS age_group 
+FROM customer;
 ```
 
---
+
+### INNER JOIN
 
 ```sql
 SELECT * FROM authors a
@@ -163,33 +162,6 @@ SELECT * FROM crew
     LEFT JOIN users model
         ON crew.fk_model = model.userID
 ORDER BY crew.crewID ASC;
-```
-
-### Conditionals
-
-#### CASE Statement
-The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
-
-```sql
-SELECT
-    CASE users.age
-        WHEN 0 THEN 'baby'
-        WHEN 15 THEN 'teen'
-        ELSE 'adult'
-    END AS 'age'
-FROM users;
-```
-
---
-
-```sql
-SELECT
-    CASE
-        WHEN users.age < 13 THEN 'preteen'
-        WHEN users.age < 20 THEN 'teen'
-        ELSE 'adult'
-    END AS 'UserAge'
-FROM users;
 ```
 
 ### Unions
