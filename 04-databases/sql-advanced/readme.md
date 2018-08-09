@@ -97,11 +97,10 @@ ALTER TABLE customer DROP date;
 
 ### FOREIGN KEYS
 ```sql
-DROP TABLE books;
-CREATE TABLE books (
-	book_id SERIAL PRIMARY KEY,
-	name VARCHAR(100) NOT NULL,
-	author_id INTEGER REFERENCES authors(author_id)
+CREATE TABLE merch_order (
+	id SERIAL PRIMARY KEY,
+	num_items INTEGER,
+	customer_id INTEGER REFERENCES customer(id)
 );
 ```
 
