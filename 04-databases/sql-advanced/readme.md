@@ -148,6 +148,7 @@ INNER JOIN gives us the intersections of tables (or the rows that are the same i
 
 Suppose we have a second table of subscribers like so:
 
+```sql
  id |  name  | catalog | email 
 ----+--------+---------+-------
   1 | Ramesh | 0       | 1
@@ -155,7 +156,8 @@ Suppose we have a second table of subscribers like so:
   3 | Busak  | 1       | 1
   4 | Reg    | 0       | 1
   5 | Hardik | 1       | 1
-  
+ ```
+ 
 And we want to see which of our subscribers have become customers.
 
 ```sql
