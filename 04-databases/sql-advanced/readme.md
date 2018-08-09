@@ -77,19 +77,25 @@ Or maybe we want the average salaries of the customers from each country:
 SELECT country, AVG(salary) FROM customer GROUP BY country;
 ```
 
+### Aliases
+
+Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query.
+
+```sql
+SELECT country, avg(salary) AS avgSal FROM customer GROUP BY country;
+```
+
 ## Alter Table Command
 
 ```sql
-ALTER TABLE books ADD CONSTRAINT author_id
-FOREIGN KEY (author_id) REFERENCES authors (author_id)
-ON DELETE NO ACTION;
+ALTER TABLE customer ADD COLUMN date DATE;
 
-ALTER TABLE books ADD COLUMN year_released INTEGER;
+ALTER TABLE customer ALTER COLUMN name SET NOT NULL;
 
-ALTER TABLE books ALTER COLUMN name SET NOT NULL;
+ALTER TABLE customer DROP date;
 ```
 
-### Easier to add Constraints when creating a table
+### FOREIGN KEYS
 ```sql
 DROP TABLE books;
 CREATE TABLE books (
@@ -129,10 +135,6 @@ WHERE rating = (
 	SELECT MAX(rating) FROM movies
 );
 ```
-
-### Aliases
-
-Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query. This is useful for creating shorthand names for tables when using table prefixes, renaming columns, or differentiating tables when you join the same table more than once in a query (eliminating ambiguity).
 
 ####
 ```sql
