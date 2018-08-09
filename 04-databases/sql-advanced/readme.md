@@ -1,7 +1,6 @@
 # Advanced SQL
 
 ## Objectives
-* Utilize different ways to filter data in the WHERE clause
 * Describe the uses of advanced queries like subqueries and unions
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
