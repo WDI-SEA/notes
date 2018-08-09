@@ -31,6 +31,19 @@ Not equal - `<>`
 - % - SELECT * FROM students WHERE name LIKE '%b';
 ```
 
+Let's suppose we have a *customer* table with the following data:
+
+```sql
+ id |  name   | age |  country  | salary 
+----+---------+-----+-----------+--------
+  1 | Ramesh  |  32 | Ahmedabad |   2000
+  3 | Kaushik |  23 | Kota      |   2000
+  2 | Ramesh  |  25 |           |   1500
+  4 | Kaushik |  25 | Mumbai    |       
+  5 | Hardik  |  27 | Bhopal    |   8500
+  6 | Komal   |     |           |   4500
+```
+
 ## GROUP BY
 
 "In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
