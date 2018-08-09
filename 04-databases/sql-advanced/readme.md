@@ -72,12 +72,6 @@ What if we just want to know how many different ages we have? We can combine GRO
 SELECT age, COUNT(age) FROM customer GROUP BY age;
 ```
 
-We get the same result. GROUP BY allows you to 'group' the table by a specific attribute, which is then provided to the aggregate function.
-```sql
-SELECT rating, COUNT(rating) FROM movies
-GROUP BY rating;
-```
-
 Or maybe we want the average salaries of the customers from each country:
 ```sql
 SELECT country, AVG(salary) FROM customer GROUP BY country;
