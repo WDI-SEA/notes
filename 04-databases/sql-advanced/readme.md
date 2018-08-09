@@ -161,8 +161,7 @@ Suppose we have a second table of subscribers like so:
 And we want to see which of our subscribers have become customers.
 
 ```sql
-SELECT customer.name 
-FROM customer 
+SELECT * FROM customer 
 INNER JOIN subscriber 
 ON customer.name=subscriber.name;
 ```
