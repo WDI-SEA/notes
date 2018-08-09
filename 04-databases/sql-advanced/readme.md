@@ -144,6 +144,20 @@ FROM customer;
 
 ### INNER JOIN
 
+INNER JOIN gives us the intersections of tables (or the rows that are the same in each table involved in the join).
+
+Suppose we have a second table of subscribers like so:
+
+ id |  name  | catalog | email 
+----+--------+---------+-------
+  1 | Ramesh | 0       | 1
+  2 | Komal  | 1       | 0
+  3 | Busak  | 1       | 1
+  4 | Reg    | 0       | 1
+  5 | Hardik | 1       | 1
+  
+And we want to see which of our subscribers have become customers.
+
 ```sql
 SELECT customer.name 
 FROM customer 
