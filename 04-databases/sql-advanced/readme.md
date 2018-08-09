@@ -44,24 +44,43 @@ Let's suppose we have a *customer* table with the following data:
   6 | Komal   |     |           |   4500
 ```
 
-## GROUP BY
+## COUNT()
+
+COUNT() is an *aggregate function*.
 
 "In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
 
-We use an aggregate function to get the total count of movies in a table.
+We use an aggregate function to get the total count of customers in a table.
 ```sql
-SELECT COUNT(*) FROM movies;
+SELECT COUNT(*) FROM customer;
 ```
 
-What about getting the count of something more specific in movies, such as the count of each rating? This query will only return a different number from the above query if there exist movies in the table that don't have a value in the rating column.
+What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint? 
 ```sql
-SELECT COUNT(rating) FROM movies;
+SELECT COUNT(age) FROM customer;
+```
+
+## GROUP BY
+
+GROUP BY is used to pull together identical data points. For example, say we just want to see the different ages we have in our customer table, without having to look through the duplicates too.
+```sql
+SELECT age FROM customer GROUP BY age;
+```
+
+What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT():
+```sql
+SELECT age, COUNT(age) FROM customer GROUP BY age;
 ```
 
 We get the same result. GROUP BY allows you to 'group' the table by a specific attribute, which is then provided to the aggregate function.
 ```sql
 SELECT rating, COUNT(rating) FROM movies
 GROUP BY rating;
+```
+
+Or maybe we want the average salaries of the customers from each country:
+```sql
+SELECT country, AVG(salary) FROM customer GROUP BY country;
 ```
 
 ## Alter Table Command
