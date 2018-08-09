@@ -145,10 +145,10 @@ FROM customer;
 ### INNER JOIN
 
 ```sql
-SELECT * FROM authors a
-    INNER JOIN books b
-        ON a.author_id = b.author_id
-ORDER BY a.author_id ASC;
+SELECT customer.name 
+FROM customer 
+INNER JOIN subscriber 
+ON customer.name=subscriber.name;
 ```
 
 --
