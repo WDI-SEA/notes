@@ -142,7 +142,7 @@ FROM customer;
 ```
 
 
-### INNER JOIN
+### JOINs
 
 INNER JOIN gives us the intersections of tables (or the rows that are the same in each table involved in the join).
 
@@ -166,66 +166,32 @@ INNER JOIN subscriber
 ON customer.name=subscriber.name;
 ```
 
---
+LEFT JOIN is similar to INNER JOIN, except it will include *all* rows from the left table (the first table listed in the query). Similarly, RIGHT JOIN will include all the rows from the right table.
 
 ```sql
-SELECT * FROM crew
-    LEFT JOIN users photographer
-        ON crew.fk_photographer = photographer.userID
-    LEFT JOIN users director
-        ON crew.fk_director = director.userID
-    LEFT JOIN users model
-        ON crew.fk_model = model.userID
-ORDER BY crew.crewID ASC;
+SELECT * FROM customer
+LEFT JOIN subscriber 
+ON customer.name=subscriber.name;
+```
+
+```sql
+SELECT * FROM customer
+RIGHT JOIN subscriber 
+ON customer.name=subscriber.name;
 ```
 
 ### Unions
 
-Unions are the compilation of one or more disparate SQL queries that have the same columns. These are helpful when doing data aggregation that requires multiple SQL statements with different sets of joins and where clauses, but that return the same type of data.
+Unions display the results of two or more SELECT statements into one table, so the SELECT statements must have the same number of columns with the same names/data types, in the same order.
 
-Note: Unioned SQL statements MUST have the exact same columns (matching names) in the exact same order.
-
-In the example below, I want all users and the number of photographs taken that they have "been a part of". In my first query I'm selecting photographers. In my second I'm selecting directors. In my third I'm selecting editors. But I want everything to display as just individual users with a 'role' column that I've manually set.
+Let's try viewing the ids and names from both the customer and the subscriber tables.
 
 ```sql
-SELECT
-	users.id,
-	users.name,
-    'Photographer' AS 'role',
-	COUNT(photos.id) AS 'photoCount'
-FROM photoShoots
-	INNER JOIN users
-		ON photoShoots.fk_photographerUserId = users.id
-	INNER JOIN photos
-		ON photoShoots.id = photos.fk_photoShootsId
-GROUP BY users.id, users.name
+SELECT id, name FROM customer UNION SELECT id, name FROM subscriber ORDER BY id;
+```
 
-UNION
+Notice that the resulting table has fewer rows that the sum of the rows from each table. This is because UNION statements also eliminate any duplicate rows from the result. To include the duplicate rows, use UNION ALL.
 
-SELECT
-	users.id,
-	users.name,
-    'Director' AS 'role',
-	COUNT(photos.id) AS 'photoCount'
-FROM photoShoots
-	INNER JOIN users
-		ON photoShoots.fk_directorUserId = users.id
-	INNER JOIN photos
-		ON photoShoots.id = photos.fk_photoShootsId
-GROUP BY users.id, users.name
-
-UNION
-
-SELECT
-	users.id,
-	users.name,
-	'Editor' AS 'role',
-	COUNT(photos.id) AS 'photoCount'
-FROM photoShoots
-	INNER JOIN users
-		ON photoShoots.fk_editorUserId = users.id
-	INNER JOIN photos
-		ON photoShoots.id = photos.fk_photoShootsId
-GROUP BY users.id, users.name;
-    
+```sql
+SELECT id, name FROM customer UNION ALL SELECT id, name FROM subscriber ORDER BY id;
 ```
