@@ -1,6 +1,6 @@
-#Deploy Node + MongoDB to Heroku
+# Deploy Node + MongoDB to Heroku
 
-##Objectives
+## Objectives
 
 * Deploy a MEAN app to a production server using Heroku
 * Use the mLab addon and connect to a mLab instance
@@ -12,7 +12,7 @@ First, let's deploy the Node app to Heroku.
 * Create a `Procfile` in the root of your Node application
   * In terminal, run `touch Procfile`. Must be called with a capitol P
   * make sure it is named "Procfile" (no extention) 
-  * make sure your Procfile is in the same folder as your index.js file) 
+  * make sure your Procfile is in the same folder as your index.js file
   * in terminal type `echo "web: node index.js" >> Procfile`
 
 * In your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
