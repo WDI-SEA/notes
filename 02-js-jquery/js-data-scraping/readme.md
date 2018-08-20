@@ -9,14 +9,14 @@
 ## What is web scraping?
 Scraping (Screen Scraping, Web Data Extraction, Web Harvesting, etc) refers to the process of requesting an HTML page and picking out relevant data from the document string. In other words, you can scrape content off of web pages by parsing the html.
 
-## Why scrape?
+#### Why scrape?
 
 * no API available
 * API is unreliable/unkept/etc.
 * no fee or call limit (unless a rate-limit is set up)
 * more anonymous than getting data through dev resources
 
-## Why not scrape?
+#### Why not scrape?
 
 * need to log into site in order to access desired data
 * organization of data is makes it hard/overly-laborious to access
@@ -39,28 +39,26 @@ To get started, create a new folder, and initialize npm. We'll also want to inst
 ```bash
 mkdir seattle-neighborhoods
 cd seattle-neighborhoods
-npm init --yes
-npm install --save request cheerio
+npm init --y
+npm install request cheerio
 ```
 
-## Getting the HTML document
+#### Step 1: Get the HTML document
 
-To scrape data from the site, we need to request the webpage like so:
+There are multiple ways to get an HTML document, but we'll use the ```request``` module in this example. To scrape data from the site, we need to request the webpage like so:
 
 ```js
 var request = require('request');
 var cheerio = require('cheerio');
 
-request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, data) {
-  // code here
+request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, body) {
+  console.log(body);
 });
 ```
 
-###Using Cheerio with the data
+### Step 2: Parse the HTML
 
-Inside the callback function of request, we'll pass the data along to Cheerio by calling `cheerio.load()`. The result can be stored in a variable, and then we can run jQuery-like selectors on the data.
-
-Using `$` as the variable name will make this look like jQuery.
+The request to the seattle neighborhoods url gave us the entire HTML document string - now we need to parse it in order to pick out the specific data we're looking for. This is where Cheerio comes in! Inside the callback function of request, we'll pass the html we got back into the `cheerio.load()` function. We store the result, which is a cheerio object, in the dollar sign variable because cheerio is designed to mimic jQuery selectors (though technically, we could store it in any variable we'd like).
 
 ```js
 var $ = cheerio.load(data);
