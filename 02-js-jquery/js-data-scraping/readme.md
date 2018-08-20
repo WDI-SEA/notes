@@ -1,16 +1,31 @@
-#Data Scraping with Cheerio
+# Data Scraping with Cheerio
 
-##Objectives
+## Objectives
 
 * Identify situations where data scraping would be beneficial
 * Understand the methods and legality of data scraping
 * Use modules such as Cheerio to scrape data from the web
 
-Web scraping is a useful tool for extracting data from a webpage. It's a process that involves requesting a HTML page and picking out relevant data from the document.
+## What is web scraping?
+Scraping (Screen Scraping, Web Data Extraction, Web Harvesting, etc) refers to the process of requesting an HTML page and picking out relevant data from the document string. In other words, you can scrape content off of web pages by parsing the html.
+
+## Why scrape?
+
+* no API available
+* API is unreliable/unkept/etc.
+* no fee or call limit (unless a rate-limit is set up)
+* more anonymous than getting data through dev resources
+
+## Why not scrape?
+
+* need to log into site in order to access desired data
+* organization of data is makes it hard/overly-laborious to access
+* web page structure frequently changes (program that uses scraped data would need constant updates)
+* copywrite and other legal issues
 
 **NOTE:** The legality of data scraping and using a site's data may depend on a site's terms of use. Scraping a site and using the data for profit may violate a site's terms of use, so be careful before scraping a site. This is not legal advice, and we are not lawyers, but we recommend that you contact a lawyer if you want to scrape data for a for-profit application.
 
-##Getting Started: Scraping Seattle Neighborhoods
+## Getting Started: Scraping Seattle Neighborhoods
 
 Let's try creating a file that will scrape Seattle neighborhoods from this site:
 
