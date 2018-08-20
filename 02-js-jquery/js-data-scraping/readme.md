@@ -61,12 +61,15 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 The request to the seattle neighborhoods url gave us the entire HTML document string - now we need to parse it in order to pick out the specific data we're looking for. This is where Cheerio comes in! Inside the callback function of request, we'll pass the html we got back into the `cheerio.load()` function. We store the result, which is a cheerio object, in the dollar sign variable because cheerio is designed to mimic jQuery selectors (though technically, we could store it in any variable we'd like).
 
 ```js
-var $ = cheerio.load(data);
+request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, body) {
+  var $ = cheerio.load(data);
+  console.log($);
+});
 ```
 
 Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for most info.
 
-###Traversing the DOM
+### Step 3: Traverse the DOM (scrape!)
 
 * Clicking on one of the neighborhoods displaying a hidden div with information about that 'hood.
 * Each of these divs have both 1) the name of the 'hood and 2) a link to a page detailing the neighborhood
