@@ -170,27 +170,12 @@ You may notice that the data on your local machine does not travel up to Heroku.
 You can view your brand new database by executing the `psql` command you know and love on Heroku. Do this by typing
     **heroku pg:psql**
     
-**WARNING (06/16/2017):**
-Be aware that `sequelize-cli` does not currently support `sequelize@4.0.0`.
-Sequelize version 4.0.0 is a new version that introduces breaking changes.
-The last working version of `sequelize` is `sequalize@3.30.4`. Make sure you're
-not using `sequelize` version 4.0.0 by looking at `package.json` and seeing what
-version of `sequelize` is listed in the dependencies.
+**WARNING (2017) Edited (2018):**
+At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue (for version Sequelize 4) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up! 
 
-The problem with the new version has to do with creating 1:M or M:M associations.
-Sequelize 4.0.0 does not create associations in the same way it used to up to
-version 3.30.4. The association methods like `addModel` won't work any more.
+If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
 
-You'll see this error message if you're experiencing this problem.
-
-```
-Unhandled rejection TypeError: album.addSong is not a function
-```
-
-Always, always, always use `npm install --save sequelize@3.30.4` until further
-notice!
-
-##Heroku Envionment variables
+## Heroku Envionment variables
 
 In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
 In order to add environment variables to github. We will run a heroku command to set it per item in our .env file
@@ -199,11 +184,11 @@ In order to add environment variables to github. We will run a heroku command to
 heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
 ```
 
-##Something is broken?!?!?!?!
+## Something is broken?!?!?!?!
 
 Don't panic! Type **heroku logs** to see the error and info messages from the Heroku server! Find the error and Google it if the meaning isn't readily apparent!
 
-##Review
+## Review
 * App deployment
   * Login to Heroku using the Heroku toolbelt (only do once)
   * Create a Procfile and fetch your port in your app
@@ -218,7 +203,7 @@ Don't panic! Type **heroku logs** to see the error and info messages from the He
   * Run migrations on Heroku
 
 
-##Resources
+## Resources
 
 For all resources Heroku-related, check out the documentation on Heroku's website.
 

@@ -1,4 +1,4 @@
-#Middleware
+# Middleware
 
 We want to be able to check if our user is logged in from within any of our routes. One strategy for doing this is to expand our request object (req) using an express middleware. Middleware is code that exists in the "middle" between receiving the request/response objects from the client and handling them on the server.
 

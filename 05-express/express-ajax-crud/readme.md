@@ -1,6 +1,6 @@
-#RESTful CRUD
+# RESTful CRUD
 
-##Objectives
+## Objectives
 
 * Describe what RESTful routing is
 * Use AJAX to implement PUT and DELETE routes
@@ -9,7 +9,7 @@
 
 Source: [wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer)
 
-##RESTful routing example
+## RESTful routing example
 
 Imagine we have an app that stores teams signing up for a hackathon. We would create a model called team which would represent a single team with their name and their members. The data would be stored in a table called teams (where we store many teams). The routes would also be the plural "teams".
 
@@ -28,7 +28,7 @@ If you are storing something beside teams you'll use this same pattern. It could
 
 Previously, we implemented the first four routes. Also, we can find a way to implement the route `GET /teams/:name/edit`. But what about DELETE and PUT? Forms don't support these methods, so we'll need to use AJAX.
 
-##DELETE
+## DELETE
 
 Delete should be used to delete an existing item. A delete request contains no payload (`req.body`) and no query string (`req.query`). The only data is expressed via a URL parameter which matches the item's name (`req.params.name`).
 
@@ -82,7 +82,7 @@ app.delete('/teams/:name', function(req, res) {
 ```
 
 
-###PUT
+### PUT
 
 Put should be used to update an existing item. We'll need an example where there's a route for editing the team. Here's an example.
 

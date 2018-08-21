@@ -1,32 +1,32 @@
-#Lets code!
+# Lets code!
 
 Now we will be implementing the topics you just researched. Come up with a working example, and be ready to teach everyone.
 
-##Bcrypt
+## Bcrypt
 
 Implement code to use bcrypt to encrypt a plain text string AND then use `.compare()` to check it.
 
 This can be done in a **stand alone .js file**. Be aware that bcrypt takes time so it uses a callback.
 
-##Sequelize validations
+## Sequelize validations
 
 Implement a validation on ArticlePulse to require submitted comments to be between `20` and `200` characters.
 
 Test that it works. Use .catch() to send a message to the user. It can just use res.send() for now if you want. If you have extra time, try to make the message render on the page.
 
-##Sequelize hooks
+## Sequelize hooks
 
 Use Sequelize hooks to convert all comments posted to your BlogPulse app to lowercase before they are created. The hook should be created in your model.
 
 If you have more time, try coming up with another use for a hook in the same project.
 
-##Sessions
+## Sessions
 
 Use sessions to implement a back button on your BlogPulse app. 
 
 The link should be on the post page and link back to the home page OR author page depending on which page they came from.
 
-##Middleware
+## Middleware
 
 Create a middleware for the Daily Planet that adds a function `.log` to your `req` object. It should be created using `app.use()`. In any route, you should be able to call `req.log()`.
 

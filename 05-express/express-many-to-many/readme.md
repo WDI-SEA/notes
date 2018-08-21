@@ -1,13 +1,13 @@
-#Sequelize - Many to Many
+# Sequelize - Many to Many
 
-##Objectives
+## Objectives
 
 * Create a join table and utilize it in a many-to-many relationship
 * Use Sequelize's helper methods to add relationships between two different models.
 
 If we wanted to expand our models to include a many to many relationship, we can use a many to many relationship via a join table. We will be expanding our data model to include posts and tags.
 
-**Very Important** Name - your models `singular`
+> **Very Important** Name - your models `singular`
 
 ```
 sequelize model:create --name post --attributes title:string,body:string,authorName:string
@@ -17,11 +17,11 @@ sequelize model:create --name tag --attributes name:string
 sequelize model:create --name postsTags --attributes postId:integer,tagId:integer
 ```
 
-##Update your Associations
+## Update your Associations
 
 In order to associate posts to tags in a many to many fashion, you will need to update the associations on the posts and tags.
 
-###post.js
+### post.js
 
 ```js
 associate: function(models) {
@@ -29,7 +29,7 @@ associate: function(models) {
 }
 ```
 
-###tags.js
+### tags.js
 
 ```js
 associate: function(models) {
@@ -37,9 +37,9 @@ associate: function(models) {
 }
 ```
 
-##Examples
+## Examples
 
-###Create a post
+### Create a post
 
 ```js
 db.post.findOrCreate({
@@ -53,7 +53,7 @@ db.post.findOrCreate({
 });
 ```
 
-###Add a unique tag to a Post.
+### Add a unique tag to a Post.
 
 In order to add a unique tag to a post, we must first try to find or create a tag, in order to make sure it is in fact unique.
 
