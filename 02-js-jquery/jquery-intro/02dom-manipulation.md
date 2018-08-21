@@ -43,11 +43,25 @@ We can select and change html elements like so:
 
 ```js
 // vanilla JavaScript
-document.getElementById('myDiv').innerHTML = "Goodbye world!";
+
+var myDiv = document.getElementById('myDiv');
+myDiv.innerHTML = "Goodbye world!";
+
 
 //jQuery
 var myDiv = $('#myDiv')
 myDiv.html("Goodbye world!");
+
+```
+
+or, with chaining:
+
+```js
+// vanilla JavaScript
+document.getElementById('myDiv').innerHTML = "Goodbye world!";
+
+//jQuery
+$('#myDiv').html("Goodbye world!");
 ```
 
 #### Adding and removing DOM elements
