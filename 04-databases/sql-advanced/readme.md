@@ -1,7 +1,6 @@
 # Advanced SQL
 
 ## Objectives
-* Utilize different ways to filter data in the WHERE clause
 * Describe the uses of advanced queries like subqueries and unions
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
@@ -31,109 +30,99 @@ Not equal - `<>`
 - % - SELECT * FROM students WHERE name LIKE '%b';
 ```
 
+Let's suppose we have a *customer* table with the following data:
+
+```sql
+ id |  name   | age |  country  | salary 
+----+---------+-----+-----------+--------
+  1 | Ramesh  |  32 | Ahmedabad |   2000
+  3 | Kaushik |  23 | Kota      |   2000
+  2 | Ramesh  |  25 |           |   1500
+  4 | Kaushik |  25 | Mumbai    |       
+  5 | Hardik  |  27 | Bhopal    |   8500
+  6 | Komal   |     |           |   4500
+```
+
+## COUNT()
+
+COUNT() is an *aggregate function*.
+
+"In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
+
+We use an aggregate function to get the total count of customers in a table.
+```sql
+SELECT COUNT(*) FROM customer;
+```
+
+What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint? 
+```sql
+SELECT COUNT(age) FROM customer;
+```
+
 ## GROUP BY
 
-We use an aggregate function to get the total count of movies in a table.
+GROUP BY is used to pull together identical data points. For example, say we just want to see the different ages we have in our customer table, without having to look through the duplicates too.
 ```sql
-SELECT COUNT(*) FROM movies;
+SELECT age FROM customer GROUP BY age;
 ```
 
-What about getting the count of something more specific in movies, such as the count of each rating?
+What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT():
 ```sql
-SELECT COUNT(rating) FROM movies;
+SELECT age, COUNT(age) FROM customer GROUP BY age;
 ```
 
-We get the same result. GROUP BY allows you to 'group' the table by a specific attribute, which is then provided to the aggregate function.
+Or maybe we want the average salaries of the customers from each country:
 ```sql
-SELECT rating, COUNT(rating) FROM movies
-GROUP BY rating;
-```
-
-## Alter Table Command
-
-```sql
-ALTER TABLE books ADD CONSTRAINT author_id
-FOREIGN KEY (author_id) REFERENCES authors (author_id)
-ON DELETE NO ACTION;
-
-ALTER TABLE books ADD COLUMN year_released INTEGER;
-
-ALTER TABLE books ALTER COLUMN name SET NOT NULL;
-```
-
-### Easier to add Constraints when creating a table
-```sql
-DROP TABLE books;
-CREATE TABLE books (
-	book_id SERIAL PRIMARY KEY,
-	name VARCHAR(100) NOT NULL,
-	author_id INTEGER REFERENCES authors(author_id)
-);
-```
-
-## Nested queries
-
-What if I want to do something very specific, but I need to get groups of results? For example:
-
-1. Get titles of movies with the highest ratings.
-2. Get titles of movies with the lowest ratings.
-
-Let's try it using WHERE
-
-```sql
-SELECT title FROM movies
-WHERE rating = MAX(rating);
-```
-
-That will give us an error, because MAX is an aggregate function and can't be used in WHERE.
-
-Solution: Nested queries.
-
-```sql
-SELECT MAX(rating) FROM movies;
-```
-
-This will return the maximum rating, which we need to feed into WHERE.
-
-```sql
-SELECT title FROM movies
-WHERE rating = (
-	SELECT MAX(rating) FROM movies
-);
+SELECT country, AVG(salary) FROM customer GROUP BY country;
 ```
 
 ### Aliases
 
-Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query. This is useful for creating shorthand names for tables when using table prefixes, renaming columns, or differentiating tables when you join the same table more than once in a query (eliminating ambiguity).
+Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query.
 
-####
 ```sql
-SELECT
-    users.userID AS 'id',
-    users.username AS 'name'
-FROM users;
+SELECT country, avg(salary) AS avgSal FROM customer GROUP BY country;
 ```
 
---
+### Alter Table Command
 
 ```sql
-SELECT * FROM authors a
-    INNER JOIN books b
-        ON a.author_id = b.author_id
-ORDER BY a.author_id ASC;
+ALTER TABLE customer ADD COLUMN date DATE;
+
+ALTER TABLE customer ALTER COLUMN name SET NOT NULL;
+
+ALTER TABLE customer DROP date;
 ```
 
---
+### FOREIGN KEYS
+```sql
+CREATE TABLE merch_order (
+	id SERIAL PRIMARY KEY,
+	num_items INTEGER,
+	customer_id INTEGER REFERENCES customer(id)
+);
+```
+
+### Nested queries
+
+What if I want to get names of customers with the highest salary.
+
+Let's try it using WHERE
 
 ```sql
-SELECT * FROM crew
-    LEFT JOIN users photographer
-        ON crew.fk_photographer = photographer.userID
-    LEFT JOIN users director
-        ON crew.fk_director = director.userID
-    LEFT JOIN users model
-        ON crew.fk_model = model.userID
-ORDER BY crew.crewID ASC;
+SELECT name, salary FROM customer
+WHERE salary = MAX(salary);
+```
+
+That will give us an error, because MAX is an aggregate function and can't be used in WHERE.
+
+This will return the maximum rating, which we need to feed into WHERE.
+
+```sql
+SELECT name, salary FROM customer
+WHERE salary = (
+	SELECT MAX(salary) FROM customer
+);
 ```
 
 ### Conditionals
@@ -142,74 +131,66 @@ ORDER BY crew.crewID ASC;
 The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
 
 ```sql
-SELECT
-    CASE users.age
-        WHEN 0 THEN 'baby'
-        WHEN 15 THEN 'teen'
-        ELSE 'adult'
-    END AS 'age'
-FROM users;
+SELECT name,
+	age, 
+		CASE WHEN age<25
+		THEN 'young adult'
+		ELSE 'adult' 
+		END AS age_group 
+FROM customer;
 ```
 
---
+
+### JOINs
+
+INNER JOIN gives us the intersections of tables (or the rows that are the same in each table involved in the join).
+
+Suppose we have a second table of subscribers like so:
 
 ```sql
-SELECT
-    CASE
-        WHEN users.age < 13 THEN 'preteen'
-        WHEN users.age < 20 THEN 'teen'
-        ELSE 'adult'
-    END AS 'UserAge'
-FROM users;
+ id |  name  | catalog | email 
+----+--------+---------+-------
+  1 | Ramesh | 0       | 1
+  2 | Komal  | 1       | 0
+  3 | Busak  | 1       | 1
+  4 | Reg    | 0       | 1
+  5 | Hardik | 1       | 1
+ ```
+ 
+And we want to see which of our subscribers have become customers.
+
+```sql
+SELECT * FROM customer 
+INNER JOIN subscriber 
+ON customer.name=subscriber.name;
+```
+
+LEFT JOIN is similar to INNER JOIN, except it will include *all* rows from the left table (the first table listed in the query). Similarly, RIGHT JOIN will include all the rows from the right table.
+
+```sql
+SELECT * FROM customer
+LEFT JOIN subscriber 
+ON customer.name=subscriber.name;
+```
+
+```sql
+SELECT * FROM customer
+RIGHT JOIN subscriber 
+ON customer.name=subscriber.name;
 ```
 
 ### Unions
 
-Unions are the compilation of one or more disparate SQL queries that have the same columns. These are helpful when doing data aggregation that requires multiple SQL statements with different sets of joins and where clauses, but that return the same type of data.
+Unions display the results of two or more SELECT statements into one table, so the SELECT statements must have the same number of columns with the same names/data types, in the same order.
 
-Note: Unioned SQL statements MUST have the exact same columns (matching names) in the exact same order.
-
-In the example below, I want all users and the number of photographs taken that they have "been a part of". In my first query I'm selecting photographers. In my second I'm selecting directors. In my third I'm selecting editors. But I want everything to display as just individual users with a 'role' column that I've manually set.
+Let's try viewing the ids and names from both the customer and the subscriber tables.
 
 ```sql
-SELECT
-	users.id,
-	users.name,
-    'Photographer' AS 'role',
-	COUNT(photos.id) AS 'photoCount'
-FROM photoShoots
-	INNER JOIN users
-		ON photoShoots.fk_photographerUserId = users.id
-	INNER JOIN photos
-		ON photoShoots.id = photos.fk_photoShootsId
-GROUP BY users.id, users.name
+SELECT id, name FROM customer UNION SELECT id, name FROM subscriber ORDER BY id;
+```
 
-UNION
+Notice that the resulting table has fewer rows that the sum of the rows from each table. This is because UNION statements also eliminate any duplicate rows from the result. To include the duplicate rows, use UNION ALL.
 
-SELECT
-	users.id,
-	users.name,
-    'Director' AS 'role',
-	COUNT(photos.id) AS 'photoCount'
-FROM photoShoots
-	INNER JOIN users
-		ON photoShoots.fk_directorUserId = users.id
-	INNER JOIN photos
-		ON photoShoots.id = photos.fk_photoShootsId
-GROUP BY users.id, users.name
-
-UNION
-
-SELECT
-	users.id,
-	users.name,
-	'Editor' AS 'role',
-	COUNT(photos.id) AS 'photoCount'
-FROM photoShoots
-	INNER JOIN users
-		ON photoShoots.fk_editorUserId = users.id
-	INNER JOIN photos
-		ON photoShoots.id = photos.fk_photoShootsId
-GROUP BY users.id, users.name;
-    
+```sql
+SELECT id, name FROM customer UNION ALL SELECT id, name FROM subscriber ORDER BY id;
 ```
