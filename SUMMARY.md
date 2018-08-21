@@ -155,6 +155,7 @@
     * [Geocoding and Google Maps](05-express/additional-topics/express-geocode/readme.md)
     * [Cloudinary](05-express/additional-topics/express-cloudinary/readme.md)
     * [Websockets with Socket.io](05-express/express-socket-io/readme.md)
+    * [SASS](05-express/node-sass/readme.md)
 * [Ruby](06-ruby-rails/ruby.md)
   * [Intro to Ruby](06-ruby-rails/ruby-intro/readme.md)
   * [Ruby Exercises](06-ruby-rails/ruby-exercises/readme.md)

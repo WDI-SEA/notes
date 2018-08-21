@@ -89,3 +89,6 @@ Once you run the `merge` command, a text editor may pop up. Verify the commit me
 
 Awesome, now push your local changes up to Github by running `git push`
 
+## Resources
+
+Want to hook up your own domain name to your projects on Github pages? [Read this](https://help.github.com/articles/using-a-custom-domain-with-github-pages/)

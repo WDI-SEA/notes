@@ -1,6 +1,6 @@
-#Advanced CSS
+# Advanced CSS
 
-##Objectives
+## Objectives
 
 * Define responsive design
 * Name a reason that it is now important to consider variable screen sizes in your site design
@@ -15,7 +15,6 @@ The world of CSS is **huge**, especially when it comes to the wide variety of te
 * Responsive design
 * Pseudo-classes and pseudo-elements
 * Vendor prefixes
-* Expanding your CSS knowledge
 
 
 
