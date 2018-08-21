@@ -155,3 +155,7 @@ module.exports = router;
 ```
 
 Note that the routes should be defined *relative* to the definition in `app.use`. For example, the route defined above in `controllers/people.js` will be `http://localhost:3000/people`.
+
+## Extra Resources
+
+[Templating Your Node App](https://scotch.io/tutorials/use-ejs-to-template-your-node-application) - This site provides a good walk-through of using partials.

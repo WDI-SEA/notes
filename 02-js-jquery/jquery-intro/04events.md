@@ -1,20 +1,15 @@
 # jQuery - Events
 
-Similar to vanilla JavaScript, we can add event handlers to different elements on the page.
+Similar to vanilla JavaScript, we can add event handlers to different elements on the page using jQuery event handler functions like .click(), .submit(), etc, or using .on([insert event type here], [insert function here]).
 
 ```js
-// click
-$('.item').on('click', function() {
+// click (on any div tag)
+$('div').on('click', function() {
   console.log('clicked!');
 });
 
 // click (alternative form)
 $('.item').click(function() {
-  console.log('clicked!');
-});
-
-// click with event delegation
-$('.list').on('click', 'li', function() {
   console.log('clicked!');
 });
 
@@ -24,13 +19,12 @@ $('.form').on('submit', function() {
 });
 
 // form submission, preventing refresh of the page
-$('.form').on('submit', function(e) {
+$('.form').submit(function(e) {
   e.preventDefault();
-  console.log('clicked!');
 });
 
 // hover, which needs 2 functions for hovering over and out
-$('.form').hover(function() {
+$('div').hover(function() {
   console.log('hovered over!');
 }, function() {
   console.log('hovered out!');
@@ -38,9 +32,44 @@ $('.form').hover(function() {
 
 ```
 
+More on jQuery events here: https://api.jquery.com/category/events/
+
 ## Event Delegation
 
-Note that one of our examples used something called **event delegation**. Event delegation attaches an event to a single element and *delegates* the events out to specified children. But why not do this?
+
+Event delegation attaches an event to a single element and *delegates* the events out to specified children.
+This is important for non-static collections of elements.
+
+```html
+//HTML
+<ul>
+  <li>#1</li>
+  <li>#2</li>
+  <li>#3</li>
+</ul>
+```
+
+```js
+// click without event delegation
+$('ul li').on('click', function() {
+  console.log('clicked!');
+});
+
+//add a new list item
+var newListItem = $("<li></li>");
+newListItem.text("#4");
+$("ul").append(newListItem);
+```
+In the above code, the 4th list item wouldn't have an event handler attached to it!
+This event delegation will fix it:
+
+```js
+// click without event delegation
+$('ul').on('click', 'li', function() {
+  console.log('clicked!');
+});
+
+Why not do this?
 
 ```js
 $('.list li').on('click', function() {
@@ -48,27 +77,26 @@ $('.list li').on('click', function() {
 });
 ```
 
-While this works for a static list, if we were to add another list item later, it would not have an event listener attached unless we ran this function again. Event delegation makes things easier by applying the event to the entire parent.
+```
+// add a new list item
+var newListItem = $("<li></li>");
+newListItem.text("#4");
+$("ul").append(newListItem);
+```
 
-<p data-height="265" data-theme-id="0" data-slug-hash="wWwdxP" data-default-tab="js,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/wWwdxP/">Event Delegation</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+Event delegation makes things easier by applying the event to the entire parent for delegation to all children as they are born.
 
 ## Effects and Animations
 
-* `hide()`
-* `show()`
-* `fadeIn()`
-* `fadeOut()`
-* `slideToggle()`
-* `animate()`
+While this works for a static list, if we were to add another list item later, it would not have an event listener attached unless we ran this function again. Event delegation makes things easier by applying the event to the entire parent which in turn delegates the event to its children as they are born.
 
-And of course, there are more in jQuery's documentation.
-
+<p data-height="265" data-theme-id="0" data-slug-hash="wWwdxP" data-default-tab="js,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/wWwdxP/">Event Delegation</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
 ## Event Propagation
 
+This occurs when there is an element nested within another element and both of them have event handlers attached to them, so the firing of an event attached to the internal element triggers the firing of the event handler attached to its parent elemennt.
+
 <p data-height="465" data-theme-id="0" data-slug-hash="XKrRYQ" data-default-tab="js,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/XKrRYQ/">Event Propagation</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ## Making sure the DOM has loaded
 
@@ -93,10 +121,3 @@ $(function() {
   // your code here
 });
 ```
-
-
-## Conclusion
-
-* jQuery makes JavaScript super friendly and easy to write. a lot of websites are using jquery, soon you will too.  Remember that it's always good to know how to use what is called vanilla JavaScript, or JavaScript without a library.
-
-* Please spend some time reviewing [the documentation](https://api.jquery.com/).

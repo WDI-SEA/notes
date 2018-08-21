@@ -1,6 +1,6 @@
-#Intro to AJAX
+# Intro to AJAX
 
-##Objectives
+## Objectives
 
 * Define AJAX and what the abbreviation stands for
 * Describe the purpose of AJAX
@@ -10,19 +10,19 @@
 
 Ajax (Asynchronous JavaScript and XML) is used to create asynchronous web applications. This simply means a web page that can make calls back to the server in the background.
 
-##Understanding HTTP
+## Understanding HTTP
 
 Before we can understand AJAX we need to a little background on HTTP. HTTP is one of many internet protocols and is the protocol used for web communcation. HTTP can only send TEXT and is a request-response protocol. This means that a server can only respond to a request from a client (usually a web browser). [Read more on wiki](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol).
 
 
 ![http diagram](./http_diagram.png)
 
-##AJAX
+## AJAX
 
 Originally the only way an HTTP request could be initiated was if the user clicked a link on a webpage, or submitted a form. AJAX allows JavaScript to send requests to the server with or without user interaction. This enables page content to be updated dynamically without a full page refresh.
 
 
-##AJAX in jQuery
+## AJAX in jQuery
 
 For information about AJAX in jQuery, the best place to go is the [jQuery AJAX Documentation](http://api.jquery.com/category/ajax/).
 
@@ -54,7 +54,7 @@ $.ajax({
 
 Note how in the `$.ajax()` example, we need to be more explicit by providing an object with the `url`, `method`, and `data`. Using `$.get()` will assume that the first argument is the URL and the second argument is data we want to send via the query string.
 
-##AJAX is asynchronous
+## AJAX is asynchronous
 
 An AJAX request doesn't allow you to load things instantly. Requesting things over the network always takes time, and you need an event handler to deal with the results. Look at the following code:
 
@@ -73,7 +73,7 @@ console.log('Just fired AJAX request!');
 What order will the `console.log` statements appear?
 
 
-##Using Data
+## Using Data
 
 What if we want to use data from an AJAX request? We'll need to keep **scope** in mind, which is the concept of **where** variables exist.
 
@@ -117,7 +117,7 @@ $.get('https://www.reddit.com/search.json', {
 ```
 
 
-##Promises
+## Promises
 
 Note that at the end of the AJAX request, there is a function called `.done()` that is called once the response has been received. This is an example of a **promise**. Promises are common concepts in JavaScript, and you can think of promises as a "contract" between two functions. When the `.done()` promise is attached to the AJAX function, it "promises" to run once the response comes back successful. This is due to the request-response cycle taking time, and requiring asynchronous behavior.
 
@@ -182,26 +182,24 @@ Consider how the ```forEach``` and ```map``` functions may be useful tools to pr
 this complicated objects.
 
 Now you know how to access information you want to display on the page. Find a way
-to use and modify the provided ```addSearchResult`` function to get search results
+to use and modify the provided ```addSearchResult``` function to get search results
 to display on the page.
 
 Now you're cooking with gas.
 
-##APIs to hit
+## APIs to hit
 
 Here are a few APIs you can use to practice AJAX calls. They either won't save changes, or won't allow you to use POST, PUT or DELETE, so they're safe to play with.
 
-[General Assembly's Doughnuts API](https://api.doughnuts.ga/)
-
 [Open Movie Database API](http://www.omdbapi.com/)
 
-[Acromine acronym API](http://www.nactem.ac.uk/software/acromine/rest.html)
+[Acromine Acronym API](http://www.nactem.ac.uk/software/acromine/rest.html)
 
 [Pokemon API](http://pokeapi.co/)
 
 [Star Wars API](https://swapi.co/)
 
-###Cross-Origin Requests
+### Cross-Origin Requests
 
 Note that not all websites/APIs play nice with AJAX. You may see an error in the console from APIs like the [iTunes API](https://www.apple.com/itunes/affiliates/resources/documentation/itunes-store-web-service-search-api.html)
 

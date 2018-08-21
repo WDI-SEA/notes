@@ -19,17 +19,17 @@ Most of what we've developed so far has just run on our own computers. Both our 
 
 Options?
 
-####Buy Another Computer
+#### Buy Another Computer
 
 We could just buy another computer somewhere else and use it to run our applications - or even more than one, if needed, and by the way, a server is a computer. We could connect this other computer to the internet and with a bit of configuration, we could allow people to connect to it using a URL.
 
 However, we'd have to buy and look after this computer, have somewhere to store it and ensure that it was working and always connected to the internet. Also, if someone hit an error when they used our app, we might have to stop and start it? Maybe there is a better way?
 
-####Use a Cloud Computing Platform
+#### Use a Cloud Computing Platform
 
 We could also use Amazon Web Services or similar cloud services, which provide the servers needed to host applications via the cloud. While many companies use AWS for deployment (such as Netflix), we are expected to not only deploy our system, but also set up the system architecture for our application. This includes logging in to the remote server, setting up the web server, and managing configuration and databases. While this provides a lot of flexibility for larger applications, there's a large learning curve that leans towards Linux system administration. Luckily, there is an even better way.
 
-####Abstracting Cloud Computing
+#### Abstracting Cloud Computing
 
 Heroku is a cloud-based, Platform as a Service (PaaS). Essentially it's a group of virtual machines that run on Amazon Web Services (EC2) and hosts your application code in the cloud. By using git, you can deploy your code directly to Heroku's machines - they call them "dynos" - and seconds later your changes will be live in production.
 
@@ -40,7 +40,7 @@ First you need to link your machine to your Heroku account - a similar process t
 
 ## Before Deploying
 
-###Check Your Github Repo
+### Check Your Github Repo
 
 Do you notice a folder called "node_modules"? Or your .env file with your environment variables?
 
