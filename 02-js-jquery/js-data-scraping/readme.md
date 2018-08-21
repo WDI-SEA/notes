@@ -56,6 +56,8 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 });
 ```
 
+Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for most info.
+
 ### Step 2: Parse the HTML
 
 The request to the seattle neighborhoods url gave us the entire HTML document string - now we need to parse it in order to pick out the specific data we're looking for. This is where Cheerio comes in! Inside the callback function of request, we'll pass the html we got back into the `cheerio.load()` function. We store the result, which is a cheerio object, in the dollar sign variable because cheerio is designed to mimic jQuery selectors (though technically, we could store it in any variable we'd like).
@@ -67,8 +69,6 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 });
 ```
 
-Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for most info.
-
 ### Step 3: Identify the content you want to scrape.
 
 * First you have to identify what content you're looking to scrape and how to access it. Clicking on one of the neighborhoods displays a hidden div with information about that location. Each of these divs have both 1) the name of the 'hood and 2) a link to a page detailing the neighborhood. Let's say that we want to grab the name and the link to more info for each of the neighborhoods.
@@ -76,32 +76,42 @@ Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for mo
 * So, we'll select those elements using Cheerio's selector syntax.
 
 ```js
-// returns an array of objects with a whole lot of info
+// returns an cheerio object with a whole lot of info
  var neighborhoods = $('.info-window-content');
  console.log(neighborhoods);
 ```
 
 ### Step 4: Traverse the DOM (scrape!)
 
-* Cheerio has its own `.map()` function, but it's slightly different in that the index comes first, then the element.
-* Cheerio has `.text()`, which we'll call to get the element's text.
-* The `.get()` function will correctly return the elements.
+* Cheerio has its own `.map()` function to parse through a cheerio object, but it still returns another cheerio object
+* (see docs -> traversing -> map)
+* (for more on find/text/attr, etc, see docs)
 
 ```js
-var neighborhoods = $('.info-window-content').map(function(index, element) {
-    return {
-        name: $(element).find('h4').text(),
-        link: $(element).find('a').attr('href')
-    };
-}).get();
-
-console.log(neighborhoods);
-});
-
-console.log(neighborhoods);
+	var neighborhoods = $('.info-window-content').map(function(index, element) {
+		// find() docs -> traversing -> find
+	    return {
+	        name: $(element).find('h4').text(),
+	        link: $(element).find('a').attr('href')
+	    };
+	});
+	console.log(neighborhoods);
 ```
 
-###Final Code
+This still gives us a lot of gobbledy-gook we didn't ask for. Use the get function after .map() to see an array of exactly what we asked for (see docs -> traversing -> get):
+
+```js
+	// add .get() to just get back what you asked for, instead of an entire cheerio object
+	var neighborhoods = $('.info-window-content').map(function(index, element) {
+	    return {
+	        name: $(element).find('h4').text(),
+	        link: $(element).find('a').attr('href')
+	    };
+	}).get();
+	console.log(neighborhoods);
+```
+
+### Final Code
 
 [cheerio-scraping-seattle-neighborhoods repo](https://github.com/WDI-SEA/cheerio-scraping-seattle-neighborhoods)
 
