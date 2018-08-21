@@ -69,12 +69,20 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 
 Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for most info.
 
-### Step 3: Traverse the DOM (scrape!)
+### Step 3: Identify the content you want to scrape.
 
-* Clicking on one of the neighborhoods displaying a hidden div with information about that 'hood.
-* Each of these divs have both 1) the name of the 'hood and 2) a link to a page detailing the neighborhood
-* Inspect that div- you'll see these hidden divs have a class `info-window-content`
-* So, we'll select those elements using Cheerio's selector syntax
+* First you have to identify what content you're looking to scrape and how to access it. Clicking on one of the neighborhoods displays a hidden div with information about that location. Each of these divs have both 1) the name of the 'hood and 2) a link to a page detailing the neighborhood. Let's say that we want to grab the name and the link to more info for each of the neighborhoods.
+* Inspect that div- you'll see these hidden divs have a class `info-window-content`.
+* So, we'll select those elements using Cheerio's selector syntax.
+
+```js
+// returns an array of objects with a whole lot of info
+ var neighborhoods = $('.info-window-content');
+ console.log(neighborhoods);
+```
+
+### Step 4: Traverse the DOM (scrape!)
+
 * Cheerio has its own `.map()` function, but it's slightly different in that the index comes first, then the element.
 * Cheerio has `.text()`, which we'll call to get the element's text.
 * The `.get()` function will correctly return the elements.
