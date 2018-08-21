@@ -179,19 +179,19 @@ var request = require('request');
 var cheerio = require('cheerio');
 var async = require('async');
 
-// make a request to the Visit Seattle and scrape neighorhood names and links
+// // make a request to the Visit Seattle and scrape neighorhood names and links
 request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, data) {
   var $ = cheerio.load(data);
 
   // scrape neighborhood names and links, and store as an array of objects
-  var neighborhoods = $('.text-medium-small').map(function(index, element) {
+  var neighborhoods = $('.info-window-content').map(function(index, element) {
     return {
-      name: $(element).text(),
-      link: $(element).closest('a').attr('href')
+      name: $(element).find('h4').text(),
+      link: $(element).find('a').attr('href')
     };
   }).get();
-
-  // pass the neighborhood data to fetchDescriptions
+//   console.log("printing neighborhoods from request:", neighborhoods);
+//   // pass the neighborhood data to fetchDescriptions
   fetchDescriptions(neighborhoods);
 });
 
@@ -214,7 +214,7 @@ function getNeighborhoodDescription(neighborhood, cb) {
     var $ = cheerio.load(data);
 
     // get the first paragraph (the description) and store in the neighborhood object
-    neighborhood.description = $('p').first().text();
+    neighborhood.description = $('h2').first().text();
 
     // return the appended neighborhood object to the async.concat call
     cb(null, neighborhood);
