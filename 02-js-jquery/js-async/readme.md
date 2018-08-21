@@ -214,7 +214,7 @@ function getNeighborhoodDescription(neighborhood, cb) {
     var $ = cheerio.load(data);
 
     // get the first paragraph (the description) and store in the neighborhood object
-    neighborhood.description = $('p').first().text();
+    neighborhood.description = $('h2').first().text();
 
     // return the appended neighborhood object to the async.concat call
     cb(null, neighborhood);
