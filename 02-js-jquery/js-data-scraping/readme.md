@@ -43,7 +43,7 @@ npm init --y
 npm install request cheerio
 ```
 
-#### Step 1: Get the HTML document
+### Step 1: Get the HTML document
 
 There are multiple ways to get an HTML document, but we'll use the ```request``` module in this example. To scrape data from the site, we need to request the webpage like so:
 
@@ -56,7 +56,7 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 });
 ```
 
-Consult the [Cheerio Documentaiton](https://github.com/cheeriojs/cheerio) for most info.
+Consult the [Cheerio Documentation](https://github.com/cheeriojs/cheerio) for most info.
 
 ### Step 2: Parse the HTML
 
@@ -64,7 +64,7 @@ The request to the seattle neighborhoods url gave us the entire HTML document st
 
 ```js
 request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (error, response, body) {
-  var $ = cheerio.load(data);
+  var $ = cheerio.load(body);
   console.log($);
 });
 ```
