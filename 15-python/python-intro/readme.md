@@ -1,6 +1,6 @@
-#Python Crash Course
+# Python Crash Course
 
-##Objectives
+## Objectives
 
 * Describe the history of the Python language
 * Identify fundamentals and concepts of the Python language
@@ -9,17 +9,11 @@
 * Write a program that responds to user input
 
 ## Python History
-The Python programming language started in December 1989 as a hobby project
-for Dutch programmer Guido van Rossum. He was looking for a programming project
-to keep himself occupied during his Christmas break. It was first released in
-1991.
-
-Ten years later on October 16th 2000 Python 2.0 was introduced with many major
-new features and it started to gather a community dedicated to it's development.
-
-Python 3.0 was released on December 3rd 2008. Version 3.0 introduced many
-enhancements and unified more of the design of the language at the cost of
-making some old 2.0 code incompatible.
+![Guido van Rossum](guido.jpg "Guido van Rossum")
+* winter break hobby project for Dutch programmer Guido van Rossum (Benevolent Dictator For Life)
+* Python 1.0 realeased 1991
+* Python 2.0 (2000) - started to gather a development community
+* Python 3.0 (2008) - unified the language more at the cost of making some old 2.0 code incompatible
 
 Python is a high-level interpreted programming language. "High level" means that
 programmers don't have to worry about things like managing memory, the langauge
@@ -52,10 +46,6 @@ and you can read a full list of them here: <https://www.python.org/dev/peps/>.
 
 * Python stylistically conforms to the **snake_case** convention
 * The [documentation](http://python.org/) is fantastic
-
-### Guido van Rossum
-![Guido van Rossum](guido.jpg "Guido van Rossum")
-Creator, and Benevolent Dictator For Life
 
 # Python Features and Syntax!
 JavaScript was probably your first programming language. Python is probably
