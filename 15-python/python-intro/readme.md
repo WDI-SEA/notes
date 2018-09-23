@@ -25,34 +25,14 @@
 * Python 2.0 (2000) - started to gather a development community
 * Python 3.0 (2008) - unified the language more at the cost of making some old 2.0 code incompatible
 
-Python is a high-level interpreted programming language. "High level" means that
-programmers don't have to worry about things like managing memory, the langauge
-takes care of that for us. Programming languages are either *interpreted* or
-*compiled*. Compiled languages have to be run through a compiler that changes
-source code into compiled code before the program can be run. Interpreted
-languages are run on the fly. Interpreted languages are generally more playful
-and easier to experiment with because we can take small pieces of code, paste
-it into a console that interprets it and immediately evaluates it.
-
-The bulk of JavaScript was built by one person in 10 days. JavaScript only runs
-in the browser.
-
-Python has been built by a community of programmers over many
-years. Many people have put good thought into the design of the language. Python
-is a general purpose language that exists on your computer outside the browser.
-Python is built to handle a wide variety of tasks beyond web development. Python
-comes with a large standard library of functions that you can use to accomplish
-most any programming task you set out to do.
-
-The creator of Python, Guido van Rossum, still plays an active role in the
-development of the language. He has been given the title, "Benevolent Dictator
-for Life" by the Python community. He plays a central role in deciding the
-direction of Python.
-
-The Python community is continually developing the language and adding new
-features. One formal way the community drives development is through PEPs,
-Python Enhancement Proposals. These proposals are documented on <http://python.org>
-and you can read a full list of them here: <https://www.python.org/dev/peps/>.
+#### Advantages
+* high-level language (closer to english than machine code)
+* interpreted (as opposed to compiled)programming language (compiled languages have to be run through a compiler that changes
+source code into compiled code before the program can be run, whereas interpreted
+languages are run on the fly 
+* general purpose scripting language that runs outside a browser
+* free and open source (check out the docs!)
+* comes with a *huge* library of builtin functions
 
 * Python stylistically conforms to the **snake_case** convention
 * The [documentation](http://python.org/) is fantastic
