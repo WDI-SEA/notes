@@ -33,19 +33,9 @@ languages are run on the fly
 * general purpose scripting language that runs outside a browser
 * free and open source (check out the docs!)
 * comes with a *huge* library of builtin functions
-
-* Python stylistically conforms to the **snake_case** convention
 * The [documentation](http://python.org/) is fantastic
 
 # Python Features and Syntax!
-JavaScript was probably your first programming language. Python is probably
-you're first look at a second programming language. Don't worry! Lots of things
-are the same! Most programming languages have things like comments, variables,
-numbers, stings, arrays, objects, functions, parameters, return values and
-classes. The difference between programming languages is they just decide to
-represent or implement these common things in different ways, or with different
-syntaxes. Although the syntax of Python is new you'll be able to reason about
-what's going on by thinking about how JavaScript does similar things.
 
 Here's the long list of how to get Python to do the things you already know how
 to do in JavaScript. Let's dive right into it.
