@@ -9,8 +9,18 @@
 * Write a program that responds to user input
 
 ## Python History
+
+#### Benevolent Dictator For Life
 ![Guido van Rossum](guido.jpg "Guido van Rossum")
-* winter break hobby project for Dutch programmer Guido van Rossum (Benevolent Dictator For Life)
+* Guido van Rossum (Dutch) built Python as a hobby project on his winter break
+
+#### Goals
+* An easy and intuitive language just as powerful as major competitors
+* Open source, so anyone can contribute to its development
+* Code that is as understandable as plain English
+* Suitability for everyday tasks, allowing for short development times
+
+#### Releases
 * Python 1.0 realeased 1991
 * Python 2.0 (2000) - started to gather a development community
 * Python 3.0 (2008) - unified the language more at the cost of making some old 2.0 code incompatible
