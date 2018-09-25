@@ -2,25 +2,28 @@
 
 ### Overview
 
-**The time has come for the final project.** Ideally, this project should incorporate AngularJS or another framework/technology we haven't covered, but feel free to use anything we have learned in the course.
+**The time has come for the final project.** Ideally, this project should incorporate some framework/technology we haven't covered, but feel free to use anything we have learned in the course as well.
 
 Make sure you review your project proposal with your instructor so you can make sure it's **something you can accomplish in the limited time we have**, and make sure it's **something that'll showcase your skills both visually and functionally**. Sometimes people do judge a book by its cover – or an app by its design.
 
 ---
 
+### Groups or Solo?
+
+You **may** work in a group. If you choose to do so, you will be responsible for forming your own groups. Max group size is **four devs**!
+
 ### Technical Requirements
 
-Your app must:
+Your app must (unless otherwise approved):
 
-* **Use Ruby on Rails and Active Record** to build an application
+* **Use Django or Express** to build an application backend 
 * **Create an application using at least 2 related models**, one of which should be a user
 * Include **all major CRUD functions** for at least one of those models
-* Create your own front-end with HTML, Javascript, & jQuery
-* **Add authentication** to restrict access to appropriate users
-* **Craft thoughtful user stories together**, as a team
+* Create your own front-end! **Put effort into your design!**
+* **Add authentication/authorization** to restrict access to appropriate users
 * **Manage team contributions and collaboration** using a standard Git flow on Github
 * Layout and style your front-end with **clean & well-formatted CSS**, with or without a framework.
-* **Deploy your application online** so it's publically accessible
+* **Deploy your application online** so it's publicly accessible
 
 ---
 
