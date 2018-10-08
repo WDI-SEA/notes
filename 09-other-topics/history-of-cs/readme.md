@@ -20,7 +20,7 @@ The word `computer` originally referred to the *person* who was doing the comput
 
 ### The Abacus
 
-![](https://upload.wikimedia.org/wikipedia/commons/2/27/Chinese-abacus.jpg)
+![](https://res.cloudinary.com/briezh/image/upload/v1539028604/abacus_nv0wmx.jpg)
 
 Yes, the first computing tool was an abacus. To the best of anyone's knowledge, it was invented by the ancient Sumerians between 2700 and 2300 BC.
 
@@ -28,7 +28,7 @@ Notice an abacus, like other early computing devices were mechanical (meaning di
 
 ### The Antikythera Mechanism
 
-![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Antikythera_mechanism_frontview%2C_1st-2nd_century_BC%2C_Greece_%28transparent_model%29.jpg/3024px-Antikythera_mechanism_frontview%2C_1st-2nd_century_BC%2C_Greece_%28transparent_model%29.jpg)
+![](https://res.cloudinary.com/briezh/image/upload/v1539028604/Antikythera_mechanism_vgzsyu.jpg)
 
 The Antikythera Mechanism is thought to be the first Analog computer, and was developed in ancient Greece around the first century BC. It is so named because it was discovered in a shipwreck off the coast of the Greek island Antikythera in 1901. 
 
