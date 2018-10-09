@@ -1,6 +1,6 @@
 # A Brief History of Computer Science
 
-You may have never heard the names Ada Lovelace, Charles Babbage, or Alan Turing, but you wouldn't be programming today if it weren't for the foundational work they did in computer science. Today we'll discuss early computing, development of transistors, and up to the beginnings of the internet.
+You may have never heard the names Blaise Pascal, Ada Lovelace, Charles Babbage, Alan Turing, or John von Neumann, but you wouldn't be programming today if it weren't for the foundational work they did in computer science, mathematics, and computational theory. Today we'll discuss early analogue computing, development of digital computers, and up to the beginnings of higher-level programming languages and the internet.
 
 ### Before we start...
 
@@ -67,7 +67,11 @@ Babbage's analytical engine's design was ground-breaking. No one, up until that 
 
 #### Details
 
+![](https://res.cloudinary.com/briezh/image/upload/v1539124205/Charles_Babbage_uv2dmm.jpg)
+
 Babbage's analytical engine took input of 'formulae' and 'data' - which were to be fed into the machine via punchcards - similar to mechanical looms of that time period. There was to be a 'store' which had room for 1000 40-digit numbers (or about 16kB). The internal operations supported included basic mathematical operators, comparison operators, and square roots. Loops and conditionals were also possible. The language used would be similar to modern-day assembly languages.
+
+![](https://res.cloudinary.com/briezh/image/upload/v1539124205/AdaLovelace_kf1tuk.jpg)
 
 [Ada Lovelace](https://en.wikipedia.org/wiki/Ada_Lovelace) corresponded with Babbage during his development of the analytical engine, and developed a working relationship and friendship with him. She wrote an algorithm that would allow the engine to compute [Bernoulli numbers](http://numbers.computation.free.fr/Constants/Miscellaneous/bernoulli.html) (a recurring theme in number theory), and is thus credited as the first programmer, even though no programming languages had been invented yet. She wrote the first algorithm intended to be carried out by a machine.
 
@@ -81,18 +85,17 @@ In the United States, census data is collected every ten years. In 1880, the US 
 
 ![](https://res.cloudinary.com/briezh/image/upload/v1539104015/Alan_Turing_Aged_16_qi8uza.jpg)
 
-Alan Turing is considered the father of theoretical computer science and artificial intelligence. He formalized the meanings of words `algorithm` and `computation`. He worked at Cambridge University and performed [critical code breaking work for the British during World War 2](https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma).
+Alan Turing is considered the father of theoretical computer science and artificial intelligence. He formalized the meanings of words `algorithm` and `computation`. He worked at Cambridge University and later performed [critical code breaking work for the British during World War 2](https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma).
 
 Turing also developed the idea of a Turing machine. A Turing machine, simply stated, is a machine that can model any kind of algorithm with an answer. For the sake of argument, we usually don't consider any memory constraints. For a more detailed explanation in layman's terms, see [this reddit post](https://www.reddit.com/r/explainlikeimfive/comments/4umot5/eli5_what_does_turing_complete_mean/).
 
-### World War 2
+### The 1940s: World War 2 and Early Digital Computers
 
 While discussing the advent of the modern computer, it's nearly impossible to avoid discussing the second world war. Many advancements in the field of computing on both sides were made to further the war effort. While people like Turing were working on decryption for the allied forces, people like [Konrad Zuse](https://en.wikipedia.org/wiki/Konrad_Zuse) were working in Germany. Zuse's work was ignored or understated for a long time due to the fact that he worked for the Nazis. For his part, he never became a member of the Nazi party but also never expressed any qualms about working for them. An exerpt from Wikipedia says the following:
 
 *"While Zuse never became a member of the Nazi Party, he is not known to have expressed any doubts or qualms about working for the Nazi war effort. Much later, he suggested that in modern times, the best scientists and engineers usually have to choose between either doing their work for more or less questionable business and military interests in a Faustian bargain, or not pursuing their line of work at all."*
 
 Make of that what you will - this is a history lesson, and not meant to put a value judgment on a person's choices, this is merely meant to summarize advancements in the field of computing. In fact, Zuse's [Z3](https://en.wikipedia.org/wiki/Z3_(computer)) computer is considered the first modern, Turing-complete, fully-programmable digital computer, and the programming language he used, [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) was the first high-level programming language. 
-
 
 #### Plankalkül Features/Limitations
 
@@ -106,23 +109,24 @@ Make of that what you will - this is a history lesson, and not meant to put a va
 
 ### ENIAC, EDVAC, and EDSAC
 
-Meanwhile in the United States, the ENIAC (Electronic Numerical Integrator and Computer) was created by the US Army's Ballistic Research Laboratory.
+```
+“Computers in the future may weigh no more than 1.5 tons.”
+— Popular Mechanics in 1949, forecasting the relentless march of science.
+```
 
-[John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was a mathematician working on the hydrogen bomb at Los Alamos. When he heard about the ENIAC, Los Alamos became heavily involved with it as well, and ran the first program on the ENIAC, which was a test of the feasibility of a thermonuclear weapon. The I/O for this test used 1 million punchcards.
+Meanwhile in the United States, the ENIAC (Electronic Numerical Integrator and Computer) was created by the US Army's Ballistic Research Laboratory. [John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was a mathematician working on the hydrogen bomb at Los Alamos. When he heard about the ENIAC, Los Alamos became heavily involved with it as well, and ran the first program on the ENIAC, which was a test of the feasibility of a thermonuclear weapon. The I/O for this test used 1 million punchcards.
 
 John Von Neumann subsequently worked on the [EDVAC](https://en.wikipedia.org/wiki/EDVAC) (Electronic Discrete Variable Automatic Computer). Unlike the ENIAC, it used a binary number system rather than a decimal system. When describing the design of this computer, Von Neumann described the basic architecture of the modern computer. This is known as [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture).
 
 The [EDSAC](https://en.wikipedia.org/wiki/Electronic_delay_storage_automatic_calculator) (Electronic Delay Storage Automatic Calculator) was inspired by the EDVAC and was the second computer to use Von Neumann's architecture.
 
-> Fun Fact: John Von Neumann invented the merge sort algorithm - he wrote down the algorithm - with pen and paper - on 23 pages!
-
-#### Interesting Facts about Von Neumann 
+### The Interesting Life of John Von Neumann 
 
 (Summarized from [Wikipedia](https://en.wikipedia.org/wiki/John_von_Neumann))
 
 ![](https://res.cloudinary.com/briezh/image/upload/v1539117174/JohnvonNeumann-LosAlamos_cihpl8.gif)
 
-John Von Neumann was noted for his cognitive abilities even among other intellectuals. He had an eidetic memory, meaning he had a high degree of recall with only brief exposure. He had memorized the phone book and was known to entertain friends by asking them to call out a page and he would recite the names, numbers, and addresses on it. At age 6 he could divide 2 8-digit numbers in his head and coverse in Ancient Greek. At 8, he was familiar with differential and integral calculus. College professors of Von Neumann admitted that he would often come back the next day having solved a previously unsolved problem.
+John Von Neumann was noted for his cognitive abilities even among other intellectuals. At age 6 he could divide 2 8-digit numbers in his head and coverse in Ancient Greek. At 8, he was familiar with differential and integral calculus. College professors of Von Neumann admitted that he would often come back the next day having solved a previously unsolved problem. He had an eidetic memory, meaning he had a high degree of recall with only brief exposure. He had memorized the phone book and was known to entertain friends by asking them to call out a page and he would recite the names, numbers, and addresses on it. According to [Herman Goldstine](https://en.wikipedia.org/wiki/Herman_Goldstine), who worked on ENIAC, Von Neumann could recite every book he ever read.
 
 Von Neumann was one of the [Martians](https://en.wikipedia.org/wiki/The_Martians_(scientists)) - a group of prominent Hungarian-American Scientists whose acheivements are briefly listed below. Besides Von Neumann, the other Martians included:
 
@@ -140,7 +144,9 @@ One of them, Eugene Wigner, was asked why the Hungary of his generation had prod
 
 Edward Teller admitted that he *'never could keep up with him'*. Teller also said *'von Neumann would carry on a conversation with my 3-year-old son, and the two of them would talk as equals, and I sometimes wondered if he used the same principle when he talked to the rest of us.'*
 
-### High-Level Programming Languages
+> Fun Fact: John Von Neumann invented the merge sort algorithm - he wrote down the algorithm - with pen and paper - on 23 pages!
+
+## The 1950s and the Advent of High-Level Programming Languages
 
 With the development of the first Turing-complete computers, soon followed the development of programming languages to use on them. The four biggest ones from the 1950's were:
 
@@ -148,6 +154,8 @@ With the development of the first Turing-complete computers, soon followed the d
 * [LISP](https://en.wikipedia.org/wiki/Lisp_(programming_language)) (1958) - First procedural programming language
 * [ALGOL](https://en.wikipedia.org/wiki/ALGOL) (1958)
 * [COBOL](https://en.wikipedia.org/wiki/COBOL) (1959)
+
+(Beware - acronym-overload!)
 
 #### FORTRAN
 
@@ -229,17 +237,17 @@ Because it is so elegant, programmers have popularly referred to LISP (some more
 
 [COBOL](https://en.wikipedia.org/wiki/COBOL) (COmmon Businuess Oriented Language) is still widely used in legacy applications. It is declining in popularity and most usage is to maintain old projects/existing applications.
 
-### DARPAnet
+## The Beginnings of the Internet
+
+#### DARPAnet
 
 TODO
 
-### Linux
+### Advent of Operating Systems
 
-TODO
+#### Linux
 
-### Advent of Programming Languages
-
-TODO
+#### Windows
 
 ## Resources 
 
