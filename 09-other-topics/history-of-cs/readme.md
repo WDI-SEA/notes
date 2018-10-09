@@ -47,7 +47,9 @@ Roughly contemporary with the Antikythera mechanism, an Indian mathematician nam
 
 ## Middle Ages
 
-During this time period, advancements in mathematics and further understanding of things like binary numbers and floating point numbers set the stage for future developments. Mechanical clocks and geared mechanisms became more advanced. The first true computers were based on clocks and calculators.
+During this time period, advancements in mathematics and further understanding of things like floating point numbers set the stage for future developments. Mechanical clocks and geared mechanisms became more advanced. The first true computers were based on clocks and calculators.
+
+The binary number system was refined and popularized in the Western world centuries later in the late middle ages by [Gottfried Wilhelm Leibnitz](https://en.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz).
 
 ## Early and Mid-Modern Era
 
@@ -61,15 +63,15 @@ The programming language [Pascal](https://en.wikipedia.org/wiki/Pascal_(programm
 
 ### Babbage's Analytical Engine
 
+![](https://res.cloudinary.com/briezh/image/upload/v1539124205/Charles_Babbage_uv2dmm.jpg)
+
 Charles Babbage designed a new kinds of mechanical calculator - his [analytical engine](https://en.wikipedia.org/wiki/Analytical_Engine). This went beyond his original design of a differential engine (basically an advanced mathematical calculator), and provided the first idea of a programmable computer. It's the first design for a computer that could be considered [Turing-Complete](https://en.wikipedia.org/wiki/Turing_completeness) in the modern sense of how we think of computers, although when Babbage was designing his analytical engine, Alan Turing was not even born yet.
 
 Babbage's analytical engine's design was ground-breaking. No one, up until that point had designed any machines that were this general in usage. The analytical engine was not built in Babbage's lifetime, but later models suggest his machine would have worked. 
 
 #### Details
 
-![](https://res.cloudinary.com/briezh/image/upload/v1539124205/Charles_Babbage_uv2dmm.jpg)
-
-Babbage's analytical engine took input of 'formulae' and 'data' - which were to be fed into the machine via punchcards - similar to mechanical looms of that time period. There was to be a 'store' which had room for 1000 40-digit numbers (or about 16kB). The internal operations supported included basic mathematical operators, comparison operators, and square roots. Loops and conditionals were also possible. The language used would be similar to modern-day assembly languages.
+Babbage's analytical engine took input of 'formulae' and 'data' - which were to be fed into the machine via punchcards - similar to mechanical looms of that time period. There was to be a 'store' which had room for 1000 40-digit numbers (or about 16kB). The internal operations supported included basic mathematical operators, comparison operators, and square roots. Loops and conditionals were also possible. The language used would be similar to modern-day assembly languages. 
 
 ![](https://res.cloudinary.com/briezh/image/upload/v1539124205/AdaLovelace_kf1tuk.jpg)
 
@@ -114,11 +116,19 @@ Make of that what you will - this is a history lesson, and not meant to put a va
 — Popular Mechanics in 1949, forecasting the relentless march of science.
 ```
 
-Meanwhile in the United States, the ENIAC (Electronic Numerical Integrator and Computer) was created by the US Army's Ballistic Research Laboratory. [John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was a mathematician working on the hydrogen bomb at Los Alamos. When he heard about the ENIAC, Los Alamos became heavily involved with it as well, and ran the first program on the ENIAC, which was a test of the feasibility of a thermonuclear weapon. The I/O for this test used 1 million punchcards.
+Meanwhile in the United States, the ENIAC (Electronic Numerical Integrator and Computer) was created by the US Army's Ballistic Research Laboratory. [John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was a mathematician working on the hydrogen bomb at Los Alamos. When he heard about the ENIAC, Los Alamos became heavily involved with it as well, and ran the first program on the ENIAC, which was a test of the feasibility of a thermonuclear weapon. The I/O for this test used 1 million punch cards.
 
 John Von Neumann subsequently worked on the [EDVAC](https://en.wikipedia.org/wiki/EDVAC) (Electronic Discrete Variable Automatic Computer). Unlike the ENIAC, it used a binary number system rather than a decimal system. When describing the design of this computer, Von Neumann described the basic architecture of the modern computer. This is known as [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture).
 
 The [EDSAC](https://en.wikipedia.org/wiki/Electronic_delay_storage_automatic_calculator) (Electronic Delay Storage Automatic Calculator) was inspired by the EDVAC and was the second computer to use Von Neumann's architecture.
+
+#### What about memory?
+
+![](https://res.cloudinary.com/briezh/image/upload/v1539125458/paper-tape_p53bio.jpg)
+
+Early computers used punch cards or paper tape to do I/O - literally holes in a piece of paper. Here is an example of a 1950s IBM punch card:
+
+![](https://res.cloudinary.com/briezh/image/upload/v1539125458/ibm-punch-card_ce9aof.jpg)
 
 ### The Interesting Life of John Von Neumann 
 
@@ -237,11 +247,13 @@ Because it is so elegant, programmers have popularly referred to LISP (some more
 
 [COBOL](https://en.wikipedia.org/wiki/COBOL) (COmmon Businuess Oriented Language) is still widely used in legacy applications. It is declining in popularity and most usage is to maintain old projects/existing applications.
 
-## The Beginnings of the Internet
+## TODOS
+
+A lot hasn't been covered yet! This lesson will be continually built upon! Some topics to expand upon in the future include...
+
+### The Beginnings of the Internet
 
 #### DARPAnet
-
-TODO
 
 ### Advent of Operating Systems
 
@@ -260,3 +272,4 @@ TODO
 * [ELI5 Turing-Complete](https://www.reddit.com/r/explainlikeimfive/comments/4umot5/eli5_what_does_turing_complete_mean/)
 * [Cryptanalysis of the Enigma](https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma)
 * [History of Programming Languages](https://en.wikipedia.org/wiki/History_of_programming_languages)
+* [Visual History of Data Storage](https://www.makeuseof.com/tag/punch-cards-holograms-short-history-data-storage/)

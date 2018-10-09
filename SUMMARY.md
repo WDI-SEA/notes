@@ -276,6 +276,7 @@
     * [Binary Trees](15-python/python-data-structures/python-binary-trees/readme.md)
     * [TensorFlow & Neural Networks](15-python/python-neural-networks/readme.md)
 * [Assorted Topics](09-other-topics/readme.md)
+  * [History of Computer Science](09-other-topics/history-of-cs/readme.md)
   * [Regular Expressions](09-other-topics/regular-expressions/readme.md)
   * [Intro to WDI (Course Info)](09-other-topics/intro-wdi/readme.md)
   * [Being Successful in WDI](09-other-topics/success-in-wdi/readme.md)
