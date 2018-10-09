@@ -7,7 +7,7 @@ You may have never heard the names Ada Lovelace, Charles Babbage, or Alan Turing
 Let's define a few words so we're all on the same page about what they mean
 
 | Word | Definition in this Context |
-| -------------- | -------------------------------------------------------- |
+| ---------------- | ------------------------------------------------------ |
 | Mechanical | relating to physical forces or motion; physical. |
 | Analogue | relating to or using signals or information represented by a continuously variable physical quantity such as spatial position or voltage. |
 | Compute | To calculate or evaluate |
@@ -43,7 +43,7 @@ It was used for various astronomical calculations such as predicting eclipses an
 
 ### Other Early Advancements
 
-Roughly contemporary with the Antikythera mechanism, an Indian mathematician named [Pingala](https://en.wikipedia.org/wiki/Pingala), is credited with the first use of a binary number system.
+Roughly contemporary with the Antikythera mechanism, an Indian mathematician named [Pingala](https://en.wikipedia.org/wiki/Pingala), is credited with the first use of a binary number system. It used long and short dashes and was similar to Morse code.
 
 ## Middle Ages
 
@@ -56,6 +56,8 @@ During this time period, advancements in mathematics and further understanding o
 In 1642, while still a teenager helping his father with tax collection duties in France, [Blaise Pascal](https://en.wikipedia.org/wiki/Blaise_Pascal) invented a mechanical calculator. These were later known as Pascal's Calculators or Pascalines. While other attempts had been made, this was the first fully functional and properly working version.
 
 ![](https://upload.wikimedia.org/wikipedia/commons/6/68/17th-century-mechanical-calculators_-Detail.jpg)
+
+The programming language [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)) is named in honor of Blaise Pascal.
 
 ### Babbage's Analytical Engine
 
@@ -71,7 +73,7 @@ Babbage's analytical engine took input of 'formulae' and 'data' - which were to 
 
 ### US Census
 
-In the United States, census data is collected every ten years. In 1880, the US Census count took seven years. Population trends indicated that the 1890 census might take over 10 years, so they looked for another solution by holding a contest to find a better way to do it. A census department employee named Herman Hollerith won the contest. He would later go on to found the  Tabulating Machine Company, which later to became IBM. His solution used punchcards to input the data and mechanical relays to increment the count.
+In the United States, census data is collected every ten years. In 1880, the US Census count took seven years. Population trends indicated that the 1890 census might take over 10 years, so they looked for another solution by holding a contest to find a better way to do it. A census department employee named Herman Hollerith won the contest. He would later go on to found the Tabulating Machine Company, which later became IBM. His solution used punchcards to input the data and mechanical relays to increment the count.
 
 ## Modern Era
 
@@ -85,11 +87,11 @@ Turing also developed the idea of a Turing machine. A Turing machine, simply sta
 
 ### World War 2
 
-While discussing the advent of the modern computer, it's impossible not to discuss in some part the second world war. Many advancements on both ally and axis sides were made in the war effort. While people like Turing were working on decryption for the allied forces, people like [Konrad Zuse](https://en.wikipedia.org/wiki/Konrad_Zuse) were working in Germany. Zuse's work was ignored or understated for a long time due to the fact that he worked for the Nazis. For his part, he never became a member of the Nazi party but also never expressed any qualms about working for them. An exerpt from Wikipedia says the following:
+While discussing the advent of the modern computer, it's nearly impossible to avoid discussing the second world war. Many advancements in the field of computing on both sides were made to further the war effort. While people like Turing were working on decryption for the allied forces, people like [Konrad Zuse](https://en.wikipedia.org/wiki/Konrad_Zuse) were working in Germany. Zuse's work was ignored or understated for a long time due to the fact that he worked for the Nazis. For his part, he never became a member of the Nazi party but also never expressed any qualms about working for them. An exerpt from Wikipedia says the following:
 
-**"While Zuse never became a member of the Nazi Party, he is not known to have expressed any doubts or qualms about working for the Nazi war effort. Much later, he suggested that in modern times, the best scientists and engineers usually have to choose between either doing their work for more or less questionable business and military interests in a Faustian bargain, or not pursuing their line of work at all."**
+*"While Zuse never became a member of the Nazi Party, he is not known to have expressed any doubts or qualms about working for the Nazi war effort. Much later, he suggested that in modern times, the best scientists and engineers usually have to choose between either doing their work for more or less questionable business and military interests in a Faustian bargain, or not pursuing their line of work at all."*
 
-Make of that what you will - this is a history lesson, and not meant to put a value judgment on a person's choices, this is merely meant to summarize advancements in the field of computing.  In fact, Zuse's [Z3](https://en.wikipedia.org/wiki/Z3_(computer)) computer is considered the first modern, Turing-complete, fully-programmable computer, and the programming language he used, [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) was the first high-level programming language. 
+Make of that what you will - this is a history lesson, and not meant to put a value judgment on a person's choices, this is merely meant to summarize advancements in the field of computing. In fact, Zuse's [Z3](https://en.wikipedia.org/wiki/Z3_(computer)) computer is considered the first modern, Turing-complete, fully-programmable digital computer, and the programming language he used, [Plankalkül](https://en.wikipedia.org/wiki/Plankalk%C3%BCl) was the first high-level programming language. 
 
 
 #### Plankalkül Features/Limitations
@@ -102,25 +104,56 @@ Make of that what you will - this is a history lesson, and not meant to put a va
 * For and while loops
 * Only primitive data type is a single bit
 
-### ENIAC and EDVAC 
+### ENIAC, EDVAC, and EDSAC
 
 Meanwhile in the United States, the ENIAC (Electronic Numerical Integrator and Computer) was created by the US Army's Ballistic Research Laboratory.
 
-[John von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was a mathematician working on the hydrogen bomb at Los Alamos. When he heard about the ENIAC, Los Alamos became heavily involved with it as well, and ran it's first program on the ENIAC, which was a test of the feasibility of a thermonuclear weapon. The I/O for this test used 1 million punchcards.
+[John Von Neumann](https://en.wikipedia.org/wiki/John_von_Neumann) was a mathematician working on the hydrogen bomb at Los Alamos. When he heard about the ENIAC, Los Alamos became heavily involved with it as well, and ran the first program on the ENIAC, which was a test of the feasibility of a thermonuclear weapon. The I/O for this test used 1 million punchcards.
 
-John von Neumann subsequently worked on the [EDVAC](https://en.wikipedia.org/wiki/EDVAC) (Electronic Discrete Variable Automatic Computer). Unlike the ENIAC, it used a binary number system rather than a decimal system. When describing this computer, von Neumann described the basic architecture of the modern computer.
+John Von Neumann subsequently worked on the [EDVAC](https://en.wikipedia.org/wiki/EDVAC) (Electronic Discrete Variable Automatic Computer). Unlike the ENIAC, it used a binary number system rather than a decimal system. When describing the design of this computer, Von Neumann described the basic architecture of the modern computer. This is known as [Von Neumann architecture](https://en.wikipedia.org/wiki/Von_Neumann_architecture).
 
-### Compilers and High-Level Programming Languages
+The [EDSAC](https://en.wikipedia.org/wiki/Electronic_delay_storage_automatic_calculator) (Electronic Delay Storage Automatic Calculator) was inspired by the EDVAC and was the second computer to use Von Neumann's architecture.
 
-With the development of the first Turing-complete computers, soon followed the development of programming languages to use on them. Some notable developments include:
+> Fun Fact: John Von Neumann invented the merge sort algorithm - he wrote down the algorithm - with pen and paper - on 23 pages!
+
+#### Interesting Facts about Von Neumann 
+
+(Summarized from [Wikipedia](https://en.wikipedia.org/wiki/John_von_Neumann))
+
+![](https://res.cloudinary.com/briezh/image/upload/v1539117174/JohnvonNeumann-LosAlamos_cihpl8.gif)
+
+John Von Neumann was noted for his cognitive abilities even among other intellectuals. He had an eidetic memory, meaning he had a high degree of recall with only brief exposure. He had memorized the phone book and was known to entertain friends by asking them to call out a page and he would recite the names, numbers, and addresses on it. At age 6 he could divide 2 8-digit numbers in his head and coverse in Ancient Greek. At 8, he was familiar with differential and integral calculus. College professors of Von Neumann admitted that he would often come back the next day having solved a previously unsolved problem.
+
+Von Neumann was one of the [Martians](https://en.wikipedia.org/wiki/The_Martians_(scientists)) - a group of prominent Hungarian-American Scientists whose acheivements are briefly listed below. Besides Von Neumann, the other Martians included:
+
+| Name | Notable Acheivements |
+| --------------------- | -------------------------------------------- |
+| Theodore von Kármán | Contributions in aeronatics/astronautics, advancements in aerodynamics, worked at JPL, awarded National Medal of Science by JFK |
+| George de Hevesy | Nobel Prize in Chemistry, discovered element Hafnium, developed radioactive isotope tracers |
+| Leó Szilárd | Patented nuclear reactor, wrote a letter with Einstein that resulted in the Manhattan project, cured his own cancer with cobalt 60 treatment he developed himself, numerous contributions and awards |
+| Dennis Gabor | Nobel Prize in Physics for invention of holography/holographic methods, numerous other awards |
+| Eugene Wigner | Nobel Prize in Physics for contributions to theory on atomic nuclei and elementary particles, work on the Manhattan project, numerous other contributions and awards |
+| Edward Teller | 'The father of the hydrogen bomb', numerous contributions to nuclear and molecular physics, spectroscopy, and surface physics |
+| Paul Erdős | Extensive contributions to mathematics (discrete mathematics, graph theory, number theory, set theory, probability theory, etc.) - 1500 papers, still unsurpassed |
+
+One of them, Eugene Wigner, was asked why the Hungary of his generation had produced so many geniuses. Wigner, who won the Nobel Prize in Physics in 1963, replied that Von Neumann was the only genius.
+
+Edward Teller admitted that he *'never could keep up with him'*. Teller also said *'von Neumann would carry on a conversation with my 3-year-old son, and the two of them would talk as equals, and I sometimes wondered if he used the same principle when he talked to the rest of us.'*
+
+### High-Level Programming Languages
+
+With the development of the first Turing-complete computers, soon followed the development of programming languages to use on them. The four biggest ones from the 1950's were:
 
 * [FORTRAN](https://en.wikipedia.org/wiki/Fortran) (1957) - First to use a compiler
 * [LISP](https://en.wikipedia.org/wiki/Lisp_(programming_language)) (1958) - First procedural programming language
-* ALGOL (1958)
+* [ALGOL](https://en.wikipedia.org/wiki/ALGOL) (1958)
+* [COBOL](https://en.wikipedia.org/wiki/COBOL) (1959)
 
 #### FORTRAN
 
-[FORTRAN](https://en.wikipedia.org/wiki/Fortran), first released in 1957, stands for 'FORmula TRANslation'. It is considered a high-level language and was the first language to use a compiler to translate high-level code down into machine code. Here is a simple program written in FORTRAN:
+[FORTRAN](https://en.wikipedia.org/wiki/Fortran), first released in 1957, stands for 'FORmula TRANslation'. It is considered a high-level language and was the first language to use a compiler to translate high-level code down into machine code. It is known for being very fast. FORTRAN is the predecessor to several later languages, the most widely known one is [BASIC](https://en.wikipedia.org/wiki/BASIC) (an acronym for Beginner's All-purpose Symbolic Instruction Code).
+
+Here is a simple program written in FORTRAN:
 
 ```FORTRAN
 C AREA OF A TRIANGLE WITH A STANDARD SQUARE ROOT FUNCTION
@@ -151,9 +184,13 @@ C AREA OF THE TRIANGLE
       END
 ```
 
+> Fun Fact: Code for NASA's probes Voyager 1 and Voyager 2 were written in FORTRAN
+
+FORTRAN is still used and is now known simply as 'Fortran' (without the capital letters). Today, Fortran is mostly used for super-computing tasks in the scientific and engineering communities. As web developers, you're unlikely to ever encounter it unless you go out searching for it!
+
 #### LISP
 
-**"Lisp has jokingly been called "the most intelligent way to misuse a computer". I think that description is a great compliment because it transmits the full flavor of liberation: it has assisted a number of our most gifted fellow humans in thinking previously impossible thoughts."** 
+*"Lisp has jokingly been called "the most intelligent way to misuse a computer". I think that description is a great compliment because it transmits the full flavor of liberation: it has assisted a number of our most gifted fellow humans in thinking previously impossible thoughts."*
 
 - [Edsger Dijkstra](https://en.wikiquote.org/wiki/Edsger_W._Dijkstra)
 
@@ -186,7 +223,11 @@ Because it is so elegant, programmers have popularly referred to LISP (some more
 
 #### ALGOL
 
+[ALGOL](https://en.wikipedia.org/wiki/ALGOL) stands for 'ALGOrithmic Language'. While it is no longer in common use today, ALGOL defined some fundamentals of syntax that are still in use today, such as code blocks, scope, and nested functions. Most modern languages have syntax that is 'ALGOL-like', and ALGOL was a predecessor to many other languages, including C and Pascal.
+
 #### COBOL
+
+[COBOL](https://en.wikipedia.org/wiki/COBOL) (COmmon Businuess Oriented Language) is still widely used in legacy applications. It is declining in popularity and most usage is to maintain old projects/existing applications.
 
 ### DARPAnet
 
