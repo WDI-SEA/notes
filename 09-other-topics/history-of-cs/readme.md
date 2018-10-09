@@ -71,11 +71,32 @@ Babbage's analytical engine took input of 'formulae' and 'data' - which were to 
 
 ### US Census
 
-In the United States, census data is collected every ten years. In 1880, the US Census count took seven years. Population trends indicated that the 1890 census might take over 10 years, so they looked for another solution by holding a contest.
+In the United States, census data is collected every ten years. In 1880, the US Census count took seven years. Population trends indicated that the 1890 census might take over 10 years, so they looked for another solution by holding a contest to find a better way to do it. A census department employee named Herman Hollerith won the contest. He would later go on to found the  Tabulating Machine Company, which later to became IBM. His solution used punchcards to input the data and mechanical relays to increment the count.
 
 ## Modern Era
 
 ### Alan Turing
+
+Alan Turing is considered the father of theoretical computer science and artificial intelligence. He formalized the meanings of words `algorithm` and `computation`. He worked at Cambridge University and performed [critical code breaking work for the British during World War 2](https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma).
+
+Turing also developed the idea of a Turing machine. A Turing machine, simply stated, is a machine that can model any kind of algorithm with an answer. For the sake of argument, we usually don't consider any memory constraints. For a more detailed explanation in layman's terms, see [this reddit post](https://www.reddit.com/r/explainlikeimfive/comments/4umot5/eli5_what_does_turing_complete_mean/).
+
+
+### ENIAC
+
+TODO
+
+### DARPAnet
+
+TODO
+
+### Linux
+
+TODO
+
+### Advent of Programming Languages
+
+TODO
 
 ## Resources 
 
@@ -86,3 +107,4 @@ In the United States, census data is collected every ten years. In 1880, the US 
 * [Charles Babbage](https://en.wikipedia.org/wiki/Charles_Babbage)
 * [Turing-Complete](https://en.wikipedia.org/wiki/Turing_completeness)
 * [ELI5 Turing-Complete](https://www.reddit.com/r/explainlikeimfive/comments/4umot5/eli5_what_does_turing_complete_mean/)
+* [Cryptanalysis of the Enigma](https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma)
