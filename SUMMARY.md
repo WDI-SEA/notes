@@ -228,6 +228,7 @@
   * [Foreman (Environment Variables)](00-config-deployment/foreman/readme.md)
   * [Deploy - AWS Elastic Beanstalk](00-config-deployment/aws-elastic-beanstalk/README.md)
   * [Deploy - S3 Static Sites](00-config-deployment/aws-s3-static-site/README.md)
+  * [Deploy - Django](00-config-deployment/deploy-django/readme.md)
 * [Data Structures and Algorithms](08-cs/readme.md)
   * [Recursion](08-cs/cs-recursion/readme.md)
   * [Problem Solving - Array Flatten](08-cs/teaser-js-array-flatten/readme.md)
