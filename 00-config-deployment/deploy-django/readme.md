@@ -80,17 +80,21 @@ Unfortunately, Django makes you jump through some hoops to get static files work
 
 ## Set up Database Settings
 
-We'll need to set up our database settings in `settings.py` to be configured for our production environment. These settings will be different than our development environment settings. There are a couple ways to go about this.
+There's no one way to do this, but you'll eventually find that you need different settings between a development environment and a production environment. We'll need to set up our database settings in `settings.py` to be configured for our production environment. These settings will be different than our development environment settings. There are a couple ways to go about this.
 
 First option is that you can comment/uncomment the production code right before you push each time. This can get tedious after awhile.
 
 The second option is to make separate settings.py files for development and production environments. 
 
-> NOTE: In a professional setting, you'll have a test environment too! Test environments typically mirror production and act as a staging environment so that code doesn't go straight from development to production.
+The third option is to make an environment variable that you check in your settings.py file and load things you need within conditional statements.
+
+The fourth option is to use a third party tool that handles it for you.
+
+> NOTE: In a professional setting, you'll have a test environment (and possibly a staging environment) too! Test environments typically mirror production and act as a place you can test things outside of your local machine so that code doesn't go straight from development to production.
 
 #### Splitting up settings
 
-...TODO
+This website has [directions and code examples for all three options](https://www.webforefront.com/django/configuredjangosettings.html). Enjoy!
 
 ## Lock that Pipfile
 
@@ -182,4 +186,5 @@ As normal, check your heroku logs to see what errors have come up. Logs will als
 * [Pipenv Guide](https://realpython.com/pipenv-guide/) - more explanations of best practices in less technial language
 * [Heroku's Docs regarding Gunicorn](https://devcenter.heroku.com/articles/python-gunicorn)
 * [Provisioning Postgres DB on Heroku](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-heroku-postgres)
-* [Django-configurations](https://django-configurations.readthedocs.io/en/stable/) - a helpful tool for splitting up settings files.
+* [Django-configurations](https://django-configurations.readthedocs.io/en/stable/) - Official docs on settings.py
+* [Configure Django Settings](https://www.webforefront.com/django/configuredjangosettings.html) - A helpful tool that explains how to set up your settings.py in layman's terms!
