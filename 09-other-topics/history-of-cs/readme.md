@@ -12,6 +12,7 @@ Let's define a few words so we're all on the same page about what they mean
 | Analogue | relating to or using signals or information represented by a continuously variable physical quantity such as spatial position or voltage. |
 | Compute | To calculate or evaluate |
 | Turing-Complete | Computationally universal - can model/solve any problem |
+| High-Level Language | In contrast to assembly languages, a programming language that abstracts the code from the particular computer |
 
 ### What is a computer?
 
@@ -253,7 +254,7 @@ A lot hasn't been covered yet! This lesson will be continually built upon! Some 
 
 ### The Beginnings of the Internet
 
-#### DARPAnet
+#### DARPA and ARPAnet
 
 ### Advent of Operating Systems
 
