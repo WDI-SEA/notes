@@ -1,22 +1,29 @@
 # WDI Seattle
 
-![Seattle and the Olympic Mountains by Brian Hague on 500px.com](https://drscdn.500px.org/photo/134493425/m%3D900/f16538c0cf8632e88f50eb219b305723)
+![](https://res.cloudinary.com/briezh/image/upload/v1539805526/spaceneedle_ga_sea_ykjk40.jpg)
 
 
-Welcome to GA Seattle! This is the notes repository for our Web Development Immersive. You can view the content in a more searchable/friendly format on Gitbook:
-
-https://wdi_sea.gitbooks.io/notes/content/
+Welcome to GA Seattle! This is the notes repository for our Web Development Immersive. You can view the content in a more searchable/friendly format on [Gitbook](https://gawdiseattle.gitbooks.io/wdi/)!
 
 ![GA Logo](./_assets/ga_cog.png)
 
-## Setting up the Notes locally
+## Setting up the Notes locally 
+
+This is totally optional. If you choose to do this, please update every 3-6 months to get any additions/updates changes we make to the local Seattle curriculum!
 
 * Fork this repository
 * Clone your fork to your development machine
 * Setup a remote for your fork
-  * Run `git remote add upstream git@github.com:WDI-SEA/notes.git`
+  * On your terminal, run `git remote add upstream git@github.com:WDI-SEA/notes.git`
 * Install the Gitbook CLI tool by running `npm install -g gitbook-cli`
 * Preview the Gitbook by running `gitbook serve`
+
+#### Updating your local repo
+
+* On your terminal, run:
+  * `git fetch upstream master` (get the changes from us)
+  * `git merge upstream/master` (add those changes to your local machine's clone)
+  * `git push origin master` (updates your fork on github)
 
 ## Contributing to the Notes
 
@@ -26,9 +33,47 @@ https://wdi_sea.gitbooks.io/notes/content/
   * Create a pull request and be sure to be very explicit about the changes you've made
   * Ask someone on the WDI team to look at your pull request
 
-## Directory
+## Schedule
 
-But wait, there's more! Notes are organized by topic, but there's a suggested order to go through the notes, complete with assignments.
+Notes below are organized by topic, but they are unordered. This is because we may at any point swap new material in or switch the order of the units.
+
+### Connected Classroom Alteration (Fall 2018)
+
+Connected classroom (SEA and DTLA) used Python/Django as unit 2 instead of unit 4. Also removed much of unit 4 computer science topics.
+
+| Unit | Tech | Weeks | Topics |
+| ------------------------- | ----------------------- | ----------- | ----------- |
+| Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, jQuery, AJAX, fundamentals |
+| Full-Stack Web Dev | Python/Django | 4 - 6 | Data Structures & Algorithms, Whiteboarding, Python fundamentals |
+| Second Language Full-Stack Development | Node/Express/PostgreSQL | 7 - 9 | Local auth, RESTful routing, ORMs |
+| Front-End Framework | React/Redux/Mongo (MERN) | 10 - 12 | JWT Token Auth, MongoDB | 
+
+
+### Fall 2017-Current
+
+Local market demand and the fact that Angular and Ruby content was not up to date led us to the conclusion we should switch from Angular to React, and from Ruby to Python. 
+
+| Unit | Tech | Weeks | Topics |
+| ------------------------- | ----------------------- | ----------- | ----------- |
+| Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, jQuery, AJAX, fundamentals |
+| Full-Stack Development | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs |
+| Front-End Framework | React/Redux/Mongo (MERN) | 7 - 9 | JWT Token Auth, MongoDB | 
+| Second Language + Interview Prep | Python/Django | 10 - 12 | Data Structures & Algorithms, Whiteboarding, Python fundamentals |
+
+### Early 2017
+
+We began the transition from Angular to React. Some cohorts in this period may have learned either or both.
+
+Additionally, much of the original Python material (locally) was developed at this time.
+
+### 2016 and Before 
+
+| Unit | Tech | Weeks | Topics |
+| ------------------------- | ----------------------- | ----------- | ----------- |
+| Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, jQuery, AJAX, fundamentals |
+| Full-Stack Development | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs |
+| Front-End Framework | AngularJS (MEAN) | 7 - 9 | JWT Token Auth, MongoDB | 
+| Second Language | Ruby/Rails | 10 - 12 | oAuth |
 
 ### Prework
 
@@ -36,18 +81,12 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 * [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
 * [FreeCodeCamp](http://www.freecodecamp.com/)
 
-### Templates
+### Unit: Front End Development
 
-* [Front-end Template](https://github.com/WDI-SEA/TEMPLATE-js)
-* [Express Template](https://github.com/WDI-SEA/TEMPLATE-express)
-* [Express Authentication Template](https://github.com/WDI-SEA/express-authentication)
-
-### Front End Development
-
-| Topic | Assignments |
-| ----- | ----------- |
+| Topic | Labs + Assignments |
+| ----- | -------------- |
 | [Internet Fundamentals][1] | [Internet Lab][1000] |
-| [Command Line][2] <br><br> [Intro to Git][3] | [Command Line Murder Mystery][1001] |
+| [Command Line][2] <br><br> [Intro to Git][3] | [Command Line Murder Mystery][1001] <br><br> [Github 101][1026] |
 | [HTML][5] <br><br> [CSS Selectors][6] |  |
 | [CSS Box Model and Positioning][9] | [Recreate Instagram][1023] <br><br> [Recreate Airbnb][1024] |
 | [JavaScript Primitives][4] | [Primitives Exercises][1003]  |
@@ -57,7 +96,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Callbacks and Iterators][12] | [Iterators Lab][1011] <br><br> [Iterators with Reddit][1012] |
 | [Intro to jQuery][13] | [Random Quote Generator][1013] <br><br> [Todo List][1014] |
 | [jQuery Plugins][14] | [jQuery UI Lab][1015] |
-| [AJAX][15] | [AJAX Doughnuts][1016] <br><br> [Reddit AJAX Slideshow][1017] |
+| [AJAX][15] | [AJAX Pokemons][1016] <br><br> [Reddit AJAX Slideshow][1017] |
 | [Responsive CSS][16] | |
 | [Bootstrap][17] | [Bootstrap Mockups][1018] |
 | [User Stories and Wireframing][18] | [Wireframing: Build an Idea][1019] |
@@ -119,6 +158,7 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1023]: https://github.com/WDI-SEA/css-positioning
 [1024]: https://github.com/WDI-SEA/css-airbnb
 [1025]: https://github.com/WDI-SEA/code-review
+[1026]: https://github.com/WDI-SEA/github_101
 
 
 ### NodeJS/Express
@@ -278,14 +318,34 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Custom Directives][320] | [Creating Directives][1314] |
 | [Angular Components][333] |                             |
 
-### ReactJS (Newer content available - contact Seattle WDI team)
+### React
 
-| Topic | Assignments |
-| ----- | ----------- |
-| [Intro to ReactJS][328] | [React Stopwatch][1316] |
-| [React with Gulp and Browserify][329] | |
-| [React Router][330] <br><br> [Starter Code][331] | [React Yearbook][1317] |
-| [React Animations][332] <br><br> | |
+| Topic | Assignments + Labs |
+| ----- | ------------------ |
+| [Intro to ES6][1318] <br><br> [Let and Const][1319] <br><br> [Arrow Functions][1320] | [ES6 Overview][1321] |
+| [Intro to ReactJS][] | [React Video (2m)][1322] <br><br> [React Video (8:30-16:30)][1323] <br><br> [Create React App][1324] |
+| [React Components][1325] <br><br> [React Virtual DOM][1326] | [Virtual DOM Video][1327] |
+| [React Props][1328] <br><br> [Multiple Props][1329] | [React Props][1330] <br><br> [React Nested Components][1331] <br><br> [LotR Lab][1332] |
+| [React State][1334] | [React Films][1333] <br><br> [React Calculator][1335] <br><br> [React ATM][1336] |
+| [React Router pt 1][1337] <br><br> [React Router pt 2][1338] | [Router Blog][1343] |
+| [APIs][1340] <br><br> [Data Types][1341] | [Shakespeare Fetch][1342]  |
+| [Unidirectional Flow][1344] | [Fetch the Weather][1345] |
+| [Functional Components][1346] | [Functional Components Lab][1347] |
+| [Redux Intro][1350] | [Lab 1][1351] [Lab 2][1352] |
+| [React Native Set-Up][1353] <br><br> [React Native Lesson][1354] | [Navigators][1355] <br><br> [Deployment][1356] |
+
+
+
+| Projects and Additional Topics |
+| -------- |
+| [Project 4][1304] |
+| [MEAN/MERN Hackathon][1312] |
+| [Interview Questions][1315]
+| [ES6 Variables and Strings (Codepen)][1306] |
+| [ES6 Arrow Functions (Codepen)][1307] |
+| [Imperative vs Declarative][1339] |
+| [Deploying React Apps][1348] |
+| [React-Tac-Toe][1349] |
 
 
 ### Computer Science
@@ -304,14 +364,6 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 | [Hashmaps][326] | |
 | [Trees and Other Topics][327] | N/A |
 
-
-| Projects and Additional Topics |
-| -------- |
-| [Project 4][1304] |
-| [MEAN Hackathon][1312] |
-| [Interview Questions][1315]
-| [ES6 Variables and Strings (Codepen)][1306] |
-| [ES6 Arrow Functions (Codepen)][1307] |
 
 [301]: 07-angular/angular-intro/readme.md
 [302]: 07-angular/angular-directives-filters/readme.md
@@ -365,6 +417,45 @@ But wait, there's more! Notes are organized by topic, but there's a suggested or
 [1315]: https://github.com/WDI-SEA/interview-questions
 [1316]: https://github.com/WDI-SEA/react-stopwatch
 [1317]: https://github.com/WDI-SEA/react-yearbook
+[1318]: https://github.com/WDI-SEA/react_es6_global/blob/master/01-es6.md
+[1319]: https://github.com/WDI-SEA/react_es6_global/blob/master/02-es6-const-let.md
+[1320]: https://github.com/WDI-SEA/react_es6_global/blob/master/03-es6-arrow.md
+[1321]: https://github.com/WDI-SEA/react_es6_global/blob/master/05-es6-exercise.md
+[1322]: https://generalassembly.wistia.com/medias/lr8idjxtx8
+[1323]: https://www.youtube.com/watch?v=KVZ-P-ZI6W4&feature=youtu.be&t=510 
+[1324]: https://github.com/WDI-SEA/react_intro_global/blob/master/02-initial-setup.md
+[1325]: https://github.com/WDI-SEA/react_intro_global/blob/master/03-components.md 
+[1326]: https://github.com/WDI-SEA/react_intro_global/blob/master/04-virtual-dom.md 
+[1327]: https://www.youtube.com/watch?v=-DX3vJiqxm4
+[1328]: https://github.com/WDI-SEA/react_intro_global/blob/master/05-props.md
+[1329]: https://github.com/WDI-SEA/react_intro_global/blob/master/06-multiple-props.md
+[1330]: https://github.com/WDI-SEA/react_intro_global/blob/master/07-props-challenge.md
+[1331]: https://github.com/WDI-SEA/react_intro_global/blob/master/08-nested-components.md
+[1332]: https://github.com/WDI-SEA/lotr-solution-code
+[1333]: https://github.com/WDI-SEA/react_intro_global/blob/master/12-film-1-components.md
+[1334]: https://github.com/WDI-SEA/react_state_exercises_global/blob/master/01_state.md
+[1335]: https://github.com/WDI-SEA/react_state_exercises_global/blob/master/07_calculator_exercise.md
+[1336]: https://github.com/WDI-SEA/react_atm_global
+[1337]: https://github.com/WDI-SEA/react_router_global/blob/master/01-router-introduction.md
+[1338]: https://github.com/WDI-SEA/react_router_global/blob/master/02-react-router-intro.md
+[1339]: https://github.com/WDI-SEA/react_apis_heroku_global/blob/master/05-declarative-imperative.md
+[1340]: https://github.com/WDI-SEA/react_apis_heroku_global/blob/master/01-APIs.md
+[1341]: https://github.com/WDI-SEA/react_apis_heroku_global/blob/master/02-data-types.md
+[1342]: https://github.com/WDI-SEA/react_apis_heroku_global/blob/master/03-fetch.md
+[1343]: https://github.com/WDI-SEA/react_intro_global/blob/master/07-props-challenge.md
+[1344]: https://github.com/WDI-SEA/react_es6_global/blob/master/08-unidirectional-flow.md
+[1345]: https://github.com/WDI-SEA/react_apis_heroku_global/blob/master/04-fetch-project.md
+[1346]: https://github.com/WDI-SEA/react_es6_global/blob/master/06-functional-components.md
+[1347]: https://github.com/WDI-SEA/react_functional_components
+[1348]: https://gawdiseattle.gitbooks.io/wdi/10-react/react-deploy/readme.html 
+[1349]: https://github.com/WDI-SEA/react-tac-toe 
+[1350]: https://git.generalassemb.ly/jamieking/redux-todo-list/tree/redux-impl
+[1351]: https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/redux/state-management-and-intro-to-redux.md 
+[1352]: https://git.generalassemb.ly/atl-wdi/wdi-curriculum/blob/master/instructor_notes/redux/react-with-redux.md
+[1353]: https://git.generalassemb.ly/wdi-wc-march2018/warm-ups/blob/master/week-8/monday.md 
+[1354]: https://git.generalassemb.ly/wdi-wc-march2018/react-native/blob/master/README.md
+[1355]: https://reactnavigation.org/docs/en/hello-react-navigation.html
+[1356]: https://docs.expo.io/versions/latest/guides/building-standalone-apps.html 
 
 ---
 
