@@ -37,6 +37,21 @@ This is totally optional. If you choose to do this, please update every 3-6 mont
 
 Notes below are organized by topic, but they are unordered. This is because we may at any point swap new material in or switch the order of the units.
 
+Something to know is that some of the lessons here are more historical and haven't been used in at least a couple years. For example, the Ruby lessons and the lessons in unit 1 that delve deeper into the guts of ES5 syntax like prototypal inheritance. We've elected to skip that in favor of teaching OOP during the Python unit.
+
+### Future Directions
+
+We are considering:
+
+* Dropping jQuery or doing a much lighter version than we are currently.
+* Dropping AJAX and replacing it with Fetch for APIs 
+* Dropping AJAX and replacing it with Method Override for RESTful routing
+* Adding a lesson on Django REST framework
+* Enhancing Django material in general
+* Rewriting portions of the Node/Express unit for more fine grained lessonslabs as opposed to a few very long code-alongs.
+
+
+
 ### Connected Classroom Alteration (Fall 2018)
 
 Connected classroom (SEA and DTLA) used Python/Django as unit 2 instead of unit 4. Also removed much of unit 4 computer science topics.
@@ -44,7 +59,7 @@ Connected classroom (SEA and DTLA) used Python/Django as unit 2 instead of unit 
 | Unit | Tech | Weeks | Topics |
 | ------------------------- | ----------------------- | ----------- | ----------- |
 | Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, jQuery, AJAX, fundamentals |
-| Full-Stack Web Dev | Python/Django | 4 - 6 | Data Structures & Algorithms, Whiteboarding, Python fundamentals |
+| Full-Stack Web Development | Python/Django | 4 - 6 | Data Structures & Algorithms, Whiteboarding, Python fundamentals |
 | Second Language Full-Stack Development | Node/Express/PostgreSQL | 7 - 9 | Local auth, RESTful routing, ORMs |
 | Front-End Framework | React/Redux/Mongo (MERN) | 10 - 12 | JWT Token Auth, MongoDB | 
 
@@ -56,7 +71,7 @@ Local market demand and the fact that Angular and Ruby content was not up to dat
 | Unit | Tech | Weeks | Topics |
 | ------------------------- | ----------------------- | ----------- | ----------- |
 | Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, jQuery, AJAX, fundamentals |
-| Full-Stack Development | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs |
+| Full-Stack Web Development | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs |
 | Front-End Framework | React/Redux/Mongo (MERN) | 7 - 9 | JWT Token Auth, MongoDB | 
 | Second Language + Interview Prep | Python/Django | 10 - 12 | Data Structures & Algorithms, Whiteboarding, Python fundamentals |
 
@@ -71,7 +86,7 @@ Additionally, much of the original Python material (locally) was developed at th
 | Unit | Tech | Weeks | Topics |
 | ------------------------- | ----------------------- | ----------- | ----------- |
 | Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, jQuery, AJAX, fundamentals |
-| Full-Stack Development | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs |
+| Full-Stack Web Development | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs |
 | Front-End Framework | AngularJS (MEAN) | 7 - 9 | JWT Token Auth, MongoDB | 
 | Second Language | Ruby/Rails | 10 - 12 | oAuth |
 
