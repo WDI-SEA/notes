@@ -342,6 +342,41 @@ We could also use compound statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
+## Foreign Keys
+
+This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
+
+What are some examples of when this would be useful?
+* (library) books table references an authors table
+* (elementary school) a students table refereces a classes table, which references teachers table, which references a schools table, which references a districts table, etc.
+
+Let's build out the books and authors tables listed above:
+
+```
+CREATE TABLE authors (
+  id SERIAL PRIMARY KEY,
+  first_name TEXT,
+  last_name INT
+);
+
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  author_id INT references authors(id)
+);
+
+INSERT INTO authors (first_name, last_name) VALUES ('J.K.', 'Rowling');
+INSERT INTO books (title, author_id) VALUES ('Harry Potter', 1);
+```
+
+Use select statements to view the tables and make sure everything worked as expected. Now try to delete the Harry Potter book - what happened? If you delete the associated author, can you delete the book now?
+
+Now practice planning out a more complex scenario! Use your own ideas, or try the following: 
+* customers (id, name, email)
+* items
+* merch_order (id, num_items, customer_id)
+* ordered_items (id, item_id, quantity, merch_order)
+
 ## ER Diagrams
 
 Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
