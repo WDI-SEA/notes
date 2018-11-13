@@ -161,7 +161,7 @@ SELECT id, name FROM students;
 UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 ```
 
-##DELETE-ing Data
+## DELETE-ing Data
 
 ```sql
 DELETE from students WHERE name = 'Mary';
@@ -341,6 +341,8 @@ We could also use compound statements here:
 ```sql
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
+## LAB: 
+[Where in the world is Carmen San Diego?](https://github.com/WDI-SEA/sql-carmen-san-diego)
 
 ## Foreign Keys
 
@@ -383,3 +385,6 @@ Creating an ER diagram can be useful if you are designing a DB with lots of tabl
 
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
 * [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
+
+## Deliverable:
+[Apartments](https://github.com/WDI-SEA/apartment-database)
