@@ -82,4 +82,6 @@ To run a file in node via the command line, type ```node [file name here]```.
 
 ```node index.js```
 
+Congratulations, you've created and run your first Node program! Let's learn more about how Node is used in the wild (and eventually, in the web-development context).
+
 
