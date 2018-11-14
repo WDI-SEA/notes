@@ -2,8 +2,13 @@
 
 ### Importing and Exporting Modules with Node
 
-Node's module system allows code written in a partiuclar file (or folder) to be exported, and then imported into other files. Here's an example of a module called `Person.js` being imported into a file.
+Node's module system allows code written in one file to be exported, and then imported into other files. By importing a module (i.e. a specified section of code), we can then use that code as if it actually were written in the file we imported it to. 
 
+Let's try an example!
+
+1. Inside the ```my-first-node-project``` folder, create a javascript file called ```myModule.js```.
+
+2. 
 **Person.js**
 ```js
 var Person = function(name) {

@@ -66,4 +66,20 @@ Take a look at the ```package.json``` file. What do you notice?
 
 This is where the values we just set up via ```npm init``` are stored. This is like your _settings_ file. You can edit these values by changing them in this file (make sure to save).
 
+3. Make your entry point.
+
+Unless you specified a different file name in setup (check the ```main``` value in ```package.json```), Node will look for a file called ```index.js``` as the entry point for running your project. This file holds the code to be executed - this is the heart of your program. Create this file now.
+
+```touch index.js```
+
+Let's write some code in here and run it to see Node in action! Write the following line to your ```index.js```:
+
+```console.log("Hello world!")```
+
+4. Run your program!
+
+To run a file in node via the command line, type ```node [file name here]```.
+
+```node index.js```
+
 
