@@ -19,17 +19,17 @@ Most of what we've developed so far has just run on our own computers. Both our 
 
 Options?
 
-####Buy Another Computer
+#### Buy Another Computer
 
 We could just buy another computer somewhere else and use it to run our applications - or even more than one, if needed, and by the way, a server is a computer. We could connect this other computer to the internet and with a bit of configuration, we could allow people to connect to it using a URL.
 
 However, we'd have to buy and look after this computer, have somewhere to store it and ensure that it was working and always connected to the internet. Also, if someone hit an error when they used our app, we might have to stop and start it? Maybe there is a better way?
 
-####Use a Cloud Computing Platform
+#### Use a Cloud Computing Platform
 
 We could also use Amazon Web Services or similar cloud services, which provide the servers needed to host applications via the cloud. While many companies use AWS for deployment (such as Netflix), we are expected to not only deploy our system, but also set up the system architecture for our application. This includes logging in to the remote server, setting up the web server, and managing configuration and databases. While this provides a lot of flexibility for larger applications, there's a large learning curve that leans towards Linux system administration. Luckily, there is an even better way.
 
-####Abstracting Cloud Computing
+#### Abstracting Cloud Computing
 
 Heroku is a cloud-based, Platform as a Service (PaaS). Essentially it's a group of virtual machines that run on Amazon Web Services (EC2) and hosts your application code in the cloud. By using git, you can deploy your code directly to Heroku's machines - they call them "dynos" - and seconds later your changes will be live in production.
 
@@ -40,7 +40,7 @@ First you need to link your machine to your Heroku account - a similar process t
 
 ## Before Deploying
 
-###Check Your Github Repo
+### Check Your Github Repo
 
 Do you notice a folder called "node_modules"? Or your .env file with your environment variables?
 
@@ -170,27 +170,12 @@ You may notice that the data on your local machine does not travel up to Heroku.
 You can view your brand new database by executing the `psql` command you know and love on Heroku. Do this by typing
     **heroku pg:psql**
     
-**WARNING (06/16/2017):**
-Be aware that `sequelize-cli` does not currently support `sequelize@4.0.0`.
-Sequelize version 4.0.0 is a new version that introduces breaking changes.
-The last working version of `sequelize` is `sequalize@3.30.4`. Make sure you're
-not using `sequelize` version 4.0.0 by looking at `package.json` and seeing what
-version of `sequelize` is listed in the dependencies.
+**WARNING (2017) Edited (2018):**
+At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue (for version Sequelize 4) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up! 
 
-The problem with the new version has to do with creating 1:M or M:M associations.
-Sequelize 4.0.0 does not create associations in the same way it used to up to
-version 3.30.4. The association methods like `addModel` won't work any more.
+If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
 
-You'll see this error message if you're experiencing this problem.
-
-```
-Unhandled rejection TypeError: album.addSong is not a function
-```
-
-Always, always, always use `npm install --save sequelize@3.30.4` until further
-notice!
-
-##Heroku Envionment variables
+## Heroku Envionment variables
 
 In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
 In order to add environment variables to github. We will run a heroku command to set it per item in our .env file
@@ -199,11 +184,11 @@ In order to add environment variables to github. We will run a heroku command to
 heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
 ```
 
-##Something is broken?!?!?!?!
+## Something is broken?!?!?!?!
 
 Don't panic! Type **heroku logs** to see the error and info messages from the Heroku server! Find the error and Google it if the meaning isn't readily apparent!
 
-##Review
+## Review
 * App deployment
   * Login to Heroku using the Heroku toolbelt (only do once)
   * Create a Procfile and fetch your port in your app
@@ -218,7 +203,7 @@ Don't panic! Type **heroku logs** to see the error and info messages from the He
   * Run migrations on Heroku
 
 
-##Resources
+## Resources
 
 For all resources Heroku-related, check out the documentation on Heroku's website.
 

@@ -16,7 +16,7 @@ Creating a blog.
 ```
 npm init
 
-npm install --save express ejs pg pg-hstore sequelize@3.30.4
+npm install --save express ejs pg pg-hstore sequelize
 
 createdb blog
 
@@ -29,10 +29,10 @@ Make sure to setup `config.json` with postgres settings.
 There's a new version of sequelize that doesn't work with the `sequelize-cli`
 command line tool we use.
 
-Always, always, always use `npm install --save sequelize@3.30.4` until further
+Always, always, always use `npm install --save sequelize` until further
 notice!
 
-##Creating A Model
+## Creating A Model
 
 There are a few things to remember when creating models. Models shall be lowercase and singular. Sequlize will automatically create plural tables when any migrations are run. Also id, createdAt, and updatedAt fields are given for you.
 
@@ -46,7 +46,7 @@ When creating a table that will reference another table, use the following forma
 sequelize model:create --name post --attributes title:string,content:text,authorId:integer
 ```
 
-###Adding the Associations
+### Adding the Associations
 
 The following lines need to be inserted into the author and post models respectively in the `associate` function. The comment line is where you will insert it.
 
@@ -74,11 +74,11 @@ sequelize db:migrate
 
 Read more: [Seqeulize docs - One to Many](http://docs.sequelizejs.com/en/latest/docs/associations/#one-to-many-associations)
 
-##Using the association
+## Using the association
 
 Once the association is set up, we can use the `createModel`, `getModels`, `setModel`, and `addModel` helper methods. "Model" in each of these is replaced with the model name you create.
 
-###Creating an associated item with `createModel`
+### Creating an associated item with `createModel`
 
 We can use the `createPost` method to create a new post associated with an author. Remeber to use the `.then` promise.
 
@@ -106,7 +106,7 @@ db.author.findOne().then(function(author) {
 });
 ```
 
-###Other methods
+### Other methods
 
 `setModel` and `addModel` are used to associate an existing record. If you created a post and later wanted to add an association to an author this is how you'd do it.
 
@@ -118,7 +118,7 @@ db.author.findOne().then(function(author) {
 ```
 
 
-##Using `include`
+## Using `include`
 
 Sequeize supports "eager loading", meaning it can load all of the posts for us in advance if we know we need them. We let it know what we need by using `include`.
 

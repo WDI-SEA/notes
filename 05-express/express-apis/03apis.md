@@ -32,13 +32,13 @@ Identify what's necessary for making a server-side request.
 
 You can make a `.js` file that only has this code, and try running it with Node. See what happens.
 
-###Incorporating `request` into Express
+### Incorporating `request` into Express
 
 In order to incorporate the `request` module into Express, we can set up a basic Express application and place the request code inside a route.
 
 This can be done by creating a new directory, running `npm init`, then installing the correct dependencies (refer back to the notes if you forgot). Here's an example app.
 
-####Example
+#### Example
 
 **index.js**
 
@@ -62,13 +62,13 @@ Note that this app sends out the HTML for http://www.google.com, minus the image
 
 Let's use a more useful source of data that we can parse, like OMDB (Open Movie Database)
 
-###Fetching JSON data
+### Fetching JSON data
 
 Let's modify the example above to make a request to OMDB's API. [OMDB Link](http://www.omdbapi.com/)
 
 **We'll be using this endpoint:** http://www.omdbapi.com/?s=star+wars
 
-####Modified Example
+#### Modified Example
 
 **index.js**
 
@@ -143,7 +143,7 @@ var dataObj = JSON.parse(body);
 res.render("results", {results: dataObj.Search});
 ```
 
-##Additional Topics
+## Additional Topics
 
 * [API Information](../../12-resources/apis.md)
 * [Using APIs with Client/Secret Keys (Foreman)](../../00-config-deployment/foreman/readme.md)

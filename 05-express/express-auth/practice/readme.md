@@ -1,12 +1,12 @@
-#Auth in Practice
+# Auth in Practice
 
-##Objectives
+## Objectives
 
 * Incorporate multiple packages into a working authentication setup
 * Use flash messages for one-time user notifications
 * Implement middleware to simplify and automate repetitive tasks
 
-###Note
+### Note
 
 This codealong relies heavily on an app that's been scaffolded with signup and login routes. Once we're done, you should have a starting point for your project. Due to this, we won't be forking the repo, but instead cloning the repo and performing the following:
 
@@ -18,7 +18,7 @@ This codealong relies heavily on an app that's been scaffolded with signup and l
 
 **Repo Link:** https://github.com/WDI-SEA/express-authentication
 
-##Getting Started
+## Getting Started
 
 We have provided a starting scaffold with the following routes.
 
@@ -29,14 +29,14 @@ We have provided a starting scaffold with the following routes.
 
 Dependencies such as express, ejs, and sequelize are included in this app. Follow the instructions provided in order to setup the application.
 
-##Test-Driven Development
+## Test-Driven Development
 
 This project is also setup with tests for the authentication functionality we'll be implementing. We'll go one step at a time and make all the tests pass.
 
 * Run `npm test` to run all tests
 * Run `NODE_ENV=test node_modules/mocha/bin/mocha tests/fileName.js` to run a specific file
 
-###Laundry List
+### Laundry List
 
 1. Create a user model to store the user's name, email, and password, complete with validations
 2. Create functions to hash the user's password, validate the password, and protect the password

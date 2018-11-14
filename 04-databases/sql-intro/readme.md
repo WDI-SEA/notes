@@ -18,14 +18,16 @@
 Discuss as a class. Why is it better than just writing to files?
 
 * Data is structured
-* Databases are transactional
+* Can store [master data and transactional data](https://www.quora.com/What-is-the-difference-between-transactional-data-and-master-data)
 * Data retrevial is fast
-* Has a system for remote access
+* Has a system for remote access (data is often stored on a remote server)
 * Has a system for backup
 
 ## Types of Databases
 
-**RDBMS** (Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribut of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
+**RDBMS** (Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribute of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
+
+![diagram of example relational database](https://image.slidesharecdn.com/databasemanagementsystem-161020091729/95/database-management-system-9-638.jpg?cb=1476955074 "diagram of example relational database")
 
 ### Brands of Relational Databases
 
@@ -39,7 +41,6 @@ Discuss as a class. Why is it better than just writing to files?
 
 **NoSQL** There is also a school of thought called NoSql.  It is often a Key Value storage system and is not relational.  This is typically used in applications where a database does not scale well.  Example technologies include MongoDB, Apache CouchDB, SimpleDB.
 
-
 ## How are databases used in the wild?
 
 For learning and testing purposes, we will be using Postgres on the same machine that our web server is running. In the real world, your database will be on a separate machine, called a **database server**.
@@ -49,69 +50,39 @@ A database server is a computer or group of computers that is dedicated to stori
 
 # psql
 
-Today we're using PostgreSQL, often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from. We're using a "post-Ingres" database.
+Today we're using [PostgreSQL](https://www.postgresql.org/download/macosx/), often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from. We're using a "post-Ingres" database. PostgreSQL is the default database on macOS Server as of OS X Server version 10.7.
 
-If you installed Postgres.app you have access to psql from the elephant icon at the top of the screen:
+If you install [Postgres.app](https://postgresapp.com/downloads.html), you will have access to psql from the elephant icon at the top of the screen:
 
 * ![image](Postgres.png)
 
-If you are using the command line:
+You can start and stop running the server from here.
 
-* In your terminal, type ```psql```.
+**psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user.
 
-**psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user
+* In your terminal, type ```psql``` to begin using psql.
 
-psql has some of it's own command which begin with `\`
+psql has some of it's own commands.
 
-List all of the available databases:
+* type ```\?``` to view them all.
 
-```
-\list
-```
-
-Connect to one of your databases:
-
-```
-\c myDatabase
-```
-
-List all of the available tables in the current database:
-
-```
-\dt
-```
-
-Check you connection information:
-
-```
-\conninfo
-```
-
-
-There are lots of other commands which you can see with:
-
-```
-\?
-```
 Use `q` to exit the help screen (or any other screen that doesn't self-terminate)
 
 Note that all psql commands start with `\` except for `q`.
 
-To quite psql and return to the home terminal:
+To _quit_ psql and return to the home terminal:
 
-```
-\q
-```
+```\q```
 
 ## SQL: Structured Query Language
 
 **A Brief History of Databases**
 
-Before the notion of an RDBMS and a standard language for querying that data was created, there were many database venders. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly.  Luckly in the 1970s SQL was created and later turned into a standard.  Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
+Before the notion of an RDBMS (like PostreSQL) and a standard language for querying that data was created (SQL), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard.  Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
 
 **CRUD**
 
-Stands for Create, Read, Update and Destroy. This is the lifecycle of data in an applicatoin. In SQL, CRUD can be mapped to the following **INSERT, SELECT, UPDATE, DELETE**. We will walk through examples of in this section.
+Stands for Create, Read, Update and Destroy. This is the lifecycle of data in an applicatoin. In SQL, CRUD can be mapped to the following **INSERT, SELECT, UPDATE, DELETE**. We will walk through examples in this section.
 
 ## Creating a Database
 
@@ -120,21 +91,22 @@ Most database products have the notion of separate databases.  Lets create one f
 CREATE DATABASE testdb;
 ```
 
-**ALL SQL COMMANDS MUST BE ENDED WITH A SEMICOLON IN THE PSQL SHELL**
+Remember that the default DBMS on a mac is PostgreSQL. Type ```psql``` to connect to PostgreSQL via the command line.
 
-Connect to a database
-```
-\connect testdb
-```
+To view all the databases that exist on your machine, type ```\l```. You should see ```testdb``` in this list.
+
+Connect to the database: ```\connect testdb```
 
 Once we connect, our command prompt should look similar to this: ```testdb=#```
 
-List our tables:
-```
-\dt
-```
+To view the tables in the database you're connected to, type ```\dt```. (This stands for "display tables".)
 
 At this point we should have a database with no tables in it. So now we need to create tables - using SQL **(NOT to be confused with the psql app itself)**
+
+**ALL SQL COMMANDS MUST BE ENDED WITH A SEMICOLON IN THE PSQL SHELL**
+It doesn't matter how many lines you take up to write the SQL statements because it won't run until you type a semi-colon.
+
+Note that psql will not accept values with double quotes, only single quotes.
 
 ### CREATE-ing a Table
 
@@ -146,7 +118,6 @@ CREATE TABLE students (
     phone VARCHAR(15),
     email TEXT
 );
-
 ```
 
 Check that it's there:
@@ -156,7 +127,7 @@ Check that it's there:
 
 Look at the table structure
 ```
- \d+ students
+ \d students
 ```
 
 ### INSERT-ing Data
@@ -173,9 +144,6 @@ VALUES
 ('Bob Jones', '(415)555-5555', 'bob@example.com');
 
 ```
-Note that psql will not accept values with double quotes, only single quotes.
-
-It doesn't matter how many lines you take up to write the SQL statements because it won't run until you write it with 
 
 ### SELECT-ing Data
 
@@ -193,7 +161,7 @@ SELECT id, name FROM students;
 UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 ```
 
-##DELETE-ing Data
+## DELETE-ing Data
 
 ```sql
 DELETE from students WHERE name = 'Mary';
@@ -213,20 +181,29 @@ DROP TABLE students;
 
 ## Database Schema Design
 
-For this lesson, how to design a complete database system is out of scope. We will discuss a few things here though.
+The **schema** of the database is the set of CREATE TABLE commands that specify what the tables are and how they relate to each other. For our very simple database example, here is the schema:
 
-The **schema** of the database is the set of create table commands that specify what the tables are and how they relate to each other. For our very simple database example, here is the schema:
+We typed
+```sql
+CREATE TABLE students (
+    id SERIAL PRIMARY KEY,
+    name TEXT,
+    phone VARCHAR(15),
+    email TEXT
+);
+```
 
 ```
-testdb=# \d+ students
-                                                    Table "public.students"
- Column |         Type          |                       Modifiers
---------+-----------------------+-------------------------------------------------------
- id     | integer               | not null default nextval('students_id_seq'::regclass)
- name   | text                  |
- phone  | character varying(15) |
- email  | text                  |
-
+testdb=# \d students
+                                   Table "public.students"
+ Column |         Type          | Collation | Nullable |               Default                
+--------+-----------------------+-----------+----------+--------------------------------------
+ id     | integer               |           | not null | nextval('students_id_seq'::regclass)
+ name   | text                  |           |          | 
+ phone  | character varying(15) |           |          | 
+ email  | text                  |           |          | 
+Indexes:
+    "students_pkey" PRIMARY KEY, btree (id)
 ```
 
 ## What is a Primary Key?
@@ -251,11 +228,11 @@ Similar to how Javascript has types of data, SQL defines types that can be store
 
 ## Exercise Time
 
-Design a table for a movie database. Discuss a few things that a movie table may have. Choose the appropriate data type for the data. Make the CREATE TABLE command and execute it in psql. Use \dt to verify that the table was created. Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use \dt again to make sure that the table has been dropped.
+Design a table for a movie database. Discuss a few things that a movie table may have. Choose the appropriate data type for the data. Make the ```CREATE TABLE``` command and execute it in psql. Use ```\dt``` to verify that the table was created. Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use ```\dt``` again to make sure that the table has been dropped.
 
 ## Selecting
 
-A select statement allows you to get data from the database. Here are the [docs on select](http://www.postgresql.org/docs/9.0/static/sql-select.html). Also, postgres a good [tutorial on select](http://www.postgresql.org/docs/7.3/static/tutorial-select.html). I'd recommend looking at the tutorial sometime after the lesson.
+A select statement allows you to get data from the database. Here are the [docs on select](http://www.postgresql.org/docs/9.0/static/sql-select.html). Also, postgres has a good [tutorial on select](http://www.postgresql.org/docs/7.3/static/tutorial-select.html). I'd recommend looking at the tutorial sometime after the lesson.
 
 Create a new database to hold a movies table:
 
@@ -291,7 +268,7 @@ INSERT INTO movies (title, description, rating) VALUES('Argo', 'a movie', 8);
 INSERT INTO movies (title, description, rating) VALUES('Gigli', 'really bad movie', 1);
 ```
 
-This will select all the attributes from the movies table unconditionally.  Make sure not to forget the ; at the end of each statement. In SQL, semi colons are required to terminate statements.
+This will select all the attributes from the movies table unconditionally.  Make sure not to forget the semi-colon at the end of each statement.
 
 ```sql
 SELECT * FROM movies;
@@ -302,7 +279,6 @@ We may not want all attribues though.  Let's say instead we only care about the 
 ```sql
 SELECT title, description FROM movies;
 ```
-
 
 This will select the titles from movies table where the rating is greater than 4.
 
@@ -360,11 +336,48 @@ The statement below deletes the Dude Wheres My Car row from the database:
 DELETE FROM movies WHERE title='Dude Wheres My Car';
 ```
 
-We could also use compond statements here:
+We could also use compound statements here:
 
 ```sql
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
+## LAB: 
+[Where in the world is Carmen San Diego?](https://github.com/WDI-SEA/sql-carmen-san-diego)
+
+## Foreign Keys
+
+This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
+
+What are some examples of when this would be useful?
+* (library) books table references an authors table
+* (elementary school) a students table refereces a classes table, which references teachers table, which references a schools table, which references a districts table, etc.
+
+Let's build out the books and authors tables listed above:
+
+```
+CREATE TABLE authors (
+  id SERIAL PRIMARY KEY,
+  first_name TEXT,
+  last_name INT
+);
+
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  author_id INT references authors(id)
+);
+
+INSERT INTO authors (first_name, last_name) VALUES ('J.K.', 'Rowling');
+INSERT INTO books (title, author_id) VALUES ('Harry Potter', 1);
+```
+
+Use select statements to view the tables and make sure everything worked as expected. Now try to delete the Harry Potter book - what happened? If you delete the associated author, can you delete the book now?
+
+Now practice planning out a more complex scenario! Use your own ideas, or try the following: 
+* customers (id, name, email)
+* items
+* merch_order (id, num_items, customer_id)
+* ordered_items (id, item_id, quantity, merch_order)
 
 ## ER Diagrams
 
@@ -372,3 +385,6 @@ Creating an ER diagram can be useful if you are designing a DB with lots of tabl
 
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
 * [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
+
+## Deliverable:
+[Apartments](https://github.com/WDI-SEA/apartment-database)

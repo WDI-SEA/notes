@@ -1,14 +1,14 @@
-#Sessions
+# Sessions
 
-###What are sessions?
+### What are sessions?
 
 Sessions are used to store data about a user on the server. This can be an authenticated user or a non-authenticated user. Session data is stored on the server for each person using the website and referenced using a cookie stored on the users computer. The session cookie contains a unique key that allows the server to access the correct data for each person. The cookie is sent to the server on each request.
 
-###Why is this useful?
+### Why is this useful?
 
 Session data is retained between page loads so it allows sharing of data between requests without passing it in the url string. Sessions are also integral for user authentication.
 
-###Using sessions in Express
+### Using sessions in Express
 
 To utilize sessions in Express, we need to load the session middleware. The setup is very similar to setting up the body-parser middleware.
 

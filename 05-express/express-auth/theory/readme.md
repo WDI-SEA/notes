@@ -1,6 +1,6 @@
-#Authentication in theory
+# Authentication in theory
 
-##Objectives
+## Objectives
 
 * Utilize sessions to remember users between page loads
 * Utilize bcrypt to hash passwords
@@ -10,14 +10,14 @@
 
 Authentication is a complex concept that involves using many of the concepts you've already learned and several new concepts. An authentication system allows the registration / signup of new users and allows those users to sign in.
 
-###Authentication vs. Authorization
+### Authentication vs. Authorization
 
 * **Authentication:** Proving that a user is valid
   * Providing a username and password is a method of proving user validity
 * **Authorization:** The rules that allow a user to perform actions
   * Admins may be authorized to delete users, while regular users cannot delete other users
 
-###Creating Authentication
+### Creating Authentication
 
 To facilitate creating an authentication system, we need to create the following:
 
