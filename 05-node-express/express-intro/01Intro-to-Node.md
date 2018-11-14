@@ -25,6 +25,20 @@ But wait! Isn't Javascript is a _front-end_ language written for browsers? Yes! 
 
 We'll see that there are functions and patterns unique to Node (for example, the `require` function in Node, which is not available in the browser).
 
+### Install Node
+
+We will use Homebrew to install Node via the command line.
+
+1. update Homebrew with the latest version of Node
+```brew update```
+
+2. install Node on your machine (this may take a few minutes)
+```brew install node```
+
+3. verify that Node was installed by checking the version that is on your machine
+```node -v```
+
+
 ### Setting up a Node Project
 
 1. Create a new folder for your first node project.
@@ -43,5 +57,13 @@ You will be prompted to enter values for a number of fields to set up the node p
 
 To skip this step in the future (and accept all default values at once), type ```npm init -y```.
 
-What do you notice?
+Check out all the files that have been added to your project. This happened when you ran ```npm init``` You should see:
+* a node_modules folder (we'll talk about soon)
+* a package-lock.json file (ignore for now)
+* a package.json file
+
+Take a look at the ```package.json``` file. What do you notice?
+
+This is where the values we just set up via ```npm init``` are stored. This is like your _settings_ file. You can edit these values by changing them in this file (make sure to save).
+
 
