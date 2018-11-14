@@ -1,6 +1,6 @@
-#Python Crash Course
+# Python Crash Course
 
-##Objectives
+## Objectives
 
 * Describe the history of the Python language
 * Identify fundamentals and concepts of the Python language
@@ -9,63 +9,33 @@
 * Write a program that responds to user input
 
 ## Python History
-The Python programming language started in December 1989 as a hobby project
-for Dutch programmer Guido van Rossum. He was looking for a programming project
-to keep himself occupied during his Christmas break. It was first released in
-1991.
 
-Ten years later on October 16th 2000 Python 2.0 was introduced with many major
-new features and it started to gather a community dedicated to it's development.
+#### Benevolent Dictator For Life
+![Guido van Rossum](guido.jpg "Guido van Rossum")
+* Guido van Rossum (Dutch) built Python as a hobby project on his winter break
 
-Python 3.0 was released on December 3rd 2008. Version 3.0 introduced many
-enhancements and unified more of the design of the language at the cost of
-making some old 2.0 code incompatible.
+#### Goals
+* An easy and intuitive language just as powerful as major competitors
+* Open source, so anyone can contribute to its development
+* Code that is as understandable as plain English
+* Suitability for everyday tasks, allowing for short development times
 
-Python is a high-level interpreted programming language. "High level" means that
-programmers don't have to worry about things like managing memory, the langauge
-takes care of that for us. Programming languages are either *interpreted* or
-*compiled*. Compiled languages have to be run through a compiler that changes
-source code into compiled code before the program can be run. Interpreted
-languages are run on the fly. Interpreted languages are generally more playful
-and easier to experiment with because we can take small pieces of code, paste
-it into a console that interprets it and immediately evaluates it.
+#### Releases
+* Python 1.0 realeased 1991
+* Python 2.0 (2000) - started to gather a development community
+* Python 3.0 (2008) - unified the language more at the cost of making some old 2.0 code incompatible
 
-The bulk of JavaScript was built by one person in 10 days. JavaScript only runs
-in the browser.
-
-Python has been built by a community of programmers over many
-years. Many people have put good thought into the design of the language. Python
-is a general purpose language that exists on your computer outside the browser.
-Python is built to handle a wide variety of tasks beyond web development. Python
-comes with a large standard library of functions that you can use to accomplish
-most any programming task you set out to do.
-
-The creator of Python, Guido van Rossum, still plays an active role in the
-development of the language. He has been given the title, "Benevolent Dictator
-for Life" by the Python community. He plays a central role in deciding the
-direction of Python.
-
-The Python community is continually developing the language and adding new
-features. One formal way the community drives development is through PEPs,
-Python Enhancement Proposals. These proposals are documented on <http://python.org>
-and you can read a full list of them here: <https://www.python.org/dev/peps/>.
-
-* Python stylistically conforms to the **snake_case** convention
+#### Advantages
+* high-level language (closer to english than machine code)
+* interpreted (as opposed to compiled)programming language (compiled languages have to be run through a compiler that changes
+source code into compiled code before the program can be run, whereas interpreted
+languages are run on the fly 
+* general purpose scripting language that runs outside a browser
+* free and open source (community development through Python Enhancement Proposals)
+* comes with a *huge* library of builtin functions
 * The [documentation](http://python.org/) is fantastic
 
-### Guido van Rossum
-![Guido van Rossum](guido.jpg "Guido van Rossum")
-Creator, and Benevolent Dictator For Life
-
 # Python Features and Syntax!
-JavaScript was probably your first programming language. Python is probably
-you're first look at a second programming language. Don't worry! Lots of things
-are the same! Most programming languages have things like comments, variables,
-numbers, stings, arrays, objects, functions, parameters, return values and
-classes. The difference between programming languages is they just decide to
-represent or implement these common things in different ways, or with different
-syntaxes. Although the syntax of Python is new you'll be able to reason about
-what's going on by thinking about how JavaScript does similar things.
 
 Here's the long list of how to get Python to do the things you already know how
 to do in JavaScript. Let's dive right into it.
