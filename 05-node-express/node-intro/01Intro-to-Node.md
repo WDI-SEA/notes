@@ -57,14 +57,7 @@ You will be prompted to enter values for a number of fields to set up the node p
 
 To skip this step in the future (and accept all default values at once), type ```npm init -y```.
 
-Check out all the files that have been added to your project. This happened when you ran ```npm init``` You should see:
-* a node_modules folder (we'll talk about soon)
-* a package-lock.json file (ignore for now)
-* a package.json file
-
-Take a look at the ```package.json``` file. What do you notice?
-
-This is where the values we just set up via ```npm init``` are stored. This is like your _settings_ file. You can edit these values by changing them in this file (make sure to save).
+Take a look at the ```package.json``` file that was just created. This is where the values we just set up via ```npm init``` are stored. This is like your _settings_ file. You can edit these values by changing them in this file (make sure to save).
 
 3. Make your entry point.
 
