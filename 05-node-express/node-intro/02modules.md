@@ -110,3 +110,28 @@ Run ```index.js``` to read your story in the terminal!
 For more on the ```fs``` module, see [w3schools](https://www.w3schools.com/nodejs/ref_fs.asp).
 
 Try adding to your story using ```fs.write()```.
+
+### Exercise: HTTP core module
+
+In this excercise, you will make a Hello World app from scratch by using the the HTTP core module to spin up an [HTTP server](https://www.quora.com/What-is-an-HTTP-Server-and-what-does-it-do).
+
+![HTTP Request and Response Diagram](https://qph.fs.quoracdn.net/main-qimg-7cf2f16f34b9cdd2652abcf17f85555d)
+
+1. Create a ```hello-node``` directory.
+2. Initialize Node in this directory.
+3. Create your entry point file.
+4. Import the ```http``` module into your entry file. (Hint: use the ```require``` function)
+5. Create an http server that listens to ```port 8000``` and writes ```Hello, World!``` to the client. (Hint: look up the core http module on [w3schools](https://www.w3schools.com/nodejs/nodejs_http.asp))
+6. Run the server using nodemon.
+7. Check to see that your program is working by visiting ```localhost:8000``` in your browser.
+
+# Finished Code
+<details>
+  <summary>index.js</summary>
+  var http = require('http');
+
+	http.createServer(function(req, res){
+		res.write("Hello, World!");
+		res.end();
+	}).listen(8000);
+</details>
