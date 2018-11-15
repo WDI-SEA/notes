@@ -18,3 +18,44 @@ NPM is the largest open-source software registry in the world. It includes a web
 Check out this [NPM Intro Video](https://www.youtube.com/watch?v=x03fjb2VlGY)
 
 The NPM CLI makes incorporating a node package into your program fairly easy, but you can refer to [this playlist](https://www.youtube.com/watch?v=pa4dc480Apo&list=PLQso55XhxkgBMeiYmFEHzz1axDUBjTLC6) if you ever get lost. It includes a whole series of videos that demonstrate the fundamentals of using NPM.
+
+The NPM CLI installed automatically on your machine when you installed Node. Verify this now by checking the version in your terminal:
+```npm -v```
+
+### First Node Package: Nodemon
+
+[Nodemon](https://www.npmjs.com/package/nodemon) is a package that makes developing node apps easier. It restarts the application everytime you save changes to your code.
+
+We will use Nodemon quite a bit, so instead of installing it on each node app we build, we will install it globally. This will make it accessible to all of our node apps.
+
+In the command line, type the following code:
+```npm install -g nodemon```
+
+Since we're installing it globally (that's where the ```-g``` flag comes in), it doesn't matter what directory we're in.
+
+Let's see nodemon in action! Try running your ```my-first-node-app``` using nodemon. Simply ```cd``` into the directory, then run ```nodemon```. Nodemon knows to run the file that corresponds to ```main:``` in your ```package.json```.
+
+Now open up ```my-first-node-app``` in sublime. Add the following code to ```index.js```:
+
+```js
+var i=0;
+
+var myTimer = setInterval(count,1000)
+
+function count() {
+	console.log(i)
+	i++;
+}
+```
+
+Make sure to save the file and check out what's happening in your terminal!
+
+Now change the ```count``` function to print ```i*2``` instead of just ```i``` and save. 
+
+You can always restart nodemon by typing ```rs```.
+
+To quit nodemon (and any program running in the terminal), press CTRL+C.
+
+***Congratulations***, you've just installed and used your first third party node module!
+
+We installed nodemon globally, but most node packages will only be useful for specific projects. In this case, when you run ```npm install [package name]``` you want to make sure you're inside the directory of the project you want to use the package in, and leave of the ```-g``` flag.
