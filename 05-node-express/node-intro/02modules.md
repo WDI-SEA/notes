@@ -110,8 +110,3 @@ Run ```index.js``` to read your story in the terminal!
 For more on the ```fs``` module, see [w3schools](https://www.w3schools.com/nodejs/ref_fs.asp).
 
 Try adding to your story using ```fs.write()```.
-
-
-
-
-
