@@ -1,12 +1,12 @@
 # Node Modules
 
-### Creating, Exporting, and Importing Modules
+## Creating, Exporting, and Importing Modules
 
 Node's module system allows code written in one file to be exported, and then imported into other files. By importing a module (i.e. a specified section of code), we can then use that code as if it actually were written in the file we imported it to. 
 
 Let's try an example!
 
-1. Create your module.
+### 1. Create your module.
 
 Inside the ```my-first-node-project``` folder, create a javascript file called ```myModule.js```.
 
@@ -22,7 +22,7 @@ module.exports.beBasic = function() {
 
 Now, our module.exports object has a key-value pair where the key is ```beBasic``` and the value is a function.
 
-2. Import your module in ```index.js```.
+### 2. Import your module in ```index.js```.
 
 This is where the ```require``` function, specific to Node, comes into play. This function takes one argument: the path to the file that contains the module you are exporting.
 
@@ -74,16 +74,16 @@ How do we get our ```count``` function to run? Make this happen.
 
 Functions aren't the only things we can export! Try adding some other types of data to your module.
 
-#### Further Reading
+### Further Reading
 
 To view a practical example of importing and exporting modules, read
 [this article](http://www.sitepoint.com/understanding-module-exports-exports-node-js/). You'll see that we can export multiple functions by assigning `module.exports` to an object. This is a pattern that we'll see frequently in Node.
 
-### Using Built-In Modules
+## Using Built-In Modules
 
 It's great to have the flexibility to create our own modules, but Node supplies us with some simple built-in modules (aka core modules) that are ready for us to import and use!
 
-##### Example: fs module
+### Example: fs module
 
 We will use the ```fs``` core module (it stands for "file system") to read a text file. 
 
@@ -125,7 +125,7 @@ In this excercise, you will make a Hello World app from scratch by using the the
 6. Run the server using nodemon.
 7. Check to see that your program is working by visiting ```localhost:8000``` in your browser.
 
-# Finished Code
+#### Finished Code
 <details>
   <summary>index.js</summary>
   var http = require('http');
