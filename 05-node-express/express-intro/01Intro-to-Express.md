@@ -50,3 +50,14 @@ var express require('express');
 var express require('express');
 var app = express();
 ```
+
+### 7. Create a Home Route
+
+***index.js***
+```js
+app.get('/', function(req, res) {
+	res.send('Hello, World!');
+});
+
+app.listen(3000);
+```
