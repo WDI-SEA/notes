@@ -1,13 +1,33 @@
-#First Express App with Routes
+#Routes
 
-##Our first Express App
+A **route** is a combination of a ***URL pattern*** and ***HTTP Verb***.
+
+###URL Pattern
+
+##HTTP Verb
+
+There are 4 HTTP verbs:
+* get
+* post
+* put
+* delete
+
+These verbs represent a _method_ for the request. In other words, they tell the server what the nature of the request from the client is.
+
+| HTTP Verb     | CRUD          | Example  |
+| ------------- |:-------------:| -----------------:|
+| GET           | READ          | Look at someone's profile on LinkedIn |
+| POST          | CREATE        | Post on LinkedIn |
+| PUT           | UPDATE        | Change your bio on LinkedIn |
+| DELETE        | DELETE        | Delete a photo from LinkedIn |
+
+
+##Node Calculator App
 
 ###Setting up a project
 Create a new folder for use with the project using `mkdir node_calculator`, and cd into `cd node_calculator`
 
 ###index.js
-
-The following example shows how to get routes working in Node. A **route** is a combination of a URL pattern + HTTP Verb (get, post, put, delete). These verbs represent a method for the request.
 
 Each route is called on our Express app, and takes a URL pattern and a callback function. The callback function gives us back the request (`req`) and response to send back to the client (`res`). Calling the `.send` function on the response sends a string back to the client.
 
@@ -16,7 +36,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('hello brian');
+  res.send('Hello, world!');
 });
 
 app.listen(3000);

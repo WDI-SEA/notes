@@ -61,9 +61,21 @@ var app = express();
 
 ***index.js***
 ```js
+var express require('express');
+var app = express();
+
 app.get('/', function(req, res) {
 	res.send('Hello, World!');
 });
 
-app.listen(3000);
+app.listen(8000);
 ```
+
+We'll learn more about this code in the next lesson. For now, just copy it down.
+
+### 8. Run nodemon
+```bash
+nodemon
+```
+
+Now visit localhost:8000 in your browser. ***Congratulations!*** You've just built your first express app!
