@@ -24,11 +24,29 @@ npm init
 npm install express
 ```
 
-***Pause!*** Open your project file tree in sublime and notice the new files that appear.
+***Pause!*** Open your project file tree in sublime and notice the new files that appear. This happens when you use npm to install a package locally, but only once! These files are only needed to run third party modules so they appear when you install one but wont duplicate if you install more than one.
+
+* node_modules folder
+* package-log.json
+
+Also take a look at the package.json file. Notice that express now shows up in the dependencies field. All third party modules will be listed here automatically when you use npm to install them.
 
 ### 4. Create your entry point file.
 ```bash
 touch index.js
 ```
 
-### 5. 
+### 5. Import the Express module
+
+***index.js***
+```js
+var express require('express');
+```
+
+### 6. Create an instance of an express app
+
+***index.js***
+```js
+var express require('express');
+var app = express();
+```
