@@ -73,37 +73,102 @@ By design, the express ```get()``` function will pass two arguments into the cal
 
 ```send()``` is also an express function that takes one argument: the data you want to send to the front end. More on ```res.send()``` and related functions [here](https://fullstack-developer.academy/res-json-vs-res-send-vs-res-end-in-express/). You'll get more comfortable with all of this as we do more examples.
 
-## 2nd Express App: Express Calculator
+## 2nd Express App: Fun With Routes
 
-### Set up the project.
-Create a new folder for use with the project using `mkdir node_calculator`, and cd into `cd node_calculator`
+### Set up the project
 
-###index.js
+#### 1. Create a new directory called express_calculator
+```bash
+mkdir fun_with_routes
+```
+#### 2. Initialize Node
+```bash
+cd fun_with_routes
+npm init
+```
+#### 3. Install Express
+```bash
+npm install express
+```
+### 4. Create entry point
+```bash
+touch index.js
+```
+#### 5. Create an instance of express
+***index.js***
+```js
+var express = require('express');
+var app = express();
+```
+#### 6. Establish the base URL
+***index.js***
+```js
+var express = require('express');
+var app = express();
 
-Each route is called on our Express app, and takes a URL pattern and a callback function. The callback function gives us back the request (`req`) and response to send back to the client (`res`). Calling the `.send` function on the response sends a string back to the client.
+app.listen(8000);
+```
+
+#### 7. Write a home route
 
 ```js
 var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('Hello, world!');
+  res.send('You've reached the home route!');
 });
 
-app.listen(3000);
+app.listen(8000);
 ```
 
-###More Route Styles
+Run nodemon and visit localhost:8000 to make sure everything is working.
+
+### More Route Styles
+
+#### Strings
+
+Now let's try adding another route that has a string URL pattern:
+```js
+app.get('/', function(req, res) {
+  res.send('You've reached the home route!');
+});
+
+app.get('/about', function(req, res) {
+  res.send('This is a practice app to learn about express routes.');
+});
+```
+
+Visit localhost:8000/about to view the response from this route.
+
+#### Parameters
 
 By putting a colon before a string in our route, we can create routes with different variables, or **parameters**. These parameters are automatically pulled out for us by Express and can be accessed via the `req.params` object.
 
 ```js
-var express = require('express');
-var app = express();
-
 app.get('/', function(req, res) {
-  res.send('hello brian');
+  res.send('You've reached the home route!');
 });
+
+app.get('/about', function(req, res) {
+  res.send('This is a practice app to learn about express routes.');
+});
+
+app.get('/:input', function(req, res) {
+  res.send("Our parameter is " + req.params.input + ".");
+});
+```
+
+We can combine parameters and strings.
+```js
+
+app.get("/greet/:name", function(req, res) {
+  res.send("Hello " + req.params.name + "!");
+});
+```
+
+And we can have more than one parameter:
+```js
 
 app.get("/greet/:name/:lastname", function(req, res) {
   res.send("Hello " + req.params.name + " " + req.params.lastname);
@@ -114,15 +179,33 @@ app.get("/multiply/:x/:y", function(req, res) {
 });
 
 app.get("/add/:x/:y", function(req, res) {
+  res.send("The answer is: " + (req.params.x + req.params.y));
+});
+```
+
+Wait, what happened with that last route?? URL parameters come in as strings, so Javascript just concatonated them instead of treating them as integers and adding them. We can fix that:
+
+```js
+
+app.get("/add/:x/:y", function(req, res) {
   res.send("The answer is: " + (parseInt(req.params.x) + parseInt(req.params.y)));
 });
 ```
 
-In addition to having routes where different portions of the URL are different paramaters, we can use the generic string of the URL in our route logic using the wildcard.
+Say we want to add any number of integers together. We could use wildcard route, denoted by an asterisk!
+
+First let's take a look at how the asterisk works:
 
 ```js
 app.get("/add/*", function(req, res) {
-  var myParams = req.params[0].split("/")
+  res.send(req.params);
+});
+```
+
+Now let's split up the wildcard parameter and sum using _reduce_:
+```js
+app.get("/add/*", function(req, res) {
+  var myParams = req.params[0].split("/");
   var result = myParams.reduce(function(total, num) {
     return total + parseInt(num)
   }, 0);
@@ -130,7 +213,4 @@ app.get("/add/*", function(req, res) {
 });
 ```
 
-This will give you a URL like `http://localhost:3000/add/5/3/3/2/3` and give you an answer.
-
-###Running your Project
-If `"main": "index.js"` is in your `package.json`, then running `nodemon` will automatically start your project and serving your file.
+In this example, we focused on the URL patterns. The HTTP verbs will come into play more when we start working with true CRUD functionality. 
