@@ -5,15 +5,14 @@ A **route** is a combination of a ***URL pattern*** and ***HTTP Verb***.
 ### URL Pattern
 The URL Patterns refer to everything that comes after the base URL (the slash and anything that follows). For example, let's look at a simple website - go to http://www.lemon-fol.io . You're looking at the home route. Now click on "projects" in the nav bar, or add /projects to the end of the URL in the URL bar. In this scenario, everything _before_ /projects is the base URL. The base URL alone took you to the home route ("/") which served the home page. The URL pattern "/projects" served different files.
 
-Let's look at a more complex example. Go to reddit.com and search for "cute puppies". Notice what appears in the URL bar.
-
-<p align="center">https://www.reddit.com/search?q=cute%20puppies</p>
+Let's look at a more complex example. Go to reddit.com and search for "cute puppies". Notice what appears in the URL bar: 
+<em>https://www.reddit.com/search?q=cute%20puppies</em>
 
 Let's break this down:
 * Base URL:
-<em align="center">https://www.reddit.com<em>
+<em>https://www.reddit.com</em>
 * The rest that will be captured by a URL pattern:
-<em align="center">/search?q=cute%20puppies</em>
+<em>/search?q=cute%20puppies</em>
 
 In this situation, the URL pattern would look something like "/search?q=:searchedterms", where :searchedterms is a parameter that represents whatever was typed into the search bar.
 
