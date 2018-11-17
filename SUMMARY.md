@@ -120,7 +120,7 @@
     * [Node Modules](05-node-express/node-intro/02modules.md)
     * [Node Package Manager (NPM)](05-node-express/node-intro/03packages.md)
   * [Express](05-node-express/express-intro/00readme.md)
-    * [Intro to Express](05-node-express/express-intro/Intro-toExpress.md)
+    * [Intro to Express](05-node-express/express-intro/01Intro-to-Express.md)
     * [Routes](05-node-express/express-intro/02routes.md)
     * [Views](05-node-express/express-intro/03views.md)
     * [Templates](05-node-express/express-intro/04templates.md)
