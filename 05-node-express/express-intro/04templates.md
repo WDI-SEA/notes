@@ -1,39 +1,4 @@
-# Views and Templates
-
-### Views
-
-First, we cannot keep using `res.send` to send a response. Ultimately, we'll want to send HTML files back to the client. It would be much more efficient to store them in files. Let's make a folder, `/views`, and create an `index.html` page inside.
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Testing a View</title>
-  </head>
-  <body>
-    <h1>Hello world!</h1>
-  </body>
-</html>
-```
-
-Let's modify the `index.js` to send this file via `.sendFile`. In order to use this function, we also need to add where `.sendFile` can find the views.
-
-**index.js**
-```js
-var express = require('express');
-var path = require('path');
-var app = express();
-
-// this sets a static directory for the views
-app.use(express.static(path.join(__dirname, 'views')));
-
-app.get('/', function(req, res) {
-  // use sendFile to render the index page
-  res.sendFile('index.html');
-});
-
-app.listen(3000);
-```
+# Templates
 
 ### Templating with ejs
 

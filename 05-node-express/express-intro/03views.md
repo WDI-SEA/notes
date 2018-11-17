@@ -33,8 +33,6 @@ Make sure the message displays on the page when you navigate to the appropriate 
 
 Writing text to a web page using ```res.send()``` gives us something to look at, but isn't very pretty. Instead of sending plain text, let's start serving HTML files. Since each page will display different HTML, we'll have several HTML files, or _views_.
 
-#### Views
-
 ***1.*** Create a views folder inside your project directory. Inside this folder, create three HTML files:
 * index.html (this is the standard filename for the view associated with the base URL)
 * about.html
