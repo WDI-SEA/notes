@@ -1,14 +1,24 @@
 # Templates
 
-### Templating with ejs
+## Template Engines
 
-The downside to this method is that we are only sending HTML files, and what if we want to customize what's on the page? On the front-end, we could manipulate the page using jQuery. But on the back-end, we can inject values into the HTML using template engines. So we're going to set up a template engine called **ejs** (embedded JavaScript) and use that instead.
+The downside to this method is that we are only sending HTML files, but what if we want to customize what's on the page? On the front-end, we could manipulate the DOM with Javascript, that's certainly an option! But what if we want to display data that we pull from a database? ***Template engines*** allow us to inject values into the HTML, and even script logic into the HTML. This will be extremely useful for building in CRUD functionality and full stack apps in general. ([docs](https://expressjs.com/en/guide/using-template-engines.html))
 
-We need to do a couple steps to get the template engine working.
+### EJS: Embedded Javascript
 
-First, install `ejs` by running `npm install --save ejs` in the command line.
+There are several javascript template engines for express, one of the most popular of which, is [EJS](https://www.npmjs.com/package/ejs), available via npm. Let's update our express personal website views with EJS.
 
-Then, replace the `app.use` statement with the following statement (ejs assumed we'll be placing all template files into the `/views` folder, so it's optional if adhering to that syntax).
+#### Install EJS
+
+Add EJS to your personal website project using npm:
+
+```bash
+npm install ejs
+```
+
+#### Set the view engine to EJS
+
+Replace the ```app.use()``` statement with an ```app.set(name, value)``` statement [ docs(https://expressjs.com/en/api.html#app.set) ] where the name is the ```view engine``` property and the value is ```ejs```. ejs assumed we'll be placing all template files into the `/views` folder, so it's optional if adhering to that syntax.
 
 ```js
 app.set('view engine', 'ejs');
