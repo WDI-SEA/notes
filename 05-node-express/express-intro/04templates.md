@@ -9,7 +9,7 @@ The downside to this method is that we are only sending HTML files, but what if 
 
 ### EJS: Embedded Javascript
 
-There are several javascript template engines for express, one of the most popular of which, is [EJS](https://www.npmjs.com/package/ejs), available via npm. Let's update our express personal website views with EJS.
+There are several javascript template engines for express, one of the most popular of which, is [EJS](https://ejs.co/), available via npm. Let's update our express personal website views with EJS.
 
 #### Install EJS
 
