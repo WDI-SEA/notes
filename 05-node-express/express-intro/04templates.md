@@ -5,7 +5,7 @@
 
 ## Template Engines
 
-The downside to this method is that we are only sending HTML files, but what if we want to customize what's on the page? On the front-end, we could manipulate the DOM with Javascript, that's certainly an option! But what if we want to display data that we pull from a database? ***Template engines*** allow us to inject values into the HTML, and even script logic into the HTML. This will be extremely useful for building in CRUD functionality and full stack apps in general. ([docs](https://expressjs.com/en/guide/using-template-engines.html))
+The downside to this method is that we are only sending HTML files, but what if we want to customize what's on the page? On the front-end, we could manipulate the DOM with Javascript, that's certainly an option! But what if we want to display data that we pull from a database? ***Template engines*** allow us to inject values into the HTML, and even script logic into the HTML. This will be extremely useful for building in CRUD functionality and full stack apps in general. [docs](https://expressjs.com/en/guide/using-template-engines.html)
 
 ### EJS: Embedded Javascript
 
@@ -21,7 +21,7 @@ npm install ejs
 
 #### Set the view engine to EJS
 
-Above your routes, add an ```app.set(name, value)``` statement [ docs(https://expressjs.com/en/api.html#app.set) ] where the name is the ```view engine``` property and the value is ```ejs```.
+Above your routes, add an ```app.set(name, value)``` statement [docs](https://expressjs.com/en/api.html#app.set) where the name is the ```view engine``` property and the value is ```ejs```.
 
 ```js
 app.set('view engine', 'ejs');
