@@ -106,45 +106,49 @@ This doesn't only apply to primitive variables. We can even include variable dec
       <% status = 'old' %>
     <% } %>
     <h3>This means you are <%=status%>!</h3>
-
-    <% var obsessions = ['spying', 'sarcasm', 'Kenny Loggins']; %>
-
-    <ul>
-    <% obsessions.forEach(function(item) { %>
-      <li><%= item %></li>
-    <% }); %>
-    </ul>
   </body>
 </html>
 ```
+
+#### Exercise
+
+Pass an array of your 3 or more of your favorite things to the _about_ view and display them in an unordered list using a forEach loop. _(Hint: this will require a combination of `<%%>`, `<%=%>`, and html.)_
 
 ### Partials
 
 Partials can be used to modularize views and reduce repetition. A common pattern is to move the header and footer of a page into separate views, or partials, then render them on each page.
 
-#### Example
+#### Create the partials
+
+In the main directory of your project, create a `partials` folder that includes a `header.ejs` file.
 
 **partials/header.ejs**
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <title>My Site</title>
-</head>
-<body>
+  <head>
+    <title>Home Page</title>
+  </head>
+  <body>
+  <header>
+    <img src="http://placekitten.com/500/500">
+  </header>
 ```
 
-**partials/footer.ejs**
-```html
-</body>
-</html>
-```
+#### Include your partial
 
 **index.ejs**
 ```html
-<% include ../partials/header.ejs %>
+    <% include ../partials/header.ejs %>
 
-<h1>Welcome to my site!</h1>
-
-<% include ../partials/footer.ejs %>
+    <h1>Hello, <%= name %>!</h1>
+.
+.
+.
 ```
+
+#### Excercise
+
+Create a footer partial and include the header and footer on all three of your pages.
+
+
