@@ -1,5 +1,8 @@
 # Templates
 
+### Pre-reqs:
+* Express Personal Website from views lesson
+
 ## Template Engines
 
 The downside to this method is that we are only sending HTML files, but what if we want to customize what's on the page? On the front-end, we could manipulate the DOM with Javascript, that's certainly an option! But what if we want to display data that we pull from a database? ***Template engines*** allow us to inject values into the HTML, and even script logic into the HTML. This will be extremely useful for building in CRUD functionality and full stack apps in general. ([docs](https://expressjs.com/en/guide/using-template-engines.html))
@@ -38,32 +41,28 @@ app.get('/', function(req, res) {
 });
 ```
 
-### Templating with Variables
+### The Cool Part: Templating with Variables
 
-Templating with variables means we can pass in an object to the `.render` function and access those variables inside the ejs template.
+_Templating with variables_ means we can pass in an object to `res.render()` and access the values stored in it as variables inside the ejs template.
+
+This is best demonstrated with an example. Create an object with at least one key-value pair and pass that object in as the second argument to the render function in one of your routes:
 
 **index.js**
 ```js
-var express = require('express');
-var app = express();
-
-app.set('view engine', 'ejs');
-
 app.get('/', function(req, res) {
   res.render('index', {name: "Sterling Archer"});
 });
-
-app.listen(3000);
 ```
 
-then we need to update our `index.ejs` to use a templating variable.
+We now have access to a _name_ variable inside our ```index.ejs``` file! We can access this variable by embedding it into the html using this notation: ```<%= embedded js goes here %>```.
 
+For example:
 **index.ejs**
 ```html
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Testing a View</title>
+    <title>Home Page</title>
   </head>
   <body>
     <h1>Hello, <%= name %>!</h1>
