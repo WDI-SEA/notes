@@ -18,14 +18,25 @@ npm install ejs
 
 #### Set the view engine to EJS
 
-Replace the ```app.use()``` statement with an ```app.set(name, value)``` statement [ docs(https://expressjs.com/en/api.html#app.set) ] where the name is the ```view engine``` property and the value is ```ejs```. ejs assumed we'll be placing all template files into the `/views` folder, so it's optional if adhering to that syntax.
+Above your routes, add an ```app.set(name, value)``` statement [ docs(https://expressjs.com/en/api.html#app.set) ] where the name is the ```view engine``` property and the value is ```ejs```.
 
 ```js
 app.set('view engine', 'ejs');
 ```
+#### Adapt your routes to ejs
 
-Also, rename the .html file to a .ejs file. We'll see that the `.ejs` extension is optional in the route, but necessary in the file's actual name.
+***1.*** Rename the .html files to .ejs files.
 
+***2.*** Replace your ```res.sendFile(<absolute path>)``` statements with ```res.render(<file name>)``` statements.
+
+***3.*** Ejs assumes a lot about the path to the template files, so as long as they are nested in a ```views``` folder and have ```.ejs``` extensions, you can simply pass the filename (no extension, though it wont break it if you include it) into ```res.render()```.
+
+Your home route should look like this:
+```js
+app.get('/', function(req, res) {
+  res.render('index.ejs');
+});
+```
 
 ### Templating with Variables
 
