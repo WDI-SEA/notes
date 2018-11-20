@@ -50,7 +50,7 @@ This is best demonstrated with an example. Create an object with at least one ke
 **index.js**
 ```js
 app.get('/', function(req, res) {
-  res.render('index', {name: "Sterling Archer"});
+  res.render('index', {name: "Sterling Archer", age: 35});
 });
 ```
 
@@ -70,12 +70,22 @@ For example:
 </html>
 ```
 
-The JavaScript being embedded is enclosed by the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be printed to the screen. We can also use the following signs to tell EJS to parse code in different ways:
+The _any JavaScript_ can be embedded using the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be _printed to the screen_. 
 
-* `<- name %>` will print out the expression without escaping HTML
-  * If the name was `"<span>Sterling Archer</span>"`, then the `<span>` elements won't be escaped.
-* `<% name %>` will not print out the expression, but it will execute it
-  * Handy for `if` statements and loops
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+  </head>
+  <body>
+    <h1>Hello, <%= name %>!</h1>
+    <h2>You are <%= age*7 %> in dog years.</h2>
+  </body>
+</html>
+```
+
+`<%  %>` _without_ the `=`  will not print out the expression, but it will execute it. This comes in handy for `if` statements and loops.
 
 This doesn't only apply to primitive variables. We can even include variable declarations and iterators using ejs.
 
@@ -83,10 +93,19 @@ This doesn't only apply to primitive variables. We can even include variable dec
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Testing a View</title>
+    <title>Home Page</title>
   </head>
   <body>
     <h1>Hello, <%= name %>!</h1>
+    <% var dogAge = age*7 %>
+    <h2>You are <%= dogAge %> in dog years.</h2>
+    <% var status %>
+    <%if (dogAge<100) {%>
+      <% status = 'young' %>
+    <%} else {%>
+      <% status = 'old' %>
+    <% } %>
+    <h3>This means you are <%=status%>!</h3>
 
     <% var obsessions = ['spying', 'sarcasm', 'Kenny Loggins']; %>
 
