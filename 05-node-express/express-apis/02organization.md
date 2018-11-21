@@ -119,7 +119,7 @@ Add a simple navigation list to the to of the layout page so there's a link to e
 
 ```
 
-## Controllers
+## Controllers & Express Router
 
 Controllers are more important the more views you have, so let's create a few more views.
 
@@ -131,30 +131,51 @@ Controllers are more important the more views you have, so let's create a few mo
 
 We have been placing all routes into `index.js` when creating a Node/Express app, but this can get cumbersome when dealing with many routes. The solution is to group related routes and separate these groups into separate files. These files will go into a `controllers` folder.
 
-***1.*** Create a `controllers` folder inside the root directory.
+***1.*** Create a `controllers` folder inside the root directory. 
 
-**index.js**
-
-```js
-var peopleCtrl = require("./controllers/people")
-app.use("/people", peopleCtrl);
-```
-
-**controllers/people.js**
+***2.*** Inside the `controllers` folder, create a file called `faves.js` with the following routes:
 
 ```js
 var express = require("express");
 var router = express.Router();
 
-router.get("/", function(req, res) {
+router.get('/foods', function(req, res) {
+  res.render('foods.ejs');
+});
 
+router.get('/animals', funciton(req, res) {
+  res.render('animals.ejs');
 });
 
 module.exports = router;
 ```
 
-Note that the routes should be defined *relative* to the definition in `app.use`. For example, the route defined above in `controllers/people.js` will be `http://localhost:3000/people`.
+***3.*** Express has a `Router()` function that will help us wrap these routes into a module that we'll export back into our main server file. Add these wrapper lines of code to `faves.js`
 
-## Extra Resources
+```js
+var express = require("express");
+var router = express.Router();
 
-[Templating Your Node App](https://scotch.io/tutorials/use-ejs-to-template-your-node-application) - This site provides a good walk-through of using partials.
+router.get('/foods', function(req, res) {
+  res.render('foods.ejs');
+});
+
+router.get('/animals', funciton(req, res) {
+  res.render('animals.ejs');
+});
+
+module.exports = router;
+```
+***4.*** Now back in `index.js`, we just need to add some middleware to get these routes working again!
+
+**index.js**
+```js
+var faves = require("./controllers/faves") //import the faves routes
+app.use("/faves", faves); //look inside `/views/faves` for the ejs files
+```
+
+Note that we defined the routes *relative* to the definition in `app.use`.
+
+Check that these routes are working by visiting `http://localhost/faves/foods` and `http://localhost/faves/animals`.
+
+Now finish the lab off by doing the same for your hates pages!
