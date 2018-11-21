@@ -1,56 +1,33 @@
-# Organizing an Express App
+# Lab: Layouts and Controllers
 
-## Basic Express Setup
+### Set Up a new Express App
 
-Before we do anything else, let's set up a basic Express app. We need to install our dependencies, create the index.js server file, and create an index for our homepage.
+Before we do anything else, let's set up a new basic Express app called `animals-express-app`.
 
-```
-mkdir organized-express-app
-cd organized-express-app
-npm init
-npm install --save express ejs
-touch index.js
-```
+####1. Create a new project
 
-**index.js:**
+####2. Initialize Node
 
-```js
-var express = require("express");
-var app = express();
+####3. Install Dependencies
+* express
+* ejs
 
-app.set('view engine', 'ejs');
+####4. Set up Express
+* `index.js` file
+* require express
+* create an instace of express
+* tell the app which port to listen to
 
-app.get("/", function(req, res) {
-  res.render("index", {title: "Favorite Foods", foods: ["sandwich", "corn dog"]})
-});
+####5. Set up a working home route
+* set view engine to ejs
+* create a bare bones ejs file for the home page
+* setup home route to render this ejs file
 
-app.listen(3000);
-```
+## EJS Layouts
 
-**views/index.ejs:**
+Adding partials can dry up the code a bit, but [EJS Layouts](https://www.npmjs.com/package/express-ejs-layouts) can take this modularity even farther and make a big diffence with large applications.
 
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Webpage</title>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <ul>
-      <% foods.forEach(function(food) { %>
-        <li><%= food %></li>
-      <% }); %>
-    </ul>
-  </body>
-</html>
-```
-
-## Layouts
-
-Yesterday we used partials to create a header and a footer for our website. Adding a header and a footer to every page can be cumbersome. Why should we have to write the same lines at the beginning and end of every page? We shouldn't! There's a better way!
-
-Instead, we can create a layout that has a special place for our page content. We can define a basic page structure made up of our header and footer and have a place in the middle where all our content will go. In order to do this, another module must be installed.
+EJS layouts is a node package that allows us to create a boilerplate (aka a _layout_) that we can inject whatever content into based on which route is reached. Layouts normally include header and footer content that you want to display on every page (navbar, sitemap, logo, etc.).
 
 ### Example
 

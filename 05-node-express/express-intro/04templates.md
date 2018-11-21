@@ -124,12 +124,6 @@ In the main directory of your project, create a `partials` folder that includes 
 
 **partials/header.ejs**
 ```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Home Page</title>
-  </head>
-  <body>
   <header>
     <img src="http://placekitten.com/500/500">
   </header>
@@ -139,6 +133,13 @@ In the main directory of your project, create a `partials` folder that includes 
 
 **index.ejs**
 ```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home Page</title>
+  </head>
+  <body>
+
     <% include ../partials/header.ejs %>
 
     <h1>Hello, <%= name %>!</h1>
