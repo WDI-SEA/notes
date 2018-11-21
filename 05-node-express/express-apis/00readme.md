@@ -2,7 +2,6 @@
 
 ## Objectives
 
-* Name the components of an Express application
 * Utilize layouts and controllers in an Express app
 * Describe the purpose of using an API on the backend.
 * Create an application that uses an API and the `request` module.
