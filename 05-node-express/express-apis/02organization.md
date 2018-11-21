@@ -2,7 +2,7 @@
 
 ### Set Up a new Express App
 
-Before we do anything else, let's set up a new basic Express app called `animals-express-app`.
+Before we do anything else, let's set up a new basic Express app called `faves-hates-app`.
 
 ####1. Create a new project
 
@@ -18,10 +18,9 @@ Before we do anything else, let's set up a new basic Express app called `animals
 * create an instace of express
 * tell the app which port to listen to
 
-####5. Set up a working home route
+####5. Set up EJS
 * set view engine to ejs
-* create a bare bones ejs file for the home page
-* setup home route to render this ejs file
+* create a `views` folder
 
 ## EJS Layouts
 
@@ -29,17 +28,17 @@ Adding partials can dry up the code a bit, but [EJS Layouts](https://www.npmjs.c
 
 EJS layouts is a node package that allows us to create a boilerplate (aka a _layout_) that we can inject whatever content into based on which route is reached. Layouts normally include header and footer content that you want to display on every page (navbar, sitemap, logo, etc.).
 
-### Example
+### Install EJS Layouts
 
-**Step 1:**
+#### Step 1: Install EJS layouts
 
 Install `express-ejs-layouts` via npm
 
 ```
-npm install --save express-ejs-layouts
+npm install express-ejs-layouts
 ```
 
-**Step 2:**
+#### Step 2: Set up EJS layouts
 
 Require the module and add it to the app.
 
@@ -48,7 +47,11 @@ var ejsLayouts = require("express-ejs-layouts");
 app.use(ejsLayouts);
 ```
 
-**Step 3:**
+What is ```app.use()```? This is an express function that indicates _middleware_. Middleware is code that intercepts the request object when it comes in from the client, but before it hits any route. We'll see more examples of middleware later.
+
+How are you supposed to know that ejs layouts requires middleware? [The docs.](https://www.npmjs.com/package/express-ejs-layouts)
+
+#### Step 3: Create a Layout
 
 In the root of the views folder, add a layout called `layout.ejs`
 
@@ -67,9 +70,11 @@ In the root of the views folder, add a layout called `layout.ejs`
 
 This layout will be used by all pages, and the content will be filled in where the `<%- body %>` tag is placed. `<%- body %>` is a special tag used by `express-ejs-layouts` that cannot be renamed.
 
+#### Step 4: Set up a few views/routes
+
 Now we can create another page `animals.ejs` and see that it's content is placed in the page. We can create new pages without having to write the include statements for the header and footer.
 
-First we add a simple route to `app.js`:
+First we add a simple route to `index.js`:
 
 ```js
 app.get("/animals", function(req, res) {
@@ -88,6 +93,10 @@ And we create a new file `views/animals.ejs`:
 </ul>
 ```
 
+Now create a `foods` view/route that displays your favorite foods.
+
+#### Bonus: Add Navigation
+
 Add a simple navigation list to the to of the layout page so there's a link to every page from every page:
 
 ```html
@@ -98,7 +107,7 @@ Add a simple navigation list to the to of the layout page so there's a link to e
 </head>
 <body>
   <ul>
-    <li><a href="/">Favorite Foods</a></li>
+    <li><a href="/foods">Favorite Foods</a></li>
     <li><a href="/animals">Favorite Animals</a></li>
   </ul>
   <%- body %>
