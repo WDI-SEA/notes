@@ -30,7 +30,7 @@ So if you were CRUDing a database of dinosaurs, the following routes would form 
 
 | VERB | URL | Action (CRUD) | Description |
 |------|-----|---------------|-------------|
-| GET | /dinosaurs | Index (Read) | lists all animals |
+| GET | /dinosaurs | Index (Read) | lists all dinosaurs |
 | GET | /dinosaurs/1 | Show (Read) | list information about a specific animal (id = 1) |
 | POST | /dinosaurs | Create | creates an animal with the POST payload data |
 | PUT | /dinosaurs/1 | Update | updates the data for a specific animal (id = 1) |
@@ -75,7 +75,7 @@ We'll start workign with data from an actual database soon, but for now we'll ju
 ]
 ```
 
-### 2. Set up Index / Read (GET) route
+### 2. Index / Read (GET) route
 
 Index is a route (URL) that lists all items of a specific type. It is a GET request to (in this example) `/dinosaurs`.
 
@@ -129,11 +129,11 @@ app.get('/dinosaurs', function(req, res) {
 });
 ```
 
-In the above example we load the `dinosaurs/index.ejs` view and pass it `dinoData` as `myAnimals`. Now we can access myDinos directly in the `index.ejs` file.
+In the above example we load the `dinosaurs/index.ejs` view and pass it `dinoData` as `mydinosaurs`. Now we can access myDinos directly in the `index.ejs` file.
 
-### 3. Show / Read (GET)
+### 3. Show / Read (GET) route
 
-_Show_ is a route that displays a single item of a specific type. It is a GET
+_Show_ is a route that displays a single item of a specific type. Since we're still just reading data, it is a GET
 request to (in this example) `/dinosaurs/1`
 
 Create a `dinosaurs/show.ejs` file:
@@ -142,44 +142,36 @@ Create a `dinosaurs/show.ejs` file:
 <%= myDino.name %> is a <%= myDino.type %>.
 ```
 
-**Show route -- in index.js**
+Now let's write our show route. We can access the index from the url through the `req.params` object, but it will be a string. In order to use in to access an array value, we need to cast it to an integer.
 
+**Show route -- in index.js**
 ```js
-//express index route for animals (lists all animals)
-app.get('/animals/:idx', function(req, res) {
-  // get animals
-  var animals = fs.readFileSync('./data.json');
-  animals = JSON.parse(animals);
+//express show route for dinosaurs (lists one dinosaur)
+app.get('/dinosaurs/:idx', function(req, res) {
+  // get dinosaurs
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinoData = JSON.parse(dinosaurs);
 
   //get array index from url parameter
-  var animalIndex = parseInt(req.params.idx);
+  var dinoIndex = parseInt(req.params.idx);
 
   //render page with data of the specified animal
-  res.render('animals/show', {myAnimal: animals[animalIndex]});
+  res.render('dinosaurs/show', {myDino: dinoData[dinoIndex]});
 });
 ```
 
-In the above example we load the `animals/show.ejs` view and pass it a specific
-item from the `animals` array as `myAnimal`. We use the :idx url parameter to
-specify which animal to display. Again, this means in the show.ejs file we can
-access myAnimal directly.
+In the above example we load the `dinosaurs/show.ejs` view and pass it a specific
+item from the `dinoData` array as `myDino`. We use the `:idx` url parameter to
+specify which animal to display. This means in the `show.ejs` file we can
+access myDino directly.
 
+### 4. Create (POST) route
 
-
-
-Display the animal based on the url. With the example `/animals/1` we would be
-displaying the 2nd item in the array (index starting at 0) and get output like
-this...
-
-Fido is a dog.
-
-###Create (POST)
-
-To create an item (animal in this example) we need to make a POST to the url `/animals` with the data about that animal. We do this using a form with the method attribute set to `post` and the action set to the create url.
+To create an item (animal in this example) we need to make a POST to the url `/dinosaurs` with the data about that animal. We do this using a form with the method attribute set to `post` and the action set to the create url.
 
 **frontend - form html**
 ```html
-<form method="POST" action="/animals">
+<form method="POST" action="/dinosaurs">
   <label for="animalType">Type</label>
   <input type="text" name="type">
 
@@ -190,7 +182,7 @@ To create an item (animal in this example) we need to make a POST to the url `/a
 </form>
 ```
 
-When the above form is submitted it will make a `POST` to the url `/animals` with the data contained in the form fields.
+When the above form is submitted it will make a `POST` to the url `/dinosaurs` with the data contained in the form fields.
 
 To receive this data we need to create a `POST` route in express and use the `body-parser` npm module to receive that data. But first, let's set up the `body-parser` module!
 
@@ -221,7 +213,7 @@ Now, if we try to add this backend route, calling `req.body` should contain the 
 
 **backend - express route**
 ```js
-app.post('/animals', function(req, res) {
+app.post('/dinosaurs', function(req, res) {
   //debug code (output request body)
   console.log(req.body);
   res.send(req.body);
@@ -247,54 +239,54 @@ going to use the JSON file created above to store our data. This will involve th
 * Writing the new JSON file
 
 ```js
-app.post('/animals', function(req, res) {
-  // read animals file
-  var animals = fs.readFileSync('./data.json');
-  animals = JSON.parse(animals);
+app.post('/dinosaurs', function(req, res) {
+  // read dinosaurs file
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  dinosaurs = JSON.parse(dinosaurs);
 
-  // add item to animals array
-  animals.push(req.body);
+  // add item to dinosaurs array
+  dinosaurs.push(req.body);
 
-  // save animals to the data.json file
-  fs.writeFileSync('./data.json', JSON.stringify(animals));
+  // save dinosaurs to the data.json file
+  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinosaurs));
 
-  //redirect to the GET /animals route (index)
-  res.redirect('/animals');
+  //redirect to the GET /dinosaurs route (index)
+  res.redirect('/dinosaurs');
 });
 ```
 
 ####Additional: Show / Read (GET) with a Form
 
-There may be instances where you need to GET animals, but you don't want them all. A good example is filtering animals with a specific name via a search bar.
+There may be instances where you need to GET dinosaurs, but you don't want them all. A good example is filtering dinosaurs with a specific name via a search bar.
 
 In these cases, you don't want to use a POST action, because POST is reserved for creating new resources. Instead, we can create another form with a GET method, and read the data via a **querystring**.
 
-**Animals index page**
+**dinosaurs index page**
 
 ```html
-<form method="GET" action="/animals">
+<form method="GET" action="/dinosaurs">
   <label for="nameFilter">Filter by Name</label>
   <input id="nameFilter" type="text" name="nameFilter">
   <input type="submit">
 </form>
 ```
 
-Note that this form will submit to the same page. We'll need to see if there's a querystring, then filter the animals if one is present.
+Note that this form will submit to the same page. We'll need to see if there's a querystring, then filter the dinosaurs if one is present.
 
 ```js
-app.get('/animals', function(req, res){
-  var animals = fs.readFileSync('./data.json');
-  animals = JSON.parse(animals);
+app.get('/dinosaurs', function(req, res){
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  dinosaurs = JSON.parse(dinosaurs);
 
   var nameFilter = req.query.nameFilter;
 
   if (nameFilter) {
-    animals = animals.filter(function(animal) {
+    dinosaurs = dinosaurs.filter(function(animal) {
       return animal.name.toLowerCase() === nameFilter.toLowerCase();
     });
   }
 
-  res.render('animals/index', {myAnimals: animals});
+  res.render('dinosaurs/index', {mydinosaurs: dinosaurs});
 });
 ```
 
