@@ -40,7 +40,11 @@ So if you were CRUDing a database of dinosaurs, the following routes would form 
 
 ## CRUD in action: Dinosaur App
 
+So far, we've only been rendering views, which is why we've been using GET for all of our routes. Now that we're working with data, we'll start to see how the other HTTP verbs come into play. Here we will focus on GET and POST.
+
 ### 1. Set up a new express app called `crud_dinosaurs`.
+
+Incorporate `express-ejs-layouts`.
 
 **Backend data store**
 
@@ -71,50 +75,63 @@ We'll start workign with data from an actual database soon, but for now we'll ju
 ]
 ```
 
-So far, we've only been rendering views, which is why we've been using GET for all of our routes. Now that we're working with data, we'll start to see how the other HTTP verbs come into play. Here we will focus on GET and POST.
+### 2. Set up Index / Read (GET) route
 
-###Index / Read (GET)
+Index is a route (URL) that lists all items of a specific type. It is a GET request to (in this example) `dinosaurs.json`.
 
-Index is a route (URL) that lists all items of a specific type. It is a GET request to (in this example) `/animals`.
+Format the ejs to display the data. Assume that we will pass the data in as `myDinos`.
 
-**Index route -- in index.js**
-
-```js
-// Include fs (short for filesystem) at the top. No need to install via npm
-var fs = require('fs');
-
-// Express index route for animals (lists all animals)
-app.get('/animals', function(req, res) {
-  var animals = fs.readFileSync('./data.json');
-  animals = JSON.parse(animals);
-  res.render('animals/index', {myAnimals: animals});
-});
-```
-
-In the above example we load the `animals/index.ejs` view and pass it `animals` as `myAnimals`. This means in the index.ejs file we can access myAnimals directly.
-
-**Index view -- in /views/animals/index.ejs**
-
+**Index view -- in /views/dinosaurs/index.ejs**
 ```html
 <ul>
-  <% myAnimals.forEach(function(animal) { %>
-  <li><%= animal.name %> is a <%= animal.type %></li>
+  <% myDinos.forEach(function(dino) { %>
+  <li><%= dino.name %> is a <%= dino.type %></li>
   <% }); %>
 </ul>
 ```
 
-Here we are looping through the `myAnimals` array passed from the route and
-displaying a list of all of the items.
+To access our data, we'll use the `fs` (filesystem) core module. Import this module in `index.js`
+```js
+var fs = require('fs');
+```
 
-**output would be something like this:**
+Now let's pull in our data and take a took at it. 
 
-* Neko is a cat
-* Fido is a dog
-* Mufasa is a lion
-* Tony is a tiger
-* Kuma is a bear
+```js
+// lists all dinosaurs
+app.get('/dinosaurs', function(req, res) {
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  console.log(dinosaurs);
+});
+```
+ ***Note:*** This console.log() is in our server file, which means it will print to our terminal, NOT the browser inspector.
+ 
+ That doesn't look very helpful, does it? That's because we're pulling in a JSON object, which isn't quite the same as a normal JS object. JSON (JavaScript Object Notation), is a standard format for data that is being transmitted (sent back and forth), and it needs to be _parsed_, or converted to a true JS data type - in this case, an array.  Read more about working with JSON [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
 
-###Show / Read (GET)
+Try parsing the data before printing it:
+```js
+// lists all dinosaurs
+app.get('/dinosaurs', function(req, res) {
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinoData = JSON.parse(dinosaurs);
+  console.log(dinoData);
+});
+```
+
+That's more like it! Now lets send it to our EJS file:
+
+```js
+// lists all dinosaurs
+app.get('/dinosaurs', function(req, res) {
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinoData = JSON.parse(dinosaurs);
+  res.render('dinosaurs/index', {myDinos: dinoData});
+});
+```
+
+In the above example we load the `dinosaurs/index.ejs` view and pass it `dinoData` as `myAnimals`. Now we can access myDinos directly in the `index.ejs` file.
+
+### Show / Read (GET)
 
 Show is a route that displays a single item of a specific type. It is GET
 request to (in this example) `/animals/1`
