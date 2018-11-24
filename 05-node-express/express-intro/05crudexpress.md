@@ -1,33 +1,44 @@
-#CRUD in Express
+# CRUD in Express
 
-##Objectives
+## Objectives
 
-* Define what the acronym CRUD stands for
 * Name the HTTP Verb associated with each CRUD function
 * Name the two HTTP verbs that HTTP understands
 * Name the two HTTP verbs in which you must utilize AJAX to make HTTP understand them
 
-CRUD is an acronym that stands for Create, Read, Update, Destroy. These are the basic operations that you can perform on data. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action: Creatinging a user (create), Listing comments (read) to editing your profile (update), to deleting a video you uploaded on youtube (destroy).
+## Review CRUD
+
+Recall CRUD from the SQL database lessons. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action. For example:
+* ***C***reate a youtubeuser, a video, a comment
+* ***R***ead comments, view videos, etc.
+* ***U***pdate your profile, edit a video title, etc.
+* ***D***elete a video, comment, or an entire channel!
 
 [Formal definition on wiki](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
 
-####RESTful Routing
+# RESTful Routing
+
+RESTful Routing is the (best) practice of choosing routes (URL patterns + HTTP verbs) that reflect the CRUD functionality of that route.
+A RESTful route incorporates:
+* the _item or data_ you're interacting with
+* the _CRUD action_ you're performing on that item or data
 
 On the web the best practice for CRUD actions uses something called RESTful routing. The basic idea is your route (URL) should relate to the type of item you are interacting with, as well as the action you'll be performing to change/view the state of the item(s).
 
-So if you were CRUDing Animals the route would be `/animals` and the following routes would form a full set of CRUD RESTful routes
+#### Example: Dinosaurs
+So if you were CRUDing a database of dinosaurs, the following routes would form a full set of CRUD RESTful routes
 
 | VERB | URL | Action (CRUD) | Description |
 |------|-----|---------------|-------------|
-| GET | /animals | Index (Read) | lists all animals |
-| GET | /animals/1 | Show (Read) | list information about a specific animal (id = 1) |
-| POST | /animals | Create | creates an animal with the POST payload data |
-| PUT | /animals/1 | Update | updates the data for a specific animal (id = 1) |
-| DELETE | /animals/1 | Delete (Destroy) | deletes the animal with the specified id (1) |
+| GET | /dinosaurs | Index (Read) | lists all animals |
+| GET | /dinosaurs/1 | Show (Read) | list information about a specific animal (id = 1) |
+| POST | /dinosaurs | Create | creates an animal with the POST payload data |
+| PUT | /dinosaurs/1 | Update | updates the data for a specific animal (id = 1) |
+| DELETE | /dinosaurs/1 | Delete (Destroy) | deletes the animal with the specified id (1) |
 
 [Read more on wiki](http://en.wikipedia.org/wiki/Representational_state_transfer)
 
-##CRUD in action
+## CRUD in action
 
 For now we're just going to focus on POST and GET (Create and Read)
 
