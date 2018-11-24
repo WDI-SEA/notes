@@ -165,22 +165,27 @@ item from the `dinoData` array as `myDino`. We use the `:idx` url parameter to
 specify which animal to display. This means in the `show.ejs` file we can
 access myDino directly.
 
-### 4. Create (POST) route
+### 4. New / Create (POST) route
 
-To create an item (animal in this example) we need to make a POST to the url `/dinosaurs` with the data about that animal. We do this using a form with the method attribute set to `post` and the action set to the create url.
+To create an item (dinosaur in this example) we need to get the data about that item, so we'll use a [form](https://www.w3schools.com/html/html_forms.asp).
 
-**frontend - form html**
+Form tags have two attributes that are very import for their CRUD functionality:
+* ***method:*** HTTP verb - GET or POST. You will use POST most often because it is significantly more secure. Read about the difference between these two methods by scrolling down to the "When to Use GET" AND "When to Use Post" sections of [this page](https://www.w3schools.com/html/html_forms.asp).
+* ***action:*** This value should be a path. Specifically, it is the url pattern associated with the route that will handle the data - in this case, the POST route we will write.
+
+**dinosaurs/new.ejs**
 ```html
 <form method="POST" action="/dinosaurs">
-  <label for="animalType">Type</label>
+  <label for="dinosaureType">Type</label>
   <input type="text" name="type">
 
-  <label for="animalName">Name</label>
-  <input id="animalName" type="text" name="name">
+  <label for="dinosaurName">Name</label>
+  <input id="dinosaurName" type="text" name="name">
 
-  <input id="animalType" type="submit">
+  <input id="dinosaurType" type="submit">
 </form>
 ```
+Then we'll make a POST to the url `/dinosaurs` with the data about that dinosaur that we got from the user.
 
 When the above form is submitted it will make a `POST` to the url `/dinosaurs` with the data contained in the form fields.
 
