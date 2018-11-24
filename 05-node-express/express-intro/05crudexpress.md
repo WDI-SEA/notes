@@ -77,7 +77,7 @@ We'll start workign with data from an actual database soon, but for now we'll ju
 
 ### 2. Set up Index / Read (GET) route
 
-Index is a route (URL) that lists all items of a specific type. It is a GET request to (in this example) `dinosaurs.json`.
+Index is a route (URL) that lists all items of a specific type. It is a GET request to (in this example) `/dinosaurs`.
 
 Format the ejs to display the data. Assume that we will pass the data in as `myDinos`.
 
@@ -104,7 +104,7 @@ app.get('/dinosaurs', function(req, res) {
   console.log(dinosaurs);
 });
 ```
- ***Note:*** This console.log() is in our server file, which means it will print to our terminal, NOT the browser inspector.
+ ***Note:*** This `console.log()` is in our server file, which means it will print to our terminal, NOT the browser inspector.
  
  That doesn't look very helpful, does it? That's because we're pulling in a JSON object, which isn't quite the same as a normal JS object. JSON (JavaScript Object Notation), is a standard format for data that is being transmitted (sent back and forth), and it needs to be _parsed_, or converted to a true JS data type - in this case, an array.  Read more about working with JSON [here](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
 
@@ -131,10 +131,16 @@ app.get('/dinosaurs', function(req, res) {
 
 In the above example we load the `dinosaurs/index.ejs` view and pass it `dinoData` as `myAnimals`. Now we can access myDinos directly in the `index.ejs` file.
 
-### Show / Read (GET)
+### 3. Show / Read (GET)
 
-Show is a route that displays a single item of a specific type. It is GET
-request to (in this example) `/animals/1`
+_Show_ is a route that displays a single item of a specific type. It is a GET
+request to (in this example) `/dinosaurs/1`
+
+Create a `dinosaurs/show.ejs` file:
+
+```html
+<%= myDino.name %> is a <%= myDino.type %>.
+```
 
 **Show route -- in index.js**
 
@@ -159,9 +165,7 @@ specify which animal to display. Again, this means in the show.ejs file we can
 access myAnimal directly.
 
 
-```html
-<%= myAnimal.name %> is a <%= myAnimal.type %>.
-```
+
 
 Display the animal based on the url. With the example `/animals/1` we would be
 displaying the 2nd item in the array (index starting at 0) and get output like
