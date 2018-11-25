@@ -165,15 +165,16 @@ item from the `dinoData` array as `myDino`. We use the `:idx` url parameter to
 specify which animal to display. This means in the `show.ejs` file we can
 access myDino directly.
 
-### 4. New / Create (POST) route
+### 4. New / Read (GET) route
 
 To create an item (dinosaur in this example) we need to get the data about that item, so we'll use a [form](https://www.w3schools.com/html/html_forms.asp).
 
 Form tags have two attributes that are very import for their CRUD functionality:
 * ***method:*** HTTP verb - GET or POST. You will use POST most often because it is significantly more secure. Read about the difference between these two methods by scrolling down to the "When to Use GET" AND "When to Use Post" sections of [this page](https://www.w3schools.com/html/html_forms.asp).
-* ***action:*** This value should be a path. Specifically, it is the url pattern associated with the route that will handle the data - in this case, the POST route we will write.
+* ***action:*** This value should be a path. Specifically, it is the url pattern associated with the route that will handle the data - in this case, that will be the `/dinosaurs` POST route we will write.
 
-**dinosaurs/new.ejs**
+Create a `dinosaurs/new.ejs` view that contains an html form:
+
 ```html
 <form method="POST" action="/dinosaurs">
   <label for="dinosaureType">Type</label>
@@ -185,11 +186,45 @@ Form tags have two attributes that are very import for their CRUD functionality:
   <input id="dinosaurType" type="submit">
 </form>
 ```
-Then we'll make a POST to the url `/dinosaurs` with the data about that dinosaur that we got from the user.
 
-When the above form is submitted it will make a `POST` to the url `/dinosaurs` with the data contained in the form fields.
+Now write a GET route so we can view this form at `localhost:3000/dinosaurs/new`:
 
-To receive this data we need to create a `POST` route in express and use the `body-parser` npm module to receive that data. But first, let's set up the `body-parser` module!
+```js
+app.get('/dinosaurs/new', function(req, res){
+  res.render('dinosaurs/new');
+});
+```
+Not working? Make sure this route is _above_ the show (`/dinosaurs/:idx`) route, otherwise the show route will catch the request and pass in "new" as `req.params.idx`.
+
+### 5. Create (POST) route
+
+When the above form is submitted it will make a `POST` to the url `/dinosaurs` with the data contained in the form fields. To receive this data, we need to create the `POST` route and use the node package `body-parser` to make the data readable. (If it bothers you that we're glazing over how the data comes through before we send it through something like `body-parser`, read [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90). It will always make sense to use some sort of framework like `body-parser` in practice, but if you're interested in capturing the raw data, see [this article](https://itnext.io/how-to-handle-the-post-request-body-in-node-js-without-using-a-framework-cd2038b93190).)
+
+***body-parser*** will store the data submitted from the form in a user-friendly `req.body` object.
+
+install `body-parser` via npm and add it to your server file:
+
+***index.js***
+```js
+var express = require('express');
+var app = express();
+var ejsLayouts = require('express-ejs-layouts');
+var fs = require('fs');
+var bodyParser = require('body-parser'); //
+
+app.set('view engine', 'ejs');
+app.use(ejsLayouts);
+app.use(bodyParser.json());
+
+app.get('/', function(req, res){
+  res.render('home');
+});
+.
+.
+.
+```
+
+in express and use the `body-parser` npm module to receive that data. But first, let's set up the `body-parser` module!
 
 
 ### BodyParser
