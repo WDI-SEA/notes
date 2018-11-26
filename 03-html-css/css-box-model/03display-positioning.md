@@ -6,11 +6,31 @@ As you saw, the outermost box of each element went all the way across the page. 
 
 We can change all this with the first positioning property we'll learn, the `display` property and the four values we can use: inline, block, inline-block, and none.
 
-* An **inline** element has no line break before or after it. This makes the element sit on the same line as another element, but without formatting it like a block. It only takes up as much width as it needs (not the whole line). Inline places all your elements on a single line. The bad news is that it doesn't maintain their "box"ness. So much for that padding...
+--
 
-* A **block** element has some whitespace above and below it and does not tolerate any HTML elements next to it. This makes the element a block box. It won't let anything sit next to it on the page and takes up the full width.
+**Block Elements**
+* by default, takes up the full width of the page
+* line break before and after
+* box model applies
+* examples:
+  * Semantic block containers: div, main, section, header, footer, article, nav, aside, etc.
+  * Text wrappers: p, h1,...,h6, blockquote, li
+  * List containers: ul, ol
 
-* An **inline-block** element is placed as an inline element (on the same line as adjacent content), but it behaves as a block element. This makes the element a block box but will allow other elements to sit next to it on the same line.
+**Inline Elements**
+* only takes up as much width as it needs
+* no line break before or after it
+* no box model
+* examples:
+  * img
+  * a
+  * span
+  * em, strong, etc.
+
+**Inline-Block Elements**
+* only takes up as much width as it needs
+* no line break before or after it
+* box model!!!
 
 * If you assign **none** as the value of the display, this will make the element and its content disappear from the page entirely!
 
