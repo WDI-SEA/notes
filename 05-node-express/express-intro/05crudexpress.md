@@ -214,49 +214,21 @@ var bodyParser = require('body-parser'); //
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
-app.use(bodyParser.json());
-
-app.get('/', function(req, res){
-  res.render('home');
-});
-.
-.
-.
-```
-
-in express and use the `body-parser` npm module to receive that data. But first, let's set up the `body-parser` module!
-
-
-### BodyParser
-
-Parsing parameters from a form needs an external module called `body-parser`.
-
-```bash
-npm install --save body-parser
-```
-
-**index.js**
-```js
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
-
-app.set('view engine', 'ejs');
-
-// tell your app to use the module
 app.use(bodyParser.urlencoded({extended: false}));
+
+.
+.
+.
 ```
 
-Note that we set an attribute `extended` to `false` when telling our app to use the body parser. This attribute determines which library is used to parse data. Discussion on extended [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
+The `bodyParser.urlencoded()` middleware tells body-parser to capture urlencoded data (form data) and store it in `req.body`. The `{extended: false}` option ensures that the values in this body will either be strings or arrays. More on this [here](https://www.npmjs.com/package/body-parser#bodyparserurlencodedoptions). Further discussion on it [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
 
-Now, if we try to add this backend route, calling `req.body` should contain the form input.
+Now, if we can access the form data in a POST route!
 
-**backend - express route**
+***index.js***
 ```js
 app.post('/dinosaurs', function(req, res) {
-  //debug code (output request body)
   console.log(req.body);
-  res.send(req.body);
 });
 ```
 
