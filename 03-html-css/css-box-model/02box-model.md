@@ -8,9 +8,9 @@ With CSS properties and values, it is possible to apply specific styles to each 
 
 The image below illustrates the box model and what you should have seen in your dev tools:
 
-![box-model](http://s6.postimg.org/gi8r6c341/css_box_model.png)
+![box-model](https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_box_model_chrome.png)
 
-_From [www.theslate.org](http://www.theslate.org)_
+_From [viking codeschool](https://www.vikingcodeschool.com/html5-and-css3/the-css-box-model)_
 
 But what do these different layers mean, and how are they relating to one another?
 
