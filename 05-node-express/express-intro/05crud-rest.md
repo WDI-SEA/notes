@@ -170,7 +170,7 @@ access myDino directly.
 To create an item (dinosaur in this example) we need to get the data about that item, so we'll use a [form](https://www.w3schools.com/html/html_forms.asp).
 
 Form tags have two attributes that are very import for their CRUD functionality:
-* ***method:*** HTTP verb - GET or POST. You will use POST most often because it is significantly more secure. Read about the difference between these two methods by scrolling down to the "When to Use GET" AND "When to Use Post" sections of [this page](https://www.w3schools.com/html/html_forms.asp).
+* ***method:*** HTTP verb - `GET` or `POST`. You will use POST most often because it is significantly more secure. Read about the difference between these two methods by scrolling down to the "When to Use GET" AND "When to Use Post" sections of [this page](https://www.w3schools.com/html/html_forms.asp).
 * ***action:*** This value should be a path. Specifically, it is the url pattern associated with the route that will handle the data - in this case, that will be the `/dinosaurs` POST route we will write.
 
 Create a `dinosaurs/new.ejs` view that contains an html form:
@@ -187,7 +187,7 @@ Create a `dinosaurs/new.ejs` view that contains an html form:
 </form>
 ```
 
-Now write a GET route so we can view this form at `localhost:3000/dinosaurs/new`:
+Now write a `GET` route so we can view this form at `localhost:3000/dinosaurs/new`:
 
 ```js
 app.get('/dinosaurs/new', function(req, res){
@@ -272,15 +272,15 @@ app.post('/dinosaurs', function(req, res) {
 });
 ```
 
-`JSON.stringify` does the opposite of `JSON.parse`; it converts javascript data into json data.
+`JSON.stringify` does the opposite of `JSON.parse` - it converts javascript data into json data.
 
-####Additional: Show / Read (GET) with a Form
+### Show / Read (GET) with a Form
 
-There may be instances where you need to GET dinosaurs, but you don't want them all. A good example is filtering dinosaurs with a specific name via a search bar.
+There may be instances where you need to `GET` dinosaurs, but you don't want them all. A good example is filtering dinosaurs with a specific name via a search bar.
 
-In these cases, you don't want to use a POST action, because POST is reserved for creating new resources. Instead, we can create another form with a GET method, and read the data via a **querystring**.
+In these cases, you don't want to use a POST action, because POST is reserved for creating new resources. Instead, we can create another form with a `GET` method, and read the data via a **querystring**. This is an appropriate use of the `GET` form method because the user input is not sensitive.
 
-**dinosaurs index page**
+Add a form to `dinosaurs/index.ejs`
 
 ```html
 <form method="GET" action="/dinosaurs">
@@ -290,29 +290,21 @@ In these cases, you don't want to use a POST action, because POST is reserved fo
 </form>
 ```
 
-Note that this form will submit to the same page. We'll need to see if there's a querystring, then filter the dinosaurs if one is present.
+The idea here is that the search bar allows the user to filter what's on the page, so it will be a `GET` request to `/dinosaurs`... but we already have a route for that! When you submit a form using the `GET` method, the key/value pairs are appended to the URL in a _query string_. Try searching for a dinosaur now and notice what happens to the URL. This query string, like parameters (`req.params`) is available via the request object. We'll use a conditional to check if there's a querystring, then filter the dinosaurs if one is present.
 
 ```js
-app.get('/dinosaurs', function(req, res){
+app.get('/dinosaurs', function(req, res) {
   var dinosaurs = fs.readFileSync('./dinosaurs.json');
-  dinosaurs = JSON.parse(dinosaurs);
+  var dinoData = JSON.parse(dinosaurs);
 
   var nameFilter = req.query.nameFilter;
 
   if (nameFilter) {
-    dinosaurs = dinosaurs.filter(function(animal) {
-      return animal.name.toLowerCase() === nameFilter.toLowerCase();
+    dinoData = dinoData.filter(function(dino) {
+      return dino.name.toLowerCase() === nameFilter.toLowerCase();
     });
   }
 
-  res.render('dinosaurs/index', {mydinosaurs: dinosaurs});
+  res.render('dinosaurs/index', {myDinos: dinoData});
 });
 ```
-
-## Wrapup
-
-* Node.js/Express
-* Routes
-* Views/templates
-* CRUD/RESTful
-* creating an app with GET and POST
