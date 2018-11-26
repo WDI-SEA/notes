@@ -232,14 +232,19 @@ app.post('/dinosaurs', function(req, res) {
 });
 ```
 
+Try adding a new dinosaur and make sure you see the appropriate data come through in the terminal when you submit the form.
+
+
+**body-parser Summary:**
 Form data is passed as payload of the request. Every field that has a name will
 be included in that payload and it is sent as form encoded text. When
 `body-parser` is installed it automatically **parses** the form body into a
 javascript object that we can use and it stores it in `req.body` so we can use it. All of this is done as middleware, which we just configured.
 
-In the above example we could access the animal type form field by using
+**The `name` attribute matters!**
+In the above example we could access the dinosaur type form field by using
 `req.body.type` and the name field by using `req.body.name`. This correlates
-directly to the names given to the form fields in the **form html** above.
+directly to the _names_ given to the form fields in the **form html** above.
 
 Generally, the code in the **express route** would contain code that would
 CREATE an item in a database and redirect the user to a route with a confirmation
@@ -266,6 +271,8 @@ app.post('/dinosaurs', function(req, res) {
   res.redirect('/dinosaurs');
 });
 ```
+
+`JSON.stringify` does the opposite of `JSON.parse`; it converts javascript data into json data.
 
 ####Additional: Show / Read (GET) with a Form
 
