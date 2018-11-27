@@ -56,7 +56,7 @@
   * [CSS Box Model and Positioning](03-html-css/css-display-positioning/readme.md)
     * [Box Model](03-html-css/css-display-positioning/01box-model.md)
     * [Display and Positioning](03-html-css/css-display-positioning/02display-positioning.md)
-    * [Flexbox (Game)](03-html-css/css-responsive-design/flexbox.md)
+    * [Flexbox (Game)](03-html-css/css-responsive-design/03flexbox.md)
     * [Floats and Clears](03-html-css/css-box-model/04floats-clears.md)
     * [Additional Topics](03-html-css/css-box-model/05additional.md)
   * [Advanced CSS](03-html-css/css-responsive-design/readme.md)
