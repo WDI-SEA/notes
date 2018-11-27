@@ -8,22 +8,32 @@ With CSS properties and values, it is possible to apply specific styles to each 
 
 The image below illustrates the box model and what you should have seen in your dev tools:
 
-![box-model](http://s6.postimg.org/gi8r6c341/css_box_model.png)
+![box-model](https://s3.amazonaws.com/viking_education/web_development/web_app_eng/css_box_model_chrome.png)
 
-_From [www.theslate.org](http://www.theslate.org)_
+_From [viking codeschool](https://www.vikingcodeschool.com/html5-and-css3/the-css-box-model)_
 
 But what do these different layers mean, and how are they relating to one another?
 
 ---
 
-* **Margin** - clears an area around the border; the margin does not have a background color, it is completely transparent
-  * The margin is **outside the element**
-* **Border** - a border that goes around the padding and content; the border is affected by the background color of the box
-  * The border is **inside the element**
-* **Padding** - clears an area around the content; the space between the content and the border; the padding is affected by the background color of the box
-  * The padding is **inside the element**
-* **Content** - The content of the box, where text and images appear
-  * The content is **inside the element**
+**Margin**
+* _outside of the element_
+* clears an area around the border
+* does NOT have a background color (transparent)
+
+**Border** 
+* _inside the element_
+* a border that goes around the padding and content;
+* it IS affected by the background color of the element
+
+**Padding**
+* _inside the element_
+* clears an area between the content and the border * it IS affected by the background color of the element
+
+**Content**
+* _inside the element_
+* where text and images appear
+* it IS affected by the background color of the element
 
 ---
 
@@ -43,10 +53,10 @@ If you want to specify a particular margin, to a particular side, you can do it 
 
 ```css
 div {
-  margin-top: /*some value*/;
-  margin-right: /*some value*/;
-  margin-bottom: /*some value*/;
-  margin-left: /*some-value*/;
+  margin-top: 1px;
+  margin-right: 2px;
+  margin-bottom: 3px;
+  margin-left: 4px;
 }
 ```
 
