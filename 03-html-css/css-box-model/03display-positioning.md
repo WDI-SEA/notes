@@ -13,19 +13,19 @@ We can change all this with the first positioning property we'll learn, the `dis
 * line break before and after
 * box model applies
 * examples:
-  * Semantic block containers: div, main, section, header, footer, article, nav, aside, etc.
-  * Text wrappers: p, h1,...,h6, blockquote, li
-  * List containers: ul, ol
+  * Semantic block containers: `<div>`, `<main>`, `<section>`, `<header>`, `<footer>`, `<article>`, `<nav>`, `<aside>`, etc.
+  * Text wrappers: `<p>`, `<h1>`,...,`<h6>`, `<blockquote>`, `<li>`
+  * List containers: `<ul>`, `<ol>`
 
 **Inline Elements**
 * only takes up as much width as it needs
 * no line break before or after it
 * no box model
 * examples:
-  * img
-  * a
-  * span
-  * em, strong, etc.
+  * `<img>`
+  * `<a>`
+  * `<span>`
+  * `<em>`, `<strong>`, etc.
 
 **Inline-Block Elements**
 * only takes up as much width as it needs
