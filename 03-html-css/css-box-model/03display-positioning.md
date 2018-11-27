@@ -34,6 +34,8 @@ We can change all this with the first positioning property we'll learn, the `dis
 
 * If you assign **none** as the value of the display, this will make the element and its content disappear from the page entirely!
 
+
+
 Here are a few examples in CSS, written as classes:
 
 ```css
@@ -48,11 +50,17 @@ Here are a few examples in CSS, written as classes:
 .inline-block {
   display: inline-block;
 }
+
+.hidden {
+ display: hidden;
+}
 ```
 
 We would end up with something like this:
 
-![display](https://i.imgur.com/zeD1f2m.png)
+![display](https://res.cloudinary.com/daa0gvpyr/image/upload/v1543278655/Screen_Shot_2018-11-26_at_4.29.23_PM_ietkzm.png)
+
+Play around with these different display options in [this codepen](https://codepen.io/taylordarneille/pen/KrBZoZ).
 
 
 ## Positioning
