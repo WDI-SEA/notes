@@ -76,7 +76,7 @@ Obviously, replace `yourappname` with your actual app name. The release command 
 
 Unfortunately, Django makes you jump through some hoops to get static files working in the production environment.
 
-...TODO
+You can follow the directions on [their docs](http://whitenoise.evans.io/en/stable/django.html) to get it set up.
 
 ## Set up Database Settings
 
@@ -188,3 +188,4 @@ As normal, check your heroku logs to see what errors have come up. Logs will als
 * [Provisioning Postgres DB on Heroku](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-heroku-postgres)
 * [Django-configurations](https://django-configurations.readthedocs.io/en/stable/) - Official docs on settings.py
 * [Configure Django Settings](https://www.webforefront.com/django/configuredjangosettings.html) - A helpful tool that explains how to set up your settings.py in layman's terms!
+* [Django Whitenoise Docs](http://whitenoise.evans.io/en/stable/django.html)
