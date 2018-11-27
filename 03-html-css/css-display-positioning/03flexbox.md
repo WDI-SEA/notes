@@ -1,4 +1,4 @@
-#Flexbox
+# Flexbox
 
 Another method for creating responsive, aligned content is by using a new layout method called **Flexbox**. Flexbox allows items in a container to be laid out efficiently, even when the size of the container and/or items is unknown (thus the prefix *flex*)
 
