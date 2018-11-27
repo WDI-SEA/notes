@@ -33,4 +33,6 @@ Specifically, pseudo-elements can style first lines, first letters, as well as t
 
 <p data-height="400" data-theme-id="0" data-slug-hash="BzyKVL" data-default-tab="css,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/BzyKVL/">Pseudo-Elements</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
 
+For more reading on pseudo classes and elements, see [this smashing magazine article](https://www.smashingmagazine.com/2016/05/an-ultimate-guide-to-css-pseudo-classes-and-pseudo-elements/).
+
 For more pseudo-classes and pseudo-elements, see the Additional Topics links.
