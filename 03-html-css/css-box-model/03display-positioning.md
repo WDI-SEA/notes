@@ -1,4 +1,6 @@
-# Taking Up Space using Display
+# Taking Up Space
+
+## Display
 
 Cool, right? Each HTML element gets its own box to live in.
 
@@ -55,20 +57,17 @@ Here are a few examples in CSS, written as classes:
  display: hidden;
 }
 ```
-
 We would end up with something like this:
 
 ![display](https://res.cloudinary.com/daa0gvpyr/image/upload/v1543278655/Screen_Shot_2018-11-26_at_4.29.23_PM_ietkzm.png)
 
 Play around with these different display options in [this codepen](https://codepen.io/taylordarneille/pen/KrBZoZ).
 
-
-## Positioning
+## Position
 
 Another CSS property, "position", can take `relative` or `absolute` values, among others.
 
 A page element with "relative positioning" gives you the control to "absolutely position" children elements inside of it. This might not be obvious to everyone - that's probably because this isn't intuitive, at all. Let's look at an example.
-
 
 ![css position relative](https://i.imgur.com/LRd7lBy.png)
 
