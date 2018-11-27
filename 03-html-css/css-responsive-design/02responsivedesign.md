@@ -5,10 +5,6 @@
 You can also check out this visual explanation:
 http://johnpolacek.github.io/scrolldeck.js/decks/responsive/
 
-## Background
-
-PUT STUFF HERE
-
 ### Examples of responsive sites:
 
 - [Boston Globe](http://www.bostonglobe.com/)  
@@ -20,8 +16,7 @@ You'll be hard-pressed to find a major website that doesn't deal with mobile
 devices somehow. Reddit isn't specifically responsive, but you do have the
 option of switching to a mobile-optimized site.
 
-If you look at the Reddit site on your phone, try hitting the hamburger menu in
-the top right corner, and selecting desktop site. How does this change your
+If you look at the Reddit site on your phone, try selecting "mobile site" from the site map at the bottom of the page. How does this change your
 experience?
 
 ### The Web has always been responsive
@@ -141,4 +136,3 @@ for more links.
 ### Columns Example
 
 <p data-height="400" data-theme-id="0" data-slug-hash="zBxqda" data-default-tab="html,result" data-user="bhague1281" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/bhague1281/pen/zBxqda/">Media Queries</a> by Brian Hague (<a href="http://codepen.io/bhague1281">@bhague1281</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
