@@ -8,7 +8,16 @@ Recall the single equals, or "assignment operator", which assigns values to vari
 
 ```js
 var x = 3;
+var a = b = 5;
 ```
+
+That second line sets assigns both `a` and `b` to the value `5`. 
+This demonstrates that the assignment operator
+* returns the value that is assigned 
+* _right-to-left_ associativity, meaning `a = b = 5` is the same things as `a = (b = 5)`
+More on this [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Associativity).
+
+***Note: almost all operators have left-to-right associativity, this is a rarity***
 
 ### Equality Operator (==)
 
@@ -113,7 +122,7 @@ Lastly, we can combine different boolean expressions by using logic operators.
 //true, the "not" operator negates the first expression (!false ends up being true)
 ```
 
-We'll be using these expressions throughout the course.
+We'll be using these expressions throughout the course. If you find that an expression evaluates to a value that you weren't expecting, check out the [operator precedence table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table) to see what order the expression is being evaluated. This is like the order of operations, or PEMDAS of javascript. 
 
 #### Class Exercise
 

@@ -1,6 +1,6 @@
 # The Box Model
 
-All HTML elements can be considered boxes. Even if you see a circle, it's living within a box.
+Most HTML elements can be considered boxes, or is _living inside a box_.
 
 The CSS box model describes this principal - a box wraps around all HTML elements, and it consists of: margins, borders, padding, and the actual content.  This model allows us to place a border around elements and space elements in relation to other elements.
 
@@ -28,7 +28,8 @@ But what do these different layers mean, and how are they relating to one anothe
 
 **Padding**
 * _inside the element_
-* clears an area between the content and the border * it IS affected by the background color of the element
+* clears an area between the content and the border
+* it IS affected by the background color of the element
 
 **Content**
 * _inside the element_
