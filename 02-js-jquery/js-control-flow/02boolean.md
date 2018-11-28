@@ -122,7 +122,7 @@ Lastly, we can combine different boolean expressions by using logic operators.
 //true, the "not" operator negates the first expression (!false ends up being true)
 ```
 
-We'll be using these expressions throughout the course.
+We'll be using these expressions throughout the course. If you find that an expression evaluates to a value that you weren't expecting, check out the [operator precedence table](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table) to see what order the expression is being evaluated. This is like the order of operations, or PEMDAS of javascript. 
 
 #### Class Exercise
 
