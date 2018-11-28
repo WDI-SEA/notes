@@ -1,11 +1,12 @@
 ### Objects
 
-Why use objects to store `key` and `value` pairs? They are like arrays except that data is not stored in any sorted order and keys do not have to numbered indexes.
+Objects, like arrays, store data, but objects are organized differently. Objects store `key: value` pairs, and instead of accessing a value by its index, we access a value by it's associate key. Thus, objects are not ordered like arrays are.
 
 #### Creating
 
 ```js
 var friend = {firstName: "Jane", lastName: "Doe"}
+friend
 ```
 
 #### Accessing
@@ -13,20 +14,49 @@ var friend = {firstName: "Jane", lastName: "Doe"}
 ```js
 friend.firstName
 friend.lastName
+```
+or
+```js
+friend["firstName"]
+friend["lastName"]
+```
 
-friend['firstName']
-friend['lastName']
+#### Adding Data
+
+```js
+friend.middleName = "Jersey"
+```
+or
+```js
+friend["middleName"] = "Jersey"
+```
+
+#### Modifying values
+
+```js
+friend.firstName = "John"
+```
+or
+```js
+friend["firstName"] = "John"
+```
+
+#### Deleting data
+```js
+delete friend.middleName
+```
+or
+```js
+delete friend['middleName']
 ```
 
 ### Exercise
 
-1.) How would you represent the following using an object?
+1.) Represent the following values in an object:
 
-````js
-John, Doe, 36, 1234 Park st.
 ````
-
-**(Hint: think in terms of firstname, lastname, age, address)**
+"John", "Doe", 36, "1234 Park st".
+````
 
 2.) Once you've represented the above as an object, update John's address to `1234 Park ln`.
 
@@ -46,3 +76,5 @@ Grey, Doe, 34, 1214 Park st.
 Lydia, Doe, 30, 1294 Park st.
 Harriet, Doe, 32, 1324 Park st.
 ```
+
+4.) Mary is taking to the road, so she no longer has an address. Delete her address!
