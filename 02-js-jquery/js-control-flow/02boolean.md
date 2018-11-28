@@ -8,7 +8,16 @@ Recall the single equals, or "assignment operator", which assigns values to vari
 
 ```js
 var x = 3;
+var a = b = 5;
 ```
+
+That second line sets assigns both `a` and `b` to the value `5`. 
+This demonstrates that the assignment operator
+* returns the value that is assigned 
+* _right-to-left_ associativity, meaning `a = b = 5` is the same things as `a = (b = 5)`
+More on this [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Associativity).
+
+***Note: almost all operators have left-to-right associativity, this is a rarity***
 
 ### Equality Operator (==)
 
