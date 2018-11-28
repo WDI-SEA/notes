@@ -6,7 +6,6 @@ Objects, like arrays, store data, but objects are organized differently. Objects
 
 ```js
 var friend = {firstName: "Jane", lastName: "Doe"}
-friend
 ```
 
 #### Accessing
