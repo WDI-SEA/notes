@@ -48,52 +48,95 @@ Without DOM manipulation, web pages would just be static visuals with no changes
 
 The *document* object represents the DOM.
 
-**Select by tag id:**
+#### Selecting DOM Elements by HTML
+* document.getElementById
+* document.getElementsByClassName
+* document.getElementsByTagName
 
-```js
-var navBar = document.getElementById("ac-globalnav");
+***html***
+```html
+<div id="hello" class="square">
+  Hello, world!
+</div>
+
+<div id="gb" class="square">
+  Goodbye, world!
+</div>
 ```
 
-Let's look at the styles?
+***css***
+```css
+#hello {
+  background: yellow;
+}
 
-```js
-navBar.style;
+#gb {
+  background: orange;
+}
+
+.square {
+  height: 100px;
+  width: 100px;
+}
 ```
 
-Change the styling:
-
+***js***
 ```js
-navBar.style.backgroundColor = "blue";
-navBar.style.height = "75px";
+var myDiv = document.getElementById('hello');
+
+console.log(myDiv);
+
+var theSquares = document.getElementsByClassName("square");
+
+console.log(theSquares[0]);
+console.log(theSquares[1]);
+
+var theDivs = document.getElementsByTagName("div")
+
+console.log(theDivs[0]);
+console.log(theDivs[1]);
+
 ```
 
-Let's look at the innerHTML:
+#### Selecting DOM Elements by CSS
+* document.querySelector
+* document.querySelectorAll
 
+***js***
 ```js
-navBar.innerHTML
+var myDiv2 = document.querySelector('#gb');
+
+console.log(myDiv2);
+
+var mySquares2 = document.querySelectorAll('.square')
+;
+
+console.log(mySquares2[0])
+console.log(mySquares2[1])
+
+var myDivs2 = document.querySelectorAll('div');
+
+console.log(myDivs2[0])
+console.log(myDivs2[1])
 ```
 
-Let's change the innerHTML:
+#### Changing DOM Elements
 
+***changing styles***
 ```js
-navBar.innerHTML
+myDiv.style.backgroundColor= 'chartreuse';
+myDiv2.style.height="300px";
 ```
 
-**Select by class**
-
-When we use classes to grab elements, we get an HTML collection, the contents of which we can access like an array.
-```js
-var unitLinks = document.getElementsByClassName("unit-link");
-unitLinks
-unitLinks[0].style.backgroundColor = "purple";
-```
-
-**Select by tag name**
-Like above, getElementsByTagName also returns an HTML collection.
+***changing content***
 
 ```js
-var headerThrees = document.getElementsByTagName("h3");
+myDiv.innerText = "I love WDI"
+myDiv2.innerHTML = "<h2>I love GA</h2>"
 ```
+
+
+
 
 What if I want to do something to each h3? Since this isn't technically an array (it's an HTML collection), array methods like forEach wont work.
 
