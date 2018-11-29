@@ -16,18 +16,29 @@ Document Object Model: A model of all the objects on a web page - usually repres
 
 ## DOM manipulation
 
-**What**: Using Javascript we can read and/or change the DOM, i.e. make the webpage do something interesting.
+### What is DOM manipulation?
 
-Examples:
+Using Javascript we can read and/or change the DOM, i.e. make the webpage do something interesting.
+
+**Examples:**
 * Change or Remove HTML elements
 * Create and Add HTML elements
 * Change the CSS styles of HTML elements
 * Read & Change attributes of HTML elements (href, src, alt, etc)
 * Attach event listeners to HTML elements (click, keypress, submit, etc.)
 
-**Why**: Without DOM manipulation, web pages would just be static visuals with no changes and no interaction with the user.
+### Why would we want to manipulate the DOM?
 
-**How**: The *document* object represents the DOM.
+Without DOM manipulation, web pages would just be static visuals with no changes and no interaction with the user.
+
+**Example:**
+* Clicking on buttons would do nothing
+* You could never type into an input field
+* You could never zoom into an image or stop/start a video
+
+### How do we manipulate the dom?: 
+
+The *document* object represents the DOM.
 
 **Select by tag id:**
 
