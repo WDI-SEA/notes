@@ -235,10 +235,14 @@ Now that we know how to select DOM elements, we can attach events to them:
 ***addEventListener([event type],[function that you want to run when the event fires])***
 
 ```js
-homeIcon.addEventListener("click", function() {
+helloDiv.addEventListener("click", function() {
 	console.log("HOME ICON CLICKED");
-}
+});
 ```
+
+#### Exercise:
+
+Research a different event listener (not `click`) and apply it to the other div.
 
 ### DOMContentLoaded
 
