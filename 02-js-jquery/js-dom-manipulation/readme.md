@@ -11,12 +11,9 @@ and do things like:
 We haven't seen the true power of DOM manipulation. The power to create and
 destroy DOM elements!!
 
-After this lesson, complete this lab: <https://github.com/ga-students/dom-times-table>
-
 ## Creating DOM Elements
-The DOM allows us to create elements (make and add new HTML elements to our page).
-We can create any HTML tag we want. We can make `<a>` tags, `<p>` tags, `<div>`'s.
-Really anything.
+
+We can add to the DOM! One big part of DOM manipulation is creating and adding new HTML elements to our page.
 
 To create any new element we follow three basic steps:
 
@@ -31,8 +28,8 @@ to a page.
 
 ```js
 var a = document.createElement("a");
-a.href = "http://thefair.com/";
-a.textContent = "thefair.com";
+a.href = "hhttp://hackertyper.com/";
+a.textContent = "Hack!";
 
 document.body.appendChild(a);
 ```
@@ -107,13 +104,15 @@ Here's what it looks like all together:
 var list = document.getElementById("my-favorite-movies");
 
 var newMovie = document.createElement("li");
-newMovie = "Dr. Strangelove";
+newMovie.innerText = "Dr. Strangelove";
 
 // get a reference to the first element inside the list
-var first = list.children[0];
+var second = list.children[1];
+
+console.log(second);
 
 // use insertBefore to add newMovie just before the first element.
-list.insertBefore(newMovie, first);
+list.insertBefore(newMovie, second);
 ```
 
 Of course, you can choose any of the children of an element as a `referenceNode`
@@ -239,17 +238,16 @@ It's way easier to remove elements than it is to add them. Use this syntax:
 // straight up remove an element without remorse.
 parent.removeChild(child);
 
-// you may optional save a reference to the element that was removed.
+// you may, if desired, save a reference to the element that was removed.
 var oldChild = parent.removeChild(child);
 ```
 
 `.removeChild()` allows you to remove any element you have reference
-to. Notice that it returns a reference to the node you removed. You
-may choose to save this to a variable or not. If you save a removed
+to. If you save a removed
 element to a variable then you have access to it and can add it to
 somewhere else on the page.
 
-## Moving Elements
+### Exercise: Moving Elements
 
 Practice saving the return value of `.removeChild()` and passing it to
 `.appendChild()` to move elements from one list to another.
