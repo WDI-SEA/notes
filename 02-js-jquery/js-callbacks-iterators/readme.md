@@ -1,11 +1,11 @@
-#Functional Programming
+# Functional Programming
 
 Programming with functions! Weren't we already doing that? Well yes, but we can use functions more heavily, especially in place of loops.
 
 ##Objectives
 
 * Use callback functions with setInterval and setTimeout
-* Demonstrate ability to pass a function as a parameter
+
 * Compare and contrast the four main JavaScript iterators: forEach, map, reduce, filter
     - Name an ideal situation for each one
 * Utilize callbacks with JavaScript iterators
