@@ -156,24 +156,29 @@ Multi-element selectors like `querySelectorAll`, `getElementsByTageName`, and `g
 
 **Accessing and changing element attributes**
 
-What if I want to change an attribute, like the href on this a tag?
+What if I want to change an attribute, like the src on this img?
+
+**html**
+```html
+<img src="http://www.placekitten.com/200/200">
+```
 
 There are 2 ways to get and set attributes of a DOM element. You can access the properties directly or use use get/setAttribute methods. It's important that you know both exist, but generally accessing the properties directly is more consistent across browsers.
 
 ```js
-var homeIcon = document.querySelector("#ac-gn-firstfocus-small"); //this is the apple logo at the top
+var photo = document.querySelector("img");
 
 //get using property
-homeIcon.href;
+console.log(photo.src);
 
 //set using property
-homeIcon.href = "https://google.com";
+photo.src = "https://picsum.photos/200/200";
 
 //get using getAttribute method
-homeIcon.getAttribute("href");
+photo.getAttribute("src");
 
 //set using setAttribute method
-homeIcon.setAttribute("href","https://google.com");
+photo.setAttribute("src","https://placebear.com/200/200");
 ```
 
 **Classes**
