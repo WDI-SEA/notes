@@ -119,63 +119,6 @@ Of course, you can choose any of the children of an element as a `referenceNode`
 for `insertBefore`. The new element will simply be added in the spot just before
 whatever you choose.
 
-## Creating Complex DOM Elements
-It's possible to build up complex arrangements of HTML elements in JavaScript
-and add them to the page.
-
-```html
-<div class="chat-message">
-  <div class="info">
-    <img class="profile-pic" src="netizen42.png" />
-    <div class="username">netizen42</div>
-    <div class="timestamp">10:34 PM</div>
-  </div>
-  <div class="message">I'm hacking into the mainframe now. You better be ready.</div>
-</div>
-```
-
-```js
-// create a new div for each container div
-var chat = document.createElement("div");
-var info = document.createElement("div");
-
-// create elements inside the info container
-var img = document.createElement("img");
-var user = document.createElement("div");
-var time = document.createElement("div");
-
-// create the div for the simple chat message
-var msg = document.createElement("div");
-
-img.classList.add("profile-pic");
-img.src = "netizen42.png";
-
-user.classList.add("username");
-user.textContent = "netizen42";
-
-time.classList.add("timestamp");
-time.textContent = "10:34 PM";
-
-
-msg.classList.add("message");
-msg.textContent = "I'm hacking into the mainframe now. You better be ready.";
-
-// add the image, the user and the timestamp to the info container
-info.appendChild(img);
-info.appendChild(user);
-info.appendChild(time);
-
-// add the info container and the message to the total chat container
-chat.appendChild(info);
-chat.appendChild(msg);
-
-// finally, attach the entire new structure to some container on the page.
-var parent = document.getElementById("some-container");
-parent.appendChild(chat);
-```
-
-And there you go! It requires lots of writing, but the ability to create truly
-new and complex DOM elements on-the-fly within JavaScript is awesome!
 
 ## The Case Against `.innerHTML`
 It's true that instead of doing any of those fancy DOM manipulation we could
@@ -204,24 +147,6 @@ just use set `.innerHTML` equal to strings.
   fine-grain control over how things are added to the page.
 
   It totally works, but I'm telling you, I promise, it gets nasty!
-
-  ```js
-  var username = "netizen42";
-  var now = new Date();
-  var timestamp = now.getHour() + ":" + now.getMinutes();
-
-  var message = "I'm hacking into the mainframe now. You better be ready."
-
-  var container = document.getElementById("some-container");
-  container.innerHTML = "<div class='chat-message'>" +
-      "<div class='info'>" +
-        "<img class='profile-pic' src='" + username + ".png' />" +
-        "<div class='username'>" + username + "</div>" +
-        "<div class='timestamp'>" + timestamp + " </div>" +
-      "</div>" +
-      "<div class='message'>" + message + "</div>" +
-    "</div>";
-  ```
 
 - A final reason to prefer manual DOM manipulation over `.innerHTML` is
   that it's much faster. The browser is optimized to make changes to
