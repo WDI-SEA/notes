@@ -68,7 +68,7 @@ function annoy() {
   console.log('Are we there yet?');
 }
 
-var oneSecondInterval = setInterval(annoy, 1000);
+setInterval(annoy, 1000);
 ```
 
 Things to be careful of: you need to know what the function expects as parameters. Javascript is forgiving, but not a mind-reader.

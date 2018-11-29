@@ -41,6 +41,8 @@ function yellRandom(randomNumGenerator) {
 yellRandom(returnRandom)
 ```
 
+## Examples: Timing Functions
+
 Many built in javascript functions take callback functions. For example, `setInterval` and `setTimeout` both take a function and run it at a specific time.
 
 ## setTimeout & setInterval
@@ -97,7 +99,6 @@ var parents = setInterval(shutDown, 3200);
 You can disable an interval using `clearInterval`:
 
 ```js
-var kids;
 function annoy() {
 	console.log('Are we there yet?');
 }
@@ -107,3 +108,42 @@ function hush() {
 var kids = setInterval(annoy, 1000);
 setTimeout(hush, 10000)
 ```
+And you can disable your `setTimeout` before the function fires using `clearTimeout`:
+
+```js
+function alarmRing() {
+	console.log('RRRIIINNNGGGGG');
+}
+
+function turnOffSnooze() {
+	console.log("turning snooze off now");
+	clearTimeout(snoozeAlarm);
+}
+
+var snoozeAlarm = setTimeout(alarmRing, 5000);
+
+var snoozeOff = setTimeout(turnOffSnooze, 3000)
+```
+
+### Exercises:
+
+***1.*** Use `setInteral` and `setTimeout` to write a program that prints the following:
+
+(This should mimic a countdown, so each line will print after a one second delay.)
+
+```bash
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+Blast off!
+``` 
+
+***2.*** How could you mimic the `setInterval` functionality using `setTimeout`? Use `setTimeout` to recreate the `var kids = setInterval(annoy, 1000);` functionality.
+
