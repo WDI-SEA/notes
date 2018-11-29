@@ -128,56 +128,31 @@ myDiv.style.backgroundColor= 'chartreuse';
 myDiv2.style.height="300px";
 ```
 
-***changing content***
+#### Changing Content
 
+***single DOM element changes***
 ```js
 myDiv.innerText = "I love WDI"
 myDiv2.innerHTML = "<h2>I love GA</h2>"
 ```
 
+#### Manipulating Multiple DOM Elements
 
-
-
-What if I want to do something to each h3? Since this isn't technically an array (it's an HTML collection), array methods like forEach wont work.
-
-```js
-Array.isArray(headerThrees);
-```
-
-But we can MAKE it an array!!
+What if I want to do something to both divs at once?
 
 ```js
-var h3array = Array.from(headerThrees);
-Array.isArray(h3array);
-h3array.forEach(function(h){h.style.backgroundColor="yellow";});
+// this wont work!
+theSquares.style.border = "2px dashed black"
+
+// but this will
+for(var i = 0; i<theSquares.length; i++) {
+  theSquares[i].style.border ="dashed 2px black"
+}
 ```
 
-**Preferred: select using CSS selectors**
+** Be Careful! **
+Multi-element selectors like `querySelectorAll`, `getElementsByTageName`, and `getElementsByClassName` don't actually return an array; they return something called an _HTML collection_. This means that many array methods (iterators, in particular, which we'll learn about later) wont work. If you run into this problem, you can use the [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) method to convert it to an array.
 
-Get elements by tag name or class is very unspecific. You can go after specific CSS selectors, just like you would in stylesheets:
-
-```js
-document.querySelectorAll("h3");
-document.querySelectorAll("h3").forEach(function(h3){h3.style.backgroundColor = "white"});
-```
-
-You can just grab the first element with that selector by dropping the "All".
-
-```js
-var learnMore = document.querySelector("#section-1-hero-position-1 > div > div.links.cta > a:nth-child(1)");
-learnMore
-```
-
-While we're at it, let's mess with the text:
-
-```js
-learnMore.innerHTML
-learnMore.textContent
-learnMore.innerText
-learnMore.innerHTML = "Learn NOTHINGS"
-learnMore.textContent = "Learn Latin"
-learnMore.innerText = "Learn ALL THE THINGS"
-```
 
 **Accessing and changing element attributes**
 
@@ -208,38 +183,39 @@ Acessing, getting, setting CSS classes is slightly different than other properti
 First you can directly access the class attribute by using the `className` property of a DOM element.
 
 ```js
-homeIcon.className
+console.log(document.querySelector('div').className);
 ```
 
 This works fine, but since elements can have multiple classes (separated by spaces) this often leads to needing to do some string parsing, so intead, we often use the `classList` attribute, which gives us "a DOM token list".
 
 ```js
-homeIcon.classList
+console.log(document.querySelector('div').classList);
 ```
 
 And just like the HTML collection, we can access the values in the classList like an array.
 
 ```js
-homeIcon.classList
+var helloDiv = document.querySelector('div');
+console.log(helloDiv.classList[0]);
 ```
 You can add to the classList:
 
 ```js
-homeIcon.classList.add('my-new-class');
-homeIcon.classList
+helloDiv.classList.add('yellow');
+console.log(helloDiv.classList);
 ```
 
 You can also check if an item has a class (returns true or false)
 
 ```js
-homeIcon.classList.contains('my-new-class');
+console.log(helloDiv.classList.contains('square'))
 ```
 
 You can remove a class from the classList:
 
 ```js
-homeIcon.classList.remove('my-new-class');
-homeIcon.classList.contains('my-new-class');
+helloDiv.classList.remove('yellow');
+console.log(helloDiv.classList.contains('yellow'))
 ```
 
 **Events**
