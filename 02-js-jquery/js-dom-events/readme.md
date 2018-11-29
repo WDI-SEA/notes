@@ -8,9 +8,11 @@
 
 ## What is the DOM?
 
-Document Object Model: A model of all the objects on a web page - usually represented by a tree of nodes -  that is created by the browser when a web page is loaded.
+When the broswer loads a webpage, it takes in all the information about what needs to be displayed on the page, and creates a bunch of Javascript objects that represent the elements on the page. These objects mirror the html hierarchy, where the highest order parent is the _document_ object.
 
 ![DOM](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSew-BsBdRn9RadAFC2626myd4j66yaFIWzSd6nkdvN-rbg14NX)
+
+**Document Object Model**: A model of all the html elements on a web page - usually represented by a tree of nodes -  that is created by the browser when a web page is loaded.
 
 [DOM on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model)
 
