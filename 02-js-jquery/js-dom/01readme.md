@@ -4,7 +4,6 @@
 * Define what DOM stands for and what it refers to
 * Select elements from the DOM using selectors
 * Add events to elements in the DOM
-* Manage scope and control logic on a page
 
 ## What is the DOM?
 

@@ -1,6 +1,6 @@
-#Functions
+# Functions
 
-##Objectives
+## Objectives
 * Describe a situation where you would use:
 	- A function with a return value
 	- A function without a return value
@@ -11,7 +11,7 @@
 * Write a function that operates on two or more parameters
 * Identify the scope of variables inside and outside functions
 
-##Defining a function
+## Defining a function
 
 A function is a module that can store and invoke code. When writing repetitive code, we can isolate code into **functions** in order to reduce repetition. For example, if we needed to say "Hello World" to the screen multiple times, we can create a function like so.
 
@@ -35,7 +35,7 @@ var FUNCTIONNAME = function() {
 
 We can also create functions that accept **parameters**, and use those parameters as variables in the function.
 
-##Defining a function with a parameter
+## Defining a function with a parameter
 ```js
 var greeting = function(taco) {
 	// anything inside of here will execute when called
@@ -48,7 +48,7 @@ greeting(name);
 greeting(name2);
 ```
 
-##Defining a function with two parameters
+## Defining a function with two parameters
 
 Functions can have multiple parameters, separated by commas.
 
@@ -66,7 +66,7 @@ greeting(name, name2);
 greeting(name2, name);
 ```
 
-##Printing and returning are different
+## Printing and returning are different
 
 Note that functions can have **input** via parameters. They can also have **output** as return values. Returning values from a function is denoted by the keyword `return`. Also, return values are optional.
 
@@ -102,7 +102,7 @@ returnHello2("nachos");
 console.log("without a return value:", returnHello2("taco") ); //will show as undefined
 ```
 
-##Declaring functions
+## Declaring functions
 
 There are two different ways to declare a function
 ```js
@@ -135,7 +135,7 @@ function multiply(a, b) {
 
 Despite being more flexible, the former declaration that assigns the function to a variable is more common when developing Node applications.
 
-###Exercises
+### Exercises
 
 1. What is the return value of this function when called?
 
