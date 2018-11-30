@@ -124,7 +124,8 @@ whatever you choose.
 It's true that instead of doing any of those fancy DOM manipulation we could
 just use set `.innerHTML` equal to strings.
 
-- Using `innerHTML` may be a security concern. Someone can sneak malicious
+**1. Safer** 
+  Using `innerHTML` may be a security concern. Someone can sneak malicious
   content on your page. Using `.textContent` guarantees strings will only
   appear as text.
 
@@ -137,7 +138,8 @@ just use set `.innerHTML` equal to strings.
   window.location = "http://evil.com";
   </script>
   ```
-- Using `innerHTML` requires of string manipulation when it's mixed with
+**2. Easier**
+  Using `innerHTML` requires string manipulation when it's mixed with
   functions and parameters. These lines get long, and it's easy to confuse
   when to use necessary single-quotes or double-quotes to make attributes
   in HTML tags render correctly.
@@ -146,11 +148,12 @@ just use set `.innerHTML` equal to strings.
   find that creating elements as described here offers more modularity and
   fine-grain control over how things are added to the page.
 
-  It totally works, but I'm telling you, I promise, it gets nasty!
+  It totally works, but it can get nasty!
 
-- A final reason to prefer manual DOM manipulation over `.innerHTML` is
+**3. Faster**
+  A final reason to prefer manual DOM manipulation over `.innerHTML` is
   that it's much faster. The browser is optimized to make changes to
-  the DOM via the `.appendChild`, `insertBefore` methods described here.
+  the DOM via the methods described here.
 
   The browser spends more time manually computing how to interpret string
   content added via `.innerHTML`.
