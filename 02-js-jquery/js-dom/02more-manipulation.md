@@ -28,7 +28,7 @@ to a page.
 
 ```js
 var a = document.createElement("a");
-a.href = "hhttp://hackertyper.com/";
+a.href = "http://hackertyper.com/";
 a.textContent = "Hack!";
 
 document.body.appendChild(a);
