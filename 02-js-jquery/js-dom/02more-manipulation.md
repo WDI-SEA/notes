@@ -106,12 +106,12 @@ var list = document.getElementById("my-favorite-movies");
 var newMovie = document.createElement("li");
 newMovie.innerText = "Dr. Strangelove";
 
-// get a reference to the first element inside the list
+// get a reference to the second element inside the list
 var second = list.children[1];
 
 console.log(second);
 
-// use insertBefore to add newMovie just before the first element.
+// use insertBefore to add newMovie just before the second element.
 list.insertBefore(newMovie, second);
 ```
 
