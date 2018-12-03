@@ -93,7 +93,7 @@ var foods = [
 ```
 
 
-##map
+## map
 
 ### What:
 
@@ -108,7 +108,7 @@ Like `forEach`, map will one-by-one pass the values from the array into your cal
 **Create a new array where all the values from the old array are capitalized.**
 
 ```js
-var names = ["tim", "ilias", "elie", "markus"];
+var names = ["tim thompson", "ilias iliad", "elie ellison", "markus mourning"];
 
 // old way with for loop
 var cased = [];
@@ -124,9 +124,70 @@ var cased = names.map(function (person) {
 console.log(cased);
 
 // Should output
-// > ["TIM", "ILIAS", "ELIE", "MARKUS"]
-// > ["TIM", "ILIAS", "ELIE", "MARKUS"]
+// > ['TIM THOMPSON', 'ILIAS ILIAD', 'ELIE ELLISON', 'MARKUS MOURNING']
+// > ['TIM THOMPSON', 'ILIAS ILIAD', 'ELIE ELLISON', 'MARKUS MOURNING']
 ```
+
+**Use `map` to create an array of objects with a `firstName` property and a `lastName` property**
+```js
+var names = ["tim thompson", "ilias iliad", "elie ellison", "markus mourning"];
+
+function splitName(fullName) {
+  return {
+    firstName: fullName.split(" ")[0], 
+    lastName: fullName.split(" ")[1]
+  }
+}
+
+var objNames = names.map(splitName);
+
+console.log(objNames);
+
+// Should output
+// > [ { firstName: 'tim', lastName: 'thompson' },
+  { firstName: 'ilias', lastName: 'iliad' },
+  { firstName: 'elie', lastName: 'ellison' },
+  { firstName: 'markus', lastName: 'mourning' } ]
+```
+
+**Challenge: Modify `splitName` to account for the possibility of a middle name that will store as a `middleName` property.**
+```js
+var names = ["tim toby thompson", "ilias iliad", "elie ellison", "markus mary mourning"];
+
+function splitName(fullName) {
+  var nameArr = fullName.split(" ")
+  var nameObj = {firstName: nameArr[0]};
+  if(nameArr.length===3) {
+    nameObj.middleName = nameArr[1];
+    nameObj.lastName = nameArr[2];
+  } else {
+    nameObj.lastName= nameArr[1];
+  }
+  return nameObj;
+}
+
+var objNames = names.map(splitName);
+
+// Should output
+// > [ { firstName: 'tim', middleName: 'toby', lastName: 'thompson' },
+  { firstName: 'ilias', lastName: 'iliad' },
+  { firstName: 'elie', lastName: 'ellison' },
+  { firstName: 'markus', middleName: 'mary', lastName: 'mourning' } ]
+
+```
+
+**Use `map` to create a new array `strNums` that holds the same values as `intNums` but as strings instead of integers**
+```js
+var intNums = [0, 1, 2, 3, 4, 5]
+
+var strNums = intNums.map(function(elem){
+  return elem.toString();
+  });
+
+console.log(strNums);
+```
+
+[more on map](https://codeburst.io/learn-understand-javascripts-map-function-ffc059264783)
 
 ## filter
 
@@ -161,6 +222,20 @@ console.log(oddLengthNames);
 // Should output
 // > ["elie", "markus"]
 // > ["tim", "ilias"]
+```
+
+**Use `filter` to return an array of dogs.**
+
+```js
+var pets = [ {name: "fluffy", age: 2, type: "cat"}, {name: "fido", age: 1, type: "dog"}, {name: "nelly", age: 64, type: "parrot"}, {name: "benedict", age: 1, type: "sea cucumber"}, {name: "spot", age: 10, type: "dog"}, {name: "magic", age: 9, type: "cat"}]
+
+var dogs = pets.filter(function(pet){
+  if (pet.type === "dog") {
+    return pet
+  }
+})
+
+console.log(dogs);
 ```
 
 ## reduce
