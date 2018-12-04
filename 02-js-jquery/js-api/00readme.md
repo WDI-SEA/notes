@@ -47,16 +47,31 @@ Your browser can also make API requests directly, but remember that a browser is
 
 It is important to spend time reading the documentation for an API, which will tell you the base URL for the request, and how to format endpoints to get the data you want. The documentation will also (usually) show you examples of the data you will receive so you are prepared to navigate that data.
 
-**Non-auth Examples:** 
+You can add a Chrome Extension like [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa/related?hl=en) to break up the JSON into a hierarchical, easier-to-read format.
 
 Many APIs require you to sign up for a personalized key that you will need to add to the request URL. This allows them to regulate the incoming requests.
 
-**Examples (no key required)**
+### Try it:
+
+The `search` endpoint for the [Reddit API](https://www.reddit.com/dev/api/) doesn't require a key, so let's take a look at the data it returns.
+
+**Base URL:** `https://www.reddit.com/search.json?`
+
+**endpoint:** `q=<search terms here>`
+
+**Try these:**
+* `https://www.reddit.com/search.json?q=kittens`
+* `https://www.reddit.com/search.json?q=cute+puppies`
+
+### Examples (no key required)
+
 * [Random Quotes API](https://talaikis.com/random_quotes_api/)
 
 * [iTunes API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 
-**Examples (key required)**
+* [Reddit API]
+
+### Examples (key required)
 
 * [NASA](https://api.nasa.gov/)
 
