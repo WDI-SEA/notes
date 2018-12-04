@@ -37,6 +37,8 @@ Companies will often break up their software between multiple different servers,
 
 In the case above, a Yelp server is making an API request to a _third party_ server from Google.
 
+[FCC article about APIs](https://medium.freecodecamp.org/what-is-an-api-in-english-please-b880a3214a82)
+
 --
 
 ## Looking at API response data
