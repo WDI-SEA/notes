@@ -230,9 +230,7 @@ console.log(oddLengthNames);
 var pets = [ {name: "fluffy", age: 2, type: "cat"}, {name: "fido", age: 1, type: "dog"}, {name: "nelly", age: 64, type: "parrot"}, {name: "benedict", age: 1, type: "sea cucumber"}, {name: "spot", age: 10, type: "dog"}, {name: "magic", age: 9, type: "cat"}]
 
 var dogs = pets.filter(function(pet){
-  if (pet.type === "dog") {
-    return pet
-  }
+    return pet.type==="dog";
 })
 
 console.log(dogs);
