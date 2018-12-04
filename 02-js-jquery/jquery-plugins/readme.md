@@ -9,7 +9,7 @@
 
 ## What is a Plugin?
 
-Plugins are pieces of code that someone else has written to extende jQuery's functionality. The most common plugin is jQuery UI.
+Plugins are pieces of code that someone else has written to extend jQuery's functionality. The most common plugin is jQuery UI.
 
 ## Why aren't plugins just included in the standard jQuery library?
 * extra code that you don't use just bogs down your project
@@ -20,12 +20,15 @@ jQuery plugins require jQuery in order to work, so the script tag that pulls in 
 
 ## jQuery UI
 
-jQueryUI provides an additional library of user interactions and elements not provided by jQuery. You can find the jQuery and jQueryUI CDN here: https://developers.google.com/speed/libraries/
+jQueryUI provides an additional library of user interactions and elements not provided by jQuery. You can find the CDNs for jQuery and jQueryUI [here](https://developers.google.com/speed/libraries/)
 
 jQuery UI also provides elements with 'themes' or styling. In order to use these styled elements (dropdowns, accordions, etc.), be sure to include the appropriate jQuery UI CSS stylesheet in the head tag as well.
 
-* go over implementing sortable in the to-do list
-* jQuery UI according lab
+### Example: sortable 
+
+Let's go over implementing sortable in a jQuery to-do list.
+
+* jQuery UI accordion lab
 http://api.jqueryui.com/accordion/
 * build up loading example
 https://gasparesganga.com/labs/jquery-loading-overlay/#comments-and-ideas
