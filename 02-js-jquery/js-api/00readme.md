@@ -55,10 +55,6 @@ Many APIs require you to sign up for a personalized key that you will need to ad
 
 The `search` endpoint for the [Reddit API](https://www.reddit.com/dev/api/) doesn't require a key, so let's take a look at the data it returns.
 
-**Base URL:** `https://www.reddit.com/search.json?`
-
-**endpoint:** `q=<search terms here>`
-
 **Try these:**
 * `https://www.reddit.com/search.json?q=kittens`
 * `https://www.reddit.com/search.json?q=cute+puppies`
@@ -69,7 +65,7 @@ The `search` endpoint for the [Reddit API](https://www.reddit.com/dev/api/) does
 
 * [iTunes API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 
-* [Reddit API]
+* [Random User API](https://randomuser.me/)
 
 ### Examples (key required)
 
