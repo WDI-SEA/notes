@@ -3,10 +3,6 @@
 ## Objectives
 * Use AJAX to implement PUT and DELETE routes
 
->Representational State Transfer (REST) is a software architecture style consisting of guidelines and best practices for creating scalable web services. REST is a coordinated set of constraints applied to the design of components in a distributed hypermedia system that can lead to a more performant and maintainable architecture.
-
-Source: [wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer)
-
 ## DELETE
 
 Delete should be used to delete an existing item. A delete request contains no payload (`req.body`) and no query string (`req.query`). The only data is expressed via a URL parameter which matches the item's name (`req.params.name`).
