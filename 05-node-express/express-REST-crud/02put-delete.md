@@ -1,32 +1,11 @@
 # RESTful CRUD
 
 ## Objectives
-
-* Describe what RESTful routing is
 * Use AJAX to implement PUT and DELETE routes
 
 >Representational State Transfer (REST) is a software architecture style consisting of guidelines and best practices for creating scalable web services. REST is a coordinated set of constraints applied to the design of components in a distributed hypermedia system that can lead to a more performant and maintainable architecture.
 
 Source: [wikipedia](http://en.wikipedia.org/wiki/Representational_state_transfer)
-
-## RESTful routing example
-
-Imagine we have an app that stores teams signing up for a hackathon. We would create a model called team which would represent a single team with their name and their members. The data would be stored in a table called teams (where we store many teams). The routes would also be the plural "teams".
-
-
-| Verb | Path | Action | Used for |
-|----|----|----|----|
-| GET | /teams | index | display a list of all teams |
-| GET | /teams/new | new | return an HTML form for creating a new team |
-| POST | /teams | create | create a new team (using form data from /teams/new) |
-| GET | /teams/:name | show | display a specific team |
-| GET | /teams/:name/edit | edit | return an HTML form for editing a team |
-| PUT | /teams/:name | update | update a specific team (using form data from /teams/:name/edit) |
-| DELETE | /teams/:name | destroy | deletes a specific team |
-
-If you are storing something beside teams you'll use this same pattern. It could be `users`, `photos`, `books`, etc.
-
-Previously, we implemented the first four routes. Also, we can find a way to implement the route `GET /teams/:name/edit`. But what about DELETE and PUT? Forms don't support these methods, so we'll need to use AJAX.
 
 ## DELETE
 
