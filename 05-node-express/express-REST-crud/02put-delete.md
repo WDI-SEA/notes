@@ -22,7 +22,7 @@ In the previous half of this lesson, we implemented the first three routes. Here
 ### Middleware
 `method-override` is a node package that allows us to catch incoming requests to the back-end and change the method from `POST` to `DELETE` or `PUT`. We'll use the `method-override` middleware that looks for a `_method=DELETE` or `_method=PUT` query string in the request URL and swap out the method accordingly.
 
-_By default, `method-override` will only override `POST` methods, because having a `DELETE` or `PUT` route accessible via a `GET` request "may introduce security issues and cause weird behavior when requests travel through caches"(see the `options.metods` section of the `method-override` docs for on this)_
+_By default, `method-override` will only override `POST` methods, because having a `DELETE` or `PUT` route accessible via a `GET` request "may introduce security issues and cause weird behavior when requests travel through caches"(see the `options.methods` section of the `method-override` docs for on this)_
 
 #### Setup:
 
@@ -38,9 +38,7 @@ app.use(methodOverride('_method'))
 
 Delete should be used to delete an existing item. A delete request contains no payload (`req.body`) and no query string (`req.query`). The only data is expressed via a URL parameter which matches the item's name (`req.params.name`).
 
-There is no way to initiate a DELETE action unless we use AJAX. So let's try it out.
-
-Let's start by adding a delete link to our index page list items. Note that we must add a second `forEach` parameter in order to get access to the dinoId/index.
+Since we can only use `POST` methods to activate the `method-override` functionality, we will use a form to submit the request. Let's start by adding a delete button (form submission) to our index page list items. Note that we must add a second `forEach` parameter in order to get access to the dinoId/index.
 
 **dinosaurs/index.ejs**
 ```html
@@ -52,34 +50,13 @@ Let's start by adding a delete link to our index page list items. Note that we m
 
 <ul>
   <% myDinos.forEach(function(dino, index) { %>
-  <li><%= dino.name %> is a <%= dino.type %><a href="/dinosaurs/<%= index %>" class="delete-link">Delete</a></li>
+  <li><%= dino.name %> is a <%= dino.type %>
+  	<form method="POST" action="/dinosaurs/<%= index %>">
+  		<input type="submit" value="Delete">
+  	</form>
+  </li>
   <% }); %>
 </ul>
-```
-
-Without JavaScript, this would link to `GET /teams/Edward` which would simply display the team at that route. However, we can use JavaScript to override the default behavior and send the request with the DELETE verb.
-
-**jQuery / JavaScript**
-
-```js
-$('.delete-link').on('click', function(e) {
-  e.preventDefault();
-  var teamElement = $(this);
-  var teamUrl = teamElement.attr('href');
-  $.ajax({
-    method: 'DELETE',
-    url: teamUrl
-  }).done(function(data) {
-    // get data returned from the DELETE route
-    console.log(data);
-
-    // do stuff when the DELETE action is complete
-    teamElement.remove();
-
-    // or, you can redirect to another page
-    window.location = '/teams';
-  });
-});
 ```
 
 **Server**
