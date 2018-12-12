@@ -17,7 +17,22 @@ In the previous half of this lesson, we implemented the first three routes. Here
 
 ## Method-Override
 
-`PUT` and `DELETE` routes are not supported by HTML5. If you're wondering why, check out these discussions on [stackoverflow](https://stackoverflow.com/questions/16805956/why-dont-browsers-support-put-and-delete-requests-and-when-will-they) and [stackexchange](https://softwareengineering.stackexchange.com/questions/114156/why-are-there-are-no-put-and-delete-methods-on-html-forms). These requests are so often used that there are well-established workarounds like [`method-override`](https://www.npmjs.com/package/method-override), which is what we will use.
+  `PUT` and `DELETE` routes are not supported by HTML5. If you're wondering why, check out these discussions on [stackoverflow](https://stackoverflow.com/questions/16805956/why-dont-browsers-support-put-and-delete-requests-and-when-will-they) and [stackexchange](https://softwareengineering.stackexchange.com/questions/114156/why-are-there-are-no-put-and-delete-methods-on-html-forms). These requests are so often used that there are well-established work-arounds like [`method-override`](https://www.npmjs.com/package/method-override), which is what we will use.
+  
+### Middleware
+`method-override` is a node package that allows us to catch incoming requests to the back-end and change the method from `POST` to `DELETE` or `PUT`. We'll use the `method-override` middleware that looks for a `_method=DELETE` or `_method=PUT` query string in the request URL and swap out the method accordingly.
+
+_By default, `method-override` will only override `POST` methods, because having a `DELETE` or `PUT` route accessible via a `GET` request "may introduce security issues and cause weird behavior when requests travel through caches"(see the `options.metods` section of the `method-override` docs for on this)_
+
+#### Setup:
+
+**1.** Install `method-override` via npm.
+
+**2.** Configure middleware (make sure it lives above any other middleware code that uses the request method):
+
+```js
+app.use(methodOverride('_method'))
+```
 
 ## DELETE
 
