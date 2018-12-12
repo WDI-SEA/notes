@@ -198,11 +198,9 @@ Not working? Make sure this route is _above_ the show (`/dinosaurs/:idx`) route,
 
 ### 5. Create (POST) route
 
-When the above form is submitted it will make a `POST` to the url `/dinosaurs` with the data contained in the form fields. To receive this data, we need to create the `POST` route and use the node package `body-parser` to make the data readable. (If it bothers you that we're glazing over how the data comes through before we send it through something like `body-parser`, read [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90). It will always make sense to use some sort of framework like `body-parser` in practice, but if you're interested in capturing the raw data, see [this article](https://itnext.io/how-to-handle-the-post-request-body-in-node-js-without-using-a-framework-cd2038b93190).)
+When the above form is submitted it will make a `POST` to the url `/dinosaurs` with the data contained in the form fields. To receive this data, we need to create the `POST` route and use some middleware to make the data readable. This middleware is new to `express` and prior to version 4, we had to manually install the `body-parser` node package in order to use it. (If it bothers you that we're glazing over how the data comes through before we send it through something like `body-parser`, read [this article](https://medium.com/@adamzerner/how-bodyparser-works-247897a93b90). It will always make sense to use some sort of framework like `body-parser` in practice, but if you're interested in capturing the raw data, see [this article](https://itnext.io/how-to-handle-the-post-request-body-in-node-js-without-using-a-framework-cd2038b93190).)
 
-***body-parser*** will store the data submitted from the form in a user-friendly `req.body` object.
-
-install `body-parser` via npm and add it to your server file:
+This middleware will store the data submitted from the form in a user-friendly `req.body` object.
 
 ***index.js***
 ```js
@@ -210,18 +208,18 @@ var express = require('express');
 var app = express();
 var ejsLayouts = require('express-ejs-layouts');
 var fs = require('fs');
-var bodyParser = require('body-parser'); //
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
-app.use(bodyParser.urlencoded({extended: false}));
+//body-parser middleware
+app.use(express.urlencoded({extended: false}));
 
 .
 .
 .
 ```
 
-The `bodyParser.urlencoded()` middleware tells body-parser to capture urlencoded data (form data) and store it in `req.body`. The `{extended: false}` option ensures that the values in this body will either be strings or arrays. More on this [here](https://www.npmjs.com/package/body-parser#bodyparserurlencodedoptions). Further discussion on it [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
+The `express.urlencoded()` middleware tells body-parser to capture urlencoded data (form data) and store it in `req.body`. The `{extended: false}` option ensures that the values in this body will either be strings or arrays. More on this [here](https://www.npmjs.com/package/body-parser#bodyparserurlencodedoptions). Further discussion on it [here](http://stackoverflow.com/questions/29175465/body-parser-extended-option-qs-vs-querystring).
 
 Now, if we can access the form data in a POST route!
 
@@ -238,8 +236,8 @@ Try adding a new dinosaur and make sure you see the appropriate data come throug
 **body-parser Summary:**
 Form data is passed as payload of the request. Every field that has a name will
 be included in that payload and it is sent as form encoded text. When
-`body-parser` is installed it automatically **parses** the form body into a
-javascript object that we can use and it stores it in `req.body` so we can use it. All of this is done as middleware, which we just configured.
+`body-parser` is used, it automatically **parses** the form body into a
+javascript object that we can use and it stores it in `req.body` so we can use it (similar to how we convert API responses to JSON. All of this is done as middleware, which we just configured.
 
 **The `name` attribute matters!**
 In the above example we could access the dinosaur type form field by using
