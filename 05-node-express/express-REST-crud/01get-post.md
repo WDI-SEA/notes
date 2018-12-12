@@ -253,7 +253,7 @@ going to use the JSON file created above to store our data. This will involve th
 
 * Reading the JSON file
 * Pushing the new animal to the object
-* Writing the new JSON file
+* Writing the new JSON file using [fs.writeFileSync](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) (this will replace the old dinosaurs.json)
 
 ```js
 app.post('/dinosaurs', function(req, res) {
