@@ -15,6 +15,10 @@
 
 In the previous half of this lesson, we implemented the first three routes. Here we will cover the final two routes in this RESTful routing example.
 
+## Method-Override
+
+`PUT` and `DELETE` routes are not supported by HTML5. If you're wondering why, check out these discussions on [stackoverflow](https://stackoverflow.com/questions/16805956/why-dont-browsers-support-put-and-delete-requests-and-when-will-they) and [stackexchange](https://softwareengineering.stackexchange.com/questions/114156/why-are-there-are-no-put-and-delete-methods-on-html-forms). These requests are so often used that there are well-established workarounds like [`method-override`](https://www.npmjs.com/package/method-override), which is what we will use.
+
 ## DELETE
 
 Delete should be used to delete an existing item. A delete request contains no payload (`req.body`) and no query string (`req.query`). The only data is expressed via a URL parameter which matches the item's name (`req.params.name`).
