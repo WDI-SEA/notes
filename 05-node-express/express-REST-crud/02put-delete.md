@@ -9,10 +9,21 @@ Delete should be used to delete an existing item. A delete request contains no p
 
 There is no way to initiate a DELETE action unless we use AJAX. So let's try it out.
 
-**HTML**
+Let's start by adding a delete link to our index page list items. Note that we must add a second `forEach` parameter in order to get access to the dinoId/index.
 
+**dinosaurs/index.ejs**
 ```html
-<a href="/teams/Edward" class="delete-link">Delete team Edward</a>
+<form method="GET" action="/dinosaurs">
+  <label for="nameFilter">Filter by Name</label>
+  <input id="nameFilter" type="text" name="nameFilter">
+  <input type="submit">
+</form>
+
+<ul>
+  <% myDinos.forEach(function(dino, index) { %>
+  <li><%= dino.name %> is a <%= dino.type %><a href="/dinosaurs/<%= index %>" class="delete-link">Delete</a></li>
+  <% }); %>
+</ul>
 ```
 
 Without JavaScript, this would link to `GET /teams/Edward` which would simply display the team at that route. However, we can use JavaScript to override the default behavior and send the request with the DELETE verb.
