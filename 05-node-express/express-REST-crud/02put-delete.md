@@ -3,6 +3,18 @@
 ## Objectives
 * Use AJAX to implement PUT and DELETE routes
 
+## Review REST
+
+| VERB | URL | Action (CRUD) | Description |
+|------|-----|---------------|-------------|
+| GET | /dinosaurs | Index (Read) | lists all dinosaurs |
+| GET | /dinosaurs/1 | Show (Read) | list information about a specific animal (id = 1) |
+| POST | /dinosaurs | Create | creates an animal with the POST payload data |
+| PUT | /dinosaurs/1 | Update | updates the data for a specific animal (id = 1) |
+| DELETE | /dinosaurs/1 | Delete (Destroy) | deletes the animal with the specified id (1) |
+
+In the previous half of this lesson, we implemented the first three routes. Here we will cover the final two routes in this RESTful routing example.
+
 ## DELETE
 
 Delete should be used to delete an existing item. A delete request contains no payload (`req.body`) and no query string (`req.query`). The only data is expressed via a URL parameter which matches the item's name (`req.params.name`).
