@@ -1,5 +1,11 @@
 # APIs with Express
 
+### Objectives
+
+* Describe the purpose of using
+ an API on the backend.
+* Create an application that uses an API and the `request` module.
+
 In order to get around issues such as [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS) and API access control, we can communicate with other servers through our server. In this case, our server acts as both a client and a server. We'll be doing some requests using the `request` Node module.
 
 To use the module, install it using npm.

@@ -1,5 +1,11 @@
 # Lab: Layouts and Controllers
 
+Express gives us a lot of flexibility out of the box (configuration over convention). While this is a good thing, it can become a problem when we don't take the time to organize our project.
+
+### Objectives
+
+* Utilize layouts and controllers in an Express app
+
 ### Prereqs:
 * ability to create a basic node/express app with basic routes and views
 
@@ -7,21 +13,21 @@
 
 Before we do anything else, let's set up a new basic Express app called `faves-hates-app`.
 
-####1. Create a new project
+#### 1. Create a new project
 
-####2. Initialize Node
+#### 2. Initialize Node
 
-####3. Install Dependencies
+#### 3. Install Dependencies
 * express
 * ejs
 
-####4. Set up Express
+#### 4. Set up Express
 * `index.js` file
 * require express
 * create an instance of express
 * tell the app which port to listen to
 
-####5. Set up EJS
+#### 5. Set up EJS
 * set view engine to ejs
 * create a `views` folder
 
