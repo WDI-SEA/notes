@@ -28,10 +28,16 @@ _By default, `method-override` will only override `POST` methods, because having
 
 **1.** Install `method-override` via npm.
 
-**2.** Configure middleware (make sure it lives above any other middleware code that uses the request method):
+**2.** Import the module
 
 ```js
-app.use(methodOverride('_method'))
+var methodOverride = require('method-override');
+```
+
+***3.*** Configure middleware (make sure it lives above any other middleware code that uses the request method):
+
+```js
+app.use(methodOverride('_method'));
 ```
 
 ## DELETE
