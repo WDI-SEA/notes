@@ -115,6 +115,24 @@ Now we have to create a form for editting the information and submitting the `PU
 
 **/dinosaurs/edit.ejs**
 ```html
+<form method="POST" action="/dinosaurs/<%=dinoId%>/?_method=PUT">
+	<label>Name</label>
+	<input type="text" name="name" value="<%= dino.name %>">
+	<label>Type</label>
+	<input type="text" name="type" value="<%= dino.type %>">
+	<input type="submit">
+</form>
+```
+
+We need a `GET` route to view this form!
+
+**index.js**
+```js
+app.get('/dinosaurs/edit/:idx', function(req, res){
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinoData = JSON.parse(dinosaurs);
+  res.render('dinosaurs/edit', {dino: dinoData[req.params.idx], dinoId: req.params.idx});
+});
 ```
 
 **index.js**
