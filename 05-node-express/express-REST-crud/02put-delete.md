@@ -136,22 +136,15 @@ app.get('/dinosaurs/edit/:idx', function(req, res){
 });
 ```
 
+Finally we can write our `PUT` route! The form submission will return the editted values through `req.body`, just like we saw with the `new.ejs` view and `POST` route. Now all we need to do is edit the JSON accordingly.
+
 **index.js**
-
 ```js
-app.put('/teams/:name', function(req, res) {
-  var teamToEdit = req.params.name;
-
-  // Edit team here
-
-  /*
-   * instead of rendering a page, send back JSON or text, which can be read
-   * in the .done() promise of the AJAX call
-   */
-  res.send({message: 'success'});
+app.put('/dinosaurs/:idx', function(req, res){
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  dinosaurs = JSON.parse(dinosaurs);
+  //re-assign the name and type fields of the dinosaur to be editted
+  dinosaurs[req.params.idx].name = req.body.name;
+  dinosaurs[req.params.idx].type = req.body.type;
 });
 ```
-
-Here's an example repository.
-
-https://github.com/WDI-SEA/hackathon-teams
