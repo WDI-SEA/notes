@@ -143,8 +143,13 @@ Finally we can write our `PUT` route! The form submission will return the editte
 app.put('/dinosaurs/:idx', function(req, res){
   var dinosaurs = fs.readFileSync('./dinosaurs.json');
   dinosaurs = JSON.parse(dinosaurs);
+  
   //re-assign the name and type fields of the dinosaur to be editted
   dinosaurs[req.params.idx].name = req.body.name;
   dinosaurs[req.params.idx].type = req.body.type;
+
+   // save the editted dinosaurs to the data.json file
+  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinosaurs));
+  res.redirect('/dinosaurs');
 });
 ```
