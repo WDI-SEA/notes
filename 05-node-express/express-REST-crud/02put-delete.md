@@ -8,10 +8,11 @@
 | VERB | URL | Action (CRUD) | Description |
 |------|-----|---------------|-------------|
 | GET | /dinosaurs | Index (Read) | lists all dinosaurs |
-| GET | /dinosaurs/1 | Show (Read) | list information about a specific animal (id = 1) |
-| POST | /dinosaurs | Create | creates an animal with the POST payload data |
-| PUT | /dinosaurs/1 | Update | updates the data for a specific animal (id = 1) |
-| DELETE | /dinosaurs/1 | Delete (Destroy) | deletes the animal with the specified id (1) |
+| GET | /dinosaurs/1 | Show (Read) | list information about a specific dinosaur (id = 1) |
+| POST | /dinosaurs | Create | creates an dinosaur with the POST payload data |
+| GET | /dinosaurs/edit/1 | Show(Read) | form for editting a specific dinosaurs (id = 1)|
+| PUT | /dinosaurs/1 | Update | updates the data for a specific dinosaur (id = 1) |
+| DELETE | /dinosaurs/1 | Delete (Destroy) | deletes the dinosaur with the specified id (1) |
 
 In the previous half of this lesson, we implemented the first three routes. Here we will cover the final two routes in this RESTful routing example.
 
