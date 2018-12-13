@@ -1,7 +1,7 @@
 # RESTful CRUD
 
 ## Objectives
-* Use AJAX to implement PUT and DELETE routes
+* Use `method-override` to implement PUT and DELETE routes
 
 ## Review REST
 
