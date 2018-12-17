@@ -1,46 +1,10 @@
-# CRUD in Express
+
+# GET & POST
+
+So far, we've only been rendering views, which is why we've been using GET for all of our routes. Now that we're working with data, we'll start to see how the other HTTP verbs come into play. Here we will focus on `GET` and `POST`.
 
 ## Objectives
-
-* Name the HTTP Verb associated with each CRUD function
-* Name the two HTTP verbs that HTTP understands
-* Name the two HTTP verbs in which you must utilize AJAX to make HTTP understand them
-
-## Review CRUD
-
-Recall CRUD from the SQL database lessons. Most sites you interact with on the internet are CRUD sites. Almost everything you do on the web is a CRUD action. For example:
-* ***Create*** a youtubeuser, a video, a comment
-* ***Read*** comments, view videos, etc.
-* ***Update*** your profile, edit a video title, etc.
-* ***Delete*** a video, comment, or an entire channel!
-
-[Formal definition on wiki](http://en.wikipedia.org/wiki/Create,_read,_update_and_delete)
-
-## RESTful Routing
-
-RESTful Routing is the (best) practice of choosing routes (URL patterns + HTTP verbs) that reflect the CRUD functionality of that route.
-A RESTful route incorporates:
-* the _item or data_ you're interacting with
-* the _CRUD action_ you're performing on that item or data
-
-On the web the best practice for CRUD actions uses something called RESTful routing. The basic idea is your route (URL) should relate to the type of item you are interacting with, as well as the action you'll be performing to change/view the state of the item(s).
-
-### Example: Dinosaurs
-So if you were CRUDing a database of dinosaurs, the following routes would form a full set of CRUD RESTful routes
-
-| VERB | URL | Action (CRUD) | Description |
-|------|-----|---------------|-------------|
-| GET | /dinosaurs | Index (Read) | lists all dinosaurs |
-| GET | /dinosaurs/1 | Show (Read) | list information about a specific animal (id = 1) |
-| POST | /dinosaurs | Create | creates an animal with the POST payload data |
-| PUT | /dinosaurs/1 | Update | updates the data for a specific animal (id = 1) |
-| DELETE | /dinosaurs/1 | Delete (Destroy) | deletes the animal with the specified id (1) |
-
-[Read more on wiki](http://en.wikipedia.org/wiki/Representational_state_transfer)
-
-## CRUD in action: Dinosaur App
-
-So far, we've only been rendering views, which is why we've been using GET for all of our routes. Now that we're working with data, we'll start to see how the other HTTP verbs come into play. Here we will focus on GET and POST.
+* Implement `GET` and `POST` routes in `express`.
 
 ### 1. Set up a new express app called `crud_dinosaurs`.
 

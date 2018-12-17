@@ -1,7 +1,7 @@
 # RESTful CRUD
 
 ## Objectives
-* Use `method-override` to implement PUT and DELETE routes
+* Use `method-override` to implement `PUT` and `DELETE` routes in `express`.
 
 ## Review REST
 

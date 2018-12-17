@@ -132,10 +132,9 @@
       * [Views](05-node-express/express-intro/03views.md)
       * [Templates](05-node-express/express-intro/04templates.md)
       * [Layouts and Controllers](05-node-express/express-apis/02organization.md)
-      * [CRUD]
+      * [CRUD & REST](05-node-express/express-REST-crud/00readme.md)
         * [Get and Post](05-node-express/express-REST-crud/01get-post.md)
-        * [Get and Post](05-node-express/express-REST-crud/01put-delete.md)
-      * [Full RESTful Routing](05-node-express/express-ajax-crud/readme.md)
+        * [Put and Delete](05-node-express/express-REST-crud/01put-delete.md)
     * [APIs with Express](05-node-express/express-apis/03apis.md)
   * [Sequelize](05-node-express/express-sequelize/readme.md)
     * [Terminology](05-node-express/express-sequelize/02terms.md)
