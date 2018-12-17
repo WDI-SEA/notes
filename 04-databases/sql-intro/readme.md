@@ -72,7 +72,9 @@ Note that all psql commands start with `\` except for `q`.
 
 To _quit_ psql and return to the home terminal:
 
-```\q```
+```bash
+\q
+```
 
 ## SQL: Structured Query Language
 
@@ -87,7 +89,8 @@ Stands for Create, Read, Update and Destroy. This is the lifecycle of data in an
 ## Creating a Database
 
 Most database products have the notion of separate databases.  Lets create one for the lesson.
-```
+
+```bash
 CREATE DATABASE testdb;
 ```
 
