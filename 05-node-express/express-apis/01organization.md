@@ -158,7 +158,7 @@ Controllers become important organizational tools when you start making apps wit
 
 ***We have been placing all routes into `index.js` when creating a Node/Express app, but this can get cumbersome when dealing with many routes. The solution is to group related routes and separate these groups into separate files. These files will go into a `controllers` folder.***
 
-***3.*** Create a `controllers` folder inside the root directory the all routes except for the home route. 
+***3.*** Create a `controllers` folder inside the root directory that will contain all routes except for the home route. 
 
 ***4.*** Inside the `controllers` folder, create a file called `faves.js` with the following routes:
 
