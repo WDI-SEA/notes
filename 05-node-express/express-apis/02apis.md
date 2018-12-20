@@ -103,7 +103,7 @@ app.get('/', function(req, res) {
 app.listen(3000);
 ```
 
-** API Keys? **
+**API Keys**
 
 Notice that OMDB API has added an key requirement to their API since the original creation of this lesson. That's okay, it just means we'll need to register for a key real quick before running the  example. Don't worry - it's free and only takes a few minutes. Lots of APIs will require keys, so let's get into the habit!
 
