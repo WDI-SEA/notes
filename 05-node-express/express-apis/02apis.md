@@ -72,7 +72,7 @@ Let's use a more useful source of data that we can parse, like OMDB (Open Movie 
 
 Let's modify the example above to make a request to OMDB's API. [OMDB Link](http://www.omdbapi.com/)
 
-**We'll be using this endpoint:** http://www.omdbapi.com/?s=star+wars
+**We'll be using this endpoint:** http://www.omdbapi.com/?s=star+wars&apikey=yourkey123
 
 #### Modified Example
 
@@ -85,7 +85,8 @@ var app = express();
 
 app.get('/', function(req, res) {
   var qs = {
-    s: 'star wars'
+    s: 'star wars',
+    apikey: 'YOUR-KEY-HERE'
   };
 
   request({
@@ -102,6 +103,12 @@ app.get('/', function(req, res) {
 app.listen(3000);
 ```
 
+** API Keys? **
+
+Notice that OMDB API has added an key requirement to their API since the original creation of this lesson. That's okay, it just means we'll need to register for a key real quick before running the  example. Don't worry - it's free and only takes a few minutes. Lots of APIs will require keys, so let's get into the habit!
+
+> Protip: Never share your API keys! These should go in `.env` files and never, ever be pushed up to Github or anywhere else online. The `.env` file can be added to your `.gitignore` file to make git ignore it!
+
 **Things to Note**
 
 * In order to pass a query string to OMDB, we can create an object with key-value pairs.
@@ -111,6 +118,7 @@ app.listen(3000);
   * Try putting `res.send` outside of the `request` function two lines down. You'll get an error!
 
 ### Creating UI From JSON
+
 Requests allows us to get data, but it's not displayed very pretty. Let's build a template to display the data.
 
 Create a file `views/results.ejs` to display all of the results:
