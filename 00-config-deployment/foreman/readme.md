@@ -1,12 +1,12 @@
-#Environment Variables with Foreman
+# Environment Variables with Foreman
 
-##Objectives
+## Objectives
 
 * Define what an environment variable is
 * Explain why certain variables should not be committed to a codebase
 * Use different methods to create environment variables.
 
-##Environment Variables
+## Environment Variables
 
 Environment variables are values that exist in a computer's current environment. They can affect how a computer runs, or how certain commands are executed. If you open up the following file:
 
@@ -26,13 +26,13 @@ To avoid restarting the terminal, run the `~/.zshrc` file again.
 source ~/.zshrc
 ```
 
-##Why use Environment Variables?
+## Why use Environment Variables?
 
 Frequently, we'll have variables that are unique to a particular computer. An example is the `PORT` variable we looked for when deploying to Heroku. We also use variables to avoid committing values that are either sensitive or vary from machine to machine.
 
 When we use API keys that are meant to be private/secret, this is a case where we **DO NOT WANT TO COMMIT THE VALUES**. These values can vary, but if a malicious user gets ahold of them, they can cause disastrous results, especially if the values access an account that costs money or resources.
 
-##Using Foreman
+## Using Foreman
 
 An alternative to adding environment variables to `~/.zshrc` is to use `foreman`. Install it by running:
 
@@ -60,7 +60,7 @@ console.log(process.env.SECRET_KEY);
 console.log(process.env.OTHER_TOKEN);
 ```
 
-For a Rails app, we'd run:
+For a Ruby on Rails app, we'd run:
 
 ```bash
 foreman run rails s
