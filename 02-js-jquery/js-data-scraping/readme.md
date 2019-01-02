@@ -132,7 +132,7 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function(erro
 
 ## Exercise
 
-Modify your code to scrape the photo and description of each neighboorhood too! Your `console.log` should print out and array of objects that each include a `name`, a `link`,  a `photo`, and a `description`.
+Modify your code to scrape the photo and description of each neighboorhood too! Your `console.log` should print out and array of objects that each include a `name`, a `link`,  a `photo` (if there is one), and a `description`.
 
 ## Scraping multiple sites
 
