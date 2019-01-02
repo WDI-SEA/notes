@@ -38,7 +38,7 @@ To get started, create a new folder, and initialize npm. We'll also want to inst
 
 ### Step 1: Get the HTML document
 
-There are multiple ways to get an HTML document, but we'll use the ```request``` module in this example. To scrape data from the site, we need to request the webpage. In your main server file (entry point), import the `request` and `cheerio` modules, then make a request to the Seattle Neigbhborhoods website.
+There are multiple ways to get an HTML document, but we'll use the ```request``` module in this example. To scrape data from the site, we need to request the webpage. In a `gethoods.js` file, import the `request` and `cheerio` modules, then make a request to the Seattle Neigbhborhoods website.
 
 ```js
 var request = require('request');
