@@ -19,7 +19,7 @@ Scraping (Screen Scraping, Web Data Extraction, Web Harvesting, etc) refers to t
 #### Why not scrape?
 
 * need to log into site in order to access desired data
-* organization of data is makes it hard/overly-laborious to access
+* organization of data makes it hard/laborious to access
 * web page structure frequently changes (program that uses scraped data would need constant updates)
 * copywrite and other legal issues
 
