@@ -130,6 +130,10 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function(erro
 });
 ```
 
+## Exercise
+
+Modify your code to scrape the photo and description of each neighboorhood too! Your `console.log` should print out and array of objects that each include a `name`, a `link`,  a `photo`, and a `description`.
+
 ## Scraping multiple sites
 
 By scraping this site, we were able to return an array of neighborhoods, complete with their name and a link to more information. Now, if we want to get neighborhood descriptions, we would need to make many more requests to retrieve additional webpages. Look at the notes for [async](../js-async/readme.md) for how to accomplish this task.
