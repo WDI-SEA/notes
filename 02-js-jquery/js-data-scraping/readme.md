@@ -19,7 +19,7 @@ Scraping (Screen Scraping, Web Data Extraction, Web Harvesting, etc) refers to t
 #### Why not scrape?
 
 * need to log into site in order to access desired data
-* organization of data is makes it hard/overly-laborious to access
+* organization of data makes it hard/laborious to access
 * web page structure frequently changes (program that uses scraped data would need constant updates)
 * copywrite and other legal issues
 
@@ -27,25 +27,18 @@ Scraping (Screen Scraping, Web Data Extraction, Web Harvesting, etc) refers to t
 
 ## Getting Started: Scraping Seattle Neighborhoods
 
-Let's try creating a file that will scrape Seattle neighborhoods from this site:
+Let's try creating a program that will scrape neighborhood data from this site:
 
 http://www.visitseattle.org/things-to-do/neighborhoods/
 
 To get started, create a new folder, and initialize npm. We'll also want to install two modules:
 
 * `request` - for accessing external resources via HTTP
-* `cheerio` - essentially, this is server side jQuery. We will be using this to traverse the data we get back form `request`
-
-```bash
-mkdir seattle-neighborhoods
-cd seattle-neighborhoods
-npm init --y
-npm install request cheerio
-```
+* `cheerio` - essentially, this is server side jQuery. We will be using this to traverse the data we get back from our `request`.
 
 ### Step 1: Get the HTML document
 
-There are multiple ways to get an HTML document, but we'll use the ```request``` module in this example. To scrape data from the site, we need to request the webpage like so:
+There are multiple ways to get an HTML document, but we'll use the ```request``` module in this example. To scrape data from the site, we need to request the webpage. In a `gethoods.js` file, import the `request` and `cheerio` modules, then make a request to the Seattle Neigbhborhoods website.
 
 ```js
 var request = require('request');
@@ -56,7 +49,9 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 });
 ```
 
-Consult the [Cheerio Documentation](https://github.com/cheeriojs/cheerio) for most info.
+Run the program and take a look at your output. What did the request return?
+
+Look over the [Cheerio Documentation](https://github.com/cheeriojs/cheerio) - for more info about our next steps.
 
 ### Step 2: Parse the HTML
 
@@ -68,6 +63,8 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
   console.log($);
 });
 ```
+
+Run the program and take a look at the `cheerio` object. How might we find the html again? Does the `cheerio` object contain a method for this?
 
 ### Step 3: Identify the content you want to scrape.
 
@@ -98,7 +95,7 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function (err
 	console.log(neighborhoods);
 ```
 
-This still gives us a lot of gobbledy-gook we didn't ask for. Use the get function after .map() to see an array of exactly what we asked for (see docs -> traversing -> get):
+This still gives us a lot of gobbledy-gook we didn't ask for. Use the `.get()` function after `.map()` to see an array of exactly what we asked for (see docs -> traversing -> get):
 
 ```js
 	// add .get() to just get back what you asked for, instead of an entire cheerio object
@@ -132,6 +129,10 @@ request('http://www.visitseattle.org/things-to-do/neighborhoods/', function(erro
     console.log(neighborhoods);
 });
 ```
+
+## Exercise
+
+Modify your code to scrape the photo and description of each neighboorhood too! Your `console.log` should print out and array of objects that each include a `name`, a `link`,  a `photo` (if there is one), and a `description`.
 
 ## Scraping multiple sites
 
