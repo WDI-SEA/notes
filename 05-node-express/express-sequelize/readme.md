@@ -1,6 +1,6 @@
 # Getting started with Sequelize
 
-##Objectives
+## Objectives
 * Identify an ORM
 * Weigh pros and cons between ORMs and raw SQL queries
 * Use the Sequelize CLI to create and migrate models
