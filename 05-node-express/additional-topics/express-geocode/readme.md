@@ -1,4 +1,4 @@
-#Geocoding and Google Maps
+# Geocoding and Google Maps
 
 ## Objectives
 
@@ -6,7 +6,7 @@
 * Utilize geocoding with a geocoder and Sequelize hooks
 * Use Google Maps to add geocoordinates to a map.
 
-##Starter Code
+## Starter Code
 
 We'll be using the starter code here (fork and clone): https://github.com/WDI-SEA/express-geocode-maps-example
 
@@ -22,7 +22,7 @@ We'll be using the starter code here (fork and clone): https://github.com/WDI-SE
 First lets install the package into our starter code. Note that we'll be using Google's geocoder API.
 
 ```
-npm install --save geocoder
+npm install geocoder
 ```
 
 ### Try this in a separate file
