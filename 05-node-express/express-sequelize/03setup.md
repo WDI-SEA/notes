@@ -23,10 +23,10 @@ touch index.js
 echo "node_modules" >> .gitignore
 ```
 
-Add/save dependencies (sequelize needs pg for Postgres and pg-hstore for JSON serialization)
+Add/save dependencies (sequelize needs pg for Postgres)
 
 ```
-npm install express ejs pg pg-hstore sequelize
+npm install express ejs pg sequelize
 ```
 
 Create a database and initialize a sequelize project
