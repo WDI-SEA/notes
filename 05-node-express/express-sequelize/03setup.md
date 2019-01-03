@@ -96,7 +96,7 @@ If you want to make changes to your model after generating it - all you have to 
 
 This will generate the following migration
 
-**migrations/*-create-user.js**
+**migrations/\*-create-user.js**
 
 ```js
 "use strict";
