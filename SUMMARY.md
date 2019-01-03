@@ -28,7 +28,6 @@
     * [GitHub Accounts](00-schedule/WDI-12/github-accounts.md)
     * [Classroom Culture](00-schedule/WDI-12/classroom_culture.md)
     * [Cheat Sheet](00-schedule/WDI-12/cheat-sheet.md)
-    * [Weekly Q&A](00-schedule/WDI-12/week-01-questions.md)
   * [WDI 11](00-schedule/WDI-11/calendar.md)
     * [Calendar](00-schedule/WDI-11/calendar.md)
     * [Homework](00-schedule/WDI-11/homework.md)
