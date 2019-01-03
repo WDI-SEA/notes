@@ -1,6 +1,6 @@
-##Setup
+# Setup
 
-### Setup part 1 - getting the sequelize-cli tool (you only have to do this once)
+## Setup part 1 - getting the sequelize-cli tool (you only have to do this once)
 
 We need install a generator so we can use sequelize. Much like our other terminal apps, we will only install this once.
 
@@ -26,7 +26,7 @@ echo "node_modules" >> .gitignore
 Add/save dependencies (sequelize needs pg for Postgres and pg-hstore for JSON serialization)
 
 ```
-npm install --save express ejs body-parser pg pg-hstore sequelize
+npm install express ejs pg pg-hstore sequelize
 ```
 
 Create a database and initialize a sequelize project
