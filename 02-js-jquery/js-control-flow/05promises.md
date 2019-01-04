@@ -43,6 +43,31 @@ console.log(myPromise);
 
 ## Consuming the Promise
 
+Promises are generally _consumed_ by attaching a `.then().catch()`. 
+**.then()** 
+* triggered by the `resolve()` function
+* handles what to do next with the retrieved data
+**.catch()**
+* triggered by the `reject()` function
+* handles the error
+
+```js
+function consumePromise(){
+	myPromise
+		.then(function(retrievedValue){ // will run if resolve() is called
+			console.log("fulfilled! retrievedValue is:", retrievedValue);
+		}).catch(function(err){ // will run if reject() is called
+			console.log("wah wah :( Error:", err);
+		})
+}
+
+var valueToRetrieve = "!!!";
+var myPromise = new Promise(myCallback);
+consumePromise();
+```
+
+Run this code to see the `.then()` callback run. Change `valueToRetrieve` to a falsey value to see the `.catch()` in action!
+
 
 ## More Resources
 * [Javascript Promises for Dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
