@@ -68,6 +68,63 @@ consumePromise();
 
 Run this code to see the `.then()` callback run. Change `valueToRetrieve` to a falsey value to see the `.catch()` in action!
 
+## Chaining Promises
+
+You can chain multiple promises together using the `.then()` function. In the callback function of the `.then()`, just return the next promise you want to run:
+
+```js
+function consumeTwoPromises(){
+	myPromise
+		.then(function(firstRetrievedValue){
+			return new Promise(function(resolve, reject){
+				console.log("first retrived value: "+firstRetrievedValue);
+				if(firstRetrievedValue){
+					resolve(firstRetrievedValue+"???")
+				} else {
+					reject("firstRetrievedValue is falsey");
+				}
+			})
+		})
+		.then(function(secondRetrievedValue){ // will run if resolve() is called
+			console.log("second retrieved value is:", secondRetrievedValue);
+		}).catch(function(err){ // will run if reject() is called
+			console.log("wah wah :( Error:", err);
+		})
+}
+
+var valueToRetrieve = "!!!";
+var myPromise = new Promise(myCallback);
+consumeTwoPromises();
+```
+
+## Asyncronicity
+
+Note that promises are asynchronous. If we add the following `console.log()` statements, they wont necessarily run in the order we'd expect. Try it out!
+
+```js
+function consumeTwoPromises(){
+	console.log("before promises")
+	myPromise
+		.then(function(firstRetrievedValue){
+			return new Promise(function(resolve, reject){
+				console.log("first retrived value: "+firstRetrievedValue);
+				if(firstRetrievedValue){
+					resolve(firstRetrievedValue+"???")
+				} else {
+					reject("firstRetrievedValue is falsey");
+				}
+			})
+		})
+		.then(function(secondRetrievedValue){ // will run if resolve() is called
+			console.log("second retrieved value is:", secondRetrievedValue);
+		}).catch(function(err){ // will run if reject() is called
+			console.log("wah wah :( Error:", err);
+		})
+	console.log("after promises");
+}
+```
+
+How would you edit this code so that the final `console.log` statement runs _after_ the promises are fulfilled?
 
 ## More Resources
 * [Javascript Promises for Dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
