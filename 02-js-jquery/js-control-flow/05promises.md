@@ -43,3 +43,8 @@ console.log(myPromise);
 
 ## Consuming the Promise
 
+
+## More Resources
+* [Javascript Promises for Dummies](https://scotch.io/tutorials/javascript-promises-for-dummies)
+* [cujoJS: Learning Promises](http://know.cujojs.com/tutorials/promises/)
+
