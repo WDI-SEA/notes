@@ -2,9 +2,9 @@
 
 A promise is an Javascript object that has a job: go get a particular value. A promise can be in one of three states:
 
-**1. Pending:** the promise is in the process of trying to retrieve the value
-**2. Fulfilled:** the promise has successfully retrieved the value
-**3. Rejected:** the promise was unable to retrieve the value
+* **Pending:** the promise is in the process of trying to retrieve the value
+* **Fulfilled:** the promise has successfully retrieved the value
+* **Rejected:** the promise was unable to retrieve the value
 
 ### Analogy
 Imagine you are stuck at home with a sprained ankle, so you send your friend to the market to buy some pain medication. Your friend is the **promise**. Once your friend has left for the market, the promise is **pending**. If your friend returns from the market with medication, the promise is **fulfilled**. If your friend returns from the market _without_ medication, the promise is **rejected**. 
@@ -23,7 +23,7 @@ The promise will pass 2 arguments into the callback:
 
 ```js
 function myCallback(resolve, reject) {
-	console.log('pending...');
+  console.log('pending...');
   if(valueToRetrieve) {
     resolve(valueToRetrieve);
   } else {
