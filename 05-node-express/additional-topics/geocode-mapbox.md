@@ -29,6 +29,7 @@ const geocodingClient = mbxGeocoding({ accessToken: 'your-access-token' });
 ```
 
 **4.Forward Geocode!**
+
 Search for `'Seattle, WA'` and check out the GeoJSON feature collection that is returned!
 
 ```js
