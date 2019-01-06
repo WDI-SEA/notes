@@ -1,4 +1,4 @@
-# Geocoding and Google Maps
+# Geocoding and Mapbox
 
 ## Objectives
 
@@ -6,11 +6,7 @@
 * Utilize geocoding with a geocoder and Sequelize hooks
 * Use Google Maps to add geocoordinates to a map.
 
-## Starter Code
-
-We'll be using the starter code here (fork and clone): https://github.com/WDI-SEA/express-geocode-maps-example
-
-## Geocoding Addresses
+## Geocoder
 
 **What is geocoding?** - The process of converting a description of a place to geographic coordinates. The relationship between the description and the place is a *mapping* (no pun intended).
 
@@ -19,15 +15,14 @@ We'll be using the starter code here (fork and clone): https://github.com/WDI-SE
 "Seattle, WA" -> **geocode** -> {lat: 47.6062095, lng: -122.3320708}
 
 ### Using Geocoder
-First lets install the package into our starter code. Note that we'll be using Google's geocoder API.
 
-```
-npm install geocoder
-```
+We'll use the [geocoder](https://www.npmjs.com/package/geocoder) node module.
 
-### Try this in a separate file
+**1.** Set up a new node project called `geocode-example`.
 
-We'll use this code in a file called `mapTest.js`
+**2.** Install `geocoder` via `npm`.
+
+**3.** In a file called `mapTest.js`, import `geocoder` and geocode Seattle:
 
 ```js
 var geocoder = require('geocoder');
