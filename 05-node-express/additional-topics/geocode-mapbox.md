@@ -90,9 +90,9 @@ You're going to set up an app that allows users to search for a city and add the
 
 ### Set up the front end.
 
-* Install `express`, `ejs`, and `express-ejs-layouts`.
+* Install `express`, `ejs`, `express-ejs-layouts`, and `method-override`.
 * Set up an `express` app that listens to port `8000`.
-* Add `ejs`, `express-ejs-layouts`, and `body-parser` middleware.
+* Add `ejs`, `express-ejs-layouts`, `body-parser`, and `method-override` middleware.
 * Create your `views` folder that has your `layout.ejs`.
 
 ### Set up the database.
@@ -117,6 +117,8 @@ You're going to set up an app that allows users to search for a city and add the
 
 #### favorites
 * lists all saved favorite cities
+* each list item should have a "remove from favorites" button that deletes that city from the `places` table and redirects back to the favorites page
+* "remove from favorites" button will need to be a `POST` form with a submit button that utilizes `method-override`
 
 ### Routes
 
@@ -132,3 +134,6 @@ You're going to set up an app that allows users to search for a city and add the
 
 #### GET '/favorites'
 * pull all favorited cities from the database and pass them into the view
+
+#### DELETE '/remove'
+* deletes city from `place` table and redirects to _favorites_ view
