@@ -78,12 +78,19 @@ geocodingClient
 
 Now we're going to embed a map into a web page so our user can interact with it on the front end.
 
+**6.** Set up the front end.
+
 * Install `express` and `ejs`.
 * Set up an `express` app that uses `ejs` as its view engine and listens to port `8000`.
 * Write a home route that renders a `map` view.
 
-**6.** Install `mapbox-gl` via `npm`.
+**7.** Copy Example Code
 
+The [Mapbox Examples] page has all the examples plus source code you could ever want! Let's copy the source code from the [Draw GeoJSON points](https://www.mapbox.com/mapbox-gl-js/example/geojson-markers/) example and do some tweaking to make it our own.
+
+**8.** Put our own marker on the map
+
+By default, there are two GeoJSON markers on the map, one in San Francisco and one in DC. Let's get the coordinates for General Assembly Seattle and add it to our list of markers that display on load.
 
 ## More Resources
 * [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
