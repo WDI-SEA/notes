@@ -92,5 +92,7 @@ The [Mapbox Examples] page has all the examples plus source code you could ever 
 
 By default, there are two GeoJSON markers on the map, one in San Francisco and one in DC. Let's get the coordinates for General Assembly Seattle and add it to our list of markers that display on load.
 
+Let's search for the Seattle Tower
+
 ## More Resources
 * [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
