@@ -100,6 +100,7 @@ You're going to set up an app that allows users to search for a city and add the
 #### city-search
 * form with two text inputs, one for city and one for state
 * form should submit a GET request to `/search`
+* "View My Favorites" button links to  `/favorites` view
 
 #### search-results
 * header that says "search results for <insert the search terms here usint EJS> "
@@ -107,18 +108,23 @@ You're going to set up an app that allows users to search for a city and add the
 * each list item should include a form with four hidden fields (city, state, lat, long) so the favorites button actually submits a `POST` request to `/add`
 * include a "back to search" button that links back to the search page
 
+#### favorites
+* lists all saved favorite cities
+
 ### Routes
 
-### GET '/'
+#### GET '/'
 * render `city-search` view
 
-### GET '/search'
+#### GET '/search'
 * use forward geocoding to search for cities in the US (_hint: use the `type` and `countries` fields in addition to `query`_)
 * render `search-results` page, passing through the searched data as well as the results
 
-### POST '/add'
+#### POST '/add'
 * use `findOrCreate` to post to the database of favorites
 
+#### GET '/favorites'
+* pull all favorited cities from the database and pass them into the view
 
 ## More Resources
 * [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
