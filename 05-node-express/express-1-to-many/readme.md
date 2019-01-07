@@ -14,9 +14,9 @@ Today we're going to cover how to setup a one to many relationship, using more t
 Creating a blog.
 
 ```
-npm init
+npm init -y
 
-npm install --save express ejs pg pg-hstore sequelize
+npm install express ejs pg sequelize
 
 createdb blog
 
@@ -24,13 +24,6 @@ sequelize init
 ```
 
 Make sure to setup `config.json` with postgres settings.
-
-**WARNING (06/16/2017):**
-There's a new version of sequelize that doesn't work with the `sequelize-cli`
-command line tool we use.
-
-Always, always, always use `npm install --save sequelize` until further
-notice!
 
 ## Creating A Model
 
