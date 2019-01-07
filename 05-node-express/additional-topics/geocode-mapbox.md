@@ -30,7 +30,7 @@ const geocodingClient = mbxGeocoding({ accessToken: 'your-access-token' });
 
 **4.Forward Geocode!**
 
-Search for `'Seattle, WA'` and check out the GeoJSON feature collection that is returned!
+Search for `'Seattle, WA'` and check out the GeoJSON feature collection that is returned. [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#search-for-places) 
 
 ```js
 geocodingClient
@@ -55,5 +55,21 @@ geocodingClient
   .then(response => {
     const match = response.body;
     console.log(match.features[0].center);
+  });
+```
+
+**5.Reverse Geocode!**
+
+Now copy the coordinates that you just found and reverse geocode them! [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#retrieve-places-near-a-location)
+
+```js
+geocodingClient
+  .reverseGeocode({
+    query: [ -122.3301, 47.6038 ]
+  })
+  .send()
+  .then(response => {
+    const match = response.body;
+    console.log(match);
   });
 ```
