@@ -88,10 +88,37 @@ You're going to set up an app that allows users to search for a city and add the
 * Add `ejs`, `express-ejs-layouts`, and `body-parser` middleware.
 * Create your `views` folder that has your `layout.ejs`.
 
+### Set up the database.
+
+* install `pg`, `pg-hstore`, and `sequelize` via npm
+* initialize  `sequelize`
+* create a `place` model with `city`, `state`, `lat`, and `long` fields
+* run migration
 
 ### Views
 
+#### city-search
+* form with two text inputs, one for city and one for state
+* form should submit a GET request to `/search`
+
+#### search-results
+* header that says "search results for <insert the search terms here usint EJS> "
+* list search results (include the name and coordinates of each result, along with an "add to favorites" button)
+* each list item should include a form with four hidden fields (city, state, lat, long) so the favorites button actually submits a `POST` request to `/add`
+* include a "back to search" button that links back to the search page
+
 ### Routes
+
+### GET '/'
+* render `city-search` view
+
+### GET '/search'
+* use forward geocoding to search for cities in the US (_hint: use the `type` and `countries` fields in addition to `query`_)
+* render `search-results` page, passing through the searched data as well as the results
+
+### POST '/add'
+* use `findOrCreate` to post to the database of favorites
+
 
 ## More Resources
 * [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
