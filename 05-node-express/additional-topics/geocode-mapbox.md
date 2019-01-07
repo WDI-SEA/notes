@@ -80,6 +80,9 @@ geocodingClient
   });
 ```
 
+## More Resources
+* [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
+
 ---
 
 ## Exercise/Lab: City Search
@@ -129,6 +132,3 @@ You're going to set up an app that allows users to search for a city and add the
 
 #### GET '/favorites'
 * pull all favorited cities from the database and pass them into the view
-
-## More Resources
-* [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
