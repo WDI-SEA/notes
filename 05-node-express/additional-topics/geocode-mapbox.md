@@ -73,3 +73,17 @@ geocodingClient
     console.log(match);
   });
 ```
+
+## Embedding a Map
+
+Now we're going to embed a map into a web page so our user can interact with it on the front end.
+
+* Install `express` and `ejs`.
+* Set up an `express` app that uses `ejs` as its view engine and listens to port `8000`.
+* Write a home route that renders a `map` view.
+
+**6.** Install `mapbox-gl` via `npm`.
+
+
+## More Resources
+* [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
