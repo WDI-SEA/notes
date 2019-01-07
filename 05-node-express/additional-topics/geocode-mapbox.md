@@ -99,6 +99,7 @@ You're going to set up an app that allows users to search for a city and add the
 
 * install `pg`, `pg-hstore`, and `sequelize` via npm
 * initialize  `sequelize`
+* configure `config.json`
 * create a `place` model with `city`, `state`, `lat`, and `long` fields
 * run migration
 
