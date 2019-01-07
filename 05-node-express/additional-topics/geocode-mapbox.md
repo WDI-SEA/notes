@@ -17,6 +17,8 @@ We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#g
 
 ## Get Geocoding
 
+---
+
 ### Using Mapbox
 * Head to the [mapbox sign up page](https://www.mapbox.com/signup/?route-to=%22/account/%22) and make an account.
 * Locate your Access Token - this will be the same for all Mapbox APIs
@@ -77,6 +79,8 @@ geocodingClient
     console.log(match);
   });
 ```
+
+---
 
 ## Exercise/Lab: City Search
 You're going to set up an app that allows users to search for a city and add their favorite cities to a database.
