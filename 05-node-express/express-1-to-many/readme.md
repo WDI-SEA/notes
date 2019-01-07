@@ -86,7 +86,7 @@ db.author.findOne().then(function(author) {
 });
 ```
 
-###Loading associated items using `getModels`
+### Loading associated items using `getModels`
 
 We can manually get all posts of an author by calling `.getPosts()` on an author instance. Remember this query is asynchronous and takes time, so we have to  use a `.then()` promise too.
 
@@ -109,7 +109,6 @@ db.author.findOne().then(function(author) {
   author.addPost(post);
 });
 ```
-
 
 ## Using `include`
 
