@@ -129,7 +129,7 @@
       * [Routes](05-node-express/express-intro/02routes.md)
       * [Views](05-node-express/express-intro/03views.md)
       * [Templates](05-node-express/express-intro/04templates.md)
-      * [Layouts and Controllers](05-node-express/express-apis/02organization.md)
+      * [Layouts and Controllers](05-node-express/express-apis/01organization.md)
       * [CRUD & REST](05-node-express/express-REST-crud/00readme.md)
         * [Get and Post](05-node-express/express-REST-crud/01get-post.md)
         * [Put and Delete](05-node-express/express-REST-crud/01put-delete.md)
