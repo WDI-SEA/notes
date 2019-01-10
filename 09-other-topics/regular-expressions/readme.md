@@ -74,7 +74,7 @@ There are some special shortcuts you may see written with backslashes.
 | . | Match any single character other than the newline character |
 | ? | Match the preceeding expression 0 or 1 times. Also can be used as a modifier on * and + to make them match the fewest valid characters (non-greedy) as opposed to the most valid characters (greedy) |
 | (...) | putting an expression in parenthesis causes the match to be remembered and saved for later use. |
-| `|` | this is the or operator - e.g., `x|y` will match x or y. |
+| &#124; | this is the or operator - e.g., x &#124; y will match x or y. |
 | [...] | A character set (match any character that is included) |
 | [^...] | A negated character set (match any character NOT in the set) |
 | \d | Matches any digit (equivalent to [0-9]) |
