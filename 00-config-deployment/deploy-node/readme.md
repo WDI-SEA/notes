@@ -183,13 +183,16 @@ You may notice that the data on your local machine does not travel up to Heroku.
 You can view your brand new database by executing the `psql` command you know and love on Heroku. Do this by typing
     **heroku pg:psql**
 
-### Migrate from Sequelize 3 to 4
 
-If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
+# DEBUGGING HELP
 
 ## Something is broken?!?!?!?!
 
 Don't panic! Type `heroku logs` to see the error and info messages from the Heroku server! Find the error and Google it if the meaning isn't readily apparent! Some fixes to common errors are found below!
+
+### Migrate from Sequelize 3 to 4
+
+If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
 
 ### Version Conflicts
 
