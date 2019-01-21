@@ -117,7 +117,7 @@ Get back into your groups of two from earlier and layout your shuffled deck of c
 
 #### 1. Selection sort
 
-This time, you're only going to make a swap if your smaller number will be in its final resting place. Thus, you should go through the array and find the lowest number and swap it with the first card. Then do the same thing with the second card, and so on until you're finished.
+This sort is similar to Bubble Sort, but this time, you're only going to make a swap if your smaller number will be in its final resting place. Thus, you should go through the array and find the lowest number and swap it with the first card. Then do the same thing with the second card, and so on until you're finished.
 
 After you're done, add `Selection Sort` to the table above with your best guesses about what its stats are based on your experience.
 
