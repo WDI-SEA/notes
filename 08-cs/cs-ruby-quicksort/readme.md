@@ -81,7 +81,7 @@ else
 end
 ```
 
-##Starter Code (with partition)
+## Starter Code (with partition)
 
 ```rb
 # define algorithm here (you'll need lo and hi for the beginning/endpoints on the recursive call)
