@@ -1,10 +1,10 @@
-#Intro to NoSQL
+# Intro to NoSQL
 
-##What is MongoDB?
+## What is MongoDB?
 
 MongoDB (short for hu**mongo**us) is one of the new breeds of databases known as NoSQL databases. NoSQL databases are heavily used in realtime, big data and social media applications and generally called NoSQL because they do things a little differently than traditional SQL databases. It is a schemaless document-based datastore. This means it doesn't have `tables`. It instead has `documents`.
 
-###Data Format
+### Data Format
 
 * A MongoDB database consists of documents.
 * A document in MongoDB is composed of field and value pairs.
@@ -28,7 +28,7 @@ BSON basically extends JSON with additional data types, such as **ObjectID** and
 
 Read more about MongoDB here: [MongoDB Documentation](http://docs.mongodb.org/manual/)
 
-###MongoDB vs. Relational Databases
+### MongoDB vs. Relational Databases
 
 ![MongoDB vs Relational Databases](http://4.bp.blogspot.com/-edz2_QrFvCE/UnzBhKZE3FI/AAAAAAAAAEs/bTEsqnZFTXw/s1600/SQL-MongoDB+Correspondence.PNG)
 
