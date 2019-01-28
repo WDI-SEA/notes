@@ -24,7 +24,7 @@ cd family-tree
 npm init -y
 
 # install dependencies
-npm install express body-parser
+npm install express 
 
 # create index file
 touch index.js
