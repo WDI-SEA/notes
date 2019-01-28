@@ -21,10 +21,10 @@ mkdir family-tree
 cd family-tree
 
 # setup npm
-npm init --yes
+npm init -y
 
 # install dependencies
-npm install --save express body-parser
+npm install express body-parser
 
 # create index file
 touch index.js
@@ -33,7 +33,7 @@ touch index.js
 To use Mongoose in your Node app:
 
 ```bash
-npm install --save mongoose
+npm install mongoose
 ```
 
 With the package installed, lets use it - open index.js and setup your app:
@@ -80,10 +80,8 @@ var mongoose = require('mongoose');
 var userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
-  meta: {
-    age: Number,
-    website: String
-  }
+  age: Number,
+  website: String
 });
 ```
 
