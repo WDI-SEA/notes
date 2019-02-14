@@ -41,6 +41,7 @@ TIME_ZONE = 'America/Los_Angeles'
 ```
 
 **boardgamesite/boardgamesite/urls.py**
+(You have to create this file yourself.)
 ```python
 urlpatterns = [
   url(r'^admin/', admin.site.urls),
