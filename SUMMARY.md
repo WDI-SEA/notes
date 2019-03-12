@@ -1,5 +1,5 @@
 * [Introduction](README.md)
-* [Schedule](00-schedule/WDI-22/calendar.md)
+* [Schedule](00-schedule/SEI-24/calendar.md)
   * [SEI 24](00-schedule/SEI-24/calendar.md)
     * [Calendar](00-schedule/SEI-24/calendar.md) 
   * [WDI 22](00-schedule/WDI-22/calendar.md)
