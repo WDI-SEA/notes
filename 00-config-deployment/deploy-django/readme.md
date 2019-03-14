@@ -78,6 +78,12 @@ Unfortunately, Django makes you jump through some hoops to get static files work
 
 You can follow the directions on [their docs](http://whitenoise.evans.io/en/stable/django.html) to get it set up.
 
+After you're done with that, run the following commnd to collect your assets into the static folder:
+
+```
+heroku run python manage.py collectstatic
+```
+
 ## Set up Database Settings
 
 There's no one way to do this, but you'll eventually find that you need different settings between a development environment and a production environment. We'll need to set up our database settings in `settings.py` to be configured for our production environment. These settings will be different than our development environment settings. There are a couple ways to go about this.
