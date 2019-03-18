@@ -136,7 +136,7 @@ _"Hey, give me the information located at the web address 'google.com'"_
 
 When the user press enter in the url input in a web browser , a `GET request` will start, this is what this request will look like:
 
-![http request CLI](http://s27.postimg.org/u231qbweb/Screen_Shot_2015_08_15_at_15_27_13.png)
+![http request CLI](https://i.imgur.com/58nCl0e.png)
 
 
 Note, the webpage being requested is:
