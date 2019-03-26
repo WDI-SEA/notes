@@ -61,7 +61,7 @@ The `search` endpoint for the [Reddit API](https://www.reddit.com/dev/api/) does
 
 ### Examples (no key required)
 
-* [Random Quotes API](https://talaikis.com/random_quotes_api/)
+* [Random Quotes API](https://quotesondesign.com/api-v4-0/)
 
 * [iTunes API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/)
 
