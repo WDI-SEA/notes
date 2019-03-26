@@ -66,10 +66,10 @@ that's inside of an image.
 ## Drawing on the Canvas
 Check out this repo to bare-bones page with a canvas we can draw on.
 
-The canvas element provides us with something called it's **context**.
-Canvas supports a variety of different contexts, primarily 2D and 3D. We'll
-be using our canvas for drawing simple two-dimensional images so we'll grab
-the 2D context off the canvas.
+The canvas element provides us with something called it's **context**. Think
+of context like a repo for canvas methods. Canvas supports a variety of 
+different contexts, primarily 2D and 3D. We'll be using our canvas for drawing 
+simple two-dimensional images so we'll grab the 2D context off the canvas.
 
 The canvas element is the canvas we paint on, the context is like our
 paintbrush. We'll use the context to paint rectangles at first. The context
@@ -97,14 +97,16 @@ function main() {
   var canvas = document.getElementById("easel");
   var ctx = canvas.getContext("2d");
 
-  // It's possible for the canvas to be a different size than the element on the
-  // page. If the canvas were smaller than the element than it would be stretched.
-  // Let's use jQuery to measure the size of the element and set the canvas to that.
-  canvas.width = $(canvas).width();
-  canvas.height = $(canvas).height();
+  // The canvas doesn't register the same way as a div, so if you set the width
+  // and height properties in your CSS file, you'll end up stretching the canvas
+  // which automatically has 2:1 ratio (width of 300px and a height of 150px). 
+  // You can get around this by putting the width and height in the HTML or doing
+  // it programatically by assigning attributes with Javascript
+  canvas.setAttribute('width', '800');
+  canvas.setAttribute('height', '800');
   
   // It turns out to be useful to attach the width and height properties to the
-  // ctx too, so it knows how big it's canvas is.
+  // ctx too, so it knows how big it's canvas is. 
   ctx.width = canvas.width;
   ctx.height = canvas.height;
 
@@ -377,7 +379,7 @@ document.getElementById("clear").addEventListener("click", function(event) {
 });
 ```
 
-## Refact Draw Method Inside Rectangle Classo
+## Refactor Draw Method Inside Rectangle Class
 Object oriented programming allows us to:
 
 1. model data that represents what objects are
