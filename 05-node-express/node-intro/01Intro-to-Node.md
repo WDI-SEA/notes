@@ -19,6 +19,7 @@
     * manage data securely
 
 ## Node
+
 Node is a platform that uses JavaScript for creating network applications.
 
 But wait! Isn't Javascript is a _front-end_ language written for browsers? Yes! This is the beauty of Node. It gives us a server-side environment that can handle logic written in Javascript. It allows JavaScript to be run on a server.

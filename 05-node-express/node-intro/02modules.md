@@ -122,16 +122,19 @@ In this excercise, you will make a Hello World app from scratch by using the the
 3. Create your entry point file.
 4. Import the ```http``` module into your entry file. (Hint: use the ```require``` function)
 5. Create an http server that listens to ```port 8000``` and writes ```Hello, World!``` to the client. (Hint: look up the core http module on [w3schools](https://www.w3schools.com/nodejs/nodejs_http.asp))
-6. Run the server using nodemon.
+6. Run the server using the command `node index.js`.
 7. Check to see that your program is working by visiting ```localhost:8000``` in your browser.
 
 #### Finished Code
+
 <details>
   <summary>index.js</summary>
-  var http = require('http');
+  	```js
+	var http = require('http')
 
 	http.createServer(function(req, res){
-		res.write("Hello, World!");
-		res.end();
-	}).listen(8000);
+		res.write('Hello, World!')
+		res.end()
+	}).listen(8000)
+	```
 </details>

@@ -38,13 +38,13 @@ Let's see nodemon in action! Try running your ```my-first-node-app``` using node
 Now open up ```my-first-node-app``` in sublime. Add the following code to ```index.js```:
 
 ```js
-var i=0;
+var i = 0
 
-var myTimer = setInterval(count,1000)
+var myTimer = setInterval(count, 1000)
 
 function count() {
 	console.log(i)
-	i++;
+	i++
 }
 ```
 
@@ -58,4 +58,4 @@ To quit nodemon (and any program running in the terminal), press CTRL+C.
 
 ***Congratulations***, you've just installed and used your first third party node module!
 
-We installed nodemon globally, but most node packages will only be useful for specific projects. In this case, when you run ```npm install [package name]``` you want to make sure you're inside the directory of the project you want to use the package in, and leave of the ```-g``` flag.
+We installed nodemon globally, but most node packages will only be useful for specific projects. In this case, when you run ```npm install [package name]``` you want to make sure you're inside the directory of the project you want to use the package in, and leave off the ```-g``` flag.
