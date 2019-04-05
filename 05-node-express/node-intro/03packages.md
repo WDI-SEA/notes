@@ -59,3 +59,117 @@ To quit nodemon (and any program running in the terminal), press CTRL+C.
 ***Congratulations***, you've just installed and used your first third party node module!
 
 We installed nodemon globally, but most node packages will only be useful for specific projects. In this case, when you run ```npm install [package name]``` you want to make sure you're inside the directory of the project you want to use the package in, and leave off the ```-g``` flag.
+
+## Using a Third Party Module
+
+#### Introducing Moment: A Date/Time Format Module
+
+Moment is a date formatting module. Instead of the mess of text that comes out when you create a regular date with JavaScript using the date class, we can pretty-print the date in a human readable way.
+
+```js
+console.log(new Date())
+// Prints: Fri Apr 05 2019 09:58:38 GMT-0700 (Pacific Daylight Time)
+```
+
+#### Install Moment
+
+1. Go to your terminal 
+
+2. Make sure you're in the top level of your ```my-first-node-app``` folder
+
+3. Type the command ```npm install moment```
+
+4. When the command is finished, go back to your text editor
+
+5. Make sure there is a folder called ```node_modules``` in the top level of your ```my-first-node-app``` folder
+
+#### Use Moment in a Node App
+
+1. Open `index.js` in your text editor
+
+2. Require the moment library at the top of `index.js` and assign it to a variable called `moment`
+
+3. Take a look at [Moment's Docs](http://momentjs.com/). There are a lot of things you can do with this module!
+
+4. Let's use the moment module to print a date! Add the following code to your `index.js` file:
+
+```js
+console.log(moment().format("MMM Do YYYY"))
+```
+
+5. What does this print? You should have seen whatever today's date was in the format: 3-letter month, numerical day plus ordinal, and 4-digit year. For example: 
+
+```
+Apr 15th, 2020
+```
+
+6. Next challenge: Use moment to pretty-print your birthday. Use the fully spelled out month, day of the week, escaped text for words such as `the` and `of`, and 4-digit year. For example:
+
+```
+Wednesday the 11th of September in the year 1985
+```
+
+7. BONUS: Use moment's `.fromNow()` function
+
+<details>
+    <summary>Solution Code</summary>
+
+```js
+var moment = require('moment')
+
+// Prints today's date
+console.log(moment().format("MMM Do YYYY"))
+
+// Prints my birthday
+console.log(moment('09-11-1985', 'MM DD YYYY').format("dddd [the] Do [of] MMMM [in the year] YYYY"))
+
+// Prints how long ago my birthday was
+console.log('Oh boy, that was', moment('09-11-1985', 'MM DD YYYY').fromNow(), 'years ago!')
+```
+</details>
+
+#### Git Ignore File
+
+Before we get too much further, **WAIT**! 
+
+Take a look at the `node_modules` folder that got generated when you used the `npm install` command. How big is this folder? How many files are in it? What's going on?
+
+In general, we keep track of the version of the module that we are using in a file called `package.json`. This means we can just redownload the modules based on the version number on any new computer we want to put our code on - be that a fellow developer's computer or a production server. A package.json file might look something like this:
+
+```js
+{
+  "name": "node-introl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
+```
+
+> Notice there is a "dependencies" section which lists our 3rd party dependencies. Right now we just have one, but others we install will go here, along with their version numbers in alphabetical order.
+
+So, because we can just re-install the appropriate packages, we actually don't *need* to have the `node_modules` folder to be tracked by git at all! In fact, the node_modules folder can get so huge and unweildy that it's greatly preferred that you **DO NOT** push them up to github nor track them with version control! In fact, this can also cause serious errors during deployment!
+
+**How can we avoid this?!**
+
+We can specify directions to git about which files it should ignore by creating a file called `.gitignore`. Yes, the `.` at the front is necessary!
+
+A `.gitignore` file will contain a list of files and folders that git should NOT be tracking. Go ahead and make a `.gitignore` file now and put `node_modules` into it as the first line.
+
+```
+node_modules
+```
+
+Congrats - now when you add git tracking to this folder, it will not track the node_modules folder and will not push it to github! 
+
+Other common things to ignore for git are things like `.env` files which contain localized settings and possibly sensitive data like secret keys, salts, or API keys. Thus leading to this pro-tip:
+
+> Life Pro Tip: .gitignore should be one of the first files you create in a project! Create it before you do a single check-in. Always. Don't be the developer who oopsed and put an API key in public. 
