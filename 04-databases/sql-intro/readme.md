@@ -25,11 +25,12 @@ Discuss as a class. Why is it better than just writing to files?
 
 ## Types of Databases
 
-**RDBMS** (Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribute of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
+### RDBMS
+(Relational Database Management System) The most common type of database today is a **relational database**.  Relational databases have tabular data with rows for each instance of data and columns for each attribute of that data. Tables may refer to one another. Relational databases typically use **SQL** (Structured Query Language).
 
 ![diagram of example relational database](https://image.slidesharecdn.com/databasemanagementsystem-161020091729/95/database-management-system-9-638.jpg?cb=1476955074 "diagram of example relational database")
 
-### Brands of Relational Databases
+**Brands of Relational Databases**
 
 * Postgres
 * MySQL
@@ -37,9 +38,11 @@ Discuss as a class. Why is it better than just writing to files?
 * Microsoft SQL Server
 * SQLite (Good for mobile development/Small applications)
 
-**Cloud Storage**  This is a very vague term and can be used to mean lots of things. Typically it is a system in which your data is stored and managed by a company so you don't have to worry about losing it. Examples included AWS (Amazon Web Services), Rackspace, MS Azure
+### Cloud Storage  
+This is a very vague term and can be used to mean lots of things. Typically it is a system in which your data is stored and managed by a company so you don't have to worry about losing it. Examples included AWS (Amazon Web Services), Rackspace, MS Azure
 
-**NoSQL** There is also a school of thought called NoSql.  It is often a Key Value storage system and is not relational.  This is typically used in applications where a database does not scale well.  Example technologies include MongoDB, Apache CouchDB, SimpleDB.
+### NoSQL
+There is also a school of thought called NoSql (literally Not SQL).  Instead of data being stored in tables, it is often a Key Value storage system and is not relational.  This is typically used in applications where a database needs to scale well.  Example technologies include MongoDB, Apache CouchDB, SimpleDB.
 
 ## How are databases used in the wild?
 
@@ -167,12 +170,12 @@ UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 ## DELETE-ing Data
 
 ```sql
-DELETE from students WHERE name = 'Mary';
+DELETE FROM students WHERE name = 'Mary';
 ->DELETE 0
 ```
 
 ```sql
-DELETE from students WHERE email = 'bobby@example.com';
+DELETE FROM students WHERE email = 'bobby@example.com';
 ->DELETE 1
 ```
 
