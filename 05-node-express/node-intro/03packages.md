@@ -85,47 +85,48 @@ console.log(new Date())
 
 #### Use Moment in a Node App
 
-1. Open `index.js` in your text editor
+* Open `index.js` in your text editor
 
-2. Require the moment library at the top of `index.js` and assign it to a variable called `moment`
+* Require the moment library at the top of `index.js` and assign it to a variable called `moment`
 
-3. Take a look at [Moment's Docs](http://momentjs.com/). There are a lot of things you can do with this module!
+* Take a look at [Moment's Docs](http://momentjs.com/). There are a lot of things you can do with this module!
 
-4. Let's use the moment module to print a date! Add the following code to your `index.js` file:
+* Let's use the moment module to print a date! Add the following code to your `index.js` file:
 
 ```js
 console.log(moment().format("MMM Do YYYY"))
 ```
 
-5. What does this print? You should have seen whatever today's date was in the format: 3-letter month, numerical day plus ordinal, and 4-digit year. For example: 
+* What does this print? You should have seen whatever today's date was in the format: 3-letter month, numerical day plus ordinal, and 4-digit year. For example: 
 
 ```
 Apr 15th, 2020
 ```
 
-6. Next challenge: Use moment to pretty-print your birthday. Use the fully spelled out month, day of the week, escaped text for words such as `the` and `of`, and 4-digit year. For example:
+* Next challenge: Use moment to pretty-print your birthday. Use the fully spelled out month, day of the week, escaped text for words such as `the` and `of`, and 4-digit year. For example:
 
 ```
 Wednesday the 11th of September in the year 1985
 ```
 
-7. BONUS: Use moment's `.fromNow()` function
+* BONUS: Use moment's `.fromNow()` function
 
 <details>
     <summary>Solution Code</summary>
-
-```js
+<br>
 var moment = require('moment')
-
+<br><br>
 // Prints today's date
+<br>
 console.log(moment().format("MMM Do YYYY"))
-
+<br><br>
 // Prints my birthday
+<br>
 console.log(moment('09-11-1985', 'MM DD YYYY').format("dddd [the] Do [of] MMMM [in the year] YYYY"))
-
+<br><br>
 // Prints how long ago my birthday was
+<br>
 console.log('Oh boy, that was', moment('09-11-1985', 'MM DD YYYY').fromNow(), 'years ago!')
-```
 </details>
 
 #### Git Ignore File
@@ -164,6 +165,7 @@ We can specify directions to git about which files it should ignore by creating 
 
 A `.gitignore` file will contain a list of files and folders that git should NOT be tracking. Go ahead and make a `.gitignore` file now and put `node_modules` into it as the first line.
 
+*.gitignore*
 ```
 node_modules
 ```
