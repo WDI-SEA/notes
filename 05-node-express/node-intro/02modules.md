@@ -129,12 +129,14 @@ In this excercise, you will make a Hello World app from scratch by using the the
 
 <details>
   <summary>index.js</summary>
-  	```js
+  	<br>
 	var http = require('http')
-
+	<br><br>
 	http.createServer(function(req, res){
-		res.write('Hello, World!')
-		res.end()
+	<br>
+	&nbsp;&nbsp;res.write('Hello, World!')
+	<br>
+	&nbsp;&nbsp;res.end()
+	<br>
 	}).listen(8000)
-	```
 </details>
