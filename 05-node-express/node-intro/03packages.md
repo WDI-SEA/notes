@@ -109,7 +109,7 @@ Apr 15th, 2020
 Wednesday the 11th of September in the year 1985
 ```
 
-* BONUS: Use moment's `.fromNow()` function
+* BONUS: Use moment's `.fromNow()` function to print just how many years ago that birthday was!
 
 <details>
     <summary>Solution Code</summary>
