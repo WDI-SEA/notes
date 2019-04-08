@@ -265,14 +265,57 @@ With a `RIGHT JOIN` the table returned will have all values in the right table, 
 
 Unions display the results of two or more SELECT statements into one table, so the SELECT statements must have the same number of columns with the same names/data types, in the same order.
 
+Here's a customer table
+```sql
+id | name      
+---+---------
+ 1 | Romesh  
+ 2 | Sally 
+ 3 | Vlad
+ 4 | Poppy
+```
+and a subscriber table
+```sql
+id | name      
+---+---------
+ 1 | Romesh  
+ 2 | Sally 
+ 3 | Poppy
+ 4 | Janice
+ 5 | Kady
+```
+
 Let's try viewing the ids and names from both the customer and the subscriber tables.
 
 ```sql
 SELECT id, name FROM customer UNION SELECT id, name FROM subscriber ORDER BY id;
 ```
-
+```sql
+id | name      
+---+---------
+ 1 | Romesh  
+ 2 | Sally 
+ 3 | Vlad
+ 3 | Poppy
+ 4 | Poppy
+ 4 | Janice
+ 5 | Kady
+```
 Notice that the resulting table has fewer rows that the sum of the rows from each table. This is because UNION statements also eliminate any duplicate rows from the result. To include the duplicate rows, use UNION ALL.
 
 ```sql
 SELECT id, name FROM customer UNION ALL SELECT id, name FROM subscriber ORDER BY id;
+```
+```sql
+id | name      
+---+---------
+ 1 | Romesh 
+ 1 | Romesh 
+ 2 | Sally
+ 2 | Sally
+ 3 | Vlad
+ 3 | Poppy
+ 4 | Poppy
+ 4 | Janice
+ 5 | Kady
 ```
