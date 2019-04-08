@@ -142,7 +142,6 @@ FROM customer;
 
 
 ### JOINs
-### JOINs
 
 There are four types of JOINs in SQL:
 * `LEFT JOIN`
