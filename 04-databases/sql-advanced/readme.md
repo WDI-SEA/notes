@@ -133,10 +133,10 @@ The CASE statement is used when you want to display different things depending o
 ```sql
 SELECT name,
 	age, 
-		CASE WHEN age<25
-		THEN 'young adult'
-		ELSE 'adult' 
-		END AS age_group 
+	CASE WHEN age<25
+	THEN 'young adult'
+	ELSE 'adult' 
+	END AS age_group 
 FROM customer;
 ```
 
