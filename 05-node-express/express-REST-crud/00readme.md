@@ -35,6 +35,7 @@ There are seven main RESTful routes:
 | GET | /dinosaurs/edit/:id | Edit (Read) | shows a form for editting a specific dinosaurs (i.e. /dinosaurs/edit/1)|
 | PUT | /dinosaurs/:id | Update (Update) | updates the data for a specific dinosaur (i.e. /dinosaurs/1) |
 | DELETE | /dinosaurs/:id | Destroy (Delete) | deletes the dinosaur with the specified id (i.e. /dinosaurs/1) |
+
 *NOTE: With all of your POST, PUT, and DELETE routes, you'll want to add a redirect to a GET page*
 
 [Read more on wiki](http://en.wikipedia.org/wiki/Representational_state_transfer)
