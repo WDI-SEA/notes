@@ -19,8 +19,8 @@ Your app must:
 * **Incorporate at least one API.** Examples include Yelp, Tumblr, Facebook, and others on Mashape.
 * **Have complete RESTful routes** for at least one of your resources with GET, POST, PUT, and DELETE
 * **Utilize an ORM to create a database table structure** and interact with your relationally-stored data
-* **Include wireframes** that you designed during the planning process
-* Have **semantically clean HTML and CSS**
+* **Include a readme file** that explains how to use your app
+* Have **semantically clean HTML, CSS, and back-end code**
 * **Be deployed online** and accessible to the public
 
 ---
@@ -30,14 +30,16 @@ Your app must:
 * A **working full-stack application, built by you**, hosted somewhere on the internet
 * A **link to your hosted working app** in the URL section of your Github repo
 * A **git repository hosted on Github**, with a link to your hosted project,  and frequent commits dating back to the **very beginning** of the project. Commit early, commit often.
-* **A ``readme.md`` file** with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, etc.
-* **Wireframes of your app**, hosted somewhere & linked in your readme
-* A link in your ``readme.md`` to the publically-accessible **user stories you created**
+* **A ``readme.md`` file** with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, and a link to the live site.
 
 ---
 
 ### Suggested Ways to Get Started
 
+* Start with wireframes and go through a project planning process. Consider what is your:
+    * Goals for each 'sprint'
+    * MVP
+    * Stretch Goals
 * **Begin with the end in mind.** Know where you want to go by planning with wireframes & user stories, so you don't waste time building things you don't need
 * **Don't hesitate to write throwaway code to solve short term problems**
 * **Read the docs for whatever technologies you use.** Most of the time, there is a tutorial that you can follow, but not always, and learning to read documentation is crucial to your success as a developer
@@ -57,7 +59,7 @@ Your app must:
 
 ### Project Feedback + Evaluation
 
-* __Project Workflow__: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in (detailed above)?
+* __Project Workflow__: Did you spend an adequate amount of time on the planning process? Did you use source control as expected? Are your commit messages clear? Do you have a readme file?
 
 * __Technical Requirements__: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
 
