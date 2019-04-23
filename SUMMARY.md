@@ -189,6 +189,8 @@
   * [Angular Custom Filters](07-angular/angular-custom-filters/readme.md)
   * [Angular Custom Directives](07-angular/angular-custom-directives/readme.md)
 * [React (Updated 2019)](16-react/readme.md)
+  * [ES6+/ESNext](16-react/es6-syntax/readme.md)
+    * [Const and Let](16-react/es6-syntax/const-let.md)
 * [(Archived) ReactJS](10-react-2016-archived/readme.md)
   * [Intro to React](10-react-2016-archived/react-intro/readme.md)
     * [Todo List Codealong](10-react-2016-archived/react-intro/todo-codealong.md)

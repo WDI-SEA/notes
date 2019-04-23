@@ -10,3 +10,7 @@ This set of updated curriculum has been assembled from many sources including th
 | ---------------- | ------------------------------------- | ---- |
 | Day 1 AM | Lesson | 0.5hr | [Intro to ES6 Syntax](es6-syntax/readme.md) | 
 | Day 1 AM | Lesson | 1.5hr | [Intro to React](#) | 
+
+
+
+
