@@ -8,9 +8,10 @@ This set of updated curriculum has been assembled from many sources including th
 
 | Day/Time | Type | Topic | Time |
 | ---------------- | ------------------------------------- | ---- |
-| Day 1 AM | Lesson | 0.5hr | [Intro to ES6 Syntax](es6-syntax/readme.md) | 
+| Day 1 AM | Lesson | 0.75hr | [Intro to ES6 Syntax](es6-syntax/readme.md) | 
 | Day 1 AM | Lesson | 1.5hr | [Intro to React](#) | 
 
 
 
 
+Overview Exercise: https://github.com/WDI-SEA/react_es6_global/blob/master/05-es6-exercise.md

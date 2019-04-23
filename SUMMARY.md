@@ -191,6 +191,8 @@
 * [React (Updated 2019)](16-react/readme.md)
   * [ES6+/ESNext](16-react/es6-syntax/readme.md)
     * [Const and Let](16-react/es6-syntax/const-let.md)
+    * [Arrow Functions](16-react/es6-syntax/arrow.md)
+    * [Object Literals and String Interpolation](16-react/es6-syntax/literals.md)
 * [(Archived) ReactJS](10-react-2016-archived/readme.md)
   * [Intro to React](10-react-2016-archived/react-intro/readme.md)
     * [Todo List Codealong](10-react-2016-archived/react-intro/todo-codealong.md)
