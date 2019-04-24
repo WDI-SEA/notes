@@ -174,7 +174,8 @@
     * [Arrow Functions](16-react/es6-syntax/arrow.md)
     * [Object Literals and String Interpolation](16-react/es6-syntax/literals.md)
     * [ES6 Recap](16-react/es6-syntax/es6-recap.md)
-
+  * [Intro to React](16-react/intro-react/readme.md)
+    * [Create React App](16-react/intro-react/setup.md)
 * [Meteor](13-meteor/readme.md)
   *[Intro to Meteor](13-meteor/meteor-intro/readme.md)
     *[Image Board Codealong](13-meteor/meteor-intro/codealong.md)
