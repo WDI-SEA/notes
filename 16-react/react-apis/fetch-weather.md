@@ -4,8 +4,6 @@
 
 ## Implement the Fetch API
 
-![logo](assets/open-weather-map-logo.png)
-
 **Resources**:
 
 - [OpenWeather API](http://openweathermap.org/current)
@@ -25,7 +23,7 @@ You'll use the OpenWeather API to fetch weather information from a certain zip c
 At the end of this exercise, your solution will look like what's shown here.
 
 
-<img src="assets/dino-blog-weather.png" class="responsive" />
+<img src="https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png" class="responsive" />
 
 ---
 
@@ -106,10 +104,10 @@ export default About;
 
 ---
 
-## Optional
+## Bonus
 
 Spend a little time styling the page. Here's some inspiration (don't worry about the lens flare).
 
 
-![alt](https://git.generalassemb.ly/react-development/react-development-course-materials/blob/master/04-APIs-and-Heroku/assets/weather.png)
+![alt](https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png)
 
