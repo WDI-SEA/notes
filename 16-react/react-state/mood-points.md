@@ -451,11 +451,9 @@ increaseMood = () => {
 };
 ```
 
-</details>
-
 ---
 
-## Additional Resources
+## Resources
 
 - [React State vs. Props](http://lucybain.com/blog/2016/react-state-vs-pros/)
 
