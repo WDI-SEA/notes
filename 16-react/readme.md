@@ -8,7 +8,8 @@ This set of updated curriculum has been assembled from many sources including th
 
 | Day/Time | Type | Topic | Time |
 | ---------------- | ------------------------------------- | ---- |
-| Day 1 AM | Lesson | 0.75hr | [Intro to ES6 Syntax](es6-syntax/readme.md) | 
+| Day 1 AM | Lesson | 0.5hr | [Intro to ES6 Syntax](es6-syntax/readme.md) |
+| Day 1 AM | Lab | 0.5hr | [ES6 Reading & Discussion](es6-syntax/readme.md) | 
 | Day 1 AM | Lesson | 1.5hr | [Intro to React](#) | 
 
 

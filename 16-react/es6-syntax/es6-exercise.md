@@ -1,4 +1,4 @@
-# JavaScript - ES6 Changes
+## # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) JavaScript - ES6 Changes
 
 Back in the bad old days, when ES5 was all we had, we often cited this meme to inform fellow programmers of our pain. 
 
