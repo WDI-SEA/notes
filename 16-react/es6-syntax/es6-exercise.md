@@ -1,8 +1,8 @@
-## # ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) JavaScript - ES6 Changes
+## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) JavaScript - ES6 Changes
 
 Back in the bad old days, when ES5 was all we had, we often cited this meme to inform fellow programmers of our pain. 
 
-![JavaScript - the bad parts](https://res.cloudinary.com/briezh/image/upload/v1556212895/JS_Bad_Parts_bzqudk.jpg)
+![JavaScript - the bad parts](https://res.cloudinary.com/briezh/image/upload/v1556220412/JS_Bad_Parts_w70utk.jpg)
 
 The phrase "JavaScript: The **Bad** Parts" came to describe all that was janky and illogical with JavaScript. 
 

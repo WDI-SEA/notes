@@ -2,7 +2,7 @@
 
 ---
 
-![react-logo](./images/react-white-logo.png)
+![react-logo](https://res.cloudinary.com/briezh/image/upload/v1556222551/react-logo_tqvu3g.png)
 
 ---
 
