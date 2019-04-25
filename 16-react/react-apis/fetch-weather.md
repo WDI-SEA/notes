@@ -12,7 +12,7 @@
 
 - [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
 
-Time to show off! You're going to display the weather on your "Dinosaurs are awesome" blog (because reptiles are rather finicky about the weather).
+Time to show off! You're going to display the weather on your app.
 
 You'll use the OpenWeather API to fetch weather information from a certain zip code and update your blog to display the current weather.
 
@@ -99,15 +99,10 @@ export default About;
     <summary>Hint 2</summary> 
     <br />
     To see how to handle the form, check out the skeleton code.
-
 </details>
 
 ---
 
 ## Bonus
 
-Spend a little time styling the page. Here's some inspiration (don't worry about the lens flare).
-
-
-![alt](https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png)
-
+Spend a little time styling the page. Try to get it close to the example image above!
