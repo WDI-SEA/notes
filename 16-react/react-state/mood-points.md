@@ -11,14 +11,6 @@ _By the end of this lesson, you will be able to:_
 - Create an initial state in a component.
 - Change the state of a component.
 
-
----
-
-## Trello
-
-
-<img src="images/trello-example.png" class="responsive" />
-
 ---
 
 ## Let's Talk About Props!

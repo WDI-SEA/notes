@@ -191,6 +191,8 @@
     * [Dentist Website](16-react/react-router/dentist-exercise.md)
     * [Dentist Website Part 2](16-react/react-router/dentist-exercise-part2.md)
     * [Router Lab](16-react/react-router/lab-router.md)
+  * [Fetch and APIs](16-react/react-apis/readme.md)
+    * [Fetch the Weather](16-react/react-apis/fetch-weather.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
     * [Lab: Component LifeCycle](16-react/react-lifecycle/lifecycle-exercise.md)
 * [Meteor](13-meteor/readme.md)
