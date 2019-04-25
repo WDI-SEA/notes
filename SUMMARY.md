@@ -181,6 +181,8 @@
     * [Virtual DOM](16-react/intro-react/virtual-dom.md)
     * [Props](16-react/intro-react/props.md)
     * [Dino Blog Activity](16-react/intro-react/dino-blog-lab.md)
+    * [Nested Components](16-react/intro-react/nested.md)
+  * [React State](16-react/react-state/readme.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
     * [Lab: Component LifeCycle](16-react/react-lifecycle/lifecycle-exercise.md)
 * [Meteor](13-meteor/readme.md)

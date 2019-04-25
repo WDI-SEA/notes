@@ -74,7 +74,7 @@ With this setup, we can render one or more comments inside the `Post` component.
 Let's reflect on what just happened. We rendered a component _inside another component_. Technically, we just **nested** components. Very much like how we imported `Post` from `App.js` into `index.js` and rendered a post inside `index.js`, we've imported `Comment` from `Comment.js` into `App.js` and rendered a comment. Inside `App.js`, we're using some of the props to render a post and simply passing the `comments` prop on to be rendered with the `Comment` component class. So the flow of the props looks like this:
 
 
-![nested components chart](./images/nested_components_chart.jpg)
+![nested components chart](https://res.cloudinary.com/briezh/image/upload/v1556229497/nested_components_chart_panpyk.jpg)
 
 
 ### To get a little more advanced...

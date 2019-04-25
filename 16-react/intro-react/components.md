@@ -26,19 +26,17 @@ When using React, building components will be your main front-end task.
 
 Take a look at [CraigsList](https://boston.craigslist.org/search/aap) (note: right click to open in a new tab!).
 
-![Components](images/craigslist.png)
+![Components](https://res.cloudinary.com/briezh/image/upload/v1556229627/craigslist_example_ruvqji.png)
 
 Each listing is a component. How can you identify this?
 - Listings look identical in structure, but have different information populating them
 - Listings are dynamically generated based on the user's search
 
-Now, go to [Amtrak.com](https://www.amtrak.com/home) (note: right click to open in a new tab!). We want to look at the listing page, so put in any "From" (for example, New York - Penn Station), any "To" (for example, Boston - South Station), and pick any date. Hit "Find Trains". Now look at the listing page:
+Now, go to [Amtrak.com](https://www.amtrak.com/home) (note: right click to open in a new tab!). We want to look at the listing page, so put in any "From" (for example, New York - Penn Station), any "To" (for example, Boston - South Station), and pick any date. Hit "Find Trains". 
 
-![Amtrak](images/amtrak.png)
+Now take a look at the listing page. Scrolling down it, identify the visual "components" the website is comprised of. We suggest drawing this out on paper! So something like this...
 
-Scrolling down it, identify the visual "components" the website is comprised of. We suggest drawing this out on paper! So something like this...
-
-![Component diagram](images/wireframe_deconstructed.png)
+![Component diagram](https://res.cloudinary.com/briezh/image/upload/v1556229627/wireframe_deconstructed_fwf6dn.png)
 
 As you're drawing this out, think about the following questions...
 
