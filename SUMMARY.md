@@ -177,6 +177,8 @@
     * [ES6 Activity](16-react/es6-syntax/es6-exercise.md)
   * [Intro to React](16-react/intro-react/readme.md)
     * [Create React App](16-react/intro-react/setup.md)
+    * [Components and JSX](16-react/intro-react/components.md)
+    * [Virtual DOM](16-react/intro-react/virtual-dom.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
     * [Lab: Component LifeCycle](16-react/react-lifecycle/lifecycle-exercise.md)
 * [Meteor](13-meteor/readme.md)
