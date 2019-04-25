@@ -4,12 +4,17 @@ This set of updated curriculum has been assembled from many sources including th
 
 ## Pacing - Sample Schedule
 
-#### Week 1
+### Week 1
 
 | Day/Time | Type | Topic | Time |
 | ---------------- | ------------------------------------- | ---- |
 | Day 1 AM | Lesson | 0.5hr | [Intro to ES6 Syntax](es6-syntax/readme.md) |
-| Day 1 AM | Lab | 0.5hr | [ES6 Reading & Discussion](es6-syntax/readme.md) | 
-| Day 1 AM | Lesson | 1.5hr | [Intro to React](#) | 
+| Day 1 AM | Lab | 1.0hr | [ES6 Reading & Discussion](es6-syntax/readme.md) | 
+| Day 1 AM | Lesson | 1.5hr | [Intro to React & Set-Up](intro-react/readme.md) | 
+| Day 1 PM | Lab | 1.25hr | [Dino Blog](intro-react/dino-blog-lab.md) | 
+| Day 1 PM | Lesson | 0.5hr | [Props & Nested Components](intro-react/readme.md) | 
+| Day 1 PM | Code-Along | 0.75hr | [Props & Nested Components](intro-react/readme.md) | 
+| Day 1 PM | Lab | 1.5hr | [LotR Lab](intro-react/) | 
+| Day 1 HW | Deliverable | 2.0hr | [TBD]() |
 
 
