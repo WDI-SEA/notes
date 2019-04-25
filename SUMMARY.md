@@ -183,6 +183,8 @@
     * [Dino Blog Activity](16-react/intro-react/dino-blog-lab.md)
     * [Nested Components](16-react/intro-react/nested.md)
   * [React State](16-react/react-state/readme.md)
+    * [Code-Along: Mood Points](16-react/react-state/mood-points.md)
+    * [Code-Along: Edit Dino Blog](16-react/react-state/dino-blog-state.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
     * [Lab: Component LifeCycle](16-react/react-lifecycle/lifecycle-exercise.md)
 * [Meteor](13-meteor/readme.md)
