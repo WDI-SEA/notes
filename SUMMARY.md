@@ -195,6 +195,7 @@
     * [Fetch the Weather](16-react/react-apis/fetch-weather.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
     * [Lab: Component LifeCycle](16-react/react-lifecycle/lifecycle-exercise.md)
+  * [Additional Topics](16-react/adjacent-topics/readme.md)
 * [Meteor](13-meteor/readme.md)
   *[Intro to Meteor](13-meteor/meteor-intro/readme.md)
     *[Image Board Codealong](13-meteor/meteor-intro/codealong.md)
