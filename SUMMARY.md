@@ -182,6 +182,7 @@
     * [Props](16-react/intro-react/props.md)
     * [Dino Blog Activity](16-react/intro-react/dino-blog-lab.md)
     * [Nested Components](16-react/intro-react/nested.md)
+    * [Lab: LotR](16-react/intro-react/lotr.md)
   * [React State](16-react/react-state/readme.md)
     * [Code-Along: Mood Points](16-react/react-state/mood-points.md)
     * [Code-Along: Edit Dino Blog](16-react/react-state/dino-blog-state.md)
