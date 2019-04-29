@@ -49,7 +49,7 @@ Let's implement state in our blog by making the `body` a mutable value.
 
 ## Solution
 
-![Solution for Project](images/State_SOLUTION.png)
+![Solution for Project](https://res.cloudinary.com/briezh/image/upload/v1556560665/State_SOLUTION_qszfgv.png)
 
 <aside class="notes">
 
@@ -75,7 +75,7 @@ Use a form to take in user input.
 
 ## Bonus Solution
 
-![Solution for Project](images/state_BONUS_SOLUTION.png)
+![Solution for Bonus](https://res.cloudinary.com/briezh/image/upload/v1556560666/state_BONUS_SOLUTION_mjqchw.png)
 
 <aside class="notes">
 
