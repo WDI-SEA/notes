@@ -19,3 +19,7 @@ TypeScript is JavaScript... with strict types! This is useful because it makes y
 ### Context API
 
 If you find yourself "prop drilling" through multiple levels, but your app doesn't feel quite big enough for Redux to pay dividends, using Context may be for you. You can still use prop drilling alongside it if needed, but it provides a less complex solution than Redux that still helps simplify your app.
+
+### Styled Components
+
+Another way to organize your CSS. This one depends on your preference, but this style is used a lot in React Native. Read more [here](https://www.styled-components.com/docs/basics).
