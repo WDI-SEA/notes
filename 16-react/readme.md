@@ -30,6 +30,7 @@ This set of updated curriculum has been assembled from many sources including th
 | Day 2 AM | Code-Along | 0.5hr | Mood Points | 
 | Day 2 PM | Lab | 0.5hr | Dino Lab: Edit Content | 
 | Day 2 PM | Code-Along | 2.5hr | Improved Todo List | 
+| Day 2 PM | Lesson | 0.5hr | [Functional Components]() | 
 | Day 2 PM | Quiz | 1.0hr | [Quiz 2]() | 
 | Day 1 HW | Deliverable | 2.0hr | [React ATM](https://github.com/WDI-SEA/react_atm_global) |
 
