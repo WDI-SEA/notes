@@ -36,7 +36,7 @@ Open a new tab in your browser and navigate to the Wikipedia article for
 Holding down the back button to look at your browser history should show
 something like this:
 
-![Cafe Allegro to General Assembly](https://github.com/WDI-SEA/react_router_global/blob/master/assets/allegro_to_GA.png)
+![Cafe Allegro to General Assembly](https://res.cloudinary.com/briezh/image/upload/v1556732364/allegro_to_GA_oneyhh.png)
 
 Browser history mechanics are built for going **back** and **forward** between
 different pages. Browsers have the back and forward buttons for users. These
