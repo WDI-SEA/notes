@@ -36,7 +36,7 @@ At the end of this exercise, your solution will look something like what's shown
 
 Make a new component called `Weather` and make a route for rendering it with `react-router`. If you need reminders of how to do this, peek back at the react-router lessons or take a look at how you did it in the dentist website.
 
-On your "Weather" page, ask the user to input a zip code.
+On your `Weather page`, ask the user to input a zip code.
 
 - You can learn more about forms [here](https://facebook.github.io/react/docs/forms.html).
   - When this event fires, take the `event.target.value` and `fetch()` from the OpenWeather API.
@@ -107,8 +107,6 @@ export default Weather;
     <br />
     To see how to handle the form, check out the skeleton code.
 </details>
-
----
 
 ## Bonus
 
