@@ -158,10 +158,7 @@ this so the content of the homepage is moved into its own component called
   `App` component to render the `Home` component right there inside the div.
   > Note: We have been using `<Home />` to call components. `<Home></Home>` is just a different syntax we're showing you so that if you see it elsewhere, you're familiar with it.
 
-8. Let's try it out! Look at the browser and see if the homepage appears. Unfortunately, if you've been following along, it won't. You'll see an
-  error, which should look like this:
-
-![Home not defined](assets/home-not-defined-error.png)
+8. Let's try it out! Look at the browser and see if the homepage appears. Unfortunately, if you've been following along, it won't. You'll see an error!
 
 It's not enough to simply create the `Home.js` file and create the `Home`
 component. We must also remember to import the component into the `App.js` file. Any components you want to use in a file need to first be imported into that file.
@@ -207,7 +204,8 @@ class Home extends Component {
 export default Home
 ```
 
-# Create Components for Procedures and Contact
+## Create Components for Procedures and Contact
+
 The purpose of our site is to create several components that we can swap out
 as the main content of the main page of our application in order to create a
 modern Single Page Application. We'll create two more components, and then
