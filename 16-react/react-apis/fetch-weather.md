@@ -1,4 +1,4 @@
-## ![](https://s3.amazonaws.com/python-ga/images/GA_Cog_Medium_White_RGB.png) Lab: Displaying the Weather
+## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Lab: Displaying the Weather
 
 Let's take an existing project that uses react-router (like your portfolio project or the dentist website) and add a page to it that accepts a location and displays the weather.
 
