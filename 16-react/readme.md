@@ -1,6 +1,6 @@
 # React
 
-This set of updated curriculum has been assembled from many sources including the [part-time React course](https://git.generalassemb.ly/react-development/react-development-course-materials), [SEI at GA Atlanta](https://generalassemb.ly/locations/atlanta), and [SEI Remote/Online](https://generalassemb.ly/education/software-engineering-immersive-remote/online). 
+This set of updated curriculum has been assembled from many sources including the [part-time React course](https://git.generalassemb.ly/react-development/react-development-course-materials), [SEI at GA Atlanta](https://generalassemb.ly/locations/atlanta), and [SEI Remote/Online/Connected Classroom](https://generalassemb.ly/education/software-engineering-immersive-remote/online). 
 
 ## Pacing - Sample Schedule
 
