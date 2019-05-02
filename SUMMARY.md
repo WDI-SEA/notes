@@ -220,7 +220,7 @@
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node/Sequelize](00-config-deployment/deploy-node/readme.md)
   * [Deploy - Node/MongoDB](00-config-deployment/deploy-node-mongo/readme.md)
-  * [Deploy React](10-react/react-deploy/readme.md)
+  * [Deploy React](10-react-2016-archive/react-deploy/readme.md)
   * [Deploy - Rails](00-config-deployment/deploy-rails/readme.md)
     * [Foreman (Environment Variables)](00-config-deployment/foreman/readme.md)
   * [Deploy - AWS Elastic Beanstalk](00-config-deployment/aws-elastic-beanstalk/README.md)
