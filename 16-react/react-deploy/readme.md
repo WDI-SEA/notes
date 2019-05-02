@@ -35,7 +35,6 @@ what your want your app's subdomain to be when it's deployed on Heroku.
 ```
 create-react-app $APP_NAME
 cd $APP_NAME
-git init
 heroku create $APP_NAME --buildpack https://github.com/mars/create-react-app-buildpack.git
 git add -A
 git commit -m "new react app"
