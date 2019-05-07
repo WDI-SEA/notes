@@ -81,8 +81,8 @@ let myVariable: type = "my value"
 | Any       | oh my! you're telling me I don't actually have to plan ahead?
 | Array     | lets add primitive typings to arrays (syntax may vary!) 
 | void      | used for functions that do not return a value
-| null      | `null`, yup
-| undefined | `undefined`, that too 
+| null      | `null`, this is one of Typescript's two *subtypes*
+| undefined | `undefined`, Typescript's other *subtype*
 | Object    | anything that is not `number`, `string`, `boolean`, `null`, or `undefined`
 | never     | represents the type of values that never occur
 | Tuple     | enforced typings on a specified number elements
@@ -118,6 +118,7 @@ myAny = true
 
 // all ok!
 ```
+
 However, if we know that a variable can accept both strings or numbers, TypeScript allows us to plan for this scenario with the `|` operator. (This is called a "Union" type and can be a more advanced technique)
 
 ```typescript
@@ -126,6 +127,15 @@ myIndecisiveVar = 5 // also ok!
 myIndecisiveVar = false // Throws an error
 ```
 
+### The Subtypes
+
+Typescript gives us two *subtypes*, `null` and `undefined`. These are used when we've defined the type of a variable, but we don't know what that value is yet.
+
+```typescript
+let futureVar: number = undefined
+// OR
+let futureVar: number = null
+```
 
 ### Arrays
 TypeScript offers 2 options for enforcing type constraints on an array. 
