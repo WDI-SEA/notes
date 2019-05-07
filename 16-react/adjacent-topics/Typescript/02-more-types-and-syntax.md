@@ -180,5 +180,34 @@ console.log(shout<BadMessage>('All is Well')); // Argument of type '"All is Well
 console.log(shout<GoodMessage>('There is a fresh pot of coffee in the kitchen'));
 ```
 
+## Intersection Types
+
+Sometimes, when one type isn't enough, you want to merge your types. Let's say you have three types: Bear, Man, and Pig
+
+```typescript
+interface Bear {
+    claws: number
+}
+
+interface Man {
+    firstName: string
+}
+
+interface Pig {
+    hog: boolean
+}
+
+```
+When you create a new variable, you can assign one, two, or even three of these types! When you do that, your new variable will be able to have claws, firstName, and hog as values. You can also create a custom class if you're going to use your intersected type again
+
+```typescript
+type ManBearPig = Man & Bear & Pig
+
+let greatCryptid: ManBearPig
+greatCryptid.firstname = 'Steve'
+greatCryptid.claws = 5
+greatCryptid.hog = true
+```
+
 _Prepare yourself... we are about to put it to work!_
 ___
