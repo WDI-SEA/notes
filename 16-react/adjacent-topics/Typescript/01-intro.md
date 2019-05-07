@@ -49,11 +49,14 @@ $ touch type_fun.ts
 ```typescript
 let hello: string = "Hello, World!"
 ```
+Save your `type_fun.ts` and run this bash command:
 ```bash
 $ tsc type_fun.ts
 $ ls
-type_fun.js type_fun.ts
+```
+You should now see two files, `type_fun.ts` and `type_fun.js`! The `tsc` command compiles our typescript file into javascript!
 
+```bash
 $ cat type_fun.js
 
 var hello = "Hello, World!"
