@@ -7,6 +7,8 @@ type Color = 'Green' | 'Red' | 'Blue'
 
 let colorChoice: Color = 'Green' 
 colorChoice: Color = 'Purple' // Throws an error
+
+let colorOrNum: Color | number = 10 // OK!
 ```
 ___
 ## Interfaces
@@ -22,11 +24,11 @@ interface DogObject {
     name: string;
     age: number;
     isGood: boolean;
-    wagsTail?: boolean;
+    wagsTail?: boolean; // the '?' means that wagsTail is optional
 }
 
 function isGoodDog(dog: DogObject): boolean {
-    let {name, age, isGood} = dog;
+    let {name, age, isGood} = dog; // Object destructuring is neat!
     let message = `${name} is ${age} and is very good!${dog.wagsTail ? ' wag, wag, wag' : ''}`
     if (!isGood) {
         console.log('How dare you! All dogs are good dogs!!')
@@ -53,11 +55,12 @@ let barnCat: object = {
 isGoodDog(oneGoodBoy) 
 // Works!
 isGoodDog(barnCat) 
-// Error, barnCat is not 'DogObject' type. Argument of type 'object' is not assignable to parameter 
-// of type 'DogObject'. Type '{}' is missing the following properties from type 'DogObject': 
-// name, age, isGood
-// If we removed the Explicit typing from barnCat, isGoodDog(barnCat) would work because barnCat 
-// has all the necessary values of the DogObject type
+// Error, barnCat is not 'DogObject' type. Argument of type 'object' is not assignable 
+// to parameter of type 'DogObject'. Type '{}' is missing the following properties 
+// from type 'DogObject':name, age, isGood
+
+// If we removed the Explicit type from barnCat, isGoodDog(barnCat) would work 
+// because barnCat has all the necessary values of the DogObject type
 
 
 ```
@@ -78,13 +81,22 @@ When accessing an element with a known index, the correct type is retrieved:
 console.log(myStringNumTuple[0].substr(1)); // OK
 console.log(myStringNumTuple[1].substr(1)); // Error, 'number' does not have 'substr'
 ```
-When accessing an element outside the set of known indices, a union type is used instead:
+When accessing an element outside the set of known indices, an error will be thrown:
 ```typescript
-myStringNumTuple[3] = "world"; // OK, 'string' can be assigned to 'string | number'
+myStringNumTuple[3] = "world"; 
+// error, Type '"world"' is not assignable to type 'undefined'
+```
+So can I tack more onto a tuple and just assign it a new type?
+```typescript
+myStringNumTuple[3] = string; 
+// TWO errors!
+// Tuple type '[string, number]' of length '2' has no element at index '3'
+// 'string' only refers to a type, but is being used as a value here
+```
 
-console.log(myStringNumTuple[5].toString()); // OK, 'string' and 'number' both have 'toString'
-
-myStringNumTuple[6] = true; // Error, 'boolean' isn't 'string | number'
+Tuples can be as long as you want; think of them like interfaces without the name. Think back to our `DogObject` example, you could create a tuple with those constraints, but instead of accessing those values via their keys, they're accessed by their index.
+```typescript
+let tupleDog: [string, number, boolean, boolean
 ```
 ___
 ## Enum
@@ -110,9 +122,19 @@ var colorString = Color[0] // evaluates to "Green"
 
 ![WTF](https://media.giphy.com/media/ukGm72ZLZvYfS/giphy.gif)
 
-If you want to know a bit more about this bizarre type and it's usage, check out [this medium article](https://medium.com/@KevinBGreene/typescript-enums-and-polymorphism-with-type-matching-fc3dc74b031c) and [this stack-overflow question](https://stackoverflow.com/questions/40275832/typescript-has-unions-so-are-enums-redundant). The tl;dr for most devs is that Enums can be iterated over, can be used as bit flags, and have some specific use cases, but you will mostly be using Union types.
 
-I'm not saying that there are not uses for an `enum` in the wild... but if you are using it to enforce typings like this without the need for reverse mapping of integers to values etc... you are likely better off using a Union type.
+Typescript can now support Enums with strings, so you could assign certain values to certain strings
+```typescript
+enum Color {
+    Red = ff0000,
+    Green = 00ff00,
+    Blue = 0000ff
+}
+```
+
+If you want to know a bit more about this bizarre type and it's usage, check out [this medium article](https://medium.com/@KevinBGreene/typescript-enums-and-polymorphism-with-type-matching-fc3dc74b031c) and [this stack-overflow question](https://stackoverflow.com/questions/40275832/typescript-has-unions-so-are-enums-redundant). 
+
+The tl;dr for most devs is that Enums can be iterated over, can be used as bit flags, and have some specific use cases, but you will mostly be using Union types.
 
 ___
 ## `Generics<T>`
