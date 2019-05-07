@@ -78,6 +78,8 @@ declare class Cat {
   collect(name: string, breed: string, age: number): void
   destroy(id: number): boolean
 }
+
+export {}
 ```
 
 ### **@types**
