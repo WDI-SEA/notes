@@ -139,3 +139,9 @@ while a < 10:
 ```
 
 **Be wary of infinite loops**, if you don't change something about the statement in the while loop, it'll run forever, thus never reaching the code that follows it.
+
+## Additional Reading
+
+- [Learn Python Programming: Loops Video](https://www.youtube.com/watch?v=JkQ0Xeg8LRI)
+- [Python: For Loop](https://wiki.python.org/moin/ForLoop)
+- [Python: Loops](https://www.tutorialspoint.com/python/python_loops.htm)
