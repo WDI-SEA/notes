@@ -255,6 +255,8 @@
 * [Python](15-python/python.md)
   * [Python Installation](15-python/python-installation/readme.md)
   * [Intro to Python](15-python/python-intro/readme.md)
+  * [Lists](15-python/python-intro/lists.md)
+  * [Loops](15-python/python-intro/loops.md)
   * [Python Cheatsheet](15-python/python-cheatsheet/readme.md)
   * [Unit Testing](15-python/python-unit-tests/readme.md)
   * [Python Classes](15-python/python-classes/readme.md)
