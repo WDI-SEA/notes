@@ -277,6 +277,8 @@
     * [Linked Lists](15-python/python-data-structures/python-linked-lists/readme.md)
     * [Binary Trees](15-python/python-data-structures/python-binary-trees/readme.md)
     * [TensorFlow & Neural Networks](15-python/python-neural-networks/readme.md)
+  * [Python Assorted Topics](15-python/python-adjacent-topics/readme.md)
+    * [Raspberry Pi](15-python/python-adjacent-topics/pi.md)
 * [Assorted Topics](09-other-topics/readme.md)
   * [History of Computer Science](09-other-topics/history-of-cs/readme.md)
   * [Regular Expressions](09-other-topics/regular-expressions/readme.md)
