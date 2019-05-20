@@ -80,7 +80,9 @@ In order to add the instance, you can use the Heroku toolbelt by typing this com
 heroku addons:create mongolab:sandbox
 ```
 
-This will create a free database instance, limited to 496 MB in storage. Keep this in mind.
+This will create a free database instance, limited to 496 MB in storage. Keep this in mind. 
+
+> Tip: While sandbox mode is a free service, you will unfortunately need to add a credit card to your Heroku account in order to take advantage of this. Please let your instructor know if this is a hardship for you, and alternative grading arrangements will be made.
 
 #### Configuring Mongoose
 
