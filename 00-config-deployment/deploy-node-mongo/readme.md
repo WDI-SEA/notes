@@ -39,6 +39,14 @@ Then, put the following into your `package.json` file:
 },
 ```
 
+* Remove the Heroku-Postbuild script if you are launching a decoupled app.
+
+```
+"scripts": {
+    "heroku-postbuild": "There is a bunch of commands here. You can remove this!"
+},
+```
+
 * Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies so be mindful to install any dependencies you may have installed globally. You can always check your package.json to see if you are missing anything.
 
 * Before you create your app in Heroku, be sure your project is being tracked via a git repository.
