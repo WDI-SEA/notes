@@ -68,5 +68,5 @@ You can buy kits for setting up a robot or remotely controlled car. If this is o
 
 #### What else can I get?!
 
-There are lots of options! [Start here](https://opensource.com/life/16/7/top-10-Raspberry-Pi-boards) for a cool top ten list! It includes display boards, traffic lights, and remote controls! Use your imagination and start googling!
+There are lots of options! [Start here](https://opensource.com/life/16/7/top-10-Raspberry-Pi-boards) for a cool top ten list! It includes display boards, traffic lights, and [remote controls for your home](https://energenie4u.co.uk/index.php/catalogue/product/ENER002-2PI)! Use your imagination and start googling!
 
