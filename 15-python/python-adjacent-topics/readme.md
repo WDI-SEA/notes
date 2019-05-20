@@ -2,4 +2,4 @@
 
 ### Raspberry Pi
 
-The Raspberry Pi is a credit-card sized computer with lots of potential uses. It plus into a mouse, keyboard, and display (such as a TV or monitor).
+The Raspberry Pi is a credit-card sized computer with lots of potential uses. It plugs into a mouse, keyboard, and display (such as a TV or monitor).
