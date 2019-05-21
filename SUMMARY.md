@@ -281,7 +281,7 @@
     * [TensorFlow & Neural Networks](15-python/python-neural-networks/readme.md)
   * [Adjacent Topics](15-python/python-adjacent-topics/readme.md)
     * [Raspberry Pi](15-python/python-adjacent-topics/pi.md)
-    * [Scripting](15-python/python-intro/python-adjacent-topics/scripting.md)
+    * [Scripting](15-python/python-adjacent-topics/scripting.md)
 * [Assorted Topics](09-other-topics/readme.md)
   * [History of Computer Science](09-other-topics/history-of-cs/readme.md)
   * [Regular Expressions](09-other-topics/regular-expressions/readme.md)
