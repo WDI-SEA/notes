@@ -257,6 +257,8 @@
   * [Intro to Python](15-python/python-intro/readme.md)
   * [Python Lists](15-python/python-intro/lists.md)
   * [Python Loops](15-python/python-intro/loops.md)
+  * [Python Dictionaries](15-python/python-intro/dictionaries.md)
+  * [Python Sets and Tuples](15-python/python-intro/sets-and-tuples.md)
   * [Python Cheatsheet](15-python/python-cheatsheet/readme.md)
   * [Unit Testing](15-python/python-unit-tests/readme.md)
   * [Python Classes](15-python/python-classes/readme.md)
