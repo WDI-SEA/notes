@@ -3,3 +3,7 @@
 ### Raspberry Pi
 
 The Raspberry Pi is a credit-card sized computer with lots of potential uses. It plugs into a mouse, keyboard, and display (such as a TV or monitor).
+
+### Scripting
+
+A *scripting language* or interpreted language like Python executes statements in order. A *script* is typically a file with some Python code in it.
