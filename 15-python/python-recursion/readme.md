@@ -45,12 +45,14 @@ This is an example of recursive programming. We could write our instructions
 as a function called `count` that calls itself:
 
 ```python
+# Assume "person" being passed in has a method called get_person_behind()
+# It will return either "no one" or a name
 def count(person):
-  var otherPerson = person.getPersonBehindMe();
-  if (otherPerson === "no one"):
-  return 0;
+  other_person = person.get_person_behind();
+  if other_person === "no one":
+    return 0;
   else:
-  return 1 + count(otherPerson);
+    return 1 + count(otherPerson);
 ```
 
 Recursion allows us to write extremely expressive code! We can write a very
@@ -68,13 +70,13 @@ calls itself and consider what it does.
 ```python
 # define the function
 def navel_gazer():
-  print("hmm...");
+  print("hmm...")
 
   # make a recursive call to the function
-  navel_gazer();
+  navel_gazer()
 
 # call the function
-navel_gazer();
+navel_gazer()
 ```
 
 This function will theoretically print out "hmm..." forever.
@@ -105,11 +107,11 @@ case first, otherwise they perform one small piece of the problem and then recur
 ```python
 def recurse(n):
   # check for base case
-  if (n <= 0):
-    return 0;
+  if n <= 0:
+    return 0
   else:
     # otherwise do a small amount of work and call the function again
-    return 1 + recurse(n - 1);
+    return 1 + recurse(n - 1)
 ```
 
 ## Base Cases
@@ -122,7 +124,7 @@ the base case is probably:
 
 ```python
 if (list.length === 0):
-  return 0;
+  return 0
 ```
 
 Writing one or more base cases that define the answer for the simplest
@@ -228,6 +230,10 @@ def is_palindrome(ss):
 
 ### Fibonacci
 
+The [Fibonacci Sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html) is 
+a series of numbers where each number is the sum of the two preceding ones,
+starting from 0 and 1.
+
 Write a recursive function called `fib` that accepts a number `N` greater
 than zero and returns the `Nth` fibonacci number:
 
@@ -286,6 +292,7 @@ instance of a certain class.
 
 ```python
 isinstance(42, int) # True
+isinstance("lolz", int) # False
 isinstance("foo", str) # True
 isinstance([], list) # True
 isinstance({}, dict) # True
@@ -302,7 +309,7 @@ pretty_print(o1, "")
 a: 1
 b: 2
 
-pretty_print(o1, "")
+pretty_print(o2, "")
 a: 1
 b: 2
 c:
@@ -325,15 +332,6 @@ d: 4
 ```
 
 
-### Reverse String Solution
-```python
-def reverse(ss):
-  if len(ss) == 0:
-    return ""
-  return ss[-1] + reverse(ss[:-1])
-```
-
-
 ### Fibonacci Solution
 ```python
 def fib(n):
@@ -343,6 +341,14 @@ def fib(n):
     return 1
   else:
     return fib(n - 1) + fib(n - 2)
+```
+
+### Reverse String Solution
+```python
+def reverse(ss):
+  if len(ss) == 0:
+    return ""
+  return ss[-1] + reverse(ss[:-1])
 ```
 
 
