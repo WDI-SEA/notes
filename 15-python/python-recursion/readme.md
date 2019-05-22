@@ -301,9 +301,9 @@ isinstance({}, dict) # True
 Expected Output:
 
 ```python
-o1 ={a: 1, b: 2};
-o2 ={a: 1, b: 2, c:{name: "Bruce Wayne", occupation: "Hero"}, d: 4};
-o3 ={a: 1, b: 2, c:{name: "Bruce Wayne", occupation: "Hero", friends: {spiderman: {name: "Peter Parker"}, superman: {name: "Clark Kent"}}}, d: 4};
+o1 = {"a": 1, "b": 2}
+o2 = {"a": 1, "b": 2, "c": {"name": "Bruce Wayne", "occupation": "Hero"}, "d": 4}
+o3 = {"a": 1, "b": 2, "c": {"name": "Bruce Wayne", "occupation": "Hero", "friends": {"spiderman": {"name": "Peter Parker"}, "superman": {"name": "Clark Kent"}}}, "d": 4}
 
 pretty_print(o1, "")
 a: 1
