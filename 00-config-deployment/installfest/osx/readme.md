@@ -40,7 +40,13 @@ After the installation process, run the command `brew doctor`. If any warnings o
 
 ## Xcode
 
-Speaking of Xcode, install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
+We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
+
+```
+xcode-select --install
+```
+
+If you need to, you can install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
 ## GIT
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
@@ -89,34 +95,6 @@ To finish up your installation, run this command to allow for global installatio
 sudo chown -R $USER /usr/local/lib
 ```
 
-
-# Sublime Text 3 and/or Atom
-We'll be running Atom and Sublime Text 3 as our text editors of choice. You can use either or both of these.
-
-### Sublime Text 3
-
-Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
-
-It is a pretty typical installation for an app, but we need to add a shortcut so we can load sublime from the Terminal.
-
-```
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-```
-
-Restart terminal, and you should be able to open a folder to edit by typing `subl .`
-
-### Atom
-
-Download and install Atom from [here](https://atom.io/)
-
-For a command line shortcut, run this:
-
-```
-ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
-```
-
-Now you can open a folder from your terminal by typing: `atom .`
-
 ## Install Oh My ZSH
 
 Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
@@ -130,6 +108,51 @@ curl -L http://install.ohmyz.sh | sh
 ```
 
 Restart Terminal, and you should see a brand new and colorful command prompt.
+
+# Sublime Text 3 or Atom or VS Code
+Decide which code editor you'd like to install...
+
+### Sublime Text 3
+
+A very popular shareware code editor with a vast library of extensions. It will nag you to purchase it every fourth time you save a file.
+
+Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
+
+It is a pretty typical installation for an app, but we need to add a shortcut so we can load sublime from the Terminal.
+
+```
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+```
+
+Restart terminal, and you should be able to open a folder to edit by typing `subl .`
+
+### Atom
+
+Atom boasts tighter integration with Git and Github as well as being open source (which means no purchase nags.)
+
+Download and install Atom from [here](https://atom.io/)
+
+For a command line shortcut, run this:
+
+```
+ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
+```
+
+Now you can open a folder from your terminal by typing: `atom .`
+
+### VS Code
+
+Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
+
+Download and install VS Code from [here](https://code.visualstudio.com/download)
+
+To be able to open VS Code from any directory, add it to your path inside your ~/.zshrc file:
+
+```bash
+export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+```
+
+Save this file and then fully restart your terminal window (quit and restart.)
 
 ## Postgres
 
@@ -235,6 +258,50 @@ We'll be using **RoboMongo**. Install here:
 
 https://robomongo.org/
 
+## Installing Python 3
+
+Brew is also used to install Python 3. (Python 2 is already installed on your Mac.) To install Python 3 without errors, we first need to create a couple directories and change them to be owned by us:
+
+```
+mkdir /usr/local/lib
+mkdir /usr/local/Frameworks
+whoami
+```
+Make a note of the username returned from `whoami`. Enter that username in place of USERNAME below:
+```
+sudo chown -R USERNAME:wheel /usr/local/lib
+sudo chown -R USERNAME:wheel /usr/local/Frameworks
+```
+
+If you received no errors from those commands, then use this command to install version 3:
+
+```
+brew install python3
+```
+
+You can test the installation by running `python3 --version`.
+
+This should also install `pip3`, a package installer for Python 3. You can verify that it is installed and working by updating it with the following command:
+
+```
+pip3 install --upgrade pip setuptools wheel
+```
+
+This should return some normal messages - no errors. Now that `pip3` is working, we can use it to install a useful Python shell:
+
+```
+pip3 install ipython
+```
+
+iPython makes it easy to write python code in your terminal. We may not use it a huge amount but it is handy to have around.
+
+## Installing Django
+
+We will also use `pip3` to install Django, a robust back-end server for Python. We will be installing the 2.0.x version:
+
+```
+pip3 install Django
+```
 
 ## Installing Ruby on Rails
 
