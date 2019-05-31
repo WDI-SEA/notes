@@ -240,6 +240,7 @@ Take a gander [here](https://developer.mozilla.org/en-US/docs/Web/Events) at the
 An _event listener_ is a function, more specifically, a _callback_ function, that is called when an event fires. You may also hear them referred to as _event handlers_ (depending upon how they are "registered" with the browser).
 
 There are three different approaches for attaching event listeners to elements:
+
 1. In the HTML (inline) - `<button id="reset-btn" onclick="reset()">` - this isn't great because it embeds JavaScript code into our HTML, violating our separation of concerns.
 2. Assigning to DOM elements' properties - `resetBtn.onclick = reset;` - this is a better choice but it is limited to adding single event listeners. 
 3. Calling `addEventListener` on a DOM element - this is the preferred way to do it since it is functional and supports adding multiple listeners at a time.
@@ -262,7 +263,7 @@ This event object is passed into our event listener callback by the JavaScript e
 
 * `event.target` - this contains a reference to the actual DOM element that generated the event. In the case of a 'click' event, `event.target` would be the element that was clicked on.
 * Several _...X_ and _...Y_ properties that tell where the click occurred.
-* `event.preventDefault()` - a function to immediately disable the default action of this event this the given element. Useful for preventing unwanted form submissions or link navigation.
+* `event.preventDefault()` - a function to immediately disable the default action of this event for the given element. Useful for preventing unwanted form submissions or link navigation.
 * `event.stopPropagation()` - a function for disabling the "bubbling" of this event up the DOM. More on this below...
 
 *Note:* JavaScript's `this` keyword within the listener function will also be set to the DOM element that `addEventListener` was called on, so you can use it instead of `event.target` if you like.
