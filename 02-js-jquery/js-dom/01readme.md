@@ -150,7 +150,7 @@ for(var i = 0; i<theSquares.length; i++) {
 ```
 
 ** Be Careful! **
-Multi-element selectors like `querySelectorAll`, `getElementsByTageName`, and `getElementsByClassName` don't actually return an array; they return something called an _HTML collection_. This means that many array methods (iterators, in particular, which we'll learn about later) wont work. If you run into this problem, you can use the [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) method to convert it to an array.
+Multi-element selectors like `querySelectorAll`, `getElementsByTagName`, and `getElementsByClassName` don't actually return an array; they return something called an _HTML collection_. This means that many array methods (iterators, in particular, which we'll learn about later) wont work. If you run into this problem, you can use the [`Array.from`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) method to convert it to an array.
 
 
 **Accessing and changing element attributes**
@@ -222,33 +222,88 @@ helloDiv.classList.remove('yellow');
 console.log(helloDiv.classList.contains('yellow'))
 ```
 
-**Events**
+**DOM Events**
 
-Now that we know how to select DOM elements, we can attach events to them:
+DOM events are the bedrock of interactivity on web pages. They enable us as developers to implement _event-driven programming_. This programming paradigm is such that much of our code, written as _event listeners_, runs in response to events being triggered during run-time.
 
-- Common Events:
-	- change
-	- click
-	- mouseover
-	- mouseout
-	- keydown
-	- keyup
+Lots of events are generated within the browser, for example, when:
+* a user moves or clicks the mouse
+* a user presses a key
+* when a form is submitted
+* when the page has finished loading or has been resized
+* etc.
 
-* [List of Event Types](https://developer.mozilla.org/en-US/docs/Web/Events)
+Take a gander [here](https://developer.mozilla.org/en-US/docs/Web/Events) at the type and sheer number of events.
+
+#### Event Listeners
+
+An _event listener_ is a function, more specifically, a _callback_ function, that is called when an event fires. You may also hear them referred to as _event handlers_ (depending upon how they are "registered" with the browser).
+
+There are three different approaches for attaching event listeners to elements:
+1. In the HTML (inline) - `<button id="reset-btn" onclick="reset()">` - this isn't great because it embeds JavaScript code into our HTML, violating our separation of concerns.
+2. Assigning to DOM elements' properties - `resetBtn.onclick = reset;` - this is a better choice but it is limited to adding single event listeners. 
+3. Calling `addEventListener` on a DOM element - this is the preferred way to do it since it is functional and supports adding multiple listeners at a time.
+
+#### Event Listener Syntax
 
 ***addEventListener([event type],[function that you want to run when the event fires])***
 
 ```js
-helloDiv.addEventListener("click", function() {
+helloDiv.addEventListener("click", function(event) {
 	console.log("HOME ICON CLICKED");
 });
 ```
 
+#### The Callback and the Event Object
+
+The first parameter to `addEventListener` is the name of the event that we are listening for (e.g. click, change, keydown, etc.). The second parameter is the **callback function** that we pass in to tell the browser what to do when this event occurs. This callback is allowed to use a very special parameter: the event object (shown above as the parameter `event` but is frequently abbreviated to `evt` or `e`).
+
+This event object is passed into our event listener callback by the JavaScript engine in the browser. It contains may useful details about the event. Of special note are:
+
+* `event.target` - this contains a reference to the actual DOM element that generated the event. In the case of a 'click' event, `event.target` would be the element that was clicked on.
+* Several _...X_ and _...Y_ properties that tell where the click occurred.
+* `event.preventDefault()` - a function to immediately disable the default action of this event this the given element. Useful for preventing unwanted form submissions or link navigation.
+* `event.stopPropagation()` - a function for disabling the "bubbling" of this event up the DOM. More on this below...
+
+*Note:* JavaScript's `this` keyword within the listener function will also be set to the DOM element that `addEventListener` was called on, so you can use it instead of `event.target` if you like.
+
+#### Event Bubbling
+
+When an event occurs on an element, that event, whether it is listened to on that element or not, _bubbles_ up through the DOM, all the way up to the `document` object.
+
+<img src="https://i.imgur.com/B7f5PAZ.png" width="900">
+
+All event listeners registered for the same event, such as `click`, will be invoked along the path to the `document` element - unless one of those listeners calls the _event object_'s `stopPropagation()` method.
+
+This passing of the event up the DOM tree allows for a very nice feature called Event Delegation.
+
+#### Event Delegation
+
+Imagine an unordered list with many list items inside it. Each list item in our app needs to have a click event that allows it to perform some unique action. We could probably add an event listener to each list item and if there weren't too many, it woudn't be too bad. But imagine that this unordered list can grow and add hundreds of additional list items programmatically while the app is running. We can't add them to each element manually. Instead, because of the bubbling of events, we can delegate the parent of the list items to handle the event.
+
+Event delegation allows us to register a **single** event listener that can respond to events triggered by any of its **descendants**. Much more efficient!
+
+All we would need to do is view the `event.target` property of the event object to see what element was referenced there. This would be the child element that generated the event.
+
+#### Removing Event Listeners
+
+It's possible to remove an added event listener, however, only if a named function was used as the callback:
+
+```js
+btn.removeEventListener('click', handleClick);
+```
+
+This would remove the 'click' event listener (`handleClick`) that was registered on the `btn` element like this:
+
+```js
+btn.addEventListener('click', handleClick);
+```
+
 #### Exercise:
 
-Research a different event listener (not `click`) and apply it to the other div.
+Research a different event listener (not `click`) and explain what it does to your partner.
 
-### DOMContentLoaded
+#### DOMContentLoaded Event
 
 All of the selectors we've been using rely on the use of DOM elements. However, if the JavaScript loads before all the DOM elements load, the selectors won't recognize that some of them exist! To avoid this problem, there's an event called `DOMContentLoaded` that we can encapsulate our code inside. Then, we can guarantee that the DOM elements exist before manipulating them.
 
@@ -257,3 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //code and events go here
 });
 ```
+
+### References
+
+- [Event Developer Guide on MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/Events)
