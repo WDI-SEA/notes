@@ -19,22 +19,22 @@ But what do these different layers mean, and how are they relating to one anothe
 **Margin**
 * _outside of the element_
 * clears an area around the border
-* does NOT have a background color (transparent)
+* does NOT have a background color (transparent - shows the `background-color` of the container the element lives inside of)
 
 **Border** 
 * _inside the element_
-* a border that goes around the padding and content;
-* it IS affected by the background color of the element
+* a border that goes around the padding and content
+* it will use the `color` of the element unless you give it its own `border-color`
 
 **Padding**
 * _inside the element_
 * clears an area between the content and the border
-* it IS affected by the background color of the element
+* transparent - shows the `background-color` of the element
 
 **Content**
 * _inside the element_
 * where text and images appear
-* it IS affected by the background color of the element
+* the element's `color` property actually colors the content
 
 ---
 
@@ -124,5 +124,20 @@ div {
 }
 ```
 
-
 Padding becomes more apparent when we have "stuff" inside the box.
+
+#### Width, Height and `box-sizing`
+
+So with all of these parts of an element that can have their own widths, what are we actually setting when we adjust the `width` and `height` CSS properties of an element?
+
+It turns out that there are two ways that width and height can be interpretted and which one is used is determined by a third property called `box-sizing`. The CSS `box-sizing` prop gives you two main options:
+
+1. `content-box` - this is the default behavior. When you put `box-sizing: content-box` on an element (or don't specify it at all), the `width` and `height` props only affect the **content**, meaning that padding, border, and margin are not included in these values. To calculate the full size of the element, you would add the width (of the content) to the width of the padding as well as the width of the border. Then the margin exists outside of that area.
+2. `border-box` - this is a newer option that makes it so that your `width` and `height` props actually include **content, padding, and border** (all three) in their values. The only thing outside the width of the element would be its margin. Using this property setting can usually simplify layout calculations but it must be set on all elements.
+
+Having `content-box` as the default may be a reason why you may have seen your HTML elements unexpectedly wrapping onto multiple lines - if you don't add the padding and border sizes into your width calculations, you can easily exceed the width of the browser and cause content to wrap to the next line. If you switch to using `border-box` then the only extra space outside of your element's width is the margin between elements.
+
+### Resources
+
+* [CSS Box Model on W3Schools](https://www.w3schools.com/css/css_boxmodel.asp)
+* [CSS Box Sizing on W3Schools](https://www.w3schools.com/cssref/css3_pr_box-sizing.asp)
