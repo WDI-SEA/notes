@@ -2,11 +2,9 @@
 
 ## Learning Objectives
 
-- Explain the use cases for Flexbox and Grid.
+- Explain the use cases for Flexbox.
 - Define main axis and cross axis and how we orient them.
 - Explain the difference between `justify-content` and `align-items`.
-- Understand and use CSS Grid syntax.
-- Use CSS Grid to create a page layout.
 
 ## Framing
 
