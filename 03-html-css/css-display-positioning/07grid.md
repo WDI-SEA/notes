@@ -16,11 +16,11 @@ With Grid layout, you can divide up the screen into `rows` and `columns` of size
 
 *Example of **flexbox** layout*
 
-![flex layout example](img/flex-layout-ex.png) 
+![flex layout example](./img/flex-layout-ex.png) 
 
 *example of **grid** layout*
 
-![grid layout example](img/grid-layout-ex.png)
+![grid layout example](./img/grid-layout-ex.png)
 > Notice how the grid layout allows the cell on the right to take up multiple rows.  
 
 ## All the pieces of a Grid

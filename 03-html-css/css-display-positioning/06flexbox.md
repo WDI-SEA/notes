@@ -129,7 +129,7 @@ When text is wrapping, `align-content` controls how the rows or columns are arra
 
 I want my footer to lie along the bottom of my page. Once I've accomplished that, I want to evenly distribute the content boxes horizontally inside of the `<main>` element.
 
-![flexbox layout](img/flex-box-example2.png)
+![flexbox layout](./img/flex-box-example2.png)
 
 #### You Tell Me: What Should I Try?
 
