@@ -87,7 +87,7 @@ body {
 
 ## How It Works
 
-![flexbox diagram](img/flexbox-diagram.jpg)
+![flexbox diagram](./img/flexbox-diagram.jpg)
 
 When you declare `display: flex;` in a CSS rule, whatever is targeted by that rule becomes a **flex container**.
 
