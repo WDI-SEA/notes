@@ -41,6 +41,7 @@
     * [Responsive Design](03-html-css/css-responsive-design/02responsivedesign.md)
     * [Pseudo-Classes/Elements](03-html-css/css-responsive-design/03pseudo.md)
     * [Vendor Prefixes](03-html-css/css-responsive-design/04vendorprefixes.md)
+    * [Custom Properties](03-html-css/css-responsive-design/06customprops.md)
     * [Additional Topics](03-html-css/css-responsive-design/05additional.md)
   * [Bootstrap](03-html-css/css-bootstrap/readme.md)
   * [CSS Frameworks](03-html-css/css-frameworks/readme.md)

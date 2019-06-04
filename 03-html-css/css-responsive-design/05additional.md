@@ -26,3 +26,9 @@ Expanding your CSS knowledge takes **practice.** Luckily, we'll be using HTML an
 * [CSS transform property](https://css-tricks.com/almanac/properties/t/transform/)
 * [CSS transition property](https://css-tricks.com/almanac/properties/t/transition/)
 * [CSS animation property](https://css-tricks.com/almanac/properties/a/animation/)
+
+#### CSS Custom Properties
+
+* [Custom Properties (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+* [Using Custom Properties to Modify Components](https://css-tricks.com/using-custom-properties-modify-components/)
+* [It's Time to Start Using CSS Custom Properties](https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/)
