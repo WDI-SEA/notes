@@ -9,18 +9,20 @@ Let's look at a more complex example. Go to reddit.com and search for "cute pupp
 <em>https://www.reddit.com/search?q=cute%20puppies</em>
 
 Let's break this down:
-* Base URL:
+* Base URL (consists of the protocol (https) and the domain (www.reddit.com)):
 <em>https://www.reddit.com</em>
-* The rest that will be captured by a URL pattern:
-<em>/search?q=cute%20puppies</em>
+* URL Pattern (think of as directories of the web app):
+<em>/search</em>
+* Query String (a key=value way of sending data with the request):
+<em>?q=cute%20puppies</em>
 
-In this situation, the URL pattern would look something like "/search?q=:searchedterms", where :searchedterms is a parameter that represents whatever was typed into the search bar.
+In this situation, the URL pattern would look something like "/search". When the request arrived in our route handler function, we would have access to the query string key-value pairs as part of the `request` object. More on this a bit later...
 
-URL Patterns will become more clear as we get into some examples.
+URL Patterns will become clearer as we get into some examples.
 
 ## HTTP Verb
 
-There are 4 HTTP verbs:
+There are 4 main HTTP verbs:
 * get
 * post
 * put
@@ -41,6 +43,7 @@ These verbs represent a _method_ for the request. In other words, they tell the 
 Let's circle back to our home route in our ```hello-express``` project and break the code down a little more to see how routes look in express.
 
 Here we have imported the express module, and created an instance of an express application called _app_. This code comes straight from the express [docs](https://expressjs.com/en/guide/routing.html).
+
 ```js
 var express require('express');
 var app = express();
@@ -53,9 +56,9 @@ app.get('/', function(req, res) {
 });
 ```
 
-The URL pattern '/' simply denotes the base URL.
+The URL pattern '/' simply denotes the base URL or root of the app. This is almost always the directory where you initialized npm and git but can be different when you deploy it to a platform service.
 
-The last line of code in our program, ```app.listen(8000)``` tells our app to listen to port 8000. In otherwords, it designates localhost:8000 as the base URL.
+The last line of code in our program, ```app.listen(8000)``` tells our app to listen to port 8000. This is the actual "place" in the network layers of our operating system where the request will come in. After this starts, the full base URL of our app will be http://localhost:8000.
 
 ***The combination of the URL Pattern '/' and the HTTP verb 'get' ensures that this route will be reached when a GET request made by the client from the base URL.***
 
@@ -70,26 +73,47 @@ app.get('/', hello);
 ```
 By design, the express ```get()``` function will pass two arguments into the callback function: (1) the request object and (2) the response object. That is why we define a callback function with two parameters.
 
-```send()``` is also an express function that takes one argument: the data you want to send to the front end. More on ```res.send()``` and related functions [here](https://fullstack-developer.academy/res-json-vs-res-send-vs-res-end-in-express/). You'll get more comfortable with all of this as we do more examples.
+## The Request and Response Objects
+
+Our callback functions for our routes (which are sometimes referred to as **Controllers**) receive two very special objects from Express. They are provided to our function very much like the `e` object holding all the event data is passed into our event listeners, or like each item in an array is passed into our `forEach()` callback.
+
+### request
+The Request object, frequently abbreviated to `req`, contains all the data we would ever need about the actual request that came in. What are they requesting? What browser are they using? Bunches of other stuff. But mostly we will using three keys inside of it:
+
+* `req.body` - this is where any submitted form data will be stored for us.
+* `req.params` - this is where special route variables are stored for us.
+* `req.query` - this is where the query string data is stored.
+
+As you can see, most of the time, if we are accessing the `req` object, its because we need to get at some data being sent to us from the user.
+
+### response
+The Response object, or `res` for short, is what we use to send something back to the user's browser, or more formally, send a response to the request. There are a number of functions we can use:
+
+* `res.send()` - sends back a simple string. Not really used in production. This is kind of like the `console.log()` for network requests. Good for testing if the route is working.
+* `res.sendFile()` - more sophisticated in that it can send an entire file back but file is static.
+* `res.render()` - used to render data into templates with the selected template engine. More on this later.
+* `res.json()` - used to send object data back as JSON. Very common when writing a backend API. Much more on this later.
+
+You'll get more comfortable with all of this as we do more examples.
 
 ## 2nd Express App: Fun With Routes
 
 ### Set up the project
 
-#### 1. Create a new directory called express_calculator
+#### 1. Create a new directory called route-fun
 ```bash
-mkdir fun_with_routes
+mkdir route-fun
 ```
 #### 2. Initialize Node
 ```bash
-cd fun_with_routes
+cd route-fun
 npm init
 ```
 #### 3. Install Express
 ```bash
 npm install express
 ```
-### 4. Create entry point
+#### 4. Create entry point
 ```bash
 touch index.js
 ```
@@ -115,7 +139,7 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('You've reached the home route!');
+  res.send("You've reached the home route!");
 });
 
 app.listen(8000);
@@ -125,9 +149,9 @@ Run nodemon and visit localhost:8000 to make sure everything is working.
 
 ### More Route Styles
 
-#### Strings
+#### Paths
 
-Now let's try adding another route that has a string URL pattern:
+Now let's try adding another route that has the URL pattern of a string after the root slash:
 ```js
 app.get('/', function(req, res) {
   res.send('You've reached the home route!');
@@ -138,15 +162,17 @@ app.get('/about', function(req, res) {
 });
 ```
 
-Visit localhost:8000/about to view the response from this route.
+Visit localhost:8000/about to view the response from this route. We have made a "directory" in our app that will deliver the results of a different function whenever someone hits our site's `/about` URL.
+
+This is one of the primary ways in which we organize our site. Every part of our site **should** be bookmarkable in a browser - which means that each section needs a distinct URL. This is how we make our web server respond to different URLs.
 
 #### Parameters
 
-By putting a colon before a string in our route, we can create routes with different variables, or **parameters**. These parameters are automatically pulled out for us by Express and can be accessed via the `req.params` object.
+We can also pass variables in as part of a URL. By putting a colon before a string in our route, we can create routes with different variables, or **parameters**. These parameters are automatically pulled out for us by Express and can be accessed via the `req.params` object.
 
 ```js
 app.get('/', function(req, res) {
-  res.send('You've reached the home route!');
+  res.send("You've reached the home route!");
 });
 
 app.get('/about', function(req, res) {
@@ -158,7 +184,9 @@ app.get('/:input', function(req, res) {
 });
 ```
 
-We can combine parameters and strings.
+We can name them whatever we like. The string we use after the colon will be the name of the key added to the `req.params` object which will contain whatever the user typed in there after the root slash.
+
+We can combine parameters and paths.
 ```js
 
 app.get("/greet/:name", function(req, res) {

@@ -10,12 +10,12 @@ Let's create our first Node/Express app!
 
 ### 1. Create a new directory for your project.
 ```bash
-mkdir express-hello-world
+mkdir hello-express
 ```
 
 ### 2. Initialize Node
 ```bash
-cd express-hello-world
+cd hello-express
 npm init
 ```
 
@@ -34,8 +34,8 @@ This file keeps track of your npm install history. As we just learned, when we u
 
 _No need to mess with any of these automatically generated files! NPM takes care of the modifications/additions for you each time you install/uninstall a package._
 
-###package.json:
-Reveist the package.json file. Notice that express and the version number now shows up in the dependencies field. All third party modules will be listed here automatically when you use npm to install them (but the dependencies of _those_ files will not be listed here).
+### package.json:
+Revisit the package.json file. Notice that express and the version number now shows up in the dependencies field. All third party modules will be listed here automatically when you use npm to install them (but the dependencies of _those_ files will not be listed here).
 
 ### 4. Create your entry point file.
 ```bash
