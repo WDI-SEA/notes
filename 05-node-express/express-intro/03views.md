@@ -40,9 +40,9 @@ Writing text to a web page using ```res.send()``` gives us something to look at,
 
 ***2.*** Put some basic HTML in these files so you can test them.
 
-***3.*** In your routes, replace the ```res.send(<message>)``` with ```res.SendFile(<absolute file path>)``` ([docs](https://expressjs.com/en/api.html#res.sendFile))
+***3.*** In your routes, replace the ```res.send(<message>)``` with ```res.sendFile(<absolute file path>)``` ([docs](https://expressjs.com/en/api.html#res.sendFile))
 
-```res.SendFile()``` takes an _absolute_ path, so we can't just give it ```./views/index.html```. How do you get the absolute file path for each of these files? Don't know/don't care? You're in luck! ```__dirname``` is a Node keyword that gives us the absolute path of the current directory ([docs](https://nodejs.org/docs/latest/api/modules.html#modules_dirname)), so we can just tack that on in front of the relative path
+```res.sendFile()``` takes an _absolute_ path, so we can't just give it ```./views/index.html```. How do you get the absolute file path for each of these files? Don't know/don't care? You're in luck! ```__dirname``` is a Node keyword that gives us the absolute path of the current directory ([docs](https://nodejs.org/docs/latest/api/modules.html#modules_dirname)), so we can just tack that on in front of the relative path
 
 Your home route should look like this:
 ```js
