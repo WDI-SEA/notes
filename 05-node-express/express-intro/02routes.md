@@ -240,4 +240,30 @@ app.get("/add/*", function(req, res) {
 });
 ```
 
-In this example, we focused on the URL patterns. The HTTP verbs will come into play more when we start working with true CRUD functionality. 
+### Query Strings
+
+One last thing we can do in our routes is pass in a special set of key-value pairs as the last part of the URL. They are called query strings because they are typically only included with GET requests which are conventionally used to query data from some source. The query string gives us a way to pass in additional parameters to the query.
+
+In the following URL:
+
+`https://www.domain.com/some/data?key1=value&key2=value2`
+
+The query string starts at the question mark (?) and go through the end of the URL. The syntax is `key=value`. If you need more than one pair, they can be separated with ampersands (&) as you see above.
+
+Let's add a new route where we can play with this. After all the other routes but before the line that starts the server listening, add a new route:
+
+```js
+app.get("/querystring", function(req, res) {
+  let printout = '';
+  for (let key in req.query) {
+    printout += key + ": " + req.query[key] + "<br />";
+  }
+  res.send("Here's what they sent: <br /><br />" + printout);
+});
+```
+
+As you can see, we don't need to do anything special to our URL pattern. Any route that we make can accept a query string. All we need to do is look inside of `req.query`. This one will loop over the `req.query` onject to see if it has anything and will print whatever keys it finds. We can test it by hitting our server in a browser window: `http://localhost:8000/querystring?name=Steve&food=tacos`. Try replacing those key-value pairs or adding some more.
+
+## Conclusion
+
+In this example, we focused on the URL patterns. The HTTP verbs will come into play more when we start working with true CRUD functionality. For now, everything is a GET request.
