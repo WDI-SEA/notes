@@ -248,7 +248,7 @@ In the following URL:
 
 `https://www.domain.com/some/data?key1=value&key2=value2`
 
-The query string starts at the question mark (?) and go through the end of the URL. The syntax is `key=value`. If you need more than one pair, they can be separated with ampersands (&) as you see above.
+The query string starts at the question mark (?) and goes through the end of the URL. The syntax is `key=value`. If you need more than one pair, they can be separated with ampersands (&) as you see above.
 
 Let's add a new route where we can play with this. After all the other routes but before the line that starts the server listening, add a new route:
 
@@ -262,7 +262,7 @@ app.get("/querystring", function(req, res) {
 });
 ```
 
-As you can see, we don't need to do anything special to our URL pattern. Any route that we make can accept a query string. All we need to do is look inside of `req.query`. This one will loop over the `req.query` onject to see if it has anything and will print whatever keys it finds. We can test it by hitting our server in a browser window: `http://localhost:8000/querystring?name=Steve&food=tacos`. Try replacing those key-value pairs or adding some more.
+As you can see, we don't need to do anything special to our URL pattern. Any route that we make can accept a query string. All we need to do is look inside of `req.query`. This one will loop over the `req.query` object to see if it has anything and will print whatever keys it finds. We can test it by hitting our server in a browser window: `http://localhost:8000/querystring?name=Steve&food=tacos`. Try replacing those key-value pairs or adding some more.
 
 ## Conclusion
 
