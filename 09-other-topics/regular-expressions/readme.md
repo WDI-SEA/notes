@@ -246,7 +246,7 @@ var matches = "The catsup was eaten by the cat".match(re);
 ```
 The `g` at the end of the regex is the _global_ flag and it tells the regex to search for all matches, instead of just the first.
 
-### Parentheses - Grouping
+#### Parentheses - Grouping
 
 Parentheses are used inside regular expressions to create groups that can then have a quantifier applied to the group as a whole. Whereas, the square brackets character class, `[]`, represents a **single** character to match, the parentheses, `()`, represent a **group** of characters to match.
 
