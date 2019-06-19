@@ -138,7 +138,7 @@ Here are more shorthand character classes:
 
 Google will be your friend when working with regular expressions, unless you work with them frequently, there's no way to remember all this stuff!
 
-### Negating the Shorthand Classes
+#### Negating the Shorthand Classes
 
 Interestingly, the uppercase versions of the previous shorthands match just the opposite of the lowercase versions:
 
