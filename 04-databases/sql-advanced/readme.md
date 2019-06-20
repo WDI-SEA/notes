@@ -5,42 +5,119 @@
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
 
+Let's create some data tables that we can run some queries on. Go to a terminal and run `psql`. Create a new database named 'advanced':
+
+```sql
+CREATE DATABASE advanced;
+```
+
+Now connect to it using `\c advanced` and create a new 'customers' table inside:
+
+```sql
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  age INTEGER,
+  country TEXT,
+  salary INTEGER
+);
+```
+
+Lastly, give it some data:
+
+```sql
+INSERT INTO customers (name, age, country, salary) VALUES ('Bira', 32, 'Brazil', 2000);
+INSERT INTO customers (name, age, country, salary) VALUES ('Kaushik', 23, 'Kota', 2000);
+INSERT INTO customers (name, age, country, salary) VALUES ('Ramesh', 25, null, 1500);
+INSERT INTO customers (name, age, country, salary) VALUES ('Kaushik', 25, 'Mumbai', null);
+INSERT INTO customers (name, age, country, salary) VALUES ('Amelia', 27, 'England', 8500);
+INSERT INTO customers (name, age, country, salary) VALUES ('Silvana', null, null , 4500);
+```
+
+You should be able to SELECT all the data and see this output:
+
+```
+ id |  name   | age | country | salary 
+----+---------+-----+---------+--------
+  1 | Bira    |  32 | Brazil  |   2000
+  2 | Kaushik |  23 | Kota    |   2000
+  3 | Ramesh  |  25 |         |   1500
+  4 | Kaushik |  25 | Mumbai  |       
+  5 | Amelia  |  27 | England |   8500
+  6 | Silvana |     |         |   4500
+(6 rows)
+
+```
+
+Now let's make a friend for it. Create a new 'orders' table:
+
+```sql
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  order_num TEXT,
+  amount DECIMAL,
+  customer_id INTEGER REFERENCES customers(id)
+);
+```
+
+Give it some data:
+
+```sql
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('A2067O', 104.09 , 1);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('J9899P', 50.54 , 1);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('N2337B', 954.66 , 1);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('A7786C', 66.33 , 2);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('F5400B', 403.54 , 3);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('F5298H', 669.84 , 3);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('L7800M', 200.03 , 3);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('J5454G', 44.30 , 4);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('F9802B', 43.54 , 6);
+INSERT INTO orders (order_num, amount, customer_id) VALUES ('B7780B', 182.72 , 6);
+```
+
+Now `SELECT * FROM orders;` and you should see this table:
+
+```
+ id | order_num | amount | customer_id 
+----+-----------+--------+-------------
+  1 | A2067O    | 104.09 |           1
+  2 | J9899P    |  50.54 |           1
+  3 | N2337B    | 954.66 |           1
+  4 | A7786C    |  66.33 |           2
+  5 | F5400B    | 403.54 |           3
+  6 | F5298H    | 669.84 |           3
+  7 | L7800M    | 200.03 |           3
+  8 | J5454G    |  44.30 |           4
+  9 | F9802B    |  43.54 |           6
+ 10 | B7780B    | 182.72 |           6
+(10 rows)
+```
+
 ## Order of SQL Clauses
 
 ![SQL Clauses](SQLClauses.png)
 
-## Selecting specific data
+## Selecting Specific Data
 
-Not equal - `<>`
+It's great that we can select all records from a table but we frequently want to limit the results to a smaller set that meets some set of criteria. We saw the WHERE clause in the introduction to SQL lesson and saw how it can help us retrieve specific data. Here are a few more ways we can get more exclusive with our queries.
 
-```
-- LIKE - SELECT * FROM students WHERE name LIKE '%';
-- DISTINCT - SELECT DISTINCT name FROM students;
-- ORDER BY - SELECT * FROM students ORDER BY name DESC;
-- COUNT - SELECT count(*) FROM students;
-- MAX - SELECT max(age) FROM students;
-- MIN - SELECT min(age) FROM students;
-- AND - SELECT * from students WHERE name = 'Elie' AND age = 26;
-- OR - SELECT * from students WHERE name = 'Elie' OR name ='Mary';
-- IN - SELECT * FROM students WHERE name IN ('Bob', 'Tom');
-- NOT IN - SELECT * FROM students WHERE name NOT IN ('Bob', 'Tom');
-- LIMIT - SELECT * FROM students LIMIT 2;
-- OFFSET - SELECT * FROM students OFFSET 1;
-- LIMIT + OFFSET - SELECT * FROM students LIMIT 2 OFFSET 1;
-- % - SELECT * FROM students WHERE name LIKE '%b';
-```
-
-Let's suppose we have a *customer* table with the following data:
+Remember that in SQL, our comparison operators are a little different. Equality is a single equals `=` and inequality is represented by a "greater-than-or-less-than" symbol `<>`.
 
 ```sql
- id |  name   | age |  country  | salary 
-----+---------+-----+-----------+--------
-  1 | Ramesh  |  32 | Ahmedabad |   2000
-  3 | Kaushik |  23 | Kota      |   2000
-  2 | Ramesh  |  25 |           |   1500
-  4 | Kaushik |  25 | Mumbai    |       
-  5 | Hardik  |  27 | Bhopal    |   8500
-  6 | Komal   |     |           |   4500
+- LIKE - SELECT * FROM customers WHERE name LIKE '%';
+- DISTINCT - SELECT DISTINCT name FROM customers;
+- ORDER BY - SELECT * FROM customers ORDER BY name DESC;
+- COUNT - SELECT count(*) FROM customers;
+- MAX - SELECT max(age) FROM customers;
+- MIN - SELECT min(age) FROM customers;
+- AND - SELECT * from customers WHERE name = 'Kaushik' AND age = 25;
+- OR - SELECT * from customers WHERE name = 'Silvana' OR name = 'Bira';
+- IN - SELECT * FROM customers WHERE name IN ('Amelia', 'Ramesh');
+- NOT IN - SELECT * FROM customers WHERE name NOT IN ('Amelia', 'Ramesh');
+- LIMIT - SELECT * FROM customers LIMIT 2;
+- OFFSET - SELECT * FROM customers OFFSET 1;
+- LIMIT + OFFSET - SELECT * FROM customers LIMIT 2 OFFSET 1;
+- % - SELECT * FROM customers WHERE name LIKE '%a';
 ```
 
 ## COUNT()
@@ -94,14 +171,20 @@ ALTER TABLE customer ALTER COLUMN name SET NOT NULL;
 ALTER TABLE customer DROP date;
 ```
 
-### FOREIGN KEYS
+### Foreign Keys
+
+Remember our 'orders' table:
+
 ```sql
-CREATE TABLE merch_order (
-	id SERIAL PRIMARY KEY,
-	num_items INTEGER,
-	customer_id INTEGER REFERENCES customer(id)
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  order_num TEXT,
+  amount DECIMAL,
+  customer_id INTEGER REFERENCES customers(id)
 );
 ```
+
+That last column we defined is called a **FOREIGN KEY**. Foreign keys and primary keys are related in that a foreign key is basically a reference to a primary key in another table. In this case, we have a column in our 'orders' table called `customer_id` that *references* the primary key in the 'customers' table. This is the basis for making data relations with JOIN statements as we will see below. To summarize, the foreign key provides a sort of ownership link between the customer who has the primary key and all of that customer's orders in the related table where the `customer_id` matches the id from the 'customers' table.
 
 ### Nested queries
 
@@ -140,7 +223,6 @@ SELECT name,
 FROM customer;
 ```
 
-
 ### JOINs
 
 There are four types of JOINs in SQL:
@@ -151,122 +233,158 @@ There are four types of JOINs in SQL:
 
 ![4 Types of JOINs](https://www.dofactory.com/Images/sql-joins.png)
 
-Let's look at a company with a table for customers and a table for orders.
-The customer table looks like this:
-```sql
- id  | first_name | last_name   | email 
------+------------+-------------+------------------------
-  1  | Romesh     | Ranganathan | romeshranga@email.com
-  4  | Jameela    | Jamil       | jjamil@goodplace.com
-  6  | David      | ODogherty   | florencefalls@email.com
-  9  | Jackie     | Chan        | chankongsan@email.cn
-  10 | Aldis      | Hodge       | hardison@email.com
- ```
- and the order table looks like this:
- ```sql
- id  | order_number | amount | customer_id 
------+--------------+--------+-------------
-  1  | A2067O       | 104.09 | 1
-  2  | J9899P       | 50.54  | 2
-  3  | N2337B       | 954.66 | 3
-  4  | A7786C       | 66.33  | 3
-  5  | F5400B       | 403.54 | 4
-  6  | F5298H       | 669.84 | 5
-  7  | L7800M       | 200.03 | 8
-  8  | J5454G       | 44.30  | 7
-  9  | F9802B       | 43.54  | 9
-  10 | B7780B       | 182.72 | 9
- ```
- As you can see, there are some customers who haven't placed orders and some orders by customers who are no longer in the table (let's say, for example, the company deletes customers who haven't bought anything from them in 10 years). If we ask for the orders that correspond to Aldis Hodge, we will receive a value of NULL because he hasn't ordered anything. Similarly, if we request the customer that purchased order J5454G, we will also receive a value of NULL because the customer who had the id of 7 is no longer in the database.
- _NOTE: Since ORDER is the name of both our table and a SQL command, we should use double quotes when refering to the table name_
+Let's look at our table for customers and our table for orders. The customer table looks like this:
+
+```
+ id |  name   | age | country | salary 
+----+---------+-----+---------+--------
+  1 | Bira    |  32 | Brazil  |   2000
+  2 | Kaushik |  23 | Kota    |   2000
+  3 | Ramesh  |  25 |         |   1500
+  4 | Kaushik |  25 | Mumbai  |       
+  5 | Amelia  |  27 | England |   8500
+  6 | Silvana |     |         |   4500
+(6 rows)
+```
+
+And the order table looks like this:
+
+```
+ id | order_num | amount | customer_id 
+----+-----------+--------+-------------
+  1 | A2067O    | 104.09 |           1
+  2 | J9899P    |  50.54 |           1
+  3 | N2337B    | 954.66 |           1
+  4 | A7786C    |  66.33 |           2
+  5 | F5400B    | 403.54 |           3
+  6 | F5298H    | 669.84 |           3
+  7 | L7800M    | 200.03 |           3
+  8 | J5454G    |  44.30 |           4
+  9 | F9802B    |  43.54 |           6
+ 10 | B7780B    | 182.72 |           6
+(10 rows)
+```
+
+As you can see, there are some customers who haven't placed orders. If we ask for the orders that correspond to customer_id 5, we will receive a value of NULL because they haven't ordered anything.
  
- **INNER JOIN** 
+ **INNER JOIN**
+
 ```sql
-SELECT c.first_name, o.order_number FROM customer c
-INNER JOIN "order" o
+SELECT c.name, o.order_num
+FROM customers c INNER JOIN orders o
 ON c.id=o.customer_id;
 ```
-An `INNER JOIN` will return a table with all the matches from our customer and order tables where there is no NULL value on either side. 
-```sql
- first_name | order_number 
-------------+--------------
-  Romesh    | A2067O   
-  Jamella   | F5400B   
-  Jackie    | F9802B   
-  Jackie    | B7780B  
+
+An `INNER JOIN` will return a dataset with all the matches from our customer and order tables where there is no NULL value on either side.
+
 ```
-_NOTE: If you don't specify the type, SQL will perform an `INNER JOIN`._
+  name   | order_num 
+---------+-----------
+ Bira    | A2067O
+ Bira    | J9899P
+ Bira    | N2337B
+ Kaushik | A7786C
+ Ramesh  | F5400B
+ Ramesh  | F5298H
+ Ramesh  | L7800M
+ Kaushik | J5454G
+ Silvana | F9802B
+ Silvana | B7780B
+(10 rows)
+```
+_NOTE: This is the default type of JOIN so if you don't specify the type, SQL will perform an `INNER JOIN`._
 
 **FULL [OUTER] JOIN**
+
 ```sql
-SELECT c.first_name, o.order_number FROM customer c
-FULL OUTER JOIN "order" o
+SELECT c.name, o.order_num FROM customers c
+FULL OUTER JOIN orders o
 ON c.id=o.customer_id;
 ```
+
 _NOTE: The `OUTER` is optional_
+
 A `FULL OUTER JOIN` will do the opposite of an `INNER JOIN`, returning you a table with all possible combinations, even if NULL has to be placed in.
-```sql
- first_name | order_number 
-------------+--------------
-  Romesh    | A2067O   
-  NULL      | J9899P   
-  NULL      | N2337B   
-  NULL      | A7786C   
-  Jamella   | F5400B   
-  NULL      | F5298H   
-  NULL      | L7800M   
-  NULL      | J5454G   
-  Jackie    | F9802B   
-  Jackie    | B7780B   
-  Aldis     | NULL   
+
 ```
-_TIP: `LEFT JOIN` and `RIGHT JOIN` can both be considered types of outer joins_
+  name   | order_num 
+---------+-----------
+ Bira    | A2067O
+ Bira    | J9899P
+ Bira    | N2337B
+ Kaushik | A7786C
+ Ramesh  | F5400B
+ Ramesh  | F5298H
+ Ramesh  | L7800M
+ Kaushik | J5454G
+ Silvana | F9802B
+ Silvana | B7780B
+ Amelia  | 
+(11 rows)
+```
+
+_TIP: The `LEFT JOIN` and `RIGHT JOIN` below can both be considered types of outer joins_
 
 **LEFT JOIN**
+
 ```sql
-SELECT c.first_name, o.order_number FROM customer c
-LEFT JOIN "order" o
+SELECT c.name, o.order_num
+FROM customers c LEFT JOIN orders o
 ON c.id=o.customer_id;
 ```
+
 With a `LEFT JOIN` the table returned will have all values in the left table, even if there is no corresponding value on the right side.
-```sql
- first_name | order_number 
-------------+--------------
-  Romesh    | A2067O   
-  Jamella   | F5400B   
-  Jackie    | F9802B   
-  Jackie    | B7780B   
-  Aldis     | NULL   
+
+```
+  name   | order_num 
+---------+-----------
+ Bira    | A2067O
+ Bira    | J9899P
+ Bira    | N2337B
+ Kaushik | A7786C
+ Ramesh  | F5400B
+ Ramesh  | F5298H
+ Ramesh  | L7800M
+ Kaushik | J5454G
+ Silvana | F9802B
+ Silvana | B7780B
+ Amelia  | 
+(11 rows)
 ```
 
 **RIGHT JOIN**
+
 ```sql
-SELECT c.first_name, o.order_number FROM customer c
-RIGHT JOIN "order" o
+SELECT c.name, o.order_num
+FROM customers c RIGHT JOIN orders o
 ON c.id=o.customer_id;
 ```
-With a `RIGHT JOIN` the table returned will have all values in the right table, even if there is no corresponding value on the left side.
+
+With a `RIGHT JOIN` the table returned will have all values in the right table, even if there is no corresponding value on the left side. This is a very rare join as it would require us to have orphaned records in the orders table. That is, orders that have no related customer. This is actually impossible with the way we have the tables set up. The foreign key constraint in the orders table basically says that you can't have a value in the `customer_id` column in the orders table if that `id` doesn't exist in the customers table. So when we run this, it looks exactly like our INNER JOIN above.
+
 ```sql
- first_name | order_number 
-------------+--------------
-  Romesh    | A2067O   
-  NULL      | J9899P   
-  NULL      | N2337B   
-  NULL      | A7786C   
-  Jamella   | F5400B   
-  NULL      | F5298H   
-  NULL      | L7800M   
-  NULL      | J5454G   
-  Jackie    | F9802B   
-  Jackie    | B7780B  
+  name   | order_num 
+---------+-----------
+ Bira    | A2067O
+ Bira    | J9899P
+ Bira    | N2337B
+ Kaushik | A7786C
+ Ramesh  | F5400B
+ Ramesh  | F5298H
+ Ramesh  | L7800M
+ Kaushik | J5454G
+ Silvana | F9802B
+ Silvana | B7780B
+(10 rows)
 ```
 
 ### Unions
 
 Unions display the results of two or more SELECT statements into one table, so the SELECT statements must have the same number of columns with the same names/data types, in the same order.
 
-Here's a customer table
-```sql
+Here's a customers table:
+
+```
 id | name      
 ---+---------
  1 | Romesh  
@@ -274,8 +392,10 @@ id | name
  3 | Vlad
  4 | Poppy
 ```
-and a subscriber table
-```sql
+
+and a subscribers table:
+
+```
 id | name      
 ---+---------
  1 | Romesh  
@@ -285,11 +405,12 @@ id | name
  5 | Kady
 ```
 
-Let's try viewing the ids and names from both the customer and the subscriber tables.
+We could use this query to view the ids and names from both the customers and the subscribers tables.
 
 ```sql
-SELECT id, name FROM customer UNION SELECT id, name FROM subscriber ORDER BY id;
+SELECT id, name FROM customers UNION SELECT id, name FROM subscribers ORDER BY id;
 ```
+
 ```sql
 id | name      
 ---+---------
@@ -301,11 +422,13 @@ id | name
  4 | Janice
  5 | Kady
 ```
+
 Notice that the resulting table has fewer rows that the sum of the rows from each table. This is because UNION statements also eliminate any duplicate rows from the result. To include the duplicate rows, use UNION ALL.
 
 ```sql
-SELECT id, name FROM customer UNION ALL SELECT id, name FROM subscriber ORDER BY id;
+SELECT id, name FROM customers UNION ALL SELECT id, name FROM subscribers ORDER BY id;
 ```
+
 ```sql
 id | name      
 ---+---------
