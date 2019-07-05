@@ -128,29 +128,29 @@ COUNT() is an *aggregate function*.
 
 We use an aggregate function to get the total count of customers in a table.
 ```sql
-SELECT COUNT(*) FROM customer;
+SELECT COUNT(*) FROM customers;
 ```
 
 What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint? 
 ```sql
-SELECT COUNT(age) FROM customer;
+SELECT COUNT(age) FROM customers;
 ```
 
 ## GROUP BY
 
 GROUP BY is used to pull together identical data points. For example, say we just want to see the different ages we have in our customer table, without having to look through the duplicates too.
 ```sql
-SELECT age FROM customer GROUP BY age;
+SELECT age FROM customers GROUP BY age;
 ```
 
 What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT():
 ```sql
-SELECT age, COUNT(age) FROM customer GROUP BY age;
+SELECT age, COUNT(age) FROM customers GROUP BY age;
 ```
 
 Or maybe we want the average salaries of the customers from each country:
 ```sql
-SELECT country, AVG(salary) FROM customer GROUP BY country;
+SELECT country, AVG(salary) FROM customers GROUP BY country;
 ```
 
 ### Aliases
@@ -158,17 +158,17 @@ SELECT country, AVG(salary) FROM customer GROUP BY country;
 Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query.
 
 ```sql
-SELECT country, avg(salary) AS avgSal FROM customer GROUP BY country;
+SELECT country, avg(salary) AS avgSal FROM customers GROUP BY country;
 ```
 
 ### Alter Table Command
 
 ```sql
-ALTER TABLE customer ADD COLUMN date DATE;
+ALTER TABLE customers ADD COLUMN date DATE;
 
-ALTER TABLE customer ALTER COLUMN name SET NOT NULL;
+ALTER TABLE customers ALTER COLUMN name SET NOT NULL;
 
-ALTER TABLE customer DROP date;
+ALTER TABLE customers DROP date;
 ```
 
 ### Foreign Keys
@@ -193,7 +193,7 @@ What if I want to get names of customers with the highest salary.
 Let's try it using WHERE
 
 ```sql
-SELECT name, salary FROM customer
+SELECT name, salary FROM customers
 WHERE salary = MAX(salary);
 ```
 
@@ -202,9 +202,9 @@ That will give us an error, because MAX is an aggregate function and can't be us
 This will return the maximum rating, which we need to feed into WHERE.
 
 ```sql
-SELECT name, salary FROM customer
+SELECT name, salary FROM customers
 WHERE salary = (
-	SELECT MAX(salary) FROM customer
+	SELECT MAX(salary) FROM customers
 );
 ```
 
@@ -220,7 +220,7 @@ SELECT name,
 	THEN 'young adult'
 	ELSE 'adult' 
 	END AS age_group 
-FROM customer;
+FROM customers;
 ```
 
 ### JOINs
@@ -233,7 +233,7 @@ There are four types of JOINs in SQL:
 
 ![4 Types of JOINs](https://www.dofactory.com/Images/sql-joins.png)
 
-Let's look at our table for customers and our table for orders. The customer table looks like this:
+Let's look at our table for customers and our table for orders. The customers table looks like this:
 
 ```
  id |  name   | age | country | salary 
@@ -247,7 +247,7 @@ Let's look at our table for customers and our table for orders. The customer tab
 (6 rows)
 ```
 
-And the order table looks like this:
+And the orders table looks like this:
 
 ```
  id | order_num | amount | customer_id 
