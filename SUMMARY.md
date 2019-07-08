@@ -58,7 +58,7 @@
     * [Promises](02-js-jquery/js-control-flow/05promises.md)
   * [Functions](02-js-jquery/js-functions/01functions.md)
     * [Callbacks](02-js-jquery/js-functions/02callbacks.md)
-    * [Timeing Functions](02-js-jquery/js-functions/03timing-functions.md)
+    * [Timing Functions](02-js-jquery/js-functions/03timing-functions.md)
     * [Iterators](02-js-jquery/js-functions/04iterators.md)
   * [DOM and Events](02-js-jquery/js-dom/01readme.md)
   * [DOM Manipulation](02-js-jquery/js-dom/02more-manipulation.md)
