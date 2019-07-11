@@ -191,6 +191,7 @@
     * [Code-Along: Mood Points](16-react/react-state/mood-points.md)
     * [Code-Along: Edit Dino Blog](16-react/react-state/dino-blog-state.md)
     * [Lab: Simple Calc](16-react/react-state/simple-calc-exercise.md)
+    * [Lifting State](16-react/react-state/lifting-state.md)
   * [React Router](16-react/react-router/readme.md)
     * [Browser History/SPAs](16-react/react-router/browser-history-spas.md)
     * [Intro React Router](16-react/react-router/intro.md)
