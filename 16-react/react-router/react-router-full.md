@@ -1,4 +1,35 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  The Plan: Our Example Dentist Website
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Intro to React Router
+
+### Learning Objectives
+
+*After this code-along section, you will be able to:*
+* Describe React Router's main features: routing, components, history
+* Use React Router to map URLs to components
+* Use React Router to create links to different pages
+
+## React Router
+
+It's great that HTML5 introduced new browser history mechanics to make it easier
+for us as developers to build Single Page Applications, and it's important to know what's going on under the hood.
+
+However, on an important note - we're actually not going to be using these new features directly ourselves!
+
+Instead, we'll use a tool called **React Router**, which bundles everything together so we don't have to worry about it.
+
+For an intro to React Router, watch [this video](https://generalassembly.wistia.com/medias/tep72w77ir)
+
+**React Router** is a third party library that makes it easy for us to route URLs - not to different pages, but by dynamically loading different components on the same page as the user navigates to different URLs. Once we define how the URLs are routed to the components, **React Router** will manage our Single Page App's browser history automatically.
+
+Here's what React Router provides:
+
+* **Routing:** easily define what content is associated with what URLs.
+* **History:** automatically manage browser history when the user navigates between content.
+
+React Router is actually a **third-party** library. "Third-party" just means it's not built by React and not built by ourselves; it was written by some other "third-party" group of developers. Even though React Router is third-party software, it's extremely useful, trustworthy, and popular - don't be afraid to use it. With more than 20,000 stars on Github, it’s safe to assume React Router is here to stay.
+
+So let's use it!
+
+## The Plan: Our Example Dentist Website
 
 We're going to make an example dentist website that has:
 - A `Home` page.
@@ -15,8 +46,7 @@ Here's how we'll route our single-page application:
 | /procedures    | `<Procedures>` | A list of all dentist procedures.                |
 | /contact       | `<Contact>`    | A page with an address, phone number, and email. |
 
-Remember, the URL routes are paths off our main website. We could put our website at any domain, like `www.ourdentistwebsite.com` or
-`www.premiumdental.com`, and the URL route paths would behave the same. Paths only care about what comes after the domain name.
+Remember, the URL routes are paths off our main website. We could put our website at any domain, like `www.ourdentistwebsite.com` or `www.premiumdental.com`, and the URL route paths would behave the same. Paths only care about what comes after the domain name.
 
 Our routes say that if someone goes to `ourdomain.com/` they will see our home page with welcome text.
 - The content of this page will all be defined in its own `Home` component in a file called `home.js`.
@@ -164,10 +194,7 @@ The purpose of our site is to create several components that we can swap out as 
 
 To create these new files, follow the same procedure we used to create the `Home` component. Basically, we used the `App` component as a template: create each file, change the name of the component to its new name, then replace the JSX in the `render() { ... }` function with custom content. Be sure to import each new component into `App.js` just like we did with the `Home` component.
 
-You can put your own content to be rendered by each component if you'd like. Refer to these complete files in the finished repo to make sure you got everything correct:
-
-* [Procedures.js](../../../react-router-simple-dentist-site/blob/master/src/procedures.js)
-* [Contact.js](../../../react-router-simple-dentist-site/blob/master/src/contact.js)
+You can put your own content to be rendered by each component if you'd like.
 
 Now that we have our components made, there's nothing stopping us from importing multiple components into our App.js. So now, we have:
 
@@ -292,8 +319,7 @@ export default App
 ```
 
 # Navigate to the Routes
-Now that everything is hooked up you can manually enter different URLs and see how your page appears. If you go to <http://localhost:3000/>, you should see just the homepage. If you go to <http://localhost:3000/procedures>, you should
-see just the procedures page. If you go to <http://localhost:3000/contact>, then you should see just the contact page.
+Now that everything is hooked up you can manually enter different URLs and see how your page appears. If you go to <http://localhost:3000/>, you should see just the homepage. If you go to <http://localhost:3000/procedures>, you should see just the procedures page. If you go to <http://localhost:3000/contact>, then you should see just the contact page.
 
 > Check it!
 > * Make sure that React Router is routing from each URL to the proper component
@@ -312,8 +338,7 @@ Two common errors:
 # Adding a Nav Section
 Great, now our site is up and running! We can manually type in URLs and see the different pages.
 
-Although... users never really type URLs, do they? We should probably have links at the top of the page so we can just click on
-things. We could build this ourselves, but we don't have to! Remember that `Link` component we imported from React Router?
+Although... users never really type URLs, do they? We should probably have links at the top of the page so we can just click on things. We could build this ourselves, but we don't have to! Remember that `Link` component we imported from React Router?
 
 Just like links in HTML, we can wrap `<Link>` tags around whatever text that we want to display to the user to click on. The pieces of this are:
 
