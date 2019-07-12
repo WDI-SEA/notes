@@ -199,6 +199,7 @@
     * [Dentist Website Part 2](16-react/react-router/dentist-exercise-part2.md)
     * [Router Lab](16-react/react-router/lab-router.md)
   * [Fetch and APIs](16-react/react-apis/readme.md)
+    * [APIs with Fetch and Axios](16-react/react-apis/fetch-apis.md)
     * [Fetch the Weather](16-react/react-apis/fetch-weather.md)
   * [React Hooks](16-react/react-hooks/readme.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
