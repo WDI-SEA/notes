@@ -2,7 +2,9 @@
 
 There will be NO CLASS on labor day, September 2nd, 2019.
 
-https://calendar.google.com/calendar/embed?src=generalassemb.ly_ntoj3kq384ctl9p5v0cdl1m6j4%40group.calendar.google.com&ctz=America%2FLos_Angeles
+https://gist.github.com/brandiw/6d1b7da5e41f69f37cd9dcdbf887f951
+
+[Gist](https://gist.github.com/brandiw/6d1b7da5e41f69f37cd9dcdbf887f951)
 
 [Calendar Link](https://calendar.google.com/calendar/embed?src=generalassemb.ly_ntoj3kq384ctl9p5v0cdl1m6j4%40group.calendar.google.com&ctz=America%2FLos_Angeles)
 
