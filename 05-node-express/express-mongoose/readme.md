@@ -10,7 +10,59 @@
 
 ## MongoDB + Mongoose
 
-MongoDB is a document database for storing data. We can access MongoDB through Node by using an ORM called Mongoose. It's similar to other ORMs, but involves a little more setup.
+_Mongoose_ is to MongoDB as Sequelize is to a SQL database. But, because it maps code to MongoDB _documents_, it is referred to as an **Object Document Mapper (ODM)** instead of an ORM. Mongoose is going to make it easier to perform CRUD using object-oriented JS instead of working directly MongoDB.
+
+Using the Mongoose ODM is by far the most popular way to perform CRUD on a MongoDB. Mongoose's homepage says it best:
+
+> "Mongoose provides a straight-forward, schema-based solution to model your application data"
+
+Wait a second, what's with this "schema" business, isn't MongoDB schema-less? Well, yes it is, however, the vast majority of applications benefit when their data conforms to a defined structure (schema). Mongoose allows us to define schemas and ensures that documents conform.
+
+Mongoose also provides lots of other useful functionality:
+* Default property values
+* Validation
+* Automatic related model population via the `populate` method
+* _Virtual properties_ - create properties like "fullName" that are not persisted in the database
+* Custom _Instance methods_ which operate on the document
+* _Static methods_ which operate on the entire collection 
+* `pre` and `post` event lifecycle hooks (Mongoose "middleware")
+
+## The Big Picture 
+
+Here is the big picture overview of the components we'll be working with:
+
+<img src="https://i.imgur.com/Q6A7KTQ.png" width="900">
+
+### Big Picture Example 
+
+This is the general flow of how we will use Mongoose...
+
+#### Make a Schema
+
+What is a schema? It is just the structure of our data model: essentially the field names and what data type they are. This is similar the the schema we could see of each of our data tables in postgres. Viewing the table schema showed each of the columns and their data types. Recall that colmuns in SQL translate into fields or attributes in MongoDB.
+
+We define the structure of our model as a schema...
+
+```js
+var postSchema = new mongoose.Schema({
+  content: String
+});
+```
+
+This will make a single field named `content` and it will be a string.
+
+Then we use this schema to build an actual model class...
+
+```js
+module.exports = mongoose.model('Post', postSchema);
+```
+
+This creates a model called `Post` (**REMEMBER MODEL NAMES ARE ALWAYS SINGULAR**). This two-step process results in a usable model similar to the ones we saw in Sequelize. It can be required and used to perform CRUD on the `posts` collection in the MongoDB:
+
+```js
+var Post = require('./models/post');
+Post.create({content: 'Amazing post...'});
+```
 
 ## Setting up Mongoose in your app
 
@@ -40,14 +92,13 @@ With the package installed, lets use it - open index.js and setup your app:
 
 ```js
 var express = require('express');
-var bodyParser = require('body-parser');
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
 
 // Mongoose stuff
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/family-tree');
+mongoose.connect('mongodb://localhost/familyTree');
 
 app.get('/', function(req, res) {
   res.send('Hi!');
@@ -56,13 +107,35 @@ app.get('/', function(req, res) {
 app.listen(3000);
 ```
 
-You can now execute all the mongoDB commands over the database `family-tree`, which will be created if it doesn't exist.
+You can now execute all the mongoDB commands over the database `familyTree`, which will be created if it doesn't exist.
+
+### Mongoose Event Handlers
+
+Let's modify our index.js as follows:
+
+	```js
+	var mongoose = require('mongoose');
+	mongoose.connect('mongodb://localhost/familyTree');
+	
+	// shortcut to mongoose.connection object
+	var db = mongoose.connection;
+	
+	db.once('open', function() {
+  		console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
+	});
+	
+	db.on('error', function(err) {
+  		console.error(`Database error:\n${err}`);
+	});
+	```
+
+We set up an event listener to fire once when the connection 'opens' to console log what host and port it is running on. It will also console log any errors whenever they occur.
 
 ## Working with Models
 
 #### Defining a Model
 
-Like the ORMs we've worked with previously, Mongoose allows us to define models, complete with attributes, validations, and middleware (known as hooks in Sequelize, or callbacks in ActiveRecord). Let's make a model.
+Like the ORMs we've worked with previously, Mongoose allows us to define models, complete with attributes, validations, and middleware (known as hooks in Sequelize). Let's make a model.
 
 From within our family-tree app:
 
@@ -102,6 +175,7 @@ var userSchema = new mongoose.Schema({
   }
 });
 
+// Here is where you actually name the model. NAME IT SINGULAR!
 var User = mongoose.model('User', userSchema);
 
 // make this available to our other files
@@ -122,6 +196,23 @@ Here's a look at the datatypes we can use in Mongoose documents:
 - ObjectId
 
 Also, notice we create the Mongoose Model with `mongoose.model`. Remember, we can define custom methods here - this would be where we could write a method to encrypt a password.
+
+#### Timestamps in Mongoose
+
+Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `timestamps` option as follows in the schema:
+
+	```js
+	var userSchema = new mongoose.Schema({
+    name: String,
+    email: { type: String, required: true, unique: true },
+    meta: {
+      age: Number,
+      website: String
+    }
+	}, {
+	  timestamps: true
+	});
+	```
 
 #### Creating Custom Methods
 
@@ -166,7 +257,7 @@ app.get('/', function(req, res) {
 });
 ```
 
-Now run the app with `nodemon index.js` to see the result! You can define class methods in a similar manner by attaching the method to `.statics` instead of `.methods`
+Now run the app with `nodemon` to see the result! You can define class methods in a similar manner by attaching the method to `.statics` instead of `.methods`
 
 ## Interacting with MongoDB's CRUD
 
@@ -209,19 +300,19 @@ User.find({}, function(err, users) {
 });
 
 // Find only one user
-User.findOne({}, function(err, users) {
+User.findOne({}, function(err, user) {
   if (err) return res.send(err);
-  res.send(users);
+  res.send(user);
 });
 
 // Find by email
-User.find({ email: req.params.email }, function(err, users) {
+User.find({ email: req.params.email }, function(err, user) {
   if (err) return res.send(err);
   res.send(user);
 });
 
 // Find by id
-User.findById(req.params.id, function(err, users) {
+User.findById(req.params.id, function(err, user) {
   if (err) return res.send(err);
   res.send(user);
 });
