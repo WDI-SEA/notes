@@ -144,6 +144,7 @@
       * [Authorization and Flash messages](05-node-express/express-auth/practice/06authorization-flash.md)
   * [Testing with Mocha and Chai](05-node-express/express-mocha-testing/readme.md)
   * [Mongoose](05-node-express/express-mongoose/readme.md)
+    * [Mongoose Associations](05-node-express/express-mongoose/mongoose-associations.md)
   * [JSON Web Tokens](05-node-express/express-jwt/readme.md)
     * [Codealong](05-node-express/express-jwt/codealong.md)
   * [Additional Topics](05-node-express/additional-topics/readme.md)
