@@ -23,7 +23,9 @@ You may hear the word "accessibility" and think of wheelchair ramps and wonder w
 
 There are several ways to improve the accessibility of your website, but what about the greater question... why bother? You may note that most of the ways to improve accessibility include extra time and more typing. Why do that when there are deadlines looming and other shinier things that might make money?
 
-Believe it or not, accessibility is totally a money issue. One reason is that you're excluding potential customers. If someone can't use your site, they won't buy your product or give you views or ad revenue. A perhaps less obvious reason is that companies do get sued over accessibility issues. In fact, [according to a recent study done by a law firm](https://www.adatitleiii.com/2019/01/number-of-federal-website-accessibility-lawsuits-nearly-triple-exceeding-2250-in-2018/), the number of lawsuits of website accessibility tripled between 2017 and 2018. Most sources expect that number to continue to rise. 
+Believe it or not, accessibility is totally a money issue. One reason is that you're excluding potential customers. Most websites make money by selling products, accumulating user data, showing ads on their site, or some combination of those things. However, if your site isn't accessible, there are whole demographics left out of your customer base that will never be reached. 
+
+Another, perhaps less obvious monetary reason to get ADA compliant is that companies do get sued over accessibility issues. In fact, [according to a recent study done by a law firm](https://www.adatitleiii.com/2019/01/number-of-federal-website-accessibility-lawsuits-nearly-triple-exceeding-2250-in-2018/), the number of lawsuits of website accessibility tripled between 2017 and 2018. Most sources expect that number to continue to rise. 
 
 > In 2020, when we get new figures, please bug your instructor for an update!
 
