@@ -29,7 +29,7 @@ Believe it or not, accessibility is totally a money issue. One reason is that yo
 
 Additionally, there is an issue of fairness, from which the ADA compliance laws stem. As put by the person who invented the internet:
 
-~"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect."~ -Tim Berners Lee ([Source](https://www.w3.org/WAI/fundamentals/accessibility-intro/))
+_"The power of the Web is in its universality. Access by everyone regardless of disability is an essential aspect."_ -Tim Berners Lee ([Source](https://www.w3.org/WAI/fundamentals/accessibility-intro/))
 
 In other words, our usage of the web is so pervasive, that you couldn't really live a normal life if you weren't able to use it.
 
