@@ -189,9 +189,16 @@ Common semantic tags include:
 * summary
 * details
 
-### Labels (in Forms)
+### Accessible Web Forms
 
-That `<label>` tag you are likely tired of typing in your forms has a purpose. Your form will be accessible!
+That `<label>` tag you are likely tired of typing in your forms has a purpose. The `<fieldset>`, `<legend>` and `<label>` tags are designed for web accessibility and aiding screen readers to properly interpret the form. Fieldset lets you group parts of a form together. Legend defines what a fieldset is for. Labels are for inputs. You can either nest your input inside a label or you can put the label first and then as a sibling put the corresponding input. If you choose to use sibling elements, the label must have a `for` attribute and the input tag must have an `id` attribute that have matching values.
+
+```html
+<form>
+    <label for="username">Your Username:</label>
+    <input type="text" id="username">
+</form>
+```
 
 ### Accessible Names for Icons
 
