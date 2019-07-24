@@ -1,8 +1,14 @@
 ## Project 3 (Group)
 
+## Recent Projects (in React)
+
+* [Dream State](https://dream-state-app.herokuapp.com/) - By Antonia Villa, Ashton Christie, and Jacquelyn Marcella of WDI 16
+
+## Seattle Archive (Before 2016)
+
 These projects were built in Rails, with the exception of WDI SEA 03, which used Node
 
-###WDI SEA 01
+### WDI SEA 01
 
 * [Seahawk City](http://seahawkcity.com/)
   * Spot 12th man flags and events around seattle and plot them on a map.
@@ -13,7 +19,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 * [The Daily Habit - Annie/Brian/Sanda](http://thedailyhabit.herokuapp.com/)
   * Have something you want to remember to do (or not do) every day? This site will remind you. It will also text your friends if you mess up.
 
-###WDI SEA 02
+### WDI SEA 02
 
 * [Schedulacity - Nick/Katie/Dan](http://schedulacity.herokuapp.com/)
   * Cloud based client management software that allows you to schedule sessions, track attendance, and handle communication.
@@ -24,7 +30,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 * [FSTVL](http://fstvl.herokuapp.com/)
   * Your personal Conference/Festival/Convention companion. A planning app to schedule events during a festival that lets you share and compare that schedule with friends. The events are populated by Host users (festival runners).
 
-###WDI SEA 03
+### WDI SEA 03
 
 * [News To Me - Dave/Mukhtar/Cheryl](http://news2me2.herokuapp.com/)
   * An application for viewing sentiments about subjects over a period of time. Useful for what people think of sports teams, politics, and other fun subjects
@@ -35,7 +41,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 * [BloxScore - Elle/Sam/Brenden/Osama](https://bloxscore.herokuapp.com/)
   * Learn more about your community by obtaining pictures of social events, walk scores, Yelp results, and more
 
-###WDI SEA 04
+### WDI SEA 04
 
 * [Explor - Julie/Auggie/Brittany](http://explor.herokuapp.com/)
   * Research restaurants, attractions, and weather for various locations
@@ -48,7 +54,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 * [Ultimate True American - Emma/Tess/Yahya](http://ultimate-true-american.herokuapp.com/)
   * Drinking game based on the game from New Girl
 
-###WDI SEA 06
+### WDI SEA 06
 
 * [Rainy Day - Kathy/Katlyn/Neth/Scott](https://rainydayapp.herokuapp.com/)
   * Because when it pours, you'll need something fun to do
