@@ -313,6 +313,7 @@
     * [Project 2](11-projects/past-projects/project2.md)
     * [Project 3](11-projects/past-projects/project3.md)
     * [Project 4](11-projects/past-projects/project4.md)
+    * [Portfolios](11-projects/past-projects/portfolios.md)
   * [Post Project 2](11-projects/post-project-2/readme.md)
   * [MEAN Hackathon](11-projects/mean-hackathon/readme.md)
     * [Part 1: APIs](11-projects/mean-hackathon/api.md)
