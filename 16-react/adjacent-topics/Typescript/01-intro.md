@@ -135,6 +135,8 @@ Typescript gives us two *subtypes*, `null` and `undefined`. These are used when 
 let futureVar: number = undefined
 // OR
 let futureVar: number = null
+// may require use of the `as` keyword
+let futureVar = null as number;
 ```
 
 ### Arrays
