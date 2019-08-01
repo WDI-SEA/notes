@@ -17,13 +17,13 @@ test_brackets('a[bc(123)]')
 #returns true
 
 test_brackets('a[bc(12]3)')
-#returns false -- inproperly nested
+#returns false -- improperly nested
 
 test_brackets('a{b}{c(1[2]3)}')
 #returns true
 
 test_brackets('a{b}{c(1}[2]3)')
-#returns false -- inproperly nested
+#returns false -- improperly nested
 
 test_brackets('()')
 #returns true

@@ -253,10 +253,10 @@ test_brackets('abc123yay')
 #returns False -- missing closing bracket
 test_brackets('abc(123')
 
-#returns False -- inproperly nested
+#returns False -- improperly nested
 test_brackets('a[bc(12]3)')
 
-#returns False -- inproperly nested
+#returns False -- improperly nested
 test_brackets('a{b}{c(1}[2]3)')
 ```
 
