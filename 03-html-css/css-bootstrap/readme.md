@@ -1,15 +1,15 @@
 # Intro to Bootstrap
 
-##Objectives
+## Objectives
 
 * Define what front-end CSS frameworks are
 * Utilize a front-end grid system for mobile and desktop layout
 * Demonstrate ability to read documentation and implement an unfamiliar framework
 
 
-##Bootstrap
+## Bootstrap
 
-A little while back, a couple wonderful folks at Twitter created a front end framework called Bootstrap to make responsive web development much easier. Bootstrap is extremely popular and knowledge of at least one CSS framework is a very valuable skill to have. Bootstrap comes with a ton of features including a responsive grid system, buttons, icons and some very nifty JavaScript plugins.
+A little while back, a couple wonderful folks at Twitter created a front end framework called Bootstrap to make responsive web development much easier. Bootstrap is extremely popular and knowledge of at least one CSS framework is a valuable skill to have. Bootstrap comes with a ton of features including a responsive grid system, buttons, icons and some very nifty JavaScript plugins.
 
 ### How to include it
 
@@ -19,11 +19,15 @@ You can include Bootstrap multiple ways, the easiest to start is a CDN. As we co
 2. Include the actual CSS and JS files - great for offline development
 3. Package manager (`npm`, Ruby gem)
 
+[BootstrapCDN](https://www.bootstrapcdn.com/) is a great place to start to see what the latest Bootstrap versions are.
+
 ### Start with a container
 
-To make sure that all your bootstrap styles behave properly, it's always best to put your content inside an element with a class "container" (usually a div). This will create a width of 1170px, and center all your content. If you would like to use the full width of the screen use `class = "container-fluid"`
+To make sure that all your bootstrap styles behave properly, it's always best to put your content inside an element with a class "container" (usually a div). This will create a width of 1170px, and center all your content. If you would like to use the full width of the screen use `class = "container-fluid"`.
 
 ### Layout/Grid (row class, spans, offset, nesting)
+
+> UPDATE: Bootstrap 4 no longer includes a "xs" but it does include an "xl"! [Refer to their docs for updated info](https://getbootstrap.com/docs/4.3/layout/grid/).
 
 The bootstrap grid is based on 12 columns that can are accessible using by placing the columns in ```<div class = "row">``` (you must place your columns in a row) and then you use the following classes for these screen sizes.
 
@@ -84,6 +88,8 @@ To align text, use these classes.
 ```
 
 ### Icons
+
+> UPDATE: Glyphicons were dropped from Bootstrap 4 for sensible reasons (unecessary bloat mostly). If you want icons, try [Font Awesome](https://www.bootstrapcdn.com/fontawesome/)!
 
 Bootstrap comes with a set of tons of icons.
 

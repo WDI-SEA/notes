@@ -1,30 +1,30 @@
 #Portfolio
 
-##Objectives
+## Objectives
 
 * Use front end development skills to produce an aesthetically pleasing portfolio.
 * Showcase 3+ projects from WDI and beyond.
 * Market yourself to recruiters, hiring managers, and other individuals in the tech community.
 
-##Due Date
+## Due Date
 
 **Portfolio and minimum requirements are end of week 11.** You will present on this day.
 
-##WARNING
+## WARNING
 
 If you do not meet all minimum requirements by the due date, you will no longer qualify for Outcomes support.
 
-###Creating a portfolio
+### Creating a portfolio
 
 In order to market yourself and showcase your skills, you'll want to create a portfolio to illustrate your background, skills, and work. You'll also want to add methods of contact.
 
 In order to design the portfolio, we'll focus on the content you'll want to include, then focus on some possible design choices and technologies. Lastly, we'll use some case studies to illustrate some good portfolios.
 
-##Content
+## Content
 
 Before beginning the design and coding phase of your portfolio, you'll want to identify, gather, and create the content needed to fill the page(s).
 
-###Required
+### Required
 
 * A link from your GitHub user page to your portfolio
 * A picture/headshot of yourself
@@ -51,7 +51,7 @@ Before beginning the design and coding phase of your portfolio, you'll want to i
   * Additional social media links
   * Phone number (optional)
 
-###Optional
+### Optional
 
 * List of tech skills
   * Angular, Express, Rails, etc.
@@ -64,11 +64,11 @@ Before beginning the design and coding phase of your portfolio, you'll want to i
 
 Once you've obtained your content, you can focus on **designing** your portfolio, as well as picking the appropriate technologies.
 
-##Design
+## Design
 
 Your portfolio is a project in itself, so you'll want to follow some type of design process before actually creating it.
 
-###Suggestions
+### Suggestions
 
 * Create wireframes to give yourself a rough idea of what the portfolio should look like. Ask yourself or others some questions to refine your page.
   * Should the site be a single page layout? Multiple pages?
