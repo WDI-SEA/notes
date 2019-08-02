@@ -26,6 +26,22 @@ of **recursion**:
 ![Hulk Hogan's beard growing his own face](recursion_hulk_hogan.jpg)
 ![Droste branding](recursion_droste.jpg)
 
+## Recursion vs Iteration
+
+When do we use recursion? Pretty much any time we can write an iterative solution (i.e. one that loops to get to the solution), we can typically use recursion to write a more elegant solution. In general, any iterative algorithm can be rewritten as a recursive algorithm and vice versa.
+
+So when should you use one or the other? Both have pros and cons. Here are some of the properties of each:
+
+#### Iterative Solutions:
+* Are usually harder to read but easier to write
+* Have the potential for infinite loops
+
+#### Recursive Solutions:
+* Usually more difficult to write but much easier to read
+* Have the potential to overflow the function call stack
+
+There are pitfalls to both approaches, but we must prefer recursive solutions in most cases where the iterative solution would be much harder to read and maintain. Certainly, don't rewrite all of your looping algorithms as recursive algorithms but do realize that most standard algorithms like the ones we will learn for searching and sorting are usually written recursively.
+
 ## Let's Pretend We Are Each A Recursive Function
 
 How can we count how many people are sitting directly behind one person in this
@@ -165,20 +181,7 @@ if (n > 0) {
 ```
 
 Oh wait!! We've already defined a function that sums all numbers!
-Take a step and take the leap of faith. Call the function again!
-
-```js
-function sum(n) {
-  if (n < 0) {
-    return 0;
-  } else {
-    n + sum(n - 1);
-  }
-}
-```
-
-Wait, this doesn't work. Remember to `return` the value that comes back
-from the recursive call.
+Take a step and take the leap of faith. Call the function again (but make sure to return the result)!
 
 ```js
 function sum(n) {
@@ -189,6 +192,8 @@ function sum(n) {
   }
 }
 ```
+
+It is important to understand how this code is called and run. If we pass in a value of 3, we expect that it will return the result of 0 + 1 + 2 + 3 which is 6. When we first call `sum(3)` the conditional will evaluate to false and go to the recursive case and return the value of `n + sum(n - 1)`. But it doesn't know what `sum(n - 1)` will be yet so before it returns anything it must run `sum(n - 1)` where `n` equals 3. The value 2 is passed in and the process begins again. 2 is greater than 0 so we will go to the `else` case (the recursive case) and call `sum(n - 1)` but this time `n` equals 2. Rinse. Repeat. Now, we will call `sum(n - 1)` where `n` equals 1. Then the conditional will branch to the base case and will return `0`. Finally, the previous functions can start returning their values now that the most recent recursive call has completed and returned an actual value (from the base case.) 0 is returned and we add 1 to it and return that. That is returned to the previous call which adds 2. That's returned to the original call which returns 3 plus whatever was returned from the recursive calls (2 + 1 + 0) and we get our expected value of 6.
 
 ## Palindrome Practice Problem
 
@@ -250,21 +255,40 @@ function isPalindrome(ss) {
 
 ## Practice Problems
 
-### Fibonacci
+### Factorial
 
-Write a recursive function called `fib` that accepts a number `N` greater
-than zero and returns the `Nth` fibonacci number:
+Write a recursive function that computes the factorial of a number `num` passed in as an argument. The factorial of a number is the product of that number multipled by every successive integer downward to 1. In mathematics, it is denoted by the `!` symbol (e.g. 5!). So 5! (spoken "five factorial") is equal to 5 * 4 * 3 * 2 * 1 or 120. 1! is equal to 1. Interestingly, 0! is also equal to 1 according to the official definition. You should also return 1 for any negative numbers entered, for the sake of simplicity.
 
 ```js
-fib(-1) // 0
-fib(0) // 0
-fib(1) // 1
-fib(2) // 1
-fib(3) // 2
-fib(4) // 3
-fib(5) // 5
-fib(6) // 8
-fib(7) // 13
+factorial(-1) // 1
+factorial(0)  // 1
+factorial(1)  // 1
+factorial(2)  // 2
+factorial(3)  // 6
+factorial(4)  // 24
+factorial(5)  // 120
+```
+
+### Fibonacci
+
+Write a recursive function that accepts a positive number and returns the number at that place in the Fibonacci Sequence. Each term in the Fibonacci Sequence is the sum of the previous two terms. The sequence starts as follows:
+
+```1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89...```
+
+The sequence doesn't really make sense until you have at least two numbers to add so the definition of the Fibonacci Sequence states that the first two numbers are always 1 and 1 (or 0 and 1 by some definitions but we will use the "1, 1" starter definition).
+
+With that in mind, for 0 or any negative argument just return 0. Since the first two positions are always defined to be 1 and 1 so you can set up your function to return 1 when the selected position is either 1 or 2. Any higher position will need to be calculated.
+
+```python
+fibonacci(-1) # 0
+fibonacci(0) # 0
+fibonacci(1) # 1
+fibonacci(2) # 1
+fibonacci(3) # 2
+fibonacci(4) # 3
+fibonacci(5) # 5
+fibonacci(6) # 8
+fibonacci(7) # 13
 ```
 
 ### Reverse String
@@ -276,7 +300,7 @@ a reversed string.
 reverse("") // ""
 reverse("a") // "a"
 reverse("ab") // "ba"
-reverse("computer") "retupmoc"
+reverse("computer") // "retupmoc"
 reverse("abcdefghijklmnopqrstuvwxyz") // "zyxwvutsrqponmlkjihgfedcba"
 reverse(reverse("computer")) // "computer"
 ```
@@ -314,7 +338,6 @@ function prettyPrint(oo, indent) {
   // ...
 }
 ```
-
 
 It's useful to know how to detect actual key/value objects in JavaScript:
 
