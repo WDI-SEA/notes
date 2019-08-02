@@ -203,9 +203,9 @@ that turns out to be extremely elegant when written recursively.
 What is a palindrome? A palindrome is a string that is spelled the same backwards
 and forwards. 
 
-Put another way, a palindrom is a string where the first letter is equal to the
+Put another way, a palindrome is a string where the first letter is equal to the
 last letter, and the second letter is equal to the second to last letter and so
-on and so forth. An empty string is considered a palindrom. A one letter string
+on and so forth. An empty string is considered a palindrome. A one letter string
 is considered a palindrome.
 
 Write a function called `isPalindrome` that accepts a string and returns `true`
