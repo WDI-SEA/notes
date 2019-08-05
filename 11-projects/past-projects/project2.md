@@ -1,9 +1,12 @@
 ## Project 2 (Individual)
 
-Some neat, recent examples
+Some neat, recent examples. Something important to note is that for many of these, logins and/or populating your own data are required!
 
-* [Plant Parenthood](https://plant-parenthood.herokuapp.com/) - by Jacquelyn Marcella (Seattle's WDI 16)
-* [Gitpub](https://gitpub-client.herokuapp.com/drinks) - from students in Stamford, CT
+* [Gitpub](https://gitpub-client.herokuapp.com/drinks) - by students in Stamford, CT (Spring 2019)
+* [Soldiers of Destiny](http://sodsc.herokuapp.com/merch) - by Zac Wellsandt (SEI 24)
+* [Make It Special](https://makeitspecial.herokuapp.com) - by Kelly Park (WDI 22)
+* [Plant Parenthood](https://plant-parenthood.herokuapp.com/) - by Jacquelyn Marcella (WDI 16)
+* [HoneyDew](https://honeydew-app.herokuapp.com/) - by Graeme Erickson (WDI 18)
 
 ## Archive (Seattle)
 
