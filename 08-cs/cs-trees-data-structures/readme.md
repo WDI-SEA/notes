@@ -12,55 +12,46 @@ So what's the point? Trees are used in many areas of computer science, including
 
 ## Implementation
 
-Trees are built out of two classes: a `Tree` class and a `TreeNode` class.
-This is similar to how Linked Lists are built. Linked Lists have a `ListNode` with
-a propery for `data` and a property `next` to point to the next node in the list.
+Trees are built out of two classes: a `Tree` class and a `TreeNode` class. This is similar to how Linked Lists are built. Linked Lists have a `ListNode` with a propery for `data` and a property `next` to point to the next node in the list.
 
-A `TreeNode` has a property to store `data`, and `left` and `right` properties to
-store references to branches off the current node off to the left and right.
+A `TreeNode` has a property to store `data`, and `left` and `right` properties to store references to branches off the current node off to the left and right.
 
-The `Tree` class defines one node called the `root` node which represents the top of the tree.
-The `root` property points to an instance of a `TreeNode`. The `Tree` class also houses useful
+The `Tree` class defines one node called the `root` node which represents the top of the tree. The `root` property points to an instance of a `TreeNode`. The `Tree` class also houses useful
 methods for adding nodes, removing nodes, and printing out the entire tree.
-
-See [tree.rb](tree.rb) for an actual implementation of TreeNode and Tree classes in Ruby.
 
 ## Traversing Trees
 
-We can use for loops to iterate over arrays. Arrays have a definite length and
-all of the indexes are sequential.
+We can use for loops to iterate over arrays. Arrays have a definite length andall of the indexes are sequential.
 
-We can iterate Linked Lists using while loops. We can set a pointer to the first
-node and keep stepping to the next `next` node until there's no next node left.
-Linked Lists are still a linear data structure.
+We can iterate Linked Lists using while loops. We can set a pointer to the first node and keep stepping to the next `next` node until there's no next node left. Linked Lists are still a linear data structure.
 
-Trees are harder to iterate over. Each Tree Node splits into two more, on it's
-left and right side. There's no one straight path through a tree. How could we
-iterate through a tree?
+Trees are harder to iterate over. Each Tree Node splits into two more, on it's left and right side. There's no one straight path through a tree. How could we iterate through a tree?
 
-The answer. Is Recursion. For each Tree Node we can print out it's `data`, then
-print out the data for it's left and right side. Traversing a tree looks like this:
+The answer... is recursion. For each Tree Node we can print out it's `data`, then print out the data for it's left and right side. Traversing a tree looks like this:
 
-```ruby
-def inOrderTraverse(node)
-  if node != nil
-    puts node.data
-    traverse(node.left)
-    traverse(node.right)
-  end
-end
+```js
+inOrderTraversal(node) {
+  if (node) {
+    if (node.leftChild) {
+      this.inOrderTraversal(node.leftChild);
+    }
+    console.log(node.data);
+    if (node.rightChild) {
+      this.inOrderTraversal(node.rightChild);
+    }
+  }
+}
 ```
 
-Notice that there are different orders we can traverse the tree in.
+Note that there are different orders we can traverse the tree in.
 
-in-order traverse: print node.data, recurse left, recurse right.
+* In-order traverse: recurse left, print node.data, recurse right.
 
-pre-order traverse: recurse left, print node.data, recurse right.
+* Pre-order traverse: print node.data, recurse left, recurse right.
 
-post-order traverse: recurse right, print node.data, recurse left.
+* Post-order traverse: recurse left, recurse right, print node.data.
 
-Practice writing down the in-order, pre-order and post-order traversals
-for this tree:
+Practice writing down the in-order, pre-order and post-order traversals for this tree:
 
 ```txt
        4
@@ -77,24 +68,17 @@ for this tree:
 
 ### Binary Search Trees
 
-The most common tree structure is known as a binary search tree. Each node has
-at most two children, and they provide a way to order elements. When inserting values,
-the value goes to the left child if less than the root node, and to the right child
-if greater than the root node.
+The most common tree structure is known as a binary search tree. Each node has at most two children, and they provide a way to order elements. When inserting values, the value goes to the left child if less than the root node, and to the right child if greater than the root node.
 
 ![BST](http://cramster-image.s3.amazonaws.com/definitions/computerscience-5-img-1.png)
 
-Note the **mathematical benefits** of a binary tree. As we add another "level" to
-the tree, the number of nodes at that level doubles. Therefore, this can be represented
-with the equation
+Note the **mathematical benefits** of a binary tree. As we add another "level" to the tree, the number of nodes at that level doubles. Therefore, this can be represented with the equation:
 
 ```
 2^x = n
 ```
 
-where `x` is the number of levels, and `n` is the number of nodes. Since it's likely
-that we know the number of nodes vs. of the number of levels, we can represent this
-equation with logarithms.
+where `x` is the number of levels, and `n` is the number of nodes. Since it's likely that we know the number of nodes vs. of the number of levels, we can represent this equation with logarithms.
 
 ```
 x = log(n)
@@ -235,17 +219,11 @@ The above are messages that you may encounter or have already encountered when w
 
 Whenever a program initialized (let's say, a Ruby program), the computer allocates a block of memory for the program to run in.
 
-![Memory](http://www.cs.cornell.edu/courses/cs312/2004fa/lectures/memory%20layout.jpg)
+![Memory](https://i.imgur.com/luxSw9h.png)
 
-The block of memory is separated into 3 sections: the stack, the heap, and the code.
-The code required to run the program, and the stack/heap are for allocating new values. Note that the stack grows in one direction, while the heap grows in the other direction.
+The block of memory is separated into 3 sections: the stack, the heap, and the code. The code required to run the program, and the stack/heap are for allocating new values. Note that the stack grows in one direction, while the heap grows in the other direction.
 If one of these encroaches on the other, we run out of memory!
 
-Ideally, this shouldn't happen, so we need to make sure that we only allocate memory when we absolutely need it. Web programmers occasionally encounter these problems, so it's good
-to have a general idea of what's going on under the hood.
+Ideally, this shouldn't happen, so we need to make sure that we only allocate memory when we absolutely need it. Web programmers occasionally encounter these problems, so it's good to have a general idea of what's going on under the hood.
 
 Also note that linked lists, graphs, trees, and any other data structure that relies on **pointers** (variables that aren't values, but memory addresses) will usually store data in the heap.
-
-### Memory Hierarchy
-
-![Memory Hierarchy](http://tjliu.myweb.hinet.net/COA_CH_6.files/image007.jpg)
