@@ -3,6 +3,7 @@
 Some neat, recent examples. Something important to note is that for many of these, logins and/or populating your own data are required!
 
 * [Gitpub](https://gitpub-client.herokuapp.com/drinks) - by students in Stamford, CT (Spring 2019)
+* [RemindHer](https://remindher.herokuapp.com/) - by Jessi Heger (WDI 18)
 * [Soldiers of Destiny](http://sodsc.herokuapp.com/merch) - by Zac Wellsandt (SEI 24)
 * [Make It Special](https://makeitspecial.herokuapp.com) - by Kelly Park (WDI 22)
 * [Plant Parenthood](https://plant-parenthood.herokuapp.com/) - by Jacquelyn Marcella (WDI 16)
