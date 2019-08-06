@@ -1,27 +1,73 @@
-##Bucket Sort Challenge: Sorting Papers
+# Bucket Sort
 
-Create an algorithm that can take an array of letter grades and determine how many papers there are of each grade.
+Bucket sort is a distribution sort in which we take the original unsorted elements in an array and distribute them into a set of buckets. Each bucket is meant to hold a range of element values. After we have distributed all the elements from the array into the buckets, we sort each bucket and then concatenate them all into a single array again. At the end of the process, the original array will be sorted.
 
-**Example Input:**
+## Algorithm Analysis
 
-```ruby
-grades = ['A','B','B','C','C','C','D','F']
+In the best and average cases, bucket sort operates at O(n+k) time efficiency where `n` is the number of elements in the array and `k` is the number of buckets you create for sorting. Every operation that we do in a bucket sort is actually O(n) which is "linear time" but the final concatenation of the buckets can be done in constant time, or O(k). As a result, our efficiency for this algorithm is the sum of both of those: O(n+k). In the worst case, bucket sort can perform like a quadratic search at O(n<sup>2</sup>).
+
+This worst case can happen when we don't have a very even distribution of the values to be sorted. If we have a bunch very near each other, they will all be sorted into the same bucket. This will increase the time needed to sort to closer to a quadratic. As a result, bucket sort is not a great option when you have a lot of repeats or an uneven range of values.
+
+## Characteristics
+
+* Distribution Sort - puts values into auxilliary data structures
+* Not in place - requires additional space and returns a new sorted array
+* Stable - preserves original ordering of duplicates
+
+## The Algorithm
+
+* The function takes as parameters the array to be sorted (`arr`) and the number of buckets to create (`k`). (Remember that the number of elements in the array/list and the number of buckets determines the efficiency of this algorithm since it is O(n+k).)
+
+1. Create a new array of `k` empty buckets (array of arrays / list of lists).
+2. Iterate over the unsorted array to find the maximum value.
+3. Iterate over that array again to scatter each element into the appropriate bucket.
+4. Iterate over the buckets array and sort each bucket (usually we use **insertion sort**).
+5. Return all the buckets concatenated in order.
+
+## Calculating the Correct Bucket
+
+This can actually be done mathematically if we know both the number of buckets and the maximum value in our unsorted array. Consider a list of integers:
+
+```python
+ints = [19, 28, 61, 32, 17, 59, 48, 4, 10, 74, 39, 69]
 ```
 
-**Expected Output:**
+Our maximum value in here is 74. We don't want too few buckets but we also don't want too many. Having one bucket for each element actually becomes a different kind of sort known as pidgeonhole sort. With 12 values in the list, why don't we choose 6 which will make sorting each bucket extremely easy. Then the formula for calculating the bucket for each unsorted element is:
 
-```
-A - 1
-B - 2
-C - 3
-D - 1
-F - 1
+```python
+bucket_index = math.floor((unsorted_value / maximum + 1) * k)
 ```
 
-You must solve this problem using **RUBY**.
+> NOTE: As we will see, this works great for integers but will need to be tweaked for other types like floats or strings.
 
-Use the following array for testing:
+Let's see if we can understand what this is doing. When we divide the unsorted value by the maximum value in our list plus one, we get a fractional value that helps us approximate where it should be placed in our range. Values closer to the max will have a ratio closer to 1 while lower values will have ratios closer to 0. This gives us a kind of measurement of where this value should go in the final sorted list. We take this ratio and multiply it by the number of buckets and then get the floor of the whole thing to find the index of the bucket closest to where that value should end up. Let's see where our values end up:
 
 ```
-grades = ["A", "C", "B", "F", "C", "B", "B", "B", "B", "F", "B", "C", "F", "A", "D", "C", "B", "B", "B", "A", "D", "B", "C", "F", "C", "C", "B", "D", "A", "F", "C", "C", "A", "D", "D", "A", "C", "F", "C", "F", "D", "A", "C", "D", "B", "A", "B", "C", "C", "D", "A", "A", "C", "D", "A", "A", "F", "D", "A", "C", "C", "D", "F", "A", "B", "A", "C", "C", "B", "A", "B", "F", "A", "C", "D", "F", "D", "B", "D", "C", "A", "B", "B", "F", "F", "F", "C", "A", "F", "F", "B", "D", "C", "A", "A", "B", "D", "F", "C", "B", "D", "B", "D", "B", "F", "C", "F", "B", "B", "F", "A", "C", "D", "A", "C", "D", "A", "B", "D", "C", "D", "B", "A", "F", "C", "C", "C", "D", "A", "F", "C", "A", "D", "C", "B", "A", "F", "B", "B", "A", "A", "A", "C", "C", "B", "C", "B", "C", "D", "B", "B", "A", "F", "A", "C", "D", "C", "B", "D", "F", "C", "C", "D", "C", "B", "A", "B", "B", "B", "B", "F", "A", "A", "F", "F", "F", "B", "F", "B", "F", "D", "C", "B", "F", "A", "D", "A", "A", "A", "C", "D", "A", "A", "C", "D", "C", "D", "D", "D", "A", "D", "C", "C", "B", "B", "C", "D", "F", "C", "D", "A", "F", "C", "C", "C", "F", "B", "D", "F", "C", "A", "B", "C", "F", "C", "C", "F", "F", "B", "B", "F", "F", "C", "A", "F", "B", "C", "F", "F", "A", "C", "F", "B", "B", "F", "B", "A", "C", "B", "D", "C", "A", "B", "F", "D", "A", "C", "A", "A", "F", "F", "B", "D", "D", "B", "F", "C", "F", "F", "D", "F", "F", "B", "A", "A", "A", "C", "B", "F", "A", "C", "C", "D", "B", "A", "A", "D", "B", "F", "D", "F", "F", "D", "C", "D", "B", "F", "D", "B", "D", "C", "D", "C", "B", "C", "B", "D", "D", "A", "A", "D", "D", "A", "D", "C", "C", "B", "C", "D", "A", "B", "C", "C", "B", "A", "C", "A", "C", "C", "D", "B", "F", "A", "C", "F", "D", "B", "D", "D", "C", "A", "A", "F", "F", "C", "F", "D", "B", "F", "A", "A", "A", "C", "C", "C", "B", "B", "C", "D", "A", "F", "D", "A", "B", "F", "F", "A", "D", "D", "A", "F", "F", "C", "A", "B", "F", "F", "A", "B", "C", "B", "A", "F", "B", "F", "D", "F", "A", "D", "B", "D", "D", "D", "D", "F", "D", "D", "F", "F", "A", "A", "A", "F", "F", "F", "A", "D", "B", "C", "C", "F", "F", "F", "C", "A", "A", "D", "D", "D", "B", "B", "C", "C", "A", "F", "F", "A", "D", "F", "D", "C", "C", "C", "D", "F", "F", "F", "B", "F", "F", "D", "C", "B", "D", "F", "F", "D", "C", "C", "A", "B", "D", "C", "F", "F", "D", "F", "F", "A", "B", "F", "A", "A", "F", "B", "B", "D", "F", "F", "A", "C", "A", "F", "F", "F", "C", "F", "C", "A", "D", "C", "C", "D", "A", "B", "B", "F", "C", "B", "B", "A", "D", "C", "A", "B", "B", "F", "D", "A", "F"]
+math.floor((19 / 75) * 6) = 1
+math.floor((28 / 75) * 6) = 2
+math.floor((61 / 75) * 6) = 4
+math.floor((32 / 75) * 6) = 2
+math.floor((17 / 75) * 6) = 1
+math.floor((59 / 75) * 6) = 4
+math.floor((48 / 75) * 6) = 3
+math.floor(( 4 / 75) * 6) = 0
+math.floor((10 / 75) * 6) = 0
+math.floor((74 / 75) * 6) = 5
+math.floor((39 / 75) * 6) = 3
+math.floor((69 / 75) * 6) = 5
 ```
+
+```python
+#    0         1         2         3         4         5
+[ [4, 10], [19, 17], [28, 32], [48, 39], [61, 59], [74, 69] ]
+```
+
+Not too shabby! Now all we need to do is sort each bucket and then concatenate them all together and return it.
+
+## Implement it!
+
+Now that you have an understanding of how this works, take a stab at implementing it for sorting a list of integers.
+
+### Bonus:
+
+If you get that working, try changing it to a list of float values between zero and one (e.g. 0.334, 0.167, 0.834, etc.). How would you need to modify the bucket index calculation to make it work for a list of fractional float values?
