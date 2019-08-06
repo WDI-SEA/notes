@@ -1,10 +1,14 @@
 # Quicksort
 
-The idea of quicksort is similar to merge sort, but we'll be using **partitioning** instead of a merge function. The idea is to take an array and divide it into 3 partitions.
+Another very popular fast sorting algorithm, Quicksort has an interesting way of choosing an arbitrary element, called the `pivot`, and then recursively grouping values less than the pivot to the left and values greater to its right. There are a few rules to this algorithm that make it a little challenging to understand but we will lay them all out very clearly.
 
-1. The bottom partition, which should contain numbers lower than a number we call the **pivot**.
-2. The top partition, which should contain numbers higher than the pivot.
-3. The pivot (a single element).
+Let's start by looking at the key players in this sort:
+
+* **left**: A marker used for finding numbers lower than the pivot. It moves one element at a time from the leftmost position until it finds a value greater than or equal to the pivot value. If it ever reaches the rightmost edge of the array, it stops.
+
+* **right**: A marker used for finding numbers higher than the pivot. It moves one element at a time from the rightmost position until it finds a value less than the pivot. If it ever reaches the **left** marker, it stops.
+
+* **pivot**: An initially randomly chosen element in the array. It's value is meant to be the point around which things swap: higher numbers go to the right while lower numbers go to the left. Basically, when the **right** and **left** find their values that are lower or higher than the pivot, respectively, those values are swapped. Though it can be chosen randomly, many basic implementations simply use the leftmost or rightmost element as the initial pivot.
 
 **Example**
 ```
@@ -57,62 +61,36 @@ Combining the left partitions and right partitions give us:
 ```
 [Another good explanation (with visuals)](http://me.dt.in.th/page/Quicksort/)
 
-## Implementation
+## Algorithm Analysis
 
-Quicksort is one of the more difficult sorts to implement, so a partition function is provided for you. This function partitions a section of an array and returns the array index of the pivot. Implement quicksort while meeting the following requirements:
+Quicksort is another O(n log(n)) algorithm similar to Merge Sort. Normally, it outperforms similarly efficient sorts like merge sort and heapsort but there are rare cases when it can perform as poorly as a quadratic like bubble sort. Usually this has to do with the data being in the exactly perfect wrong order which causes the algorithm to work to its maximum or beyond. Interestingly, the exact wrong order for Quicksort that causes it to degrade to O(n<sup>2</sup>) is an array that is already sorted!
 
-* written in Ruby
-* no built-in functions (such as sort!)
-* passes testing
+## Characteristics
 
-## Testing
+* Comparison Sort - compares values and swaps them
+* In-place - operates directly on the array argument
+* Unstable - does not preserve original ordering of ties
 
-Test your quicksort algorithm using a shuffled array and compare it to an ordered array.
+## The Algorithm
 
-**Example**
-```
-test = (1..10).to_a.shuffle
-quicksort(test, 0, test.length-1)
+Quicksort is a two-parter like merge sort. We have the actual `quicksort` function that someone would call to sort an array that they pass in as an argument. It operates a little like `binarySearch`: The first parameter is the array to be sorted, and the second and third parameters are where to start and where to stop for the sub-portion of the array on which this recursive step is operating. On the first invocation of `quicksort` you can use default values for these. The "left" marker will always start at 0 and the "right" should be set to the array's length - 1 if it isn't specified (if it is set to null).
 
-if test == (1..10).to_a
-	puts 'The sort worked!'
-else
-	puts 'Noooo, the sort failed!'
-end
-```
+1. First, we make sure that the "left" or "low" index is less than the "right" or "high" index. If that is true, we call a `partition` function that will return a new pivot index.
+2. Then we call `quicksort` on the left half of the array (from "left" to "pivot") and also call `quicksort` on the right half (from "pivot + 1" to "right").
+3. The `quicksort` function returns whenever the "left" index ends up greater than or equal to the "right" index. It doesn't need to return any value because the array has been sorted in place.
 
-## Starter Code (with partition)
+The `partition` function does the heavy lifting. This partition scheme is called Hoare's Partition Scheme and he is the person who invented quicksort. It takes the same parameters as quicksort: the array, the left index and the right index.
 
-```rb
-# define algorithm here (you'll need lo and hi for the beginning/endpoints on the recursive call)
-def quicksort(arr, lo, hi)
+1. Get the value in the middle of the array and store this as the pivot value.
+2. Set `i` to be "left" and set `j` to be "right". (many uses of Hoare's partition use a `do...while` construct that is absent in python's standard library and will show `i = left - 1` and `j = right + 1`... **this will not work with this python implementation**)
+3. Now inside of an infinite loop, do the following:
+    1. Increment `i` by 1 while the value in the array at that index is less than the pivot value.
+    2. Decrement `j` by 1 while the value in the array at that index is greater than the pivot value.
+    3. If `i` is greater than or equal to `j`, return `j` as the new pivot. (This return is what will end the infinite loop.) Else, swap the values in the array at indices `i` and `j`.
 
-end
+## Let's implement it!
 
-# partition function (selects a pivot, sorts into partitions, and returns the array index of the pivot)
-def partition(arr, lo, hi)
-  pivot = arr[hi]
+### Further Research Resources
 
-  left = lo
-  for element in (lo...hi)
-    if arr[element] <= pivot
-      arr[left], arr[element] = arr[element], arr[left]
-      left += 1
-    end
-  end
-
-  arr[left], arr[hi] = arr[hi], arr[left]
-  return left
-end
-
-# testing quicksort
-test = (1..10).to_a.shuffle
-quicksort(test, 0, test.length-1)
-
-if test == (1..10).to_a
-  puts 'The sort worked!'
-else
-  puts 'Noooo, the sort failed!'
-end
-```
-
+* [Quicksort Visualized with Hungarian Dance](https://www.youtube.com/watch?v=ywWBy6J5gz8)
+* [Quicksort on Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
