@@ -46,14 +46,14 @@ touch index.js
 
 ***index.js***
 ```js
-var express require('express');
+var express = require('express');
 ```
 
 ### 6. Create an instance of an express app
 
 ***index.js***
 ```js
-var express require('express');
+var express = require('express');
 var app = express();
 ```
 
@@ -61,7 +61,7 @@ var app = express();
 
 ***index.js***
 ```js
-var express require('express');
+var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
