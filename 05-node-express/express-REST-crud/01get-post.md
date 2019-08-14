@@ -141,13 +141,13 @@ Create a `dinosaurs/new.ejs` view that contains an html form:
 
 ```html
 <form method="POST" action="/dinosaurs">
-  <label for="dinosaureType">Type</label>
-  <input type="text" name="type">
+  <label for="dinosaurType">Type</label>
+  <input id="dinosaurType" type="text" name="type">
 
   <label for="dinosaurName">Name</label>
   <input id="dinosaurName" type="text" name="name">
 
-  <input id="dinosaurType" type="submit">
+  <input type="submit">
 </form>
 ```
 
