@@ -1,9 +1,11 @@
-
 # GET & POST
+
+**NOTE**: Please get the starter code for this lab [here](https://github.com/WDI-SEA/RESTful-cryptids).
 
 So far, we've only been rendering views, which is why we've been using GET for all of our routes. Now that we're working with data, we'll start to see how the other HTTP verbs come into play. Here we will focus on `GET` and `POST`.
 
 ## Objectives
+
 * Implement `GET` and `POST` routes in `express`.
 
 ### 1. Set up a new express app called `crud_dinosaurs`.

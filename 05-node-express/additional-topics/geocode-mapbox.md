@@ -1,6 +1,7 @@
 # Geocoding with Mapbox
 
 ## Objectives
+
 * Describe geocoding
 * Use Mapbox geocoder to forward and reverse geocode
 
@@ -20,10 +21,12 @@ We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#g
 ---
 
 ### Using Mapbox
+
 * Head to the [mapbox sign up page](https://www.mapbox.com/signup/?route-to=%22/account/%22) and make an account.
 * Locate your Access Token - this will be the same for all Mapbox APIs
 
 ### Set up
+
 * Create a new node project called `geocode-example`.
 * Install the [@mapbox/mapbox-sdk](https://github.com/mapbox/mapbox-sdk-js) node module via `npm`.
 * In `mapTest.js` file, import the geocoder from the mapbox module and set up a geocoding client using your access token [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#geocoding).
@@ -81,11 +84,13 @@ geocodingClient
 ```
 
 ## More Resources
+
 * [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
 
 ---
 
 ## Exercise/Lab: City Search
+
 You're going to set up an app that allows users to search for a city and add their favorite cities to a database.
 
 ### Set up the front end.
@@ -97,7 +102,7 @@ You're going to set up an app that allows users to search for a city and add the
 
 ### Set up the database.
 
-* install `pg`, `pg-hstore`, and `sequelize` via npm
+* install `pg` and `sequelize` via npm
 * initialize  `sequelize`
 * configure `config.json`
 * create a `place` model with `city`, `state`, `lat`, and `long` fields
@@ -124,17 +129,22 @@ You're going to set up an app that allows users to search for a city and add the
 ### Routes
 
 #### GET '/'
+
 * render `city-search` view
 
 #### GET '/search'
+
 * use forward geocoding to search for cities in the US (_hint: use the `type` and `countries` fields in addition to `query`_)
 * render `search-results` page, passing through the searched data as well as the results
 
 #### POST '/add'
+
 * use `findOrCreate` to post to the database of favorites
 
 #### GET '/favorites'
+
 * pull all favorited cities from the database and pass them into the view
 
 #### DELETE '/remove'
+
 * deletes city from `place` table and redirects to _favorites_ view
