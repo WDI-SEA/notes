@@ -14,7 +14,8 @@ This second project is your first foray into **building a full-stack application
 
 Your app must:
 
-* **Have at _least_ 2 models** (more if they make sense) -- ideally a user model and one that represents the main functional idea for your app
+* **Have at _least_ 2 models** (more if they make sense) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.
+    * Note: If your app idea doesn't really call for more models, let your instructors know and they can suggest ideas for other sufficiently difficult replacements for this requirement.
 * **Include sign up/log in functionality**, with hashed passwords & an authorization flow
 * **Incorporate at least one API.** Examples include Yelp, Tumblr, Facebook, and others on Mashape.
 * **Have complete RESTful routes** for at least one of your resources with GET, POST, PUT, and DELETE
@@ -22,6 +23,8 @@ Your app must:
 * **Include a readme file** that explains how to use your app
 * Have **semantically clean HTML, CSS, and back-end code**
 * **Be deployed online** and accessible to the public
+
+> Note: Much of this functionality should already be included in your boilerplate code!
 
 ---
 
