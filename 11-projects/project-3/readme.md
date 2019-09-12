@@ -12,16 +12,6 @@ Make it work, and make it awesome.
 
 ---
 
-### Premise: Startup in a Week
-
-Your team has been put together in order to create a startup around a particular idea. In one week, you're expected to flesh out your ideas as a group and create a MVP (Minimum Viable Product). Since you'll be answering to investors (the class and your instructors), keep the following in mind:
-
-* What is your application (elevator pitch, ideally in one sentence)
-* What value does your application provide to your audience?
-* What steps have you taken to entice users? (user experience, a fancy frontend, trying out functionality before being forced to signup)
-
----
-
 ### Technical Requirements
 
 Your app must:
@@ -92,3 +82,16 @@ Your app must:
 | **3** | _Exceeds expectations, you wonderful creature, you!_ |
 
  This will serve as a helpful overall gauge of whether you met the project goals, but __the more important scores are the individual ones__ above, which can help you identify where to focus your efforts for the next project!
+
+ ---
+## Need Some Inspiration?
+
+You can make an app about anything you and your team wants! However sometimes it is difficult to come up with something without a specific prompt. For those that want to use it, here is a sample prompt:
+
+### Premise: Startup in a Week
+
+Your team has been put together in order to create a startup around a particular idea. In one week, you're expected to flesh out your ideas as a group and create a MVP (Minimum Viable Product). Since you'll be answering to investors (the class and your instructors), keep the following in mind:
+
+* What is your application (elevator pitch, ideally in one sentence)
+* What value does your application provide to your audience?
+* What steps have you taken to entice users? (user experience, a fancy frontend, trying out functionality before being forced to signup)
