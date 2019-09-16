@@ -19,7 +19,7 @@
 
 Make a directory using `mkdir`, which accepts the name of the new directory as an argument. Note that when naming directories, using hyphens or underscores is recommended when separating words (don't use spaces).
 
-```
+```sh
 mkdir living_room
 ```
 
@@ -29,8 +29,19 @@ Let's `cd` into our new `living_room`  Look around with `ls`, and `ls -la`.  Wha
 
 Creating a file can be done by using the `touch` command. Then, the file can be opened in Sublime Text for editing.
 
-```
+```sh
 touch books.txt
+```
+
+Now you can open that up in your editor of choice:
+
+```sh
+code books.txt
+```
+```sh
+atom books.txt
+```
+```sh
 subl books.txt
 ```
 
@@ -56,15 +67,15 @@ Now try `ls -la` again.  Do you see the `books.txt` file?
 
 ## `cat` - Reading and concatenating files
 
-A quick way to read files without opening Sublime is by using `cat`.
+A quick way to read files without opening your editor is by using `cat`.
 
-```
+```sh
 cat books.txt
 ```
 
 If we had another file, we could provide additional filenames as arguments in order to concatenate files together.
 
-```
+```sh
 cat books.txt schedule.txt
 ```
 
@@ -72,7 +83,7 @@ cat books.txt schedule.txt
 
 `echo` is a command that echoes (outputs) what we give to it as arguments.
 
-```
+```sh
 echo "This bookshelf flexes under the weight of the books it holds."
 ```
 
@@ -82,7 +93,7 @@ At first glance, it seems too simple. Why would we need this command? Well every
 
 Let's try redirecting the output from `echo` to a file.
 
-```
+```sh
 echo "This bookshelf flexes under the weight of the books it holds" > bookshelf.txt
 ```
 
@@ -95,7 +106,7 @@ Try running `ls` again, and `cat` our new file.
 
 Two angle brackets `>>` works similarly, but it **appends** the string to the end of the file.
 
-```
+```sh
 echo "It does not break, it does its job admirably" >> bookshelf.txt
 ```
 
@@ -107,13 +118,13 @@ Let's look back at `books.txt`. Look at the file contents. Notice that the list 
 
 We can use the `|` character to **pipe** output into another command, specifically the `sort` command. This is different from file redirection because we're directing output to the input of a command, not a file.
 
-```
+```sh
 cat books.txt | sort
 ```
 
 Note that if we look at `books.txt`, nothing changed. We read the contents of `books.txt` and piped the contents into sort, but the output was never saved. Luckily, we can combine piping with file redirection.
 
-```
+```sh
 cat books.txt | sort > sorted_books.txt
 ```
 
@@ -123,7 +134,7 @@ Look around again to see how the room has changed.
 
 There are dozens of powerful tools we can leverage using pipes. One of the ones you'll be using the most is `grep`.
 
-```
+```sh
 cat books.txt | grep Mil
 ```
 
@@ -135,7 +146,7 @@ See how we filtered out just the lines that contain Mil? Try grepping for someth
 
 Now that we have our books sorted, we really don't need our unsorted list of books. `mv` stands for move, and that's how we move files and folders from place to place.
 
-```
+```sh
 mv sorted_books.txt books.txt
 ```
 
@@ -143,7 +154,7 @@ mv sorted_books.txt books.txt
 
 To copy files, we use the `cp` command. Let's try adding a second bookshelf.
 
-```
+```sh
 cp bookshelf.txt second_bookshelf.txt
 ```
 
@@ -153,7 +164,7 @@ Note that if we copy a folder, we'll need to use an additional option, `-r`.
 
 To remove files, we use the `rm` command. Let's go back and remove that second bookshelf.
 
-```
+```sh
 rm second_bookshelf.txt
 ```
 
@@ -161,3 +172,22 @@ Note that if we remove a folder, we'll need to use an additional option, `-r` an
 
 **IMPORTANT NOTE:** This does not send files to the trash can or recycle bin. Your files are **gone forever**, so be careful when using this command!
 
+## Learning More About Commands
+
+Happily, the manual for every standard shell command is embedded in every Unix-derived system. It is as easy to access as typing `man name-of-command`. The word `man` is short for 'manual' and typing that will bring up the documentation for all the commands you will need to know.
+
+Let's see if we can learn a bit more about the `grep` command. In your terminal, type the following:
+
+```sh
+man grep
+```
+
+This is a Unix manual page. You can exit it at any time by typing the letter 'q'. You can use the mouse pad to scroll or the arrow keys. Look in the section labeled 'SYNOPSIS' and you will see a listing of every command line option that you can use with grep. A bit further down in the 'DESCRIPTION' section you will find an explanation of every option.
+
+Take 5 minutes and see if you can find the answers to the following questions:
+
+1. How can I print the line number in the file where the match is found? (For example, if I grepped for `Jack` in the list of books, I want it to show that it is found on line 5.)
+
+2. How can I also print the 3 lines *after* the line where the match is found?
+
+3. What if I wanted to print the 2 lines before the match as well as the 3 lines after the match? (Hint: There are actually two ways to do this. What would be the cleanest way?)

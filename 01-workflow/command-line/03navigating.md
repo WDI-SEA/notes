@@ -1,8 +1,8 @@
-#Navigating the Filesystem
+# Navigating the Filesystem
 
 The file structure you see in the Terminal is the same as the one you see in the `Finder` application. Finder tends to hide some of the folders from you to keep things simple for most users, but everywhere that you go in Finder is accessible through the Terminal.
 
-##Common Navigation Commands
+## Common Navigation Commands
 
 * `pwd` - print working directory
 * `open` - open a file/directory

@@ -30,6 +30,7 @@
   * [Group Collaboration](01-workflow/group-collab/01readme.md)
     * [Git Workflows](01-workflow/group-collab/02gitworkflows.md)
     * [Project Roles and Tools](01-workflow/group-collab/03rolestools.md)
+  * [VS Code Tips & Tricks](01-workflow/01-using-vscode.md)
 * [HTML/CSS](03-html-css/readme.md)
   * [HTML](03-html-css/html-review/readme.md)
   * [CSS Selectors](03-html-css/css-selectors/readme.md)
