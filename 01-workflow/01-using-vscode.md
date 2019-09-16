@@ -128,3 +128,10 @@ command + d
 * open in browser - TechER: Adds an "open in browser" context menu item. Handy for launching HTML files.
 
 * Rainbow Brackets - 2gua: More bracket colorizing.
+
+## Full VS Code Command Reference
+
+This PDF shows all the Mac OS commands for VS Code:
+
+[https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf)
+
