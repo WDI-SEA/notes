@@ -82,24 +82,23 @@ Let's pull up a new `set_practice.py` file and make some sets!
 - Use a `for` loop to print out both `clothing_list` and `clothing_set`.
 - Try to print an index!
 
-<details><summary>Answers</summary>
-<p>
+<details>
+    <summary>Answers</summary>
+    ```python
+    clothing_list = ["red", "black", "brown", "black", "purple"]
 
-```python
-clothing_list = ["red", "black", "brown", "black", "purple"]
+    clothing_set = set(clothing_list)
 
-clothing_set = set(clothing_list)
+    for item in clothing_list:
+      print(item)
+    for item in clothing_set:
+      print(item)
+      
+    for i in range(len(clothing_set)):
+      print(clothing_set[i])
+    # => TypeError: 'set' object does not support indexing
+    ```
 
-for item in clothing_list:
-  print(item)
-for item in clothing_set:
-  print(item)
-  
-for i in range(len(clothing_set)):
-  print(clothing_set[i])
-# => TypeError: 'set' object does not support indexing
-```
-</p>
 </details>
 
 ### Adding to a Set
