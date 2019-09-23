@@ -67,8 +67,9 @@ print(my_class)
 ```
 
 #### `pop()`
-There are two ways to use `pop()`; with no parameters or with an index. **If no parameter is set, `pop()` will remove the last item from a list and return it**, otherwise it will remove the item at that specific index.
-For example:
+
+There are two ways to use `pop()`; with no parameters or with an index. **If no parameter is set, `pop()` will remove the last item from a list and return it**, otherwise it will remove the item at that specific index. For example:
+
 ```python
 my_class = ["James", "Kelly", "Zoe", "Steve", "Nhu", "Paulo", "Sonyl"]
 
@@ -94,28 +95,31 @@ print(my_class)
 5. Delete the first name on the list
 6. Move the last name on the list to be the second name
 
-<details><summary>Answers</summary>
-<p>
+<details>
+    <summary>Answers</summary>
 
-```python
-# 1. Declare a list with the names of your classmates
-classmates = ["James", "Tamis", "Parker", "Nhu", "Brad", "Q", "Kelly", "Paulo", "Doug"]
-# 2. Print out the length of that list
-print(len(classmates))
-# 3. Add a new classmate
-classmates.append("Taylor")
-print(classmates)
-# 4. Print the 3rd name on the list
-print(classmates[2])
-# 5. Delete the first name on the list
-print(classmates.pop(0))
-# 6. Move the last name on the list to be the second name
-classmates.insert(1, classmates.pop())
-print(classmates)
+    ```python
+    # 1. Declare a list with the names of your classmates
+    classmates = ["James", "Tamis", "Parker", "Nhu", "Brad", "Q", "Kelly", "Paulo", "Doug"]
 
-```
+    # 2. Print out the length of that list
+    print(len(classmates))
 
-</p>
+    # 3. Add a new classmate
+    classmates.append("Taylor")
+    print(classmates)
+
+    # 4. Print the 3rd name on the list
+    print(classmates[2])
+
+    # 5. Delete the first name on the list
+    print(classmates.pop(0))
+
+    # 6. Move the last name on the list to be the second name
+    classmates.insert(1, classmates.pop())
+    print(classmates)
+    ```
+
 </details>
 
 ### Numerical List Operations
