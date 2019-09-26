@@ -30,6 +30,8 @@ pip install pipenv
 
 Your Pipfile is a list of dependencies for your Django app. It replaces the old way of keeping track of this, where you would use a freeze command to create a `requirements.txt` file. Now instead we will have `Pipfile` and `Pipfile.lock`. We'll cover the lock file in a moment. For now, let's set up your Pipfile.
 
+> Tip: You may see a lot of code on the internet that still uses requirements.txt. Remember, Pipfiles are a reaplcement for this. We do not need a requirements.txt!
+
 #### What goes in the Pipfile?
 
 According to the [Pipenv docs](https://docs.pipenv.org/basics/), when you run the `pipenv --python 3` command, if you don't have a Pipfile already, one will be generated for youthat looks like this:
