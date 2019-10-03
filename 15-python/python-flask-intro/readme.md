@@ -1,15 +1,17 @@
 # Intro to Flask
 
 ## Objectives
+
 * Use the Flask microframework to create a Python web server
 * Configure a GET route to send raw data
 * Configure a GET route accept query parameters
 * Configure the server to serve static content
 
-<http://flask.pocoo.org/>
-<http://api.mongodb.com/python/current/tutorial.html>
+[Flask Docs](http://flask.pocoo.org/)
+[Mongo Tutorial](http://api.mongodb.com/python/current/tutorial.html)
 
 ## What is Flask?
+
 Flask describes itself as a microframework. It comes with a small set of
 utilities that will help you define routes on a server, and send files
 back to a browser.
@@ -21,6 +23,7 @@ framework just deals with allowing those packages to be used in a server
 environment easily.
 
 ## Install Flask and Create a Minimal Server
+
 Use your terminal's `pip3` command to install Flask for Python3.
 
 ```
@@ -46,6 +49,7 @@ if __name__ == "__main__":
 ```
 
 ## Configure Route Variables
+
 Like Express, Flask allows us to bake valuable information into our URL
 structure. Embedding information into our URLs allows our web applications
 to have beautiful URLs that users can remember easily.
@@ -97,6 +101,7 @@ if __name__ == "__main__":
 ```
 
 ## Serve Static Content
+
 The `app = Flask()` function includes useful parameters to customize how static
 content is served. These two parameters define where your static directory is
 located, and where that directory is made available as a URL on your server.
@@ -136,6 +141,7 @@ if __name__ == "__main__":
 ```
 
 # Last Remarks
+
 There you go! That's the basics of using Python together with Flask. Remember,
 Flask calls itself a "microframework". It tries to do provide developers with
 just what they need to create a simple web server and nothing more. It stays
@@ -153,6 +159,7 @@ Here's a summary of the Unix Philosophy:
 * Write programs to handle text streams, because that is a universal interface.
 
 # Microframework vs Monolithic Framework
+
 In contrast, we'll also learn about another Python web framework: Django.
 Django is a "monolithic" framework that involves itself in much more in the
 configuration and operation of a web server. Whereas Flask makes zero decisions
