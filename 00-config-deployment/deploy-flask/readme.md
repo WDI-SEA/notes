@@ -83,7 +83,9 @@ Your Procfile should look like the following:
 web: gunicorn server:app
 ```
 
-> Tip: "server" in the above command refers to the name of your entry point. So, it assumes you called your main file `server.py`. If you called your main file `app.py` then it would look like `web: gunicorn app:app`
+The "server" in the above command refers to the name of your entry point. So, it assumes you called your main file `server.py`. If you called your main file `app.py` then it would look like `web: gunicorn app:app`
+
+> Tip: You can add a release step as well, which runs after the build succeeds. For example, this is often used for database migrations.
 
 ## Deploy!
 
@@ -102,6 +104,7 @@ You can add configuration variables from the command line or via the GUI if you 
 
 ```
 heroku config:set FLASK_ENV=production
+heroku config:set FLASK_SECRET=SuperSecretKey
 ```
 
 ## Resources
