@@ -4,7 +4,7 @@
 
 **The time has come for the final project.** Ideally, this project should incorporate some framework/technology we haven't covered, but feel free to use anything we have learned in the course as well.
 
-Make sure you review your project proposal with your instructor so you can make sure it's **something you can accomplish in the limited time we have**, and make sure it's **something that'll showcase your skills both visually and functionally**. Sometimes people do judge a book by its cover – or an app by its design.
+Make sure you review your project proposal with your instructor so you can make sure it's **something you can accomplish in the limited time we have**, and make sure it's **something that'll showcase your skills both visually and functionally**. Sometimes people do judge a book by its cover – or in this case, an app by its design.
 
 ---
 
@@ -16,11 +16,18 @@ You **may** work in a group. If you choose to do so, you will be responsible for
 
 Your app must (unless otherwise approved):
 
-* **Use Django or Express** to build an application backend 
+* **Use Django, Flask, or Express** to build an application backend 
+    * Other frameworks and languages will be considered on a case-by-case basis
 * **Create an application using at least 2 related models**, one of which should be a user
-* Include **all major CRUD functions** for at least one of those models
+    * Exception: If you are doing a Flask app, user auth is optional if you did not make an in-class boilerplate!
+* Include **all major CRUD functions** for at least one of your models
+    * At least one PUT
+    * At least one DELETE
+    * At least one POST
+    * At least 2 GETs
 * Create your own front-end! **Put effort into your design!**
-* **Add authentication/authorization** to restrict access to appropriate users
+    * If you have a friend in UX, feel free to consult with them or have them help you with non-code aspects of the project (such as wireframing, color palette, etc). After all, this is a portfolio piece - put your best work forward!
+* Add authentication (log in) **AND authorization** (page protection) to restrict access to appropriate users
 * **Manage team contributions and collaboration** using a standard Git flow on Github
 * Layout and style your front-end with **clean & well-formatted CSS**, with or without a framework.
 * **Deploy your application online** so it's publicly accessible
