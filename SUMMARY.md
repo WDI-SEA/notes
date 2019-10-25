@@ -68,6 +68,7 @@
   * [DOM Manipulation](02-js-jquery/js-dom/02more-manipulation.md)
   * [HTML5 Canvas](02-js-jquery/js-canvas/readme.md)
   * [How To Reduce Redundancy](02-js-jquery/js-how-to-reduce-redundancy/readme.md)
+  * [(2019) JavaScript OOP](02-js-jquery/js-classes/01-js-oop-2019.md)
   * [(2016) OOP with Classes](02-js-jquery/js-classes/readme.md)
   * [(1995) OOP with Prototypes](02-js-jquery/js-prototypes/01readme.md)
     * [Constructors](02-js-jquery/js-prototypes/02constructors.md)

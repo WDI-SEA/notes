@@ -4,8 +4,6 @@
 - Review history of JavaScript from 1995 to present
 - Discuss
 - See how ES6 classes work
--
-
 
 Today we're going to learn a new way to organize data and functionality in our
 code. This lesson comes with a warning.
