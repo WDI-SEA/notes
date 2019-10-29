@@ -16,20 +16,13 @@
 The life cycle comprises three main stages:
 
 1. When the component is being created (known as **mounting**).
-
 2. When the component is being **updated**.
-
 3. When the component is being removed from the DOM (known as **unmounting**).
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - React class components provide several life-cycle methods you can use to control your application based on the state of the UI.
-
 - Life-cycle methods happen automatically, but you can call them to modify them.
-
-</aside>
 
 ---
 
@@ -40,15 +33,9 @@ These methods are called at specific points in the rendering process. You can us
 * `componentDidMount()`, for example, is called immediately *after* a component is rendered to the DOM.
 * `componentWillUnmount()` is called immediately *before* a component is removed from the DOM.
 
-
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Some common uses of life-cycle methods include making asynchronous requests, binding event listeners, and optimizing for performance.
-
-
-</aside>
 
 ---
 
@@ -72,35 +59,22 @@ These methods are called at specific points in the rendering process. You can us
 * **Destruction/unmounting**: For example, what needs to happen when we're done with the component? Method is:
   - `componentWillUnmount()`
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Again, React components' life-cycle events fall into three broad categories, as seen here.
-
 - Error handling: `componentDidCatch()` method is called when there is an error in a life-cycle method, when rendering, or in the constructor of child components.
-
-
-</aside>
 
 ---
 
 ## Let's Examine Each Category
 
-![Lifecycles](./assets/react-lifecycle-methods.png)
+![Lifecycles](./assets/React_Component_Lifecycle.png)
 
-
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Here they are in diagram form.
-
 - Again, you don't need to write these methods — they happen automatically, just like constructors did before we explicitly wrote one. You only have to worry about these if you want to change something in them. But, if you do, it's important to understand them!
 - Note that `getDerivedStateFromProps()`, `shouldComponentUpdate()`, and `getSnapshotBeforeUpdate()` are not included in this diagram because they are less commonly leveraged.
-
-</aside>
-
 
 ---
 
@@ -112,15 +86,11 @@ constructor(props) {
 }
 ```
 
-<aside class="notes">
-
 - This is in the first part of the component life cycle: **initializing/mounting**. Like any JavaScript class, the `constructor()` method is called when a component is instantiated (i.e., when it's first rendered). We've already used these, but let's take a look in more detail.
 
 - In a class constructor, you must call `super()` before you do anything else. So, a React component `constructor()` in its most basic form looks as is shown here.
 
 - Even though you may see the constructor syntax used in some online resources, the best practices for how to write the initial state for components have changed in recent years. Instead, we can create a component and directly define the starting state without ever having to use a constructor as of React 16. The following will be a detailed guide of the older syntax as it will be likely that legacy React application might still use this syntax. Being familiar with both syntaxes is important.
-
-</aside>
 
 ---
 
@@ -135,16 +105,11 @@ constructor(props) {
 }
 ```
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - You don't need to define a constructor if that's all it does, however. This happens automatically when your component is invoked. A common use of the constructor is to initialize state using the props passed to the component, as we've been doing.
 
 - This constructor sets the initial `fruits` state of the component to the `fruits` prop passed to the component.
-
-
-</aside>
 
 ## React v16
 
@@ -154,15 +119,11 @@ state = {
   }
 ```
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Calling state this way is best practice for new React project. React will automatically set the state and handle the constructor behind the scene.
 
 - Note that constructor is no longer used. To get access to props passed down from the parent, you can access it through `this.props`.  Another thing React does behind the scene to make cleaner code!
-
-</aside>
 
 ---
 
@@ -197,9 +158,7 @@ class FruitTable extends Component {
 }
 ```
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Notice that, in the constructor, `this.addFruit` is bound to the class:
 `this.addFruit = this.addFruit.bind(this);`
@@ -210,15 +169,12 @@ class FruitTable extends Component {
 
 - You only need a constructor for two purposes: 1. Initializing local state by assigning an object to `this.state`. 2. Binding event handler methods to an instance.
 
-</aside>
-
 ## React v16
 
 ```javascript
 class FruitTable extends Component {
   state = {
-      fruits: props.fruits
-    }
+    fruits: props.fruits
   }
 
   addFruit = (fruit) => {
@@ -229,18 +185,13 @@ class FruitTable extends Component {
 }
 ```
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Using the new arrow function, we can bind the `this` context during the method definition. It will behave the same way as described above with the `constructor()` and `bind()`.
-
-</aside>
 
 ---
 
 ## The `static getDerivedStateFromProps()` and `getSnapshotBeforeUpdate()` Methods
-
 
 `getDerivedStateFromProps()` is invoked right before calling the `render()` method. It should return an object to update the state or null to update nothing.
 
@@ -249,16 +200,12 @@ class FruitTable extends Component {
 _Note:_: These methods exists for *rare* use cases in which the state depends on changes in props over time (`getDerivedStateFromProps()`) or if you need to handle something such as scroll position before an update (`getSnapshotBeforeUpdate()`). It's a best practice to explore other lifecycle methods before using these.
 
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - These methods are not as commonly used and can make your code overly verbose and your components overly complicated.
 - Alternatives: If you want to perform a supplementary effect in response to props, use `componenentDidUpdate()`, which we will discuss later.
 - Alternatives: Discuss memoization helpers for re-computing data when a prop changes.
 - Alternatives: To reset its state on prop change, make the component fully controlled or uncontrolled with a key instead of using this method.
-
-</aside>
 
 ---
 
@@ -280,7 +227,6 @@ componentDidMount() {
 
 ## The `componentDidMount()` and `componentWillUnmount()` Methods
 
-
 ```javascript
 class FruitTable extends Component {
   componentDidMount() {
@@ -298,15 +244,11 @@ class FruitTable extends Component {
 }
 ```
 
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - Another common use for `componentDidMount()` is to bind event listeners to your component. You can then remove the event listeners in `componentWillUnmount()`, which is the only method in the last part of the component life cycle (when the component is being removed from the DOM). In the example seen on this slide, we bind and unbind an event listener for a drag-drop component. sNote that memory issues will arise when using event listeners without unbinding them after use!
 
 - You may call `setState()` immediately in `componentDidMount()`. It will trigger an extra rendering but will happen before the browser updates the screen.
-
-</aside>
 
 ---
 
@@ -362,7 +304,6 @@ class Car extends Component {
 ```
 ---
 
-
 ## Let's break that down:
 
 - `constructor()`
@@ -381,12 +322,9 @@ Use [`window.setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/Windo
 
 `window.setTimeout(this.incrementSpeed, 1000)`: The `incrementSpeed` method is [recursive](https://en.wikipedia.org/wiki/Recursion_computer_science) — it invokes itself as the timeout callback. After one second, `window.setTimeout` will call `this.incrementSpeed` again. The `speed` will increase by `1`, and a new timer will be set to do it again.
 
-
-<aside class="notes">
-
 ## React v16
 
-```javascript
+```js
 class Car extends Component {
   // Sets initial state to either the speed prop, or 0 if the speed prop
   // is not passed to the component.
@@ -421,13 +359,10 @@ class Car extends Component {
 }
 ```
 
-<aside class="notes">
-**Talking Points**:
+#### Talking Points:
 
 - You should never set `state` in `render()` — `render()` should only react to changes in state or props, not create those changes.
 - `render()` should be a "pure" function. It does not modify component state, it returns the same result every time it’s invoked, and it does not directly interact with the browser.
-
-</aside>
 
 ---
 
@@ -441,16 +376,10 @@ If `shouldComponentUpdate()` returns `false`, then `render()` and `componentDidU
 shouldComponentUpdate(nextProps, nextState)
 ```
 
-
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - In the vast majority of cases, you should rely on the default behavior to re-render on every state change and will not need to invoke `shouldComponentUpdate()`.
 - `shouldComponentUpdate()` only exists as a performance optimization, and you shouldn't rely on it to "prevent" a re-rendering.
-
-
-</aside>
 
 ---
 
@@ -467,14 +396,9 @@ componentDidUpdate(prevProps) {
     this.fetchData(this.props.model);
   }
 }
-
 ```
 
-
-
-<aside class="notes">
-
-**Talking Points**:
+#### Talking Points:
 
 - `componentDidUpdate()` is invoked immediately after updating occurs and is a good place to operate on the DOM when the component has been updated.
 - This is also a good place to do network requests as long as you compare the current props to previous props.
@@ -483,10 +407,7 @@ componentDidUpdate(prevProps) {
 - The re-rendering may not be visible to the user, but it can kill your performance!
 - As mentioned before, `componentDidUpdate()` will not be invoked if `shouldComponentUpdate()` returns `false`.
 
-</aside>
-
 ---
-
 
 ## Summary
 
