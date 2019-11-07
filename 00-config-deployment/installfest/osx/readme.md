@@ -227,20 +227,38 @@ We'll be using **Postico**. Install here:
 
 https://eggerapps.at/postico/
 
-## Installing MongoDB
+## Installing MongoDB (Updated 11/2019)
 
-```
+**Notes:** The name of the free version of MongoDB has changed to `mongodb-community` as of November 2019. Also, the Catalina version of MacOS (version 10.15) disallows folders being created at the root of the file system so you must create your MOngoDB data folder inside your home folder
+
+```sh
 #Install MongoDB
-brew install mongodb
+brew install mongodb-community
 
 #make data directory
-sudo mkdir -p /data/db
+sudo mkdir -p ~/mongodb-data
+```
 
+After creating the data directory in your home folder, it should be marked with your correct ownership permissions but if you find that it is owned by root instead, you can change it to be owned by you with the following commands:
+
+```sh
 #get your user name
 whoami
 
 #set data directory permissions (replacing USERNAME with the result from whoami above)
-sudo chown -R USERNAME:wheel /data
+sudo chown -R USERNAME:wheel ~/mongodb-data
+```
+
+Finally, to tell MongoDB to start using the data directory that you just created, you must start it with the following command:
+
+```sh
+mongod --dbpath ~/mongodb-data
+```
+
+To make a shortcut for this command, open your ~/.zshrc (or ~/.bashrc if not using ZSH) and add this line to the bottom:
+
+```sh
+alias mongod="mongod --dbpath ~/mongodb-data"
 ```
 
 ### Testing the MongoDB server
