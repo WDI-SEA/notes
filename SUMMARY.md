@@ -206,7 +206,7 @@
   * [Fetch and APIs](16-react/react-apis/readme.md)
     * [APIs with Fetch and Axios](16-react/react-apis/fetch-apis.md)
     * [Fetch the Weather](16-react/react-apis/fetch-weather.md)
-  * [React Hooks](16-react/react-hooks/readme.md)
+  * [React Hooks](16-react/react-hooks/01-hooks-intro.md)
   * [React LifeCycle](16-react/react-lifecycle/readme.md)
     * [Lab: Component LifeCycle](16-react/react-lifecycle/lifecycle-exercise.md)
   * [React Deployment](16-react/react-deploy/readme.md)
