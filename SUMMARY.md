@@ -277,6 +277,7 @@
   * [Unit Testing](15-python/python-unit-tests/readme.md)
   * [Python Classes](15-python/python-classes/readme.md)
   * [Python Class Inheritance](15-python/python-inheritance/readme.md)
+  * [Intro to SQLAlchemy](15-python/python-sqlalchemy/intro.md)
   * [Intro to Flask](15-python/python-flask-intro/readme.md)
   * [Using PyMongo](15-python/python-pymongo/readme.md)
   * [Intro to Django](15-python/python-django-intro/readme.md)
