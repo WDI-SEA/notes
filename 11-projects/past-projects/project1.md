@@ -7,6 +7,7 @@
 * [Chairman of the Board](http://seancswanson.com/chairman-of-the-board/) - Sean Swanson (WDI 16)
 * [Tanya Wenya Teens](https://dddotcom.github.io/twt/) Denise Ortega (WDI 12)
 * [UFO Awesome](https://adamredwoods.github.io/wdi-game-project1/) - Adam Piette (WDI 16)
+* [Blackjack Trainer](https://graemeerickson.github.io/blackjack_strategy/) - Graeme Erickson (WDI 18)
 * [2048 (Dynamic Board Size)](https://devangrose.github.io/) - Devan Grose (WDI 20)
 * [Gorilla Surf Game](https://jonmlinch.github.io/game-project/) - Jon Linch (WDI 20)
 
