@@ -265,4 +265,3 @@ For more information than you probably ever wanted to know about fetching data i
 - [How to Fetch Data in React](https://www.robinwieruch.de/react-fetching-data/)
 - [Fetching Data with React Hooks](https://www.robinwieruch.de/react-hooks-fetch-data/) 
   -  🏴‍☠️ BEWARE! There be HOOKS here!   🏴‍☠️ 
-  - seriously - don't you dare use Hooks for Project 3
