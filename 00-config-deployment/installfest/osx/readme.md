@@ -1,4 +1,4 @@
-# WDI Seattle Install Fest
+# SEI Seattle Install Fest
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
@@ -17,12 +17,6 @@ For the first portion of the class, we'll be working exclusively inside of the b
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
-
-## GArnet
-
-~~We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.~~
-
-GA Seattle isn't currently using this system - your homework progress and attendance will be reported to you regularly by your instructor and is also available on request.
 
 ## Homebrew
 
@@ -109,8 +103,22 @@ curl -L http://install.ohmyz.sh | sh
 
 Restart Terminal, and you should see a brand new and colorful command prompt.
 
-# Sublime Text 3 or Atom or VS Code
-Decide which code editor you'd like to install...
+# Code Editor Options
+
+### VS Code
+
+Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
+
+Download and install VS Code from [here](https://code.visualstudio.com/download)
+
+To be able to open VS Code from any directory, add it to your path inside your ~/.zshrc file:
+
+```bash
+export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+```
+
+Save this file and then fully restart your terminal window (quit and restart.)
+
 
 ### Sublime Text 3
 
@@ -140,24 +148,10 @@ ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
 
 Now you can open a folder from your terminal by typing: `atom .`
 
-### VS Code
-
-Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
-
-Download and install VS Code from [here](https://code.visualstudio.com/download)
-
-To be able to open VS Code from any directory, add it to your path inside your ~/.zshrc file:
-
-```bash
-export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-```
-
-Save this file and then fully restart your terminal window (quit and restart.)
-
 ## Postgres
 
 ### Postgres.app
-We will be using a relational database called Postgres for Node and Rails portion our class.
+We will be using a relational database called Postgres during our class.
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
@@ -229,7 +223,7 @@ https://eggerapps.at/postico/
 
 ## Installing MongoDB (Updated 11/2019)
 
-**Notes:** The name of the free version of MongoDB has changed to `mongodb-community` as of November 2019. Also, the Catalina version of MacOS (version 10.15) disallows folders being created at the root of the file system so you must create your MOngoDB data folder inside your home folder
+**Notes:** The name of the free version of MongoDB has changed to `mongodb-community` as of November 2019. Also, the Catalina version of MacOS (version 10.15) disallows folders being created at the root of the file system so you must create your MongoDB data folder inside your home folder
 
 ```sh
 #Install MongoDB
@@ -312,6 +306,9 @@ pip3 install ipython
 ```
 
 iPython makes it easy to write python code in your terminal. We may not use it a huge amount but it is handy to have around.
+
+
+# Archive Resources from Previous Curriculum
 
 ## Installing Django
 
