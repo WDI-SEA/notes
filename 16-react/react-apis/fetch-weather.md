@@ -52,6 +52,46 @@ On your `Weather` page, ask the user to input a zip code.
 
 ### Skeleton Code (Starter)
 
+Here is a functional Weather component starter:
+
+```js
+import React, { useEffect, useState } from 'react'
+
+const Weather = (props) => {
+  // Your useState definitions here
+  let [zipcode, setZipcode] = useState('')
+
+  const handleChange = (event) => {
+    setZipcode(event.target.value)
+    console.log('Your zip code is' + zipcode)
+  }
+
+  useEffect((event) => {
+    // Your fetch call here
+  }, []) 
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+      <p>
+        { /* Display weather information here */ }
+      </p>
+      <label>
+        Please enter your zip code for the weather:
+        <input type="text" onChange={handleChange} value={zipcode} />
+      </label>
+      <input type="submit" value="Get my forecast!" />
+    </form>
+    </div>
+  )
+}
+
+
+export default Weather
+```
+
+You are free to use class-based components too if you'd like. Here is the starter code for a Weather class component.
+
 ```js
 import React, { Component } from 'react';
 
@@ -67,7 +107,7 @@ class Weather extends Component {
   }
 
   handleSubmit = (event) => {
-    // Your fetch here
+    // Your fetch call here
     // Your state updates go under function(json)
   }
 
@@ -76,7 +116,7 @@ class Weather extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
         <p>
-          // Display weather information here
+          { /* Display weather information here */ }
         </p>
         <label>
           Please enter your zip code for the weather:
