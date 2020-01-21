@@ -6,8 +6,11 @@
 * Describe why someone would want to use a version control system
 * Describe git concepts such as pulls, pushes, merges, commits in layman's terms
 * Identify main git commands to manage files
-* Distinguish bewteen local and remote repositories
-* Distinguish bewteen git and GitHub
+* Distinguish between local and remote repositories
+* Distinguish between git and GitHub
+
+## What is GitHub?
+History/workflow using version control + the github platform here: [https://docs.google.com/presentation/d/1hmykydaN6dbLW7vnaHTLBU-PcdxQ8wZYoWDYm11wwxs/edit?usp=sharing](https://docs.google.com/presentation/d/1hmykydaN6dbLW7vnaHTLBU-PcdxQ8wZYoWDYm11wwxs/edit?usp=sharing)
 
 ## Motivation
 
