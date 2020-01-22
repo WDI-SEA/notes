@@ -96,7 +96,7 @@ myStringNumTuple[3] = string;
 
 Tuples can be as long as you want; think of them like interfaces without the name. Think back to our `DogObject` example, you could create a tuple with those constraints, but instead of accessing those values via their keys, they're accessed by their index.
 ```typescript
-let tupleDog: [string, number, boolean, boolean
+let tupleDog: [string, number, boolean, boolean]
 ```
 ___
 ## Enum
@@ -201,12 +201,20 @@ interface Pig {
 When you create a new variable, you can assign one, two, or even three of these types! When you do that, your new variable will be able to have claws, firstName, and hog as values. You can also create a custom class if you're going to use your intersected type again
 
 ```typescript
+// Define a new type comprised of other types!
 type ManBearPig = Man & Bear & Pig
 
-let greatCryptid: ManBearPig
-greatCryptid.firstname = 'Steve'
-greatCryptid.claws = 5
-greatCryptid.hog = true
+// We must declare initial values
+let greatCryptid: ManBearPig = {
+  firstname: 'Sassy',
+  claws: 5,
+  hog: true
+}
+
+// We can reassign the values as needed
+greatCryptid.firstname = 'Grogg'
+greatCryptid.claws = 7
+greatCryptid.hog = false
 ```
 
 _Prepare yourself... we are about to put it to work!_
