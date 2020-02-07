@@ -284,6 +284,7 @@
     * [Stacks and Queues](15-python/python-data-structures/python-stacks-and-queues/readme.md)
     * [Linked Lists](15-python/python-data-structures/python-linked-lists/readme.md)
     * [Binary Trees](15-python/python-data-structures/python-binary-trees/readme.md)
+    * [Bubble Sort](15-python/python-data-structures/python-bubble-sort/readme.md)
     * [TensorFlow & Neural Networks](15-python/python-neural-networks/readme.md)
   * [Adjacent Topics](15-python/python-adjacent-topics/readme.md)
     * [Raspberry Pi](15-python/python-adjacent-topics/pi.md)
