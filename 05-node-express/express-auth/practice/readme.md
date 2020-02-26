@@ -8,13 +8,17 @@
 
 ### Note
 
-This codealong relies heavily on an app that's been scaffolded with signup and login routes. Once we're done, you should have a starting point for your project. Due to this, we won't be forking the repo, but instead cloning the repo and performing the following:
+This codealong relies heavily on an app that's been scaffolded with signup and login routes. Once we're done, you should have a starting point for your project. Due to this, we'll be using Github template feature, to turn this express-authentication into a template.
+When starting a new project, you'll want to create a new repo on github and choose `express-authentication` as your template. 
+After this, you'll want to take a few steps to customise your new project.
 
-* Removing the `.git` folder
-* Reinitializing your git repo by running `git init` and adding your project's remote to the repo
-* Renaming the databases from `express_auth` to `yourprojectname`
-* Renaming the `package.json` file to include your project name
-* Changing the `README.md` to reflect your project
+* `git clone` your new project onto your local repo.
+* `npm install` to install dependencies
+* Customise your `layout.ejs`, `package.json`, and `README.md` to reflect your project.
+* Create a new Database for your project
+* Update your `config.json` file.
+* Check the models and migrations for relevance to your project's needs
+* Add a `.env` file with at least a `SESSION_SECRET`.
 
 **Repo Link:** https://github.com/WDI-SEA/express-authentication
 
@@ -51,4 +55,4 @@ This project is also setup with tests for the authentication functionality we'll
     * Verifying if a user's email and password are correct
 6. Add functionality to have users log out
 7. Create middleware for protecting pages
-8. Add flash messages as Bootstrap alerts
+8. Add flash messages as partials
