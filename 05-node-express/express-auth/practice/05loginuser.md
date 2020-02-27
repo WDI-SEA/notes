@@ -7,30 +7,44 @@ We'll need to...
 3. Initialize Passport to use our session module
 4. Add login and logout functionality to the `auth` controller
 
+## Passport and passport-local
+
+From the [passport website](http://www.passportjs.org/)
+
+> Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application.
+
+Passport has a lot of different strategies for authenticating users—github, linkedin, and more! (Passport website lists 502 different strategies!) We're using the Local strategy.
+
+> This module lets you authenticate using a username and password in your Node.js applications. By plugging into Passport, local authentication can be easily and unobtrusively integrated into any application or framework that supports Connect-style middleware, including Express.
+
 ## Install passport and passport-local
 
 We'll use Passport in order to provide login functionality, and `passport-local` in order to provide local user authentication.
 
 ```
-npm install --save passport passport-local
+npm i passport passport-local
 ```
 
 ## Configure Passport to use our user model
 
-Create the Passport configuration inside of the config folder.
+Create the Passport configuration inside of the config folder. This will be a javascript file
+
+```
+touch config/ppConfig.js
+```
 
 **config/ppConfig.js**
 
 ```js
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
-var db = require('../models');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const db = require('../models');
 
 /*
  * Passport "serializes" objects to make them easy to store, converting the
  * user to an identifier (id)
  */
-passport.serializeUser(function(user, cb) {
+passport.serializeUser((user, cb) => {
   cb(null, user.id);
 });
 
@@ -38,8 +52,8 @@ passport.serializeUser(function(user, cb) {
  * Passport "deserializes" objects by taking the user's serialization (id)
  * and looking it up in the database
  */
-passport.deserializeUser(function(id, cb) {
-  db.user.findById(id).then(function(user) {
+passport.deserializeUser((id, cb) => {
+  db.user.findByPk(id).then(user => {
     cb(null, user);
   }).catch(cb);
 });
@@ -67,10 +81,10 @@ passport.deserializeUser(function(id, cb) {
 passport.use(new LocalStrategy({
   usernameField: 'email',
   passwordField: 'password'
-}, function(email, password, cb) {
-  db.user.find({
-    where: { email: email }
-  }).then(function(user) {
+}, (email, password, cb) => {
+  db.user.findOne({ 
+    where: { email }
+  }).then(user => {
     if (!user || !user.validPassword(password)) {
       cb(null, false);
     } else {
@@ -91,7 +105,7 @@ Now that we've created the configuration, we need to make our app *aware of its 
 
 ```js
 // require the configuration at the top of the file
-var passport = require('./config/ppConfig');
+const passport = require('./config/ppConfig');
 
 // initialize the passport configuration and session as middleware
 app.use(passport.initialize());
@@ -114,7 +128,7 @@ Luckily, all of that configuration and middleware means a straightforward login 
 
 ```js
 // require the passport configuration at the top of the file
-var passport = require('../config/ppConfig');
+const passport = require('../config/ppConfig');
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/',
@@ -135,25 +149,27 @@ Ideally, we want to already be logged in after signup. We can modify the signup 
 **controllers/auth.js**
 
 ```js
-router.post('/signup', function(req, res) {
+router.post('/signup', (req, res) => {
   db.user.findOrCreate({
-    where: { email: req.body.email },
-    defaults: {
+    where: {
+      email: req.body.email
+    }, defaults: {
       name: req.body.name,
       password: req.body.password
     }
-  }).spread(function(user, created) {
+  }).then(([user, created]) => {
     if (created) {
-      // replace the contents of this if statement with the code below
+      console.log('user created');
       passport.authenticate('local', {
-        successRedirect: '/'
+        successRedirect: '/',
       })(req, res);
     } else {
-      console.log('Email already exists');
+      console.log('email already exists');
       res.redirect('/auth/signup');
     }
-  }).catch(function(error) {
-    console.log('An error occurred: ', error.message);
+  }).catch(err => {
+    console.log('💩 Error occured finding or creating user');
+    console.log(err);
     res.redirect('/auth/signup');
   });
 });
@@ -166,9 +182,8 @@ Including the Passport configuration in our app means that logging out is really
 **controllers/auth.js**
 
 ```js
-router.get('/logout', function(req, res) {
+router.get('/logout', (req, res) => {
   req.logout();
-  console.log('logged out');
   res.redirect('/');
 });
 ```
@@ -179,10 +194,10 @@ router.get('/logout', function(req, res) {
 
 ## Login/Logout Finished
 
-Congrats, your login/logout functionality should be finished! Verify by running the auth tests only. All tests should pass.
+Congrats, your login/logout functionality should be finished! Verify by running the tests. You should have 17 passing and only one failing.
 
 ```
-NODE_ENV=test foreman run node_modules/mocha/bin/mocha test/auth.test.js
+npm test
 ```
 
 Now for one more section...
