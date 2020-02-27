@@ -13,7 +13,7 @@ We'll need to...
 In order to hash passwords, we'll need to install `bcrypt`.
 
 ```
-npm install --save bcrypt
+npm i bcrypt
 ```
 
 ## Creating the user model
@@ -40,7 +40,7 @@ Now that we have a user, we want to limit the values we can assign to a user's n
 
 In order to do this, we can use Sequelize validations. Note that by adding a `msg` within each validation, we'll be able to give a user-friendly message if a validation fails. This will be handled in our routes later.
 
-[Sequelize Validation Documentation](http://docs.sequelizejs.com/en/latest/docs/models-definition/#validations)
+[Sequelize Validation Documentation](https://sequelize.org/v5/manual/models-definition.html)
 
 **models/user.js**
 
@@ -96,24 +96,29 @@ Therefore, we need to hash the password before it ever reaches the database. We 
 
 ```js
 // at the very top, require bcrypt
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
-// ...
-{
-  // ...
-  hooks: {
-    beforeCreate: function(createdUser, options, cb) {
-      // hash the password
-      var hash = bcrypt.hashSync(createdUser.password, 10);
-      // store the hash as the user's password
-      createdUser.password = hash;
-      // continue to save the user, with no errors
-      cb(null, createdUser);
+module.exports = (sequelize, DataTypes) => {
+  const user = sequelize.define('user', {
+    // ...
+  }, {
+    hooks: {
+      beforeCreate: (pendingUser, options) => {
+        if (pendingUser && pendingUser.password) {
+          // hash the password
+          let hash = bcrypt.hashSync(pendingUser.password, 12);
+          // store the hash as the user's password
+          pendingUser.password = hash;
+        }
+      }
     }
-  },
-  classMethods: {},
-  // ...
-}
+  });
+  user.associate = function(models) {
+    // associations can be defined here
+  };
+  
+  return user;
+};
 ```
 
 > This should pass the following test
@@ -137,27 +142,31 @@ In order to perform these actions, we'll create two methods that can be called o
 * To hide the hash from the user object, we'll *override* an instance method called `toJSON`, which will leave the hash out of the user's JSON object.
   * **Example**
   ```js
-  user.toJSON(); // returns { name: 'Brian', email: 'bh@ga.co' }
+  user.toJSON(); // returns { name: 'Tosspot', email: 'gavin.scotsman@ga.co' }
   ```
 
 **models/user.js**
 
 ```js
-{
-  classMethods: {},
-  instanceMethods: {
-    validPassword: function(password) {
-      // return if the password matches the hash
-      return bcrypt.compareSync(password, this.password);
-    },
-    toJSON: function() {
-      // get the user's JSON data
-      var jsonUser = this.get();
-      // delete the password from the JSON data, and return
-      delete jsonUser.password;
-      return jsonUser;
-    }
+  // ...
+  
+  user.associate = function(models) {
+    // associations can be defined here
+  };
+
+  // Compares entered password to hashed password
+  user.prototype.validPassword = function(passwordTyped) {
+    return bcrypt.compareSync(passwordTyped, this.password);
+  };
+
+  // remove the password before serializing
+  user.prototype.toJSON = function() {
+    let userData = this.get();
+    delete userData.password;
+    return userData;
   }
+
+  return user;
 }
 ```
 
