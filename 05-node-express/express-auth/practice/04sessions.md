@@ -10,16 +10,16 @@ In order to save whether the user is logged in or not, we'll need to create a pe
 ## Install express-session
 
 ```
-npm install --save express-session
+npm i express-session
 ```
 
 ## Setup the session module
 
-**index.js**
+**server.js**
 
 ```js
 // at the very top, require express-session
-var session = require('express-session');
+const session = require('express-session');
 
 /*
  * setup the session with the following:
@@ -32,6 +32,7 @@ var session = require('express-session');
  * saveUninitialized: If a session is new, but hasn't been changed, save it.
  * We'll set this to true.
  */
+ 
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -42,11 +43,9 @@ app.use(session({
 **.env**
 
 ```
-SESSION_SECRET=tacocat
+SESSION_SECRET=uiohjknjuhbuttslouihknj
 ```
 
 ## Session finished
 
 To verify that this session works, we'll start setting up Passport and login functionality in the next section. There are no tests associated with the sessions right now.
-
-Additionally, you'll need to run your app and tests using `foreman` in order to read the environment variable.
