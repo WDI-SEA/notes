@@ -27,7 +27,7 @@ To receive the user's data, let's create a signup route.
 **controllers/auth.js**
 
 ```js
-router.post('/signup', function(req, res) {
+router.post('/signup', (req, res) => {
   // try sending back the form data
   res.send(req.body);
 });
@@ -45,9 +45,9 @@ Verify that this works. While spitting back form data verifies this route's func
 
 ```js
 // at the very top, include the database models
-var db = require('../models');
+const db = require('../models');
 
-router.post('/signup', function(req, res) {
+router.post('/signup', (req, res) => {
   // find or create a user, providing the name and password as default values
   db.user.findOrCreate({
     where: { email: req.body.email },
@@ -55,17 +55,17 @@ router.post('/signup', function(req, res) {
       name: req.body.name,
       password: req.body.password
     }
-  }).spread(function(user, created) {
+  }).then(([user, created]) => {
     if (created) {
       // if created, success and redirect home
-      console.log('User created!');
+      console.log(`${user.name} was created!`);
       res.redirect('/');
     } else {
       // if not created, the email already exists
       console.log('Email already exists');
       res.redirect('/auth/signup');
     }
-  }).catch(function(error) {
+  }).catch(error => {
     // if an error occurs, let's see what the error is
     console.log('An error occurred: ', error.message);
     res.redirect('/auth/signup');
