@@ -1,9 +1,9 @@
-# WDI Seattle
+# SEI Seattle
 
 ![](https://res.cloudinary.com/briezh/image/upload/v1539805526/spaceneedle_ga_sea_ykjk40.jpg)
 
 
-Welcome to GA Seattle! This is the notes repository for our Web Development Immersive. You can view the content in a more searchable/friendly format on [Gitbook](https://gawdiseattle.gitbooks.io/wdi/)!
+Welcome to GA Seattle! This is the notes repository for our Software Engineering Immersive (formerly known as Web Development Immersive). You can view the content in a more searchable/friendly format on [Gitbook](https://gawdiseattle.gitbooks.io/wdi/)!
 
 ![GA Logo](./_assets/ga_cog.png)
 
