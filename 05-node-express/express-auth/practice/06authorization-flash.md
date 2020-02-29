@@ -19,7 +19,7 @@ connect-flash requires `session`, so you **must** load the [express-session](htt
 #### Installing connect-flash
 
 ```
-npm install --save connect-flash
+npm install connect-flash
 ```
 
 #### Including connect-flash
@@ -28,7 +28,7 @@ npm install --save connect-flash
 
 ```js
 // require connect-flash at the top of the page
-var flash = require('connect-flash');
+const flash = require('connect-flash');
 
 /* 
  * Include the flash module by calling it within app.use().
@@ -53,14 +53,14 @@ router.get('/signup', function(req, res) {
   res.render('auth/signup');
 });
 
-router.post('/signup', function(req, res) {
+router.post('/signup', (req, res) => {
   db.user.findOrCreate({
     where: { email: req.body.email },
     defaults: {
       name: req.body.name,
       password: req.body.password
     }
-  }).spread(function(user, created) {
+  }).then(([user, created]) => {
     if (created) {
       // FLASH
       passport.authenticate('local', {
@@ -72,14 +72,14 @@ router.post('/signup', function(req, res) {
       req.flash('error', 'Email already exists');
       res.redirect('/auth/signup');
     }
-  }).catch(function(error) {
+  }).catch(error => {
     // FLASH
     req.flash('error', error.message);
     res.redirect('/auth/signup');
   });
 });
 
-router.get('/login', function(req, res) {
+router.get('/login', (req, res) => {
   res.render('auth/login');
 });
 
@@ -91,7 +91,7 @@ router.post('/login', passport.authenticate('local', {
   successFlash: 'You have logged in'
 }));
 
-router.get('/logout', function(req, res) {
+router.get('/logout', (req, res) => {
   req.logout();
   // FLASH
   req.flash('success', 'You have logged out');
@@ -106,15 +106,15 @@ module.exports = router;
 We can retrieve the message using `req.flash()` and pass that message in to the view. However, we don't want to remember to do that on every route, like this:
 
 ```js
-app.get('/', function(req, res) {
+app.get('/', (req, res) => {
   res.render('index', { alerts: req.flash() });
 });
 ```
 
-Instead, we can create middleware to make the messages accessible in every view. This can be done by attaching the value to `res.locals`. While we're at it, let's add the currently logged in user as well. Add the following middleware after the rest of your middleware.
+Instead, we can create middleware to make the messages accessible in every view. This can be done by attaching the value to `res.locals`. While we're at it, let's add the currently logged in user as well. Add the following middleware after the rest of your middleware in `server.js`.
 
 ```js
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   // before every route, attach the flash messages and current user to res.locals
   res.locals.alerts = req.flash();
   res.locals.currentUser = req.user;
@@ -132,12 +132,12 @@ In order to display the alerts, we can make a partial that renders on every page
 
 ```html
 <% if (alerts.error) { %>
-  <% alerts.error.forEach(function(msg) { %>
-    <div class="alert alert-danger"><%= msg %></div>
+  <% alerts.error.forEach(msg => { %>
+    <div class="alert alert-error"><%= msg %></div>
   <% }); %>
 <% } %>
 <% if (alerts.success) { %>
-  <% alerts.success.forEach(function(msg) { %>
+  <% alerts.success.forEach(msg => { %>
     <div class="alert alert-success"><%= msg %></div>
   <% }); %>
 <% } %>
@@ -148,9 +148,27 @@ Rendering the partial and the current user:
 **views/layout.ejs**
 
 ```html
-<%- JSON.stringify(currentUser) %>
-
 <% include partials/alerts %>
+```
+
+While we're on the layout, let's add some conditional rendering for the nav bar. We added `req.flash()` messages to `res.locals` but we also added a `currentUser`. That means that we will have access to that variable from any of our EJS pages. The value will be truthy if there is a user logged in and falsy if not.
+
+**views/layout.ejs**
+
+```html
+<header>
+  <nav>
+    <ul>
+      <% if (!currentUser) { %>
+        <li><a href="/auth/signup">Signup</a></li>
+        <li><a href="/auth/login">Login</a></li>
+      <% } else { %>
+        <li><a href="/auth/logout">Logout</a></li>
+        <li><a href="/profile">Profile</a></li>
+      <% } %>
+    </ul>
+  </nav>
+</header>
 ```
 
 #### Authorization for web pages
@@ -160,7 +178,7 @@ Lastly, let's add authorization so users need to be logged in to access certain 
 **middleware/isLoggedIn.js**
 
 ```js
-module.exports = function(req, res, next) {
+module.exports = (req, res, next) => {
   if (!req.user) {
     req.flash('error', 'You must be logged in to access that page');
     res.redirect('/auth/login');
@@ -172,13 +190,13 @@ module.exports = function(req, res, next) {
 
 Whenever we want to limit access to a particular page, require this middleware on the route. The current logic will redirect the user to the login route if they're not logged in.
 
-**index.js**
+**server.js**
 
 ```js
 // require the authorization middleware at the top of the page
-var isLoggedIn = require('./middleware/isLoggedIn');
+const isLoggedIn = require('./middleware/isLoggedIn');
 
-app.get('/profile', isLoggedIn, function(req, res) {
+app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile');
 });
 ```
@@ -189,13 +207,20 @@ app.get('/profile', isLoggedIn, function(req, res) {
 > 
 > **GET /profile - should return a 200 response if logged in**
 
+If you want to lock down all the routes in a specific controller, you can add the `isLoggedIn` middleware when you use the middleware.
+
+```js
+app.use('/dinos', isLoggedIn, require('./routes/dinos'));
+```
+
 ## Conclusion and CSRF
 
-Congrats, you have a working application with user authentication and authorization! To ensure all components are working, run `foreman run npm test` to verify all tests pass.
+Congrats, you have a working application with user authentication and authorization! To ensure all components are working, run `npm test` to verify all tests pass.
 
-See the finished OAuth example here:
+See a finished OAuth example here:
 
-https://github.com/WDI-SEA/express-authentication/tree/brian-oauth
+https://github.com/sixhops/oauth-boilerplate
+
 
 #### Additional: Cross-Site Request Forgeries
 
