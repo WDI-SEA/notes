@@ -3,34 +3,19 @@
 
 ## Let's implement state in our blog.
 
-**Goals:**
+**Deliverable:**
 
-Let's implement state in our blog by making the `body` a mutable value. 
-
-> Note: mutable means editable  or changeable!
-
+Let's implement state in our blog by making the `body` or `content` a mutable value. 
 
 ---
 
-## But First: What Would Happen to State if You Refreshed the Page?
+## Steps to Achieve
 
-- In React, state just represents the state of data on our page.
+  1. Set an initial state prop in your component that contains content or body for posts. 
 
-- Something saved to state in React is not automatically saved to a database or to local storage.
-
-- State is just what's currently on the page. If you refresh the page, then all state is lost and refreshed with the page.
-
----
-
-## Steps
-
-#### 1. Set an initial state for our `App` component.
-
-#### 2. Modify `App`'s `render()` method so that it uses the `body` from state, not props.
-
-#### 3. Create a `changeBody()` method inside `App` that updates `body` based on a user's input.
-
-#### 4. Add a button to `App`'s `render()` method that triggers `changeBody()`.
+  2. Add a button to somewhere in your page (up to you which component to add to!). This button should `onClick` open an alert that takes a value. 
+  
+  3. Take the user inputed value into the alert box and use that return value to update the state of the body or content of your post.  
 
 
 **Some things to note:**
@@ -47,7 +32,7 @@ Let's implement state in our blog by making the `body` a mutable value.
 
 ---
 
-## Solution
+## Solution Image
 
 ![Solution for Project](https://res.cloudinary.com/briezh/image/upload/v1556560665/State_SOLUTION_qszfgv.png)
 
@@ -56,28 +41,4 @@ Let's implement state in our blog by making the `body` a mutable value.
 **This is what your solution should look like.**
 
 ---
-
-## Bonus
-
-Use a form to take in user input.
-
-> Helpful documentation is available [here](https://reactjs.org/docs/forms.html).
-
-
-**Talking Points:**
-
-- The blog post's `body` should be updated dynamically when the user types in an input field.
-- One option is to keep track of what the new input is going to be by triggering a method using `onChange` on the `<input>`.
-- Another option is to pass an `event` object to the `onSubmit()` method and traverse the DOM from the event's target (for example, `e.target`) to find the `<input>` value.
-- Note: You can leave the button from above to give the user options!
-
----
-
-## Bonus Solution
-
-![Solution for Bonus](https://res.cloudinary.com/briezh/image/upload/v1556560666/state_BONUS_SOLUTION_mjqchw.png)
-
-<aside class="notes">
-
-**This is what your solution should look like.**
 
