@@ -67,12 +67,9 @@ declare interface ContactInfo {
 
 // the shape of a Cat class
 declare class Cat {
-  // the constructor accepts these args
-  contructor(
-    name: string,
-    breed: string,
-    age: number,
-  )
+  name: string;
+  breed: string;
+  age: number;
 
   // methods for collecting and destroying
   collect(name: string, breed: string, age: number): void
