@@ -42,15 +42,6 @@ to do in JavaScript. Let's dive right into it.
 
 ## Comments
 
-In JS, we use line and multiline comments.
-```js
-// here's a line comment
-
-/* And a multiline
-   comment
-*/
-```
-
 In Python, multiline comments exist, but we generally use line comments with hashtags, for readability.
 ```python
 # here is a line comment
@@ -60,11 +51,13 @@ In Python, multiline comments exist, but we generally use line comments with has
 # for you to read
 ```
 
+For multiline comments in Python, you can use `"""` blocks. However observe proper indentation or you will get a `SyntaxError`.
+
 ## Variables
 
 Local variables start with a lowercase letter. No `var` necessary. Most Python
 programs choose to insert underscores between words instead of writing names in
-camelCase.
+camelCase (this is considered more readable by the PEP maintainers). 
 
 ```python
 my_variable = 5
@@ -74,10 +67,19 @@ print(my_variable)
 ## Data Types
 
 ### Nothingness
-Just as Javascript uses undefined or null, Python uses `None`
+Just as Javascript uses undefined or null, Python uses `None`.
+
+`None` is a unique datatype (`NoneType`) and is not equivalent to `False`, empty string, or `0`. However, `None` does not evaluate to `True`.
 
 ```python
 my_bank_account = None
+
+if my_bank_account:
+   print("This is true!")
+else:
+   print("This is not true...")
+   
+# will print "This is not true..."
 ```
 
 ### Booleans
@@ -135,8 +137,8 @@ Math.pow(2, 999)
 You can declare strings in Python just like in JavaScript:
 
 ```python
-card1 = "ace_of_spades"
-card2 = "king_of_hearts"
+card1 = "ace of spades"
+card2 = "king of hearts"
 ```
 
 #### String Methods
@@ -245,7 +247,7 @@ and
 ```
 
 ### Lists
-Python has arrays. Python calls it's arrays lists.
+Arrays in Python are called Lists.
 
 Python lists can be indexed just like strings. Also, use the
 `len()` operator to find the length of a list. Python lists don't have a
@@ -280,7 +282,7 @@ one_through_ten = list(range(10))
 [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 ```
 
-#### Array Methods
+#### List Methods
 
 ```python
 a = [1, 23, 12, 99, 82]
