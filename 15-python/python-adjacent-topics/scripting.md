@@ -29,11 +29,11 @@ All languages, like Python, are one of these two categories.
 #### Compiled languages:
 
 - Compile means "build".
-- *We can't immediate run code - the computer can't just read the code and needs to translate it to something it understands first.*
+- We can't immediately run code - *the computer can't just read the code; it needs to translate it to something it understands first.*
 - Write code, *then compile it (not quick!),* then run it.
 - Find a bug? Fix it, *wait for the code to compile,* run it, repeat.
 
-You don't need to memorize this - just know that there's a difference, and Python is scripting.
+You don't need to memorize this - just know that there's a difference, and Python is a scripting language.
 
 ## What is a Script?
 
