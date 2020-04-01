@@ -417,7 +417,7 @@ def unhandled_exception(e):
   return jsonify(message=message_str.split(':')[0])
 ```
 
-The POST, PUT, DELETE routes
+The POST Route
 -
 
 When we write our functions, we have control over how the information gets passed into it. We can decide to take the entire request form/json and pass it into our `create_user()` function, then parse the data in our function, or we can parse the data outside of it and pass in what we want to the function. This tutorial is written as the following option.
@@ -436,7 +436,7 @@ def create_user(name, email, bio):
 
 Looks pretty similar to what we did in the python shell! The only difference is `bio=bio or None`. This is one way to account for optional fields. In this instance, we are expecting to recieve three parameters, even if one is just an empty string or none. 
 
-#### 🏴‍☠️ args and kwargs
+### 🏴‍☠️ args and kwargs
 
 Often times when looking at python code, you'll run into parameters `*args` or `**kwargs`. These values are used to more easily handle a variable number of arguments that are passed into the function!
 
@@ -513,7 +513,7 @@ def create_user(**form_kwargs):
   return jsonify(new_user.as_dict())
 ```
 
-#### API implimentation
+### 🏁API implimentation
 
 Right now, our `api.py` has two get routes; one to `/users` and one to `/users/<int:id>`. If `@app.route` is called with only one parameter, then it will assume that only the GET action is allowed on that route. To add more methods, a second parameter will be added to `@app.route()` called `methods`. This will be equal to a list of action strings. In order to access which method the request is using, flask's `request` will also have to be imported. While we're importing, we'll also need to import our freshly crafted `create_user` function as well.
 
@@ -537,3 +537,74 @@ def user_index_create():
 def user_show_put_delete(id):
     return get_user(id)
 ```
+
+The PUT Route
+-
+
+Calling the update function in our api will look VERY similar to the how we called `create_user`. The only difference is that it will take an id which will be used to query the database for a specific user which we will update. 
+
+#### Update
+
+The function itself will look a little more complex. The reason this is is because there is no `update` method attached to our User object. The update has to be explicitly assigned. If we don't know which values are actually present _(for example, if `bio` was passed up in the form as an empty string, we don't want to overwrite our current bio with an empty string)_, we have to write them all out and add an or statement.
+
+```python
+def update_user(id, name, email, bio):
+  user = User.query.get(id)
+  if user:
+    user.name = name or user.name
+    user.email = email or user.email
+    user.bio = bio or user.bio
+    db.session.commit()
+    return jsonify(user.as_dict())
+  else:
+    raise Exception('No User at id {}'.format(id))
+```
+This works out just fine at the level that we are working at, but if we were using the `spells` schema, this method would get ugly fast.
+
+###### The Kwarg Method
+
+If we use the `**kwarg` method, we're going to have to iterate through the given dictionary at set the attribute of our user for each one. It's not too different from the non-kwarg method for our user model, but with more involved tables, this method will add a lot to code readability.
+
+```python
+def update_user(id, **update_values):
+  user = User.query.get(id)
+  if user:
+    for key, value in update_values.items():
+      setattr(user, key, value)
+    db.session.commit()
+    return jsonify(user.as_dict())
+  else:
+    raise Exception('No User at id {}'.format(id))
+```
+There are three main things that are unfamiliar in this function:
+1. **`update_values.items()`**—`dictionary.items()` will return a list of tuples of two, where the first value is the key and the second is the value at that key. If I have a dictionary `steven = {"nickname": "Stevie", "age": 44}`,`steven.items()` will return a list that looks like this: `[('nickname', 'Stevie'), ('age', 44)]`.
+2. **`for key, value in update_values.items()`**—Because each item in the list the comes from `.items()` is a tuple of two, I know with impunity that we'll be getting two values per iteration. When using this syntax, the value of `key` is set to the value of tuple at index 0 while `value` is set to the value of tuple at index 1. Using our `steven` example from earlier, this loop will run twice because there are two tuples in the list resulting from `steven.items()`. In the first loop, `key == 'nickname'` and `value == 'Stevie'`. In the second iteration, `key == 'age'` while `value == 44`.
+3. **setattr(user, key, value)**—With special objects like a SQLAlchemy model, they are non scriptable. That is why, when we used the quick inline return value in our models' `as_dict()` function, we had to call `getattr`. `getattr` takes two parameters, the object whose values you want to pull from, and the name of the key that holds that value. When we `setattr`, we still want those first two attributes, but we follow it up with a third, which is what we want to **set** that value to.
+
+### 🏁API implimentation
+
+Based on how we define this function, we're going to pass it a minimum of one argument, and more if we need. First, we'll want to import our function from `user_crud`. Next, we'll want to make sure that our `/users/<int:id>` route is prepared to take PUT methods. After that, we'll add another conditional that states; if the request method is PUT, return the results of the `update_user` function with an id and a series of arguments as the parameters.
+
+Mouthy pseudocode. Let's see it in action.
+
+```python
+...
+from crud.user_crud import get_all_users, get_user, create_user, update_user
+
+...
+
+@app.route('/users/<int:id>', methods=['GET', 'PUT'])
+def user_show_update_delete(id):
+  if request.method == 'GET':
+    return get_user(id)
+  if request.method == 'PUT':
+    return update_user(id, **request.form)
+# if doing it the non-kwarg way
+#   return update_user(id, name=request.form[name], email=request.form[email], bio=request.form[bio])
+```
+and VOILA! We have the power to delete users with a simple form PUT request.
+
+The DELETE Route
+-
+
+Coming soon
