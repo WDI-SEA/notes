@@ -393,7 +393,7 @@ def user_index_create():
     return get_all_users()
 
 @app.route('/users/<int:id>')
-def user_show_put_delete():
+def user_show_put_delete(id):
     return get_user(id)
 ```
 
@@ -417,7 +417,123 @@ def unhandled_exception(e):
   return jsonify(message=message_str.split(':')[0])
 ```
 
-The POST routes
+The POST, PUT, DELETE routes
 -
 
-Coming soon!
+When we write our functions, we have control over how the information gets passed into it. We can decide to take the entire request form/json and pass it into our `create_user()` function, then parse the data in our function, or we can parse the data outside of it and pass in what we want to the function. This tutorial is written as the following option.
+
+#### Create
+
+First up, is our `create_user` function. In order to create a user, we need three strings: `name`, `email`, `bio`.
+
+```python
+def create_user(name, email, bio):
+  new_user = User(name=name, email=email, bio=bio or None)
+  db.session.add(new_user)
+  db.session.commit()
+  return jsonify(new_user.as_dict())
+```
+
+Looks pretty similar to what we did in the python shell! The only difference is `bio=bio or None`. This is one way to account for optional fields. In this instance, we are expecting to recieve three parameters, even if one is just an empty string or none. 
+
+#### 🏴‍☠️ args and kwargs
+
+Often times when looking at python code, you'll run into parameters `*args` or `**kwargs`. These values are used to more easily handle a variable number of arguments that are passed into the function!
+
+##### `*args`
+
+Say you have a function that greets everyone in a classroom. You want to pass it multiple arguments, but you don't know how many arguments it will take, each class is different! Using `*variable_name` will make the function receive a tuple of arguments that can be accessed accordingly.
+
+You can also use the `*` to pass in the parameters! This is especially useful if you are programmatically receiving a list.
+
+```python
+def greet_class(*students):
+  for student in students:
+    print(f'Hello {student}!')
+        
+sei24 = ['Sam', 'Justin', 'Miguel', 'Nathan', 'Zac']
+
+greet_class(*sei24)
+# Hello Sam!
+# Hello Justin!
+# Hello Miguel!
+# Hello Nathan!
+# Hello Zac!
+```
+
+##### `**kwargs`
+
+Where `*args` gives you a tuple, `**kwargs` gives you a dictionary, arguments with keywords...keyword arguments...keyword args...keywargs...kwargs.
+
+This is a particularly useful feature if the key is important as well! The best example of this is our database! Right now, our tables don't have a lot of columns, but let's look at a schema that is a little more involved:
+
+| spells                           |
+|:---------------------------------|
+| name: String(NOT NULL)           |
+| desc: String                     |
+| higher_level: String             |
+| page: String                     |
+| range: String(NOT NULL)          |
+| components: String(NOT NULL)     |
+| material: String                 |
+| ritual: Boolean(NOT NULL)        |
+| duration: String(NOT NULL)       |
+| concentration: Boolean(NOT NULL) |
+| casting_time: String(NOT NULL)   |
+| level: Integer(NOT NULL)         |
+| school_id: ForeignKey(NOT NULL)  |
+
+In this example, there are twelve columns, four of which are not required. That means we could be getting 12-16 arguments, which is fairly meaty to write out a parameter for each! Enter `**kwargs`.
+
+```python
+def create_spell(**form_args):
+  new_spell = Spell(**form_args)
+  db.session.add(new_spell)
+  db.session.commit()
+  return jsonify(new_spell.as_dict())
+```
+
+Even cooler is that we can pass them in using the double asteriks notation!
+
+```python
+@app.route('/spells', methods=['POST'])
+def add_spell():
+  return create_spell(**request.form)
+```
+
+More on `*args` and `**kwargs` via [this stack overflow answer](https://stackoverflow.com/a/36908)
+
+Let's apply this to our user creation where we don't konw how many values will be passed in. 
+
+```python
+def create_user(**form_kwargs):
+  new_user = User(**form_kwargs)
+  db.session.add(new_user)
+  db.session.commit()
+  return jsonify(new_user.as_dict())
+```
+
+#### API implimentation
+
+Right now, our `api.py` has two get routes; one to `/users` and one to `/users/<int:id>`. If `@app.route` is called with only one parameter, then it will assume that only the GET action is allowed on that route. To add more methods, a second parameter will be added to `@app.route()` called `methods`. This will be equal to a list of action strings. In order to access which method the request is using, flask's `request` will also have to be imported. While we're importing, we'll also need to import our freshly crafted `create_user` function as well.
+
+```python
+# api.py
+from flask import jsonify, request
+from models import app, User
+from crud.user_crud import get_all_users, get_user, create_user
+
+# Routes
+@app.route('/users', methods=['GET', 'POST'])
+def user_index_create():
+  if request.method == 'GET':
+    return get_all_users()
+  if request.method == 'POST':
+    return create_user(**request.form)
+# If not using **kwargs:
+    # return create_user(name=request.form['name'], email=request.form['email'], bio=request.form['bio'])
+
+@app.route('/users/<int:id>')
+def user_show_put_delete(id):
+    return get_user(id)
+```
