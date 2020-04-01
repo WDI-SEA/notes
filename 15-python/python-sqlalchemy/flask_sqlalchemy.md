@@ -338,7 +338,7 @@ This block of code will **try** to run some functions with our imported gabe ins
 
 This is good to know, but Flask has a very particular way that it deals with errors.
 
-The GET routes
+📇 The GET routes
 -
 
 #### Index Users
@@ -417,7 +417,7 @@ def unhandled_exception(e):
   return jsonify(message=message_str.split(':')[0])
 ```
 
-The POST Route
+📝The POST Route
 -
 
 When we write our functions, we have control over how the information gets passed into it. We can decide to take the entire request form/json and pass it into our `create_user()` function, then parse the data in our function, or we can parse the data outside of it and pass in what we want to the function. This tutorial is written as the following option.
@@ -538,7 +538,7 @@ def user_show_put_delete(id):
     return get_user(id)
 ```
 
-The PUT Route
+🛠The PUT Route
 -
 
 Calling the update function in our api will look VERY similar to the how we called `create_user`. The only difference is that it will take an id which will be used to query the database for a specific user which we will update. 
@@ -581,7 +581,7 @@ There are three main things that are unfamiliar in this function:
 2. **`for key, value in update_values.items()`**—Because each item in the list the comes from `.items()` is a tuple of two, I know with impunity that we'll be getting two values per iteration. When using this syntax, the value of `key` is set to the value of tuple at index 0 while `value` is set to the value of tuple at index 1. Using our `steven` example from earlier, this loop will run twice because there are two tuples in the list resulting from `steven.items()`. In the first loop, `key == 'nickname'` and `value == 'Stevie'`. In the second iteration, `key == 'age'` while `value == 44`.
 3. **setattr(user, key, value)**—With special objects like a SQLAlchemy model, they are non scriptable. That is why, when we used the quick inline return value in our models' `as_dict()` function, we had to call `getattr`. `getattr` takes two parameters, the object whose values you want to pull from, and the name of the key that holds that value. When we `setattr`, we still want those first two attributes, but we follow it up with a third, which is what we want to **set** that value to.
 
-### 🏁API implimentation
+### 🗺 API implimentation
 
 Based on how we define this function, we're going to pass it a minimum of one argument, and more if we need. First, we'll want to import our function from `user_crud`. Next, we'll want to make sure that our `/users/<int:id>` route is prepared to take PUT methods. After that, we'll add another conditional that states; if the request method is PUT, return the results of the `update_user` function with an id and a series of arguments as the parameters.
 
@@ -604,7 +604,81 @@ def user_show_update_delete(id):
 ```
 and VOILA! We have the power to delete users with a simple form PUT request.
 
-The DELETE Route
+🧨 The DELETE Route
 -
 
-Coming soon
+The Delete function is the easiest mutative function and looks quite a bit like the `get_user` function.
+
+#### Destroy
+
+All we need to destroy a user is something to search for them by, in our case, it will be the id.
+
+```python
+def destroy_user(id):
+  user = User.query.get(id)
+  if user:
+    db.session.delete(user)
+    db.session.commit()
+    return redirect('/users')
+  else:
+    raise Exception('No User at id {}'.format(id))
+```
+
+That's it! 
+
+### 📦 API implimentation
+
+The steps need to add this to our API are the same as for the Update:
+* Import the function from `crud.user_crud`
+* Add 'DELETE' to the list of accepted actions on the relevant route
+* Add conditional in the route function that checks for request method 'DELETE'
+* return the results of `destroy_user(id)` 
+
+Still confused? Wanna check your work? Love looking at blocks of DRY code? Eyeballs just can't stop that reading?
+
+```python
+# api.py
+from models import app
+from flask import jsonify, request
+from crud.user_crud import get_all_users, get_user, create_user, destroy_user, update_user
+
+@app.errorhandler(Exception)
+def unhandled_exception(e):
+  app.logger.error('Unhandled Exception: %s', (e))
+  message_str = e.__str__()
+  return jsonify(message=message_str.split(':')[0])
+
+@app.route('/users', methods=['GET', 'POST'])
+def user_index_create():
+  if request.method == 'GET':
+    return get_all_users()
+  if request.method == 'POST':
+    print(request.form)
+    return create_user(**request.form)
+
+
+@app.route('/users/<int:id>', methods=['GET', 'PUT', 'DELETE'])
+def user_show_update_delete(id):
+  if request.method == 'GET':
+    return get_user(id)
+  if request.method == 'PUT':
+    return update_user(id, **request.form)
+  if request.method == 'DELETE':
+    return destroy_user(id)
+```
+
+# Take a break!
+
+You created a RESTful api using Flask and SQLAlchemy!
+
+![Developer stretching out and relaxing in the sun with his large laptop and a beverage](https://media.giphy.com/media/S6TEoUBJuGfQCoGl8l/giphy.gif)
+
+## Bonuses
+
+Not enough coding for you? Itching for more!? Add CRUD for the other two models! Some things to consider:
+* What information does the user want when they query for all posts? How does this information differ from when they're querying for a single post?
+* When adding a post, how will you handle adding tags? Will it be a separate route? Will the user be adding it when they add a post? If so is that an optional field? How will you check for existing tags vs new ones?
+* What if the user wants all posts associated with a user? What is the route for that? Where does that route live? What parameters do you need to make that happen and where will you get them from?
+* Try your hand at writing a `get_or_create` function that you can use to return an existing instance or create a new one if it isn't in the database already. What parameters would it need to take? How would you handle variation so it can be used on any model?
+* Try to read SQLalchemy docs! You're masochistic enough to get to this bullet point in the bonuses, so why not REALLY push your understanding by reading some of the densest docs an ORM can manage.
+    * SQLAlchemy has a lot of functionaly that doesn't exist on the `query`. How would you impliment some of that in your API? 
