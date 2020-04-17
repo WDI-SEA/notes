@@ -1,6 +1,6 @@
-#Sequelize - 1 to Many Relationships
+# Sequelize - 1 to Many Relationships
 
-##Objectives
+## Objectives
 
 * utilize table relationships in a database
 * add a 1:M association using Sequelize
@@ -9,7 +9,7 @@
 
 Today we're going to cover how to setup a one to many relationship, using more than one table. This will allow data in one table to be associated with data in another.
 
-##Getting Started
+## Getting Started
 
 Creating a blog.
 
