@@ -191,6 +191,23 @@ class Home extends Component {
 
 export default Home
 ```
+or with a functional component...
+
+```js
+import React, {useEffect} from 'react'
+
+const Home = () => {
+   useEffect() {
+      /* nothing here... yet! */
+   }
+	
+   return (
+      <div>
+        <h1>My favorite Kanye quote:</h1>
+      </div>
+   )
+  }
+```
 
 We can now tell our component to fetch a Kanye quote and then set it to our state. We do this by adding the 
 `axios.get()` call inside of _componentDidMount()_.
@@ -229,6 +246,27 @@ class Home extends Component {
   }
 }
 ```
+or as a functional component...
+```js
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+
+const Home = () => {
+   let [kanye, setKanye] = useState('')
+   
+   useEffect(() => {
+   let kanyeRest = 'https://api.kanye.rest/'
+   axios.get(kanyeRest)
+   .then( response => {
+        setKanye(response.data.quote)
+      })
+   .catch(err => console.log(err.message))
+   }, [])
+   return (
+        <div>{kanye}</div>
+   )
+}
+```
 
 Let's test it out!
 
@@ -257,6 +295,25 @@ render() {
        </div>
      )
   }
+```
+and one more time, as a functional component:
+
+```js
+if(kanye){
+   return (
+   <div>
+      <h1>My favorite Kanye quote:</h1>
+      <div>{kanye}</div>
+      <p>Lo, my heart doth swoon... Such a way with words.</p>
+   </div>
+   )
+}
+return (
+   <div>
+      <h1>My favorite Kanye quote:</h1>
+      <div>Loading...</div>
+   </div>
+)
 ```
 
 You're done! Your `home` page should load a random Kanye quote!
