@@ -44,6 +44,19 @@ class Movie extends Component {
 export default Movie
 ```
 
+or, we could write it as a functional component, like so:
+```js
+import React from 'react'
+
+const Movie = () => {
+   return (
+     // code goes here!
+   )
+}
+
+export default Movie
+```
+
 Let's add some JSX to the render function so this component will be visible in
 our application. Let's keep the JSX simple for now, and we'll make it more
 complex once we're sure it works.
@@ -79,6 +92,22 @@ class Movie extends Component {
       </div>
     )
   }
+}
+
+export default Movie
+```
+
+so what does it look like as a functional component? I'm so glad you asked!
+```js
+import React from 'react'
+
+const Movie = () => {
+   return (
+      <div>
+         <h1>The Lord of the Rings: A Trilogy</h1>
+         <p>4h 37min</p>
+      </div>
+   )
 }
 
 export default Movie
@@ -147,6 +176,30 @@ class App extends Component {
 export default App;
 ```
 
+or, if you're following along building a functional component, it will look like:
+```js
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import Movie from './Movie';
+
+const App = () => {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <Movie />
+        </header>
+      </div>
+    );
+}
+
+export default App;
+```
+
 ### Passing Information via Properties
 We need to make our Movie component accept information so we can use it to
 display different titles and runtimes. In the `src/App.js` file, add `title`, `hours`, and `minutes`
@@ -166,6 +219,11 @@ through the `this.props` object. This means that inside the `Movie` component, w
 
 In `src/Movie.js`, change the `<h1>` to display the value of
 the `title` prop by writing `{this.props.title}`.
+
+**Note: in the event that you're using a functional component, you can omit the word "this" from these notes! Just remember to pass props into your function, like so:**
+```js
+const Movie = (props) => {
+```
 
 There was also the `hours` and `minutes` props. Update the JSX to access and display the value of each prop we created.
 
@@ -187,6 +245,21 @@ class Movie extends Component {
 }
 
 export default Movie;
+```
+or, as functional:
+```js
+import React from 'react'
+
+const Movie = (props) => {
+  return(
+    <div>
+      <h1>The Lord of the Rings: {props.title}</h1>
+      <p>{props.hours}h {props.minutes}min</p>
+    </div>
+  )
+}
+
+export default Movie
 ```
 
 Refresh the page and make sure everything works correctly.
