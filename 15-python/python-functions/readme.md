@@ -40,7 +40,7 @@ Naming conventions for functions in Python follow many of the same guidelines as
 * Not be a reserved keyword in Python (for example, no function can be named `def` or `if`)
 * Be concise. Python functions can be any length within reason, but try to keep the names short and to the point. Try to make the function name informative about what it does. 
 
-You can look into [more details here](https://www.dummies.com/programming/python/how-to-name-functions-in-python/) for more info about naming conventions in Python.
+You can look into [more details here](https://www.dummies.com/programming/python/how-to-name-functions-in-python/) for more info about naming conventions in Python. Also, need a keyword list? [Check this out](https://www.programiz.com/python-programming/keyword-list).
 
 #### Aside: Stubbing a function
 
