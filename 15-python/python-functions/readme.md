@@ -28,8 +28,9 @@ Notice the parts of the function:
 * `greeting`: The name of the function (can be alphanumeric + underscores - see details below)
 * `()`: An empty set of parentheses indicates that no data is expected to be passed into this function. Any parameters we want to define would go here
 * `:`: The colon here is important. It indicated the end of the function signature and the start of the function's code
+* `print('Hello world')`: This is the actual code that the function contains. 
 
-#### Aside - how should you name a Python function?
+#### Aside: Naming a Python function
 
 Naming conventions for functions in Python follow many of the same guidelines as naming variables. Your function in Python should:
 
@@ -40,3 +41,35 @@ Naming conventions for functions in Python follow many of the same guidelines as
 * Be concise. Python functions can be any length within reason, but try to keep the names short and to the point. Try to make the function name informative about what it does. 
 
 You can look into [more details here](https://www.dummies.com/programming/python/how-to-name-functions-in-python/) for more info about naming conventions in Python.
+
+#### Aside: Stubbing a function
+
+STUB
+
+## Parameters and Arguments
+
+Parameters and arguments both describe data that goes into a function. Generally the subtle difference is that arguments are the bits of data you pass in, and parameters are the names that the function uses to understand the data that was passed in to it.
+
+### A function with one parameter
+
+Here's a function with one parameter - let's modify our greeting function from above to allow a person's name to be passed in.
+
+```py
+def greeting(name):
+  print('Hello', name)
+  
+greeting('Erin')
+greeting('Paolo')
+greeting('Tanya')
+```
+
+We've called (executed) the function 3 times with different names. 
+Expected Output:
+
+```
+Hello Erin
+Hello Paolo
+Hello Tanya
+```
+
+In the above example, `name` is the parameter. It's the data as defined within the function. Arguments on the other hand are the data that is passed in when the function is called. In this case, 'Erin', 'Paolo', and 'Tanya' are all arguments being passed into the greeting function.
