@@ -7,7 +7,7 @@ After this lesson students will be able to
 * Write a Python function using the `def` keyword
 * Include parameters and return statements in a Python function
 * Describe the use of the `global` keyword
-* Use named parameters and default values for arguments to a function
+* Use named arguments and default values for arguments to a function
 
 ## The Basics
 
@@ -98,3 +98,19 @@ Hello Tanya
 ```
 
 In the above example, `name` is the parameter. It's the data as defined within the function. Arguments on the other hand are the data that is passed in when the function is called. In this case, 'Erin', 'Paolo', and 'Tanya' are all arguments being passed into the greeting function.
+
+### Multiple Parameters
+
+STUB
+
+### Named Arguments
+
+STUB
+
+### Default Values
+
+STUB
+
+## Global vs Local Variables
+
+STUB
