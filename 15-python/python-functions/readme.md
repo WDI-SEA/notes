@@ -44,7 +44,32 @@ You can look into [more details here](https://www.dummies.com/programming/python
 
 #### Aside: Stubbing a function
 
-STUB
+In JavaScript or another language, you may have done a process called "stubbing". This is a practice where you'd define functions, classes, routes, etc., with the intention of writing the actual code inside them later. It can be a useful practice when you want to plan out the overall structure of your program before getting into the line-by-line details of your code.
+
+```js
+function greeting() {
+  // TODO: Write this code later
+}
+```
+
+However, if you try to run this code in Python, you will get an error:
+
+```py
+def greeting():
+  # TODO: This is a job for future me!
+```
+
+The error you get looks like this:
+
+![Syntax Error](https://res.cloudinary.com/briezh/image/upload/c_scale,w_364/v1590000037/Screen_Shot_2020-05-20_at_11.39.42_AM_omq2ji.png)
+
+In order to make a stub in Python what we want to use is the [pass keyword](https://res.cloudinary.com/briezh/image/upload/c_scale,w_364/v1590000037/Screen_Shot_2020-05-20_at_11.39.42_AM_omq2ji.png). As you might have expected given the name, the `pass` keyword does nothing. It's a placeholder, exactly what we want! Let's modify our Python stub above with the `pass` keyword to make the code functional again.
+
+```py
+def greeting():
+  # TODO: This is a job for future me!
+  pass # This let's the function have one line of code that just does nothing
+```
 
 ## Parameters and Arguments
 
