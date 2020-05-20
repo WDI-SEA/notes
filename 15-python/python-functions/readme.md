@@ -101,16 +101,139 @@ In the above example, `name` is the parameter. It's the data as defined within t
 
 ### Multiple Parameters
 
-STUB
+Creating a function with multiple parameters in Python is a lot like creating a function with only one parameter. It's important to note that unless otherwise specified (see named arguments) the arguments are understood to be in order. Consider the following code:
+
+```py
+def about_me(fave_food, fave_animal, fave_place):
+  print('I love to eat', fave_food, 'while petting my', fave_animal, 'at', fave_place)
+  
+about_me('sushi', 'cat', 'the beach')
+```
+
+The expected output is `"I love to eat sushi while petting my cat at the beach"`. This is because "sushi", "cat", and "the beach" are provided in order corresponding to the parameters fave_food, fave_animal, and fave_place. Therefore, the values are assigned like this:
+
+* fave_food = "sushi"
+* fave_animal = "cat"
+* fave_place = "the beach"
+
+What happens if we mess up the order? For example, what is the output when the function is called like this:
+
+```py
+about_me("the beach", "sushi", "cat")
+```
+
+The output is a goofy non-sensical sentence because the parameters have been assigned like this:
+
+* fave_food = "the beach"
+* fave_animal = "sushi"
+* fave_place = "cat"
+
+What if we want or need to provide them out of order? What we need is named arguments!
 
 ### Named Arguments
 
-STUB
+Consider the above example code. When we tried to call the function with the arguments out of order, we got a mess:
+
+```py
+about_me("the beach", "sushi", "cat")
+```
+
+However, Python allows us to specify the names of the parameters if we wish. Try running this code:
+
+```py
+about_me(fave_place="the beach", fave_food="sushi", fave_animal="cat")
+```
 
 ### Default Values
 
-STUB
+Typically in Python, if we pass a wrong number of arguments in, we'll get an error - unlike JavaScript which just allows undefined arguments! However sometimes having a default value or an optional argument can be useful. For example, perhaps if a user does not provide a piece of information, we can make an assumption about what it is. If we have a function that stores user information and they don't provide whether their phone number is a work, home, or cell number, we can infer that it's a cell number.
+
+```py
+def accept_phone(number, phone_type):
+  print('The phone number', number, 'is a', phone_type, 'phone')
+```
+
+We can pass arguments as normal:
+
+```py
+accept_phone('555-1234', 'home')
+accept_phone('555-5678', 'cell')
+accept_phone('555-8765', 'work')
+```
+
+But what if we'd like to pass arguments like this and just assume that the type of phone is a cell?
+
+```py
+accept_phone('555-1122')
+```
+
+As the function is currently written we'll get an error telling us we've passed the wrong number of arguments. We can modify the function to accept a default of "cell" for the second argument.
+
+```py
+def accept_phone(number, phone_type="cell"):
+  print('The phone number', number, 'is a', phone_type, 'phone')
+```
+
+With this modification, test out the following functions. What do they print? Do they behave as expected?
+
+```py
+accept_phone('555-1234', 'home')
+accept_phone('555-5678', 'cell')
+accept_phone('555-8765', 'work')
+accept_phone('555-1122')
+```
 
 ## Global vs Local Variables
 
-STUB
+Python functions have their own scope, which can house separate variabled from the parent scope. If you want to use a global variable within your function, it will typically work as expected, however it is a good practice to indicate which values are global and in certain cases you will need to use it to disambiguate when there is a global and local variable with the same name.
+
+### Activity
+
+Run each of the following code snippets. What prints out? Was it what you expected? Why or why not?
+
+**Scenario 1: Only a global variable**
+
+```py
+def greeting():
+  print('Hello', name)
+
+name = 'Marco'
+greeting()
+```
+
+**Scenario 2: A global variable and a local variable**
+
+```py
+def greeting():
+  name = 'Maria'
+  print('Hello', name)
+
+name = 'Marco'
+greeting()
+```
+
+**Scenario 3: Using both variables**
+
+```py
+def greeting():
+  print('Hello', name)
+  name = 'Maria'
+  print('Hello', name)
+
+name = 'Marco'
+greeting()
+```
+
+**Scenario 4: Is this allowed?**
+
+```py
+def greeting():
+  global name
+  print('Hello', name)
+  name = 'Maria'
+  print('Hello', name)
+
+name = 'Marco'
+greeting()
+```
+You can [read more on it here](https://www.geeksforgeeks.org/global-local-variables-python/).
