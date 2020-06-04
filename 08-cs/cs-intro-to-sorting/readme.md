@@ -103,10 +103,11 @@ You may have heard people describe a sort as an "in-place" sort. This means that
 | Bucket Sort | Ω(n+k) | O(n<sup>2</sup>) | O(n+k) | Yes | Distribution | - |
 | Radix Sort | Ω(nk) | O(nk) | O(n+k) | Yes | Distribution | Variation of bucket sort; in place versions exist but are not stable | 
 | Merge Sort | Ω(n log(n)) | O(n log(n)) | O(n)* | Yes | Comparison | Divide and conquer, uses merges, *in-place version exists |
-| Quick Sort | Ω(n log(n)) | O(n log(n)) | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
+| Quick Sort | Ω(n log(n)) | O(n<sup>2</sup>)* | O(log(n)) | No | Comparison | Stable versions exist; uses partitioning |
 | Heap Sort | Ω(n log(n)) | O(n log(n)) | O(1) | No | Comparison | In-place, but not stable. Like improved selection sort |
 
 #### Notes about table
+* Quick sort has an *average* time complexity of n log(n), and is actually considered a "good" sort despite the fact that it has a quadratic time worse case scenario. In fact, on average, it's even faster than merge sort!
 * Many sorts such as merge sort or insertion sort have an in-place version of the algorithm, however, these solutions may be more complex to implement or have different time complexities than the basic algorithm
 * Quick sort has stable implementations available, however the time and space complexity of this alteration of the algorithm is different.
 * Quick sort performs worst on data sets with few unique values. An implementation called [Quick3](https://www.toptal.com/developers/sorting-algorithms/quick-sort-3-way) (because it has 3-way partitions instead of 2-way) solves this issue.
