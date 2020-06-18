@@ -268,8 +268,9 @@ And these insert statements:
 INSERT INTO movies (title, description, rating) VALUES('Cars', 'a movie', 9);
 INSERT INTO movies (title, description, rating) VALUES('Back to the Future', 'another movie', 9);
 INSERT INTO movies (title, description, rating) VALUES('Dude Wheres My Car', 'probably a bad movie', 3);
-INSERT INTO movies (title, description, rating) VALUES('Godfather', 'good movie', 10);
+INSERT INTO movies (title, description, rating) VALUES('Godfather', 'good movie', 9);
 INSERT INTO movies (title, description, rating) VALUES('Mystic River', 'did not see it', 7);
+INSERT INTO movies (title, description, rating) VALUES('Jurassic Park', 'dinos and Jeff Goldblum', 10)
 INSERT INTO movies (title, description, rating) VALUES('Argo', 'a movie', 8);
 INSERT INTO movies (title, description, rating) VALUES('Gigli', 'really bad movie', 1);
 ```
@@ -347,8 +348,6 @@ We could also use compound statements here:
 ```sql
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
-## LAB: 
-[Where in the world is Carmen San Diego?](https://github.com/WDI-SEA/sql-carmen-san-diego)
 
 ## Foreign Keys
 
@@ -373,11 +372,11 @@ CREATE TABLE books (
   author_id INT references authors(id)
 );
 
-INSERT INTO authors (first_name, last_name) VALUES ('J.K.', 'Rowling');
-INSERT INTO books (title, author_id) VALUES ('Harry Potter', 1);
+INSERT INTO authors (first_name, last_name) VALUES ('Alexandre', 'Dumas');
+INSERT INTO books (title, author_id) VALUES ('The Three Musketeers', 1);
 ```
 
-Use select statements to view the tables and make sure everything worked as expected. Now try to delete the Harry Potter book - what happened? If you delete the associated author, can you delete the book now?
+Use select statements to view the tables and make sure everything worked as expected. Now try to delete the Hobbit book - what happened? If you delete the associated author, can you delete the book now?
 
 Now practice planning out a more complex scenario! Use your own ideas, or try the following: 
 * customers (id, name, email)
@@ -392,5 +391,5 @@ Creating an ER diagram can be useful if you are designing a DB with lots of tabl
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
 * [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
 
-## Deliverable:
-[Apartments](https://github.com/WDI-SEA/apartment-database)
+## LAB: 
+[Where in the world is Carmen San Diego?](https://github.com/WDI-SEA/sql-carmen-san-diego)
