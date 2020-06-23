@@ -11,51 +11,47 @@ Today we're going to cover how to setup a one to many relationship, using more t
 
 ## Getting Started
 
-Creating a blog.
-
-```
-npm init -y
-
-npm install express ejs pg sequelize
-
-createdb blog
-
-sequelize init
-```
-
-Make sure to setup `config.json` with postgres settings.
+We're going to build off the `userapp` we created in the intro to sequelize. A bit of a recap on how to start an express sequelize app:
+1. Create a directory for your app
+2. `cd` into that directory
+3. Create your express route entry point (often `index.js`, `app.js`, or `server.js`)
+4. Initialize npm with `npm init -y`
+5. Install your dependencies `npm i express pg sequelize`
+6. Create your Database (either using sequelize-cli or in your psql shell)
+7. Initialize Sequelize with `sequelize init`
+8. Edit your `config.json` file
 
 ## Creating A Model
 
-There are a few things to remember when creating models. Models shall be lowercase and singular. Sequlize will automatically create plural tables when any migrations are run. Also id, createdAt, and updatedAt fields are given for you.
+There are a few things to remember when creating models. Models shall be lowercase and singular. Sequlize will automatically create plural tables when any migrations are run. Also id, createdAt, and updatedAt fields are given for you. When we created our user, we ran this command:
 
 ```
-sequelize model:create --name author --attributes name:string
+sequelize model:create --name user --attributes firstName:string,lastName:string,age:integer,email:string
 ```
 
 When creating a table that will reference another table, use the following format, `parentId`, when adding the foreign key to the table. This format is necessary for some of built in methods of Sequelize.
 
 ```
-sequelize model:create --name post --attributes title:string,content:text,authorId:integer
+sequelize model:create --name pet --attributes name:string,species:string,description:text,userId:integer
 ```
 
 ### Adding the Associations
 
 The following lines need to be inserted into the author and post models respectively in the `associate` function. The comment line is where you will insert it.
 
-Insert into **models/author.js**, inside the `associate` function
+Insert into **models/user.js**, inside the `associate` function
 
 ```js
 associate: function(models) {
-  models.author.hasMany(models.post);
+  models.user.hasMany(models.pet);
 }
 ```
 
-Insert into **models/post.js**, inside the `associate` function
+Insert into **models/pet.js**, inside the `associate` function
 
 ```js
 associate: function(models) {
-  models.post.belongsTo(models.author);
+  models.pet.belongsTo(models.user);
 }
 ```
 
@@ -76,49 +72,49 @@ Once the association is set up, we can use the `createModel`, `getModels`, `setM
 We can use the `createPost` method to create a new post associated with an author. Remeber to use the `.then` promise.
 
 ```js
-db.author.findOne().then(function(author) {
-  author.createPost({
-    title: 'Post title',
-    content: 'this is the post content'
-  }).then(function(post) {
-    console.log(post.get());
+db.user.findOne().then(function(user) {
+  user.createPet({
+    name: 'Spot',
+    species: 'Mutt Dog'
+  }).then(function(dog) {
+    console.log(dog.get());
   });
 });
 ```
 
 ### Loading associated items using `getModels`
 
-We can manually get all posts of an author by calling `.getPosts()` on an author instance. Remember this query is asynchronous and takes time, so we have to  use a `.then()` promise too.
+We can manually get all pets of a user by calling `.getPets()` on a user instance. Remember this query is asynchronous and takes time, so we have to  use a `.then()` promise too.
 
 ```js
-db.author.findOne().then(function(author) {
-  //load posts for this author
-  author.getPosts().then(function(posts) {
-    //do something with posts here
+db.user.findOne().then(function(user) {
+  //load pets for this user
+  user.getPets().then(function(pets) {
+    //do something with pets here
   });
 });
 ```
 
 ### Other methods
 
-`setModel` and `addModel` are used to associate an existing record. If you created a post and later wanted to add an association to an author this is how you'd do it.
+`setModel` and `addModel` are used to associate an existing record. If you created a pet and later wanted to add an association to an user this is how you'd do it.
 
 ```js
-db.author.findOne().then(function(author) {
-  //associate previously loaded post instance
-  author.addPost(post);
+db.user.findOne().then(function(user) {
+  //associate previously loaded pet instance
+  user.addPost(pet);
 });
 ```
 
 ## Using `include`
 
-Sequeize supports "eager loading", meaning it can load all of the posts for us in advance if we know we need them. We let it know what we need by using `include`.
+Sequeize supports "eager loading", meaning it can load all of the pets for us in advance if we know we need them. We let it know what we need by using `include`.
 
 ```js
-db.author.findAll({
+db.user.findAll({
   include: [db.post]
-}).then(function(authors){
-  // authors will have a .posts key with an array of posts
-  console.log(author.posts);
+}).then(function(users){
+  // users will have a .pets key with an array of pets
+  console.log(users[0].pets);
 });
 ```
