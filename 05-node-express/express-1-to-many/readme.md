@@ -100,9 +100,20 @@ db.user.findOne().then(function(user) {
 `setModel` and `addModel` are used to associate an existing record. If you created a pet and later wanted to add an association to an user this is how you'd do it.
 
 ```js
-db.user.findOne().then(function(user) {
-  //associate previously loaded pet instance
-  user.addPost(pet);
+db.pet.findOrCreate({
+  where: {
+    name: 'Simba',
+    species: 'Ginger Cat'
+  },
+  defaults: {
+    description: 'Traumatised by a very jealous toy aussie, Simba is very cute but rarely comes out to play'
+  }
+}).then(function([pet, created]) {
+  db.user.findOne().then(function(user) {
+    //associate previously loaded pet instance
+    user.addPet(pet);
+    console.log('User ' + user.firstName + ' is the owner of ' + pet.name);
+  });
 });
 ```
 
@@ -112,7 +123,7 @@ Sequeize supports "eager loading", meaning it can load all of the pets for us in
 
 ```js
 db.user.findAll({
-  include: [db.post]
+  include: [db.pet]
 }).then(function(users){
   // users will have a .pets key with an array of pets
   console.log(users[0].pets);
