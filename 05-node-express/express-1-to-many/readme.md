@@ -69,7 +69,7 @@ Once the association is set up, we can use the `createModel`, `getModels`, `setM
 
 ### Creating an associated item with `createModel`
 
-We can use the `createPost` method to create a new post associated with an author. Remeber to use the `.then` promise.
+We can use the `createPet` method to create a new post associated with an author. Remeber to use the `.then` promise.
 
 ```js
 db.user.findOne().then(function(user) {
@@ -77,7 +77,7 @@ db.user.findOne().then(function(user) {
     name: 'Spot',
     species: 'Mutt Dog'
   }).then(function(dog) {
-    console.log(dog.get());
+    console.log(dog.name);
   });
 });
 ```
