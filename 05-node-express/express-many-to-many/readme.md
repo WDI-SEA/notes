@@ -23,9 +23,9 @@ We will be expanding our data model in `userapp` to include toys for our pets.
 
 
 ```
-sequelize model:create --name toys --attributes type:string,color:string
+sequelize model:create --name toy --attributes type:string,color:string
 
-sequelize model:create --name petsToys --attributes petId:integer,toysId:integer
+sequelize model:create --name petsToys --attributes petId:integer,toyId:integer
 ```
 
 ## Update your Associations
@@ -52,24 +52,11 @@ toys.associate = function(models) {
 
 ## Examples
 
-### Create a pet
-
-```js
-db.pet.findOrCreate({
-  where: {
-    name: "Ruby Tuesday",
-    species: "Toy Aussie"
-  }
-}).then(function([pet, created]) {
-  console.log(pet.get());
-});
-```
-
 ### Add a unique toy to a pet.
 
-In order to add a unique toy to a pet, we must first try to find or create a toy, in order to make sure it is in fact unique.
+In order to add a unique toy to a pet, we must first try to find or create a pet, in order to make sure it is in fact unique.
 
-Secondly, we must attach a pet to the toys, using some built in helpers.
+Secondly, we must attach a toy to the pet, using some built in helpers.
 
 Some ORM has capabilities to do a bulk create on an object associations, but that kind of logic is not built in Sequelize.
 
@@ -77,34 +64,126 @@ Some ORM has capabilities to do a bulk create on an object associations, but tha
 // First, get a reference to a pet.
 db.pet.findOrCreate({
   where: {
-    name: "Ruby Tuesday",
-    species: "Toy Aussie"
+    name: "Silly May",
+    species: "Mini Aussie"
   }
 }).then(function([pet, created]) {
   // Second, get a reference to a toy.
   db.toy.findOrCreate({
-    where: {type: "ball", color: "green"}
+    where: {type: "stinky bear", color: "brown"}
   }).then(function([toy, created]) {
     // Finally, use the "addModel" method to attach one model to another model.
-    pet.addToy(toy).then(function(toy) {
+    pet.addToy(toy).then(function(relationInfo) {
       console.log(toy.type, "added to", pet.name);
     });
   });
 });
 ```
+Take some time to use these helper functions to add more toys and more pets!
 
 ### Get all pets that use a toy
 
 Sequelize generates helper functions that allow you to get related items. For instance, if you wanted to find all pets that used a given toy:
 
 ```js
-db.toy.find({
+db.toy.findOne({
   where: {type: "ball"}
 }).then(function(toy) {
   toy.getPets().then(function(pets) {
-    pets.forEach(function(pet) {
-      console.log(pet.name, 'loves the', toy.type);
+    console.log(pets.length, 'pet(s) love the', toy.color, toy.type)
+  });
+});
+```
+You can use the `addModel()` helper function to add a pet association on a toy if there are no pet associations yet.
+
+```js
+db.toy.findOrCreate({
+  where: {type: "ball", color: "green"}
+}).then(function([toy, created]) {
+  toy.getPets().then(function(pets) {
+    // Check if their are any pets associated with this toy
+    if (pets.length > 0) {
+      pets.forEach(function(pet) {
+        console.log(pet.name, 'loves their', toy.color, toy.type);
+      });
+    } else {
+      // findOrCreate a Pet and add it to the toy
+      db.pet.findOrCreate({
+        where: {
+          name: "Ruby Tuesday",
+          species: "Toy Aussie"
+        }
+      }).then(function([pet, created]) {
+        toy.addPet(pet).then(function(relationInfo){
+          console.log(pet.name, 'has faved the', toy.color, toy.type, 'toy')
+        })
+      });
+    } // end of if statement
+  });
+});
+```
+
+Because this is a Many to Many association, all the logic from before can be turned around to search for all the toys of a particular pet!
+
+```js
+db.pet.findOne({
+  where: {name: "Ruby Tuesday"}
+}).then(function(pet) {
+  pet.getToys().then(function(toys) {
+    toys.forEach(function(toy) {
+      console.log(pet.name, 'loves their', toy.color, toy.type);
     });
   });
 });
+```
+
+> NOTE: In the above code, if Ruby Tuesday doesn't have any toys, that `forEach` function will crash the nodemon server! 
+> Make sure you have error handling so your whole app doesn't shut down because one pet isn't materialistic!
+
+### Get all the data!
+
+Since we have a 1:M relationship between users and pets as well as a N:M relationship between pets and toys, we can get all our info through the Pet model. One of the easier ways of doing this is through the `include` keyword:
+
+```js
+db.pet.findOne({
+  where: {
+    name: "Silly May"
+  },
+  include: [db.user, db.toy]
+}).then(function(pet) {
+  pet.toys.forEach(function(toy) {
+    console.log(pet.user.firstName + '\'s pet', pet.name, 'loves their', toy.color, toy.type)
+  })
+})
+```
+
+Or we can use a mix of `include` and helper functions to get all the toys of all the pets of a certain user!
+
+```js
+db.user.findByPk(1, { include: [db.pet] })
+.then(function(user) {
+  user.pets.forEach(function(pet) {
+    pet.getToys().then(function(toys) {
+      toys.forEach(function(toy) {
+        console.log(user.firstName + '\'s pet', pet.name, 'loves their', toy.color, toy.type)
+      })
+    })
+  })
+})
+```
+
+As you can see, there are MANY (to) MANY ways to get associated data when it is needed. It's also easy to see how easy it can be to get lost in nesting hell. One way to help keep things clean is to comment the end of each section. 
+If we take the last block of code as an example:
+
+```js
+db.user.findByPk(1, { include: [db.pet] })
+.then(function(user) {
+  user.pets.forEach(function(pet) {
+    pet.getToys().then(function(toys) {
+      toys.forEach(function(toy) {
+        console.log(user.firstName + '\'s pet', pet.name, 'loves their', toy.color, toy.type)
+      }) // toys.forEach end
+    }) // getToys end
+  }) // pets.forEach end
+}) // user.findByPk end
 ```
