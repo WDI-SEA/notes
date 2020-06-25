@@ -5,95 +5,103 @@
 * Create a join table and utilize it in a many-to-many relationship
 * Use Sequelize's helper methods to add relationships between two different models.
 
-If we wanted to expand our models to include a many to many relationship, we can use a many to many relationship via a join table. We will be expanding our data model to include posts and tags.
+## To Join the Many
 
-> **Very Important** Name - your models `singular`
+When creating a many to many relationship, we need to have some way of creating that relationship. With a 1:M relationship, the id of the one is attached to the many (`pets.userId` in the 1:M relationship in our `userapp`). What do we do when there is no 1? When everything is many, we have to have some place to put the corrosponding ids.
+
+Enter join tables! These tables have a one to many relationship with each of the relevant tables. 
+
+![An er diagram featuring a many to many relationship with students and classes and a join table called enrollments](https://fmhelp.filemaker.com/help/18/fmp/en/FMP_Help/images/relational.07.06.1.png)
+
+Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `products_orders`.
+
+## Sequelize models
+
+We will be expanding our data model in `userapp` to include toys for our pets.
+
+> **Very Important** Name - your models `singular`, but your join model will be plural.
+
 
 ```
-sequelize model:create --name post --attributes title:string,body:string,authorName:string
+sequelize model:create --name toys --attributes type:string,color:string
 
-sequelize model:create --name tag --attributes name:string
-
-sequelize model:create --name postsTags --attributes postId:integer,tagId:integer
+sequelize model:create --name petsToys --attributes petId:integer,toysId:integer
 ```
 
 ## Update your Associations
 
-In order to associate posts to tags in a many to many fashion, you will need to update the associations on the posts and tags.
+In order to associate pets to toys in a many to many fashion, you will need to update the associations on the pets and toys.
 
-### post.js
+### pet.js
 
 ```js
 associate: function(models) {
- models.post.belongsToMany(models.tag, {through: "postsTags"})
+ models.pet.belongsToMany(models.toy, {through: "petsToys"})
 }
 ```
 
-### tags.js
+### toys.js
 
 ```js
 associate: function(models) {
-  models.tag.belongsToMany(models.post, {through: "postsTags"})
+  models.toy.belongsToMany(models.pet, {through: "petsToys"})
 }
 ```
 
 ## Examples
 
-### Create a post
+### Create a pet
 
 ```js
-db.post.findOrCreate({
+db.pet.findOrCreate({
   where: {
-    title: "taco",
-    body: "burrito",
-    authorName: "Brian"
+    name: "Ruby Tuesday",
+    species: "Toy Aussie"
   }
-}).spread(function(post, created) {
-  console.log(post.get());
+}).then(function([pet, created]) {
+  console.log(pet.get());
 });
 ```
 
-### Add a unique tag to a Post.
+### Add a unique toy to a pet.
 
-In order to add a unique tag to a post, we must first try to find or create a tag, in order to make sure it is in fact unique.
+In order to add a unique toy to a pet, we must first try to find or create a toy, in order to make sure it is in fact unique.
 
-Secondly, we must attach a post to the tags, using some built in helpers.
+Secondly, we must attach a pet to the toys, using some built in helpers.
 
 Some ORM has capabilities to do a bulk create on an object associations, but that kind of logic is not built in Sequelize.
 
 ```js
-// First, get a reference to a post.
-db.post.findOrCreate({
+// First, get a reference to a pet.
+db.pet.findOrCreate({
   where: {
-    title: "taco",
-    body: "burrito",
-    authorName: "Brian"
+    name: "Ruby Tuesday",
+    species: "Toy Aussie"
   }
-}).spread(function(post, created) {
-  // Second, get a reference to a tag.
-  db.tag.findOrCreate({
-    where: {name: "food"}
-  }).spread(function(tag, created) {
+}).then(function([pet, created]) {
+  // Second, get a reference to a toy.
+  db.toy.findOrCreate({
+    where: {type: "ball", color: "green"}
+  }).then(function([toy, created]) {
     // Finally, use the "addModel" method to attach one model to another model.
-    post.addTag(tag).then(function(tag) {
-      console.log(tag, "added to", post);
+    pet.addToy(toy).then(function(toy) {
+      console.log(toy.type, "added to", pet.name);
     });
   });
 });
 ```
 
-### Get all posts that use a tag
+### Get all pets that use a toy
 
-Sequelize generates helper functions that allow you to get related items. For instance, if you wanted to find all posts that used a given tag:
+Sequelize generates helper functions that allow you to get related items. For instance, if you wanted to find all pets that used a given toy:
 
 ```js
-db.tag.find({
-  where: {name: "food"}
-}).then(function(tag) {
-  tag.getPosts().then(function(posts) {
-    console.log("These posts are tagged with " + tag.name + ":");
-    posts.forEach(function(post) {
-      console.log("Post title: " + post.title);
+db.toy.find({
+  where: {type: "ball"}
+}).then(function(toy) {
+  toy.getPets().then(function(pets) {
+    pets.forEach(function(pet) {
+      console.log(pet.name, 'loves the', toy.type);
     });
   });
 });
