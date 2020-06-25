@@ -35,17 +35,19 @@ In order to associate pets to toys in a many to many fashion, you will need to u
 ### pet.js
 
 ```js
-associate: function(models) {
- models.pet.belongsToMany(models.toy, {through: "petsToys"})
-}
+ pet.associate = function(models) {
+   // associations can be defined here
+   models.pet.belongsTo(models.user);
+   models.pet.belongsToMany(models.toy, {through: "petsToys"})
+ };
 ```
 
 ### toys.js
 
 ```js
-associate: function(models) {
-  models.toy.belongsToMany(models.pet, {through: "petsToys"})
-}
+toys.associate = function(models) {
+   models.toy.belongsToMany(models.pet, {through: "petsToys"})
+ };
 ```
 
 ## Examples
