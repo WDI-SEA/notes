@@ -37,8 +37,8 @@ You should see some indication that you're in a virtual environment in your shel
 
 Now that we have a virtual environment set up, we need to install some things:
 
-* `sqlalchemy`—The ORM that we'll be using
-* `psycopg2`—It's a python driver for our postgres database
+* `sqlalchemy`—The ORM that we'll be using `pip install sqlalchemy`
+* `psycopg2`—It's a python driver for our postgres database `pip install psycopg2`
 
 ## Models
 
