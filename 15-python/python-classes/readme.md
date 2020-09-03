@@ -1,6 +1,6 @@
 # Intro to Classes
 
-##Objectives
+## Objectives
 * Understand difference between objects and classes
 * Understand how classes are defined
 * Understand how objects are initialized
