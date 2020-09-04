@@ -9,7 +9,7 @@
 
 ## Overview
 
-SQLAlchemy is python SQl toolkit and an ORM. Often used with Flask, it abstracts the SQL commands while still leaving the control in the developer's care.
+SQLAlchemy is python SQL toolkit and an ORM. Often used with Flask, it abstracts the SQL commands while still leaving the control in the developer's care.
 
 From [the SQLAlchemy website](https://www.sqlalchemy.org/):
 > ...Instead of hiding away SQL and object relational details behind a wall of automation, all processes are fully exposed within a series of composable, transparent tools. The library takes on the job of automating redundant tasks while the developer remains in control of how the database is organized and how SQL is constructed.
