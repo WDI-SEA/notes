@@ -641,7 +641,6 @@ Every selector has its place in the specificity hierarchy, and if two selectors 
 A couple of rules to think about:
 
 * If two selectors apply to the same element, the one with higher specificity wins
-* When selectors have an equal specificity value, the latest rule is the one that counts
 * When selectors have an unequal specificity value, the more specific rule is the one that counts
 * Rules with more specific selectors have a greater specificity
 * The last rule defined overrides any previous, conflicting rules
