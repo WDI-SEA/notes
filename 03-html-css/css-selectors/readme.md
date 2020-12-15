@@ -520,6 +520,98 @@ li#not {
 
 Now, all our list items are centered but the top item has a different font than the bottom.
 
+You might be asking yourself, *"why did we need to specifically select the li elements with the class of why using `li.why`? Why not just select them with `.why`?"* Reasonable question and the answer is that we would achieve the same effect by using `.why` as the selector, but let's look at the utility of `li.why` by adding a span with the `why` class and givng all `why` elements an underline:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Intro to CSS</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <p>This is a paragraph element</p>
+
+    <div>This is a DIV</div>
+    <div>This is another DIV</div>
+
+    <div class="comments">
+      Hello
+    </div>
+
+    <div class="comments">
+      Hello
+    </div>
+
+    <div class="comments">
+      Hello
+    </div>
+
+    <section id="dolphin">
+      I am a dolphin
+    </section>
+
+    <p class="first second">Multiple classes</p>
+
+    <ul>
+      <li class="why">Why a dolphin?</li>
+      <li class="why" id="not">Why not?</li>
+    </ul>
+  </body>
+</html>
+```
+
+```css
+body {
+  background: red;
+}
+
+p {
+  color: orange;
+}
+
+div {
+  border: 1px solid black;
+}
+
+.comments {
+  font-weight: bold;
+  color: #64FE2E; /* green */
+}
+
+#dolphin {
+  font-style: italic;
+  color: #0040FF; /*blue*/
+}
+
+.first {
+  font-size: 40px;
+}
+
+.second {
+  color: white;
+}
+
+li {
+  text-align: center;
+}
+
+li.why {
+  font-family: sans-serif;
+}
+
+li#not {
+  font-family: serif;
+}
+
+.why {
+  text-decoration: underline;
+}
+```
+
+
 
 ## Specificity in CSS
 
