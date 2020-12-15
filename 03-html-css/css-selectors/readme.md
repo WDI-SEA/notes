@@ -423,7 +423,7 @@ div {
 }
 
 .second {
-  color: red;
+  color: white;
 }
 ```
 
@@ -502,7 +502,7 @@ div {
 }
 
 .second {
-  color: red;
+  color: white;
 }
 
 li {
