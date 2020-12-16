@@ -26,7 +26,9 @@
 * also used as a backend language, using Node.js
 * working on [ECMAScript 6](https://github.com/lukehoban/es6features)
 
-## [Repl.it](https://repl.it/@tmdarneille/JSPrimitives#index.js) from today's lesson
+### Repl.it
+[Repl.it](https://repl.it/) is a quick and easy tool for practicing Javascript (and other languages!) that we'll use throughout the class.
+Here is a [Repl.it](https://repl.it/@tmdarneille/JSPrimitives#index.js) with the code from this lesson you can reference later, but for now open up a new repl of your own to code along to this lesson in!
 
 ## Comments
 
