@@ -659,3 +659,6 @@ CSS can be really fun or a total nightmare. You have to remember a few rules, bu
 * Describe the differences between classes and IDs.
 * Identify the popular CSS properities we used today.
 * What are the use cases for inline styling vs. internal/external style sheets?
+
+### Reference Repo
+Here is a [repo](https://github.com/TaylorDarneille/css-basics) with the code from this code-along.
