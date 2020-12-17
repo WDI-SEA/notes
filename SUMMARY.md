@@ -46,6 +46,7 @@
     * [Promises](02-js-jquery/js-control-flow/05promises.md)
   * [Functions](02-js-jquery/js-functions/01functions.md)
     * [Callbacks](02-js-jquery/js-functions/02callbacks.md)
+    * [Higher Order Functions](02-js-jquery/js-functions/higher-order-functions.md)
     * [Timing Functions](02-js-jquery/js-functions/03timing-functions.md)
     * [Timing Functions (ES6)](02-js-jquery/js-functions/03-es6-timing-functions.md)
     * [Callbacks & Timing Functions Lab](02-js-jquery/js-functions/callbacks-review-lab.md)
