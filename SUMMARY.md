@@ -48,6 +48,7 @@
     * [Callbacks](02-js-jquery/js-functions/02callbacks.md)
     * [Timing Functions](02-js-jquery/js-functions/03timing-functions.md)
     * [Timing Functions (ES6)](02-js-jquery/js-functions/03-es6-timing-functions.md)
+    * [Callbacks & Timing Functions Lab](02-js-jquery/js-functions/callbacks-review-lab.md)
     * [Iterators](02-js-jquery/js-functions/04iterators.md)
     * [Iterators (ES6)](02-js-jquery/js-functions/04-es6-iterators.md)
   * [DOM: Javascript in the browser](02-js-jquery/js-dom/00interactivity.md)
