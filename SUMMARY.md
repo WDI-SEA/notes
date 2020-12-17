@@ -73,6 +73,7 @@
     * [Prototypes](02-js-jquery/js-prototypes/03prototypes.md)
   * [Intro to TDD](02-js-jquery/js-tdd-intro/readme.md)
   * [Scoping](02-js-jquery/js-scopes/readme.md)
+  * [Scope Lesson V2](02-js-jquery/js-scopes/scopev2.md)
   * [Inheritance](02-js-jquery/js-inheritance/01readme.md)
     * [Prototypal Inheritance](02-js-jquery/js-inheritance/02prototypalinheritance.md)
     * [Call, Apply, and other Functions](02-js-jquery/js-inheritance/03callapplyfunctions.md)
