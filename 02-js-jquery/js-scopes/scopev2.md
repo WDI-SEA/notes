@@ -108,14 +108,8 @@ Since it is good practice for a function to **do only one thing**, we can have m
 A function can take the **return value** of another function and put it to good use.
 
 **Question**
-<details>
-<summary>If everything has a scope, our functions are declared in a scope. In which scope have we been declaring our functions? </summary>
-<br>
-answer: global scope
-<br>
-</br>
-</details>
-<br>
+
+If everything has a scope, our functions are declared in a scope. In which scope have we been declaring our functions?
 
 Let's build two interacting functions from the ground up, both will be defined in the global scope:
 
