@@ -109,7 +109,7 @@
   * [Node](05-node-express/node-intro/00readme.md)
     * [Intro to Node](05-node-express/node-intro/01Intro-to-Node.md)
     * [Node Modules](05-node-express/node-intro/02modules.md)
-    * [Node Package Manager (NPM)](05-node-express/node-intro/03packages.md)
+    * [Node Packages](05-node-express/node-intro/03packages.md)
     * [More on custom Node Modules](02-js-jquery/js-custom-node-module/readme.md)
   * [Express](05-node-express/express-intro/00readme.md)
     * [Intro to Express](05-node-express/express-intro/01Intro-to-Express.md)
