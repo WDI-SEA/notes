@@ -173,3 +173,4 @@ In the main directory of your project, create a `partials` folder that includes 
 #### Excercise
 
 Create a footer partial and include the header and footer partials on all three of your pages.
+
