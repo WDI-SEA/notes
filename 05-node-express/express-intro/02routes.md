@@ -10,7 +10,7 @@ Let's look at a more complex example. Go to reddit.com and search for "cute pupp
 
 Let's break this down:
 
-* Base URL \(consists of the protocol \(https\) and the domain \(www.reddit.com)):
+* Base URL \(consists of the protocol \(https\) and the domain \(www.reddit.com\)\):
 
   [_https://www.reddit.com_](https://www.reddit.com)
 
@@ -18,7 +18,7 @@ Let's break this down:
 
   _/search_
 
-* Query String \(a key=value way of sending data with the request):
+* Query String \(a key=value way of sending data with the request\):
 
   _?q=cute%20puppies_
 
@@ -83,7 +83,7 @@ By design, the express `get()` function will pass two arguments into the callbac
 
 ## The Request and Response Objects
 
-Our callback functions for our routes _(which are sometimes referred to as Controllers)_ receive two very special objects from Express. They are provided to our function very much like the `event` object holding all the event data is passed into our event listener callbacks, or like each item in an array is passed into our `forEach()` callback.
+Our callback functions for our routes receive two very special objects from Express. They are provided to our function very much like the `event` object holding all the event data is passed into our event listener callbacks, or like each item in an array is passed into our `forEach()` callback.
 
 ### request
 
@@ -294,3 +294,4 @@ As you can see, we don't need to do anything special to our URL pattern. Any rou
 ## Conclusion
 
 In this example, we focused on the URL patterns. The HTTP verbs will come into play more when we start working with true CRUD functionality. For now, everything is a GET request.
+
