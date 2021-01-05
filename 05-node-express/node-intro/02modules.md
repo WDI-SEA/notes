@@ -15,11 +15,8 @@ In Node, `module.exports` is an object that will hold the code to be exported. W
 Add the following code to your `myModule.js` file:
 
 ```javascript
-module.exports.beBasic = function() {
-    return "That's so fetch.";
-}
+module.exports.beBasic = () => "That's so fetch!"
 ```
-> NOTE: To write it with ES6 syntax `module.exports.beBasic = () => "That's so fetch!"`
 
 Now, our module.exports object has a key-value pair where the key is `beBasic` and the value is a function.
 
@@ -46,8 +43,8 @@ Let's add some more code to our module. In `myModule.js`, add the following code
 ```javascript
 module.exports.beBasic = () => "That's so fetch!"
 
-const countTo = (max) => {
-    for (let i = 0; i <= max; i++) {
+const count = () => {
+    for (var i = 0; i <= 10; i++) {
         console.log(i);
     }
 }
@@ -59,7 +56,7 @@ Now call this new count function from `index.js`:
 const myModule = require('./myModule.js');
 
 myModule.beBasic();
-myModule.countTo(10);
+myModule.count();
 ```
 
 Try running this code in the command line: `node index.js`
@@ -68,7 +65,7 @@ What happened? Why didn't this work?
 
 _The exported module will only contain the code that is encapsulated in the_ `module.exports` _object!_
 
-How do we get our `countTo` function to run? Make this happen.
+How do we get our `count` function to run? Make this happen.
 
 Functions aren't the only things we can export! Try adding some other types of data to your module.
 
@@ -93,7 +90,7 @@ Write the following code to your entry point file:
 ```javascript
 var fs = require('fs');
 
-fs.readFile('story.txt', 'utf8', (err, data) => {
+fs.readFile('story.txt', 'utf8', function(err, data){
     if(err) {
         console.log("There was a problem reading the file.");
     } else {
@@ -106,7 +103,7 @@ Run `index.js` to read your story in the terminal!
 
 For more on the `fs` module, see [w3schools](https://www.w3schools.com/nodejs/ref_fs.asp).
 
-Research different `fs` module functionality and try adding to your story using `fs.write()`.
+Try adding to your story using `fs.write()`.
 
 ### Exercise: HTTP core module
 
@@ -118,18 +115,23 @@ In this excercise, you will make a Hello World app from scratch by using the the
 2. Initialize Node in this directory.
 3. Create your entry point file.
 4. Import the `http` module into your entry file. \(Hint: use the `require` function\)
-5. Create an http server that listens to `port 8000` and writes `Hello, World!` to the client. \(Hint: read about the core http module on [w3schools](https://www.w3schools.com/nodejs/nodejs_http.asp)\)
+5. Create an http server that listens to `port 8000` and writes `Hello, World!` to the client. \(Hint: look up the core http module on [w3schools](https://www.w3schools.com/nodejs/nodejs_http.asp)\)
 6. Run the server using the command `node index.js`.
 7. Check to see that your program is working by visiting `localhost:8000` in your browser.
 
 <details><summary>SOLUTION</summary>
-<code>
+<p>
+
+```js  
  const http = require('http')  
   
  http.createServer((req, res)=>{  
    res.write('Hello, World!')  
    res.end()  
  }).listen(8000)
- </code>
+ ```
+
+</p>
 </details>
+
 
