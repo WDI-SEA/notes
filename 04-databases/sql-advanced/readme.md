@@ -95,7 +95,7 @@ Now `SELECT * FROM orders;` and you should see this table:
 
 ## Order of SQL Clauses
 
-![SQL Clauses](../.gitbook/assets/SQLClauses.png)
+![SQL Clauses](./SQLClauses.png)
 
 ## Selecting Specific Data
 
@@ -238,7 +238,7 @@ There are four types of JOINs in SQL:
 * `INNER JOIN`
 * `FULL [OUTER] JOIN`
 
-![4 Types of JOINs](../.gitbook/assets/sql_joins.png)
+![4 Types of JOINs](./sql_joins.png)
 
 Let's look at our table for customers and our table for orders. The customers table looks like this:
 
