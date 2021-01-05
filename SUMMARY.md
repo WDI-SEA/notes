@@ -311,6 +311,8 @@
   * [Intro to WDI (Course Info)](09-other-topics/intro-wdi/readme.md)
   * [Being Successful in WDI](09-other-topics/success-in-wdi/readme.md)
   * [Internet Fundamentals](09-other-topics/internet-fundamentals/readme.md)
+    * [Internet Fundamentals V2](09-other-topics/internet-fundamentals/internet-fundamentals.md)
+    * [Full Stack Slide Deck](https://docs.google.com/presentation/d/1qlTcmXNVMtinorzdL9G2lGDENDJdkUd8-LuSNUsqtiU/edit#slide=id.p)
     * [Internet Lab](09-other-topics/internet-fundamentals/internetlab.md)
   * [User Stories and Wireframing](09-other-topics/user-stories-wireframing/readme.md)
     * [Wireframing Exercise: Build an Idea](09-other-topics/user-stories-wireframing/exercise.md)
