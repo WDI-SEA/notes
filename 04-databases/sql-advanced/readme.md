@@ -1,6 +1,7 @@
 # Advanced SQL
 
 ## Objectives
+
 * Describe the uses of advanced queries like subqueries and unions
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
@@ -36,7 +37,7 @@ INSERT INTO customers (name, age, country, salary) VALUES ('Silvana', null, null
 
 You should be able to SELECT all the data and see this output:
 
-```
+```text
  id |  name   | age | country | salary 
 ----+---------+-----+---------+--------
   1 | Bira    |  32 | Brazil  |   2000
@@ -46,7 +47,6 @@ You should be able to SELECT all the data and see this output:
   5 | Amelia  |  27 | England |   8500
   6 | Silvana |     |         |   4500
 (6 rows)
-
 ```
 
 Now let's make a friend for it. Create a new 'orders' table:
@@ -77,7 +77,7 @@ INSERT INTO orders (order_num, amount, customer_id) VALUES ('B7780B', 182.72 , 6
 
 Now `SELECT * FROM orders;` and you should see this table:
 
-```
+```text
  id | order_num | amount | customer_id 
 ----+-----------+--------+-------------
   1 | A2067O    | 104.09 |           1
@@ -95,7 +95,7 @@ Now `SELECT * FROM orders;` and you should see this table:
 
 ## Order of SQL Clauses
 
-![SQL Clauses](SQLClauses.png)
+![SQL Clauses](../.gitbook/assets/SQLClauses.png)
 
 ## Selecting Specific Data
 
@@ -120,18 +120,20 @@ Remember that in SQL, our comparison operators are a little different. Equality 
 - % - SELECT * FROM customers WHERE name LIKE '%a';
 ```
 
-## COUNT()
+## COUNT\(\)
 
-COUNT() is an *aggregate function*.
+COUNT\(\) is an _aggregate function_.
 
 "In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
 
 We use an aggregate function to get the total count of customers in a table.
+
 ```sql
 SELECT COUNT(*) FROM customers;
 ```
 
-What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint? 
+What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint?
+
 ```sql
 SELECT COUNT(age) FROM customers;
 ```
@@ -139,16 +141,19 @@ SELECT COUNT(age) FROM customers;
 ## GROUP BY
 
 GROUP BY is used to pull together identical data points. For example, say we just want to see the different ages we have in our customer table, without having to look through the duplicates too.
+
 ```sql
 SELECT age FROM customers GROUP BY age;
 ```
 
-What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT():
+What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT\(\):
+
 ```sql
 SELECT age, COUNT(age) FROM customers GROUP BY age;
 ```
 
 Or maybe we want the average salaries of the customers from each country:
+
 ```sql
 SELECT country, AVG(salary) FROM customers GROUP BY country;
 ```
@@ -184,7 +189,7 @@ CREATE TABLE orders (
 );
 ```
 
-That last column we defined is called a **FOREIGN KEY**. Foreign keys and primary keys are related in that a foreign key is basically a reference to a primary key in another table. In this case, we have a column in our 'orders' table called `customer_id` that *references* the primary key in the 'customers' table. This is the basis for making data relations with JOIN statements as we will see below. To summarize, the foreign key provides a sort of ownership link between the customer who has the primary key and all of that customer's orders in the related table where the `customer_id` matches the id from the 'customers' table.
+That last column we defined is called a **FOREIGN KEY**. Foreign keys and primary keys are related in that a foreign key is basically a reference to a primary key in another table. In this case, we have a column in our 'orders' table called `customer_id` that _references_ the primary key in the 'customers' table. This is the basis for making data relations with JOIN statements as we will see below. To summarize, the foreign key provides a sort of ownership link between the customer who has the primary key and all of that customer's orders in the related table where the `customer_id` matches the id from the 'customers' table.
 
 ### Nested queries
 
@@ -204,38 +209,40 @@ This will return the maximum rating, which we need to feed into WHERE.
 ```sql
 SELECT name, salary FROM customers
 WHERE salary = (
-	SELECT MAX(salary) FROM customers
+    SELECT MAX(salary) FROM customers
 );
 ```
 
 ### Conditionals
 
 #### CASE Statement
+
 The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
 
 ```sql
 SELECT name,
-	age, 
-	CASE WHEN age<25
-	THEN 'young adult'
-	ELSE 'adult' 
-	END AS age_group 
+    age, 
+    CASE WHEN age<25
+    THEN 'young adult'
+    ELSE 'adult' 
+    END AS age_group 
 FROM customers;
 ```
 
 ### JOINs
 
 There are four types of JOINs in SQL:
+
 * `LEFT JOIN`
 * `RIGHT JOIN`
 * `INNER JOIN`
 * `FULL [OUTER] JOIN`
 
-![4 Types of JOINs](https://www.dofactory.com/Images/sql-joins.png)
+![4 Types of JOINs](../.gitbook/assets/sql_joins.png)
 
 Let's look at our table for customers and our table for orders. The customers table looks like this:
 
-```
+```text
  id |  name   | age | country | salary 
 ----+---------+-----+---------+--------
   1 | Bira    |  32 | Brazil  |   2000
@@ -249,7 +256,7 @@ Let's look at our table for customers and our table for orders. The customers ta
 
 And the orders table looks like this:
 
-```
+```text
  id | order_num | amount | customer_id 
 ----+-----------+--------+-------------
   1 | A2067O    | 104.09 |           1
@@ -265,9 +272,9 @@ And the orders table looks like this:
 (10 rows)
 ```
 
-As you can see, there are some customers who haven't placed orders. If we ask for the orders that correspond to customer_id 5, we will receive a value of NULL because they haven't ordered anything.
- 
- **INNER JOIN**
+As you can see, there are some customers who haven't placed orders. If we ask for the orders that correspond to customer\_id 5, we will receive a value of NULL because they haven't ordered anything.
+
+**INNER JOIN**
 
 ```sql
 SELECT c.name, o.order_num
@@ -277,7 +284,7 @@ ON c.id=o.customer_id;
 
 An `INNER JOIN` will return a dataset with all the matches from our customer and order tables where there is no NULL value on either side.
 
-```
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -292,9 +299,10 @@ An `INNER JOIN` will return a dataset with all the matches from our customer and
  Silvana | B7780B
 (10 rows)
 ```
+
 _NOTE: This is the default type of JOIN so if you don't specify the type, SQL will perform an `INNER JOIN`._
 
-**FULL [OUTER] JOIN**
+**FULL \[OUTER\] JOIN**
 
 ```sql
 SELECT c.name, o.order_num FROM customers c
@@ -306,7 +314,7 @@ _NOTE: The `OUTER` is optional_
 
 A `FULL OUTER JOIN` will do the opposite of an `INNER JOIN`, returning you a table with all possible combinations, even if NULL has to be placed in.
 
-```
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -335,7 +343,7 @@ ON c.id=o.customer_id;
 
 With a `LEFT JOIN` the table returned will have all values in the left table, even if there is no corresponding value on the right side.
 
-```
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -384,7 +392,7 @@ Unions display the results of two or more SELECT statements into one table, so t
 
 Here's a customers table:
 
-```
+```text
 id | name      
 ---+---------
  1 | Romesh  
@@ -395,7 +403,7 @@ id | name
 
 and a subscribers table:
 
-```
+```text
 id | name      
 ---+---------
  1 | Romesh  
