@@ -1,33 +1,37 @@
-# Lab: Layouts and Controllers
+# Layouts and Controllers
 
-Express gives us a lot of flexibility out of the box (configuration over convention). While this is a good thing, it can become a problem when we don't take the time to organize our project.
+Express gives us a lot of flexibility out of the box \(configuration over convention\). While this is a good thing, it can become a problem when we don't take the time to organize our project.
 
 ### Objectives
 
 * Utilize layouts and controllers in an Express app
 
 ### Prereqs:
+
 * ability to create a basic node/express app with basic routes and views
 
 ### Set Up a new Express App
 
-Before we do anything else, let's set up a new basic Express app called `faves-hates-app`.
+Before we do anything else, let's set up a new basic Express app called `love-it-or-leave-it`.
 
 #### 1. Create a new project
 
 #### 2. Initialize Node
 
 #### 3. Install Dependencies
+
 * express
 * ejs
 
 #### 4. Set up Express
+
 * `index.js` file
 * require express
 * create an instance of express
 * tell the app which port to listen to
 
 #### 5. Set up EJS
+
 * set view engine to ejs
 * create a `views` folder
 
@@ -35,7 +39,7 @@ Before we do anything else, let's set up a new basic Express app called `faves-h
 
 Adding partials can dry up the code a bit, but [EJS Layouts](https://www.npmjs.com/package/express-ejs-layouts) can take this modularity even farther and make a big diffence with large applications.
 
-EJS layouts is a node package that allows us to create a boilerplate (aka a _layout_) that we can inject content into based on which route is reached. Layouts normally include header and footer content that you want to display on every page (navbar, sitemap, logo, etc.).
+EJS layouts is a node package that allows us to create a boilerplate \(aka a _layout_\) that we can inject content into based on which route is reached. Layouts normally include header and footer content that you want to display on every page \(navbar, sitemap, logo, etc.\).
 
 ### Install EJS Layouts
 
@@ -43,40 +47,42 @@ EJS layouts is a node package that allows us to create a boilerplate (aka a _lay
 
 Install `express-ejs-layouts` via npm
 
-```
-npm install express-ejs-layouts
+```text
+npm i express-ejs-layouts
 ```
 
 #### Step 2: Set up EJS layouts
 
 Require the module and add it to the app.
 
-***index.js***
-```js
-var express = require('express');
-var app = express();
-var ejsLayouts = require('express-ejs-layouts');
+_**index.js**_
+
+```javascript
+const express = require('express');
+const app = express();
+const ejsLayouts = require('express-ejs-layouts');
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
 
-app.listen(3000)
+app.listen(3000, () => console.log('You\'re listening to the smooth sounds of Port 3000')
 ```
 
-What is ```app.use()```? This is an express function that indicates _middleware_. Middleware functions intercepts the request object when it comes in from the client, but before it hits any route. We'll see more examples of middleware later.
+What is `app.use()`? This is an express function that indicates _middleware_. Middleware functions intercepts the request object when it comes in from the client, but before it hits any route. We'll see more examples of middleware later.
 
 How are you supposed to know that ejs layouts requires middleware? [The docs.](https://www.npmjs.com/package/express-ejs-layouts)
 
 #### Step 3: Create a Layout
 
-In the root of the views folder, add a layout called `layout.ejs`. It _must_ be called `layout.ejs`, as mandated by `express-ejs-layouts`.
+In the root of the `views` folder, add a layout called `layout.ejs`. It _must_ be called `layout.ejs`, as mandated by `express-ejs-layouts`.
 
 **layout.ejs**
-```html
+
+```markup
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faves&Hates</title>
+  <title>Love It or Leave It</title>
 </head>
 <body>
   <%- body %>
@@ -90,15 +96,16 @@ This layout will be used by all pages, and the content will be filled in where t
 
 In the views folder, create a `home.ejs` file:
 
-***home.ejs***
-```html
+_**home.ejs**_
+
+```markup
 <h1>This is the home page!</h1>
 ```
 
 Now create a home route in `index.js` below the middleware:
 
-```js
-app.get('/', function(req, res) {
+```javascript
+app.get('/', (req, res) => {
   res.render('home');
 });
 ```
@@ -106,17 +113,21 @@ app.get('/', function(req, res) {
 Ejs will assume that `home` means `home.ejs`. Now starte nodemon and check that your home page renders as desired.
 
 #### Step 5: Set up a few more views/routes
-***index.js***
-```js
-app.get('/animals', function(req, res) {
-  res.render('animals', {title: 'Favorite Animals', animals: ['sand crab', 'corny joke dog']})
+
+_**index.js**_
+
+```javascript
+app.get('/animals', (req, res) => {
+  res.render('animals', {animals: ['sand crab', 'corny joke dog']})
 });
 ```
-***animals.ejs***
-```html
-<h1><%= title %></h1>
+
+_**animals.ejs**_
+
+```markup
+<h1>Favorite Animals</h1>
 <ul>
-  <% animals.forEach(function(animal) { %>
+  <% animals.forEach((animal) => { %>
     <li><%= animal %></li>
   <% }) %>
 </ul>
@@ -124,82 +135,132 @@ app.get('/animals', function(req, res) {
 
 Visit `localhost:3000/animals` to make sure that all is well.
 
-Now create a `foods` view/route that displays your favorite foods, just like you did with animals.
+#### Exercise
+
+* Create a `foods` route and view that displays your favorite foods, just like you did with animals.
+* Create a `movies` route and view that displays your *least* favorite movies.
+* Create a `products` route and view that displays your *least* favorite products.
+
 
 #### Bonus: Add Navigation
 
-Add a simple navigation list to the to of the layout page so there's a link to every page from every page:
+Add a simple navigation list to the top of the layout page so there's a link to every page from every page:
 
-***layout.ejs***
-```html
+_**layout.ejs**_
+
+```markup
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Faves&Hates</title>
+  <title>Love It or Leave It</title>
 </head>
 <body>
   <ul>
     <li><a href='/foods'>Favorite Foods</a></li>
     <li><a href='/animals'>Favorite Animals</a></li>
+    <li><a href='/movies'>Worst Movies</a></li>
+    <li><a href='/products'>Worst Products</a></li>
   </ul>
   <%- body %>
 </body>
 </html>
-
 ```
 
 ## Controllers & Express Router
 
-Controllers become important organizational tools when you start making apps with several views, so let's create a few more views.
+Controllers become important organizational tools when you start making apps with several views, so let's organize the routs/views we have into two sections: `love-it` and `leave-it`.
 
-***1.*** Inside the `views` folder, create a `faves` folder and move your `foods.ejs` and `animals.ejs` files into it.
+_**1.**_ Change your routes to have the following url patterns:
 
-***2.*** Inside the `views` folder, create a `hates` folder that also contains a `foods.ejs` file and an `animals.ejs` file, but design these views to display your least favorite foods and animals.
+* `/loveit/food`
+* `/loveit/animals`
+* `/leaveit/movies`
+* `/leaveit/products`
 
-***We have been placing all routes into `index.js` when creating a Node/Express app, but this can get cumbersome when dealing with many routes. The solution is to group related routes and separate these groups into separate files. These files will go into a `controllers` folder.***
+Now check that these new url patterns render the expected html, and fix your nav bar to have the correct links.
 
-***3.*** Create a `controllers` folder inside the root directory that will contain all routes except for the home route. 
+_**We have been placing all routes into `index.js` when creating a Node/Express app, but this can get cumbersome when dealing with many routes. The solution is to group related routes and separate these groups into separate files. These files will go into a `controllers` folder.**_
 
-***4.*** Inside the `controllers` folder, create a file called `faves.js` with the following routes:
+_**2.**_ Create a `controllers` folder inside the root directory that will contain all routes except for the home route.
 
-```js
-app.get('/foods', function(req, res) {
-  res.render('faves/foods', {title: 'Favorite Foods', foods: ['coconut', 'avocado']});
+_**4.**_ Inside the `controllers` folder, create a file called `loveit.js`, and copy your two `loveit` routes into this file.
+
+with the following routes:
+
+```javascript
+app.get('/lovit/foods', (req, res) => {
+  res.render('foods', {foods: ['coconut', 'avocado']});
 });
 
-app.get('/animals', function(req, res) {
-  res.render('faves/animals', {title: 'Favorite Animals', animals: ['sand crab', 'corny joke dog']})
+app.get('/loveit/animals', (req, res) => {
+  res.render('animals', {animals: ['sand crab', 'corny joke dog']})
 });
-
 ```
 
 But wait! `app` doesn't exist in this file! Express has a `Router()` function that will help us wrap these routes into a module that we'll export back into our main server file.
 
-***5.***  Add these wrapper lines of code to `faves.js`, and replace `app` with `router`.
+_**5.**_ Add these wrapper lines of code to `loveit.js`, and replace `app` with `router`.
 
-```js
-var express = require('express');
-var router = express.Router();
+```javascript
+const express = require('express');
+const router = express.Router();
 
-router.get('/foods', function(req, res) {
-  res.render('faves/foods', {title: 'Favorite Foods', foods: ['coconut', 'avocado']});
+router.get('/loveit/foods', (req, res) => {
+  res.render('foods', {foods: ['coconut', 'avocado']});
 });
 
-router.get('/animals', function(req, res) {
-  res.render('faves/animals', {title: 'Favorite Animals', animals: ['sand crab', 'corny joke dog']})
+router.get('/loveit/animals', (req, res) => {
+  res.render('animals', {animals: ['sand crab', 'corny joke dog']})
 });
 
 module.exports = router;
 ```
-***6.*** Now back in `index.js`, we just need to add some middleware to get these routes working again!
+
+_**6.**_ Now back in `index.js`, we just need to add some middleware to get these routes working again!
 
 **index.js**
-```js
-app.use('/faves', require('./controllers/faves'));
+
+```javascript
+app.use('/loveit', require('./controllers/loveit'));
+```
+This middelware says *"Dear Express, if you get a request for a url pattern that starts with `/loveit`, please to to the `loveit` controller file to find the relevant routes."* SO, by the time express is looking in the right controller file, it already has processed the `/loveit` part of the url pattern, thus, we can now remove that part from the routes in `controllers/loveit.js`:
+
+```javascript
+const express = require('express');
+const router = express.Router();
+
+router.get('/foods', (req, res) => {
+  res.render('foods', {foods: ['coconut', 'avocado']});
+});
+
+router.get('/animals', (req, res) => {
+  res.render('animals', {animals: ['sand crab', 'corny joke dog']})
+});
+
+module.exports = router;
 ```
 
-Note that we defined the routes *relative* to the definition in `app.use`. In other words, take note that our URL patterns in `faves.js` don't inclued `'/faves'`, because that is taken care of by the middleware.
+Note that we defined the routes _relative_ to the definition in `app.use`. In other words, take note that our URL patterns in `loveit.js` don't inclued `'/loveit'`, because that is taken care of by the middleware.
 
-Check that these routes are working by visiting `http://localhost/faves/foods` and `http://localhost/faves/animals`.
+Check that these routes are working by visiting `http://localhost/loveit/foods` and `http://localhost/loveit/animals`.
 
-Now finish the lab off by doing the same for your hates pages!
+Finally, it is standard to organize your views the same way you organize your routes. This means we should create a subdirectory inside of `views` called `loveit` and move our `animals.ejs` and `food.ejs` files into it. 
+
+We also need ot update our `res.render()` lines accordingly:
+
+```javascript
+const express = require('express');
+const router = express.Router();
+
+router.get('/foods', (req, res) => {
+  res.render('loveit/foods', {foods: ['coconut', 'avocado']});
+});
+
+router.get('/animals', (req, res) => {
+  res.render('loveit/animals', {animals: ['sand crab', 'corny joke dog']})
+});
+
+module.exports = router;
+```
+
+Now finish the lab off by doing the same for your leave-it routes/pages!
