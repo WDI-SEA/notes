@@ -288,6 +288,7 @@ This will select all the attributes from the movies table unconditionally. Make 
 
 ```sql
 SELECT * FROM movies;
+`
 ```
 
 We may not want all attribues though. Let's say instead we only care about the titles of the movie and the description. Here is the query we'd use:
@@ -405,3 +406,4 @@ Creating an ER diagram can be useful if you are designing a DB with lots of tabl
 ### LAB:
 
 [Where in the world is Carmen San Diego?](https://github.com/WDI-SEA/sql-carmen-san-diego)
+
