@@ -50,7 +50,7 @@ _**3.**_ In your routes, replace the `res.send(<message>)` with `res.sendFile(<a
 Your home route should look like this:
 
 ```javascript
-app.get('/', (req, res) => {
+app.get('/', (req, res) {
   res.sendFile(__dirname+'/views/index.html');
 });
 ```
@@ -58,3 +58,4 @@ app.get('/', (req, res) => {
 Test it out to see if your HTML shows up!
 
 Make sure to do this for all three routes. Now check to see that your html is coming through on the browser.
+
