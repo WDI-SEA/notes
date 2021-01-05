@@ -1,9 +1,9 @@
 # Node Package Manager \(NPM\)
 
 There are three types of Node modules: 
-* Core Modules \(like `fs`\) 
-* Local Modules \(that you create\) 
-* Third Party Modules
+* 1. Core Modules \(like `fs`\) 
+* 2. Local Modules \(that you create\) 
+* 3. Third Party Modules
 
 Core modules are great for gaining quick access to commonly-needed functionality in your program, and local modules allow you the flexibility to build out whatever tools you might possibly need, but third party modules, which fall somewhere in between, are perhaps the most exciting modules of them all!
 
@@ -102,8 +102,8 @@ Wednesday the 11th of September in the year 1985
 
 * BONUS: Use moment's `.fromNow()` function to print just how many years ago that birthday was!
 
----
-#### SOLUTION
+<details><summary>SOLUTION</summary>
+<p>
 
 ```js
  const moment = require('moment')  
@@ -118,6 +118,8 @@ Wednesday the 11th of September in the year 1985
  console.log('Oh boy, that was', moment('09-11-1985', 'MM DD YYYY').fromNow(), 'years ago!')
 ```
 
+</p>
+</details>
 
 #### Git Ignore File
 
@@ -166,3 +168,4 @@ Congrats - now when you add git tracking to this folder, it will not track the n
 Other common things to ignore for git are things like `.env` files which contain localized settings and possibly sensitive data like secret keys, salts, or API keys. Thus leading to this pro-tip:
 
 > Life Pro Tip: .gitignore should be one of the first files you create in a project! Create it before you do a single check-in. Always. Don't be the developer who oopsed and put an API key in public.
+
