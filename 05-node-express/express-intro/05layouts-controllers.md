@@ -110,7 +110,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-Ejs will assume that `home` means `home.ejs`. Now starte nodemon and check that your home page renders as desired.
+Ejs will assume that `home` means `home.ejs`. Now start nodemon and check that your home page renders as desired.
 
 #### Step 5: Set up a few more views/routes
 
@@ -188,7 +188,7 @@ _**4.**_ Inside the `controllers` folder, create a file called `loveit.js`, and 
 with the following routes:
 
 ```javascript
-app.get('/lovit/foods', (req, res) => {
+app.get('/loveit/foods', (req, res) => {
   res.render('foods', {foods: ['coconut', 'avocado']});
 });
 
@@ -223,7 +223,7 @@ _**6.**_ Now back in `index.js`, we just need to add some middleware to get thes
 ```javascript
 app.use('/loveit', require('./controllers/loveit'));
 ```
-This middelware says *"Dear Express, if you get a request for a url pattern that starts with `/loveit`, please to to the `loveit` controller file to find the relevant routes."* SO, by the time express is looking in the right controller file, it already has processed the `/loveit` part of the url pattern, thus, we can now remove that part from the routes in `controllers/loveit.js`:
+This middelware says *"Dear Express, if you get a request for a url pattern that starts with `/loveit`, please go to the `loveit` controller file to find the relevant routes."* SO, by the time express is looking in the right controller file, it already has processed the `/loveit` part of the url pattern, thus, we can now remove that part from the routes in `controllers/loveit.js`:
 
 ```javascript
 const express = require('express');
