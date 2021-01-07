@@ -15,7 +15,7 @@ In Node, `module.exports` is an object that will hold the code to be exported. W
 Add the following code to your `myModule.js` file:
 
 ```javascript
-module.exports.beBasic = () => "That's so fetch!"
+module.exports.beBasic = () => console.log("That's so fetch!")
 ```
 
 Now, our module.exports object has a key-value pair where the key is `beBasic` and the value is a function.
@@ -44,7 +44,7 @@ Let's add some more code to our module. In `myModule.js`, add the following code
 module.exports.beBasic = () => "That's so fetch!"
 
 const count = () => {
-    for (var i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 10; i++) {
         console.log(i);
     }
 }
