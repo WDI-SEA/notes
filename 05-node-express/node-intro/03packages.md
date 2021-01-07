@@ -102,7 +102,9 @@ Wednesday the 11th of September in the year 1985
 
 * BONUS: Use moment's `.fromNow()` function to print just how many years ago that birthday was!
 
-<details><summary>SOLUTION</summary>
+<details>
+    <summary>SOLUTION</summary>
+    
 <p>
 
 ```js
@@ -120,6 +122,7 @@ Wednesday the 11th of September in the year 1985
 
 </p>
 </details>
+
 
 #### Git Ignore File
 
