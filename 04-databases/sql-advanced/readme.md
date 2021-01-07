@@ -220,8 +220,7 @@ WHERE salary = (
 The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
 
 ```sql
-SELECT name,
-    age, 
+SELECT name, age, 
     CASE WHEN age<25
     THEN 'young adult'
     ELSE 'adult' 
