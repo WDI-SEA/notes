@@ -58,9 +58,9 @@ Require the module and add it to the app.
 _**index.js**_
 
 ```javascript
-var express = require('express');
-var app = express();
-var ejsLayouts = require('express-ejs-layouts');
+const express = require('express');
+const app = express();
+const ejsLayouts = require('express-ejs-layouts');
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
