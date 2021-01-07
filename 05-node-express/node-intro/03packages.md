@@ -33,7 +33,7 @@ Since we're installing it globally \(that's where the `-g` flag comes in\), it d
 
 Let's see nodemon in action! Try running your `my-first-node-app` using nodemon. Simply `cd` into the directory, then run `nodemon`. Nodemon knows to run the file that corresponds to `main:` in your `package.json`.
 
-Now open up `my-first-node-app` in sublime. Add the following code to `index.js`:
+Now open up `my-first-node-app` in your text editor. Add the following code to `index.js`:
 
 ```javascript
 let i = 0
