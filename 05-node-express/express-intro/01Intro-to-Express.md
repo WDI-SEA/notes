@@ -2,7 +2,7 @@
 
 _Express is a light-weight, web application framework for writing RESTful APIs in Node.js._
 
-We'll get to the _RESTFUL API_ part soon, but for now, think of Express as a Node Package that gives us some extra tools for creating a web application using Node.
+We'll get to the _RESTful API_ part soon, but for now, think of Express as a Node Package that gives us some extra tools for creating a web application using Node.
 
 Let's create our first Node/Express app!
 
