@@ -183,7 +183,7 @@ _**We have been placing all routes into `index.js` when creating a Node/Express 
 
 _**2.**_ Create a `controllers` folder inside the root directory that will contain all routes except for the home route.
 
-_**4.**_ Inside the `controllers` folder, create a file called `loveit.js`, and copy your two `loveit` routes into this file.
+_**3.**_ Inside the `controllers` folder, create a file called `loveit.js`, and copy your two `loveit` routes into this file.
 
 with the following routes:
 
@@ -199,7 +199,7 @@ app.get('/loveit/animals', (req, res) => {
 
 But wait! `app` doesn't exist in this file! Express has a `Router()` function that will help us wrap these routes into a module that we'll export back into our main server file.
 
-_**5.**_ Add these wrapper lines of code to `loveit.js`, and replace `app` with `router`.
+_**4.**_ Add these wrapper lines of code to `loveit.js`, and replace `app` with `router`.
 
 ```javascript
 const express = require('express');
@@ -216,7 +216,7 @@ router.get('/loveit/animals', (req, res) => {
 module.exports = router;
 ```
 
-_**6.**_ Now back in `index.js`, we just need to add some middleware to get these routes working again!
+_**5.**_ Now back in `index.js`, we just need to add some middleware to get these routes working again!
 
 **index.js**
 
