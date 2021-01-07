@@ -15,7 +15,7 @@ fetch(requestURL)
         // whatever we return in the first .then promise will be passed into this callback function
         // do some stuff with the jsonData here
     })
-    .catch(function(error){
+    .catch((error)=>{
         // any errors encountered in the request or the .then promises above will be passed into this callback
         console.log("Oh no, there's been an error!", error);
     })
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     const addPerson = (person)=>{
         let li = document.createElement("li");
-        li.textContent = person.name.first, person.name.last;
+        li.textContent = `${person.name.first} ${person.name.last};
         peopleList.appendChild(li);
     }
 
