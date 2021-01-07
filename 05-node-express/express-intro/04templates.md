@@ -85,7 +85,7 @@ For example: **index.ejs**
 </html>
 ```
 
-The _any JavaScript_ can be embedded using the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be _printed to the screen_.
+Javascript can be embedded using the `<% %>` tags. The addition of the `=` sign on the opening tag means that a value will be _printed to the screen_.
 
 ```markup
 <!DOCTYPE html>
