@@ -204,7 +204,7 @@ WHERE salary = MAX(salary);
 
 That will give us an error, because MAX is an aggregate function and can't be used in WHERE.
 
-This will return the maximum rating, which we need to feed into WHERE.
+This will return the maximum salary, which we need to feed into WHERE.
 
 ```sql
 SELECT name, salary FROM customers
