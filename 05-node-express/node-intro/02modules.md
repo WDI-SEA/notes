@@ -29,7 +29,7 @@ In the `index.js` file, write the following code:
 ```javascript
 const myModule = require('./myModule.js');
 
-console.log(myModule.beBasic());
+myModule.beBasic();
 ```
 
 Run `index.js` via the command line:
@@ -41,7 +41,7 @@ Voila! You've successfully created and imported a module!
 Let's add some more code to our module. In `myModule.js`, add the following code:
 
 ```javascript
-module.exports.beBasic = () => "That's so fetch!"
+module.exports.beBasic = () => console.log("That's so fetch!")
 
 const count = () => {
     for (let i = 0; i <= 10; i++) {
