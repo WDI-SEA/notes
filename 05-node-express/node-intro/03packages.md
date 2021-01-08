@@ -9,7 +9,7 @@ Core modules are great for gaining quick access to commonly-needed functionality
 
 ### Node Packages
 
-Because developers are awesome, there are hundreds of thousands of already-written modules out there, ready for use! Each of these modules are encapsulated in a _**Node Package**_ and made available via _**Node Package Manger**_ or _**NPM**_, for short. A node package is a folder that contains one or more modules, a `package.json` file, and any meta-info needed to make the modules work correctionly and play well with your node program.
+Because developers are awesome, there are hundreds of thousands of already-written modules out there, ready for use! Each of these modules are encapsulated in a _**Node Package**_ and made available via _**Node Package Manager**_ or _**NPM**_, for short. A node package is a folder that contains one or more modules, a `package.json` file, and any meta-info needed to make the modules work correctionly and play well with your node program.
 
 ### NPM
 
