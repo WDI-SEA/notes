@@ -63,9 +63,16 @@ Today we're using [PostgreSQL](https://www.postgresql.org/download/macosx/), oft
 
 If you install [Postgres.app](https://postgresapp.com/downloads.html), you will have access to psql from the elephant icon at the top of the screen:
 
-* ![image](../.gitbook/assets/Postgres.png)
+* ![image](./Postgres.png)
 
 You can start and stop running the server from here.
+
+In order to access our server from our terminal, we need to install the path in our `.zshrc` or `.bashrc`. Open up your file from terminal by typing anywhere `open ~/.zshrc` and add this line to the bottom:
+
+```
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+```
+To apply this, either restart your terminal or type `source ~/.zshrc` in your zshell. To check if it works, 
 
 **psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user.
 
