@@ -1,30 +1,32 @@
-# RESTful CRUD
+# Put and Delete
 
 ## Objectives
+
 * Use `method-override` to implement `PUT` and `DELETE` routes in `express`.
 
 ## Review REST
 
-| VERB | URL | Action (CRUD) | Description |
-|------|-----|---------------|-------------|
-| GET | /dinosaurs | Index (Read) | lists all dinosaurs |
-| GET | /dinosaurs/new | New (Read) | shows a form to make a new dinosaur |
-| POST | /dinosaurs | Create (Create) | creates an dinosaur with the POST payload data |
-| GET | /dinosaurs/:id | Show (Read) | list information about a specific dinosaur (i.e. /dinosaurs/1) |
-| GET | /dinosaurs/edit/:id | Edit (Read) | shows a form for editting a specific dinosaurs (i.e. /dinosaurs/edit/1)|
-| PUT | /dinosaurs/:id | Update (Update) | updates the data for a specific dinosaur (i.e. /dinosaurs/1) |
-| DELETE | /dinosaurs/:id | Destroy (Delete) | deletes the dinosaur with the specified id (i.e. /dinosaurs/1) |
+| VERB | URL | Action \(CRUD\) | Description |
+| :--- | :--- | :--- | :--- |
+| GET | /dinosaurs | Index \(Read\) | lists all dinosaurs |
+| GET | /dinosaurs/new | New \(Read\) | shows a form to make a new dinosaur |
+| POST | /dinosaurs | Create \(Create\) | creates an dinosaur with the POST payload data |
+| GET | /dinosaurs/:id | Show \(Read\) | list information about a specific dinosaur \(i.e. /dinosaurs/1\) |
+| GET | /dinosaurs/edit/:id | Edit \(Read\) | shows a form for editting a specific dinosaurs \(i.e. /dinosaurs/edit/1\) |
+| PUT | /dinosaurs/:id | Update \(Update\) | updates the data for a specific dinosaur \(i.e. /dinosaurs/1\) |
+| DELETE | /dinosaurs/:id | Destroy \(Delete\) | deletes the dinosaur with the specified id \(i.e. /dinosaurs/1\) |
 
 In the previous half of this lesson, we implemented the first four routes. Here we will cover the final three routes in this RESTful routing example.
 
 ## Method-Override
 
-  `PUT` and `DELETE` routes are not supported by HTML5. If you're wondering why, check out these discussions on [stackoverflow](https://stackoverflow.com/questions/16805956/why-dont-browsers-support-put-and-delete-requests-and-when-will-they) and [stackexchange](https://softwareengineering.stackexchange.com/questions/114156/why-are-there-are-no-put-and-delete-methods-on-html-forms). These requests are so often used that there are well-established work-arounds like [`method-override`](https://www.npmjs.com/package/method-override), which is what we will use.
-  
+`PUT` and `DELETE` routes are not supported by HTML5. If you're wondering why, check out these discussions on [stackoverflow](https://stackoverflow.com/questions/16805956/why-dont-browsers-support-put-and-delete-requests-and-when-will-they) and [stackexchange](https://softwareengineering.stackexchange.com/questions/114156/why-are-there-are-no-put-and-delete-methods-on-html-forms). These requests are so often used that there are well-established work-arounds like [`method-override`](https://www.npmjs.com/package/method-override), which is what we will use.
+
 ### Middleware
+
 `method-override` is a node package that allows us to catch incoming requests to the back-end and change the method from `POST` to `DELETE` or `PUT`. We'll use the `method-override` middleware that looks for a `_method=DELETE` or `_method=PUT` query string in the request URL and swap out the method accordingly.
 
-_By default, `method-override` will only override `POST` methods, because having a `DELETE` or `PUT` route accessible via a `GET` request "may introduce security issues and cause weird behavior when requests travel through caches"(see the `options.methods` section of the `method-override` docs for on this)_
+_By default, `method-override` will only override `POST` methods, because having a `DELETE` or `PUT` route accessible via a `GET` request "may introduce security issues and cause weird behavior when requests travel through caches"\(see the `options.methods` section of the `method-override` docs for more on this\)_
 
 #### Setup:
 
