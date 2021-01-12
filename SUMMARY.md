@@ -132,7 +132,7 @@
     * [Validations and Migrations](05-node-express/express-sequelize/05validationsmigrations.md)
     * [Resources](05-node-express/express-sequelize/06resources.md)
     * [1:M Relationships](05-node-express/express-sequelize/one-to-many.md)
-    * [N:M Relationships](05-node-express/express-many-to-many/readme.md)
+    * [N:M Relationships](05-node-express/express-sequelize/many-to-many.md)
   * [Express Authentication](05-node-express/express-auth/readme.md)
     * [Research Components](05-node-express/express-auth/research/components.md)
     * [Code Components](05-node-express/express-auth/research/code.md)
