@@ -119,7 +119,6 @@ Notice that OMDB API has a key requirement for their API. That's okay, it just m
 
 **Things to Note**
 
-* After getting the response back, we need to look inside response.data to see what was actually returned from the api. That's where axios puts the data. The response object you get back from axios is actually a wrapper that contains the api data among other things.
 * It's very important to call `res.send` in the correct place \(the axios 'then' promise\)
   * Try putting `res.send` outside of the 'then'. You'll get an error!
 
