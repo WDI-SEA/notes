@@ -85,7 +85,7 @@ Once this is complete, let's move to the models folder.
 The sequelize CLI has an equivalent command to `createdb`. You can use either, they do the same thing!
 
 ```text
-sequelize db:create userapp_development
+createdb userapp_development
 ```
 
 ### Create a model and a matching migration
