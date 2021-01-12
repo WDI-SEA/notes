@@ -65,7 +65,7 @@ Now let's pull in our data and take a took at it.
 
 ```javascript
 // lists all dinosaurs
-app.get('/dinosaurs', function(req, res) {
+app.get('/dinosaurs', (req, res) => {
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
   console.log(dinosaurs);
 });
