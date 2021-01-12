@@ -49,7 +49,7 @@ Format the ejs to display the data. Assume that we will pass the data in as `myD
 
 ```markup
 <ul>
-  <% myDinos.forEach(function(dino) { %>
+  <% myDinos.forEach(dino => { %>
   <li><%= dino.name %> is a <%= dino.type %></li>
   <% }); %>
 </ul>
@@ -250,10 +250,10 @@ The idea here is that the search bar allows the user to filter what's on the pag
 
 ```javascript
 app.get('/dinosaurs', function(req, res) {
-  var dinosaurs = fs.readFileSync('./dinosaurs.json');
-  var dinoData = JSON.parse(dinosaurs);
+  let dinosaurs = fs.readFileSync('./dinosaurs.json');
+  let dinoData = JSON.parse(dinosaurs);
 
-  var nameFilter = req.query.nameFilter;
+  let nameFilter = req.query.nameFilter;
 
   if (nameFilter) {
       dinoData = dinoData.filter(dino => dino.name.toLowerCase() === nameFilter.toLowerCase());
