@@ -121,7 +121,7 @@ db.pet.findOrCreate({
 
 ## Using `include`
 
-Sequeize supports "eager loading", meaning it can load all of the pets for us in advance if we know we need them. We let it know what we need by using `include`.
+Sequelize supports "eager loading", meaning it can load all of the pets for us in advance if we know we need them. We let it know what we need by using `include`.
 
 ```javascript
 db.user.findAll({
