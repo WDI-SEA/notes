@@ -120,6 +120,7 @@
     * [Layouts and Controllers](05-node-express/express-intro/05layouts-controllers.md)
     * [CRUD & REST](05-node-express/express-REST-crud/00readme.md)
       * [Get and Post](05-node-express/express-REST-crud/01get-post.md)
+      * [Get and Post Lab](05-node-express/express-REST-crud/get-post-lab.md)
       * [Put and Delete](05-node-express/express-REST-crud/02put-delete.md)
     * [APIs with Express (request)](05-node-express/express-apis/02apis.md)
     * [APIs with Express (axios)](05-node-express/express-apis/03apis-axios.md)
