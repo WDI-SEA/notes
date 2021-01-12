@@ -106,29 +106,16 @@ This will generate the following model:
 
 ```javascript
 'use strict';
-const {
-  Model
-} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class user extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  };
-  user.init({
+  const user = sequelize.define('user', {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     age: DataTypes.INTEGER,
     email: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'user',
-  });
+  }, {});
+  user.associate = function(models) {
+    // associations can be defined here
+  };
   return user;
 };
 ```
@@ -142,8 +129,8 @@ And a corresponding migration:
 ```javascript
 'use strict';
 module.exports = {
-  up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('users', {
+  up: (queryInterface, Sequelize) => {
+    return queryInterface.createTable('users', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -172,8 +159,8 @@ module.exports = {
       }
     });
   },
-  down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('users');
+  down: (queryInterface, Sequelize) => {
+    return queryInterface.dropTable('users');
   }
 };
 ```
