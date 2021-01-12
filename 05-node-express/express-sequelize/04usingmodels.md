@@ -103,7 +103,7 @@ db.user.findOne({where: {id: 4}})
 ```
 
 ```javascript
-db.user.findByPk(1).then(foundUser)\=>{
+db.user.findByPk(1).then(foundUser)=>{
   console.log(foundUser);
   //res.send("myTemplate", {user: foundUser);
 });
