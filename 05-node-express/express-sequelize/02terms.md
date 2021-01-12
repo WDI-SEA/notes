@@ -4,7 +4,7 @@
 
 An ORM \(Object Relational Mapper\) is a piece/layer of software that creates a map between our database into javascript objects that represent our data. This means we can just use JavaScript to create and work with our data instead of writing raw SQL queries.
 
-You can read some more about the benefits of using an ORM [here](http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it)
+You can read some more about the benefits of using an ORM [here](http://stackoverflow.com/questions/1279613/what-is-an-orm-and-where-can-i-learn-more-about-it).
 
 **Exercise:** What are 3 pros of an ORM? What are 3 cons?
 
@@ -21,7 +21,7 @@ From the Sequelize docs "To put it in a nutshell, it's an ORM \(Object-Relationa
 
 A model is a javascript class that maps to a database table. You can think of a model as the blueprint for what each row of data is going to contain. Each instance of your model is a javascript object that represents one row of data. The ORM allows you perform CRUD on instances of your models which will then map to the equivalent changes in your database.
 
-Read more about Sequelize models [here](https://sequelize.org/master/manual/model-basics.html#:~:text=Models%20are%20the%20essence%20of,(and%20their%20data%20types).)
+Read more about Sequelize models [here](https://sequelize.org/master/manual/model-basics.html#:~:text=Models%20are%20the%20essence%20of,(and%20their%20data%20types).
 
 ## Migration
 
