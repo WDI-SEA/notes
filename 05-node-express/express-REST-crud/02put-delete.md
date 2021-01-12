@@ -34,24 +34,25 @@ _By default, `method-override` will only override `POST` methods, because having
 
 **2.** Import the module
 
-```js
-const methodOverride = require('method-override');
+```javascript
+var methodOverride = require('method-override');
 ```
 
-***3.*** Configure middleware (make sure it lives above any other middleware code that uses the request method):
+_**3.**_ Configure middleware \(make sure it lives above any other middleware code that uses the request method\):
 
-```js
+```javascript
 app.use(methodOverride('_method'));
 ```
 
 ## DELETE
 
-Delete should be used to delete an existing item. A delete request contains no payload (`req.body`) and no query string (`req.query`). The only data is expressed via a URL parameter which matches the item's name (`req.params.name`).
+Delete should be used to delete an existing item. A delete request contains no payload \(`req.body`\) and no query string \(`req.query`\). The only data is expressed via a URL parameter which matches the item's name \(`req.params.name`\).
 
-Since we can only use `POST` methods to activate the `method-override` functionality, we will use a form to submit the request. Let's start by adding a delete button (form submission) to our index page list items. Note that we must add a second `forEach` parameter in order to get access to the dinoId/index.
+Since we can only use `POST` methods to activate the `method-override` functionality, we will use a form to submit the request. Let's start by adding a delete button \(form submission\) to our index page list items. Note that we must add a second `forEach` parameter in order to get access to the dinoId/index.
 
 **dinosaurs/index.ejs**
-```html
+
+```markup
 <form method="GET" action="/dinosaurs">
   <label for="nameFilter">Filter by Name</label>
   <input id="nameFilter" type="text" name="nameFilter">
@@ -62,9 +63,9 @@ Since we can only use `POST` methods to activate the `method-override` functiona
 <ul>
   <% myDinos.forEach(function(dino, index) { %>
   <li><%= dino.name %> is a <%= dino.type %>
-  	<form method="POST" action="/dinosaurs/<%= index %>/?_method=DELETE">
-  		<input type="submit" value="Delete">
-  	</form>
+      <form method="POST" action="/dinosaurs/<%= index %>/?_method=DELETE">
+          <input type="submit" value="Delete">
+      </form>
   </li>
   <% }); %>
 </ul>
@@ -72,9 +73,9 @@ Since we can only use `POST` methods to activate the `method-override` functiona
 
 **index.js**
 
-```js
+```javascript
 app.delete('/dinosaurs/:idx', function(req, res){
-  let dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
   dinosaurs = JSON.parse(dinosaurs);
 
   // remove the deleted dinosaur from the dinosaurs array
@@ -88,14 +89,13 @@ app.delete('/dinosaurs/:idx', function(req, res){
 });
 ```
 
-
 ### PUT
 
 First we need a way for the user to edit an item. Add an edit link to the dinosaurs index.
 
 **/dinosaurs/index.ejs**
 
-```html
+```markup
 <form method="GET" action="/dinosaurs">
   <label for="nameFilter">Filter by Name</label>
   <input id="nameFilter" type="text" name="nameFilter">
@@ -106,10 +106,10 @@ First we need a way for the user to edit an item. Add an edit link to the dinosa
 <ul>
   <% myDinos.forEach(function(dino, index) { %>
   <li><%= dino.name %> is a <%= dino.type %>
-  	<a href="/dinosaurs/edit/<%= index %>">Edit</a>
-  	<form method="POST" action="/dinosaurs/<%= index %>/?_method=DELETE">
-  		<input type="submit" value="Delete">
-  	</form>
+      <a href="/dinosaurs/edit/<%= index %>">Edit</a>
+      <form method="POST" action="/dinosaurs/<%= index %>/?_method=DELETE">
+          <input type="submit" value="Delete">
+      </form>
   </li>
   <% }); %>
 </ul>
@@ -118,23 +118,25 @@ First we need a way for the user to edit an item. Add an edit link to the dinosa
 Now we have to create a form for editting the information and submitting the `PUT` request.
 
 **/dinosaurs/edit.ejs**
-```html
+
+```markup
 <form method="POST" action="/dinosaurs/<%=dinoId%>/?_method=PUT">
-	<label>Name</label>
-	<input type="text" name="name" value="<%= dino.name %>">
-	<label>Type</label>
-	<input type="text" name="type" value="<%= dino.type %>">
-	<input type="submit">
+    <label>Name</label>
+    <input type="text" name="name" value="<%= dino.name %>">
+    <label>Type</label>
+    <input type="text" name="type" value="<%= dino.type %>">
+    <input type="submit">
 </form>
 ```
 
 We need a `GET` route to view this form!
 
 **index.js**
-```js
+
+```javascript
 app.get('/dinosaurs/edit/:idx', function(req, res){
-  let dinosaurs = fs.readFileSync('./dinosaurs.json');
-  let dinoData = JSON.parse(dinosaurs);
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinoData = JSON.parse(dinosaurs);
   res.render('dinosaurs/edit', {dino: dinoData[req.params.idx], dinoId: req.params.idx});
 });
 ```
@@ -142,11 +144,12 @@ app.get('/dinosaurs/edit/:idx', function(req, res){
 Finally we can write our `PUT` route! The form submission will return the editted values through `req.body`, just like we saw with the `new.ejs` view and `POST` route. Now all we need to do is edit the JSON accordingly.
 
 **index.js**
-```js
+
+```javascript
 app.put('/dinosaurs/:idx', function(req, res){
-  let dinosaurs = fs.readFileSync('./dinosaurs.json');
+  var dinosaurs = fs.readFileSync('./dinosaurs.json');
   dinosaurs = JSON.parse(dinosaurs);
-  
+
   //re-assign the name and type fields of the dinosaur to be editted
   dinosaurs[req.params.idx].name = req.body.name;
   dinosaurs[req.params.idx].type = req.body.type;
@@ -156,3 +159,4 @@ app.put('/dinosaurs/:idx', function(req, res){
   res.redirect('/dinosaurs');
 });
 ```
+
