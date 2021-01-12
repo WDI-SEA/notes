@@ -256,9 +256,7 @@ app.get('/dinosaurs', function(req, res) {
   var nameFilter = req.query.nameFilter;
 
   if (nameFilter) {
-    dinoData = dinoData.filter(dino => {
-      return dino.name.toLowerCase() === nameFilter.toLowerCase();
-    });
+      dinoData = dinoData.filter(dino => dino.name.toLowerCase() === nameFilter.toLowerCase());
   }
 
   res.render('dinosaurs/index', {myDinos: dinoData});
