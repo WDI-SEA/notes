@@ -131,7 +131,7 @@
     * [Seeding Data](05-node-express/express-sequelize/seeding.md)
     * [Validations and Migrations](05-node-express/express-sequelize/05validationsmigrations.md)
     * [Resources](05-node-express/express-sequelize/06resources.md)
-    * [1:M Relationships](05-node-express/express-1-to-many/readme.md)
+    * [1:M Relationships](05-node-express/express-sequelize/one-to-many.md)
     * [N:M Relationships](05-node-express/express-many-to-many/readme.md)
   * [Express Authentication](05-node-express/express-auth/readme.md)
     * [Research Components](05-node-express/express-auth/research/components.md)
