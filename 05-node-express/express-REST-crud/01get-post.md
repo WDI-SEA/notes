@@ -58,7 +58,7 @@ Format the ejs to display the data. Assume that we will pass the data in as `myD
 To access our data, we'll use the `fs` \(filesystem\) core module. Import this module in `index.js`
 
 ```javascript
-var fs = require('fs');
+const fs = require('fs');
 ```
 
 Now let's pull in our data and take a took at it.
@@ -66,7 +66,7 @@ Now let's pull in our data and take a took at it.
 ```javascript
 // lists all dinosaurs
 app.get('/dinosaurs', function(req, res) {
-  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  let dinosaurs = fs.readFileSync('./dinosaurs.json');
   console.log(dinosaurs);
 });
 ```
@@ -80,8 +80,8 @@ Try parsing the data before printing it:
 ```javascript
 // lists all dinosaurs
 app.get('/dinosaurs', function(req, res) {
-  var dinosaurs = fs.readFileSync('./dinosaurs.json');
-  var dinoData = JSON.parse(dinosaurs);
+  let dinosaurs = fs.readFileSync('./dinosaurs.json');
+  let dinoData = JSON.parse(dinosaurs);
   console.log(dinoData);
 });
 ```
@@ -91,8 +91,8 @@ That's more like it! Now lets send it to our EJS file:
 ```javascript
 // lists all dinosaurs
 app.get('/dinosaurs', function(req, res) {
-  var dinosaurs = fs.readFileSync('./dinosaurs.json');
-  var dinoData = JSON.parse(dinosaurs);
+  let dinosaurs = fs.readFileSync('./dinosaurs.json');
+  let dinoData = JSON.parse(dinosaurs);
   res.render('dinosaurs/index', {myDinos: dinoData});
 });
 ```
@@ -117,11 +117,11 @@ Now let's write our show route. We can access the index from the url through the
 //express show route for dinosaurs (lists one dinosaur)
 app.get('/dinosaurs/:idx', function(req, res) {
   // get dinosaurs
-  var dinosaurs = fs.readFileSync('./dinosaurs.json');
-  var dinoData = JSON.parse(dinosaurs);
+  let dinosaurs = fs.readFileSync('./dinosaurs.json');
+  let dinoData = JSON.parse(dinosaurs);
 
   //get array index from url parameter
-  var dinoIndex = parseInt(req.params.idx);
+  let dinoIndex = parseInt(req.params.idx);
 
   //render page with data of the specified animal
   res.render('dinosaurs/show', {myDino: dinoData[dinoIndex]});
@@ -172,10 +172,10 @@ This middleware will store the data submitted from the form in a user-friendly `
 _**index.js**_
 
 ```javascript
-var express = require('express');
-var app = express();
-var ejsLayouts = require('express-ejs-layouts');
-var fs = require('fs');
+const express = require('express');
+const app = express();
+const ejsLayouts = require('express-ejs-layouts');
+const fs = require('fs');
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
@@ -201,7 +201,7 @@ app.post('/dinosaurs', function(req, res) {
 
 Try adding a new dinosaur and make sure you see the appropriate data come through in the terminal when you submit the form.
 
-**body-parser Summary:** Form data is passed as payload of the request. Every field that has a name will be included in that payload and it is sent as form encoded text. When `body-parser` is used, it automatically **parses** the form body into a javascript object that we can use and it stores it in `req.body` so we can use it \(similar to how we convert API responses to JSON. All of this is done as middleware, which we just configured.
+**body-parser Summary:** Form data is passed as the payload of the request. Every field that has a name will be included in that payload and it is sent as form encoded text. When `body-parser` is used, it automatically **parses** the form body into a javascript object that we can use and it stores it in `req.body` so we can use it \(similar to how we convert API responses to JSON. All of this is done as middleware, which we just configured.
 
 **The `name` attribute matters!** In the above example we could access the dinosaur type form field by using `req.body.type` and the name field by using `req.body.name`. This correlates directly to the _names_ given to the form fields in the **form html** above.
 
@@ -214,7 +214,7 @@ Generally, the code in the **express route** would contain code that would CREAT
 ```javascript
 app.post('/dinosaurs', function(req, res) {
   // read dinosaurs file
-  var dinosaurs = fs.readFileSync('./dinosaurs.json');
+  let dinosaurs = fs.readFileSync('./dinosaurs.json');
   dinosaurs = JSON.parse(dinosaurs);
 
   // add item to dinosaurs array
@@ -256,7 +256,7 @@ app.get('/dinosaurs', function(req, res) {
   var nameFilter = req.query.nameFilter;
 
   if (nameFilter) {
-    dinoData = dinoData.filter(function(dino) {
+    dinoData = dinoData.filter(dino => {
       return dino.name.toLowerCase() === nameFilter.toLowerCase();
     });
   }
