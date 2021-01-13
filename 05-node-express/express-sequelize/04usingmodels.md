@@ -108,6 +108,7 @@ Finding a user
 db.user.findOne({where: {id: 4}})
 .then(foundUser=>{
     console.log(foundUser)
+    process.exit()
 })
 ```
 
@@ -115,6 +116,7 @@ db.user.findOne({where: {id: 4}})
 db.user.findByPk(1).then(foundUser)=>{
   console.log(foundUser);
   //res.send("myTemplate", {user: foundUser);
+  process.exit()
 });
 ```
 
@@ -125,6 +127,7 @@ db.user.findOrCreate({
   where: { firstName: 'Brian' }
 }).then(([user, wasCreated]) => {
   console.log(user); // returns info about the user
+  process.exit()
 });
 ```
 
