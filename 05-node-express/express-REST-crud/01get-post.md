@@ -79,7 +79,7 @@ Try parsing the data before printing it:
 
 ```javascript
 // lists all dinosaurs
-app.get('/dinosaurs', function(req, res) {
+app.get('/dinosaurs', (req, res) => {
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
   let dinoData = JSON.parse(dinosaurs);
   console.log(dinoData);
@@ -90,7 +90,7 @@ That's more like it! Now lets send it to our EJS file:
 
 ```javascript
 // lists all dinosaurs
-app.get('/dinosaurs', function(req, res) {
+app.get('/dinosaurs', (req, res) => {
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
   let dinoData = JSON.parse(dinosaurs);
   res.render('dinosaurs/index', {myDinos: dinoData});
@@ -115,7 +115,7 @@ Now let's write our show route. We can access the index from the url through the
 
 ```javascript
 //express show route for dinosaurs (lists one dinosaur)
-app.get('/dinosaurs/:idx', function(req, res) {
+app.get('/dinosaurs/:idx', (req, res) => {
   // get dinosaurs
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
   let dinoData = JSON.parse(dinosaurs);
@@ -156,7 +156,7 @@ Create a `dinosaurs/new.ejs` view that contains an html form:
 Now write a `GET` route so we can view this form at `localhost:3000/dinosaurs/new`:
 
 ```javascript
-app.get('/dinosaurs/new', function(req, res){
+app.get('/dinosaurs/new', (req, res) => {
   res.render('dinosaurs/new');
 });
 ```
@@ -194,7 +194,7 @@ Now, if we can access the form data in a POST route!
 _**index.js**_
 
 ```javascript
-app.post('/dinosaurs', function(req, res) {
+app.post('/dinosaurs', (req, res) => {
   console.log(req.body);
 });
 ```
@@ -212,7 +212,7 @@ Generally, the code in the **express route** would contain code that would CREAT
 * Writing the new JSON file using [fs.writeFileSync](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback) \(this will replace the old dinosaurs.json\)
 
 ```javascript
-app.post('/dinosaurs', function(req, res) {
+app.post('/dinosaurs', (req, res) => {
   // read dinosaurs file
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
   dinosaurs = JSON.parse(dinosaurs);
@@ -249,7 +249,7 @@ Add a form to `dinosaurs/index.ejs`
 The idea here is that the search bar allows the user to filter what's on the page, so it will be a `GET` request to `/dinosaurs`... but we already have a route for that! When you submit a form using the `GET` method, the key/value pairs are appended to the URL in a _query string_. Try searching for a dinosaur now and notice what happens to the URL. This query string, like parameters \(`req.params`\) is available via the request object. We'll use a conditional to check if there's a querystring, then filter the dinosaurs if one is present.
 
 ```javascript
-app.get('/dinosaurs', function(req, res) {
+app.get('/dinosaurs', (req, res) => {
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
   let dinoData = JSON.parse(dinosaurs);
 
