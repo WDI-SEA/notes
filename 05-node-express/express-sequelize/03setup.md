@@ -2,7 +2,7 @@
 
 ## Setup part 1 - getting the sequelize-cli tool \(you only have to do this once\)
 
-We need install a generator so we can use sequelize. Much like our other terminal apps, we will only install this once.
+We need to install a generator so we can use sequelize. Much like our other terminal apps, we will only install this once.
 
 ```text
 npm install -g sequelize-cli
