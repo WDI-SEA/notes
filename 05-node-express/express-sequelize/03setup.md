@@ -44,13 +44,10 @@ createdb userapp_development
 
 
 **For your historical reference...**
-<details>
-<summary></summary>
   
   **WARNING \(2017\) Edited \(2018\):** At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue \(for version Sequelize 4\) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up!
 
   If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
-</details>
 
 ## Setup part 3 - config.json, models and migrations:
 
