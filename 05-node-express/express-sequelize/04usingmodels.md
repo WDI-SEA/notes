@@ -123,7 +123,7 @@ In a `findOrCreate`, a callback will return back an array, instead of a single o
 ```javascript
 db.user.findOrCreate({
   where: { firstName: 'Brian' }
-}).then(([user, created]) => {
+}).then(([user, wasCreated]) => {
   console.log(user); // returns info about the user
 });
 ```
