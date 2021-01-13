@@ -1,6 +1,7 @@
 # Using Models
 
 Just like using express and the other modules, your models must be required in order to access them in your app.
+Let's start in our index.js and add the following code:
 
 ```javascript
 const db = require('./models')
@@ -20,6 +21,8 @@ db.user.create({
     // new row of data that has been created
     // (otherwise it throws an error)
     console.log(createdUser)
+    // terminates the node process at this point so that we don't have to force-quit
+    process.exit()
 })
 ```
 
@@ -30,6 +33,7 @@ db.user.findOne({
     where: {firstName: 'Taylor'}
 }).then(foundUser=>{
     console.log(foundUser)
+    process.exit()
 })
 ```
 
@@ -46,10 +50,12 @@ db.user.findOrCreate({
     lastName: 'Smith'
   },
   defaults: { age: 88 }
-}).then(([user, created])=>{
+}).then(([user, wasCreated])=>{
   console.log(user); // returns info about the user
+  process.exit()
 });
 ```
+Find out what "wasCreated" returns! What data type is this?
 
 ### Find All
 
@@ -72,7 +78,9 @@ db.user.update({
       firstName: 'Brian'
     }
 }).then(numRowsChanged=>{
+    // Returns a value of how many rows were altered by this update
     console.log(numRowsChanged)
+    process.exit()
 });
 ```
 
@@ -86,6 +94,7 @@ See [this stack overflow](https://stackoverflow.com/questions/38524938/sequelize
   }).then(numRowsDeleted=>{
       console.log(numRowsDeleted)
     // do something when done deleting
+      process.exit()
   });
 ```
 
@@ -114,7 +123,7 @@ In a `findOrCreate`, a callback will return back an array, instead of a single o
 ```javascript
 db.user.findOrCreate({
   where: { firstName: 'Brian' }
-}).then(([user, created]) {
+}).then(([user, created]) => {
   console.log(user); // returns info about the user
 });
 ```
