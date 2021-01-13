@@ -12,7 +12,7 @@ npm install -g sequelize-cli
 
 Let's build our first app using Sequelize! First we need to create a node app and include our dependencies. **All in terminal**:
 
-Create a new folder and add an index.js and .gitignore and initialize the repository
+**Create a new folder and add an index.js and .gitignore and initialize the repository**
 
 ```text
 mkdir userapp
@@ -22,23 +22,35 @@ touch index.js
 echo "node_modules" >> .gitignore
 ```
 
-Add/save dependencies \(sequelize needs pg for Postgres\)
+**Add/save dependencies \(sequelize needs pg for Postgres\)**
 
 ```text
 npm install pg sequelize
 ```
 
-Initialize a sequelize project
+**Initialize a sequelize project**
 
 ```text
 sequelize init
 ```
 
-#### For your historical reference...
+**Create a database inside of Postgres**
 
-**WARNING \(2017\) Edited \(2018\):** At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue \(for version Sequelize 4\) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up!
+The sequelize CLI has a command called `createdb`. This performs the same action as entering our psql shell and entering `CREATE DATABASE`.
 
-If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
+```text
+createdb userapp_development
+```
+
+
+**For your historical reference...**
+<details>
+<summary></summary>
+  
+  **WARNING \(2017\) Edited \(2018\):** At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue \(for version Sequelize 4\) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up!
+
+  If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
+</details>
 
 ## Setup part 3 - config.json, models and migrations:
 
@@ -78,15 +90,8 @@ Let's change the config.json so it looks like this.
 
 When we deploy to Heroku, they will provide us a long url that contains password and login that will be secure when deployed. More on this later.
 
-Once this is complete, let's move to the models folder.
+Once this is complete, let's shift our attention to "models".
 
-### Create a database inside of Postgres
-
-The sequelize CLI has an equivalent command to `createdb`. You can use either, they do the same thing!
-
-```text
-createdb userapp_development
-```
 
 ### Create a model and a matching migration
 
