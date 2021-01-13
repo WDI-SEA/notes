@@ -215,13 +215,13 @@ Generally, the code in the **express route** would contain code that would CREAT
 app.post('/dinosaurs', (req, res) => {
   // read dinosaurs file
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
-  dinosaurs = JSON.parse(dinosaurs);
+  let dinoData = JSON.parse(dinosaurs);
 
   // add item to dinosaurs array
-  dinosaurs.push(req.body);
+  dinoData.push(req.body);
 
   // save dinosaurs to the data.json file
-  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinosaurs));
+  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
 
   //redirect to the GET /dinosaurs route (index)
   res.redirect('/dinosaurs');
