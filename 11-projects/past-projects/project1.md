@@ -5,6 +5,7 @@
 * [Unity](https://petefitton.github.io/UNITY/) - Pete Fitton (SEI 29)
 * [Ludo!](https://yboodhan.com/ludo/) - Yashoma Boodhan (SEI 28)
 * [Social Life Simulator](https://nickubed.github.io/social-life-sim/) - Nick Quandt (SEI 28)
+* [Pew Pew](https://justinrobertking.github.io/space-game/game/) - Justin King (SEI 24)
 * [Bee Free](https://009kings.github.io/beeFree/) - Sarah King (WDI 22)
 * [A Whale's Tale](http://motionless-toe.surge.sh) - Gil Weinstock (WDI 18)
 * [Chairman of the Board](http://seancswanson.com/chairman-of-the-board/) - Sean Swanson (WDI 16)
