@@ -31,7 +31,7 @@ Check out the [Sequelize BelongsToMany docs](https://sequelize.readthedocs.io/en
 
 In order to associate pets to toys in a many to many fashion, you will need to update the associations on the pets and toys.
 
-Many to many associations use the `belongsToMany` sequelize method, which takes a second options pargument. Use the `through` option to indicate the name of the join model (in this case, `PetToy`).
+Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `PetToy`).
 
 ### pet.js
 
@@ -51,6 +51,8 @@ toys.associate = function(models) {
  };
 ```
 
+Don't forget to migrate after adding your new associations!
+
 ## Examples
 
 ### Add a unique toy to a pet.
@@ -66,16 +68,17 @@ Some ORM has capabilities to do a bulk create on an object associations, but tha
 db.pet.findOrCreate({
   where: {
     name: "Silly May",
-    species: "Mini Aussie"
+    species: "Mini Aussie",
+    userId: 1
   }
-}).then(function([pet, created]) {
+}).then(([pet, created]) => {
   // Second, get a reference to a toy.
   db.toy.findOrCreate({
     where: {type: "stinky bear", color: "brown"}
-  }).then(function([toy, created]) {
+  }).then(([toy, created]) => {
     // Finally, use the "addModel" method to attach one model to another model.
-    pet.addToy(toy).then(function(relationInfo) {
-      console.log(toy.type, "added to", pet.name);
+    pet.addToy(toy).then(relationInfo => {
+      console.log(`${toy.type} added to ${pet.name}.`);
     });
   });
 });
@@ -89,10 +92,10 @@ Sequelize generates helper functions that allow you to get related items. For in
 
 ```javascript
 db.toy.findOne({
-  where: {type: "ball"}
-}).then(function(toy) {
-  toy.getPets().then(function(pets) {
-    console.log(pets.length, 'pet(s) love the', toy.color, toy.type)
+  where: {type: "stinky bear"}
+}).then(toy => {
+  toy.getPets().then(pets => {
+    console.log(`${pets.length} pet(s) love the ${toy.color, toy.type}.`);
   });
 });
 ```
@@ -102,12 +105,12 @@ You can use the `addModel()` helper function to add a pet association on a toy i
 ```javascript
 db.toy.findOrCreate({
   where: {type: "ball", color: "green"}
-}).then(function([toy, created]) {
-  toy.getPets().then(function(pets) {
+}).then(([toy, created]) => {
+  toy.getPets().then(pets => {
     // Check if their are any pets associated with this toy
     if (pets.length > 0) {
-      pets.forEach(function(pet) {
-        console.log(pet.name, 'loves their', toy.color, toy.type);
+      pets.forEach(pet => {
+        console.log(`${pet.name} loves their ${toy.color} ${toy.type}.`);
       });
     } else {
       // findOrCreate a Pet and add it to the toy
@@ -116,9 +119,9 @@ db.toy.findOrCreate({
           name: "Ruby Tuesday",
           species: "Toy Aussie"
         }
-      }).then(function([pet, created]) {
-        toy.addPet(pet).then(function(relationInfo){
-          console.log(pet.name, 'has faved the', toy.color, toy.type, 'toy')
+      }).then(([pet, created]) => {
+        toy.addPet(pet).then(relationInfo => {
+          console.log(`${pet.name} has faved the ${toy.color} ${toy.type} toy.`);
         })
       });
     } // end of if statement
@@ -131,10 +134,10 @@ Because this is a Many to Many association, all the logic from before can be tur
 ```javascript
 db.pet.findOne({
   where: {name: "Ruby Tuesday"}
-}).then(function(pet) {
-  pet.getToys().then(function(toys) {
-    toys.forEach(function(toy) {
-      console.log(pet.name, 'loves their', toy.color, toy.type);
+}).then(pet => {
+  pet.getToys().then(toys => {
+    toys.forEach(toy => {
+      console.log(`${pet.name} loves their ${toy.color} ${toy.type}.`);
     });
   });
 });
@@ -152,9 +155,9 @@ db.pet.findOne({
     name: "Silly May"
   },
   include: [db.user, db.toy]
-}).then(function(pet) {
-  pet.toys.forEach(function(toy) {
-    console.log(pet.user.firstName + '\'s pet', pet.name, 'loves their', toy.color, toy.type)
+}).then(pet => {
+  pet.toys.forEach(toy => {
+    console.log(`${pet.user.firstName}'s pet ${pet.name} loves their ${toy.color} ${toy.type}.`);
   })
 })
 ```
@@ -163,26 +166,26 @@ Or we can use a mix of `include` and helper functions to get all the toys of all
 
 ```javascript
 db.user.findByPk(1, { include: [db.pet] })
-.then(function(user) {
-  user.pets.forEach(function(pet) {
-    pet.getToys().then(function(toys) {
-      toys.forEach(function(toy) {
-        console.log(user.firstName + '\'s pet', pet.name, 'loves their', toy.color, toy.type)
-      })
-    })
-  })
-})
+.then(user => {
+  user.pets.forEach(pet => {
+    pet.getToys().then(toys => {
+      toys.forEach(toy => {
+        console.log(`${user.firstName}'s pet ${pet.name} loves their ${toy.color} ${toy.type}.`);
+      });
+    });
+  });
+});
 ```
 
-As you can see, there are MANY \(to\) MANY ways to get associated data when it is needed. It's also easy to see how easy it can be to get lost in nesting hell. One way to help keep things clean is to comment the end of each section. If we take the last block of code as an example:
+As you can see, there are MANY \(to\) MANY ways to get associated data when it is needed. It's also easy to see how easy it can be to get lost in nesting heck. One way to help keep things clean is to comment the end of each section. If we take the last block of code as an example:
 
 ```javascript
 db.user.findByPk(1, { include: [db.pet] })
-.then(function(user) {
-  user.pets.forEach(function(pet) {
-    pet.getToys().then(function(toys) {
-      toys.forEach(function(toy) {
-        console.log(user.firstName + '\'s pet', pet.name, 'loves their', toy.color, toy.type)
+.then(user => {
+  user.pets.forEach(pet => {
+    pet.getToys().then(toys => {
+      toys.forEach(toy =>  {
+        console.log(`${user.firstName}'s pet ${pet.name} loves their ${toy.color} ${toy.type}.`);
       }) // toys.forEach end
     }) // getToys end
   }) // pets.forEach end
