@@ -173,14 +173,14 @@ request(URL, (error, response, body) => {
 })
 ```
 
-## HINT
+### HINT
 ```javascript
  $(element).find('.image-container').attr('style')
 ```
 
 Now you need to modify the string to isolate the url!
 
-## SOLUTION
+### SOLUTION
 
 ```javascript
 request(URL, (error, response, body) => {
