@@ -186,9 +186,9 @@ db.user.findByPk(1, { include: [db.pet] })
     pet.getToys().then(toys => {
       toys.forEach(toy =>  {
         console.log(`${user.firstName}'s pet ${pet.name} loves their ${toy.color} ${toy.type}.`);
-      }) // toys.forEach end
-    }) // getToys end
-  }) // pets.forEach end
-}) // user.findByPk end
+      }); // toys.forEach end
+    }); // getToys end
+  }); // pets.forEach end
+}); // user.findByPk end
 ```
 
