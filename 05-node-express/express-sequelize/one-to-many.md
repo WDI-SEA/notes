@@ -55,7 +55,7 @@ Finally, let's run create all the necessary tables from our models by migrating 
 sequelize db:migrate
 ```
 
-Read more: [Seqeulize docs - One to Many](http://docs.sequelizejs.com/en/latest/docs/associations/#one-to-many-associations)
+Read more: [Sequelize docs - One to Many](http://docs.sequelizejs.com/en/latest/docs/associations/#one-to-many-associations)
 
 ## Using the association
 
@@ -83,8 +83,8 @@ db.user.findOne()
 We can manually get all pets of a user by calling `.getPets()` on a user instance. Remember this query is asynchronous and takes time, so we have to use a `.then()` promise too.
 
 ```javascript
-db.user.findOne().
-then(user=>{
+db.user.findOne()
+.then(user=>{
     //load pets for this user
     user.getPets().then(pets=>{
       //do something with pets here
