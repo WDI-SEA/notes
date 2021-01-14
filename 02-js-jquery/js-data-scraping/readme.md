@@ -39,7 +39,7 @@ To get started, create a new folder, and initialize npm. We'll also want to inst
 
 ### Step 1: Get the HTML document
 
-There are multiple ways to get an HTML document, but we'll use the `request` module in this example. To scrape data from the site, we need to request the webpage. In a `getbusinesses.js` file, import the `request`, then make a request to the Seattle Neigbhborhoods website.
+There are multiple ways to get an HTML document, but we'll use the `request` module in this example. To scrape data from the site, we need to request the webpage. In a `getbusinesses.js` file, import `request`, then make a request to the Seattle Neigbhborhoods website.
 
 ```javascript
 const request = require('request')
@@ -173,20 +173,14 @@ request(URL, (error, response, body) => {
 })
 ```
 
-<details><summary>HINT</summary>
-<p>
-
+## HINT
 ```javascript
  $(element).find('.image-container').attr('style')
 ```
 
 Now you need to modify the string to isolate the url!
 
-</p>
-</details>
-
-<details><summary>SOLUTION</summary>
-<p>
+## SOLUTION
 
 ```javascript
 request(URL, (error, response, body) => {
@@ -206,8 +200,6 @@ request(URL, (error, response, body) => {
 
 Now you need to modify the string to isolate the url!
 
-</p>
-</details>
 
 
 ## Some other resources on scraping
