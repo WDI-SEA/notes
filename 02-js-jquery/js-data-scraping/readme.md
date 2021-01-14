@@ -42,8 +42,8 @@ To get started, create a new folder, and initialize npm. We'll also want to inst
 There are multiple ways to get an HTML document, but we'll use the `request` module in this example. To scrape data from the site, we need to request the webpage. In a `getbusinesses.js` file, import `request`, then make a request to the Seattle Neigbhborhoods website.
 
 ```javascript
-const request = require('request')
-const URL = 'https://visitseattle.org/partners/?frm=partners&ptype=visitors-guide&s=&neighborhood=Capitol+Hill'
+const request = require('request');
+const URL = 'https://visitseattle.org/partners/?frm=partners&ptype=visitors-guide&s=&neighborhood=Capitol+Hill';
 
 request(URL, (error, response, body) => {
     console.log(body);
@@ -59,7 +59,7 @@ Look over the [Cheerio Documentation](https://cheerio.js.org/) - for more info a
 The request to the seattle neighborhoods url gave us the entire HTML document string - now we need to parse it in order to pick out the specific data we're looking for. This is where Cheerio comes in! Import Cheerio to your `getbusinesses.js`:
 
 ```javascript
-const cheerio = require('cheerio')
+const cheerio = require('cheerio');
 
 ```
 
@@ -90,7 +90,7 @@ First let's grab the first `search-result-preview` element. Cheerio uses [jQuery
 request(URL, (error, response, body) => {
     let $ = cheerio.load(body);
     let result = $('.search-result-preview').html();
-    console.log(result)
+    console.log(result);
 });
 ```
 
@@ -98,9 +98,9 @@ Now let's target the `title` attribute:
 
 ```javascript
 request(URL, (error, response, body) => {
-    let $ = cheerio.load(body)
+    let $ = cheerio.load(body);
     let result = $('.search-result-preview').find('a').attr('title');
-    console.log(result)
+    console.log(result);
 });
 ```
 Great! Now we know how to find the title of **one** business, but how do we get all of them?
@@ -111,21 +111,21 @@ Cheerio actually gives us the option of selecting the *first* or *all* of the el
 
 ```javascript
 request(URL, (error, response, body) => {
-    let $ = cheerio.load(body)
-    let result = $('.search-result-preview')
-    console.log(result.length)
-})
+    let $ = cheerio.load(body);
+    let result = $('.search-result-preview');
+    console.log(result.length);
+});
 ```
 It looks like that result object actually contains all of the results on the page! Cheerio has iterators for traversing cheerio objects like this. Let's use the `each` iterator, which functions similarly to the javascript `Array.forEach()`:
 
 ```javascript
 request(URL, (error, response, body) => {
-    let $ = cheerio.load(body)
-    let results = $('.search-result-preview')
+    let $ = cheerio.load(body);
+    let results = $('.search-result-preview');
     results.each((index, element)=>{
-        console.log($(element).find('a').attr('title'))
-    })
-})
+        console.log($(element).find('a').attr('title'));
+    });
+});
 ```
 
 Logging to the console is great, but in practice, we'll likely want to store all of these titles in an an array-like cheerio object. We can use the built in `.map()` iterator to pull out *just* the titles and store them in their own cheerio object: 
@@ -134,25 +134,25 @@ Logging to the console is great, but in practice, we'll likely want to store all
 ```javascript
 request(URL, (error, response, body) => {
     let $ = cheerio.load(body);
-    let results = $('.search-result-preview')
+    let results = $('.search-result-preview');
     let resultTitles = results.map((index, element)=>{
-        return $(element).find('a').attr('title')
-    })
-    console.log(resultTitles)
-})
+        return $(element).find('a').attr('title');
+    });
+    console.log(resultTitles);
+});
 ```
 
 This still gives us a lot of gobbledy-gook we didn't ask for. Use the `.get()` function after `.map()` to see an array of exactly what we asked for \(see docs -&gt; traversing -&gt; get\):
 
 ```javascript
 request(URL, (error, response, body) => {
-    let $ = cheerio.load(body)
-    let results = $('.search-result-preview')
+    let $ = cheerio.load(body);
+    let results = $('.search-result-preview');
     let resultTitles = results.map((index, element)=>{
-        return $(element).find('a').attr('title')
-    })
-    console.log(resultTitles.get())
-})
+        return $(element).find('a').attr('title');
+    });
+    console.log(resultTitles.get());
+});
 ```
 
 ## Exercise:
@@ -162,20 +162,20 @@ What if we want more than just the name of the businesses? Let's modify our code
 ```javascript
 request(URL, (error, response, body) => {
     let $ = cheerio.load(body);
-    let results = $('.search-result-preview')
+    let results = $('.search-result-preview');
     let filteredResults = results.map((index, element)=>{
         return {
             title: $(element).find('a').attr('title'),
             img: [ INSERT YOUR CODE HERE ]
         }
-    })
-    console.log(filteredResults.get())
-})
+    });
+    console.log(filteredResults.get());
+});
 ```
 
 ### HINT
 ```javascript
- $(element).find('.image-container').attr('style')
+ $(element).find('.image-container').attr('style');
 ```
 
 Now you need to modify the string to isolate the url!
@@ -185,17 +185,17 @@ Now you need to modify the string to isolate the url!
 ```javascript
 request(URL, (error, response, body) => {
     let $ = cheerio.load(body);
-    let results = $('.search-result-preview')
+    let results = $('.search-result-preview');
     let filteredResults = results.map((index, element)=>{
-        let imgurl = $(element).find('.image-container').attr('style')
-        imgurl = imgurl.substring(22, imgurl.length-15)
+        let imgurl = $(element).find('.image-container').attr('style');
+        imgurl = imgurl.substring(22, imgurl.length-15);
         return {
             title: $(element).find('a').attr('title'),
             img: imgurl
         }
-    })
-    console.log(filteredResults.get())
-})
+    });
+    console.log(filteredResults.get());
+});
 ```
 
 Now you need to modify the string to isolate the url!
