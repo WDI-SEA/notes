@@ -122,7 +122,7 @@ It looks like that result object actually contains all of the results on the pag
 axios.get(URL).then(res => {
     let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
-    results.each((index, element)=>{
+    results.each((index, element) => {
         console.log($(element).find('a').attr('title'));
     });
 });
@@ -135,7 +135,7 @@ Logging to the console is great, but in practice, we'll likely want to store all
 axios.get(URL).then(res => {
     let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
-    let resultTitles = results.map((index, element)=>{
+    let resultTitles = results.map((index, element) => {
         return $(element).find('a').attr('title');
     });
     console.log(resultTitles); 
@@ -148,7 +148,7 @@ This still gives us a lot of gobbledy-gook we didn't ask for. Use the `.get()` f
 axios.get(URL).then(res => {
     let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
-    let resultTitles = results.map((index, element)=>{
+    let resultTitles = results.map((index, element) => {
         return $(element).find('a').attr('title');
     });
     console.log(resultTitles.get());
@@ -163,7 +163,7 @@ What if we want more than just the name of the businesses? Let's modify our code
 axios.get(URL).then(res => {
     let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
-    let filteredResults = results.map((index, element)=>{
+    let filteredResults = results.map((index, element) => {
         return {
             title: $(element).find('a').attr('title'),
             img: [ INSERT YOUR CODE HERE ]
@@ -186,7 +186,7 @@ Now you need to modify the string to isolate the url!
 axios.get(URL).then(res => {
     let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
-    let filteredResults = results.map((index, element)=>{
+    let filteredResults = results.map((index, element) => {
         let imgurl = $(element).find('.image-container').attr('style');
         imgurl = imgurl.substring(22, imgurl.length-15);
         return {
