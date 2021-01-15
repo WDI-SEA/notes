@@ -34,20 +34,20 @@ Let's try creating a program that will scrape neighborhood data from this site:
 
 To get started, create a new folder, and initialize npm. We'll also want to install two modules:
 
-* `request` - for accessing external resources via HTTP
+* `axios` - for accessing external resources via HTTP
 * `cheerio` - essentially, this is server side jQuery. We will be using this to traverse the data we get back from our request.
 
 ### Step 1: Get the HTML document
 
-There are multiple ways to get an HTML document, but we'll use the `request` module in this example. To scrape data from the site, we need to request the webpage. In a `getbusinesses.js` file, import `request`, then make a request to the Seattle Neigbhborhoods website.
+There are multiple ways to get an HTML document, but we'll use the `axios` module in this example. To scrape data from the site, we need to request the webpage. In a `getbusinesses.js` file, import `axios`, then make a request to the Seattle Neigbhborhoods website.
 
 ```javascript
-const request = require('request');
+const axios = require('axios');
 const URL = 'https://visitseattle.org/partners/?frm=partners&ptype=visitors-guide&s=&neighborhood=Capitol+Hill';
 
-request(URL, (error, response, body) => {
-    console.log(body);
-});
+axios.get(URL).then(res => {
+    console.log(res.data)
+})
 ```
 
 Run the program and take a look at your output. What did the request return?
@@ -66,9 +66,9 @@ const cheerio = require('cheerio');
 Inside the callback function of request, we'll pass the html we got back into the `cheerio.load()` function. We store the result, which is a cheerio object, in the dollar sign variable because cheerio is designed to mimic jQuery selectors \(though technically, we could store it in any variable we'd like\).
 
 ```javascript
-request(URL, (error, response, body) => {
-  let $ = cheerio.load(body);
-  console.log($);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
+    console.log($);
 });
 ```
 
@@ -97,8 +97,8 @@ request(URL, (error, response, body) => {
 Now let's target the `title` attribute:
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let result = $('.search-result-preview').find('a').attr('title');
     console.log(result);
 });
@@ -110,8 +110,8 @@ Great! Now we know how to find the title of **one** business, but how do we get 
 Cheerio actually gives us the option of selecting the *first* or *all* of the elements that match the selector. Let's take a closer look at `('.search-result-preview')` by getting it's `length`:
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let result = $('.search-result-preview');
     console.log(result.length);
 });
@@ -119,8 +119,8 @@ request(URL, (error, response, body) => {
 It looks like that result object actually contains all of the results on the page! Cheerio has iterators for traversing cheerio objects like this. Let's use the `each` iterator, which functions similarly to the javascript `Array.forEach()`:
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
     results.each((index, element)=>{
         console.log($(element).find('a').attr('title'));
@@ -132,21 +132,21 @@ Logging to the console is great, but in practice, we'll likely want to store all
 
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
     let resultTitles = results.map((index, element)=>{
         return $(element).find('a').attr('title');
     });
-    console.log(resultTitles);
+    console.log(resultTitles); 
 });
 ```
 
 This still gives us a lot of gobbledy-gook we didn't ask for. Use the `.get()` function after `.map()` to see an array of exactly what we asked for \(see docs -&gt; traversing -&gt; get\):
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
     let resultTitles = results.map((index, element)=>{
         return $(element).find('a').attr('title');
@@ -160,8 +160,8 @@ request(URL, (error, response, body) => {
 What if we want more than just the name of the businesses? Let's modify our code to also store the URL for the image associated with the result:
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
     let filteredResults = results.map((index, element)=>{
         return {
@@ -183,8 +183,8 @@ Now you need to modify the string to isolate the url!
 ### SOLUTION
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let results = $('.search-result-preview');
     let filteredResults = results.map((index, element)=>{
         let imgurl = $(element).find('.image-container').attr('style');
