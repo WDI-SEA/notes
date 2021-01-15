@@ -87,8 +87,8 @@ The business name can be found inside the `search-result-preview` `div` as both 
 First let's grab the first `search-result-preview` element. Cheerio uses [jQuery selectors](https://www.w3schools.com/jquery/jquery_ref_selectors.asp) to identify elements.
 
 ```javascript
-request(URL, (error, response, body) => {
-    let $ = cheerio.load(body);
+axios.get(URL).then(res => {
+    let $ = cheerio.load(res.data);
     let result = $('.search-result-preview').html();
     console.log(result);
 });
