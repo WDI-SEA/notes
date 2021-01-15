@@ -76,13 +76,13 @@ Since we can only use `POST` methods to activate the `method-override` functiona
 ```javascript
 app.delete('/dinosaurs/:idx', (req, res) => {
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
-  dinosaurs = JSON.parse(dinosaurs);
+  let dinoData = JSON.parse(dinosaurs);
 
   // remove the deleted dinosaur from the dinosaurs array
-  dinosaurs.splice(req.params.idx, 1)
+  dinoData.splice(req.params.idx, 1)
 
   // save the new dinosaurs to the data.json file
-  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinosaurs));
+  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
 
   //redirect to the GET /dinosaurs route (index)
   res.redirect('/dinosaurs');
@@ -148,14 +148,14 @@ Finally we can write our `PUT` route! The form submission will return the editte
 ```javascript
 app.put('/dinosaurs/:idx', (req, res) => {
   let dinosaurs = fs.readFileSync('./dinosaurs.json');
-  dinosaurs = JSON.parse(dinosaurs);
+  let dinoData = JSON.parse(dinosaurs);
 
   //re-assign the name and type fields of the dinosaur to be editted
-  dinosaurs[req.params.idx].name = req.body.name;
-  dinosaurs[req.params.idx].type = req.body.type;
+  dinoData[req.params.idx].name = req.body.name;
+  dinoData[req.params.idx].type = req.body.type;
 
    // save the editted dinosaurs to the data.json file
-  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinosaurs));
+  fs.writeFileSync('./dinosaurs.json', JSON.stringify(dinoData));
   res.redirect('/dinosaurs');
 });
 ```
