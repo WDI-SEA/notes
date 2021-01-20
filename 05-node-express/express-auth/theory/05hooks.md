@@ -28,11 +28,17 @@ hooks: {
 ```
 
 ***Another way: addHook() method***
-
+Inside the `module.exports` object in `tag.js` but *before* the `return tag`:
 ```javascript
+// some other model code 
+
   tag.addHook('beforeCreate', (pendingTag, options)=>{
     tag.name = tag.name.toUpperCase();
   })
+
+  return tag;
+  
+};
 ```
 
-We can use beforeCreate hook to automatically hash a users password before it is created (AKA before the data is inserted into the database).
+We can use beforeCreate hook to automatically hash a user's password before it is created (AKA before the data is inserted into the database).
