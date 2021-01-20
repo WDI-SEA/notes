@@ -1,7 +1,7 @@
 # Express Authentication
 
-Most web applications will require login/logout functionality. In this section, we'll cover how to add authentication to our applications. We'll also cover the different modules necessary for password security, authenticated sessions, flash messages, and authorization.
+Most web applications will require login/logout functionality. Over the next day or two, we will build a node/express that is set up to handle users in this way. You will then be able to use this bare bones app as a boilerplate for your Unit 2 project.
 
-We'll start off with researching components, which we'll do in groups. Then, we'll try coding the components in groups before going over a brief overview of the different components we'll be using.
+You already know how to do a lot of this stuff, but the auth-specific parts will be new, and there are several of them. It's totally ok for those parts to feel unclear. You will not be asked to recreate this ever in this class. Most apps in the wild deal with users, so it's important to have exposure and a bit of experience on how this important functionality can by incorporated into an app. That is the point of doing this code-along.
 
-Then, we'll combine these components in the afternoon in order to get a working authentication example.
+Buckle up!
