@@ -52,4 +52,3 @@ Read more about hooks [here](https://sequelize.org/master/manual/hooks.html). We
     pendingUser.password = hashedPassword
   })
 ```
-

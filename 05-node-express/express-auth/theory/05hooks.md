@@ -27,4 +27,12 @@ hooks: {
 
 ```
 
+***Another way: addHook() method***
+
+```javascript
+  tag.addHook('beforeCreate', (pendingTag, options)=>{
+    tag.name = tag.name.toUpperCase();
+  })
+```
+
 We can use beforeCreate hook to automatically hash a users password before it is created (AKA before the data is inserted into the database).
