@@ -135,6 +135,7 @@
     * [N:M Relationships](05-node-express/express-sequelize/many-to-many.md)
   * [Express Authentication](05-node-express/express-auth/readme.md)
     * [From Scratch](05-node-express/express-auth/from-scratch.md)
+    * [Research AND Code](05-node-express/express-auth/research/research-and-code.md)
     * [Research Components](05-node-express/express-auth/research/components.md)
     * [Code Components](05-node-express/express-auth/research/code.md)
     * [Auth in Theory](05-node-express/express-auth/theory/readme.md)
