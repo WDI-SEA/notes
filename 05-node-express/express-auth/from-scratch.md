@@ -27,8 +27,6 @@ Utilize your step-by-step node/express app readme notes to do the following:
 
 ### Part 3: User Model
 
-### User Model
-
 * Install sequelize and pg
 * `sequelize init`, fix the `config.json` content, then `sequelize db:create`
 * Create a user model based off the following table (we will add the uniqueness and hashing later, so don't worry about those notes for now)
