@@ -1,12 +1,12 @@
 # Websockets with socket.io
 
-##Objectives
+### Objectives
 
 * Describe what realtime means, and how channels & open sockets push data to clients
 * Set up websockets on the server side
 * Use jQuery to update the client side
 
-###Getting Started
+### Getting Started
 
 **NOTE: There are two options for this lesson**
 
