@@ -84,7 +84,7 @@ db.pet.findOrCreate({
 });
 ```
 
-Take some time to use these helper functions to add more toys and more pets!
+Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the PetToys table in a `psql` shell you will need to wrap the table name within quotations i.e. "PetToys".
 
 ### Get all pets that use a toy
 
