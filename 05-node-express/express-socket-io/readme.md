@@ -1,6 +1,6 @@
 # Websockets with socket.io
 
-### Objectivess
+### Objectives
 
 * Describe what realtime means, and how channels & open sockets push data to clients
 * Set up websockets on the server side
