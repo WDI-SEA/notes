@@ -13,7 +13,7 @@ Enter join tables! These tables have a one to many relationship with each of the
 
 ![An er diagram featuring a many to many relationship with students and classes and a join table called enrollments](https://fmhelp.filemaker.com/help/18/fmp/en/FMP_Help/images/relational.07.06.1.png)
 
-Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `ProductOrders` or `product_orders`.
+Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `ProductOrders` or `product_orders`. (More info on [associative tables](https://en.wikipedia.org/wiki/Associative_entity)).
 
 ## Sequelize models
 
@@ -22,8 +22,10 @@ We will be expanding our data model in `userapp` to include toys for our pets.
 ```text
 sequelize model:create --name toy --attributes type:string,color:string
 
-sequelize model:create --name PetToy --attributes petId:integer,toyId:integer
+sequelize model:create --name petToys --attributes petId:integer,toyId:integer
 ```
+
+You may be noticing that this model is plural! Doesn't that break the cardinal rule that "Models are always singular!"? According to the Sequelize documentation when using a Junction Model (a model represening an join table), the model is pluralized.
 
 Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.html#many-to-many-relationships) and the [Sequelize BelongsToMany docs](https://sequelize.org/master/manual/creating-with-associations.html#hasmany---belongstomany-association) for more on all of the code and conventions covered in this lesson!
 
@@ -31,24 +33,31 @@ Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.ht
 
 In order to associate pets to toys in a many to many fashion, you will need to update the associations on the pets and toys.
 
-Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `PetToy`).
+Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `petToys`).
 
 ### pet.js
 
 ```javascript
- pet.associate = function(models) {
-   // associations can be defined here
-   models.pet.belongsTo(models.user);
-   models.pet.belongsToMany(models.toy, {through: "PetToy"})
- };
+ class pet extends Model {
+   ...
+   static associate(models) {
+     // define association here
+     models.pet.belongsTo(models.user)
+     models.pet.belongsToMany(models.toy, {through: "petToys"})
+   }
+ }
 ```
 
 ### toys.js
 
 ```javascript
-toys.associate = function(models) {
-   models.toy.belongsToMany(models.pet, {through: "PetToy"})
- };
+ class toy extends Model {
+   ...
+   static associate(models) {
+     // define association here
+     models.toy.belongsToMany(models.pet, {through: "petToys"})
+   }
+ }
 ```
 
 Don't forget to migrate after adding your new associations!
@@ -57,11 +66,11 @@ Don't forget to migrate after adding your new associations!
 
 ### Add a unique toy to a pet.
 
-In order to add a unique toy to a pet, we must first try to find or create a pet, in order to make sure it is in fact unique.
+In order to add a unique toy to a pet, we need to first find (or create) a pet to associate the toy to. 
 
-Secondly, we must attach a toy to the pet, using some built in helpers.
+Secondly, we must have a toy to attach to the pet, then we can associate them.
 
-Some ORM has capabilities to do a bulk create on an object associations, but that kind of logic is not built in Sequelize.
+Some ORMs have functions to perform a bulk create on an object associations, but that kind of logic is not built in Sequelize. The list of special methods/mixins available on Sequelize N:M associations can be found in the [documentation here](https://sequelize.org/master/manual/assocs.html#-code-foo-belongstomany-bar----through--baz-----code-).
 
 ```javascript
 // First, get a reference to a pet.
@@ -84,7 +93,24 @@ db.pet.findOrCreate({
 });
 ```
 
-Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the PetToys table in a `psql` shell you will need to wrap the table name within quotations i.e. "PetToys".
+Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the petToys table in a `psql` shell you will need to wrap the table name within quotations i.e. "petToys".
+
+An example of how you might use this in an express route:
+
+```js
+app.post('/pets/toys', (req, res) => {
+  // First get a reference to the pet
+  db.pet.findByPk(req.body.petId)
+  .then(pet => {
+    db.toy.findByPk(req.body.petId)
+    .then(toy => {
+      pet.addToy(toy);
+      res.redirect(`/pets/${req.body.petId}`);
+    })
+  })
+})
+
+```
 
 ### Get all pets that use a toy
 
@@ -95,7 +121,7 @@ db.toy.findOne({
   where: {type: "stinky bear"}
 }).then(toy => {
   toy.getPets().then(pets => {
-    console.log(`${pets.length} pet(s) love the ${toy.color, toy.type}.`);
+    console.log(`${pets.length} pet(s) loves the ${toy.color, toy.type}.`);
   });
 });
 ```
@@ -128,6 +154,8 @@ db.toy.findOrCreate({
   });
 });
 ```
+
+
 
 Because this is a Many to Many association, all the logic from before can be turned around to search for all the toys of a particular pet!
 
