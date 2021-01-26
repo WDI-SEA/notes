@@ -25,7 +25,7 @@ sequelize model:create --name toy --attributes type:string,color:string
 sequelize model:create --name PetToy --attributes petId:integer,toyId:integer
 ```
 
-Check out the [Sequelize BelongsToMany docs](https://sequelize.readthedocs.io/en/v3/docs/associations/#belongs-to-many-associations) for more on all of the code and conventions covered in this lesson!
+Check out the [Sequelize BelongsToMany docs](https://sequelize.org/master/manual/creating-with-associations.html#hasmany---belongstomany-association) for more on all of the code and conventions covered in this lesson!
 
 ## Update your Associations
 
