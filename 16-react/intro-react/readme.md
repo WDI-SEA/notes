@@ -58,16 +58,16 @@ React will work with any back-end language, but for project 3 and in our in-clas
 
 One comment made about React when it was first open sourced was "Rethinking established best practices" which kind of became the React motto.  In React, we want to move away from template pages, away from separating code based purely on file type, and more towards a **component-based** separation of concerns.  [Templates vs Components](https://wanderoak.co/fixed-templates-vs-components/)
 
-![Templates Page](images/templates-page.png)
-![Components Page](images/components-page.png)
+![Templates Page](./images/templates-page.png)
+![Components Page](./images/components-page.png)
 > [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/)
 
 When taking a look at Facebook, you could think of each status post as a mini-component in React. And a list of those updates, is a component that contains several of those mini-components. You could take that one step further and think of the Facebook app, as one giant component with several components within it. (Things like the list of status updates, the friends list, the header, etc...)
 
 Imagine you worked at Facebook when they wanted to shift from using likes to reactions. Using traditional JavaScript, HTML, and CSS the shift would make you have to change your code in a bunch of places. Component based architecture allows us to maintain our code more easily.
 
-![Wireframe](images/wireframe.png)
-![Wireframe with components](images/wireframe_deconstructed.png)
+![Wireframe](./images/wireframe.png)
+![Wireframe with components](./images/wireframe_deconstructed.png)
 > [MakeTea - Building Robust Apps with React](http://maketea.co.uk/2014/03/05/building-robust-web-apps-with-react-part-1.html)
 
 Notice the structure of how the various components are nested. 
