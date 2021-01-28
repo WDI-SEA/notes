@@ -78,13 +78,13 @@ containing other components.
 Yes, components can hold other components! In fact, you should strive to have
 lots of small components that you can nest within each other.
 
-![Templates Page](images/templates-page.png)
+![Templates Page](./images/templates-page.png)
 
 The traditional way of building out web pages. Each file contains all the code
 for a single page. If there is duplication across pages, that code is duplicated
 in the HTML.
 
-![Components Page](images/components-page.png)
+![Components Page](./images/components-page.png)
 
 > [WanderOak - Fixed Templates vs. Components](https://wanderoak.co/fixed-templates-vs-components/)
 
@@ -101,14 +101,14 @@ components.
 
 Here is a wireframe for a given web app:
 
-![Wireframe](images/wireframe.png)
+![Wireframe](./images/wireframe.png)
 
 As you can see there are a lot of pieces of the user interface that are
 repeated.
 
 With React, we can break this wireframe up into those component pieces:
 
-![Wireframe with components](images/wireframe_deconstructed.png)
+![Wireframe with components](./images/wireframe_deconstructed.png)
 
 > [MakeTea - Building Robust Apps with React](http://maketea.co.uk/2014/03/05/building-robust-web-apps-with-react-part-1.html)
 
