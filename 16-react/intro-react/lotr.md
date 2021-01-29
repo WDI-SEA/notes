@@ -18,11 +18,11 @@ cd lord-of-the-rings
 npm start
 ```
 
-#### Um, excuse me, you made a typo
+#### A note on npx
 
-Nope! The command `npx` is a legitimate thing. It's called a package runner. You can read more about it [here on npmjs.com](https://www.npmjs.com/package/npx). It enables you to run the command `create-react-app` without globally installing `create-react-app`.
+The command `npx` is called a package runner. You can read more about it [here on npmjs.com](https://www.npmjs.com/package/npx). It enables you to run the command `create-react-app` without globally installing `create-react-app`.
 
-> Note: If you globally installed create-react-app, you don't need the `npx` portion of the above command.
+> If you globally installed create-react-app, you don't need the `npx` portion of the above command.
 
 ### Create A Simple Movie Component
 Open up your `./src` directory in your favorite text editor.
@@ -121,7 +121,7 @@ reload." Let's do that!
 
 Open `src/App.js`.
 
-Add our `<Movie />` component just after the paragraph. Go back to the
+Add our `<Movie />` component in place of the `<a>` tag just after the paragraph. Go back to the
 app and see if it appears.
 
 ### Dealing with Errors
