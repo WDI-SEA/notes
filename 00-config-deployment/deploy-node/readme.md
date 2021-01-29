@@ -124,7 +124,7 @@ In this case, `sitename` is the name of your app. This will create a url like: `
 * To push to Heroku, enter the following command
 
 ```
-git push heroku master
+git push heroku main
 ```
 
 This should push all your code to Heroku and trigger a build.
