@@ -134,7 +134,7 @@ This should push all your code to Heroku and trigger a build.
 Next we want to make sure we have config variables. This is Heroku's version of a `.env` file or environment variables. Any variable names that are found in your local `.env` file should have a corresponding variable on Heroku.
 
 In your javascript code, you might have something like `process.env.GOOGLE_KEY`.
-In order to add environment variables to Heroku. We will run a Heroku command to set it per item in our .env file
+In order to add environment variables to Heroku. We can run a Heroku command to set it per item in our .env file (see [docs](https://devcenter.heroku.com/articles/config-vars#set-a-config-var) for more on configuring environment vars in heroku)
 
 ```
 heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
@@ -144,7 +144,7 @@ Alternatively, you can set these fields in the Heroku GUI under the settings tab
 
 ## Connect a DB with Sequelize
 
-You may notice that while you have a valid URL and the site is deployed, your site likely does not work when you visit it. This is because Heroku is not yet aware of our database and model structure. Let's make it aware.
+You may notice that while you have a valid URL and the site is deployed, your site likely does not work when you visit it. This is because Heroku is not yet aware of our database and model structure. Let's make it aware. See [Heroku Postgres Docs](https://elements.heroku.com/addons/heroku-postgresql) for more.
 
 * In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:hobby-dev`
 * Make sure your production variables in `config/config.json` are set like this (pay attention to the production setting).
@@ -169,7 +169,7 @@ You may notice that while you have a valid URL and the site is deployed, your si
 
 ```
 
-* Add and commit your changes to git, then push your changes to heroku using `git push heroku master`
+* Add and commit your changes to git, then push your changes to heroku using `git push heroku main`
 
 * Now run your migrations by typing in terminal `heroku run sequelize db:migrate` and you should have all your tables set up in a heroku hosted database
 
@@ -189,10 +189,6 @@ You can view your brand new database by executing the `psql` command you know an
 ## Something is broken?!?!?!?!
 
 Don't panic! Type `heroku logs` to see the error and info messages from the Heroku server! Find the error and Google it if the meaning isn't readily apparent! Some fixes to common errors are found below!
-
-### Migrate from Sequelize 3 to 4
-
-If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
 
 ### Version Conflicts
 
