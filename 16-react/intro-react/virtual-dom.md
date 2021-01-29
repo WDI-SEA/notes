@@ -21,7 +21,9 @@ import ReactDOM from 'react-dom';
 import Hello from './App.js';
 
 ReactDOM.render(
-  <Hello />,
+  <React.StrictMode>
+    <Hello />
+  </React.StrictMode>,
   document.getElementById('root')
 )
 ```
