@@ -171,6 +171,8 @@ You may notice that while you have a valid URL and the site is deployed, your si
 
 * Add and commit your changes to git, then push your changes to heroku using `git push heroku main`
 
+* So that we don't have to deal with configuring [SSL](https://www.globalsign.com/en/ssl-information-center/what-is-an-ssl-certificate), we need to add one more heroku config variable: `heroku config:set PGSSLMODE=no-verify`
+
 * Now run your migrations by typing in terminal `heroku run sequelize db:migrate` and you should have all your tables set up in a heroku hosted database
 
 * NOTE: If you have any seeder files to run, do that here as well! Simply type `heroku run` followed by the command you want to run on the production server.
