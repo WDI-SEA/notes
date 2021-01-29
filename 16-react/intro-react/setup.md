@@ -10,20 +10,15 @@
 
 Let's jump right in! We'll create a skeleton React project and walk through it as we go.
 
-An easy way to start React projects is to use a Terminal program called `create-react-app`. This excellent tool, created by Facebook, will help you set up a bare-bones React app instantly. We can simply install the package and start coding.
+An easy way to start React projects is to use a Terminal program called `create-react-app`. This excellent tool, created by Facebook, will help you set up a bare-bones React app instantly.
 
-Let's use `npm` to install it globally so we'll always have it available in our Terminal. Run:
-
-```sh
-$ npm i -g create-react-app
-```
-
-Once it's installed, create a new directory to store the app you're about to write and `cd` to the folder. Then, use the tool to create a new React app. You'll have to give your new app a name; we're calling the example app "hello_world", since that'll be our first project.
-
+We'll call the example app "hello_world", since that'll be our first project.
 
 ```sh
-$ create-react-app hello_world
+$ npx create-react-app hello_world
 ```
+
+Read more about npx [here](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
 The tool creates a new directory for your app, so move into it...
 
@@ -43,8 +38,7 @@ After running `$ npm start`, you can view the app at `http://localhost:3000`
 
 > Note: If you ever need to stop the server, you can hit `ctrl-c` in the terminal window.
 
-You'll notice the web page for our app automatically refreshes every time we save a file in the directory. This is an awesome feature of `create-react-app`
-
+You'll notice the web page for our app automatically refreshes every time we save a file in the directory. This is an awesome feature of `create-react-app`!
 
 You can look in the directory and see the structure that `create-react-app` provides for us. It looks like this:
 
@@ -62,8 +56,6 @@ You can look in the directory and see the structure that `create-react-app` prov
     ├── index.js
     └── logo.svg
 ```
-
-Most of the important files are in the `src` directory. Specifically, we'll be using `src/App.js` and `src/index.js`.
 
 ---
 
