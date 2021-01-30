@@ -3,13 +3,15 @@
 
 ### Learning Objectives
 *After this code-along section, you will be able to:*
-* Define state
+* Define what state means in relation to React components.
+* Differentiate between `this.state` and `this.props`.
 * Create an initial state in a component
 * Change the state of a component
 
 ## Intro
 
 At this point, we know about React properties and how they relate to our component's data.
+
 * The thing is, `props` represent data that will be the same every time our component is rendered. What about data in our application that may change depending on user action?
 * That's where `state` comes in.
 
@@ -27,7 +29,7 @@ Let's switch gears back to our `hello_world` project.
 
 Let's modify our earlier Hello World example to include a new `MoodTracker` component. There will be a mood displayed, and eventually a user will click a button to indicate on a scale of 1-10 how much of that mood they are feeling.
 
-### Initial State
+### Initial State (Old School Way)
 
 First, now that we're going to have a state, we're going to have an initial value. When working with classes, a good way to make initial values is by creating a constructor: `constructor (props) {}`. Constructors say, "When you create an instance of this class, do this." Without a constructor explicitly defined by us, our components will use the default constructor inherited from the `Component` class. That's why we didn't need a constructor before - we weren't doing anything differently than the normal default for every component.
 
@@ -87,6 +89,32 @@ class Hello extends Component {
 }
 ```
 
+### State Initialization in React v16+
+
+```js
+import React, { Component } from 'react';
+
+class MoodTracker extends Component {
+  // What should the state be when the component is created?
+  state = {
+    // Your info here
+  };
+  
+  // What should the component render?
+  render() {
+    // ...
+  }
+}
+
+export default MoodTracker;
+```
+
+Even though you may see the `constructor` syntax used in some online resources, the best practices for how to write the initial state for components has changed in recent years. Instead, we can create a component and directly define the starting state without ever having to use a constructor as of React 16.
+
+Much cleaner, right? Throughout the course, we're going to use this newer way to define state, but you may run into the constructor syntax during your own research as this was the way it was done prior to the release of React version 16.
+
+### Displaying State
+
 Now let's make sure we display that information to the user. Still in `App.js`, in your `render` method, we'll let the user know how many mood points they are at by adding in a line:
 
 ```html
@@ -115,14 +143,12 @@ return (
 
 Ok, we set an initial state. But how do we go about changing it?
 
-We need to set up some sort of **trigger event** to change the mood counter.
-
-We will create a button that the user can click, which will increase their mood by one.
+Changing the value of `this.state` isn't quite as straightforward as something like `this.state.moodPoints++`. Instead, when we want to update a value in React, we will use a method called `this.setState()`. This method helps React update only certain parts of the DOM, resulting in a much faster website!
 
 First, we will create a method to increase the mood.  Under the `Hello` constructor, above the `render` method, add this method:
 
 ```js
-increaseMood(e) {
+increaseMood = () => {
   this.setState({
     moodPoints: this.state.moodPoints + 1
   })
@@ -143,12 +169,31 @@ Now we'll create the button to trigger calling this function. The button will be
         <p>You are {this.props.age} years old</p>
         <p>On a scale of 1-10</p>
         <p>You are this happy: {this.state.moodPoints}</p>
-        <button onClick={(e) => this.increaseMood(e)}>Cheer up!</button>
+        <button onClick={this.increaseMood}>Cheer up!</button>
       </div>
     )
   }
 }
 ```
+
+### Synthetic Events
+
+**Events** in React are not the same as the normal events we're used to!
+
+From the [React Docs](https://reactjs.org/docs/events.html):
+
+*Your event handlers will be passed instances of SyntheticEvent, a cross-browser wrapper around the browser’s native event. It has the same interface as the browser’s native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers.*
+
+Take a look at some of the other supported synthetic events!
+
+**Event listeners** in React look very similar to adding events through HTML attributes. There are two main differences when working with React's synthetic events:
+
+- React events are named using camelCase instead of lowercase:
+-- onClick (React) vs. onclick (HTML)
+-- onSubmit (React) vs. onsubmit (HTML)
+- In JSX, you pass the actual function in as the handler, rather than a string:
+-- <button onClick={this.doSomething}>Click Me</button> (React)
+-- <button onclick="doSomething()">Click Me</button> (HTML)
 
 Altogether, your `App.js` file now looks like this:
 
