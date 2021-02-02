@@ -202,21 +202,12 @@ Altogether, your `App.js` file now looks like this:
 
 import React, {Component} from 'react';
 
-// define our Hello component
-class Hello extends Component {
-
-  constructor (props) {
-
-    // make call to parent class' (Component) constructor
-    super()
-    // define an initial state
-    this.state = {
-      moodPoints: 1 // initialize this.state.counter to be 0
-    }
+  state = {
+    moodPoints: 1
   }
 
   // increase moodPoints by 1 in this.state
-  increaseMood(e) {
+  increaseMood() {
     this.setState({
       moodPoints: this.state.moodPoints + 1
     })
@@ -233,7 +224,7 @@ class Hello extends Component {
         <p>You love {this.props.animals[0]}</p>
         <p>On a scale of 1-10</p>
         <p>You are this happy: {this.state.moodPoints}</p>
-        <button onClick={(e) => this.increaseMood(e)}>Cheer up!</button>
+        <button onClick={this.increaseMood}>Cheer up!</button>
       </div>
     )
   }
