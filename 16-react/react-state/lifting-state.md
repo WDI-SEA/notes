@@ -43,11 +43,11 @@ This app needs to keep track of changes in two items:
 
 I have two sibling components \(components at the same level of the tree/app\) that need to be aware of each other's data. Specifically, the `List` component needs to only show the fruits that match the filter value. So I need to get data from one sibling to another. Something like this:
 
-![basic data flow needed](../../.gitbook/assets/fruit-filter-data.png)
+![basic data flow needed](./assets/fruit-filter-data.png)
 
 How to achieve this, though? Using unidrectional data flow, of course! If I create a container component to hold both the filter value and the filtered list, I can hoist the `state` to the container so it's available to all the children. It will then be simple to display the `state` in the child components. The data will flow like this:
 
-![unidirectional approach](../../.gitbook/assets/fruit-list-unidirectional.png)
+![unidirectional approach](./assets/fruit-list-unidirectional.png)
 
 Now that I know the components I need, the `state` I need, and where everything needs to be, I can start writing some code.
 
