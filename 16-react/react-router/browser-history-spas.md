@@ -168,7 +168,7 @@ browser history mechanics to accommodate modern SPAs.
 
 The modern HTML5 specification (published in October 2014) introduced new browser history mechanics that make it easy to browse "back" and "forward" in single-page applications, even while actually staying on the same page.
 
-** How? **
+**How?**
 
 HTML5 introduced:
 - `.pushState()`  
