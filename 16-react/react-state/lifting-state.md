@@ -185,7 +185,7 @@ class Input extends Component {
         return (
             <div>
                 <label htmlFor="fruit-filter">Filter these Fruits: </label>
-                <input type="text" value={this.props.value} onChange={this.props.onChange} name="fruit-filter" />
+                <input type="text" value={this.props.value} onChange={this.props.onChange} id="fruit-filter" />
             </div>
         )
     }
@@ -200,8 +200,8 @@ import React, {Component} from 'react';
 
 class List extends Component {
     render(){
-        const fruitItems = this.props.fruits.map((f)=>{
-            return <li>{f}</li>
+        const fruitItems = this.props.fruits.map((fruit, idx)=>{
+            return <li key={idx}>{fruit}</li>
         })
         return (
             <ul>
@@ -233,12 +233,9 @@ Coming Soon!
 
 It's important that you think through your applications before you start writing code. It's often helpful to sketch out your app, and identify:
 
-* the **components**
-
-  you will need
-
+* the **components** you will need
 * the **states** you will need
-* where those states need to live
+* which components those states will live in
 
 Use the unidirectional data flow pattern - hoist your state toward the top of the component tree so it's available to the children that need it.
 
