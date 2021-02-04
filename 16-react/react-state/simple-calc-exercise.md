@@ -12,8 +12,7 @@ Like usual, use `create-react-app` to make a new project.
 
 ### Step 1
 Start by creating a single component file in the `src` directory, and name it
-`Calculator.js`. In this file, create your `Calculator` class. Use the `App.js`
-as an example of how to create a basic component. Add the following JSX to your Calculator's
+`Calculator.js`. In this file, create your `Calculator` class. Change `App.js` to be a class-based component that renders `Calculator` Add the following JSX to your Calculator's
 `render()` function:
 
 ```html
