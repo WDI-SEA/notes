@@ -28,10 +28,10 @@ When building a React app, it's important to take time to define the app's struc
 #### Components
 
 This app needs two components: 
-* 1. A `List` component to display the list of fruit. 
-    * This component needs one piece of data: the array of fruits to display.
-* 2. An `Input` to capture the filter value from the user.
-    * This component needs one piece of data: the current value of the filter.
+- 1. A `List` component to display the list of fruit. 
+    - This component needs one piece of data: the array of fruits to display.
+- 2. An `Input` to capture the filter value from the user.
+    - This component needs one piece of data: the current value of the filter.
 
 #### State
 
