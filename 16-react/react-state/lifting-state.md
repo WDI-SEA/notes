@@ -11,7 +11,7 @@ _After this lesson, you will be able to:_
 
 ### What is Unidirectional Data Flow?
 
-Let's start with [a video explaining this concept.](https://generalassembly.wistia.com/medias/v2uenqkgwk).
+Let's start with [a video explaining this concept](https://generalassembly.wistia.com/medias/v2uenqkgwk).
 
 In React applications, data usually flows from the top down. Why do we care? How does this apply?
 
