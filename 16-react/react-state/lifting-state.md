@@ -28,16 +28,16 @@ When building a React app, it's important to take time to define the app's struc
 #### Components
 
 This app needs two components: 
-- 1. A `List` component to display the list of fruit. 
+- A `List` component to display the list of fruit. 
     - This component needs one piece of data: the array of fruits to display.
-- 2. An `Input` to capture the filter value from the user.
+- An `Input` to capture the filter value from the user.
     - This component needs one piece of data: the current value of the filter.
 
 #### State
 
 This app needs to keep track of changes in two items: 
-* 1. The filtered list of fruits 
-* 2. The value of the filter
+* The filtered list of fruits 
+* The value of the filter
 
 #### Component hierarchy
 
