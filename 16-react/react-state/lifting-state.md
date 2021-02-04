@@ -54,7 +54,7 @@ Now that I know the components I need, the `state` I need, and where everything 
 ## Child Components
 
 ```javascript
-import React from 'react';
+import React, { Component } from 'react';
 
 class List extends Component {
     render(){
@@ -70,14 +70,14 @@ export default List;
 ```
 
 ```jsx
-import React from 'react';
+import React, { Component } from 'react';
 
 class Input extends Component {
     render(){
         return (
             <div>
                 <label htmlFor="fruit-filter">Filter these Fruits: </label>
-                <input type="text" name="fruit-filter" />
+                <input type="text" id="fruit-filter" />
             </div>
         )
     }
