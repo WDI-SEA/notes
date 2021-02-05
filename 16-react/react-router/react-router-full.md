@@ -42,16 +42,16 @@ Here's how we'll route our single-page application:
 
 | **URL Route**  | **Component**  | **Content Description**                          |
 |----------------|----------------|--------------------------------------------------|
-| /              | `<Home>`       | A homepage with welcome text.                    |
-| /services    | `<Services>` | A list of all services provided by the dental spa.                |
-| /contact       | `<Contact>`    | A page with an address, phone number, and email. |
-| /services/:id  | `<Service>`    | Will render beneath `Services` and shows details about a specific service |
+| /              | `<Home />`       | A homepage with welcome text.                    |
+| /services    | `<Services />` | A list of all services provided by the dental spa.                |
+| /contact       | `<Contact />`    | A page with an address, phone number, and email. |
+| /services/:id  | `<Service />`    | Will render beneath `Services` and shows details about a specific service |
 
 Remember, the URL routes are paths off our main website. We could put our website at any domain, like `www.ourdentistwebsite.com` or `www.premiumdental.com`, and the URL route paths would behave the same. Paths only care about what comes after the domain name.
 
 Our routes say that if someone goes to `ourdomain.com/` they will see our home page with welcome text.
-- The content of this page will all be defined in its own `Home` component in a file called `home.js`.
-- If someone navigates to the URL `ourdomain.com/contact`, they will see content with the business address, a phone number, and an email. All of this content will be defined in a component called `Contact` in a file called `contact.js`.
+- The content of this page will all be defined in its own `Home` component in a file called `Home.js`.
+- If someone navigates to the URL `ourdomain.com/contact`, they will see content with the business address, a phone number, and an email. All of this content will be defined in a component called `Contact` in a file called `Contact.js`.
 
 In the below codealong, we will walk through building this out together.
 
@@ -255,9 +255,9 @@ class App extends Component {
 
 There are three other important things to note here:
 
-- This goes *in place of* your existing component calls of `<Home />` (depending on which syntax you went for).
+- This goes *in place of* your existing component calls of `<Home />`, `<Services />` and `<Contact />` (depending on which syntax you went for).
 - The first route for the homepage at the root URL path `/` uses a special extra `exact` attribute before defining the path. The `exact` attribute means the component associated with the route will only be shown if users are at exactly that URL path. If you forget to include the `exact` keyword, when someone navigates to `/contact` they will actually see two components, because `/` is a partial match for `/contact`.
-- Notice that all of the `<Route>` components are wrapped inside one `<div>`. Like `render`, the `<Router>` element can only have one direct child element. If you don't wrap the routes with a `<div>`, the page will appear blank, and you'll have to open your JavaScript console to see that there's an error being logged to the console. Like so -
+- Notice that all of the `<Route>` components are wrapped inside one tag, `<main>`. Like `render`, the `<Router>` element can only have one direct child element. If you don't wrap the routes with a tag like `<div>` or `<main>`, the page will appear blank, and you'll have to open your JavaScript console to see that there's an error being logged to the console. Like so -
 
 ![A Router may only have one child element.](./assets/router-requires-only-one-child.png)
 
@@ -392,8 +392,8 @@ class App extends Component {
     return (
       <Router>
         <nav>
-          <Link to="/">Go to Home Page</Link>{' '}
-          <Link to="/services">See Our Services</Link>{' '}
+          <Link to="/">Go to Home Page</Link>{' | '}
+          <Link to="/services">See Our Services</Link>{' | '}
           <Link to="/contact">Contact Us!</Link>
         </nav>
         <main>
