@@ -45,6 +45,7 @@ Here's how we'll route our single-page application:
 | /              | `<Home>`       | A homepage with welcome text.                    |
 | /services    | `<Services>` | A list of all services provided by the dental spa.                |
 | /contact       | `<Contact>`    | A page with an address, phone number, and email. |
+| /services/:id  | `<Service>`    | Will render beneath `Services` and shows details about a specific service |
 
 Remember, the URL routes are paths off our main website. We could put our website at any domain, like `www.ourdentistwebsite.com` or `www.premiumdental.com`, and the URL route paths would behave the same. Paths only care about what comes after the domain name.
 
@@ -54,9 +55,9 @@ Our routes say that if someone goes to `ourdomain.com/` they will see our home p
 
 In the below codealong, we will walk through building this out together.
 
-You can see a live working copy of the site [here](https://react-router-dentist.herokuapp.com/).
+You can see a live working copy of the site [here](https://dental-spa.vercel.app/).
 
-You are going to follow along, so that you have a locally working React Router application! However, if you'd like at any point to refer to the finished code, you can see all of the final code [here](../../../react-router-simple-dentist-site).
+You are going to follow along, so that you have a locally working React Router application! However, if you'd like at any point to refer to the finished code, you can see all of the final code [here](https://github.com/009Kings/Dental-SPA).
 
 ## In Your Terminal
 
