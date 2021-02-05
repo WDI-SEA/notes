@@ -121,7 +121,7 @@ state = {
 
 #### Talking Points:
 
-- Calling state this way is best practice for new React project. React will automatically set the state and handle the constructor behind the scene.
+- Calling state this way is best practice for new React projects. React will automatically set the state and handle the constructor behind the scenes.
 
 - Note that constructor is no longer used. To get access to props passed down from the parent, you can access it through `this.props`.  Another thing React does behind the scene to make cleaner code!
 
@@ -197,7 +197,7 @@ class FruitTable extends Component {
 
 `getSnapshotBeforeUpdate()` is invoked right before the most recently rendered output is committed (e.g., to the DOM).
 
-_Note:_: These methods exists for *rare* use cases in which the state depends on changes in props over time (`getDerivedStateFromProps()`) or if you need to handle something such as scroll position before an update (`getSnapshotBeforeUpdate()`). It's a best practice to explore other lifecycle methods before using these.
+_Note:_ These methods exists for *rare* use cases in which the state depends on changes in props over time (`getDerivedStateFromProps()`) or if you need to handle something such as scroll position before an update (`getSnapshotBeforeUpdate()`). It's a best practice to explore other lifecycle methods before using these.
 
 
 #### Talking Points:
