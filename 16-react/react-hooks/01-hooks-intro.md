@@ -7,6 +7,12 @@
 * Use the `useState` hook to access and set state
 * Use the `useEffect` hook to handle post-render effects
 
+### Getting started:
+
+* Create a new react app called `hooks-practice`
+* Leave the default `App` component as a function
+* Remove all the default JSX and of `App` (we will add some back in soon)
+
 ## The `useState` hook
 
 The first hook we will learn is the one that allows us to add state to a component. It is called `useState` and it gives us the ability to declare initial state, update it, and access it all from a function-based component.
@@ -23,9 +29,27 @@ Now, the way we use this is different than how we used state in a class-based co
 const [count, setCount] = useState(0);
 ```
 
-Let's examine this line. The `useState()` function returns two items for us: a named variable which will hold our state value and a function for setting its value. We are free to choose the name of the variable (in this case, `count`) but the setter function must be named `setName` where `Name` is what you chose for the variable name, respecting camelCase. These are unpacked using array destructuring into two identifiers. The value passed into useState() is the initial value of the variable.
+Let's examine this line. The `useState()` function returns two items for us: a named variable which will hold our state value and a function for setting its value. We are free to choose the name of the variable (in this case, `count`) but the setter function must be named `setName` where `Name` is what you chose for the variable name, respecting camelCase. These are unpacked using array destructuring into two identifiers. The value passed into useState() is the initial value of the variable. You can imagine the above code to be equivalent to the following:
+
+```js
+state = {
+  count: 0
+}
+
+setCount = (newCount) => {
+  this.setState({
+    count: newCount
+  })
+}
+```
 
 Now here are the cool things: the variable holding the value is accessible simply by using its name! You do not need to type out `this.state.count` every time you want to get at the value. Also, the `setCount()` function that it makes for you is always bound to this component. There is no need to bind the method or use arrow functions - it will always work just like this!
+
+Add the following JSX to the return and run `npm start` to see the inital value of count:
+
+```JS
+<h1>The count is: {count}</h1>
+```
 
 ### Multiple state values
 
