@@ -15,9 +15,9 @@ If you're keeping up with React, you've probably noticed that React Hooks are br
 
 Hooks has been introduced to address a primary complaint of React developers - separation of concern. Essentially, Hooks allow us to use state without writing a class component.
 
-As we previously discussed, `React.js` has two types of components, class based components and functional components. Historically class components have done the heavy lifting. To keep track of state, we have to have a class component. We also need class components for lifecycle events, APIs, and more. By comparison function components are there to display the UI and state.
+As we previously discussed, `React.js` has two types of components, class based components and functional components. Historically class components have done the heavy lifting. To keep track of state, we had to use a class component. We also needed class components for lifecycle events (and therefore, calls to APIs, etc), and more. Functional components could display UI, but they couldn't do much more than that.
 
-React Hooks provides all functionality that class based components previously provided.
+React Hooks provide all the functionality that used to be exclusive to class-based components.
 
 If this is blowing your mind, not to fear! Even Dan Abramov of the Facebook team admitted that it's a difficult concept to grasp until you're in the code.
 
