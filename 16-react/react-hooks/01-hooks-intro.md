@@ -3,7 +3,7 @@
 ### Learning Objectives
 
 *After this code-along section, you will be able to:*
-* Explain the difference between class-based and hooks-based components
+
 * Use the `useState` hook to access and set state
 * Use the `useEffect` hook to handle post-render effects
 
