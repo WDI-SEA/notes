@@ -19,18 +19,6 @@ As we previously discussed, `React.js` has two types of components, class based 
 
 React Hooks provide all the functionality that used to be exclusive to class-based components.
 
-If this is blowing your mind, not to fear! Even Dan Abramov of the Facebook team admitted that it's a difficult concept to grasp until you're in the code.
-
-<!-- Model - Data
-View - What the User Sees
-Controller - Responds to an event -->
-
-React, on it's own, does not have an answer for this. Redux, Flux, MobX all currently address these concerns.
-
-Meaning that we often struggle with breaking down complex components because the logic is stateful and can’t be extracted to a function or another component.
-
-Historically when trying to solve this difficult issues we end up with components that are far to large, duplicated logic, or complex patterns like higher ordered components.
-
 ---
 
 ## Problems That Hooks Solve
@@ -43,7 +31,7 @@ Historically when trying to solve this difficult issues we end up with component
 
 ![large bundle](https://res.cloudinary.com/briezh/image/upload/v1556833944/large-bundle_cm6ujo.png)
 
-Hooks tend to minify better than equal code using classes.
+Hooks tend to minify better than the equivalent code in class-based components.
 
 * **Hooks are Easy to Implement into Existing React Applications** - Hooks do not require any large rewrites. You can even begin to adopt Hooks in your newly written components.
 
@@ -51,4 +39,4 @@ Hooks tend to minify better than equal code using classes.
 
 Hooks are not yet meant to replace Redux, Flux, MobX or any state management alternative.
 
-At this time, Facebook has different on opinions as to whether React Developers should rewrite all of their code in Hooks. But, they are asking for feedback while it is in Alpha to better understand what additional needs Hooks can address and if they're simply missing anything. 
+At this time, Facebook has different opinions as to whether React Developers should rewrite all of their code in Hooks. But, they are asking for feedback while it is in Alpha to better understand what additional needs Hooks can address and if they're simply missing anything. 
