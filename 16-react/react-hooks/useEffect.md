@@ -204,23 +204,81 @@ Notice how we are still using the second argument but we have nothing in the arr
 
 In the older lifecycle method paradigm, whenever we started an asynchronous operation in `componentDidMount` we would need to stop it or clean up after ourselves inside `componentWillUnmount`. This splitting up of logic into different functions leads to code that becomes more difficult to maintain as it grows and is one of the main problems that hooks were intended to solve. The `useEffect` hook gives us an incredibly simple way to deal with this: we return a function from our effect that does our clean-up.
 
+#### Example
+To demonstrate this, we'll put an input box on the page, and write an interval ticker that will console log the user's input once every second.
+
+First, add a `message` state:
+
 ```js
-import React, { useState, useEffect } from 'react';
+  const [message, setMessage] = useState('Hello, world!')
+```
 
-function IntervalTicker() {
-  const [handle, setHandle] = useState(null)
-  
-  useEffect(() => {
-    // This line starts an interval and stores the returned handle in state
-    setHandle( setInterval(() => console.log('tick'), 1000) )
-    // This line returns a function that clears the interval
-    return () => {
-      clearInterval(handle)
-    }
-  }, []) // Don't forget the empty dependency list
+Now add the following JSX to `App.js`, underneath the next poke button:
 
-  return (
-    <p>Yada yada yada</p>
+```js
+      <form>
+        <h1>Give a message for the console:</h1>
+        <input type='text' value={message} onChange={changeMessage}/>
+      </form>
+```
+
+And write the `onChange` handler:
+
+```js
+const changeMessage = (e) => {
+  setMessage(e.target.value)
+}
+```
+
+Alternatively, you can skip the separate `changeMessage` function by defining it in the JSX:
+
+```js
+  <input 
+    type='text' 
+    value={message} 
+    onChange={ (e)=>{setMessage(e.target.value)} }
+    />
+```
+
+Now let's write an `IntervalTicker` component. It should start an interval upon render that console logs the message every second. You can assume the message will be passed to it as a prop:
+
+
+```js
+import React, { useEffect, useState } from 'react'
+
+function IntervalTicker(props) {
+
+    const tick = () => {console.log(props.message)}
+
+    useEffect(()=>{
+        let messageInterval = setInterval(tick, 1000)
+    })
+
+    return (
+        <div>
+            <em>pssstt.... check the console for some interval action</em>
+        </div>
+    )
+}
+```
+
+Now import this component in `App` and render it at the bottom of the JSX (don't forget to pass it the `message` state as a prop!):
+
+```js
+import React, { useEffect, useState } from 'react'
+import axios from 'axios'
+import IntervalTicker from './IntervalTicker'
+
+function App() {
+  // blah blah blah ...
+
+  return(
+  // blah blah blah ...
+  <form>
+      <h1>Give a message for the console:</h1>
+      <input type='text' value={message} onChange={(e)=>{setMessage(e.target.value)}}/>
+    </form>
+    <IntervalTicker message={message} />
   )
 }
 ```
