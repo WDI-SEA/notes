@@ -274,7 +274,7 @@ function App() {
 
   return(
   // blah blah blah ...
-  <form>
+    <form>
       <h1>Give a message for the console:</h1>
       <input type='text' value={message} onChange={(e)=>{setMessage(e.target.value)}}/>
     </form>
@@ -282,5 +282,35 @@ function App() {
   )
 }
 ```
+**Check out what happens in the console when you change the input.**
 
-Our cleanup for our interval involves clearing that interval by using the handle in the `clearInterval` function. All we need to do to make this cleanup happen is to *return a function that does that* from our effect. This can be any sort of function, named or anonymous, and it just needs to do the cleanup steps. By returning that function from our effect, we are telling React that this function should be run when this component is unmounted. React will take care of the rest! We do, however, need to remember to pass in an empty dependency list so that we don't start a new interval on literally every render.
+Why are you seeing this behavior? *Hint: how many intervals are running?*
+
+We need a way to cleanup the old intervals when a new input is entered (i.e. when the `IntervalTicker` rerenders)! Fortunately, `useEffect` is already set up to deal with this. Anything we need to happen during the unmounting process we can wrap in a function that we return from `useEffect`.
+
+Add the following to the `useEffect` in `IntervalTicker`:
+
+```js
+    useEffect(()=>{
+        let messageInterval = setInterval(tick, 1000)
+        return () => {
+            console.log('unmounting')
+        }
+    })
+```
+
+Now notice how the returned function is running each time a new interval gets set (each time the original interval is unmounted). This is where we can clean up the original interval so it does not keep running when the component rerenders:
+
+```js
+    useEffect(()=>{
+        let messageInterval = setInterval(tick, 1000)
+        return () => {
+            console.log('unmounting')
+            clearInterval(messageInterval)
+        }
+    })
+```
+
+By returning that function from our effect, we are telling React that this function should be run when this component is unmounted. React will take care of the rest! Test it out!
+
+*This example was based on a [demo](https://codesandbox.io/s/gracious-tdd-gy4zo?file=/src/App.js) from [this article](https://dmitripavlutin.com/react-useeffect-explanation/)*
