@@ -314,3 +314,5 @@ Now notice how the returned function is running each time a new interval gets se
 By returning that function from our effect, we are telling React that this function should be run when this component is unmounted. React will take care of the rest! Test it out!
 
 *This example was based on a [demo](https://codesandbox.io/s/gracious-tdd-gy4zo?file=/src/App.js) from [this article](https://dmitripavlutin.com/react-useeffect-explanation/)*
+
+*Finished code-along code can be found [here](https://github.com/TaylorDarneille/hooks-code-along) for but the useState and useEffect lessons.*
