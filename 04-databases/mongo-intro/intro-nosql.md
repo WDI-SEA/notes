@@ -34,10 +34,10 @@ Read more about MongoDB here: [MongoDB Documentation](http://docs.mongodb.org/ma
 
 #### Key Differences of MongoDB
 
-- Schema-less
+- Schema-less  
 The documents in a MongoDB collection can have completely different types and number of fields from each other. **How does this compare to a SQL database like PostgreSQL?**
 
-- No Table Joins
+- No Table Joins  
 In a SQL DB, we break up related data into separate tables.
 
 In MongoDB, we often _embed_ related data in a single document, you'll see an example of this later.
