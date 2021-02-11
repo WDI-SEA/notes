@@ -4,7 +4,9 @@
 
 MongoDB installs with a client app, a JavaScript-based shell, that allows us to interact with MongoDB directly.
 
-Start the app in terminal by typing `mongo`.
+Start your MongoDB process in terminal by typing `mongod`.
+
+Open a new terminal window and start the app by typing `mongo`.
 
 The app will load and change the prompt will change to `>`.
 
