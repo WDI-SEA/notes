@@ -8,34 +8,16 @@ For the first portion of the class, we'll be working exclusively inside of the b
 
 * Slack
 * Homebrew
-* iTerm
-* Oh my ZSH
-* VS Code
+* X-code
 * Git
+* Oh my ZSH
+* **I**ntegrated **D**evelopment **E**nvironment _(VS Code)_
 
 ### Slack
 
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
-
-### iTerm
-
-iTerm is a tricked out version of the Terminal app that is the default command line interface for Mac. It will help with the visuals of the command line navigation, especially with ohmyZSH.
-
-[Download here](https://www.iterm2.com/)
-
-### Install Oh My ZSH
-
-Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
-
-We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-Visit the \[iTerm website\] for install instructions. Open iTerm and run the command listed on the site.
-
-If it prompts you to change your default shell to zsh, select yes! When it asks you for your password, enter your computer user password \(it wont show up, but iTerm is keeping track of your keystrokes\).
-
-Restart Terminal, and you should see a brand new and colorful command prompt.
 
 ### Homebrew
 
@@ -84,6 +66,29 @@ You might find your self having to re-authenticate GIT every time you work on yo
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
+
+### Install Oh My ZSH
+
+Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
+
+We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+Check that you have all the requirements:
+- A Unix-like operating system: macOS, Linux, BSD. On Windows: WSL2 is preferred, but cygwin or msys also mostly work.
+- Zsh should be installed (v4.3.9 or more recent is fine but we prefer 5.0.8 and newer). If not pre-installed (run `zsh --version` in your terminal to confirm), follow [these instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
+- curl or wget should be installed. If not (run `curl --version` in your terminal to confirm), run `brew install curl`.
+- git should be installed (we just set up our git!)
+
+Once you have all of those, simply run the following command in your terminal:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+If it prompts you to change your default shell to zsh, select yes! When it asks you for your password, enter your computer user password (it wont show characters, but terminal is keeping track of your keystrokes).
+
+Restart Terminal, and you should see a brand new and colorful command prompt!
+
 ### Install VS Code
 
 Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
@@ -104,37 +109,6 @@ export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 Save this file and then fully restart your terminal window \(quit and restart.\)
 
-### Other Code Editor Options
-
-We will use VS Code in this class, but if you're more familiar with another editor or would like to try out another editor, check these out:
-
-#### Sublime Text 3
-
-A very popular shareware code editor with a vast library of extensions. It will nag you to purchase it every fourth time you save a file.
-
-Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
-
-It is a pretty typical installation for an app, but we need to add a shortcut so we can load sublime from the Terminal.
-
-```
-ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
-```
-
-Restart terminal, and you should be able to open a folder to edit by typing `subl .`
-
-#### Atom
-
-Atom boasts tighter integration with Git and Github as well as being open source (which means no purchase nags.)
-
-Download and install Atom from [here](https://atom.io/)
-
-For a command line shortcut, run this:
-
-```
-ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
-```
-
-Now you can open a folder from your terminal by typing: `atom .`
 
 ---
 
@@ -171,124 +145,68 @@ We will be using a relational database called Postgres during our class.
 
 Download and install from [http://postgresapp.com/](http://postgresapp.com/)
 
-If you have successfully configured zsh and sublime or atom, the following command should work.
+Open up your `.zshrc` file in your Code editor (`code ~/.zshrc` for VS code)
+Your editor will popup with configuration settings, at the bottom of the file append
 
 ```text
-subl ~/.zshrc
+export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
 ```
 
--OR-
-
-```text
-atom ~/.zshrc
-```
-
-Your sublime \(or Atom\) editor will popup with configuration settings, at the bottom of the file append
-
-```text
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.6/bin
-```
-
-While we're here, add these two functions and environment variables to make it easier to access, change and refresh our ZSH configuration file in the future. Copy and paste these to the end of the file.
-
-If you plan on using Sublime Text copy this:
-
-```text
-export VISUAL=subl
-export EDITOR="$VISUAL"
-
-function zedit() {
-  subl ~/.zshrc
-}
-
-function zrefresh() {
-  echo "Refreshing your ZSH configuration."
-  source ~/.zshrc
-}
-```
-
-Otherwise, if you plan on using Atom, copy this instead:
-
-```text
-export VISUAL=atom
-export EDITOR="$VISUAL"
-
-function zedit() {
-  atom ~/.zshrc
-}
-
-function zrefresh() {
-  echo "Refreshing your ZSH configuration."
-  source ~/.zshrc
-}
-```
-
-Save the file, close Sublime \(or Atom\), and restart your terminal.
-
-Type `which psql` at which point should display
+Save the file and either restart your terminal or write `source ~/.zshrc` to apply your changes. To check if it worked, type `which psql` in your terminal at which point should display:
 
 ```text
 /Applications/Postgres.app/Contents/Versions/9.5/bin/psql
 ```
 
-#### Install Postgres GUI
-
-We'll be using **Postico**. Install here:
-
-[https://eggerapps.at/postico/](https://eggerapps.at/postico/)
-
 ---
 
 ## Part 3
 
-### Installing MongoDB \(Updated 11/2019\)
+### Installing MongoDB \(Updated 2/2021\)
 
 **Notes:** The name of the free version of MongoDB has changed to `mongodb-community` as of November 2019. Also, the Catalina version of MacOS \(version 10.15\) disallows folders being created at the root of the file system so you must create your MongoDB data folder inside your home folder
 
 ```bash
+# Download the official Homebrew formula for MongoDB and the Database Tools
+brew tap mongodb/brew
+
 #Install MongoDB
-brew install mongodb-community
-
-#make data directory
-sudo mkdir -p ~/mongodb-data
+brew install mongodb-community@4.4
 ```
 
-After creating the data directory in your home folder, it should be marked with your correct ownership permissions but if you find that it is owned by root instead, you can change it to be owned by you with the following commands:
+There are two ways to start your server:
+1. As a macOS service
+2. Manually as a background process
 
-```bash
-#get your user name
-whoami
+#### As a Service
+```
+# Start
+brew services start mongodb-community@4.4
 
-#set data directory permissions (replacing USERNAME with the result from whoami above)
-sudo chown -R USERNAME:wheel ~/mongodb-data
+# Stop
+brew services stop mongodb-community@4.4
 ```
 
-Finally, to tell MongoDB to start using the data directory that you just created, you must start it with the following command:
 
-```bash
-mongod --dbpath ~/mongodb-data
+#### As a Background Process
+
+```
+# For Mac running Intel processors
+mongod --config /usr/local/etc/mongod.conf --fork
+
+# For Apple M1 processors
+mongod --config /opt/homebrew/etc/mongod.conf --fork
+
 ```
 
-To make a shortcut for this command, open your ~/.zshrc \(or ~/.bashrc if not using ZSH\) and add this line to the bottom:
+To stop the background process, you'll need to connect to your `admin` database in your mongo shell and run `db.shutdownServer()`.
 
-```bash
-alias mongod="mongod --dbpath ~/mongodb-data"
+```mongo
+> use admin
+> db.shutdownServer()
+> quit()
 ```
 
-#### Testing the MongoDB server
-
-```text
-#Start the MongoDB server
-mongod
-```
-
-Press `control-c` to stop the server.
-
-#### Install MongoDB GUI
-
-We'll be using **RoboMongo**. Install here:
-
-[https://robomongo.org/](https://robomongo.org/)
 
 ---
 
@@ -332,6 +250,116 @@ pip3 install ipython
 ```
 
 iPython makes it easy to write python code in your terminal. We may not use it a huge amount but it is handy to have around.
+
+---
+
+## Optional Tools
+
+### iTerm
+
+iTerm is a tricked out version of the Terminal app that is the default command line interface for Mac. It will help with the visuals of the command line navigation, especially with ohmyZSH.
+
+[Download here](https://www.iterm2.com/)
+
+### Other Code Editor Options
+
+We will use VS Code in this class, but if you're more familiar with another editor or would like to try out another editor, check these out:
+
+#### Sublime Text 3
+
+A very popular shareware code editor with a vast library of extensions. It will nag you to purchase it every fourth time you save a file.
+
+Download and install version 3 from [http://www.sublimetext.com/3](http://www.sublimetext.com/3)
+
+It is a pretty typical installation for an app, but we need to add a shortcut so we can load sublime from the Terminal.
+
+```
+ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl
+```
+
+Restart terminal, and you should be able to open a folder to edit by typing `subl .`
+
+#### Atom
+
+Atom boasts tighter integration with Git and Github as well as being open source (which means no purchase nags.)
+
+Download and install Atom from [here](https://atom.io/)
+
+For a command line shortcut, run this:
+
+```
+ln -s /Applications/Atom.app/Contents/Resources/app/atom.sh /usr/local/bin/atom
+```
+
+Now you can open a folder from your terminal by typing: `atom .`
+
+### Add quick `.zshrc` access
+
+
+In your `~/.zshrc`, add these two functions and environment variables to make it easier to access, change and refresh our ZSH configuration file in the future. Copy and paste these to the end of the file.
+
+```text
+export VISUAL=code
+export EDITOR="$VISUAL"
+
+function zedit() {
+  code ~/.zshrc
+}
+
+function zrefresh() {
+  echo "Refreshing your ZSH configuration."
+  source ~/.zshrc
+}
+```
+
+If you plan on using Sublime Text, replace `code` with `subl`. 
+If you plan on using Atom, replace`code` with `atom`.
+
+
+Save the file and restart your terminal.
+
+### Install Postgres GUI
+
+Mac users can utilize **Postico**. Install here:
+
+[https://eggerapps.at/postico/](https://eggerapps.at/postico/)
+
+### Change where your `mongodb` data is stored
+
+```
+#make data directory
+sudo mkdir -p ~/mongodb-data
+```
+
+After creating the data directory in your home folder, it should be marked with your correct ownership permissions but if you find that it is owned by root instead, you can change it to be owned by you with the following commands:
+
+```bash
+#get your user name
+whoami
+
+#set data directory permissions (replacing USERNAME with the result from whoami above)
+sudo chown -R USERNAME:wheel ~/mongodb-data
+```
+
+Finally, to tell MongoDB to start using the data directory that you just created, you must start it with the following command:
+
+```bash
+mongod --dbpath ~/mongodb-data
+```
+
+To make a shortcut for this command, open your ~/.zshrc \(or ~/.bashrc if not using ZSH\) and add this line to the bottom:
+
+```bash
+alias mongod="mongod --dbpath ~/mongodb-data"
+
+```
+
+#### Install MongoDB GUI
+
+One of the most common free MongoDB GUIs is **RoboMongo**. Install here:
+
+[https://robomongo.org/](https://robomongo.org/)
+
 
 ---
 
