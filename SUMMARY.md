@@ -128,6 +128,7 @@
     * [Terminology](05-node-express/express-sequelize/02terms.md)
     * [Setup](05-node-express/express-sequelize/03setup.md)
     * [Using Models](05-node-express/express-sequelize/04usingmodels.md)
+    * [Using Models With Async/Await](05-node-express/express-sequelize/usingmodels-async-await.md)
     * [Seeding Data](05-node-express/express-sequelize/seeding.md)
     * [Validations and Migrations](05-node-express/express-sequelize/05validationsmigrations.md)
     * [Resources](05-node-express/express-sequelize/06resources.md)
