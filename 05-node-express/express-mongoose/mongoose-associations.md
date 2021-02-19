@@ -167,9 +167,9 @@ const productSchema = new mongoose.Schema({
 In order to obtain the referenced documents we need to call `populate` on the query.
 
 ```js
-Order.findById(id).populate('products').exec(function(err, order){
-    console.log(order);
-});
+Order.findById(orderId).populate('product').exec((err, foundOrder) => {
+    console.log(foundOrder);
+})
 ```
 
 Let's look at this code. We start by finding an Order by its ID. Normally, there we would use a callback since `findById()` is an asynchronous function. However, we can't put the callback there if we want to use `populate()`. You pass in only the `id` to `findById()` and then immediately chain the `populate()` function. It takes the name of the field to populate as a string. Strangely, `populate()` doesn't take a callback argument and so we must chain `exec()` which let's us add a callback. But the `populate()` function does all the magic.
