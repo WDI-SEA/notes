@@ -148,9 +148,9 @@ It's pretty much the same flow that we did with embedded documents but this time
 
 That's not very useful to a human. However, Mongoose knows how to get at the data with that ID very easily.
 
-### Modeling One-to-Many Relationships with Document References
+## Modeling Many-to-Many Relationships with Document References
 
-Orders to products could really be a many-to-many relationship, but they way we've coded above makes it on-to-many insofar as querying in mongoose goes. We can start with an order and pull all the products that were in that order, but what if we wanted to query the other direction? What if I wanted to see a list of all orders that contained a certain product? We'd need to make it many--to-many so we could query either direction. We can do that by simply adding an array of orders to the product schema:
+Orders to products could really be a many-to-many relationship, but they way we've coded above makes it one-to-many insofar as querying in mongoose goes. We can start with an order and pull all the products that were in that order, but what if we wanted to query the other direction? What if I wanted to see a list of all orders that contained a certain product? We'd need to make it many--to-many so we could query either direction. We can do that by simply adding an array of orders to the product schema:
 
 ```js
 const productSchema = new mongoose.Schema({
