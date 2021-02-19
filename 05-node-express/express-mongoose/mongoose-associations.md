@@ -167,7 +167,7 @@ const productSchema = new mongoose.Schema({
 In order to obtain the referenced documents we need to call `populate` on the query.
 
 ```js
-Order.findById(orderId).populate('product').exec((err, foundOrder) => {
+Order.findById(orderId).populate('products').exec((err, foundOrder) => {
     console.log(foundOrder);
 })
 ```
