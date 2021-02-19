@@ -43,19 +43,19 @@ Let's consider an example. With this approach we embed *schemas* within *schemas
 Emdedding documents using Mongoose:
 
 ```javascript
-const commentSchema = new Schema({
+const commentSchema = new mongoose.Schema({
     header: String,
     content: String,
     date: Date
-});
+})
 
-const blogPostSchema = new Schema({
+const blogPostSchema = mongoose.Schema({
     title: String,
     body: String,
     comments: [commentSchema],
-});
+})
 
-mongoose.model('BlogPost', blogPostSchema);
+module.exports = mongoose.model('BlogPost', blogPostSchema)
 ```
 
 In our model file for `BlogPost` we would define both the `blogPostSchema` and the `commentSchema` which will be embedded into the `BlogPost`s. We only need to make the model for the Parent. We use square brackets `[<Schema Name>]` to denote that many `comments` are in a single `BlogPost`.
@@ -63,19 +63,16 @@ In our model file for `BlogPost` we would define both the `blogPostSchema` and t
 Below, is how you *add* an embedded document to an array:
 
 ```javascript
-// Use the model created from the schema
-const BlogPost = mongoose.model('BlogPost');
-
 // Create a blog post using the model
-const post = new BlogPost({ title: "Cat", body: "Yeehaw! Sandos!" });
+const post = new BlogPost({ title: "Cat", body: "Yeehaw! Sandos!" })
 
 // Create a comment by pushing a comment object
-post.comments.push({ header: 'My comment', content: "What!?"  });
+post.comments.push({ header: 'My comment', content: "What!?"  })
 
 // Save the parent after pushing the child into the parent's array
-post.save(function (err) {
+post.save(err => {
     if (!err) console.log('Success!');
-});
+})
 ```
 
 We can treat `post.comments` as an array and use the Mongoose `push` method to push an embedded document into its parent document. **We must save the *parent* document in order for the embedded document to be saved.**
@@ -85,14 +82,15 @@ We can treat `post.comments` as an array and use the Mongoose `push` method to p
 Mongoose is super-nice and automatically adds IDs to each of our embedded subdocuments. This makes it very easy to find specific ones for showing, updating or deleting. Mongoose even provides a handy `id()` function built onto subdocuments that we can use to find one:
 
 ```javascript
-BlogPost.findById(myId, function (err, post) {
+BlogPost.findById(postId, (err, foundPost) => {
     if (!err) {
-        post.comments.id(subId).remove();
-        post.save(function (err) {
+        foundPost.comments.id(commentId).remove()
+        foundPost.save(err => {
             // do something
-        });
+            if(!err) console.log('succes!')
+        })
     }
-});
+})
 ```
 
 The `remove` method removes child documents. Above, we are locating a `BlogPost` by whatever value is in `myId` and then we are finding its subdocument with the ID of `subId` and removing that subdocument.
@@ -112,17 +110,19 @@ const orderSchema = new mongoose.Schema({
     products: [{type: mongoose.Schema.Types.ObjectId, ref: 'Product'}]
 });
 
-const Order = mongoose.model('Order', orderSchema);
+module.exports = mongoose.model('Order', orderSchema)
+```
 
+```js
 const productSchema = new mongoose.Schema({
     name: String,
     price: Number
 });
 
-const Product = mongoose.model('Product', productSchema);
+module.exports = mongoose.model('Product', productSchema)
 ```
 
-The `orderSchema` has an array of `products` but we include both a `type` and a `ref`. The type will usually always be `mongoose.Schema.Types.ObjectId` since it will be storing another document's ID. The ref is the name of the referenced model which will be used to help gather data for us as we will soon see.
+The `orderSchema` has an array of `products` but we include both a `type` and a `ref`. The type will be `mongoose.Schema.Types.ObjectId` since it will be storing another document's ID. The ref is the name of the referenced model which will be used to help gather data for us as we will soon see.
 
 **Quiz**: What is our one? What is our many?
 
@@ -147,6 +147,20 @@ It's pretty much the same flow that we did with embedded documents but this time
 ```
 
 That's not very useful to a human. However, Mongoose knows how to get at the data with that ID very easily.
+
+### Modeling One-to-Many Relationships with Document References
+
+Orders to products could really be a many-to-many relationship, but they way we've coded above makes it on-to-many insofar as querying in mongoose goes. We can start with an order and pull all the products that were in that order, but what if we wanted to query the other direction? What if I wanted to see a list of all orders that contained a certain product? We'd need to make it many--to-many so we could query either direction. We can do that by simply adding an array of orders to the product schema:
+
+```js
+const productSchema = new mongoose.Schema({
+    name: String,
+    price: Number,
+    orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
+})
+```
+
+*Tip: It's like adding associations in sequelize models! If it's a 1:M, you only add the association on one of the models, but if it's N:M you have to add it to both!)*
 
 ### Populate
 
