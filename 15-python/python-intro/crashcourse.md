@@ -1,6 +1,4 @@
-# Python Crash Course
-
-# Python Features and Syntax!
+# Python Crash Course: Features and Syntax!
 
 Here's the long list of how to get Python to do the things you already know how
 to do in JavaScript. Let's dive right into it.
