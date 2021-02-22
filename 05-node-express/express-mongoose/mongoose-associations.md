@@ -49,7 +49,7 @@ const commentSchema = new mongoose.Schema({
     date: Date
 })
 
-const blogPostSchema = mongoose.Schema({
+const blogPostSchema = new mongoose.Schema({
     title: String,
     body: String,
     comments: [commentSchema],
