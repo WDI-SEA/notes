@@ -11,7 +11,7 @@
 ## Python History
 
 #### Benevolent Dictator For Life
-![Guido van Rossum](guido.jpg "Guido van Rossum")
+![Guido van Rossum](https://www.computing.co.uk/api/v1/wps/36af8c1/e1200afd-ed3c-4084-8013-e47653a5a813/2/guido-van-rossum-python-580x358.jpg)
 * Guido van Rossum (Dutch) built Python as a hobby project on his winter break
 
 #### Goals
