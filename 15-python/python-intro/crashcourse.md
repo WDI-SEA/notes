@@ -1,40 +1,5 @@
 # Python Crash Course
 
-## Objectives
-
-* Describe the history of the Python language
-* Identify fundamentals and concepts of the Python language
-* Utilize different primitive types, control structures, and methods in Python
-* Use the `python3` interactive shell
-* Write a program that responds to user input
-
-## Python History
-
-#### Benevolent Dictator For Life
-![Guido van Rossum](guido.jpg "Guido van Rossum")
-* Guido van Rossum (Dutch) built Python as a hobby project on his winter break
-
-#### Goals
-* An easy and intuitive language just as powerful as major competitors
-* Open source, so anyone can contribute to its development
-* Code that is as understandable as plain English
-* Suitability for everyday tasks, allowing for short development times
-
-#### Releases
-* Python 1.0 realeased 1991
-* Python 2.0 (2000) - started to gather a development community
-* Python 3.0 (2008) - unified the language more at the cost of making some old 2.0 code incompatible
-
-#### Advantages
-* high-level language (closer to english than machine code)
-* interpreted (as opposed to compiled)programming language (compiled languages have to be run through a compiler that changes
-source code into compiled code before the program can be run, whereas interpreted
-languages are run on the fly 
-* general purpose scripting language that runs outside a browser
-* free and open source (community development through Python Enhancement Proposals)
-* comes with a *huge* library of builtin functions
-* The [documentation](http://python.org/) is fantastic
-
 # Python Features and Syntax!
 
 Here's the long list of how to get Python to do the things you already know how
