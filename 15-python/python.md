@@ -1,8 +1,5 @@
 # Python
-Python is a widely used high-level programming language used for general-purpose
-programming, created by Guido van Rossum and first released in 1991. Python has
-a design philosophy which emphasizes code readability. You'll often find that
-your first guess at what a function is called is surprisingly correct.
+Python is a great first-language to learn because it's (for the most part) akin to talking at your computer. That's because Python design philosophy which emphasizes code readability. You'll often find that your first guess at what a function is called is surprisingly correct.
 
 For instance, if you want to print something, you write:
 
