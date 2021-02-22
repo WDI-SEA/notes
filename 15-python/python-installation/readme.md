@@ -96,8 +96,6 @@ Ok. let's install stuff:
 
 ```
 pip3 install ipython
-pip3 install Flask
-pip3 install Django
 ```
 
 Notice that `python` refers to the default system installation of Python 2,
@@ -109,7 +107,6 @@ Always use `python3`. Always.
 python  --version         2.7.10
 python3 --version         3.6.0
 ipython3 --version        5.1.0
-django-admin.py version   # 1.10.5
 ```
 
 Start `ipython` and verify it uses Python 3 by default. (Notice that `ipython`
@@ -136,21 +133,6 @@ Great. Python3 and the enhanced IPython shell are all installed. Let's hop into
 the IPython shell and check to see if Flask and Django were installed properly.
 
 Now run `ipython3` in your Terminal to activate the enhanced IPython shell.
-We're going to make sure Flask and Django are available for us to import
-within Python.
-
-```python
-import flask
-import django
-
-print("Flask version:", flask.__version__)
-print("Django version:", django.__version__)
-```
-
-```
-Flask version: 0.12
-Django version: 1.10.5
-```
 
 Also, while youre in the IPython shell, let's go ahead and check out one
 of it's awesome features: auto-completion!
