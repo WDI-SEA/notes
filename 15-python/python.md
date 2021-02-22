@@ -1,9 +1,4 @@
-# Python Daily Mini-Surveys
-Let us know how Python is going. Fill this thing out every day:
-
-<https://docs.google.com/forms/d/e/1FAIpQLSdP64Gw64ZI5Z1LK01MLoHym2jXBuguoYlGvqPsqaPHF4xkqA/viewform>
-
-#Python
+# Python
 Python is a widely used high-level programming language used for general-purpose
 programming, created by Guido van Rossum and first released in 1991. Python has
 a design philosophy which emphasizes code readability. You'll often find that
