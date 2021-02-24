@@ -52,21 +52,36 @@ use Python 3, always. This requires us to be extra sure that we never
 "accidentally" use Python 2. Be aware!
 
 # Actual Installation
-Here's the tools we're snaggin:
+Here's the tools we'll be using for Python stuff:
 
-* **Python 3** - the latest and greatest version of Python
-* **IPython**  - an enhanced Python shell that provides excellent features
+* **python33** - the latest and greatest version of Python
+* **pip3** - python3 package manager (the npm of python3)
+* **ipython**  - an enhanced Python shell that provides excellent features
   beyond the normal Python shell. For example:
   * syntax highlighting
   * auto-completion
   * when you press the up arrow it lets you edit entire functions and blocks
     of code.
 
+### Install Python3
+
 Use `brew` to install Python 3!
 
 ```
 brew install python3
 ```
+
+Notice that `python` refers to the default system installation of Python 2,
+and `python3` refers to the latest and greatest install of Python 3.
+
+Always use `python3`. Always.
+
+```
+python  --version         2.7.16
+python3 --version         3.9.2
+```
+
+### Verify pip3
 
 Remember how installing `node` automatically installed `npm`? It's the same thing here. Installing `python3` via homebrew *also* installs `pip3`, a Python3 package installer (the npm of python`. `pip3` stands for "Pip Installs
 Packages (for Python3)." Programmers love recursive acronyms.
@@ -83,47 +98,37 @@ Should show this:
 pip 21.0.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)
 ```
 
-Ok. let's install stuff:
+### Install iPython
 
 ```
 pip3 install ipython
 ```
 
-Notice that `python` refers to the default system installation of Python 2,
-and `python3` refers to the latest and greatest install of Python 3.
-
-Always use `python3`. Always.
-
+Verify the version:
 ```
-python  --version         2.7.10
-python3 --version         3.6.0
-ipython3 --version        5.1.0
+ipython3 --version        7.20.0
 ```
 
-Start `ipython` and verify it uses Python 3 by default. (Notice that `ipython`
-and `ipython3` are both legitimate commands. If `ipython` looks like it's using
-Python 2 then run `ipython3` to be explicit.
+Start `ipython` and verify it uses Python 3 by default:
 
-We're looking for something like **imPython 3.6.0** at the beginning of the first
+```
+ipython
+```
+
+We're looking for something like **Python 3.9.2** at the beginning of the first
 line here when IPython starts up:
 
 ```
-imPython 3.6.0 (default, Dec 24 2016, 08:01:42)
-Type "copyright", "credits" or "license" for more information.
+Python 3.9.2 (default, Feb 19 2021, 21:58:43) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.20.0 -- An enhanced Interactive Python. Type '?' for help.
 
-IPython 5.1.0 -- An enhanced Interactive Python.
-?         -> Introduction and overview of IPython's features.
-%quickref -> Quick reference.
-help      -> Python's own help system.
-object?   -> Details about 'object', use 'object??' for extra details.
+In [1]: 
+
 ```
 
-Make sure that you're version numbers are *in the ballpark* of what you see above.
-
-Great. Python3 and the enhanced IPython shell are all installed. Let's hop into
-the IPython shell and check to see if Flask and Django were installed properly.
-
-Now run `ipython3` in your Terminal to activate the enhanced IPython shell.
+`ipython` and `ipython3` are both legitimate commands. If `ipython` looks like it's using
+Python 2 then run `ipython3` to be explicit.
 
 Also, while youre in the IPython shell, let's go ahead and check out one
 of it's awesome features: auto-completion!
@@ -166,6 +171,8 @@ Out[7]: <function str.upper>
 In [8]: s.upper()
 Out[8]: 'PYTHON IS AWESOME'
 ```
+
+Run `quit` to exit `ipython`.
 
 OK! Those are our tools. Now you're ready to get a proper crash-course
 introduction to Python.
