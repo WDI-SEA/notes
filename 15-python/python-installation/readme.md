@@ -68,25 +68,18 @@ Use `brew` to install Python 3!
 brew install python3
 ```
 
-Use `pip`, a Python package installer. `pip` stands for "Pip Installs
-Packages." Programmers love recursive acronyms.
+Remember how installing `node` automatically installed `npm`? It's the same thing here. Installing `python3` via homebrew *also* installs `pip3`, a Python3 package installer (the npm of python`. `pip3` stands for "Pip Installs
+Packages (for Python3)." Programmers love recursive acronyms.
 
-Notice, there's two versions of `pip`. One installs things for Python 2
-another installs things for Python 3. Use `pip3` to be explicit. If you're
-lucky, maybe your system uses `pip` for Python 3 by default. Let's assume
-we're not lucky and always use `pip3`, to be explicit.
-
-You can verify what version of Python `pip` and `pip3` use:
+You can verify what version of Python `pip3` uses:
 
 ```
-pip --version
 pip3 --version
 ```
 
-Should show these, respectively:
+Should show this:
 
 ```
-pip 9.0.1 from /Library/Python/2.7/site-packages (python 2.7)
 pip 21.0.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)
 ```
 
