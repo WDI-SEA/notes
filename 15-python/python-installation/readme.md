@@ -87,7 +87,7 @@ Should show these, respectively:
 
 ```
 pip 9.0.1 from /Library/Python/2.7/site-packages (python 2.7)
-pip 9.0.1 from /usr/local/lib/python3.6/site-packages (python 3.6)
+pip 21.0.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)
 ```
 
 Ok. let's install stuff:
