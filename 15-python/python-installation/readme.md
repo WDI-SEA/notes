@@ -61,8 +61,6 @@ Here's the tools we're snaggin:
   * auto-completion
   * when you press the up arrow it lets you edit entire functions and blocks
     of code.
-* **Flask** - a minimalist Python web microframework, much like Express
-* **Django** - a larger Python web framework
 
 Use `brew` to install Python 3!
 
