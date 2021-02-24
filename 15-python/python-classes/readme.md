@@ -147,10 +147,22 @@ provide. Let's write a `Point` class that has `x` and `y` variables. If no
 `x` and `y` values are provided when a `Point` is initialized `x` and `y`
 should both default to zero.
 
+```
+class Point():
+  def __init__(self, x=0, y=0):
+    self.x = x
+    self.y = y
+```
+
 Add a method called `distance` that calculates and returns the distance between
 the current point and the origin. Use the mathematical distance formula where
 the distance between a point and the origin is defined as the square root of
 (x*x + y*y).
+
+```
+  def distance(self):
+    return (self.x ** 2 + self.y ** 2) ** .5
+```
 
 Use Python's exponent `**` operator to calculate square root. `9 ** .5 == 3.0`
 
