@@ -183,7 +183,7 @@ print(daves_cup)
 
 ## Exercise: Create Your Own Class
 Write a `BankAccount` class.
-* Bank accounts should be created with the `kind` of account (like "savings" or "checking").
+* Upon creation, accounts should have a type (
 * Each account should keep track of it's current `balance`.
 * Each account should have access to a `deposit` and a `withdraw` method.
 * Each account should start with a `balance` set to zero.
