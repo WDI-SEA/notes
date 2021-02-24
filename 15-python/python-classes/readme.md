@@ -249,57 +249,6 @@ print(p2.distance())
 5.0
 ```
 
-## Printing Objects
-Ever tried to have Python print an object? It's nasty. If you try to print an
-object Python will print a representation of the object where you'll see what
-type of an object it is and it will show you a number representing something
-about where the object exists in memory, which we don't care about.
-
-```python
-print(p0)
-<__main__.Point object at 0x107335630>
-```
-
-We can write a special method `__str__` that Python will call when an
-object is printed or turned in to a string. Customizing this method in our
-classes makes our programs much easier to interact with.
-
-Notice that Python goes out of it's way to improve the readability of code.
-Any method that looks like `__init__` or `__str__` with underscores has a
-special purpose in the language. Python uses the underscores to make it
-immediately clear that *this is where the magic happens!*
-
-Let's define a `__str__` method in our `Point` class that will print out
-points like we're used to seeing points. `p0` in the example above should
-appear as "(0,0)" and `p2` in the example above should appear as "(3,4)".
-
-```python
-class Point():
-  def __init__(self, x=0, y=0):
-    self.x = x
-    self.y = y
-  
-  def __str__(self):
-    return "({},{})".format(self.x, self.y)
-  
-  def distance(self):
-    return (self.x ** 2 + self.y ** 2) ** .5
-```
-
-Now we can create points and when we print those objects we see something
-pretty printed instead of the garbly-goop we saw before.
-
-```python
-p0 = Point()
-p2 = Point(3, 4)
-
-print(p0)
-(0,0)
-
-print(p2)
-(3,4)
-```
-
 ## Class Variables
 In our `CoffeeCup` example and the `BankAccount` example and in our `Point`
 example each class has variables attached to the `self` property that exist
