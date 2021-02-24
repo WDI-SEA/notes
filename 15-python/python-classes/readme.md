@@ -9,12 +9,6 @@
 * Utilize the `self` keyword
 * Understand method chaining in a class
 
-## Resources
-Fork or clone this repo to gain access to a complete working end-product of
-the examples in this lesson:
-
-<https://github.com/WDI-SEA/python-class-examples>
-
 # Classes
 Python is an object-oriented language. Object-oriented languages allow us to
 create things that act like physical objects in our day-to-day lives. Every day
@@ -156,20 +150,33 @@ Looks like Dave needs a refill!
 
 ```python
 class CoffeeCup():
-  def __init__(self, capacity): # constructor
-    self.capacity = capacity
-    self.amount = 0
-    
-  def fill(self):
-    self.amount = self.capacity
-  
-  def empty(self):
-    self.amount = 0
-  
-  def drink(self, amount):
-    self.amount -= amount
-    if (self.amount == 0):
-      self.amount = 0
+	def __init__(self, capacity):
+		self.capacity = capacity
+		self.amount = 0
+	
+	def __str__(self):
+		return 'This {}oz coffee cup is {}oz full.'.format(self.capacity, self.amount)
+	
+	def fill(self):
+		self.amount = self.capacity
+	
+	def drink(self, amount):
+		self.amount -= amount
+		if(self.amount<=0):
+			self.amount=0
+
+nicks_cup = CoffeeCup(12)  # a fancy latte.
+daves_cup = CoffeeCup(16)    # gas station drip.
+taylors_cup = CoffeeCup(2)  # a quick espresso.
+
+print(nicks_cup)
+nicks_cup.fill()
+print(nicks_cup)
+daves_cup.fill()
+daves_cup.drink(10)
+print(daves_cup)
+daves_cup.drink(10)
+print(daves_cup)
 ```
 
 ---
