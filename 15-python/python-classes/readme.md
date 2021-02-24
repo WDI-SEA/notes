@@ -199,12 +199,29 @@ the current point and the origin. Use the mathematical distance formula where
 the distance between a point and the origin is defined as the square root of
 (x*x + y*y).
 
+Use Python's math module by adding `import math` at the top:
+
+```python
+import math
+
+class Point():
+	def __init__(self, x=0, y=0):
+		self.x = x
+		self.y = y
+	
+	def distance(self):
+		return math.sqrt(self.x**2+self.y**2)
+```
+
+
+**OR** leverage the fact that the square root of a number is equivalent to raising that number to the 1/2
+
 ```
   def distance(self):
     return (self.x ** 2 + self.y ** 2) ** .5
 ```
 
-Use Python's exponent `**` operator to calculate square root. `9 ** .5 == 3.0`
+Test it:
 
 ```
 p0 = Point()
