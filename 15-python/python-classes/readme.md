@@ -55,10 +55,106 @@ class CoffeeCup():
     self.amount = 0
 ```
 The `CoffeeCup` is a collection of variables and methods. The variables in
-this class are `self.capacity` and `self.amount` and they are initialized by the constructor. The methods in this class
-are `fill`, `empty`, and `drink`, and we can add them like so:
+this class are `self.capacity` and `self.amount` and they are initialized by the constructor. 
+
+### Creating Instances
+
+A constructor is actually all you need to create an object! Create instances of a class by calling `ClassName()`. This invokes the
+`__init__` method. You can pass parameters to it too, `ClassName(param1, param2)` (in this case, capacity). We treat the constructor as if the `self` parametee isn't there - python handles this bit for us.
+
+```python
+nicks_cup = CoffeeCup(12)  # a fancy latte.
+daves_cup = CoffeeCup(16)    # gas station drip.
+taylors_cup = CoffeeCup(2)  # a quick espresso.
+```
+
+### Printing Objects
+
+Let's try printing a cup:
+
+```python
+print(nicks_cup)
+```
+
+What happens?
 
 ```
+<__main__.CoffeeCup object at 0x7f68e63f5820>
+```
+
+This nasty output is showign us what type of an object it is, and a number representing something about where the object exists in memory, which we don't care about. We can override this default by explicitly writing a `__str__` method (which stands for 'stringify'... or something like that):
+
+```python
+class CoffeeCup():
+	def __init__(self, capacity):
+		self.capacity = capacity
+		self.amount = 0
+	
+	def __str__(self):
+		return 'This {}oz coffee cup is {}oz full.'.format(self.capacity, self.amount)
+```
+
+`__str__`, like `__init__` is a special method that must be named exactly this. Try printing Nick's cup again!
+
+
+### Adding Methods
+
+Nick needs some coffee in his cup, so we need a way to fill it! We can add a `fill` method like so:
+
+```python
+class CoffeeCup():
+	def __init__(self, capacity):
+		self.capacity = capacity
+		self.amount = 0
+	
+	def __str__(self):
+		return 'This {}oz coffee cup is {}oz full.'.format(self.capacity, self.amount)
+	
+	def fill(self):
+		self.amount = self.capacity
+```
+
+Now let's see Nick's cup before and after filling:
+
+```python
+print(nicks_cup)
+nicks_cup.fill()
+print(nicks_cup)
+```
+
+Now let's add a `drink` method. We'll take in an `amount` parameter to this method so we know how much coffee to remove:
+
+```python
+	def drink(self, amount):
+		self.amount -= amount
+		if(self.amount<=0):
+			self.amount=0
+```
+
+To test, fill Dave's cup, then have him drink 10oz:
+
+```python
+daves_cup.fill()
+daves_cup.drink(10)
+print(daves_cup)
+```
+
+Let's say Dave is REALLY needing some get-up-and-go so he takes *another* 10oz gulp (test the edge case):
+
+```python
+daves_cup.drink(10)
+print(daves_cup)
+```
+
+Looks like Dave needs a refill!
+
+***Exercise:*** Now try adding an `empty` method on your own and test it.
+
+---
+
+### Final Code from CoffeeCup code-along
+
+```python
 class CoffeeCup():
   def __init__(self, capacity): # constructor
     self.capacity = capacity
@@ -76,38 +172,7 @@ class CoffeeCup():
       self.amount = 0
 ```
 
-### Creating Instances
-
-Create instances of a class by calling `ClassName()`. This invokes the
-`__init__` method. You can pass parameters to it too, `ClassName(param1, param2)`.
-
-Here's how Steve, Sean and Brandi could each have their own cup of coffee. Let's
-assume the `capacity` and `amount` units are all in ounces.
-
-```python
-steves_cup = CoffeeCup(12)  # a fancy latte.
-seans_cup = CoffeeCup(16)    # gas station drip.
-brandis_cup = CoffeeCup(2)  # a quick espresso.
-```
-
-Each of our cups start empty and have their own capacity. Let's fill the cups,
-have everyone take a 1 ounce drink, and print the amount left in each cup.
-
-```python
-steves_cup.fill()
-seans_cup.fill()
-brandis_cup.fill()
-
-steves_cup.drink(1)
-seans_cup.drink(1)
-brandis_cup.drink(1)
-
-print(steves_cup.amount, "ounces left")
-print(seans_cup.amount, "ounces left")
-print(brandis_cup.amount, "ounces left")
-```
-
-That's the basics of how to create and interact with objects in Python!
+---
 
 ## Exercise: Create Your Own Class
 Write a `BankAccount` class.
