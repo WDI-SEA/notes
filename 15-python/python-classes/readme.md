@@ -16,33 +16,54 @@ the examples in this lesson:
 <https://github.com/WDI-SEA/python-class-examples>
 
 # Classes
-Python is an object oriented language. Object oriented languages allow us to
+Python is an object-oriented language. Object-oriented languages allow us to
 create things that act like physical objects in our day-to-day lives. Every day
 we interact with objects like chairs, beverages, and CDs. These objects have
 properties that define them, and they have things we can do with them.
 
-If I were to describe the properties that make up coffee I drink I would say
-each cup of coffee I drink has a `capacity`, a current `amount`. There's also
-things I an do with each cup of coffee I drink. I can `fill` my cup. I can
-`empty` my cup. I can `drink` some of my coffee. Python classes allow us to
-model the properties of my coffee and define how I can interact with my coffee.
+A **class** is like a **blueprint** for an object. It isn't an actual object in and of itself; it's simply a set of instructions for how to build a particular type of object, and how it should function.
 
-I'm not the only person who drinks coffee. A good class definition models what
-a cup of coffee is for everyone. Then, we can use the class definition to create
-**instances** of the class so I can my coffee, Sean can have his coffee and Brandi
-can have her Coffee. Each **instance** of the coffee class can have a different
-`capacity`, and keep track of different `amounts`. Although our coffees have
-different properties the properties are affected by actions like `fill`, `empty`,
-and `drink` similarly.
+A builder can take a blueprint for a house and build as many instances of that blueprint as they want. Similarly, if I programmer has a class, they can create multiple **instances** of that class. 
 
-Here's what a Coffee class would look like in Python:
+## Example: CoffeeCup
+
+Let's write a `CoffeeCup` class that has the following properties:
+* capacity (how much coffee can it hold)
+* amount (how much is it currently holding)
+* fill (to fill the cup to it's max capacity with coffee)
+* empty (to rid the cup of any existing coffee by drinking it all or pouring it out)
+* drink (to drink some amount of the coffee that is currently in the cup)
+
+Classes are made of variables and methods. In this case we have:
+* Variables: capacity, amount
+* Methods: fill, empty, drink
+
+### Constructor
+
+Every class needs a **constructor**, which is a special method that is used to construct instances of the class. In python, the constructor is the `__init__` method, which is where all the initial values of the variables are set.
+
+In the cass of our `CoffeeCup` class, we have two variables that need to be set:
+* capacity - this can vary from cup to cup, so we'll need to have the programmer set this initial value on each instance
+* amount - this presumably starts at zero upon creation of the cup
+
+`__init__` takes `self` as the first parameter always. This is how python keeps track of binding (similar to `this` in javascript). Any variables that do not have a standard initial value (like `capacity` in this case), can be initialized through the parameter list of the constructor. This is what our `CoffeeCup` class looks like with a constructor: 
 
 ```python
 class CoffeeCup():
-  def __init__(self, capacity):
+  def __init__(self, capacity): # constructor
     self.capacity = capacity
     self.amount = 0
-  
+```
+The `CoffeeCup` is a collection of variables and methods. The variables in
+this class are `self.capacity` and `self.amount` and they are initialized by the constructor. The methods in this class
+are `fill`, `empty`, and `drink`, and we can add them like so:
+
+```
+class CoffeeCup():
+  def __init__(self, capacity): # constructor
+    self.capacity = capacity
+    self.amount = 0
+    
   def fill(self):
     self.amount = self.capacity
   
@@ -55,14 +76,7 @@ class CoffeeCup():
       self.amount = 0
 ```
 
-The `CoffeeCup` is a collection of variables and methods. The variables in
-this class are `self.capacity` and `self.amount`. The methods in this class
-are `fill`, `empty`, and `drink`. The `__init__` method is a special method
-Python executes when a new cup of coffee is created.
-
-The `self` keyword is similar to the `this` keyword in JavaScript. The `self`
-keyword allow each instance of a `CoffeeCup` to know what it's own capacity is
-and what it's own current amount is.
+### Creating Instances
 
 Create instances of a class by calling `ClassName()`. This invokes the
 `__init__` method. You can pass parameters to it too, `ClassName(param1, param2)`.
