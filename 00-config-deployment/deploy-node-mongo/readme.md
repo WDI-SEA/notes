@@ -121,7 +121,7 @@ Where `sitename` is the name of your app. This will create a url like: `http://s
 2. Commit and push all your data at this point \(`git push`\). To push to Heroku, enter the following command
 
 ```text
-git push heroku master
+git push heroku main
 ```
 
 3. In terminal after you deploy your app, type in `heroku ps:scale web=1` to scale a dyno up.
