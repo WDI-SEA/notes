@@ -286,24 +286,22 @@ print(my_acct)
 ---
 
 ## Class Variables
-In our `CoffeeCup` example and the `BankAccount` example and in our `Point`
-example each class has variables attached to the `self` property that exist
-independently for each object that's created. We can also attach variables
-to the class itself so that there's one single thing that exists for an entire
-class. These are called **class variables**.
+In our examples so far, each class has variables attached to the `self` property that exist independently for each object that's created. We can also attach variables to the class itself so that there's one single thing that exists for an entire class. These are called **class variables**.
 
-For the `Point` class we'll create a class variable to represent `ORIGIN`.
-Class variables are available even without creating any instances of a class.
-We'll be able to write code that references `Point.ORIGIN` by itself.
+For the `Point` class we'll create a class variable to represent `ORIGIN`. Class variables are available even without creating any instances of a class. We'll be able to write code that references `Point.ORIGIN` by itself.
 
-Change the `distance` method to accept a reference to a second Point as an
-optional parameter. The second point parameter should have a default value
-of `None`. We will write an if statement to detect when p2 is `None` and
-set it to `Point.ORIGIN` instead.
+Change the `distance` method to accept a reference to a second Point as an optional parameter. The second point parameter should have a default value of `None`. The distance formula between two points is the square root of the difference between the two x coordinates (dx) squared, plus the difference between the two y coordinates (dy): `sqrt(dx^2 + dy^2)` 
 
-It's hard to reference the `Point` class in the class definition itself because
-it hasn't finished being created yet. We'll attach `ORIGIN` to the `Point`
-class after it's defined.
+```python
+  def distance(self, p2=None):
+    dx = self.x - p2.x
+    dy = self.y - p2.y
+    return sqrt(dx ** 2 + dy ** 2)
+```
+
+We will write an `if` statement to detect when p2 is `None` and set it to `Point.ORIGIN` instead.
+
+It's hard to reference the `Point` class in the class definition itself because it hasn't finished being created yet. We'll attach `ORIGIN` to the `Point` class after it's defined.
 
 ```python
 class Point():
@@ -319,7 +317,7 @@ class Point():
       p2 = Point.ORIGIN
     dx = self.x - p2.x
     dy = self.y - p2.y
-    return (dx ** 2 + dy ** 2) ** .5
+    return sqrt(dx**2 + dy**2)
 
 # attach ORIGIN after the Point class is defined
 Point.ORIGIN = Point()
