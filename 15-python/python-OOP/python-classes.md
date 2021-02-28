@@ -321,26 +321,6 @@ But first, let's create a **class variable** called `ORIGIN` which is a `Point` 
 
 ```python
 class Point():
-  def __init__(self, x=0, y=0):
-    self.x = x
-    self.y = y
-  
-  def __str__(self):
-    return "({},{})".format(self.x, self.y)
-  
-  def distance(self, p2):
-    dx = self.x - p2.x
-    dy = self.y - p2.y
-    return math.sqrt(dx**2 + dy**2)
-
-# attach ORIGIN after the Point class is defined
-Point.ORIGIN = Point()
-```
-
-Now set the the `p2` parameter to default to `None`, and add an `if` statement to the method that sets `p2` to `Point.ORIGIN` if it's `None`.
-
-```python
-class Point():
 	def __init__(self, x=0, y=0):
 		self.x = x
 		self.y = y
@@ -363,7 +343,7 @@ p4 = Point(1,1)
 
 # print(p0.distance())
 # print(p2.distance())
-# print(p3.distance(p4))
+print(p3.distance(p4))
 
 # we can access ORIGIN through the Point class.
 print(Point.ORIGIN)
