@@ -292,17 +292,27 @@ Let's say we wanted to make our distance method a little more robust. Let's chan
 Change the `distance` method to accept a reference to a second Point as an optional parameter. The second point parameter should have a default value of `None`. The distance formula between two points is the square root of the difference between the two x coordinates (dx) squared, plus the difference between the two y coordinates (dy): `sqrt(dx^2 + dy^2)` 
 
 ```python
-  def distance(self, p2):
-    dx = self.x - p2.x
-    dy = self.y - p2.y
-    return math.sqrt(dx ** 2 + dy ** 2)
-  
-  
-  p3 = Point(6,13)
-  p4 = Point(1,1)
-  
-  print(p3.distance(p4)
-  13.0
+class Point():
+	def __init__(self, x=0, y=0):
+		self.x = x
+		self.y = y
+	
+	# def distance(self):
+	# 	return math.sqrt(self.x**2+self.y**2)
+
+	def distance(self, p2):
+		dx = self.x - p2.x
+		dy = self.y - p2.y
+		return math.sqrt(dx**2 + dy**2)
+
+# p0 = Point()
+# p2 = Point(3, 4)
+p3 = Point(6,13)
+p4 = Point(1,1)
+
+# print(p0.distance())
+# print(p2.distance())
+print(p3.distance(p4))
 ```
 
 Great! Now, what if we wanted to make this method do *both*? i.e. we want to have the option of passing in a second point, but we also want the method to give us the distance from the origin if we *dont* pass in a second point. We can do this by defaulting the `p2` parameter to `None`, then writing a conditional that sets `p2` to the origin if a second point isn't passed in. 
@@ -331,39 +341,44 @@ Now set the the `p2` parameter to default to `None`, and add an `if` statement t
 
 ```python
 class Point():
-  def __init__(self, x=0, y=0):
-    self.x = x
-    self.y = y
-  
-  def __str__(self):
-    return "({},{})".format(self.x, self.y)
-  
-  def distance(self, p2=None):
-    if p2 is None:
-      p2 = Point.ORIGIN
-    dx = self.x - p2.x
-    dy = self.y - p2.y
-    return math.sqrt(dx**2 + dy**2)
+	def __init__(self, x=0, y=0):
+		self.x = x
+		self.y = y
+	
+	# def distance(self):
+	# 	return math.sqrt(self.x**2+self.y**2)
+
+	def distance(self, p2):
+		dx = self.x - p2.x
+		dy = self.y - p2.y
+		return math.sqrt(dx**2 + dy**2)
 
 # attach ORIGIN after the Point class is defined
 Point.ORIGIN = Point()
-```
 
-```python
+# p0 = Point()
+# p2 = Point(3, 4)
+p3 = Point(6,13)
+p4 = Point(1,1)
+
+# print(p0.distance())
+# print(p2.distance())
+# print(p3.distance(p4))
+
 # we can access ORIGIN through the Point class.
 print(Point.ORIGIN)
 (0,0)
 
-p1 = Point(3,4)
-p2 = Point(3,19)
+p4 = Point(3,4)
+p5 = Point(3,19)
 
 # Distance defaults to calculating how far away a Point is from ORIGIN
-p1.distance()
+p4.distance()
 5.0
 
 # Distance will calculate the distance from one point to another if a
 # a second Point is provided as a parameter.
-p1.distance(p2)
+p4.distance(p5)
 15.0
 ```
 
