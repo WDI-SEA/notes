@@ -187,7 +187,7 @@ provide. Let's write a `Point` class that has `x` and `y` variables. If no
 `x` and `y` values are provided when a `Point` is initialized `x` and `y`
 should both default to zero.
 
-```
+```python
 class Point():
   def __init__(self, x=0, y=0):
     self.x = x
@@ -216,14 +216,14 @@ class Point():
 
 **OR** leverage the fact that the square root of a number is equivalent to raising that number to the 1/2
 
-```
+```python
   def distance(self):
     return (self.x ** 2 + self.y ** 2) ** .5
 ```
 
 Test it:
 
-```
+```python
 p0 = Point()
 p2 = Point(3, 4)
 
@@ -286,22 +286,48 @@ print(my_acct)
 ---
 
 ## Class Variables
-In our examples so far, each class has variables attached to the `self` property that exist independently for each object that's created. We can also attach variables to the class itself so that there's one single thing that exists for an entire class. These are called **class variables**.
 
-For the `Point` class we'll create a class variable to represent `ORIGIN`. Class variables are available even without creating any instances of a class. We'll be able to write code that references `Point.ORIGIN` by itself.
+Let's say we wanted to make our distance method a little more robust. Let's change our distance method so instead of just returning the distance between a point and the origin, it can give us the distance between the point it's invoked on, and any other point of our choosing.
 
 Change the `distance` method to accept a reference to a second Point as an optional parameter. The second point parameter should have a default value of `None`. The distance formula between two points is the square root of the difference between the two x coordinates (dx) squared, plus the difference between the two y coordinates (dy): `sqrt(dx^2 + dy^2)` 
 
 ```python
-  def distance(self, p2=None):
+  def distance(self, p2):
     dx = self.x - p2.x
     dy = self.y - p2.y
-    return sqrt(dx ** 2 + dy ** 2)
+    return math.sqrt(dx ** 2 + dy ** 2)
+  
+  
+  p3 = Point(6,13)
+  p4 = Point(1,1)
+  
+  print(p3.distance(p4)
+  13.0
 ```
 
-We will write an `if` statement to detect when p2 is `None` and set it to `Point.ORIGIN` instead.
+Great! Now, what if we wanted to make this method do *both*? i.e. we want to have the option of passing in a second point, but we also want the method to give us the distance from the origin if we *dont* pass in a second point. We can do this by defaulting the `p2` parameter to `None`, then writing a conditional that sets `p2` to the origin if a second point isn't passed in. 
 
-It's hard to reference the `Point` class in the class definition itself because it hasn't finished being created yet. We'll attach `ORIGIN` to the `Point` class after it's defined.
+But first, let's create a **class variable** called `ORIGIN` which is a `Point` object at `(0,0)` and is accessible by ALL instances of `Point`. Class variables are available even without creating any instances of a class. In this case, we're creating a class variable that holds an instance of the class itself, so we have to attach it to the class *after* we've defined the class.
+
+```python
+class Point():
+  def __init__(self, x=0, y=0):
+    self.x = x
+    self.y = y
+  
+  def __str__(self):
+    return "({},{})".format(self.x, self.y)
+  
+  def distance(self, p2):
+    dx = self.x - p2.x
+    dy = self.y - p2.y
+    return math.sqrt(dx**2 + dy**2)
+
+# attach ORIGIN after the Point class is defined
+Point.ORIGIN = Point()
+```
+
+Now set the the `p2` parameter to default to `None`, and add an `if` statement to the method that sets `p2` to `Point.ORIGIN` if it's `None`.
 
 ```python
 class Point():
@@ -317,7 +343,7 @@ class Point():
       p2 = Point.ORIGIN
     dx = self.x - p2.x
     dy = self.y - p2.y
-    return sqrt(dx**2 + dy**2)
+    return math.sqrt(dx**2 + dy**2)
 
 # attach ORIGIN after the Point class is defined
 Point.ORIGIN = Point()
