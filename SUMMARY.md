@@ -283,8 +283,9 @@
   * [Python Sets and Tuples](15-python/python-intro/sets-and-tuples.md)
   * [Python Cheatsheet](15-python/python-cheatsheet/readme.md)
   * [Python Functions](15-python/python-functions/readme.md)
-  * [Python Classes](15-python/python-classes/readme.md)
-  * [Python Class Inheritance](15-python/python-inheritance/readme.md)
+  * [Python OOP]
+    * [Classes](15-python/python-OOP/python-classes.md)
+    * [Python Class Inheritance](15-python/python-inheritance/readme.md)
   * [Intro to Flask](15-python/python-flask-intro/readme.md)
   * [Intro to SQLAlchemy](15-python/python-sqlalchemy/intro.md)
     * [Flask and SQLAlchemy](15-python/python-sqlalchemy/flask_sqlalchemy.md)
