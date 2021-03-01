@@ -14,40 +14,16 @@
 4. Why do we use a class?
 
 # Inheritance
-Inheritance allows us to build new classes out of old classes.
-It allows us to extend functionality defined in a `parent`
-class and create `children` classes that extend and
-compartmentalize different pieces of functionality.
+To avoid reinventing the wheel, we can write **sub-classes** aka **child classes** that **inhehrit** the properties of their **super class** (aka **parent class**). You've actually already seen this if you've written a class-based React component that starts with `class Something extends React.Component`. The componente (i.e. the class) you're writing inherits lots of properties from a superclass supplied by React, which has things like state, lifecycle methods, etc.
 
-Inheritance models natural hierarchies that we're used to
-thinking about in the world. We can define one general class
-to model something like an **Phone** and then `inherit` the
-methods and properties of the class to make new classes out of
-the first class, like **IPhone** and **AndroidPhone**.
+Let's dive into an example. We'll a **Phone** class, then some sub-classes of **Phone**, namely **IPhone** and **AndroidPhone**. 
 
-When we say sub-classes, or child classes, `inherit` methods
-and properties from a parent class we mean the child class
-has access to all of the functionality of it's parent, and
-it can define it's own functionality on top of that.
+All phones 
+* have a phone number
+* can place phone calls
+* can send text messages
 
-When we define a class to represent a **Phone** we can add
-the basic properties and functionality that all phones
-have.
-
-* All phones have a phone number
-* All phones can place phone calls
-* All phone can send text messages
-
-After we define what a **Phone** is we can create classes
-that `inherit` from the Phone class and add their own
-properties and functionality.
-
-Let's define two new classes that `inherit` from the **Phone** class.
-We'll make an **IPhone** and an **AndroidPhone**.
-
-* iPhones have a unique `unlock` method that accepts a fingerprint
-* iPhones have a unique `set_fingerprint` method that accepts a fingerprint
-* Android phones have a unique `set_keyboard` method that accepts a keyboard
+Write a **Phone** class that has a `number` property, as well as `call` and `text` methods:
 
 ```python
 class Phone:
@@ -59,8 +35,17 @@ class Phone:
     
   def text(self, other_number, msg):
     print("Sending text from {} to {}:".format(self.number, other_number))
-    print(msg);
+    print(msg)
 ```
+
+
+Let's define two new classes that `inherit` from the **Phone** class.
+We'll make an **IPhone** and an **AndroidPhone**.
+
+* iPhones have a unique `unlock` method that accepts a fingerprint
+* iPhones have a unique `set_fingerprint` method that accepts a fingerprint
+* Android phones have a unique `set_keyboard` method that accepts a keyboard
+
     
 ```python
 class IPhone(Phone):
