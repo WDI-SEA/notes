@@ -16,6 +16,8 @@
 # Inheritance
 To avoid reinventing the wheel, we can write **sub-classes** aka **child classes** that **inhehrit** the properties of their **super class** (aka **parent class**). You've actually already seen this if you've written a class-based React component that starts with `class Something extends React.Component`. The componente (i.e. the class) you're writing inherits lots of properties from a superclass supplied by React, which has things like state, lifecycle methods, etc.
 
+## Super Class: Phone 
+
 Let's dive into an example. We'll a **Phone** class, then some sub-classes of **Phone**, namely **IPhone** and **AndroidPhone**. 
 
 All phones 
@@ -38,9 +40,30 @@ class Phone:
     print(msg)
 ```
 
+Try making some phone instances and calling their methods!
+
+---
+## Sub-classes: Iphone & AndroidPhone
 
 Let's define two new classes that `inherit` from the **Phone** class.
 We'll make an **IPhone** and an **AndroidPhone**.
+
+### Iphone
+
+First thing we need when creating a sub-class is to pass it the parent class:
+```python
+class IPhone(Phone):
+```
+
+Next, we call the parent constructor and pass any paremeters from the parent constructor into it:
+```python
+class IPhone(Phone):
+  def __init__(self, phone_number, generation):
+    super().__init__(phone_number):
+    self.generation = generation
+```
+
+--- EDITTING STARTS HERE
 
 * iPhones have a unique `unlock` method that accepts a fingerprint
 * iPhones have a unique `set_fingerprint` method that accepts a fingerprint
