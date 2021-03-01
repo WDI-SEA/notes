@@ -70,13 +70,41 @@ Next, we call the parent constructor and pass any paremeters from the parent con
 ```python
 class IPhone(Phone):
   def __init__(self, phone_number, generation, color):
-    super().__init__(phone_number):
+    super().__init__(phone_number)
     self.generation = generation
+    self.color = color
 ```
 
-Write a `__str__` method so we can create a few iPhones and see them:
+Create an instance of IPhone and verify that it inherited all the same functionality of the Phone class: 
 
+```Python
+iPhone3 = IPhone(3333333333, '7s', 'black')
+print(iPhone3)
+iPhone3.call(phone2)
+phone1.text(iPhone3, 'im so fancy')
+```
 
+```
+3333333333
+Calling 3333333333 from 2222222222.
+Sending text from 1111111111 to 3333333333:
+im so fancy
+```
+
+You can overwrite methods from the superclass by simple redefining it in the sub-class. For example, let's write a `__str__` method for IPhone and see what happens:
+
+```python
+class IPhone(Phone):
+    def __init__(self, phone_number, generation, color):
+        super().__init__(phone_number)
+        self.generation = generation
+        self.color = color
+    
+    def __str__(self):
+        return(f'{self.generation} {self.color} Iphone {self.number}')
+
+iPhone3 = IPhone(3333333333, '7s', 'black')
+```
 --- EDITTING STARTS HERE
 
 * iPhones have a unique `unlock` method that accepts a fingerprint
