@@ -25,21 +25,31 @@ All phones
 * can place phone calls
 * can send text messages
 
-Write a **Phone** class that has a `number` property, as well as `call` and `text` methods:
+Write a **Phone** class that has a `number` property, a `__str__` method, as well as `call` and `text` methods:
 
 ```python
 class Phone:
-  def __init__(self, phone_number):
-    self.number = phone_number
-    
-  def call(self, other_number):
-    print("Calling {} from {}.".format(self.number, other_number))
-    
-  def text(self, other_number, msg):
-    print("Sending text from {} to {}:".format(self.number, other_number))
-    print(msg)
+    def __init__(self, phone_number):
+        self.number = phone_number
+
+    def __str__(self):
+        return str(self.number)
+
+    def call(self, other_number):
+        print("Calling {} from {}.".format(self.number, other_number))
+
+    def text(self, other_number, msg):
+        print("Sending text from {} to {}:".format(self.number, other_number))
+        print(msg)
 ```
 
+```
+1111111111
+2222222222
+Calling 1111111111 from 2222222222.
+Sending text from 2222222222 to 1111111111:
+hello, world
+```
 Try making some phone instances and calling their methods!
 
 ---
@@ -56,12 +66,16 @@ class IPhone(Phone):
 ```
 
 Next, we call the parent constructor and pass any paremeters from the parent constructor into it:
+
 ```python
 class IPhone(Phone):
-  def __init__(self, phone_number, generation):
+  def __init__(self, phone_number, generation, color):
     super().__init__(phone_number):
     self.generation = generation
 ```
+
+Write a `__str__` method so we can create a few iPhones and see them:
+
 
 --- EDITTING STARTS HERE
 
