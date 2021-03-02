@@ -105,32 +105,39 @@ class IPhone(Phone):
 
 iPhone3 = IPhone(3333333333, '7s', 'black')
 ```
---- EDITTING STARTS HERE
 
 iPhones have that cool/scary fingerprint functionality now - let's make our IPhone class mimic this behavior, by adding a `set_fingerprint` method, as well as an `unlock` method.
 
 1. Add a `fingerprint` property to the constructor that initializes to `None`
 2. `set_fingerprint`: takes a fingerprint and sets it to the instance's `fingerprint` property
-3. `unlock`: accepts a fingerprint and and compares it to the stored fingerprint for that instance
+3. `unlock`: accepts a fingerprint and and compares it to the stored fingerprint for that instance. If there is no stored fingerprint, or if the input fingerprint doesn't match the stored fingerprint, do not unlock. Otherwise, unlock
     
 ```python
 class IPhone(Phone):
-  def __init__(self, phone_number):
-    super().__init__(phone_number):
-    self.fingerprint = None
+    def __init__(self, phone_number, generation, color):
+        super().__init__(phone_number)
+        self.generation = generation
+        self.color = color
+        self.fingerprint = None
     
-  def set_fingerprint(self, fingerprint):
-    self.fingerprint = fingerprint
+    def __str__(self):
+        return(f'{self.generation} {self.color} Iphone {self.number}')
     
-  def unlock(self, fingerprint=None):
-    if (fingerprint == self.fingerprint):
-      print("Phone unlocked because no fingerprint has not been set.")
-  
-    if (fingerprint == self.fingerprint):
-      print("Phone unlocked. Fingerprint matches.")
-    else:
-      print("Phone locked. Fingerprint doesn't match.")
+        self.fingerprint = None
+    
+    def set_fingerprint(self, fingerprint):
+        self.fingerprint = fingerprint
+    
+    def unlock(self, fingerprint=None):
+        if (not self.fingerprint):
+            print("Phone unlocked because the fingerprint has not been set.")
+        elif (fingerprint == self.fingerprint):
+            print("Phone unlocked. Fingerprint matches.")
+        else:
+            print("Phone locked. Fingerprint doesn't match.")
 ```
+
+--- EDITTING STARTS HERE
 
 ### Android 
 * Android phones have a unique `set_keyboard` method that accepts a keyboard
