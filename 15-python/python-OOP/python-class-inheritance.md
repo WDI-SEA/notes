@@ -152,15 +152,12 @@ Phone locked. Fingerprint doesn't match.
 Phone unlocked. Fingerprint matches.
 ```
 
-### Android 
-* Android phones have a unique `set_keyboard` method that accepts a keyboard
+---
 
-```python
-class Android(Phone):
-  def __init__(self, phone_number):
-    super().__init__(phone_number)
-    self.keyboard = "Default"
-    
-  def set_keyboard(self, keyboard):
-    self.keyboard = keyboard
-```
+### Exercise: Android 
+
+Write an `Android` class that inherits from `Phone`. 
+* Each `Android` should have a `keyboard` property that is initialized to `"Default"`
+* Add a `set_keyboard` method that accepts a keyboard
+* Write a `__str__` method that prints `This Android uses the <insert keyboard here> keyboard.`
+
