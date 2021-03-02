@@ -107,10 +107,11 @@ iPhone3 = IPhone(3333333333, '7s', 'black')
 ```
 --- EDITTING STARTS HERE
 
-* iPhones have a unique `unlock` method that accepts a fingerprint
-* iPhones have a unique `set_fingerprint` method that accepts a fingerprint
-* Android phones have a unique `set_keyboard` method that accepts a keyboard
+iPhones have that cool/scary fingerprint functionality now - let's make our IPhone class mimic this behavior, by adding a `set_fingerprint` method, as well as an `unlock` method.
 
+1. Add a `fingerprint` property to the constructor that initializes to `None`
+2. `set_fingerprint`: takes a fingerprint and sets it to the instance's `fingerprint` property
+3. `unlock`: accepts a fingerprint and and compares it to the stored fingerprint for that instance
     
 ```python
 class IPhone(Phone):
@@ -124,12 +125,16 @@ class IPhone(Phone):
   def unlock(self, fingerprint=None):
     if (fingerprint == self.fingerprint):
       print("Phone unlocked because no fingerprint has not been set.")
-      
+  
     if (fingerprint == self.fingerprint):
       print("Phone unlocked. Fingerprint matches.")
     else:
       print("Phone locked. Fingerprint doesn't match.")
-  
+```
+
+### Android 
+* Android phones have a unique `set_keyboard` method that accepts a keyboard
+```python
 class Android(Phone):
   def __init__(self, phone_number):
     super().__init__(phone_number)
