@@ -76,3 +76,93 @@ Try writing an `insert_end` method that adds a new node to the **end** of a link
 			temp.next = self.tail
 		self.size += 1
 ```
+
+**Test**:
+```python
+myList = LinkedList()
+myList.insert_front('Taylor')
+myList.insert_front('Dave')
+myList.insert_front('Anna')
+myList.insert_end('King')
+print(myList)
+print(len(myList))
+```
+
+```
+[Anna -> Dave -> Taylor -> King]
+4
+```
+
+### insert_after
+
+Let's say we want to insert `Gavin` after `Anna` in the list. How would we do this? 
+
+#### Find the reference node and store it
+We would first certainly need a reference to the `Anna` node, which means we have to start at the `head` and iterate through the list until we find her! Once we find the `Anna` node, we'll store it in a holder variable called `temp`:
+
+```python
+	def insert_after(self, data, node_data):
+		temp = None
+		current = self.head
+		while current:
+			if current.data == node_data:
+				temp = current
+				break
+			current = current.next
+```
+
+We should also handle the case in which we _didn't_ find the `Anna` node:
+
+```python
+	def insert_after(self, data, node_data):
+		temp = None
+		current = self.head
+		while current:
+			if current.data == node_data:
+				temp = current
+				break
+			current = current.next
+		if temp == None:
+			return 'check your node_data, we couldn\'t find it!'
+```
+
+Assuming we _do_ find the node we're looking for, which should now be stored in `temp`, we can create the new node, make it point to the node that comes after `temp`, then reassign `temp` to point to the new node:
+
+```python
+	def insert_after(self, data, node_data):
+		temp = None
+		current = self.head
+		while current:
+			if current.data == node_data:
+				temp = current
+				break
+			current = current.next
+		if temp == None:
+			return 'check your node_data, we couldn\'t find it!'
+		newNode = Node(data, temp.next)
+		temp.next = newNode
+		self.size += 1
+```
+
+Test it!
+```python
+myList = LinkedList()
+myList.insert_front('Taylor')
+myList.insert_front('Dave')
+myList.insert_front('Anna')
+myList.insert_end('King')
+myList.insert_after('Gavin', 'Anna')
+myList.insert_after('Nick', 'King')
+print(myList)
+print(len(myList))
+```
+
+```
+[Anna -> Gavin -> Dave -> Taylor -> King -> Nick]
+6
+```
+
+### Bonus Challenge: insert_before
+
+Try implementing an `insert_before` method!
+
