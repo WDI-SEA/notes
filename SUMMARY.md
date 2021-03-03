@@ -266,6 +266,7 @@
   * [Bracket Matching](08-cs/cs-ruby-bracket-stacks/readme.md)
   * [Linked Lists](08-cs/cs-linked-list/intro.md)
     * [Basics](08-cs/cs-linked-list/python-implementation/basics.md)
+    * [Node Transactions](08-cs/cs-linked-list/python-implementation/node-transactions.md)
     * [Ruby Linked Lists](08-cs/cs-ruby-linked-list/readme.md)
       * [Sample Code](08-cs/cs-ruby-linked-list/01-sample-code.md)
       * [Beginner Exercises](08-cs/cs-ruby-linked-list/02-beginner-exercises.md)

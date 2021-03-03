@@ -1,4 +1,4 @@
-# Linked List in Python
+# Linked List in Python: the basics
 
 Here we'll use object-oriented programming to build a basic linked list in python. We'll need a `Node` class and a `LinkedList` class.
 
