@@ -48,3 +48,5 @@ class LinkedList:
 			current = current.next
 		return f'[{result}]'
 ```
+
+This is great and all, but how we need to actually load our list with nodes, which means we need to add some functionality to our `LinkedList` class that allows us to add nodes to our list!
