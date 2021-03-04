@@ -194,6 +194,13 @@ class Point():
     self.y = y
 ```
 
+Add a `__str__` method that prints points in the standard tuple format `(x, y)`:
+
+```python
+    def __str__(self):
+        return '({},{})'.format(self.x, self.y)
+```
+
 Add a method called `distance` that calculates and returns the distance between
 the current point and the origin. Use the mathematical distance formula where
 the distance between a point and the origin is defined as the square root of
