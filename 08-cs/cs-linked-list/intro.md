@@ -17,7 +17,7 @@ Singly linked lists only have references to the next item in the list, so they l
 
 While doubly linked lists _also_ have references to the previous node, so they look like this:
 
-![https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fflawless-app-stories%2Fdoubly-linked-lists-swift-4-ae3cf8a5b975&psig=AOvVaw1hjTpASv9QQoFSWHhAtGeq&ust=1614896456965000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCIlKmUle8CFQAAAAAdAAAAABAV](https://www.google.com/url?sa=i&url=https%3A%2F%2Fmedium.com%2Fflawless-app-stories%2Fdoubly-linked-lists-swift-4-ae3cf8a5b975&psig=AOvVaw1hjTpASv9QQoFSWHhAtGeq&ust=1614896456965000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLCIlKmUle8CFQAAAAAdAAAAABAV)
+![https://www.java2blog.com/wp-content/uploads/2017/09/DoublyLinkedList.png](https://www.java2blog.com/wp-content/uploads/2017/09/DoublyLinkedList.png)
 
 ## Wait, why not use arrays instead?
 
