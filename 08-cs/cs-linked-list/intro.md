@@ -21,7 +21,7 @@ While doubly linked lists _also_ have references to the previous node, so they l
 
 ## Wait, why not use arrays instead?
 
-In lower level languages, arrays are allocatd in **blocks.** Therefore, arrays are static in size and can only hold a specific data type. Linked lists store data in the **heap**, meaning that the data can be stored in an unorganized manner. Since each node points to the next one, it's still possible to maintain the list structure.
+In lower level languages, arrays are allocated in **blocks.** Therefore, arrays are static in size and can only hold a specific data type. Linked lists store data in the **heap**, meaning that the data can be stored in an unorganized manner. Since each node points to the next one, it's still possible to maintain the list structure.
 
 ## Heads or tails?
 
