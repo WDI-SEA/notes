@@ -276,6 +276,7 @@
       * [Beginner Exercises](08-cs/cs-js-linked-list/02-beginner-exercises.md)
       * [Beginner Solutions](08-cs/cs-js-linked-list/02-beginner-solutions.md)
   * [Hash Tables](08-cs/cs-hash-table/readme.md)
+  * [Sets](08-cs/cs-sets/readme.md)
   * [Intro to Sorting](08-cs/cs-intro-to-sorting/readme.md)
   * [Insertion Sort](08-cs/cs-insertion-sort/readme.md)
   * [Bucket Sort](08-cs/cs-ruby-bucket-sort/readme.md)
