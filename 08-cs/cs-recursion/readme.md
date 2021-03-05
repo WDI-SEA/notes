@@ -20,7 +20,8 @@ Today we're going to explore a topic called **recursion**. According to Wikipedi
 
 Here's some pictures that we could say are **recursive** and exhibit properties of **recursion**:
 
-![Mona Lisa holding her own painting](../../.gitbook/assets/recursion_mona_lisa%20%281%29.jpg) ![Hulk Hogan&apos;s beard growing his own face](../../.gitbook/assets/recursion_hulk_hogan%20%281%29.jpg) ![Droste branding](../../.gitbook/assets/recursion_droste%20%281%29.jpg)
+![Mona Lisa holding her own painting](recursion_mona_lisa.jpg) 
+![Hulk Hogan&apos;s beard growing his own face](recursion_hulk_hogan.jpg) ![Droste branding](recursion_droste.jpg)
 
 ## Let's Pretend We Are Each A Recursive Function
 
