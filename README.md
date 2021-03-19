@@ -31,26 +31,13 @@ This is totally optional. If you choose to do this, please update every 3-6 mont
 * Recommended process:
   * Make changes in your forked repository (use a separate branch)
   * Create a pull request and be sure to be very explicit about the changes you've made
-  * Ask someone on the WDI team to look at your pull request
+  * Ask someone on the SEI team to look at your pull request
 
 ## Schedule
 
 Notes below are organized by topic, but they are unordered. This is because we may at any point swap new material in or switch the order of the units.
 
-Something to know is that some of the lessons here are more historical and haven't been used in at least a couple years. For example, the Ruby lessons and the lessons in unit 1 that delve deeper into the guts of ES5 syntax like prototypal inheritance. We've elected to skip that in favor of teaching OOP during the Python unit.
-
-### Future Directions
-
-We are considering:
-
-* Dropping jQuery or doing a much lighter version than we are currently.
-* Dropping AJAX and replacing it with Fetch for APIs 
-* Dropping AJAX and replacing it with Method Override for RESTful routing
-* Adding a lesson on Django REST framework
-* Enhancing Django material in general
-* Rewriting portions of the Node/Express unit for more fine grained lessonslabs as opposed to a few very long code-alongs.
-
-
+Something to know is that some of the lessons here are more historical and haven't been used in at least a couple cohorts or years.
 
 ### Connected Classroom Alteration (Fall 2018)
 
