@@ -8,3 +8,4 @@
 - [ ] add python implementation code-along content for DS&A (only linked lists have it atm)
 - [ ] Revamp post-cohort resources
 - [ ] Update readme with current curriculum plan
+- [ ] Update prework link in readme.md
