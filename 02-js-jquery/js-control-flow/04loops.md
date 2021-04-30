@@ -5,7 +5,7 @@
 A **while loop** repeatedly executes a code block as long as a specified condition is true. It is great for when we don't know how many times we need to do something, but must continue to do them until something happens to change the condition.
 
 ```js
-var i = 0;
+let i = 0;
 while (i < 5) {
   console.log("i is " + i);
   i++;
@@ -32,7 +32,7 @@ while (CONDITION) {
 A **for loop** is used for when we know exactly how many times we want to loop. This is very useful for repeating sections of code a certain number of times but is also very commonly used when accessing or manipulating elements in an array or similar collection. 
 
 ```js
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
   console.log("i is " + i);
 }
 
@@ -59,7 +59,7 @@ Very commonly, you will use it to loop through an array.
 ```js
 var foods = ["pizza", "tacos", "ice cream"];
 
-for (var i = 0; i < foods.length; i++) {
+for (let i = 0; i < foods.length; i++) {
   console.log("i like " + foods[i]);
 }
 
@@ -74,9 +74,9 @@ for (var i = 0; i < foods.length; i++) {
 A **for...of** loop is a newer construct, similar to a **for loop** in other languages like Python. It is specifically used for iterating over an array but the code is easier to read and understand.
 
 ```js
-var cars = ['SUV', 'Subcompact', 'Economy', 'Performance', 'Pickup'];
+let cars = ['SUV', 'Subcompact', 'Economy', 'Performance', 'Pickup'];
 
-for (var type of cars) {
+for (let type of cars) {
   console.log("My car is a " + type);
 }
 
@@ -93,12 +93,12 @@ for (var type of cars) {
 A **for...in** loop is similar to a **for...of**, but good for looping through all the key-value pairs in an Object.
 
 ```js
-var car = {
+let car = {
   wheels: 4,
   doors: 2,
   seats: 5
 };
-for (var thing in car) {
+for (let thing in car) {
   console.log("My car has " + car[thing] + " " + thing);
 }
 
@@ -127,7 +127,7 @@ Use a `for...in` loop to examine the `phoneBook` Object below and print
 out the names of all the people who share the phone number "333-333-3333".
 
 ```js
-var phoneBook = {
+let phoneBook = {
   "Abe": "111-111-1111",
   "Bob": "222-222-2222",
   "Cam": "333-333-3333",
