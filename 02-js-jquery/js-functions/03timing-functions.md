@@ -35,8 +35,8 @@ function alarm() {
 	console.log("Wake up!");
 }
 
-var firstAlarm = setTimeout(alarm, 3000);
-var secondAlarm = setTimeout(alarm, 6000);
+let firstAlarm = setTimeout(alarm, 3000);
+let secondAlarm = setTimeout(alarm, 6000);
 
 ```
 
@@ -49,8 +49,8 @@ function shutDown() {
 	console.log('No!')
 }
 
-var kids = setInterval(annoy, 1000);
-var parents = setInterval(shutDown, 3200);
+let kids = setInterval(annoy, 1000);
+let parents = setInterval(shutDown, 3200);
 ```
 
 You can disable an interval using `clearInterval`:
@@ -62,7 +62,7 @@ function annoy() {
 function hush() {
 	clearInterval(kids);
 }
-var kids = setInterval(annoy, 1000);
+let kids = setInterval(annoy, 1000);
 setTimeout(hush, 10000)
 ```
 And you can disable your `setTimeout` before the function fires using `clearTimeout`:
@@ -77,9 +77,9 @@ function turnOffSnooze() {
 	clearTimeout(snoozeAlarm);
 }
 
-var snoozeAlarm = setTimeout(alarmRing, 5000);
+let snoozeAlarm = setTimeout(alarmRing, 5000);
 
-var snoozeOff = setTimeout(turnOffSnooze, 3000)
+let snoozeOff = setTimeout(turnOffSnooze, 3000)
 ```
 
 ### Exercises:
@@ -102,4 +102,4 @@ var snoozeOff = setTimeout(turnOffSnooze, 3000)
 Blast off!
 ``` 
 
-***2.*** How could you mimic the `setInterval` functionality using `setTimeout`? Use `setTimeout` to recreate the `var kids = setInterval(annoy, 1000);` functionality.
+***2.*** How could you mimic the `setInterval` functionality using `setTimeout`? Use `setTimeout` to recreate the `let kids = setInterval(annoy, 1000);` functionality.
