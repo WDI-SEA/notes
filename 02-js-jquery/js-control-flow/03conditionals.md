@@ -13,8 +13,8 @@ if (false) {
   console.log("this will not be printed");
 }
 
-var x = 4;
-//var x = 5;
+let x = 4;
+//let x = 5;
 if (x === 5) {
   console.log("x equals 5");
 }
@@ -25,9 +25,9 @@ if (x === 5) {
 When we want code that executes when the **if statement** condition is false, we can use the **else** keyword as a shorthand.
 
 ```js
-var isTasty;
-var food = "vegetables";
-//var food = "pizza";
+let isTasty;
+let food = "vegetables";
+//let food = "pizza";
 if (food === "pizza") {
   isTasty = true;
 } else {
@@ -39,7 +39,7 @@ console.log("Is the food tasty?", isTasty);
 #### `if/else if/else`
 
 ```js
-var course = "wdi";
+let course = "wdi";
 if (course === "uxdi") {
   console.log("Hello, User Experience Designer!");
 } else if (course === "fewd") {
@@ -58,7 +58,7 @@ Sometimes, numerous **if/else** statements make code hard to read. There's an al
 Each case block must end with **break;**, otherwise the block will fall through to the next block. If none of the cases match the value, you can also implement a **default** case.
 
 ```js
-var grade = "B";
+let grade = "B";
 switch(grade) {
   case "A":
     console.log('You got an A! Great job!');
@@ -80,7 +80,7 @@ Rewrite the `if/else if/else` example above using a switch statement.
 ### Switch statements can evaluate inequalities too!
 
 ```js
-var grade = "75";
+let grade = "75";
 switch(true) {
   case (90<=grade && grade<=100):
     console.log('You got an A! Great job!');
@@ -104,19 +104,19 @@ What happens if we put something other than a Boolean as the conditional in an i
 Most values are truthy. In fact, there are only 6 falsey values in Javascript - can you guess them all?
 
 ```js
-var person = null;
+let person = null;
 if (person) {
   console.log("this will not be printed");
 } else {
   console.log("this will be printed");
 }
-var num = 0;
+let num = 0;
 if (num) {
   console.log("this will not be printed");
 } else {
   console.log("this will be printed");
 }
-var num = 5;
+let num = 5;
 if (num) {
   console.log("this will be printed");
 }

@@ -57,7 +57,7 @@ In other words, you declare a variable to be used as the iterator and test to se
 Very commonly, you will use it to loop through an array.
 
 ```js
-var foods = ["pizza", "tacos", "ice cream"];
+let foods = ["pizza", "tacos", "ice cream"];
 
 for (let i = 0; i < foods.length; i++) {
   console.log("i like " + foods[i]);
