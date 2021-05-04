@@ -16,7 +16,7 @@
 A function is a module that can store and invoke code. When writing repetitive code, we can isolate code into **functions** in order to reduce repetition. For example, if we needed to say "Hello World" to the screen multiple times, we can create a function like so.
 
 ```js
-var greeting = function() {
+let greeting = function() {
 	console.log("Hello World");
 }
 
@@ -28,7 +28,7 @@ Note that a function is assigned to a variable, and we can **call** the function
 **Parts of a function**
 
 ```
-var FUNCTIONNAME = function() {
+let FUNCTIONNAME = function() {
 	//CODE
 }
 ```
@@ -37,13 +37,13 @@ We can also create functions that accept **parameters**, and use those parameter
 
 ## Defining a function with a parameter
 ```js
-var greeting = function(taco) {
+let greeting = function(taco) {
 	// anything inside of here will execute when called
 	console.log("Good morning", taco);
 }
 
-var name = "Josh"
-var name2 = "Brian"
+let name = "Josh"
+let name2 = "Brian"
 greeting(name);
 greeting(name2);
 ```
@@ -53,15 +53,15 @@ greeting(name2);
 Functions can have multiple parameters, separated by commas.
 
 ```js
-var greeting = function(taco, stuff) {
+let greeting = function(taco, stuff) {
 	// anything inside of here will execute when called
 	console.log("Good morning", stuff, taco);
 	console.log("taco:", taco);
 	console.log("stuff:", stuff);
 }
 
-var name = "Josh"
-var name2 = "Brian"
+let name = "Josh"
+let name2 = "Brian"
 greeting(name, name2);
 greeting(name2, name);
 ```
@@ -73,29 +73,29 @@ Note that functions can have **input** via parameters. They can also have **outp
 Note that printing something to the screen using `console.log` is not the same as returning values.
 
 ```js
-var multiply = function(num1, num2) {
+let multiply = function(num1, num2) {
 	console.log("inside the function");
 	// return result = num1 * num2;
 	return num1 * num2
 }
 
-var firstNum = 2;
-var secNum = 3;
-var taco = multiply(firstNum,secNum);
+let firstNum = 2;
+let secNum = 3;
+let taco = multiply(firstNum,secNum);
 
 console.log(firstNum + " multiplied by " + secNum + " is " + taco )
 ```
 
 ```js
 // With a return value
-var returnHello = function (name) {
+let returnHello = function (name) {
 	return("Hello, " + name)
 }
 
 console.log("with a return value:", returnHello("jane") );
 
 // Without a return value
-var returnHello2 = function(name) {
+let returnHello2 = function(name) {
 	console.log("inside returnHello2: Hello, " + name);
 }
 returnHello2("nachos");
@@ -106,7 +106,7 @@ console.log("without a return value:", returnHello2("taco") ); //will show as un
 
 There are two different ways to declare a function
 ```js
-var multiply = function(a, b) {
+let multiply = function(a, b) {
 	return a * b;
 }
 
@@ -119,7 +119,7 @@ The difference between these two is that the first one is defined at run-time, m
 ```js
 multiply(2, 2); // ERROR
 
-var multiply = function(a, b) {
+let multiply = function(a, b) {
 	return a * b;
 }
 ```
@@ -140,7 +140,7 @@ Despite being more flexible, the former declaration that assigns the function to
 1. What is the return value of this function when called?
 
 ```js
-var lightsabers = function(num) {
+let lightsabers = function(num) {
 	console.log('I have ' + num + ' lightsabers.');
 }
 
@@ -150,12 +150,12 @@ lightsabers(2);
 2. How would the function above be modified if the user wanted to pass in an object of lightsabers, like this one?
 
 ```js
-var myLightsaberCollection = {
+let myLightsaberCollection = {
 	blue: 1,
 	green: 3
 }
 
-var lightsabers = function(lightsaberCollection) {
+let lightsabers = function(lightsaberCollection) {
 	//code here
 }
 
