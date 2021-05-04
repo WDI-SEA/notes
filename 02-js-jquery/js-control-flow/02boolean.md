@@ -7,8 +7,8 @@
 Recall the single equals, or "assignment operator", which assigns values to variable. Note that there is not comparison involved in assignment statements.
 
 ```js
-var x = 3;
-var a = b = 5;
+let x = 3;
+let a = b = 5;
 ```
 
 That second line sets assigns both `a` and `b` to the value `5`. 
