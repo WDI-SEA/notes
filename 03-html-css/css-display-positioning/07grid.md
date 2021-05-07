@@ -25,7 +25,7 @@ With Grid layout, you can divide up the screen into `rows` and `columns` of size
 
 ## All the pieces of a Grid
 
-When you look at a grid you see that it has **grid rows** and **grid columns**. Inside these rows and columns are **grid cells**. **Grid tracks** are one or more cells in a line in one rown or column.  Easy, right?
+When you look at a grid you see that it has **grid rows** and **grid columns**. Inside these rows and columns are **grid cells**. **Grid tracks** are one or more cells in a line in one row or column.  Easy, right?
 
 The next concept is **grid areas**. Any group of adjacent grid cells can be sectioned into a **grid area**. We have the ability to give these areas names like we give our variables and link them through styles to our HTML containers.
 
@@ -42,7 +42,7 @@ We start with defining a container by setting the `display` property to `grid`. 
 ```css
   body {
     display: grid;
-    min-height: 100%;
+    min-height: 100vh;
   }
 ```
 
@@ -68,7 +68,7 @@ First, we'll define the rows and columns:
 ```css
 body {
   display: grid;
-  min-height: 100%;
+  min-height: 100vh;
   grid-template-rows: 200px 1fr 120px;
   grid-template-columns: 180px 1fr;
 }
@@ -114,7 +114,7 @@ That looks truly bizarre, doesn't it? The syntax is definitely bizarre but it is
 
 ## Getting a little Flexy with Grid
 
-Grid itself can do some of the same vertical and horizontal spacing stuff that Flexbox can do. It uses the properties `justify-items` and `align-items`. But it is important to realize that it is only the thing marked with `display: grid` that has these abilities. The **grid areas** do not implcitly have any of that so if you need flex functionality in any of your grid areas, it's best to mark them as `display: flex` or `display: grid` and then apply your justification to the items therein.
+Grid itself can do some of the same vertical and horizontal spacing stuff that Flexbox can do. It uses the properties `justify-items` and `align-items`. But it is important to realize that it is only the thing marked with `display: grid` that has these abilities. The **grid areas** do not implicitly have any of that so if you need flex functionality in any of your grid areas, it's best to mark them as `display: flex` or `display: grid` and then apply your justification to the items therein.
 
 ---
 
