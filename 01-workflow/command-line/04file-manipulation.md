@@ -140,7 +140,7 @@ cat books.txt | grep Mil
 
 See how we filtered out just the lines that contain Mil? Try grepping for something else. There are also additional options that can be passed to both `sort` and `grep`.
 
-> Adapted from [http://en.flossmanuals.net/command-line/piping/](http://en.flossmanuals.net/command-line/piping/)
+> Adapted from [http://archive.flossmanuals.net/command-line/piping.html](http://archive.flossmanuals.net/command-line/piping.html)
 
 ## `mv` - Moving files
 
