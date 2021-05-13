@@ -38,6 +38,7 @@ Reminder, example finished projects are here for inspiration:
 MVP stands for `minimum viable product`. It is a commonly used term in software development to refer to the base requirements of a finished product. Without this idea, the fear is that projects will never be released because we will always be adding features or improving things, even though a "perfect project" is not actually possible. 
 
 ![Minimum Viable Product illustration](https://cdn.business2community.com/wp-content/uploads/2020/06/Screen-Shot-2020-06-18-at-11-40-50-AM.png)
+
 *Image Credit: https://www.business2community.com/strategy/what-is-a-minimum-viable-product-what-you-need-to-know-02323848*
 
 For your MVP goals, identify what features your game needs to have at minimum to be a functional, styled, and playable game. 
