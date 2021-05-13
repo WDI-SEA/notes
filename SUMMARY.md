@@ -344,7 +344,7 @@
     * [Don't Build a Skyscraper](09-other-topics/post-sei/skyscraper.md)
 * [Projects](11-projects/readme.md)
   * [Project 1](11-projects/project-1/readme.md)
-  * [Project 1 Pitch Guideline](11-projects/project-1-pitch-guideline/readme.md)
+  * [Project 1 Pitch Guideline](11-projects/project-1-pitch-guideline/README.md)
   * [Project 2](11-projects/project-2/readme.md)
   * [Project 3](11-projects/project-3/readme.md)
     * [Project 3 Pitch Guidelines](11-projects/project-3/pitch-guidelines.md)
