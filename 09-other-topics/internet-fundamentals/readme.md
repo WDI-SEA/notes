@@ -1,5 +1,7 @@
 # How the Internet works
 
+![The First Thing To Know About The Internet](first_thing_to_know.jpeg)
+
 ### Objectives
 
 - Explain the difference between a client and server
@@ -10,7 +12,7 @@
 - Breakdown the components of a URL: protocol, subdomain, domain, extension, resources
 - Identify the most common HTTP request/response headers
 
-##How the Internet Works in 5 Minutes
+## How the Internet Works in 5 Minutes
 
 <iframe width="100%" height="590" src="https://www.youtube.com/embed/7_LPdttKXPc" frameborder="0" allowfullscreen></iframe>
 
