@@ -2,19 +2,12 @@
 
 Iterators are built-in Array functions. They iterate through an array and use a callback to do something to, or with, the the values in that array.
 
-_Couldn't we just use `for`-loops?_ Totall! But writing `for` loops is error prone and tiring, which is why Javascript provides these iterators to perform common operations for us.
+_Couldn't we just use `for`-loops?_ Totally! But writing `for` loops is error prone and tiring, which is why Javascript provides these iterators to perform common operations for us.
 
-* run some piece of logic on each item
-* create a new array with each item being slightly transformed
-* filter the array to contain only a subset of items
-* combine all the items in some fashion
-
-The iterators for these operations are, respectively:
-
-* [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-* [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-* [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-* [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
+* [forEach](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach) runs a function you provide on each array element (no return value).
+* [map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) returns a new array with all elements transformed by a function that you provide.
+* [filter](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) returns a new array including only the array elements that pass a test that you provide.
+* [reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) returns a single value that is built using a function you provide. 
 
 ### General Practice
 
