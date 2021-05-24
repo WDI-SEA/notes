@@ -117,7 +117,7 @@ In general, we keep track of the version of the module that we are using in a fi
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^2.24.0"
+    "dayjs": "^1.10.4"
   }
 }
 ```
