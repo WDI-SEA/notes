@@ -60,68 +60,40 @@ We installed nodemon globally, but most node packages will only be useful for sp
 
 ## Using a Third Party Module
 
-#### Introducing Moment: A Date/Time Format Module
+#### Installing Day.js: A Date/Time Format Module
 
-Moment is a date formatting module. Instead of the mess of text that comes out when you create a regular date with JavaScript using the date class, we can pretty-print the date in a human readable way.
-
-```javascript
-console.log(new Date())
-// Prints: Fri Apr 05 2019 09:58:38 GMT-0700 (Pacific Daylight Time)
-```
-
-#### Install Moment
+Day.js is a modules that helps us work with dates.
 
 1. Go to your terminal
 2. Make sure you're in the top level of your `my-first-node-app` folder
-3. Type the command `npm i moment`
+3. Type the command `npm i dayjs`
 4. When the command is finished, go back to your text editor
 5. Make sure there is a folder called `node_modules` in the top level of your `my-first-node-app` folder
 
-#### Use Moment in a Node App
+#### Use Day.js in a Node App
 
 * Open `index.js` in your text editor
-* Require the moment library at the top of `index.js` and assign it to a variable called `moment`
-* Take a look at [Moment's Docs](http://momentjs.com/). There are a lot of things you can do with this module!
-* Let's use the moment module to print a date! Add the following code to your `index.js` file:
+* Require the day.js library at the top of `index.js` and assign it to a variable called `dayjs`
+* Take a look at [Day.js's Docs](https://day.js.org/en/). There are a lot of things you can do with this module!
+* Let's use the day.js module to print a date! Add the following code to your `index.js` file:
 
 ```javascript
-console.log(moment().format("MMM Do YYYY"))
+console.log(dayjs().format("MMM DD YYYY"))
 ```
 
 * What does this print? You should have seen whatever today's date was in the format: 3-letter month, numerical day plus ordinal, and 4-digit year. For example: 
 
 ```text
-Apr 15th, 2020
+Tues May 25, 2021
 ```
 
-* Next challenge: Use moment to pretty-print your birthday. Use the fully spelled out month, day of the week, escaped text for words such as `the` and `of`, and 4-digit year. For example:
+* Next challenge: Use day.js to pretty-print your birthday. Use the fully spelled out month, day of the week, escaped text for words such as `the` and `of`, and 4-digit year. For example:
 
 ```text
-Wednesday the 11th of September in the year 1985
+Tuesday, 20th of September, year 1985
 ```
 
-* BONUS: Use moment's `.fromNow()` function to print just how many years ago that birthday was!
-
-<details>
-    <summary>SOLUTION</summary>
-    
-<p>
-
-```js
- const moment = require('moment')  
-  
- // Prints today's date  
- console.log(moment().format("MMM Do YYYY"))  
-  
- // Prints my birthday  
- console.log(moment('09-11-1985', 'MM DD YYYY').format("dddd [the] Do [of] MMMM [in the year] YYYY"))  
-  
- // Prints how long ago my birthday was  
- console.log('Oh boy, that was', moment('09-11-1985', 'MM DD YYYY').fromNow(), 'years ago!')
-```
-
-</p>
-</details>
+* BONUS: Use day.js's `.fromNow()` function to print just how many years ago that birthday was!
 
 
 #### Git Ignore File
@@ -145,7 +117,7 @@ In general, we keep track of the version of the module that we are using in a fi
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "moment": "^2.24.0"
+    "dayjs": "^2.24.0"
   }
 }
 ```
