@@ -112,7 +112,7 @@ In this excercise, you will make a Hello World app from scratch by using the the
 ![HTTP Request and Response Diagram](https://qph.fs.quoracdn.net/main-qimg-7cf2f16f34b9cdd2652abcf17f85555d)
 
 1. Create a `hello-node` directory.
-2. Initialize Node in this directory.
+2. Initialize NPM in this directory.
 3. Create your entry point file.
 4. Import the `http` core module into your entry file. \(Hint: use the `require` function\)
 5. Create an http server that listens to `port 8000` and writes `Hello, World!` to the client.

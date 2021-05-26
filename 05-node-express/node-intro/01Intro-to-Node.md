@@ -50,7 +50,7 @@ We will use Homebrew to install Node via the command line.
 
 Open the folder in your favorite text editor.
 
-#### 2. Initialize Node inside the project folder.
+#### 2. Initialize NPM inside the project folder.
 
 \(check the command line prompt to make sure you're actually inside the project folder\)
 

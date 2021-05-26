@@ -118,7 +118,7 @@ You'll get more comfortable with all of this as we do more examples.
 mkdir route-fun
 ```
 
-#### 2. Initialize Node
+#### 2. Initialize NPM
 
 ```bash
 cd route-fun

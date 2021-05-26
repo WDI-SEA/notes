@@ -16,7 +16,7 @@ Before we do anything else, let's set up a new basic Express app called `love-it
 
 #### 1. Create a new project
 
-#### 2. Initialize Node
+#### 2. Initialize NPM
 
 #### 3. Install Dependencies
 
