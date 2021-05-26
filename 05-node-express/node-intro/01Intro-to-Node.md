@@ -3,7 +3,7 @@
 ## Review: Client-Server
 
 * What's the front-end \(client side\)?
-  * Broswer
+  * Browser
   * User interface
   * Html, CSS, Javascript
 * What's the back-end \(server-side\)?
