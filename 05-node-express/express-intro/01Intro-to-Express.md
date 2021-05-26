@@ -14,7 +14,7 @@ Let's create our first Node/Express app!
 mkdir hello-express
 ```
 
-### 2. Initialize Node
+### 2. Initialize NPM
 
 ```bash
 cd hello-express
