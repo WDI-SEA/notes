@@ -1,6 +1,6 @@
 # Using Models 
 
-*Updated for ECMAScript 2016 async/await and Sequelize 6*
+*Updated for ECMAScript 2017 async/await and Sequelize 6*
 
 Just like using express and the other modules, your models must be required in order to access them in your app.
 Let's start in our index.js and add the following code:
@@ -73,7 +73,6 @@ async function createUser() {
     console.log(newUser)
     // terminates the node process at this point so 
     // that we don't have to force-quit the console (optional)
-    process.exit()
   } catch (err) {
     console.log(err)
   }
@@ -130,13 +129,17 @@ Simple Update query docs can be found [here](https://sequelize.org/master/manual
 
 ```javascript
 async function updateUser(){
-  // Returns a value of how many rows were altered by this update
-  const numRowsChanged = await db.user.update({ lastName: 'Taco' }, {
-    where: {
-      firstName: 'Brian'
-    }
-  })
-  console.log(numRowsChanged)
+  try {
+    // Returns a value of how many rows were altered by this update
+    const numRowsChanged = await db.user.update({ lastName: 'Taco' }, {
+      where: {
+        firstName: 'Brian'
+      }
+    })
+    console.log(numRowsChanged)
+  } catch(error) {
+    console.log(error)
+  }
 }
 
 updateUser()
