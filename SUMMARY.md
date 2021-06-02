@@ -144,6 +144,7 @@
     * [N:M Relationships](05-node-express/express-sequelize/many-to-many.md)
     * [Using Models With Async/Await](05-node-express/express-sequelize/usingmodels-async-await.md)
     * [1:M RelationshipsWith Async/Await](05-node-express/express-sequelize/one-to-many-async-await.md)
+    * [N:M RelationshipsWith Async/Await](05-node-express/express-sequelize/many-to-many-async-await.md)
   * [Express Authentication](05-node-express/express-auth/readme.md)
     * [From Scratch](05-node-express/express-auth/from-scratch.md)
     * [Research AND Code](05-node-express/express-auth/research/research-and-code.md)
