@@ -22,7 +22,7 @@ We will be expanding our data model in `userapp` to include toys for our pets.
 ```text
 sequelize model:create --name toy --attributes type:string,color:string
 
-sequelize model:create --name petToys --attributes petId:integer,toyId:integer
+sequelize model:create --name pets_toys --attributes petId:integer,toyId:integer
 ```
 
 You may be noticing that this model is plural! Doesn't that break the cardinal rule that "Models are always singular!"? According to the Sequelize documentation when using a Junction Model (a model represening an join table), the model is pluralized.
@@ -33,7 +33,7 @@ Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.ht
 
 In order to associate pets to toys in a many to many fashion, you will need to update the associations on the pets and toys.
 
-Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `petToys`).
+Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `pets_toys`).
 
 ### pet.js
 
@@ -43,7 +43,7 @@ Many to many associations use the `belongsToMany` sequelize method, which takes 
    static associate(models) {
      // define association here
      models.pet.belongsTo(models.user)
-     models.pet.belongsToMany(models.toy, {through: "petToys"})
+     models.pet.belongsToMany(models.toy, {through: "pets_toys"})
    }
  }
 ```
@@ -55,7 +55,7 @@ Many to many associations use the `belongsToMany` sequelize method, which takes 
    ...
    static associate(models) {
      // define association here
-     models.toy.belongsToMany(models.pet, {through: "petToys"})
+     models.toy.belongsToMany(models.pet, {through: "pets_toys"})
    }
  }
 ```
@@ -93,7 +93,7 @@ db.pet.findOrCreate({
 });
 ```
 
-Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the petToys table in a `psql` shell you will need to wrap the table name within quotations i.e. "petToys".
+Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the pets_toys table in a `psql` shell you will need to wrap the table name within quotations i.e. "pets_toys".
 
 An example of how you might use this in an express route:
 
