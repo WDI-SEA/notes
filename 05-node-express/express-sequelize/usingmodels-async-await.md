@@ -71,8 +71,6 @@ async function createUser() {
         age: 27
     })
     console.log(newUser)
-    // terminates the node process at this point so 
-    // that we don't have to force-quit the console (optional)
   } catch (err) {
     console.log(err)
   }
@@ -224,7 +222,7 @@ async function readOneUser(){
       where: {firstName: 'Taylor'}
     })
     console.log(foundUser)
-    process.exit()
+    
   } catch (err) {
     console.log(err)
   }

@@ -45,7 +45,7 @@ Many to many associations use the `belongsToMany` sequelize method, which takes 
    static associate(models) {
      // define association here
      models.pet.belongsTo(models.user)
-     models.pet.belongsToMany(models.toy, {through: "pets_toys"})
+     models.pet.belongsToMany(models.toy, { through: "pets_toys" })
    }
  }
 ```
@@ -57,7 +57,7 @@ Many to many associations use the `belongsToMany` sequelize method, which takes 
    ...
    static associate(models) {
      // define association here
-     models.toy.belongsToMany(models.pet, {through: "pets_toys"})
+     models.toy.belongsToMany(models.pet, { through: "pets_toys" })
    }
  }
 ```
