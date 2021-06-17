@@ -22,7 +22,7 @@ Database operations can take a little bit of time, so they return *thenable prom
 ```javascript
 // using .thens and callbacks to find a user by primary key (id)
 db.user.findByPk(1)
-  .then(foundUser)=>{
+  .then(foundUser => {
     console.log(foundUser);
   })
   .catch(error => console.log('I only happen when there is an error!', error))
