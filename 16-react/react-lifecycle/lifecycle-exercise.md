@@ -6,7 +6,7 @@ Think about things like Sequelize hooks, JavaScript classes, or DOM events. For 
 
 ## The Big Three (or Four)
 
-React components have 3 overarching categories that the lifecycle methods fit into. Some lifecycle events may overlap multiple categories. These categories are `Mounting`, `Updating`, and `Unmounting`. Sometimes you will see `Mounting` broken out into `Initialization` and `Mounting` as it is in this [medium article](https://medium.freecodecamp.org/how-to-understand-a-components-lifecycle-methods-in-reactjs-e1a609840630).
+React components have 3 overarching categories that the lifecycle methods fit into. Some lifecycle events may overlap multiple categories. These categories are `Mounting`, `Updating`, and `Unmounting`. Sometimes you will see `Mounting` broken out into `Initialization` and `Mounting` as it is in this [free code camp article](https://medium.freecodecamp.org/how-to-understand-a-components-lifecycle-methods-in-reactjs-e1a609840630).
 
 #### Mounting
 
