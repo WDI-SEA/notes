@@ -650,7 +650,7 @@ class App extends Component {
         <Header />
         <main>
           <Route exact path="/" component={Home} />
-          <Route path="/services" render={() => <Services services={services} />} />
+          <Route exact path="/services" render={() => <Services services={services} />} />
           <Route path="/services/:id" render={(props) => <Service {...props} />} />
           <Route path="/contact" component={Contact} />
         </main>
