@@ -112,7 +112,7 @@ The `App.js` file contains one component that our whole app will live inside of.
 Let's add one `<h1>` that says `Dental Spa` and a paragraph with some short welcome text. Your `App.js` file should now look like the code below. Save the file and check your browser to make sure the changes show up.
 
 **App.js**
-```js
+```jsx
 import React, { Component } from 'react';
 import './App.css';
 
@@ -237,7 +237,7 @@ Here's the general syntax for creating routes. React Router uses some of its own
 
 Delete what is currently returned in the `render` function of your `App.js`, and replace it with a Router component call with three routes, as shown below.
 
-```js
+```jsx
 class App extends Component {
   render() {
     return (
@@ -273,7 +273,7 @@ While we're here, we'll also import a third component, `Link`, which we'll get t
 
 Put this code at the top of your `App.js`
 
-```js
+```jsx
 import {
   BrowserRouter as Router,
   Route,
@@ -285,7 +285,7 @@ import {
 Here's how the imports and all the components look like together for our dental spa:
 
 **App.js**
-```js
+```jsx
 import React, { Component } from 'react';
 import './App.css';
 
@@ -386,7 +386,7 @@ And now the nav bar will have spaces like it should.  Try it!
 # Final Code
 Here's what our final `App.js` looks like:
 
-```js
+```jsx
 class App extends Component {
   render() {
     return (
@@ -425,7 +425,7 @@ We're going to create a component called `Header` which will contain our `nav` a
 
 Here's what your `Header.js` should look like:
 
-```jsx=
+```jsx
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -455,7 +455,7 @@ Our Router functionality right now is very cool but it lacks some very important
 
 It's actually very easy. Inside of our `<Route>`s we've been using the `component` attribute. If we want more custom control, we can use a function instead but we must change the attribute from `component` to `render`. First, let's simulate some data by adding a simple array into our App's render method:
 
-```js
+```jsx
 render() {
   let services = [
     "Deep Cleaning",
@@ -511,7 +511,7 @@ That syntax `{...props}` is unpacking all of the props in the props object so th
 
 The one we are interested in is called `match`. We can find it in our component in `this.props` for class-based components or just `props` for function-based components. Here is how we might access it in our component:
 
-```jsx=
+```jsx
 import React, {Component} from 'react';
 
 class WidgetShow extends Component {
@@ -555,7 +555,7 @@ Since we haven't learned how to query an API in React yet, we're going to make a
 
 In order to mimic data that might be received from and API, we are going to create and export an array of objects for our services. Create a variable called `serviceDetails` that is an array. For each of our services listed in `App.js`, we're going to make an object that has the keys `id`, `name`, `price`, and `description`. Feel free to take some time to create this yourself, or copy this data below!
 
-```javascript
+```jsx
 const serviceDetails = [
     {
         id: 1,
@@ -598,7 +598,7 @@ We could put this in `pages` or `partials`. What are the arguments for putting i
 
 For now, make a `Service.js` component in `pages` since we're going to be using a route for it. To stub it out, simply have a `div` with an `h3` for the name, an `h6` for the price, and a `p` for the description. It should look something like this:
 
-```jsx=
+```jsx
 import React, { Component } from 'react'
 
 class Service extends Component {
@@ -624,7 +624,7 @@ Now that we have a stubbed out route, we need to see if we can render it! In our
 
 Now, go to `http://localhost:3000/services/test` to see if your stub is rendering! If not, check your `App.js`
 
-```jsx=
+```jsx
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -706,7 +706,7 @@ Take 5-15 minutes to try to figure out how to impliment this. If you get stuck, 
 
 #### Solution
 
-```javascript
+```jsx
 const service = serviceDetails.find(service => service.id.toString() === props.match.params.id)
 ```
 
@@ -744,7 +744,7 @@ _Hintsssss_
 
 Check your work (it doesn't have to look exactly like this, but is functionally similar)
 
-```jsx=
+```jsx
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -774,7 +774,7 @@ Once we've got the links working, we need to update our component to render the 
 Your code may look a little different if you choose to pass your service data to Service differently.
 
 ###### Service.js
-```jsx=
+```jsx
 import React, { Component } from 'react'
 
 class Service extends Component {
@@ -796,7 +796,7 @@ Finally, we want to add a bit of conditional styling; if someone has gone to an 
 > Because the code block of the `if` statement is a `return` statement, we don't need to explicitly use `else`; `return` exits the function, so any code after it doesn't get run! But if that condition isn't met, then that initial `return` statement never gets a chance to run, so our normal display shows.
 
 ###### _Service.js_
-```jsx=
+```jsx
 import React, { Component } from 'react'
 
 class Service extends Component {
