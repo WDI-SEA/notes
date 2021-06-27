@@ -4,6 +4,8 @@ Now, it's time for you to check back on everything! You will be building a calcu
 
 At first, your calculator will just add 2 numbers together when they are typed in. For the bonus, you might decide to get more creative.
 
+_there is a repofied version of this lab that can be found [here](https://github.com/WDI-SEA/react-simple-calc-lab/tree/main)_
+
 ## Set Up
 
 Like usual, use `create-react-app` to make a new project.
@@ -12,7 +14,7 @@ Like usual, use `create-react-app` to make a new project.
 
 Start by creating a single component file in the `src` directory, and name it `Calculator.js`. In this file, create your `Calculator` class. Use the `App.js` as an example of how to create a basic component. Add the following JSX to your Calculator's `render()` function:
 
-```markup
+```jsx
 <div className="container">
   <h1>Add with React!</h1>
 
@@ -36,7 +38,7 @@ Set up the initial state of your component. What state attributes will you need 
 
 You will want to trigger a function when the values in your textboxes change. You can capture these values by setting a function on the onChange property. Let's say I have a textbox tracking my first number.
 
-```text
+```jsx
 <input type="number"
   name="num1"
   placeholder="Enter your first number"
