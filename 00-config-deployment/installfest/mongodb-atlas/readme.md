@@ -1,6 +1,6 @@
 # ![](https://upload.wikimedia.org/wikipedia/en/thumb/4/45/MongoDB-Logo.svg/2880px-MongoDB-Logo.svg.png) Mongo DB and Atlas Installfest
 
-We will be installing and configuring [MongoDB](https://www.mongodb.com/) as well as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). 
+We will be installing and configuring [MongoDB](https://www.mongodb.com/) as well as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). Mongo uses a 'document-oriented database' structure with very JSON-like documents and familiar javascript-like commands for database operations. 
 
 * MongoDB is a popular open source **NoSQL** database. 
 * The MongoDB community CLI (a shell that lets us interact with our mongo database similar to `psql`)
@@ -10,9 +10,7 @@ This installfest is adapted from Mongo DB's install instructions that can be fou
 
 ## Installing MongoDB
 
-Mongo uses a 'document-oriented database' structure with very JSON-like documents and familiar javascript-like commands for database operations.
-
-This installfest is adapted from Mongo DB's install instructions that can be found [here](https://docs.mongodb.com/manual/administration/install-community/), and the 
+First we will insall MongoDB and and the Mongo CLI locally on our machines.
 
 ### Linux (and Windows WSL)
 
@@ -88,9 +86,7 @@ The mongo shell is like the `psql` but for mongoDB instead of postgres.
 
 ## MongoDB Atlas
 
-We will be using Atlas as the host for our MongoDB database.
-
-*Part 1 - Setting Up Atlas Account:*
+> MongoDB Atlas is a cloud hosting service provided by MongoDB. We will have to sign up for an account and configure our local machines to connect to it.
 
 ### Make an account
 
@@ -119,11 +115,53 @@ this is our todo list:
   * Leave all other defaults the same and add user. 
 6. click on **Network Access** under **Security**  on the lefthand menu and then click the big green button that says  "Add IP Address".
   * For the sake of this app we are going to allow for access from anywhere since you will each be doing your own Heroku deployments. Click "Allow Access from Anywhere" under "Whitelist a connection IP address." Leave the default `0.0.0.0/0` call, and click "Add IP Address."
-7. Return to the Clusters dashboard by clicking **Clusters** under **Data Storage** on the lefthand menu. 
-8. On your Cluster, click the Connect button. 
-  * Click "Choose a connection method", and on the next page choose "Connect your application."
-  * On this new Connect page, under list item two, click "Include full driver code example", and then copy the code MongoDB has created for you into a text file for use in just a moment. 
+ode example", and then copy the code MongoDB has created for you into a text file for use in just a moment. 
 
 ### Connecting to Your Cluster from the terminal
 
-## Using Your New MongoDB tools
+We are going to test the connection from our terminal to your Atlas cluster with a very long command, and then create a shell alias for this command.
+
+#### Connecting to your Cluster 
+
+1. Return to the Clusters dashboard by clicking **Clusters** under **Data Storage** on the lefthand menu. 
+2. On your Cluster, click the Connect button. 
+  * Click "Choose a connection method", and on the next page choose "Connect with the mongo shell."
+  * Select 'I have the mongo shell installed' and if you need to check your mongo version, there are instructions on how to do so.
+3. Copy the command it gives you to connect to your mongo shell to your atlas cluster and paste it into your terminal
+  * the terminal will prompt you for a password **THIS IS THE PASSWORD FOR YOUR CLUSTER'S USER THAT YOU CREATED EARLIER**
+  * the command will look something like this:
+```bash
+mongo "mongodb+srv://< your cluster name >.9hqnh.mongodb.net/< your database name >" --username < your user name >
+```
+
+If you are able to connect to your cluster, you are ready for the next step, otherwise take a second to debug before moving on.
+
+#### Alias the Atlas connection command
+
+That giant command to connect to Atlas is way to big, lets make a shorter command Alias for it in our zshell config file.
+
+1. Open yor zhell config file with in vscode with `code ~/.zshrc`
+2. Scroll down to the command alias section and add the following line, but replacing this generic command with the one you ran from the previous section:
+```bash
+# alias for connecting to MondoDB Atlas
+alias mongo-atlas='mongo "mongodb+srv://< your cluster name >.9hqnh.mongodb.net/< your database name >" --username super_cool_person'
+```
+*NOTE:* You must put single qoutes `' '` around the command like above
+3. Save your `.zshrc` file and restart your terminal. You can now use the command `mongo-atlas` to connect to your Atlas database.
+
+## Using Your New  MongoDB
+
+Now that mongoDB is installed, you will be able to use the following commands to start/stop/restart the mongodb servies with the follwoing commands:
+
+```bash
+# start service
+brew services start mongodb-community
+
+# stop service
+brew services stop mongodb-community
+
+# restart service
+brew services restart mongodb-community
+```
+
+You can use the command `mongo` to connect to your local development database and the command `mongo-atlas` to connect to your Atlas cloud database.
