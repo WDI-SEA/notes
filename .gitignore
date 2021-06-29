@@ -17,3 +17,5 @@ _book
 
 # OSX Files
 .DS_Store
+
+.package-lock.json
