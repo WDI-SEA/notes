@@ -121,7 +121,6 @@ this is our todo list:
 - [ ]  Build your first cluster
 - [ ]  Create your first database user along with a password
 - [ ]  Whitelist your IP address
-- [ ]  Load Sample Data
 - [ ]  Connect your cluster
 
 4. click the green **Create a New Cluster** button on the right hand side of the page. *PLEASE NOTE: It takes 3-5 min to make a new cluster.* 
