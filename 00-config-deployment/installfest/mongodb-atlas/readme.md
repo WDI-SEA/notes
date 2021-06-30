@@ -55,11 +55,9 @@ brew services restart mongodb-community
 
 You will need to have the mongodb service running in order to use the database -- so make sure it is started before you begin using mongodb!
 
-#### Using the MongoDB Shell
+#### Using the MongoDB Shell on Mac
 
 To the mongdb shell simply type the `mongo` into your terminal. You should see a shell like this:
-
-![mongo db shell](/mongo-shell.png)
 
 Congrats! MongoDB is successfully installed! You can exit the shell by typing `quit()`
 
@@ -71,11 +69,12 @@ When it comes to installing database technologies - WSL and Linux have a handful
 
 * Run the following commands one by one:
 ```
-sudo apt install mongodb
+sudo apt-get install mongodb
 sudo service mongodb start
 ```
 
-* Test if it worked by running first the `mongod` command followed by the `mongo` command. If you are in the mongo shell, then it worked! Yo
+* Test if it worked by running first the `mongod` command followed by the `mongo` command. If you are in the mongo shell, then it worked! 
+
 * If it didn't work, and you get an error referring to `/data/db ` - run the following:
 
 ```
@@ -83,6 +82,23 @@ sudo mkdir -p /data/db
 sudo chmod 777 /data/db
 mongod --dbpath /data/db
 ```
+
+#### Using the MongoDB Shell on WSL/Linux
+
+You should now be able to use the following commands to start, stop and check the status of the MongoDB service:
+
+```bash
+# start service
+sudo service mongodb start 
+
+# stop service
+sudo service mongodb stop 
+
+# check the status
+sudo service mongodb status
+```
+
+first run `mongod` to run the mongodb deamon, then run `mongo` to the start the mongo shell.
 
 ## MongoDB Atlas
 
