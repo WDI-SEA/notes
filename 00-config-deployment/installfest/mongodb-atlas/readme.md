@@ -75,7 +75,7 @@ sudo service mongodb start
 
 * Test if it worked by running first the `mongod` command followed by the `mongo` command. If you are in the mongo shell, then it worked! 
 
-* If it didn't work, and you get an error referring to `/data/db ` - run the following:
+* If it didn't work, and you get an error referring to `/data/db ` - run the following commands one by one:
 
 ```
 sudo mkdir -p /data/db
@@ -124,7 +124,7 @@ this is our todo list:
 - [ ]  Load Sample Data
 - [ ]  Connect your cluster
 
-4. lick the green **Create a New Cluster** button on the right hand side of the page. *PLEASE NOTE: It takes 3-5 min to make a new cluster.* 
+4. click the green **Create a New Cluster** button on the right hand side of the page. *PLEASE NOTE: It takes 3-5 min to make a new cluster.* 
 5. On the left hand side of the screen there is a hamburger menu. Click on **Database Access** under **Security**  on the lefthand menu and then click the big green button that says  "Add New Database User".
   * For the Authentication Method, leave it on Password. Declare a username and password under Password Authentication. This information will be hidden later in an env variable on your server. **IT IS SUPER IMPORTANT THAT YOU WRITE THIS INFORMATION DOWN**.  
     * *PLEASE NOTE - the fewer special characters your password has, the easier it will be to format your URI call, but also the less secure your db will be* 🤷  **JUST USE REGULAR CHARACTERS FOR THIS TUTORIAL -- THE SIMPLER THE PASSWORD IS THE BETTER**. 
