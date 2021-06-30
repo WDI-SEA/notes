@@ -165,19 +165,4 @@ alias mongo-atlas='mongo "mongodb+srv://< your cluster name >.9hqnh.mongodb.net/
 *NOTE:* You must put single qoutes `' '` around the command like above
 3. Save your `.zshrc` file and restart your terminal. You can now use the command `mongo-atlas` to connect to your Atlas database.
 
-## Using Your New  MongoDB
-
-Now that mongoDB is installed, you will be able to use the following commands to start/stop/restart the mongodb servies with the follwoing commands:
-
-```bash
-# start service
-brew services start mongodb-community
-
-# stop service
-brew services stop mongodb-community
-
-# restart service
-brew services restart mongodb-community
-```
-
 You can use the command `mongo` to connect to your local development database and the command `mongo-atlas` to connect to your Atlas cloud database.
