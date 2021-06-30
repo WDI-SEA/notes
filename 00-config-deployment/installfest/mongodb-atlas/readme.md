@@ -12,25 +12,6 @@ This installfest is adapted from Mongo DB's install instructions that can be fou
 
 First we will insall MongoDB and and the Mongo CLI locally on our machines.
 
-### Linux (and Windows WSL)
-
-When it comes to installing database technologies - WSL and Linux have a handful of extra configuration steps as the installations will not work by default.
-
-* Run the following commands one by one:
-```
-sudo apt install mongodb
-sudo service mongodb start
-```
-
-* Test if it worked by running the `mongo` command. If you are in the mongo shell, then it worked!
-* If it didn't work, and you get an error referring to `/data/db ` - run the following:
-
-```
-sudo mkdir -p /data/db
-sudo chmod 777 /data/db
-mongod --dbpath /data/db
-```
-
 ### Mac OS
 
 We will be using `homebrew`, everyone's favorite package manager, for this install.
@@ -83,6 +64,25 @@ To the mongdb shell simply type the `mongo` into your terminal. You should see a
 Congrats! MongoDB is successfully installed! You can exit the shell by typing `quit()`
 
 The mongo shell is like the `psql` but for mongoDB instead of postgres.
+
+### Linux (and Windows WSL)
+
+When it comes to installing database technologies - WSL and Linux have a handful of extra configuration steps as the installations will not work by default.
+
+* Run the following commands one by one:
+```
+sudo apt install mongodb
+sudo service mongodb start
+```
+
+* Test if it worked by running first the `mongod` command followed by the `mongo` command. If you are in the mongo shell, then it worked! Yo
+* If it didn't work, and you get an error referring to `/data/db ` - run the following:
+
+```
+sudo mkdir -p /data/db
+sudo chmod 777 /data/db
+mongod --dbpath /data/db
+```
 
 ## MongoDB Atlas
 
