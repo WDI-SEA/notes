@@ -44,9 +44,9 @@ What is a schema? It is just the structure of our data model: essentially the fi
 We define the structure of our model as a schema...
 
 ```js
-var postSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   content: String
-});
+}) 
 ```
 
 This will make a single field named `content` and it will be a string.
@@ -54,14 +54,14 @@ This will make a single field named `content` and it will be a string.
 Then we use this schema to build an actual model class...
 
 ```js
-module.exports = mongoose.model('Post', postSchema);
+module.exports = mongoose.model('Post', postSchema) 
 ```
 
 This creates a model called `Post` (**REMEMBER MODEL NAMES ARE ALWAYS SINGULAR**). This two-step process results in a usable model similar to the ones we saw in Sequelize. It can be required and used to perform CRUD on the `posts` collection in the MongoDB:
 
 ```js
-var Post = require('./models/post');
-Post.create({content: 'Amazing post...'});
+const Post = require('./models/post') 
+Post.create({content: 'Amazing post...'}) 
 ```
 
 ## Setting up Mongoose in your app
@@ -91,20 +91,20 @@ npm install mongoose
 With the package installed, lets use it - open index.js and setup your app:
 
 ```js
-var express = require('express');
-var app = express();
+const express = require('express') 
+const app = express() 
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false })) 
 
 // Mongoose stuff
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/familyTree');
+const mongoose = require('mongoose') 
+mongoose.connect('mongodb://localhost/familyTree') 
 
 app.get('/', function(req, res) {
-  res.send('Hi!');
-});
+  res.send('Hi!') 
+}) 
 
-app.listen(3000);
+app.listen(3000) 
 ```
 
 You can now execute all the mongoDB commands over the database `familyTree`, which will be created if it doesn't exist.
@@ -114,19 +114,19 @@ You can now execute all the mongoDB commands over the database `familyTree`, whi
 Let's modify our index.js as follows:
 
 	```js
-	var mongoose = require('mongoose');
-	mongoose.connect('mongodb://localhost/familyTree');
+	const mongoose = require('mongoose') 
+	mongoose.connect('mongodb://localhost/familyTree') 
 	
 	// shortcut to mongoose.connection object
-	var db = mongoose.connection;
+	const db = mongoose.connection 
 	
 	db.once('open', function() {
-  		console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
-	});
+  		console.log(`Connected to MongoDB at ${db.host}:${db.port}`) 
+	}) 
 	
 	db.on('error', function(err) {
-  		console.error(`Database error:\n${err}`);
-	});
+  		console.error(`Database error:\n${err}`) 
+	}) 
 	```
 
 We set up an event listener to fire once when the connection 'opens' to console log what host and port it is running on. It will also console log any errors whenever they occur.
@@ -147,15 +147,15 @@ touch models/user.js
 Now let's add:
 
 ```js
-var mongoose = require('mongoose');
+const mongoose = require('mongoose') 
 
 // create a schema
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   age: Number,
   website: String
-});
+}) 
 ```
 
 MongoDB is schemaless, meaning: all the documents in a collection can have different fields, but for the purpose of a web app, often containing validations, we can still use a schema will cast and validate each type. Also note that we can have nested structures in a Mongoose model.
@@ -164,22 +164,22 @@ At the moment we only have the schema, representing the structure of the data we
 
 ```js
 //in users.js
-var mongoose = require('mongoose');
+const mongoose = require('mongoose') 
 
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   meta: {
     age: Number,
     website: String
   }
-});
+}) 
 
 // Here is where you actually name the model. NAME IT SINGULAR!
-var User = mongoose.model('User', userSchema);
+const = User = mongoose.model('User', userSchema) 
 
 // make this available to our other files
-module.exports = User;
+module.exports = User 
 ```
 
 Notice that you can use objects and nested attributes inside an object.
@@ -202,7 +202,7 @@ Also, notice we create the Mongoose Model with `mongoose.model`. Remember, we ca
 Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `timestamps` option as follows in the schema:
 
 	```js
-	var userSchema = new mongoose.Schema({
+	const userSchema = new mongoose.Schema({
     name: String,
     email: { type: String, required: true, unique: true },
     meta: {
@@ -211,7 +211,7 @@ Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `t
     }
 	}, {
 	  timestamps: true
-	});
+	}) 
 	```
 
 #### Creating Custom Methods
@@ -219,42 +219,42 @@ Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `t
 When defining a schema, you can add custom methods and call these methods on the models. These are instance methods. Let's write a `sayHello` function under our schema:
 
 ```js
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   meta: {
     age: Number,
     website: String
   }
-});
+}) 
 
 userSchema.methods.sayHello = function() {
-  return "Hi " + this.name;
-};
+  return "Hi " + this.name 
+} 
 
-var User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema) 
 
-module.exports = User;
+module.exports = User 
 ```
 
 Now we can call it by requiring the User model in index.js:
 
-```javascript
-var User = require('./models/user');
+```js
+const User = require('./models/user') 
 
 // create a new user called Chris
-var chris = new User({
+const chris = new User({
   name: 'Chris',
   email: 'chris@gmail.com',
   meta: {
     age: 27,
     website: 'http://chris.me'
   }
-});
+}) 
 
 app.get('/', function(req, res) {
-  res.send(chris.sayHello());
-});
+  res.send(chris.sayHello()) 
+}) 
 ```
 
 Now run the app with `nodemon` to see the result! You can define class methods in a similar manner by attaching the method to `.statics` instead of `.methods`
@@ -263,27 +263,62 @@ Now run the app with `nodemon` to see the result! You can define class methods i
 
 Let's hope into an interactive shell and test out CRUD functionality. To do this, from our app directory, we'll have to type in `node` and then require our Models manually.
 
+## A Quick note about different versions of Mongoose
+
+Up until Mongoose version 4 Database queries required callback functions to handle asynchronous database operations like so:
+
+```js
+// create and save a user
+User.create({ name: 'Emily', email: 'em@i.ly' }, function(err, user) {
+  if (err) return console.log(err) 
+  console.log(user) 
+}) 
+```
+
+But starting in version 4 Mongoose database queries all return promises so queries can now be handled with `.then()` syntax or `async/await`:
+
+```js
+// create and save a user with .then()
+User.create({ name: 'Emily', email: 'em@i.ly' })
+  .then(user => {
+    console.log(user) 
+  })
+  .catch(err => {
+    console.log(err)
+  })
+
+// create and save a user with async/await
+try {
+  const user = await User.create({ name: 'Emily', email: 'em@i.ly' })
+  console.log(user)
+} catch (err) {
+  console.log(err)
+}
+```
+
+According to the [Mongoose docs on writing queries](https://mongoosejs.com/docs/queries.html) using either callbacks or promises to handle async database operations are both still supported and equally valid choices, but mixing the two together will lead to bugs so you should decide on one way or the other.
+
 #### Create
 
 We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
 
 ```js
-var newUser = User({
+const newUser = User({
   name: 'bob',
   email: 'bob@gmail.com'
-});
+}) 
 
 // save the user
 newUser.save(function(err) {
-  if (err) return console.log(err);
-  console.log('User created!');
-});
+  if (err) return console.log(err) 
+  console.log('User created!') 
+}) 
 
 // create and save a user
 User.create({ name: 'Emily', email: 'em@i.ly' }, function(err, user) {
-  if (err) return console.log(err);
-  console.log(user);
-});
+  if (err) return console.log(err) 
+  console.log(user) 
+}) 
 ```
 
 There is no "find or create" in Mongoose.
@@ -295,27 +330,27 @@ We can find multiple model instances by using the `.find` function, which accept
 ```js
 // Find All
 User.find({}, function(err, users) {
-  if (err) return res.send(err);
-  res.send(users);
-});
+  if (err) return res.send(err) 
+  res.send(users) 
+}) 
 
 // Find only one user
 User.findOne({}, function(err, user) {
-  if (err) return res.send(err);
-  res.send(user);
-});
+  if (err) return res.send(err) 
+  res.send(user) 
+}) 
 
 // Find by email
 User.find({ email: req.params.email }, function(err, user) {
-  if (err) return res.send(err);
-  res.send(user);
-});
+  if (err) return res.send(err) 
+  res.send(user) 
+}) 
 
 // Find by id
 User.findById(req.params.id, function(err, user) {
-  if (err) return res.send(err);
-  res.send(user);
-});
+  if (err) return res.send(err) 
+  res.send(user) 
+}) 
 ```
 
 Note that in the `.find` function, you can also use MongoDB queries such as `$gt`, `$lt`, `$in`, and others. Alternatively, there's a new `.where` syntax that can be used as well. [Documentation on Model.where can be found here](http://mongoosejs.com/docs/api.html#model_Model.where)
@@ -327,33 +362,33 @@ Models can be updated in a few different ways - using `.update()`, `.findByIdAnd
 ```js
 // updates all matching documents
 User.update({ name: 'brian' }, { meta: { age: 26 } }, function(err, user) {
-  if (err) console.log(err);
-  console.log(user);
-});
+  if (err) console.log(err) 
+  console.log(user) 
+}) 
 
 // updates one match only
 User.findOneAndUpdate({ name: 'brian' }, { meta: { age: 26 } }, function(err, user) {
-  if (err) console.log(err);
-  console.log(user);
-});
+  if (err) console.log(err) 
+  console.log(user) 
+}) 
 ```
 
 #### Destroy
 
 Models can be removed in a few different ways - using `.remove()`, `findByIdAndRemove()`, and `.findOneAndRemove()`.
 
-```javascript
+```js
 // find all users with the name Brian and remove them
 User.remove({ name: 'brian' }, function(err) {
-  if (err) console.log(err);
-  console.log('Users deleted!');
-});
+  if (err) console.log(err) 
+  console.log('Users deleted!') 
+}) 
 
 // find the user with id 4 and remove it
 User.findOneAndRemove({ name: 'brian' }, function(err) {
-  if (err) console.log(err);
-  console.log('User deleted!');
-});
+  if (err) console.log(err) 
+  console.log('User deleted!') 
+}) 
 ```
 
 ## Independent Practice
@@ -361,5 +396,6 @@ User.findOneAndRemove({ name: 'brian' }, function(err) {
 Using the code we just wrote and the [official Mongoose Models docs](http://mongoosejs.com/docs/models.html), add three routes to your Express app.
 
 - `GET users/`, this will return all the documents
-- `POST users/`, given some arguments in the url, this method will create a `user` record.
+- `POST users/`, given some arguments in the url, this method will create a `user` record
+- `PUT users/:id`, update one document with at a a specific id
 - `DELETE users/:id`, will remove the document corresponding to the collection
