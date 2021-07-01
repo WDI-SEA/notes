@@ -263,6 +263,14 @@ Now run the app with `nodemon` to see the result! You can define class methods i
 
 Let's hope into an interactive shell and test out CRUD functionality. To do this, from our app directory, we'll have to type in `node` and then require our Models manually.
 
+## A Quick note about different versions of Mongoose
+
+Up until Mongoose version 4 Database quruies used callback functions to handle asyncronous database operations like so:
+
+```javascript
+
+```
+
 #### Create
 
 We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
