@@ -57,9 +57,9 @@ You will need to have the mongodb service running in order to use the database -
 
 #### Using the MongoDB Shell on Mac
 
-To the mongdb shell simply type the `mongo` into your terminal. You should see a shell like this:
+To use the Mongdb shell simply type the `mongo` into your terminal. You should see a shell like this:
 
-Congrats! MongoDB is successfully installed! You can exit the shell by typing `quit()`
+Congrats! MongoDB is successfully installed! You can exit the shell by typing `exit` and pressing return.
 
 The mongo shell is like the `psql` but for mongoDB instead of postgres.
 

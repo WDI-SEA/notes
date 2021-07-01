@@ -204,7 +204,7 @@ To stop the background process, you'll need to connect to your `admin` database 
 ```mongo
 > use admin
 > db.shutdownServer()
-> quit()
+> exit
 ```
 
 
