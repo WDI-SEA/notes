@@ -263,7 +263,7 @@ Now run the app with `nodemon` to see the result! You can define class methods i
 
 Let's hope into an interactive shell and test out CRUD functionality. To do this, from our app directory, we'll have to type in `node` and then require our Models manually.
 
-## A Quick note about different versions of Mongoose
+### A Quick note about different versions of Mongoose
 
 Up until Mongoose version 4 Database queries required callback functions to handle asynchronous database operations like so:
 
