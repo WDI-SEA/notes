@@ -44,7 +44,7 @@ What is a schema? It is just the structure of our data model: essentially the fi
 We define the structure of our model as a schema...
 
 ```js
-var postSchema = new mongoose.Schema({
+const postSchema = new mongoose.Schema({
   content: String
 });
 ```
@@ -60,7 +60,7 @@ module.exports = mongoose.model('Post', postSchema);
 This creates a model called `Post` (**REMEMBER MODEL NAMES ARE ALWAYS SINGULAR**). This two-step process results in a usable model similar to the ones we saw in Sequelize. It can be required and used to perform CRUD on the `posts` collection in the MongoDB:
 
 ```js
-var Post = require('./models/post');
+const Post = require('./models/post');
 Post.create({content: 'Amazing post...'});
 ```
 
@@ -91,13 +91,13 @@ npm install mongoose
 With the package installed, lets use it - open index.js and setup your app:
 
 ```js
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 
 app.use(express.urlencoded({ extended: false }));
 
 // Mongoose stuff
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/familyTree');
 
 app.get('/', function(req, res) {
@@ -114,11 +114,11 @@ You can now execute all the mongoDB commands over the database `familyTree`, whi
 Let's modify our index.js as follows:
 
 	```js
-	var mongoose = require('mongoose');
+	const mongoose = require('mongoose');
 	mongoose.connect('mongodb://localhost/familyTree');
 	
 	// shortcut to mongoose.connection object
-	var db = mongoose.connection;
+	const db = mongoose.connection;
 	
 	db.once('open', function() {
   		console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
@@ -147,10 +147,10 @@ touch models/user.js
 Now let's add:
 
 ```js
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 // create a schema
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   age: Number,
@@ -164,9 +164,9 @@ At the moment we only have the schema, representing the structure of the data we
 
 ```js
 //in users.js
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   meta: {
@@ -176,7 +176,7 @@ var userSchema = new mongoose.Schema({
 });
 
 // Here is where you actually name the model. NAME IT SINGULAR!
-var User = mongoose.model('User', userSchema);
+const = User = mongoose.model('User', userSchema);
 
 // make this available to our other files
 module.exports = User;
@@ -202,7 +202,7 @@ Also, notice we create the Mongoose Model with `mongoose.model`. Remember, we ca
 Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `timestamps` option as follows in the schema:
 
 	```js
-	var userSchema = new mongoose.Schema({
+	const userSchema = new mongoose.Schema({
     name: String,
     email: { type: String, required: true, unique: true },
     meta: {
@@ -219,7 +219,7 @@ Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `t
 When defining a schema, you can add custom methods and call these methods on the models. These are instance methods. Let's write a `sayHello` function under our schema:
 
 ```js
-var userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   name: String,
   email: { type: String, required: true, unique: true },
   meta: {
@@ -232,7 +232,7 @@ userSchema.methods.sayHello = function() {
   return "Hi " + this.name;
 };
 
-var User = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
 
 module.exports = User;
 ```
@@ -240,10 +240,10 @@ module.exports = User;
 Now we can call it by requiring the User model in index.js:
 
 ```javascript
-var User = require('./models/user');
+const User = require('./models/user');
 
 // create a new user called Chris
-var chris = new User({
+const chris = new User({
   name: 'Chris',
   email: 'chris@gmail.com',
   meta: {
@@ -268,7 +268,7 @@ Let's hope into an interactive shell and test out CRUD functionality. To do this
 We can create a User using the `.save` method in Mongoose. You can also call `.create` to combine creating and saving the instance.
 
 ```js
-var newUser = User({
+const newUser = User({
   name: 'bob',
   email: 'bob@gmail.com'
 });
