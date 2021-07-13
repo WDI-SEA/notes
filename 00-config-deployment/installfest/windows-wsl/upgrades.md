@@ -44,15 +44,14 @@ Powerlevel10k recommends the MesloLGS NF font.
 * Right click the Ubuntu terminal header bar, click on 'Properties', click on the 'Font' tab, and change the font fo 'MesloLGS NF', or whichever other font you've installed!
 
 
-### Powerlevel10k install
+### Powerlevel10k install (Optional)
 Powerlevel10k is a fantastic theme for OhMyZsh that includes all the bells and whistles and has a very powerful configuration tool that makes it super easy to use
 
 * [Powerlevel10k webpage](https://github.com/romkatv/powerlevel10k#oh-my-zsh)
 
 1. Run the following command in your terminal
 ```
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 2. Edit the `.zshrc` config file with our newly downloaded theme
 ```
