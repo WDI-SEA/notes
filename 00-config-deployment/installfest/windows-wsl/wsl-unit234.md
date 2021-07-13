@@ -1,11 +1,14 @@
 # 🛑 Unit 2-4 Installfest
+
 **Stop!** The following instructions pertain to units 2-4 - revisit this section in unit 2!
 
 ## Unit 2 - PostgresQL
+
 When it comes to installing database technologies - WSL has a handful of extra configuration steps as the installations will not work by default.
 
 *  [PostgresQL Webpage](https://www.postgresql.org/download/linux/ubuntu/)
-```
+
+```bash
 # Create the file repository configuration:
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
@@ -21,13 +24,16 @@ sudo apt-get -y install postgresql
 ```
 
 ### WSL-specific configuration instructions
+
 By default on WSL - running the `psql` command will give you an error similar to:
 
 `psql: error: FATAL: role "<your_user_name>" does not exist`
 
 ## The fix:
+
 * Run the following commands one by one, but change `<your_user_name>` to your linux username!
-```
+
+```bash
 # Auto start the postgres server
 sudo -u postgres pg_ctlcluster 13 main start
 
@@ -45,6 +51,7 @@ sudo -u postgres psql
 ```
 
 * The last command will bring you inside of the `psql` shell - run the following command
+
 ```
 ALTER USER <your_user_name> WITH SUPERUSER;
 ```
@@ -55,13 +62,15 @@ ALTER USER <your_user_name> WITH SUPERUSER;
 When it comes to installing database technologies - WSL has a handful of extra configuration steps as the installations will not work by default.
 
 * Run the following commands one by one:
-```
+
+```bash
 sudo apt install mongodb
 sudo service mongodb start
 ```
 
 * Test if it worked by running the `mongo` command. If you are in the mongo shell, then it worked!
 * If it didn't work, and you get an error referring to `/data/db ` - run the following:
+
 ```
 sudo mkdir -p /data/db
 sudo chmod 777 /data/db
@@ -69,15 +78,18 @@ mongod --dbpath /data/db
 ```
 
 ## Unit 4 - Python
+
 Python install instructions - run the following commands in your terminal
-```
+
+```bash
 # install python
 sudo apt-get install python3
 sudo apt-get install python3-pip
 ```
 
 In your `~/.zshrc` file, add the following lines
-```
+
+```bash
 # Alias python to python3
 alias python=python3
 alias pip=pip3
@@ -89,6 +101,7 @@ path+=(/home/<your_user_name>/.local/bin)
 <hr />
 
 ## Navigation
+
 1. Read this intro
     * [✔️] [Alternative OS intro](./README.md)  
 2. Prior to the first day of class: Enable WSL and Install Ubuntu from the Microsoft Store app
