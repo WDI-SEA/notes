@@ -139,9 +139,7 @@ def contains_duplicate(nums: list[str]) -> bool:
 
 Essentially we are passing some processing power off of the cpu onto the memory since we need to have a hash table of all of the numbers. Our worst case computational complexity will be O(n) but we will also raise the memory complexity to O(n). In modern computer (_ie programming for desktop computers_) you will want to pass as much complexity as you can to the memory, since processing power is finite and memory is expansive. If we were programming microchips with little or no RAM, we could strive for the opposite. 
 
-
-
-
+<!-- TODO: add system time an big array to test the solves -->
 
 ## Addition resources
 
