@@ -1,4 +1,4 @@
-* [Introduction](README.md)
+* [Intro to SEI](README.md)
 * [Schedule](00-schedule/calendar.md)
 * [Development Workflow](01-workflow/readme.md)
   * [Command Line](01-workflow/command-line/01readme.md)
