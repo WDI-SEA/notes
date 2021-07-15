@@ -9,3 +9,7 @@ Written in 2015 or so. Replaced with newer (2019) React material.
 ## Angular 
 
 Angular version 1.5 (AngularJS). Discontinued after WDI 13 at the Seattle campus.
+
+## Ruby and Ruby on Rails
+
+Node.js and Python backends are now taught exclusively at SEA SEI
