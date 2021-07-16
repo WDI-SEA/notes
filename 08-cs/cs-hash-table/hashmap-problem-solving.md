@@ -5,6 +5,7 @@
 * describe what language features are hash tables
 * understand the use cases of hash tables
 * implement hash tables in novel problem solving situations
+* get experience working on hash table challenge problems
 
 ## Introduction
 
@@ -50,7 +51,7 @@ Right.
 Lets get started and write that out:
 
 ```python
-def contains_duplicate(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums: list[str]) -> bool:
   # loop over the numbers
   for i in range(len(nums)):
     # what kind of comparison to do here?
@@ -61,7 +62,7 @@ Okay, we have a single loop in our algorithm, that's not too bad. Our solution h
 But now here is another question: don't we need to compare every number to every other number? If each number has to be compared against all other numbers in the array, we will have to use another loop:
 
 ```python
-def contains_duplicate(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums: list[str]) -> bool:
   # loop over the numbers
   for i in range(len(nums)):
     # compare every number to every other number
@@ -72,7 +73,7 @@ def contains_duplicate(nums: list[str]) -> bool:
 We are pretty close to the solve, lets finish whats referred to as the 'naive' solution and then consider how and why to refactor. We just need to compare to the numbers from each loop to each other and return the function appropriately. Recall that we need to return `True` if we find a match ans `False` if we don't.
 
 ```python
-def contains_duplicate(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums: list[str]) -> bool:
   # loop over the numbers
   for i in range(len(nums)):
     # compare every number to every other number
@@ -89,15 +90,15 @@ You can use the following to test your function:
 
 ```python
 # test the solution with some lists of numbers
-print('it should return true:', contains_duplicate([1,2,3,1]))
-print('it should return false:', contains_duplicate([1,2,3,4]))
-print('it should return true:', contains_duplicate([1,1,1,3,3,4,3,2,4,2]))
+print('it should return true:', contains_duplicate_loop([1,2,3,1]))
+print('it should return false:', contains_duplicate_loop([1,2,3,4]))
+print('it should return true:', contains_duplicate_loop([1,1,1,3,3,4,3,2,4,2]))
 ```
 
 But wait! there is a bug? It always returns `True`! This is because we need to have the loops skip when they try to compare the same number:
 
 ```python
-def contains_duplicate(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums: list[str]) -> bool:
   # loop over the numbers
   for i in range(len(nums)):
     # compare every number to every other number
@@ -121,7 +122,7 @@ This particular can be refactored to use hash map in a clever way and achieve a 
 Here what we will need to do is use a hash table to store every number as we loop over them. Before adding a new number, we will first check to see if it is in the hash table. If we find it, we can immediately return `True` because we know that we have a duplicate.
 
 ```python
-def contains_duplicate(nums: list[str]) -> bool:
+def contains_duplicate_hash(nums: list[str]) -> bool:
   # using a dictionary as a hash table
   hash_table = {}
   # loop over the numbers
@@ -137,9 +138,13 @@ def contains_duplicate(nums: list[str]) -> bool:
   return False
 ```
 
-Essentially we are passing some processing power off of the cpu onto the memory since we need to have a hash table of all of the numbers. Our worst case computational complexity will be O(n) but we will also raise the memory complexity to O(n). In modern computer (_ie programming for desktop computers_) you will want to pass as much complexity as you can to the memory, since processing power is finite and memory is expansive. If we were programming microchips with little or no RAM, we could strive for the opposite. 
+Essentially we are passing some processing power off of the cpu onto the memory since we need to have a hash table of all of the numbers. Our worst case computational complexity will be O(n) but we will also raise the memory complexity to O(n). In modern computer (_ie programming for desktop computers_) you will want to pass as much complexity as you can to the memory, since processing power on desktops and laptops is finite while memory is expansive. If we were programming microchips with little or no RAM, we would strive for the opposite. 
 
-<!-- TODO: add system time an big array to test the solves -->
+## Lab
+
+Congratulations, you are now ready to take on some problems of your own! 🥳
+
+You can head on over to [this lab](https://github.com/WDI-SEA/python-hash-table-challenges) to get started! 
 
 ## Addition resources
 
