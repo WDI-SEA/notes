@@ -48,11 +48,11 @@ as a function called `count` that calls itself:
 # Assume "person" being passed in has a method called get_person_behind()
 # It will return either "no one" or a name
 def count(person):
-  other_person = person.get_person_behind();
+  other_person = person.get_person_behind()
   if other_person === "no one":
-    return 0;
+    return 0
   else:
-    return 1 + count(otherPerson);
+    return 1 + count(otherPerson)
 ```
 
 Recursion allows us to write extremely expressive code! We can write a very
@@ -140,14 +140,14 @@ Can someone else describe the recursive case of the people counting problem?
 
 ## Sum Problem Practice
 
-Let's write a function called `sum` that accepts a number `N` and computes the
+Let's write a function called `sum_to` that accepts a number `N` and computes the
 sum of numbers from 0 to N.
 
 What is the base case?
 
 ```python
 if (n < 0):
-  return 0;
+  return 0 
 ```
 
 What is the recursive case?
@@ -162,22 +162,22 @@ Oh wait!! We've already defined a function that sums all numbers!
 Take a step and take the leap of faith. Call the function again!
 
 ```python
-def sum(n):
+def sum_to(n):
   if (n < 0):
-   return 0;
+   return 0
   else:
-    n + sum(n - 1);
+    n + sum_to(n - 1)
 ```
 
 Wait, this doesn't work. Remember to `return` the value that comes back
 from the recursive call.
 
 ```python
-def sum(n):
+def sum_to(n):
   if (n < 0):
-    return 0;
+    return 0
   else:
-    return n + sum(n - 1);
+    return n + sum_to(n - 1)
 ```
 
 ## Palindrome Practice Problem
@@ -281,7 +281,7 @@ adding two spaces to indent:
 ```python
 def pretty_print(dictionary, indent):
   # ...
-  pretty_print(inner_dictionary, indent + '  ');
+  pretty_print(inner_dictionary, indent + '  ') 
   # ...
 
 ```
