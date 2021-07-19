@@ -23,7 +23,9 @@ Consider the following problem from [Leet code](https://leetcode.com/problems/co
 
 ```python
 '''
-Given an integer list nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+Given an integer list nums, 
+return true if any value appears at least twice in the array, 
+and return false if every element is distinct.
 
 Example 1:
 
