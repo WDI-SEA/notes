@@ -140,7 +140,9 @@ def contains_duplicate_hash(nums: list[str]) -> bool:
   return False
 ```
 
-Essentially we are passing some processing power off of the cpu onto the memory since we need to have a hash table of all of the numbers. Our worst case computational complexity will be O(n) but we will also raise the memory complexity to O(n). In modern computer (_ie programming for desktop computers_) you will want to pass as much complexity as you can to the memory, since processing power on desktops and laptops is finite while memory is expansive. If we were programming microchips with little or no RAM, we would strive for the opposite. 
+Essentially we are passing some processing power off of the cpu onto the memory since we need to have a hash table of all of the numbers. Our worst case computational complexity will be O(n) but we will also raise the memory complexity to O(n). 
+
+In modern computer programming (_ie programming for desktop computers like we are_) you will want to pass as much complexity as you can to the memory, since processing power on desktops and laptops is extremely finite while memory is very expansive. If we were programming microchips with little or no RAM, we would strive for the opposite. 
 
 ## Lab
 
