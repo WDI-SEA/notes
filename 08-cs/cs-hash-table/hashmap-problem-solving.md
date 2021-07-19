@@ -13,7 +13,7 @@ With only a few exceptions of very low-level programming languages, we can use o
 
 Due to their quick insertion and search, some problems which would take ages using nesting loops and arrays, such as the famous [two sum](https://leetcode.com/problems/two-sum/), can be solve with minimal computational power using a hash.
 
-In Javascript, good ol' objects are hash tables, and in Python dictionaries are hash tables. We are of course familiar with using these data structures as containers for related data that needs to be grouped, but using them for problem solving means thinking about utilizing them in a different way.
+In Javascript, good ol' objects are hash tables, and in Python dictionaries are hash tables. We are of course familiar with using these data structures as containers for related data that needs to be grouped together, but using them for problem solving means thinking about utilizing them in a different way.
 
 ## Using Hash Tables 
 
@@ -59,7 +59,7 @@ def contains_duplicate_loop(nums: list[str]) -> bool:
     # what kind of comparison to do here?
 ```
 
-Okay, we have a single loop in our algorithm, that's not too bad. Our solution has a worst case [Big O](https://www.bigocheatsheet.com/) of O(n) right now. This means the time complexity of our solution is 1:1 with how big our dataset is. 
+Okay, we have a single loop in our algorithm, that's not too bad. Our solution has a worst case [Big O](https://www.bigocheatsheet.com/) of `O(n)` right now. This means the time complexity of our solution is 1:1 with how big our dataset is. 
 
 But now here is another question: don't we need to compare every number to every other number? If each number has to be compared against all other numbers in the array, we will have to use another loop:
 
@@ -97,7 +97,7 @@ print('it should return false:', contains_duplicate_loop([1,2,3,4]))
 print('it should return true:', contains_duplicate_loop([1,1,1,3,3,4,3,2,4,2]))
 ```
 
-But wait! there is a bug? It always returns `True`! This is because we need to have the loops skip when they try to compare the same number:
+But wait! There is a bug? It always returns `True`! This is because we need to have the loops skip when they try to compare the same number:
 
 ```python
 def contains_duplicate_loop(nums: list[str]) -> bool:
