@@ -9,11 +9,11 @@
 
 ## Introduction
 
-With only a few exceptions of very low-level programming languages, we can use built in hash tables for efficient problem solving. 
+With only a few exceptions of very low-level programming languages, we can use our programming language's built-in hash tables for efficient problem solving. 
 
 Due to their quick insertion and search, some problems which would take ages using nesting loops and arrays, such as the famous [two sum](https://leetcode.com/problems/two-sum/), can be solve with minimal computational power using a hash.
 
-In Javascript, good ol' objects are hash tables, and in Python dictionaries are hash tables. We are of course familiar with using these data structures as containers for related data that needs to be grouped, but using them for problem solving means thinking about utilizing them in a different way.
+In Javascript, good ol' objects are hash tables, and in Python dictionaries are hash tables. We are of course familiar with using these data structures as containers for related data that needs to be grouped together, but using them for problem solving means thinking about utilizing them in a different way.
 
 ## Using Hash Tables 
 
@@ -23,7 +23,9 @@ Consider the following problem from [Leet code](https://leetcode.com/problems/co
 
 ```python
 '''
-Given an integer list nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
+Given an integer list nums, 
+return true if any value appears at least twice in the array, 
+and return false if every element is distinct.
 
 Example 1:
 
@@ -57,7 +59,7 @@ def contains_duplicate_loop(nums: list[str]) -> bool:
     # what kind of comparison to do here?
 ```
 
-Okay, we have a single loop in our algorithm, that's not too bad. Our solution has a worst case [Big O](https://www.bigocheatsheet.com/) of O(n) right now. This means the time complexity of our solution is 1:1 with how big our dataset is. 
+Okay, we have a single loop in our algorithm, that's not too bad. Our solution has a worst case [Big O](https://www.bigocheatsheet.com/) of `O(n)` right now. This means the time complexity of our solution is 1:1 with how big our dataset is. 
 
 But now here is another question: don't we need to compare every number to every other number? If each number has to be compared against all other numbers in the array, we will have to use another loop:
 
@@ -95,7 +97,7 @@ print('it should return false:', contains_duplicate_loop([1,2,3,4]))
 print('it should return true:', contains_duplicate_loop([1,1,1,3,3,4,3,2,4,2]))
 ```
 
-But wait! there is a bug? It always returns `True`! This is because we need to have the loops skip when they try to compare the same number:
+But wait! There is a bug? It always returns `True`! This is because we need to have the loops skip when they try to compare the same number:
 
 ```python
 def contains_duplicate_loop(nums: list[str]) -> bool:
@@ -117,7 +119,7 @@ Our solution works great! But there is a tiny problem: since we are we have a ne
 
 Now this isn't too bad as long as you know the size of your data. And this isn't to knock nested loops sometimes they are super useful and necessary. But in situation where you don't how large the input data will be, you need to make your algorithms as efficient as possible: An O(n^2) is the data size squared. So an array of 10 items will take 100 iterations to complete (not bad), but an array of 10,000 items will take 10,000,000 iterations! 
 
-This particular can be refactored to use hash map in a clever way and achieve a complexity of O(n) or better. 
+This particular problem can be refactored to use hash map in a clever way and achieve a complexity of O(n) or better. 
 
 Here what we will need to do is use a hash table to store every number as we loop over them. Before adding a new number, we will first check to see if it is in the hash table. If we find it, we can immediately return `True` because we know that we have a duplicate.
 
