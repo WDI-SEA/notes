@@ -140,7 +140,7 @@ Can someone else describe the recursive case of the people counting problem?
 
 ## Sum Problem Practice
 
-Let's write a function called `sum` that accepts a number `N` and computes the
+Let's write a function called `sum_to` that accepts a number `N` and computes the
 sum of numbers from 0 to N.
 
 What is the base case?
@@ -162,22 +162,22 @@ Oh wait!! We've already defined a function that sums all numbers!
 Take a step and take the leap of faith. Call the function again!
 
 ```python
-def sum(n):
+def sum_to(n):
   if (n < 0):
    return 0;
   else:
-    n + sum(n - 1);
+    n + sum_to(n - 1);
 ```
 
 Wait, this doesn't work. Remember to `return` the value that comes back
 from the recursive call.
 
 ```python
-def sum(n):
+def sum_to(n):
   if (n < 0):
     return 0;
   else:
-    return n + sum(n - 1);
+    return n + sum_to(n - 1);
 ```
 
 ## Palindrome Practice Problem
