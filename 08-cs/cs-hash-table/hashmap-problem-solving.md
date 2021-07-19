@@ -119,7 +119,7 @@ Our solution works great! But there is a tiny problem: since we are we have a ne
 
 Now this isn't too bad as long as you know the size of your data. And this isn't to knock nested loops sometimes they are super useful and necessary. But in situation where you don't how large the input data will be, you need to make your algorithms as efficient as possible: An O(n^2) is the data size squared. So an array of 10 items will take 100 iterations to complete (not bad), but an array of 10,000 items will take 10,000,000 iterations! 
 
-This particular can be refactored to use hash map in a clever way and achieve a complexity of O(n) or better. 
+This particular problem can be refactored to use hash map in a clever way and achieve a complexity of O(n) or better. 
 
 Here what we will need to do is use a hash table to store every number as we loop over them. Before adding a new number, we will first check to see if it is in the hash table. If we find it, we can immediately return `True` because we know that we have a duplicate.
 
