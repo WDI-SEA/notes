@@ -9,7 +9,7 @@
 
 ## Introduction
 
-With only a few exceptions of very low-level programming languages, we can use built in hash tables for efficient problem solving. 
+With only a few exceptions of very low-level programming languages, we can use our programming language's built-in hash tables for efficient problem solving. 
 
 Due to their quick insertion and search, some problems which would take ages using nesting loops and arrays, such as the famous [two sum](https://leetcode.com/problems/two-sum/), can be solve with minimal computational power using a hash.
 
