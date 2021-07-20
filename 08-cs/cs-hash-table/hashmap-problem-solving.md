@@ -53,7 +53,7 @@ Right.
 Lets get started and write that out:
 
 ```python
-def contains_duplicate_loop(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums):
   # loop over the numbers
   for i in range(len(nums)):
     # what kind of comparison to do here?
@@ -64,7 +64,7 @@ Okay, we have a single loop in our algorithm, that's not too bad. Our solution h
 But now here is another question: don't we need to compare every number to every other number? If each number has to be compared against all other numbers in the array, we will have to use another loop:
 
 ```python
-def contains_duplicate_loop(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums):
   # loop over the numbers
   for i in range(len(nums)):
     # compare every number to every other number
@@ -75,7 +75,7 @@ def contains_duplicate_loop(nums: list[str]) -> bool:
 We are pretty close to the solve, lets finish whats referred to as the 'naive' solution and then consider how and why to refactor. We just need to compare to the numbers from each loop to each other and return the function appropriately. Recall that we need to return `True` if we find a match ans `False` if we don't.
 
 ```python
-def contains_duplicate_loop(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums):
   # loop over the numbers
   for i in range(len(nums)):
     # compare every number to every other number
@@ -100,7 +100,7 @@ print('it should return true:', contains_duplicate_loop([1,1,1,3,3,4,3,2,4,2]))
 But wait! There is a bug? It always returns `True`! This is because we need to have the loops skip when they try to compare the same number:
 
 ```python
-def contains_duplicate_loop(nums: list[str]) -> bool:
+def contains_duplicate_loop(nums):
   # loop over the numbers
   for i in range(len(nums)):
     # compare every number to every other number
@@ -124,7 +124,7 @@ This particular problem can be refactored to use hash map in a clever way and ac
 Here what we will need to do is use a hash table to store every number as we loop over them. Before adding a new number, we will first check to see if it is in the hash table. If we find it, we can immediately return `True` because we know that we have a duplicate.
 
 ```python
-def contains_duplicate_hash(nums: list[str]) -> bool:
+def contains_duplicate_hash(nums):
   # using a dictionary as a hash table
   hash_table = {}
   # loop over the numbers
