@@ -235,7 +235,7 @@
     * [Sublime Packages](00-config-deployment/installfest/sublime-packages/readme.md)
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages/readme.md)
   * [Deploy - Node/Sequelize](00-config-deployment/deploy-node/readme.md)
-  * [Deploy - Node/MongoDB](00-config-deployment/deploy-node-mongo/readme.md)
+  * [Deploy - Node/MongoDB](00-config-deployment/deploy-node-mongo/README.md)
   * [Deploy React](16-react/react-deploy/readme.md)
   * [Deploy - Rails](00-config-deployment/deploy-rails/readme.md)
     * [Foreman (Environment Variables)](00-config-deployment/foreman/readme.md)
