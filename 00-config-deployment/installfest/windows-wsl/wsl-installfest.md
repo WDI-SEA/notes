@@ -80,7 +80,7 @@ We're going to install Node.js using a tool called Node Version Manager (NVM for
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 ```
 
-* ***Important Note***! If you've installed or plan to install Zsh and use that instead of bash, you will need to run the following command instead:
+* ***Important Note***! If you've installed or plan to install Zsh and use that instead of bash, you will need to come back and run the following command after having installed Zsh:
 ```bash
 # Run this command instead if you're using Zsh
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
