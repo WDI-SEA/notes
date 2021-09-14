@@ -1,76 +1,95 @@
-#Algorithm Complexity
+# Algorithm Complexity
 
-##Objectives
+## Objectives
 
-* Explain what algorithms are
-* Describe why we need to analyze algorithms and their complexity in terms of time and space
-* Explain why asymptotic behavior is observed
-* Use Big-O to explain the complexity of different algorithms
+* Review 'Algorithms'
+* Analyze Algorithms in the terms of time and space
+* Explain asymptotic behavior
+* Use Big-O to compare the complexity of different algorithms
 
-##What are Algorithms
+## What are Algorithms?
 
-An algorithm is a procedure or formula for solving a problem. Specifically, it is
-a step-by-step set of operations to be performed. We've been creating algorithms,
+An algorithm is a procedure for solving a problem. 
+
+Specifically, it is a step-by-step set of operations to be performed. We've been creating algorithms,
 in one form or another, throughout this class.
 
-##What is Algorithm Complexity?
+Popular examples include various sorting and searching algorithms.
 
-Whenever we create algorithms, we need to be aware that they run on computers, and
-computers have limits in terms of time and space. Even though most of the algorithms
-we've written seem to run instantaneously, when dealing with concepts like scalability,
-that "instant" algorithm can possibly take minutes or days to run if there's too much
-data provided to it.
+## What is Algorithm Complexity?
 
-What we need to do is analyze the complexity of the algorithm so we can estimate how
-efficient it is. This is done in terms of:
+Whenever we create algorithms, we need to be aware that they run on computers that are limited in terms of time and space. 
+
+So far, most of the algorithms we've written seem to run instantaneously.
+
+However, when dealing with issues like scalability, that "instant" algorithm can possibly take minutes or days to run if the data set is too large.
+
+What we need to do is analyze what happens to an algorithm as the data grows unboundedly. 
+
+This is done in terms of:
 
 * Runtime (processing time, via the CPU)
 * Runspace (how much memory does it take up)
 
-The most common way to express the efficiency/complexity of an algorithm is using what
-is called Big-O Notation
+We use Big-O notation to analyze what happens in the worst-case scenario for an algorithms runtime as the input size grows.
 
-##Big-O Notation
+## The Bird Analogy:
+
+Let's say you want to send a file to your friends house, but your internet connection isn't very fast!
+
+You only have two options:    
+1. Send your friend the file over the internet.
+2. Send your friend the file via a carrier pigeon.
+
+When the file size is small, say a couple kilobytes or megabytes, sending your friend the file doesn't take that long! 
+
+It might take on the order of a few minutes to a few hours, but your friend gets it same day.
+
+Compared to the carrier pigeon option, which may take a day to arrive at the destination, the choice is a no-brainer.
+
+But what happens when your data size grows?
+* How long will it take your friend to download a 1 gigabyte file?
+* How about a 100 gigabyte file?
+* A 1 terabyte file?
+
+In the worst case scenario, it will take your friend days, weeks, possibly months to download your file. 
+
+Looking at the carrier pigeon option, it'll take a constant time of 1-day to deliver it's payload, no matter the size!
+
+At this point, carrier pigeon is starting to make a lot of sense as a method of transportation!
+
+## Big-O Notation
 
 > In computer science, big O notation is used to classify algorithms by how they respond
 (e.g., in their processing time or working space requirements) to changes in input size. -- Wikipedia
 
-Since a big issue when discussing algorithms and data structures is their efficiency in
-the face of certain tasks, we want to use a common language to discuss such (in)efficiencies.
-Normally, we are interested in how much memory or processing time is needed to complete the
-task depending on the size of the input. We often let n represent the input size.
+How can we definitively say one algorithm will perform better than another, given an input of size `n`?
+
+Let's analyze some charts to get an idea of how the number of operations needed grows as the input size `n` grows larger. 
 
 Note that when we use Big-O notation, we're only worried about the **asymptotic** behavior.
-In other words, the behavior as we approach some type of limit. Therefore, we don't worry
-too much about coefficients in Big-O notation (You'll rarely see an algorithm analyzed as
-O(3n). It simplifies down to just O(n)).
+In other words, the behavior as we approach infinity.
 
-###Common Notations
+### Number of Operations at Various Input Sizes (n)
 
-|Input Size (n)|O(1) | O(log(N))  | O(Nlog(N)) | O(N)   |Time Taken (N<sup>2</sup>) |
-|--------------|-----| ---------- | -----------| ------ |---------------------------|
-| 1            |1    | 1          | 1          | 1      | 1                         |
-| 10           |1    | 3          | 30         | 10     | 100                       |
-| 40           |1    | 5          | 50         | 40     | 1600                      |
-| 80           |1    | 6          | 60         | 80     | 6400                      |
-| 600          |1    | 9          | 90         | 600    | 360000                    |
-| 10,000       |1    | 13         | 130        | 10,000 | 100,000,000               |
+![Big O Chart](big-o-chart.png)
+
+### Complexity Chart
+![Complexity Curves](big-o-complexity-curves.jpg)
 
 Observe how curves for different complexities compare to each other.
 
-* O(1) is a totally flat line. It's constant no matter how much
-  data is given to it.
-* O(log(n)) goes up, then flattens out.
+* O(1) is a totally flat line. The time required is the same no matter how many inputs.
 * O(n) goes up and right in a straight line.
+* O(log(n)) goes up, then flattens out.
 * O(n<sup>2</sup>) starts to spike up sharply as data gets large.
 
-![Complexity Curves](big-o-complexity-curves.jpg)
 
-#### O(1) - Constant Runtime
+### O(1) - Constant Runtime
 
-An algorithm that is O(1), is said to be "Big O of 1" or **constant**, and does not vary
-depending on the size of the input. This is good. This is fast even for very large values
-of n.
+An algorithm that is `O(1)`, is said to be "Big O of 1" or **constant time**. 
+
+The amount of time required  does not vary depending on the size of the input. This is the best case scenario where we'll maintain the same performance even for very large values of n.
 
 ```js
 function constantRuntime(x) {
@@ -79,50 +98,50 @@ function constantRuntime(x) {
 }
 ```
 
-#### O(N) - Linear Runtime
+### O(N) - Linear Runtime
 
-An algorithm that is O(n), is said to be "Big O of n" or **linear**, and this indicates
-that the resources required grow proportionally to the size of the input. This is reasonable
-performance.
+An algorithm that is `O(n)`, is said to be "Big O of n" or **linear complexity**.
+
+This indicated that the resources required grow proportionally to the size of the input at a 1:1 ratio.
 
 ```js
-function linearRuntime(x) {
-  for (var i = 0; i < x; i++) {
-    console.log(i);
+function linearRuntime(n) {
+  for (let i = 0; i < n; i++) {
+    console.log(i); // This operation runs n-times
   }
 }
 ```
 
-#### O(n<sup>2</sup>) - Quadratic Runtime
+### O(n<sup>2</sup>) - Quadratic Runtime
 
-An algorithm that is O(n^2), is said to be "Big O of n squared" or **quadratic**,
-and it means the resources grow in proportion to the square of the input. This is
-**slow**. Think of really big numbers and then think of them squared.
+An algorithm that is `O(n^2)`, is said to be "Big O of n squared" or **quadratic complexity**.
 
+It means the number of operations grow in proportion to the square of the input. This is **slow**. 
+Refer back to the chart above to see how quickly the required number of operations grows as `n` grows.
 
 ```js
-function quadraticRuntime(x) {
-  for (var i = 0; i < x; i++) {
-    for (var j = 0; j < x; j++) {
-      console.log(i * j);
+function quadraticRuntime(n) {
+  for (var i = 0; i < n; i++) {
+    for (var j = 0; j < n; j++) {
+      console.log(i * j); // This operation runs n^2 times
     }
   }
 }
 ```
 
-#### O(log(n)) - Logarithmic Runtime
+### O(log(n)) - Logarithmic Runtime
 
-An algorithm that is O(log(n)), is said to be "Big O of log n" or **logarithmic**,
-and it means the resources grow to the inverse of exponential growth. This is **fast!**
-Algorithms that grow this slow are great!
+An algorithm that is `O(log(n))`, is said to be "Big O of log n" or **logarithmic complexity**.
 
-Think of logarithmic algorithms as cutting the amount of work to do in half
-at each step of the way. Big numbers are quickly halved down to smaller and smaller
-numbers.
+It means the resources grow to the inverse of exponential growth. 
 
-Binary search is a classic O(log(n)) algorithm.
+This is **fast!**
 
-Imagine flipping through a phone book to find someone's number. A linear O(N) algorithm
+Think of logarithmic algorithms as cutting the amount of work to do in half at each step of the way. Big numbers are quickly halved down to smaller and smaller numbers.
+
+Binary search is a classic `O(log(n))` algorithm.
+
+Imagine flipping through a phone book to find someone's number. A linear `O(n)` algorithm
 would start at the beginning of the phone book and read every name on every page until
 it found the name you're looking for. This is terribly slow!
 
@@ -189,12 +208,15 @@ function binarySearch(arr, search) {
 }
 ```
 
-#### O(n log(n)) - Efficient Sorting Algorithms
+### O(n log(n)) - Efficient Sorting Algorithms
 
-This is another common measure of complexity. It usually appears when dealing
-with sorting algorithms. Think of an `n log(n)` algorithm as doing a binary search
-for each thing in an array. It performs an `log(n)` operation `n` times, so we
-multiply them together.
+This is one of the most common measures of complexity. 
 
-See the [Cheat Sheet](http://bigocheatsheet.com/) for some other common time
+It usually appears when dealing with sorting algorithms. 
+
+Think of an `n log(n)` algorithm as having to do the equivalent work of a binary search once for each input, or `n` times. 
+
+It performs an `log(n)` operation `n` times, so we multiply them together.
+
+See the [Big O Cheat Sheet](http://bigocheatsheet.com/) for some other common time
 (processing time) and space (memory) complexities and their notations.
