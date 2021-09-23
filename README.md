@@ -86,13 +86,13 @@ Additionally, much of the original Python material (locally) was developed at th
 | Front-End Framework | AngularJS (MEAN) | 7 - 9 | JWT Token Auth, MongoDB | 
 | Second Language | Ruby/Rails | 10 - 12 | oAuth |
 
-### Prework
+### Recommended Prework
 
 * [GA Dash](https://dash.generalassemb.ly/)
 * [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
 * [FreeCodeCamp](http://www.freecodecamp.com/)
 
-### Unit: Front End Development
+### Front End Development
 
 | Topic | Labs + Assignments |
 | ----- | -------------- |
