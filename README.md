@@ -39,6 +39,15 @@ Notes below are organized by topic, but they are unordered. This is because we m
 
 Something to know is that some of the lessons here are more historical and haven't been used in at least a couple cohorts or years.
 
+### Covid Era Remote Classroom Updates (2020)
+
+| Unit | Tech | Weeks | Topics |
+| ------------------------- | ----------------------- | ----------- | ----------- |
+| Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, (3rd party APIs/asynch JS may come in this unit or the next)|
+| Full-Stack w/ Templates | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs, EJS |
+| Front-End Framework | React/MongoDB (MERN) | 7 - 9 | JWT Token Auth, MongoDB | 
+| Full-Stack Web Development | Python | 10 - 12 | Data Structures & Algorithms, Whiteboarding, Python fundamentals, (optional Django or Flask) |
+
 ### Connected Classroom Alteration (Fall 2018)
 
 Connected classroom (SEA and DTLA) used Python/Django as unit 2 instead of unit 4. Also removed much of unit 4 computer science topics.
