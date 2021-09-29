@@ -75,6 +75,12 @@ Your internet provider has a nice little cached list of all of the registered do
 
 In real world terms, it's like how we use street addresses for finding a house, rather than using Latitude and Longitude coordinates - they're easier to remember and to read.
 
+#### IPv6
+
+Internet Protocol version 6 (IPv6) is the most recent version of the Internet Protocol (IP), the communications protocol that provides an identification and location system for computers on networks and routes traffic across the Internet. IPv6 was developed by the Internet Engineering Task Force (IETF) to deal with the long-anticipated problem of I[Pv4 address exhaustion](https://en.wikipedia.org/wiki/IPv4_address_exhaustion).
+
+IPv6 addresses are represented as eight groups, separated by colons, of four hexadecimal digits. The full representation may be shortened; for example, 2001:0db8:0000:0000:0000:8a2e:0370:7334 becomes 2001:db8::8a2e:370:7334. 
+
 #### Client and server communication
 
 All client-server protocols operate in the application layer. The application-layer protocol defines the basic patterns of the dialogue.
