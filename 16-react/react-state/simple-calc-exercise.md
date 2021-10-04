@@ -4,7 +4,7 @@ Now, it's time for you to check back on everything! You will be building a calcu
 
 At first, your calculator will just add 2 numbers together when they are typed in. For the bonus, you might decide to get more creative.
 
-_there is a repofied version of this lab that can be found [here](https://github.com/WDI-SEA/react-simple-calc-lab/tree/main)_
+_there is a repofied version of this lab that can be found_ [_here_](https://github.com/WDI-SEA/react-simple-calc-lab/tree/main)
 
 ## Set Up
 

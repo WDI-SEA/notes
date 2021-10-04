@@ -7,18 +7,17 @@
 
 ## Geocoding
 
-**What is geocoding?** - The process of converting a description of a place to geographic coordinates. The relationship between the description and the place is a *mapping* (no pun intended).
+**What is geocoding?** - The process of converting a description of a place to geographic coordinates. The relationship between the description and the place is a _mapping_ \(no pun intended\).
 
 ### Example:
 
-"Seattle, WA" -> **geocode** -> {lat: 47.6062095, lng: -122.3320708}
+"Seattle, WA" -&gt; **geocode** -&gt; {lat: 47.6062095, lng: -122.3320708}
 
 ### Mapbox
-We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#geocoding). Mapbox is a system of geolocation-related APIs, similar to the Google Maps API. Lyft, the Weather Channel, and many other large companies use Mapbox to incorporate maps into their apps. 
+
+We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#geocoding). Mapbox is a system of geolocation-related APIs, similar to the Google Maps API. Lyft, the Weather Channel, and many other large companies use Mapbox to incorporate maps into their apps.
 
 ## Get Geocoding
-
----
 
 ### Using Mapbox
 
@@ -31,17 +30,18 @@ We'll use the [Mapbox Geocoding API](https://www.mapbox.com/api-documentation/#g
 * Install the [@mapbox/mapbox-sdk](https://github.com/mapbox/mapbox-sdk-js) node module via `npm`.
 * In `mapTest.js` file, import the geocoder from the mapbox module and set up a geocoding client using your access token [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#geocoding).
 
-```js
+```javascript
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const geocodingClient = mbxGeocoding({ accessToken: 'your-access-token' });
 ```
 
 ### Forward Geocode
 
-Search for `'Seattle, WA'` and check out the GeoJSON feature collection that is returned. [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#search-for-places) 
+Search for `'Seattle, WA'` and check out the GeoJSON feature collection that is returned. [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#search-for-places)
 
 **mapTest.js**
-```js
+
+```javascript
 geocodingClient
   .forwardGeocode({
     query: 'Seattle, WA'
@@ -55,7 +55,7 @@ geocodingClient
 
 The coordinates are listed under the `center` field of each object.
 
-```js
+```javascript
 geocodingClient
   .forwardGeocode({
     query: 'Seattle, WA'
@@ -71,7 +71,7 @@ geocodingClient
 
 Now copy the coordinates that you just found and reverse geocode them! [docs](https://www.mapbox.com/api-documentation/?language=JavaScript#retrieve-places-near-a-location)
 
-```js
+```javascript
 geocodingClient
   .reverseGeocode({
     query: [ -122.3301, 47.6038 ]
@@ -86,8 +86,6 @@ geocodingClient
 ## More Resources
 
 * [Geocoding](https://www.mapbox.com/help/how-geocoding-works/#how-geocoding-works)
-
----
 
 ## Exercise/Lab: City Search
 
@@ -111,17 +109,20 @@ You're going to set up an app that allows users to search for a city and add the
 ### Views
 
 #### city-search
+
 * form with two text inputs, one for city and one for state
 * form should submit a GET request to `/search`
 * "View My Favorites" button links to  `/favorites` view
 
 #### search-results
-* header that says "search results for <insert the search terms here usint EJS> "
-* list search results (include the name and coordinates of each result, along with an "add to favorites" button)
-* each list item should include a form with four hidden fields (city, state, lat, long) so the favorites button actually submits a `POST` request to `/add`
+
+* header that says "search results for  "
+* list search results \(include the name and coordinates of each result, along with an "add to favorites" button\)
+* each list item should include a form with four hidden fields \(city, state, lat, long\) so the favorites button actually submits a `POST` request to `/add`
 * include a "back to search" button that links back to the search page
 
 #### favorites
+
 * lists all saved favorite cities
 * each list item should have a "remove from favorites" button that deletes that city from the `places` table and redirects back to the favorites page
 * "remove from favorites" button will need to be a `POST` form with a submit button that utilizes `method-override`
@@ -134,7 +135,7 @@ You're going to set up an app that allows users to search for a city and add the
 
 #### GET '/search'
 
-* use forward geocoding to search for cities in the US (_hint: use the `type` and `countries` fields in addition to `query`_)
+* use forward geocoding to search for cities in the US \(_hint: use the `type` and `countries` fields in addition to `query`_\)
 * render `search-results` page, passing through the searched data as well as the results
 
 #### POST '/add'
@@ -148,3 +149,4 @@ You're going to set up an app that allows users to search for a city and add the
 #### DELETE '/remove'
 
 * deletes city from `place` table and redirects to _favorites_ view
+

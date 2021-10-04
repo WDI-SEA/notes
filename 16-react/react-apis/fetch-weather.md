@@ -1,6 +1,8 @@
+# Fetch the Weather
+
 ## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Lab: Displaying the Weather
 
-Let's take an existing project that uses react-router (like your portfolio project or the dentist website) and add a page to it that accepts a location and displays the weather.
+Let's take an existing project that uses react-router \(like your portfolio project or the dentist website\) and add a page to it that accepts a location and displays the weather.
 
 **You will need:**
 
@@ -13,11 +15,9 @@ Let's take an existing project that uses react-router (like your portfolio proje
 
 **Resources**:
 
-- [OpenWeather API](http://openweathermap.org/current)
-
-- [OpenWeather API Documentation](http://openweathermap.org/current)
-
-- [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
+* [OpenWeather API](http://openweathermap.org/current)
+* [OpenWeather API Documentation](http://openweathermap.org/current)
+* [Info on `fetch()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch)
 
 Time to show off! You're going to display the weather on your app.
 
@@ -27,10 +27,7 @@ You'll use the OpenWeather API to fetch weather information from a certain zip c
 
 At the end of this exercise, your solution will look something like what's shown here.
 
-
-<img src="https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png" class="responsive" />
-
----
+![](https://res.cloudinary.com/briezh/image/upload/v1556235234/weather_gi72z2.png)
 
 ## Requirements
 
@@ -38,23 +35,21 @@ Make a new component called `Weather` and make a route for rendering it with `re
 
 On your `Weather` page, ask the user to input a zip code.
 
-- You can learn more about forms [here](https://facebook.github.io/react/docs/forms.html).
-  - When this event fires, take the `event.target.value` and `fetch()` from the OpenWeather API.
-
-- Use the response from the API to display the current temperature, the high and low temperatures, the current weather description, and the name of the city.
-  - Note: Our solution uses Fahrenheit. You're free to use Celsius or Kelvins if you'd like.
+* You can learn more about forms [here](https://facebook.github.io/react/docs/forms.html).
+  * When this event fires, take the `event.target.value` and `fetch()` from the OpenWeather API.
+* Use the response from the API to display the current temperature, the high and low temperatures, the current weather description, and the name of the city.
+  * Note: Our solution uses Fahrenheit. You're free to use Celsius or Kelvins if you'd like.
 
 **Important Notes**:
 
-- Because the OpenWeather API is not an open API, every request must end with this API key:  `&appid=052f26926ae9784c2d677ca7bc5dec98`.
+* Because the OpenWeather API is not an open API, every request must end with this API key: `&appid=052f26926ae9784c2d677ca7bc5dec98`.
+* As an example, this is a URL to which you might send a `fetch()` request: `http://api.openweathermap.org/data/2.5/weather?zip=60614,us&appid=052f26926ae9784c2d677ca7bc5dec98`.
 
-- As an example, this is a URL to which you might send a `fetch()` request: `http://api.openweathermap.org/data/2.5/weather?zip=60614,us&appid=052f26926ae9784c2d677ca7bc5dec98`.
-
-### Skeleton Code (Starter)
+### Skeleton Code \(Starter\)
 
 Here is a functional Weather component starter:
 
-```js
+```javascript
 import React, { useEffect, useState } from 'react'
 
 const Weather = (props) => {
@@ -92,7 +87,7 @@ export default Weather
 
 You are free to use class-based components too if you'd like. Here is the starter code for a Weather class component.
 
-```js
+```javascript
 import React, { Component } from 'react';
 
 class Weather extends Component {
@@ -133,20 +128,13 @@ class Weather extends Component {
 export default Weather;
 ```
 
-
 **Need a Hint or Two?**
 
-<details>
-    <summary>Hint 1</summary> 
-    <br />
-    You'll only need to create and implement the `Weather` component. Nothing else needs to change in whichever existing app you created other than hooking up the component to a route with your router!
-</details>
+Hint 1  
+ You'll only need to create and implement the \`Weather\` component. Nothing else needs to change in whichever existing app you created other than hooking up the component to a route with your router!
 
-<details>
-    <summary>Hint 2</summary> 
-    <br />
-    To see how to handle the form, check out the skeleton code.
-</details>
+Hint 2  
+ To see how to handle the form, check out the skeleton code.
 
 ## Bonus
 
@@ -156,3 +144,4 @@ Here are some extra ideas to challenge yourself if you have time:
 * Spend a little time styling the page. Try to get it close to the example image above!
 * Make your current weather into a 5-day forecast
 * Make a `Use current location` button so the user can click that instead of providing the location.
+

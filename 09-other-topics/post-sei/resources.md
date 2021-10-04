@@ -50,10 +50,10 @@
 * Articles with JavaScript must-knows
   * [CodeMentor: Top 10 JavaScript Must-Knows](https://www.codementor.io/javascript/tutorial/top-ten-things-beginners-must-know-javascript)
   * [10 Interview Questions Ever JS Developer Should Know](https://medium.com/javascript-scene/10-interview-questions-every-javascript-developer-should-know-6fa6bdf5ad95)
-* [Javascript for Kids](https://www.amazon.com/JavaScript-Kids-Playful-Introduction-Programming/dp/1593274084) (PDF [here](http://www.r-5.org/files/books/computers/overviews/for-kids/Nick_Morgan-JavaScript_for_Kids-EN.pdf))
-* [Javascript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) (PDF [here](https://github.com/NorthPaulo/research/blob/master/Frontend-books%26research/JavaScript%20-%20The%20Good%20Parts%20-%20Douglas%20Crockford%20-%20May%202008.pdf))
-* [Eloquent Javascript](https://www.amazon.com/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820) (PDF [here](https://eloquentjavascript.net/Eloquent_JavaScript.pdf))
-* [Javascrip30](https://javascript30.com/) (Or really any course by wes bos.)
+* [Javascript for Kids](https://www.amazon.com/JavaScript-Kids-Playful-Introduction-Programming/dp/1593274084) \(PDF [here](http://www.r-5.org/files/books/computers/overviews/for-kids/Nick_Morgan-JavaScript_for_Kids-EN.pdf)\)
+* [Javascript: The Good Parts](https://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) \(PDF [here](https://github.com/NorthPaulo/research/blob/master/Frontend-books%26research/JavaScript%20-%20The%20Good%20Parts%20-%20Douglas%20Crockford%20-%20May%202008.pdf)\)
+* [Eloquent Javascript](https://www.amazon.com/Eloquent-JavaScript-Modern-Introduction-Programming/dp/1593272820) \(PDF [here](https://eloquentjavascript.net/Eloquent_JavaScript.pdf)\)
+* [Javascrip30](https://javascript30.com/) \(Or really any course by wes bos.\)
 
 ### ES6 and Beyond
 
@@ -155,7 +155,7 @@ Increasing Development Speed
 * [Big O Cheat sheet for data structures and algorithms](http://bigocheatsheet.com/)
 * [Data Structures Video Series](https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P)
 * [VisuAlgo](http://visualgo.net/) - data structure and algorithm visualizations
-* [Learn2Sort](https://learn2sort.herokuapp.com/) (Make a PR to add a new sort to this app [here](https://github.com/TaylorDarneille/learn2sort))
+* [Learn2Sort](https://learn2sort.herokuapp.com/) \(Make a PR to add a new sort to this app [here](https://github.com/TaylorDarneille/learn2sort)\)
 * [Grokking Algorithms](https://www.amazon.com/Grokking-Algorithms-illustrated-programmers-curious/dp/1617292230)
 
 ## Paid General Resources
@@ -192,7 +192,8 @@ Note that if you're freelancing, it may involve writing contracts, managing mone
 * [Trello - tracking projects](https://trello.com/)
 * [Treehouse - learn Wordpress in order to create a CMS for clients](http://teamtreehouse.com/)
 
-## Other 
+## Other
 
 * [Syntax Podcast](https://syntax.fm/)
 * Subscribe to [FreeCodeCamp](https://www.freecodecamp.org/news/)'s Newsletter
+

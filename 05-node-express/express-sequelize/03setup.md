@@ -42,12 +42,11 @@ The sequelize CLI has a command called `createdb`. This performs the same action
 createdb userapp_development
 ```
 
-
 **For your historical reference...**
-  
-  **WARNING \(2017\) Edited \(2018\):** At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue \(for version Sequelize 4\) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up!
 
-  If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
+**WARNING \(2017\) Edited \(2018\):** At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue \(for version Sequelize 4\) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up!
+
+If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
 
 ## Setup part 3 - config.json, models and migrations:
 
@@ -89,7 +88,6 @@ When we deploy to Heroku, they will provide us a long url that contains password
 
 Once this is complete, let's shift our attention to "models".
 
-
 ### Create a model and a matching migration
 
 In order to create a model, we start with `sequelize model:create` and then specify the name of the model using the `--name` flag. Make sure your models are **always** singular \(table name in plural, model name in singular\). See the Table Name Inference section of [these docs](https://sequelize.org/master/manual/model-basics.html#:~:text=Models%20are%20the%20essence%20of,and%20their%20data%20types) for more. After passing in the `--name` flag followed by the name of your model, you can then add an `--attributes` flag and pass in data about your model. Generating the model also generates a corresponding migration. You only need to do this once for your model.
@@ -101,8 +99,6 @@ sequelize model:create --name user --attributes firstName:string,lastName:string
 > Make sure you do **not** have any spaces between each of the attributes and their data types. Convention matters!
 
 This will generate the following model:
-
-
 
 **models/user.js**
 
@@ -198,12 +194,12 @@ If you need to undo the last migration, this command will undo the last migratio
 sequelize db:migrate:undo
 ```
 
-Use the  `psql` shell to verify that your database and table was created:
+Use the `psql` shell to verify that your database and table was created:
 
 ```bash
 psql
 \l
 \c userapp_development
-\dt 
-
+\dt
 ```
+

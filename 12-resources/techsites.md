@@ -9,7 +9,6 @@ Here are some useful tech websites to browse, to keep up on the latest technolog
   * [/r/ruby](https://www.reddit.com/r/ruby)
   * [/r/rails](https://www.reddit.com/r/rails)
   * [/r/webdesign](https://www.reddit.com/r/web_design)
-
 * News and Blogs
   * [Hacker News](https://news.ycombinator.com)
   * [Medium](https://medium.com/tag/tech)
@@ -19,3 +18,4 @@ Here are some useful tech websites to browse, to keep up on the latest technolog
   * [RailsCasts](http://railscasts.com/)
   * [Rails Girls](http://blog.railsgirls.com/)
   * [David Walsh Blog](http://davidwalsh.name/)
+

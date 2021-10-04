@@ -1,9 +1,9 @@
-#Local Git Repo
+# Local Git
 
 A git repo is represented by a directory, just like any project. All your files will go in a directory. Try creating a directory with the following files:
 
-- project_git
-  - readme.md
+* project\_git
+  * readme.md
 
 Once you're done, we can start on the first git command.
 
@@ -11,7 +11,7 @@ Once you're done, we can start on the first git command.
 
 Inside the folder, you'll want to run the following command.
 
-```
+```text
 git init
 ```
 
@@ -21,7 +21,7 @@ You'll only need to do this once per project. If you're cloning a git repo, this
 
 ## `git status` - Checking your repo status
 
-```
+```text
 git status
 ```
 
@@ -33,7 +33,7 @@ Currently, there are no commits, so we'll want to put files under the management
 
 You can add files individually or the entire directory, including subfolders.
 
-```
+```text
 git add readme.md
 git add .
 ```
@@ -44,73 +44,74 @@ The second command will add everything in the current working directory. But try
 
 Let's say you're happy with your work and want to save a version. This is called **committing**:
 
-```
+```text
 git commit -m 'my first commit'
 ```
 
-Now, the changes are permanently saved. The file now has a unique version in git and can be recovered if lost. Make sure everything is *clean* by running `git status` again.
+Now, the changes are permanently saved. The file now has a unique version in git and can be recovered if lost. Make sure everything is _clean_ by running `git status` again.
 
 ## Process for making changes
 
-#### File status
+### File status
 
 Try making changes to the `readme.md` file. See what happens when you run:
 
-```
+```text
 git status
 ```
 
-#### `git diff` - file differences
+### `git diff` - file differences
 
 How do we find out what changed?
 
-```
+```text
 git diff readme.md
 ```
 
-#### Stage and save
+### Stage and save
 
 When we're ready to save those changes
 
-```
+```text
 git add readme.md
 git commit -m 'added title'
 ```
 
-#### `git checkout` - checkout changes
+### `git checkout` - checkout changes
 
 Or, we can undo changes. If changes have been made before comitting, we can run `checkout` to reset the file back to its most recent commit state.
 
-```
+```text
 git checkout readme.md
 ```
 
-#### `git log` - review commit history
+### `git log` - review commit history
 
 Note that once you make a commit, you won't be able to unmodify those files. You can see a list of your commits by running:
 
-```
+```text
 git log
 ```
 
-#### `git rm` - untrack a file
+### `git rm` - untrack a file
 
 If a file has been added to git and it needs to be deleted, we can run `git rm` and commit the change.
 
-```
+```text
 git rm <file>
 git commit -am 'deleted file'
 ```
 
 ## Summary
 
-* `git add` files that become part of your program (track)
+* `git add` files that become part of your program \(track\)
 * `git status <file>` or `.` to see which files changed.
-* `git diff` to see exactly what changed (by line)
-* `git commit` file changes to save (commit)
-* `git checkout` to dicsard local changes (unmodifiy)
-* `git rem` to untrack files (remove)
+* `git diff` to see exactly what changed \(by line\)
+* `git commit` file changes to save \(commit\)
+* `git checkout` to dicsard local changes \(unmodifiy\)
+* `git rem` to untrack files \(remove\)
 
 This is the most simple workflow, things get a bit more complex when you start sharing code and manage larger code bases. But this is a good start.
 
 **IMPORTANT NOTE: Avoid creating git repositories inside other git repositories.**
+

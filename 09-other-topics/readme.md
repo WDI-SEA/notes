@@ -1,1 +1,0 @@
-#Assorted Topics

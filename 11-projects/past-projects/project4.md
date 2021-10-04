@@ -1,11 +1,11 @@
-##Project  4
+# Project 4
 
-###WDI SEA 02
+## WDI SEA 02
 
 * [In Season - Aida](https://freshinseason.herokuapp.com/)
   * Find recipes based on what is in season.
 * [Uplift](https://upliftapp.herokuapp.com)
-  * Real-time app for sharing positivity (Ionic)
+  * Real-time app for sharing positivity \(Ionic\)
 * [Mozaiq - Daniel](http://mozaiq.herokuapp.com/)
   * A social Myers-Briggs personality test.
 * [Dev Box - Nick/Cody](https://devboxtools.herokuapp.com/)
@@ -19,10 +19,10 @@
 * [Pow Now - Greg](http://pow-now.herokuapp.com/)
   * Allows users to find the conditions of nearby ski slope
 
-###WDI SEA 03
+## WDI SEA 03
 
 * [Haiku d'etat - Brandon](https://haiku-detat.herokuapp.com/)
-  * App for creating (valid) haikus
+  * App for creating \(valid\) haikus
 * [Penny Post - Nathan](http://pennypost.herokuapp.com/)
   * Create a post card with your Instagram photos
 * [Inspired - Kyle](https://infinspired.herokuapp.com/)
@@ -36,10 +36,10 @@
 * [Shred WA - Steven](https://shredwa.herokuapp.com/)
   * View the latest weather info for your favorite snow sports/dirt sports venues
 
-###WDI SEA 04
+## WDI SEA 04
 
 * [RiverStream - Ara](https://riverstream.herokuapp.com/)
-  * Type terms and see different items float by (ReactJS)
+  * Type terms and see different items float by \(ReactJS\)
 * [Mahalo Knights - Alec](http://mahaloknights.herokuapp.com/)
   * Ecommerce store for clothing
 * [Retrieval - Auggie](http://retrieval.herokuapp.com/)
@@ -47,13 +47,13 @@
 * [Samesies - Thomas](http://samesies.herokuapp.com/)
   * Ecommerce store for web design themes
 * [Moodboard - Tess](https://mymoodboard.herokuapp.com/)
-  * Get inspiration for a project or design (ReactJS + Meteor)
+  * Get inspiration for a project or design \(ReactJS + Meteor\)
 * [Feeding Seattle - Emma](https://feedingseattle.herokuapp.com/)
   * Meals for Homeless and Low-Income Individuals and Families in Seattle
 * [Weather you Run - Paloma](http://weatheryourun.herokuapp.com/)
   * Track your runs and get weather information
 
-###WDI SEA 06
+## WDI SEA 06
 
 * [Patient Passport - Michael](https://patientpassport.herokuapp.com/)
   * Easily find hospital appointments
@@ -67,3 +67,4 @@
   * A project dashboard created by a developer for developers
 * [Beervana - Derek/Jonathan](http://drinkbeervana.herokuapp.com/)
   * Learn to brew beer, as well as search for beers and breweries
+

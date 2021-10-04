@@ -13,7 +13,7 @@ Enter join tables! These tables have a one to many relationship with each of the
 
 ![An er diagram featuring a many to many relationship with students and classes and a join table called enrollments](https://fmhelp.filemaker.com/help/18/fmp/en/FMP_Help/images/relational.07.06.1.png)
 
-Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `ProductOrders` or `product_orders`. (More info on [associative tables](https://en.wikipedia.org/wiki/Associative_entity)).
+Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `ProductOrders` or `product_orders`. \(More info on [associative tables](https://en.wikipedia.org/wiki/Associative_entity)\).
 
 ## Sequelize models
 
@@ -25,7 +25,7 @@ sequelize model:create --name toy --attributes type:string,color:string
 sequelize model:create --name pets_toys --attributes petId:integer,toyId:integer
 ```
 
-You may be noticing that this model is plural! Doesn't that break the cardinal rule that "Models are always singular!"? According to the Sequelize documentation when using a Junction Model (a model represening an join table), the model is pluralized.
+You may be noticing that this model is plural! Doesn't that break the cardinal rule that "Models are always singular!"? According to the Sequelize documentation when using a Junction Model \(a model represening an join table\), the model is pluralized.
 
 Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.html#many-to-many-relationships) and the [Sequelize BelongsToMany docs](https://sequelize.org/master/manual/creating-with-associations.html#hasmany---belongstomany-association) for more on all of the code and conventions covered in this lesson!
 
@@ -33,7 +33,7 @@ Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.ht
 
 In order to associate pets to toys in a many to many fashion, you will need to update the associations on the pets and toys.
 
-Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `pets_toys`).
+Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model \(in this case, `pets_toys`\).
 
 ### pet.js
 
@@ -66,7 +66,7 @@ Don't forget to migrate after adding your new associations!
 
 ### Add a unique toy to a pet.
 
-In order to add a unique toy to a pet, we need to first find (or create) a pet to associate the toy to. 
+In order to add a unique toy to a pet, we need to first find \(or create\) a pet to associate the toy to.
 
 Secondly, we must have a toy to attach to the pet, then we can associate them.
 
@@ -93,11 +93,11 @@ db.pet.findOrCreate({
 });
 ```
 
-Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the pets_toys table in a `psql` shell you will need to wrap the table name within quotations i.e. "pets_toys".
+Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the pets\_toys table in a `psql` shell you will need to wrap the table name within quotations i.e. "pets\_toys".
 
 An example of how you might use this in an express route:
 
-```js
+```javascript
 app.post('/pets/toys', (req, res) => {
   // First get a reference to the pet
   db.pet.findByPk(req.body.petId)
@@ -109,7 +109,6 @@ app.post('/pets/toys', (req, res) => {
     })
   })
 })
-
 ```
 
 ### Get all pets that use a toy
@@ -154,8 +153,6 @@ db.toy.findOrCreate({
   });
 });
 ```
-
-
 
 Because this is a Many to Many association, all the logic from before can be turned around to search for all the toys of a particular pet!
 

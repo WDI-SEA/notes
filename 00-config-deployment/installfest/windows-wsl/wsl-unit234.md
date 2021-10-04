@@ -1,4 +1,4 @@
-# 🛑 Unit 2-4 Installfest
+# WSL Unit 2, 3, and 4 installfest
 
 **Stop!** The following instructions pertain to units 2-4 - revisit this section in unit 2!
 
@@ -6,7 +6,7 @@
 
 When it comes to installing database technologies - WSL has a handful of extra configuration steps as the installations will not work by default.
 
-*  [PostgresQL Webpage](https://www.postgresql.org/download/linux/ubuntu/)
+* [PostgresQL Webpage](https://www.postgresql.org/download/linux/ubuntu/)
 
 ```bash
 # Create the file repository configuration:
@@ -52,10 +52,9 @@ sudo -u postgres psql
 
 * The last command will bring you inside of the `psql` shell - run the following command
 
-```
+```text
 ALTER USER <your_user_name> WITH SUPERUSER;
 ```
-
 
 ## Unit 3 - MongoDB
 
@@ -69,9 +68,9 @@ sudo service mongodb start
 ```
 
 * Test if it worked by running the `mongo` command. If you are in the mongo shell, then it worked!
-* If it didn't work, and you get an error referring to `/data/db ` - run the following:
+* If it didn't work, and you get an error referring to `/data/db` - run the following:
 
-```
+```text
 sudo mkdir -p /data/db
 sudo chmod 777 /data/db
 mongod --dbpath /data/db
@@ -98,17 +97,16 @@ alias pip=pip3
 path+=(/home/<your_user_name>/.local/bin)
 ```
 
-<hr />
-
 ## Navigation
 
 1. Read this intro
-    * [✔️] [Alternative OS intro](./README.md)  
+   * \[✔️\] [Alternative OS intro](./)  
 2. Prior to the first day of class: Enable WSL and Install Ubuntu from the Microsoft Store app
-    * [✔️] [WSL Setup](./wsl-setup.md)
+   * \[✔️\] [WSL Setup](wsl-setup.md)
 3. On the first day of class, your instructors will help you with **Installfest**
-    * [✔️] [Installfest](./wsl-installfest.md)
+   * \[✔️\] [Installfest](wsl-installfest.md)
 4. Optional visual and usability upgrades for your terminal
-    * [✔️] [Upgrades](./upgrades.md)
+   * \[✔️\] [Upgrades](upgrades.md)
 5. Unit 2-4 Installfest
-    * [✔️] [Unit 2, 3, 4 Installfest](./wsl-unit234.md)
+   * \[✔️\] [Unit 2, 3, 4 Installfest](wsl-unit234.md)
+

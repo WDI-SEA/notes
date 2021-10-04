@@ -1,3 +1,5 @@
+# Custom Properties
+
 ## Custom Properties - EXPERIMENTAL!
 
 Speaking of experimental CSS properties, here is one coming down the pipeline: CSS Custom Properties add the ability to define and access variables inside your CSS. But what does it mean that it is experimental? It means that it is not actually part of the standard yet and, as a result, it will not have perfect support in all browsers. It is also subject to change as it is not finalized yet.
@@ -28,8 +30,9 @@ This is one of the most useful features of Sass, the popular CSS preprocessor. I
 
 ## Additional Topics
 
-#### CSS Custom Properties
+### CSS Custom Properties
 
-* [Custom Properties (MDN)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+* [Custom Properties \(MDN\)](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
 * [Using Custom Properties to Modify Components](https://css-tricks.com/using-custom-properties-modify-components/)
 * [It's Time to Start Using CSS Custom Properties](https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties/)
+

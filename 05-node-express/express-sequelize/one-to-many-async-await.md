@@ -1,6 +1,6 @@
-# 1:M Relationships
+# 1:M RelationshipsWith Async/Await
 
-*Updated for ECMAScript 2017 async/await and Sequelize 6*
+_Updated for ECMAScript 2017 async/await and Sequelize 6_
 
 ## Objectives
 

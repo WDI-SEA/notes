@@ -1,11 +1,14 @@
+# Object Literals and String Interpolation
+
 ## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) ES6 - Object Literals and String Interpolation
 
 ### Learning Objectives
 
-*After this lesson, you will be able to:*
-- Simplify expressions using object literals
-- Simplify expressions using template literals
-- Define imports without global variables
+_After this lesson, you will be able to:_
+
+* Simplify expressions using object literals
+* Simplify expressions using template literals
+* Define imports without global variables
 
 This is the last bit of ES6 we'll check out before doing an exercise!
 
@@ -15,12 +18,14 @@ Object literal shorthand is a simple but useful bit of syntactic sugar. If you w
 
 If we declare a variable, `price`, and set it equal to 100: `const price = 100;`
 
-We then have an object called `item`. Now, `item` also has a variable of how much that item costs, which happens to also be `price`. They are different variables (one is global, and the other is specific to the `item` object); they just happen to share the same name. So our `item` object might be:
+We then have an object called `item`. Now, `item` also has a variable of how much that item costs, which happens to also be `price`. They are different variables \(one is global, and the other is specific to the `item` object\); they just happen to share the same name. So our `item` object might be:
+
 ```javascript
 const item = {
   price: 15,
 };
 ```
+
 Now, let's say that when we initialize `item`, instead of hard-coding a number into the initialization, we want to set `price` to be whatever the global price is. This global price is also stored in a variable called `price`, right?
 
 It looks like this:
@@ -47,7 +52,6 @@ const item = {
 
 Less to write, and less to read when you come back to it. A win-win!
 
-
 ## Template literals
 
 Template literals bring us string interpolation in JavaScript. This means we can create dynamic strings with more readable syntax.
@@ -65,6 +69,7 @@ Now, using template literals, we can make this easier:
 const name = 'Mike';
 const greeting = `Hi, ${name}.`;
 ```
+
 > Note that now, we can directly refer to the variable using ${} syntax within our string.
 
 In fact, combining an arrow function with a template literal, we can do this:
@@ -109,3 +114,4 @@ And somewhere else:
 ```javascript
 import { addTwo, addThree } from './arithmetic';
 ```
+

@@ -1,4 +1,4 @@
-# Login User with Passport
+# User Login
 
 We'll need to...
 
@@ -13,7 +13,7 @@ From the [passport website](http://www.passportjs.org/)
 
 > Passport is authentication middleware for Node.js. Extremely flexible and modular, Passport can be unobtrusively dropped in to any Express-based web application.
 
-Passport has a lot of different strategies for authenticating users—github, linkedin, and more! (Passport website lists 502 different strategies!) We're using the Local strategy.
+Passport has a lot of different strategies for authenticating users—github, linkedin, and more! \(Passport website lists 502 different strategies!\) We're using the Local strategy.
 
 > This module lets you authenticate using a username and password in your Node.js applications. By plugging into Passport, local authentication can be easily and unobtrusively integrated into any application or framework that supports Connect-style middleware, including Express.
 
@@ -21,7 +21,7 @@ Passport has a lot of different strategies for authenticating users—github, li
 
 We'll use Passport in order to provide login functionality, and `passport-local` in order to provide local user authentication.
 
-```
+```text
 npm i passport passport-local
 ```
 
@@ -29,13 +29,13 @@ npm i passport passport-local
 
 Create the Passport configuration inside of the config folder. This will be a javascript file
 
-```
+```text
 touch config/ppConfig.js
 ```
 
 **config/ppConfig.js**
 
-```js
+```javascript
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const db = require('../models');
@@ -99,11 +99,11 @@ module.exports = passport;
 
 ## Initialize Passport to use our session module
 
-Now that we've created the configuration, we need to make our app *aware of its existence*. This can be done by requiring the configuration and including it as middleware.
+Now that we've created the configuration, we need to make our app _aware of its existence_. This can be done by requiring the configuration and including it as middleware.
 
 **index.js**
 
-```js
+```javascript
 // require the configuration at the top of the file
 const passport = require('./config/ppConfig');
 
@@ -112,21 +112,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 ```
 
-**IMPORTANT NOTE:** You must include the passport configuration **below your session configuration.** This ensures that Passport is aware that the session module exists. 
+**IMPORTANT NOTE:** You must include the passport configuration **below your session configuration.** This ensures that Passport is aware that the session module exists.
 
 ## Add login and logout functionality
 
 > Before continuing, verify that this test is passing
-> 
+>
 > **Auth Controller - GET /auth/login - should return a 200 response**
 
-#### Login
+### Login
 
 Luckily, all of that configuration and middleware means a straightforward login route. Let's go ahead and add the POST route for login.
 
 **controllers/auth.js**
 
-```js
+```javascript
 // require the passport configuration at the top of the file
 const passport = require('../config/ppConfig');
 
@@ -137,18 +137,18 @@ router.post('/login', passport.authenticate('local', {
 ```
 
 > This should pass the following tests
-> 
+>
 > **Auth Controller - POST /auth/login - should redirect to / on success**
-> 
+>
 > **Auth Controller - POST /auth/login - should redirect to /auth/login on failure**
 
-#### Login after Signup
+### Login after Signup
 
 Ideally, we want to already be logged in after signup. We can modify the signup route to call the `passport.authenticate` function again. Note that we'll need to call it as an IIFE, passing the request and response.
 
 **controllers/auth.js**
 
-```js
+```javascript
 router.post('/signup', (req, res) => {
   db.user.findOrCreate({
     where: {
@@ -175,13 +175,13 @@ router.post('/signup', (req, res) => {
 });
 ```
 
-#### Logout
+### Logout
 
 Including the Passport configuration in our app means that logging out is really really easy. You can now call a function attached to `req` to log out. Let's implement the final route.
 
 **controllers/auth.js**
 
-```js
+```javascript
 router.get('/logout', (req, res) => {
   req.logout();
   res.redirect('/');
@@ -189,15 +189,16 @@ router.get('/logout', (req, res) => {
 ```
 
 > This should pass the following test
-> 
+>
 > **Auth Controller - GET /auth/logout - should redirect to /**
 
 ## Login/Logout Finished
 
 Congrats, your login/logout functionality should be finished! Verify by running the tests. You should have 17 passing and only one failing.
 
-```
+```text
 npm test
 ```
 
 Now for one more section...
+

@@ -1,4 +1,4 @@
-# Creating the User
+# Create the User
 
 We'll need to...
 
@@ -12,7 +12,7 @@ We'll need to...
 
 In order to hash passwords, we'll need to install `bcrypt`.
 
-```
+```text
 npm i bcrypt
 ```
 
@@ -20,14 +20,14 @@ npm i bcrypt
 
 We can create a user model using the Sequelize CLI. Let's create a user with a name, email, and password. You can add more attributes later if you'd like.
 
-```
+```text
 sequelize model:create --name user --attributes email:string,name:string,password:string
 
 sequelize db:migrate
 ```
 
 > This should pass the following test
-> 
+>
 > **Creating a User - should create successfully**
 
 ## Validate the user's name, email, and password
@@ -44,7 +44,7 @@ In order to do this, we can use Sequelize validations. Note that by adding a `ms
 
 **models/user.js**
 
-```js
+```javascript
 {
   email: {
     type: DataTypes.STRING,
@@ -76,11 +76,11 @@ In order to do this, we can use Sequelize validations. Note that by adding a `ms
 ```
 
 > This should pass the following tests
-> 
+>
 > **Creating a User - should throw an error on invalid email addresses**
-> 
+>
 > **Creating a User - should throw an error on invalid name**
-> 
+>
 > **Creating a User - should throw an error on invalid password**
 
 ## Hash the user's password before saving
@@ -88,13 +88,13 @@ In order to do this, we can use Sequelize validations. Note that by adding a `ms
 Currently, we're saving user passwords as plain text. This is bad! Very bad!
 
 * If someone gained access to our database, they would have a collection of emails and passwords. Since most people use the same password across different accounts, this can have drastic identity and legal consequences.
-* *We the developers* shouldn't be able to see our users' passwords, for the same reasons above.
+* _We the developers_ shouldn't be able to see our users' passwords, for the same reasons above.
 
 Therefore, we need to hash the password before it ever reaches the database. We can use a `beforeCreate` hook to do this automatically on every model's creation.
 
 **models/user.js**
 
-```js
+```javascript
 // at the very top, require bcrypt
 const bcrypt = require('bcrypt');
 
@@ -116,13 +116,13 @@ module.exports = (sequelize, DataTypes) => {
   user.associate = function(models) {
     // associations can be defined here
   };
-  
+
   return user;
 };
 ```
 
 > This should pass the following test
-> 
+>
 > **Creating a User - should hash the password before save**
 
 ## Validating and Protecting the Password
@@ -136,20 +136,22 @@ In order to perform these actions, we'll create two methods that can be called o
 
 * To validate the password, we'll create an instance method called `validPassword` to accept a password as a parameter, then compare the password to the hash.
   * **Example**
-  ```js
-  user.validPassword('password'); // return true or false
-  ```
-* To hide the hash from the user object, we'll *override* an instance method called `toJSON`, which will leave the hash out of the user's JSON object.
+
+    ```javascript
+    user.validPassword('password'); // return true or false
+    ```
+* To hide the hash from the user object, we'll _override_ an instance method called `toJSON`, which will leave the hash out of the user's JSON object.
   * **Example**
-  ```js
-  user.toJSON(); // returns { name: 'Tosspot', email: 'gavin.scotsman@ga.co' }
-  ```
+
+    ```javascript
+    user.toJSON(); // returns { name: 'Tosspot', email: 'gavin.scotsman@ga.co' }
+    ```
 
 **models/user.js**
 
-```js
+```javascript
   // ...
-  
+
   user.associate = function(models) {
     // associations can be defined here
   };
@@ -171,17 +173,18 @@ In order to perform these actions, we'll create two methods that can be called o
 ```
 
 > This should pass the following tests
-> 
+>
 > **User instance methods - validPassword - should validate a correct password**
-> 
+>
 > **User instance methods - validPassword - should invalidate an invalid password**
-> 
+>
 > **User instance methods - toJSON - should return a user without a password field**
 
 ## User Finished
 
 Congrats, your user should be finished! Verify by running the user tests only. All tests should pass.
 
-```
+```text
 NODE_ENV=test node_modules/mocha/bin/mocha test/user.test.js
 ```
+

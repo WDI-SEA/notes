@@ -29,9 +29,9 @@ bcrypt.hash('myPassword', 10).then(hashedPassword=>{
 
 [More info about bcrypt module](https://www.npmjs.com/package/bcrypt)
 
-### Example: Hash the password in a sequelize hook
+## Example: Hash the password in a sequelize hook
 
-Read more about hooks [here](https://sequelize.org/master/manual/hooks.html). We want the password to be hashed before the CRUD (specifically the C in this case) happens, so use a `beforeCreate` hook to replace the password that the user entered with a hash!
+Read more about hooks [here](https://sequelize.org/master/manual/hooks.html). We want the password to be hashed before the CRUD \(specifically the C in this case\) happens, so use a `beforeCreate` hook to replace the password that the user entered with a hash!
 
 ```javascript
   user.addHook('beforeCreate', async (pendingUser, options)=>{
@@ -52,3 +52,4 @@ Read more about hooks [here](https://sequelize.org/master/manual/hooks.html). We
     pendingUser.password = hashedPassword
   })
 ```
+

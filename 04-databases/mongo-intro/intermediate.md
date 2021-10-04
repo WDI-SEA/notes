@@ -1,4 +1,4 @@
-# Mongo - Intermediate Mongo
+# Intermediate Mongo
 
 ## Lesson Objectives
 
@@ -25,13 +25,13 @@ db.employees.find(
 
 There are several comparisons we can perform
 
-- $lt (less than)
-- $lte (less than or equal to)
-- $gt (greater than)
-- $gte (greater than or equal to)
-- $ne (not equal to)
-- $exists (does the property exist on an object -- either true or false)
-- $in (does the value exist within the given array)
+* $lt \(less than\)
+* $lte \(less than or equal to\)
+* $gt \(greater than\)
+* $gte \(greater than or equal to\)
+* $ne \(not equal to\)
+* $exists \(does the property exist on an object -- either true or false\)
+* $in \(does the value exist within the given array\)
 
 If the field is an array, you can search for a match within that array
 
@@ -43,7 +43,7 @@ db.employees.find(
 )
 ```
 
-If the object you pass into `find()` has more than one attribute, it will return documents that match both criteria.  This is called an AND statement (like &&)
+If the object you pass into `find()` has more than one attribute, it will return documents that match both criteria. This is called an AND statement \(like &&\)
 
 ```javascript
 db.employees.find(
@@ -56,8 +56,7 @@ db.employees.find(
 )
 ```
 
-To find all documents that match at least one of a set of criteria, use an OR statement (like \|\|)
-
+To find all documents that match at least one of a set of criteria, use an OR statement \(like \|\|\)
 
 ```javascript
 db.employees.find(
@@ -76,7 +75,7 @@ db.employees.find(
 )
 ```
 
-To find documents that have a value that matches multiple criteria, pass an object that contains both tests.  This is similar to an AND (&&), but for one property.  If you try to do a normal AND statement, but use the same property, twice it won't work.
+To find documents that have a value that matches multiple criteria, pass an object that contains both tests. This is similar to an AND \(&&\), but for one property. If you try to do a normal AND statement, but use the same property, twice it won't work.
 
 ```javascript
 db.employees.find(
@@ -181,11 +180,11 @@ db.employees.update(
 )
 ```
 
-For more operators, look here: http://docs.mongodb.org/manual/reference/operator/update/#update-operators
+For more operators, look here: [http://docs.mongodb.org/manual/reference/operator/update/\#update-operators](http://docs.mongodb.org/manual/reference/operator/update/#update-operators)
 
 ## Explain upserts
 
-Upserts will insert a value if it doesn't exist.  If it does, it will update it.
+Upserts will insert a value if it doesn't exist. If it does, it will update it.
 
 Normal:
 
@@ -239,3 +238,4 @@ db.hits.find();
 ## Summary
 
 MongoDB is quite versatile and gives the developer a lot more freedom than SQL. What would easily break a SQL database - like suddenly removing or renaming a column - are totally fine in a Mongo database!
+

@@ -21,21 +21,23 @@ When several components in a view need to share `state`, you lift, or **hoist**,
 
 Our data will be simple - a list of fruits. The app will end up looking something like this:
 
-![Fruit filter app](./assets/filter-example.png)
+![Fruit filter app](../../.gitbook/assets/filter-example.png)
 
 When building a React app, it's important to take time to define the app's structure before you start writing code. I'm going to define the **components** and the **state** I need before I write the code.
 
 #### Components
 
-This app needs two components: 
-- A `List` component to display the list of fruit. 
-    - This component needs one piece of data: the array of fruits to display.
-- An `Input` to capture the filter value from the user.
-    - This component needs one piece of data: the current value of the filter.
+This app needs two components:
+
+* A `List` component to display the list of fruit. 
+  * This component needs one piece of data: the array of fruits to display.
+* An `Input` to capture the filter value from the user.
+  * This component needs one piece of data: the current value of the filter.
 
 #### State
 
-This app needs to keep track of changes in two items: 
+This app needs to keep track of changes in two items:
+
 * The filtered list of fruits 
 * The value of the filter
 
@@ -43,11 +45,11 @@ This app needs to keep track of changes in two items:
 
 I have two sibling components \(components at the same level of the tree/app\) that need to be aware of each other's data. Specifically, the `List` component needs to only show the fruits that match the filter value. So I need to get data from one sibling to another. Something like this:
 
-![basic data flow needed](./assets/fruit-filter-data.png)
+![basic data flow needed](../../.gitbook/assets/fruit-filter-data.png)
 
 How to achieve this, though? Using unidrectional data flow, of course! If I create a container component to hold both the filter value and the filtered list, I can hoist the `state` to the container so it's available to all the children. It will then be simple to display the `state` in the child components. The data will flow like this:
 
-![unidirectional approach](./assets/fruit-list-unidirectional.png)
+![unidirectional approach](../../.gitbook/assets/fruit-list-unidirectional.png)
 
 Now that I know the components I need, the `state` I need, and where everything needs to be, I can start writing some code.
 
@@ -143,7 +145,7 @@ class FruitContainer extends Component {
       // intialize the filter value to an empty string
       filterValue: ''
     }
-  
+
     handleFilterChange = (e) => {
       e.preventDefault()
       const filterValue = e.target.value;
@@ -156,7 +158,7 @@ class FruitContainer extends Component {
           filterValue,
       })
     }
-  
+
     render() {
       return (
         <div>
@@ -165,12 +167,13 @@ class FruitContainer extends Component {
         </div>
       )
     }
-  
+
   }
 
 
 export default FruitContainer
 ```
+
 All of the data is hoisted to the top of the tree in the container, and I pass it to the child components.
 
 Now I need to return to the children components and add the functionality to handle the data it's receiving!
@@ -192,7 +195,6 @@ class Input extends Component {
 }
 
 export default Input;
-
 ```
 
 ```jsx
@@ -212,7 +214,6 @@ class List extends Component {
 }
 
 export default List;
-
 ```
 
 ## You do: Also display the fruits that do _not_ match the filter

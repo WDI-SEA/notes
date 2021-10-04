@@ -1,12 +1,14 @@
+# Arrow Functions
+
 ## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) ES6 - Arrow Functions
 
-
 ### Learning Objectives
-*After this lesson, you will be able to:*
-- Create arrow functions
-- Create arrow functions with implicit returns
-- Describe the `this` binding
 
+_After this lesson, you will be able to:_
+
+* Create arrow functions
+* Create arrow functions with implicit returns
+* Describe the `this` binding
 
 ## Arrow Functions
 
@@ -43,6 +45,7 @@ function multiply(x, y) {
 ```
 
 With the arrow syntax, it's:
+
 ```javascript
 var multiply = (x, y) => {
   return x * y;
@@ -50,21 +53,25 @@ var multiply = (x, y) => {
 ```
 
 #### Do you remember `const`?
-Anything that was a `var` in ES6 is better practice to write as a `let` or a `const`.
-You can write functions using `const` or `let` as well. This can be helpful to know that the function's assignment later cannot change (in the case of `const`) or explicitly declared as can (in the case of `let`). Using `let` or `const` with a function is not necessary, but in some cases it's good practice (more on that later).
+
+Anything that was a `var` in ES6 is better practice to write as a `let` or a `const`. You can write functions using `const` or `let` as well. This can be helpful to know that the function's assignment later cannot change \(in the case of `const`\) or explicitly declared as can \(in the case of `let`\). Using `let` or `const` with a function is not necessary, but in some cases it's good practice \(more on that later\).
 
 So now with the arrow syntax, we had:
+
 ```javascript
 var addTwo = num => {
   return num + 2;
 }
 ```
+
 And we can simply change the `var` to a `const`.
+
 ```javascript
 const addTwo = num => {
   return num + 2;
 }
 ```
+
 Another thing to note is that if the function does nothing except a return, we can simplify it even further. All of these function declarations are valid:
 
 ```javascript
@@ -81,10 +88,10 @@ const addTwo = num => {
 // now even further simplified
 const addTwo = num => num + 2;
 ```
+
 > note that we dropped the curly braces and `return` keyword
 
 You can play with arrow functions in [this CodePen](https://codepen.io/SuperTernary/pen/qjQPzY). Remember, you can also use ES6 syntax in the Chrome dev-tools console, and your Create React App projects are transpiled with Babel, so you can use ES6 there too.
-
 
 ### Implicit return
 
@@ -93,18 +100,21 @@ Continuing a thought, the last thing we noted is that if the function does nothi
 ```javascript
 const addTwo = num => num + 2;
 ```
+
 > We dropped the curly braces and `return` keyword.
 
-If there is no block following the arguments of an arrow function (meaning nothing in `{ }` curly braces), whatever follows is the return value of the function. The `addTwo` example above simply returns the value of `num + 2`. This is called an **implicit return**.
-```js
+If there is no block following the arguments of an arrow function \(meaning nothing in `{ }` curly braces\), whatever follows is the return value of the function. The `addTwo` example above simply returns the value of `num + 2`. This is called an **implicit return**.
+
+```javascript
 const addTwo = num => num + 2;
 ```
+
 **Importantly**, we can only use implicit return for functions which only contain a `return` statement.
 
 Consider these two functions.
 
-- `addTwo` can be simplified to one line, as it's just a `return` statement.
-- `mutateNumbers` contains more than just a return statement, so we still need the curly braces.
+* `addTwo` can be simplified to one line, as it's just a `return` statement.
+* `mutateNumbers` contains more than just a return statement, so we still need the curly braces.
 
 ```javascript
 const addTwo = num => {
@@ -134,13 +144,13 @@ function lowercaseListOfWords(arrayToModify) {
 }
 ```
 
-However, using ES6, the arrow function, and implicit returns, we can make that one (albeit long!) line:
+However, using ES6, the arrow function, and implicit returns, we can make that one \(albeit long!\) line:
 
 ```javascript
 const lowercaseListOfWords = arrayToModify => arrayToModify.map(word => word.toLocaleLowerCase());
 ```
 
-**Importantly**, one gotcha to be aware of with implicit returns is that object literals must be wrapped in parentheses, so the interpreter (browser, compiler, etc.) can distinguish them from blocks. An example:
+**Importantly**, one gotcha to be aware of with implicit returns is that object literals must be wrapped in parentheses, so the interpreter \(browser, compiler, etc.\) can distinguish them from blocks. An example:
 
 ```javascript
 const isItActive = isActive => ({ active: isActive });
@@ -188,3 +198,4 @@ const eatBreakfast = pancakes => {
 ```
 
 > Check it out - the arrow function can be anywhere you declare a function!
+

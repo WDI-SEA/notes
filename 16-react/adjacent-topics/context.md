@@ -1,25 +1,28 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Context API
+# Context API
 
 ### Learning Objectives
-*After this lesson, you will be able to:*
-- Define Context and distinguish a `Context.Provider` from a `Context.Consumer`
-- Use the React Context API to pass data and functions across the Component Tree
-- Identify appropriate use cases for React Context
+
+_After this lesson, you will be able to:_
+
+* Define Context and distinguish a `Context.Provider` from a `Context.Consumer`
+* Use the React Context API to pass data and functions across the Component Tree
+* Identify appropriate use cases for React Context
 
 ## What is Context in React
 
 From the [React Docs](https://reactjs.org/docs/context.html):
->Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+> Context provides a way to pass data through the component tree without having to pass props down manually at every level.
 
 In short, the Context API gives as a method to work around prop-drilling in certain situations.
 
 We have learned that React has a uni-directonal flow of data, only passing data or functions from parent to child via props. Using `Context` allows us to use data or functions that we would consider _global_ within our Component tree without passing them through each level of a branch.
 
-
-A `Context` is composed of three parts: the definition, the Provider and the Consumer. Aptly named, the Provider will provide access to the data that we want to make available, and the Consumer will be used where we want to use the data provided. 
+A `Context` is composed of three parts: the definition, the Provider and the Consumer. Aptly named, the Provider will provide access to the data that we want to make available, and the Consumer will be used where we want to use the data provided.
 
 You may have already been using Context whether you knew it or not. React Router is an example of the Context API in use! Behind the scenes, React Router has created a Context that includes `location`, `history`, `match` and helper functions to deal with navigation. It grants access via the`<BrowserRouter />` and `<Link />` components.
-```js
+
+```javascript
 /* App.js */
 <BrowserRouter> // Context Provider
   <Router exact path='/' component={Home} />
@@ -33,20 +36,22 @@ You may have already been using Context whether you knew it or not. React Router
 <Link to='/issues'>Issues</Link>
 <Link to='/pullrequests'>Pull Requests</Link>
 ```
+
 ## Appropriate Use Cases
-- Authenticated User Data
-- Theming
-- Localization data
 
->Context is primarily used when some data needs to be accessible by many components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
+* Authenticated User Data
+* Theming
+* Localization data
 
-___
+> Context is primarily used when some data needs to be accessible by many components at different nesting levels. Apply it sparingly because it makes component reuse more difficult.
+
 ## Using Context
 
 ### Create a Context
+
 Touch a new file in `src` to house your Context code. You can define and export data and function stubs to be used by Context. When creating your context make sure that the shape of your Context data matches what you will use be using in your Context Providers and Consumers
 
-```js
+```javascript
 // ColorContext.js
 import React from 'react';
 
@@ -62,17 +67,18 @@ export const ColorContext = React.createContext({
 
 ### Context Providers
 
-Import the Context (and any data) into the Component that you intend to provide data from.
+Import the Context \(and any data\) into the Component that you intend to provide data from.
 
-```js
+```javascript
 /* App.js */
 ...
 import { ColorContext, colors } from './ColorContext';
 ...
 ```
+
 Wrap the portion of your Component tree in which you intend to use the data with a Context Provider and pass the data to it as a `value` prop.
 
-```js
+```javascript
 class App extends Component {
   constructor(props) {
     super(props)
@@ -97,10 +103,12 @@ class App extends Component {
 ```
 
 ### Context Consumers
+
 Within the child component where data should be displayed, import the Context and wrap the portion of the component with a `Context.Consumer`. Your context data will be accessible through an anonymous function.
 
 ### Accessing Context in Function Components
-```js
+
+```javascript
 /* ColorPane.jsx */
 export function ColorPane(props) {
   return(
@@ -121,7 +129,8 @@ export function ColorPane(props) {
   )
 }
 ```
-```js
+
+```javascript
 /* ColorButton.jsx */
 export function Colorbutton(props) {
   return(
@@ -130,11 +139,13 @@ export function Colorbutton(props) {
     }
   )
 }
-
 ```
+
 ### Accessing Context in Class Components
+
 Class Components offer another method of accessing Context data by assigning a context to the `Component.contextType` property. This method only works when access to a single Context is required.
-```js
+
+```javascript
 import React from 'react';
 import { ColorContext } from './ColorContext'
 
@@ -158,8 +169,10 @@ export default ColorPane;
 ```
 
 ### Accessing Multiple Contexts
+
 You can use data from multiple Contexts in the following manner
-```js
+
+```javascript
 ...
 <ColorContext.Consumer>
   { ({color}) => (
@@ -174,19 +187,19 @@ You can use data from multiple Contexts in the following manner
 </ColorContext.Consumer>
 
 ...
-
 ```
 
 ### Note on Hooks
 
-The [new Hooks API*](https://reactjs.org/docs/hooks-reference.html#usecontext) has provided a `useContext` hook to allow access to your Contexts within function components.
+The [new Hooks API\*](https://reactjs.org/docs/hooks-reference.html#usecontext) has provided a `useContext` hook to allow access to your Contexts within function components.
 
-___
 ## Alternatives to Context
-- [Component Composition Patterns](https://reactjs.org/docs/composition-vs-inheritance.html)
+
+* [Component Composition Patterns](https://reactjs.org/docs/composition-vs-inheritance.html)
 
 Containment
-```js
+
+```javascript
 // ParentContainer.jsx
 export const ParentContainer = props => {
   return(
@@ -208,9 +221,11 @@ render() {
   )
 }
 ...
- ```
-Passed 
-```js
+```
+
+Passed
+
+```javascript
 //Parent.jsx
 import React from 'react';
 import { ChildOne } from './ChildOne'
@@ -271,11 +286,10 @@ class App extends Component {
 }
 
 export default App;
-
-
 ```
 
 ## Extra Resources
 
 * Redux - [Docs](https://redux.js.org/basics/usage-with-react)
 * [Hackernoon - how to use Context API](https://hackernoon.com/how-do-i-use-react-context-3eeb879169a2)
+

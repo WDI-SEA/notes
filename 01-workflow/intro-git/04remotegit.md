@@ -1,10 +1,10 @@
-#Remote Git Repo
+# Remote Git
 
 In the previous section, we worked with a local git repo. Now, let's try working with a remote repo, and clone it to create a local repo.
 
 ## Setup for this section
 
-* Create a new repo on Github (we'll use `tacos` for ours)
+* Create a new repo on Github \(we'll use `tacos` for ours\)
 
 ## Working with Remote Repositories
 
@@ -14,7 +14,7 @@ We previously mentioned that git is a **distributed version control system**. Me
 
 If you have your own repo on Github, you'll likely want to make changes on your local computer. In order to do this, you'll want to **clone** the repository, which creates a copy of a repo. The syntax will require the SSH URL.
 
-```
+```text
 git clone <SSH URL GOES HERE>
 ```
 
@@ -24,7 +24,7 @@ Once this is done, you'll have a copy on your local machine. No need to run `git
 
 Now that you have a local copy of the repo, if any changes are made on Github, you can pull those changes down by running a pull command.
 
-```
+```text
 git pull
 ```
 
@@ -34,7 +34,7 @@ Try making a change on Github using the built-in GUI and run this command! You'l
 
 Similarly, if we make changes to our local copy of the repo, we can push those changes to Github by running a push command.
 
-```
+```text
 git push
 ```
 
@@ -42,9 +42,9 @@ Try making a change locally, add your changes, and commit your changes. Run this
 
 ## `git remote` - how git knows your remotes
 
-How does `git pull` and `git push` work? Git uses a list of *remotes* to know where to push and pull from. You can view a list of these remotes by running the remote command:
+How does `git pull` and `git push` work? Git uses a list of _remotes_ to know where to push and pull from. You can view a list of these remotes by running the remote command:
 
-```
+```text
 git remote -v
 ```
 
@@ -57,3 +57,4 @@ When we work on deliverables in WDI and in the software industry, we'll usually 
 The solution is to create a **fork** of a repo. It's kinda like a clone, but it's all done on Github and gives you ownership of the copy. You'll then make changes in this fork.
 
 Once you want to officially submit your changes, you'll perform what's called a **pull request**, which we'll demo before your first deliverable.
+

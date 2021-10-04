@@ -1,10 +1,12 @@
-## Project 3 (Group)
+# Project 3
 
-## Recent Projects (in React)
+## Project 3 \(Group\)
+
+## Recent Projects \(in React\)
 
 * [Dream State](https://dream-state-app.herokuapp.com/) - By Antonia Villa, Ashton Christie, and Jacquelyn Marcella of WDI 16
 
-## Seattle Archive (Before 2016)
+## Seattle Archive \(Before 2016\)
 
 These projects were built in Rails, with the exception of WDI SEA 03, which used Node
 
@@ -17,7 +19,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 * [Listo - Adrienne/Monsanto/Alyssa/Patrick](http://getlisto.herokuapp.com/)
   * Bored and wanna meet some strangers? Don't like people that flake out? This is the site for you.
 * [The Daily Habit - Annie/Brian/Sanda](http://thedailyhabit.herokuapp.com/)
-  * Have something you want to remember to do (or not do) every day? This site will remind you. It will also text your friends if you mess up.
+  * Have something you want to remember to do \(or not do\) every day? This site will remind you. It will also text your friends if you mess up.
 
 ### WDI SEA 02
 
@@ -28,7 +30,7 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
 * [Woolli - Riley/Ben/Sean/Greg](http://baby-book.herokuapp.com)
   * Woolli is an web application that allows you to commemorate your baby's progress between birth and the age of 5. It has two main features: it allows users to create a timeline to which they can add events and upload photos. It also allows users to measure their baby as it grows, charting its progress against national averages. The application was built in a Ruby/Rails MVC framework. It utilizes a variety of JavaScript libraries, including Chart, Timeline, Moment, and Bootstrap.
 * [FSTVL](http://fstvl.herokuapp.com/)
-  * Your personal Conference/Festival/Convention companion. A planning app to schedule events during a festival that lets you share and compare that schedule with friends. The events are populated by Host users (festival runners).
+  * Your personal Conference/Festival/Convention companion. A planning app to schedule events during a festival that lets you share and compare that schedule with friends. The events are populated by Host users \(festival runners\).
 
 ### WDI SEA 03
 
@@ -64,3 +66,4 @@ These projects were built in Rails, with the exception of WDI SEA 03, which used
   * Visualize your spending across multiple budgets
 * [Contigo - Cassie/Navya/Derek/Jonathan](https://contigo.herokuapp.com/)
   * Make ride sharing easy with by fostering community and carpooling
+

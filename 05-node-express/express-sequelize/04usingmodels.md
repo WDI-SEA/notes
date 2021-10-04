@@ -1,7 +1,6 @@
 # Using Models
 
-Just like using express and the other modules, your models must be required in order to access them in your app.
-Let's start in our index.js and add the following code:
+Just like using express and the other modules, your models must be required in order to access them in your app. Let's start in our index.js and add the following code:
 
 ```javascript
 const db = require('./models')
@@ -55,6 +54,7 @@ db.user.findOrCreate({
   process.exit()
 });
 ```
+
 Find out what "wasCreated" returns! What data type is this?
 
 ### Find All
@@ -140,3 +140,4 @@ The main callback handlers to be used are as follows.
 * `.finally` - triggered after all other callbacks. Can be used for cleanup.
 
 The important thing to remember is that all queries take time and are asynchronous, so you MUST use promises to execute code that needs to happen after the query is completed.
+

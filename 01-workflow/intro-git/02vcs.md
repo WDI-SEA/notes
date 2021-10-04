@@ -1,4 +1,4 @@
-# Version Control Systems
+# Version Control
 
 ## What is version control, and why should you care?
 
@@ -15,7 +15,7 @@ Plus it functions as a backup system, a safe place for all your work. Using a VC
 
 There are many VCS. Git and GitHub have become the VCS of choice for most software teams. Do you know other VCS?
 
-##Git vs. Github
+## Git vs. Github
 
 We'll be using a version control system called **git**. It was created in 2005 to help with developing Linux kernels, and it's now the most popular version control system today.
 
@@ -25,11 +25,11 @@ Github is not the same as git. **Github** is a social network built around git. 
 
 ### Github and Git
 
-Together, git on your *local machine* and git on *Github* form a **distributed version control system**. In other words, code can be kept track of in different places, allowing multiple people to work on code simultaneously. Let's see how this works.
+Together, git on your _local machine_ and git on _Github_ form a **distributed version control system**. In other words, code can be kept track of in different places, allowing multiple people to work on code simultaneously. Let's see how this works.
 
 ![DVCS diagram](http://git-scm.com/figures/18333fig0103-tn.png)
 
-In this diagram, we have a project on three different computers, all kept track of under git. Computers A and B are local (client) machines that have a copy of the project. The server computer is another machine that allows the clients to pull down any changes that are made to the project.
+In this diagram, we have a project on three different computers, all kept track of under git. Computers A and B are local \(client\) machines that have a copy of the project. The server computer is another machine that allows the clients to pull down any changes that are made to the project.
 
 Throughout WDI, each developer will be pulling down from a server, and that server is **Github!** Once we pull down a copy of the project, we can make changes locally, and eventually push our changes to the server.
 
@@ -37,7 +37,7 @@ Throughout WDI, each developer will be pulling down from a server, and that serv
 
 A word about folder management.
 
-Recommendation: Create "Code" folder in your home directory. This is the place for all source code that you create at GA (projects, labs, assignments). Let's talk about folder structure.
+Recommendation: Create "Code" folder in your home directory. This is the place for all source code that you create at GA \(projects, labs, assignments\). Let's talk about folder structure.
 
 Options:
 
@@ -46,3 +46,4 @@ Options:
 * A combination of both
 
 Discuss approach. What works for you? I recommend that you decide on a structure in the first week and stick to it.
+

@@ -1,6 +1,6 @@
-# N:M Relationships
+# N:M RelationshipsWith Async/Await
 
-*Updated for ECMAScript 2017 async/await and Sequelize 6*
+_Updated for ECMAScript 2017 async/await and Sequelize 6_
 
 ## Objectives
 
@@ -15,7 +15,7 @@ Enter join tables! These tables have a one to many relationship with each of the
 
 ![An er diagram featuring a many to many relationship with students and classes and a join table called enrollments](https://fmhelp.filemaker.com/help/18/fmp/en/FMP_Help/images/relational.07.06.1.png)
 
-Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `ProductOrders` or `product_orders`. (More info on [associative tables](https://en.wikipedia.org/wiki/Associative_entity)).
+Often, the naming convention is to have the join table have the names of both tables. For examples if you have products and orders, the join table will often be called `ProductOrders` or `product_orders`. \(More info on [associative tables](https://en.wikipedia.org/wiki/Associative_entity)\).
 
 ## Sequelize models
 
@@ -27,7 +27,7 @@ sequelize model:create --name toy --attributes type:string,color:string
 sequelize model:create --name pets_toys --attributes petId:integer,toyId:integer
 ```
 
-You may be noticing that this model is plural! Doesn't that break the cardinal rule that "Models are always singular!"? According to the Sequelize documentation when using a Junction Model (a model represening an join table), the model is pluralized.
+You may be noticing that this model is plural! Doesn't that break the cardinal rule that "Models are always singular!"? According to the Sequelize documentation when using a Junction Model \(a model represening an join table\), the model is pluralized.
 
 Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.html#many-to-many-relationships) and the [Sequelize BelongsToMany docs](https://sequelize.org/master/manual/creating-with-associations.html#hasmany---belongstomany-association) for more on all of the code and conventions covered in this lesson!
 
@@ -35,7 +35,7 @@ Check out the [Sequelize N:M docs](https://sequelize.org/master/manual/assocs.ht
 
 In order to associate pets to toys in a many to many fashion, you will need to update the associations on the pets and toys.
 
-Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model (in this case, `pets_toys`).
+Many to many associations use the `belongsToMany` sequelize method, which takes a second options argument. Use the `through` option to indicate the name of the join model \(in this case, `pets_toys`\).
 
 ### pet.js
 
@@ -68,7 +68,7 @@ Don't forget to migrate after adding your new associations!
 
 ### Add a unique toy to a pet.
 
-In order to add a unique toy to a pet, we need to first find (or create) a pet to associate the toy to. 
+In order to add a unique toy to a pet, we need to first find \(or create\) a pet to associate the toy to.
 
 Secondly, we must have a toy to attach to the pet, then we can associate them.
 
@@ -85,7 +85,7 @@ async function createToy() {
         userId: 1
       }
     })
-    
+
     // Second, get a reference to a toy.
     const [toy, toyCreated] = await db.toy.findOrCreate({
       where: { type: "stinky bear", color: "brown" }
@@ -103,11 +103,11 @@ async function createToy() {
 createToy()
 ```
 
-Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the pets_toys table in a `psql` shell you will need to wrap the table name within quotations i.e. "pets_toys".
+Take some time to use these helper functions to add more toys and more pets! NOTE: If you are querying the pets\_toys table in a `psql` shell you will need to wrap the table name within quotations i.e. "pets\_toys".
 
 An example of how you might use this in an express route:
 
-```js
+```javascript
 app.post('/pets/toys', async (req, res) => {
   try {
     // First, get a reference to a pet.
@@ -118,7 +118,7 @@ app.post('/pets/toys', async (req, res) => {
         userId: 1
       }
     })
-    
+
     // Second, get a reference to a toy.
     const [toy, toyCreated] = await db.toy.findOrCreate({
       where: { type: "stinky bear", color: "brown" }
@@ -126,7 +126,7 @@ app.post('/pets/toys', async (req, res) => {
 
     // Finally, use the "addModel" method to attach one model to another model.
     await pet.addToy(toy)
-    
+
     // redirect to to show the created toy
     res.redirect(`/pets/${req.body.petId}`);
   } catch (error) {
@@ -145,7 +145,7 @@ async function readToy() {
     const toy = await db.toy.findOne({
       where: { type: "stinky bear" }
     })
-    
+
     const pets = await toy.getPets()
     console.log(`${pets.length} pet(s) loves the ${toy.color, toy.type}.`);
   } catch (error) {
@@ -164,9 +164,9 @@ async function readPet() {
     const pet = await db.pet.findOne({
       where: { name: "Silly May" }
     })
-    
+
     const toys = await pet.getToys()
-    
+
     toys.forEach(toy => {
       console.log(`${pet.name} loves their ${toy.color} ${toy.type}.`);
     })
@@ -205,7 +205,7 @@ async function eagerLoad() {
 eagerLoad()
 ```
 
-If you try to use eager loading includes between two models that aren't directly related, but are linked by an intermediate model (such as finding a user and including all thier pet's toys) 
+If you try to use eager loading includes between two models that aren't directly related, but are linked by an intermediate model \(such as finding a user and including all thier pet's toys\)
 
 ```javascript
 ...
@@ -216,11 +216,9 @@ const user = await db.user.findByPk(1, {
 
 you will see this error:
 
-![user-toy-error](./user-toy-error.png)
+![user-toy-error](../../.gitbook/assets/user-toy-error.png)
 
 Never Fear! you can nest includes to query complex relationships!
-
-
 
 ```javascript
 async function readUser() {
@@ -245,5 +243,4 @@ async function readUser() {
 
 readUser()
 ```
-
 

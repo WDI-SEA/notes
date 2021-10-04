@@ -1,4 +1,4 @@
-# User Sessions
+# Sessions
 
 We'll need to...
 
@@ -9,7 +9,7 @@ In order to save whether the user is logged in or not, we'll need to create a pe
 
 ## Install express-session
 
-```
+```text
 npm i express-session
 ```
 
@@ -17,7 +17,7 @@ npm i express-session
 
 **server.js**
 
-```js
+```javascript
 // at the very top, require express-session
 const session = require('express-session');
 
@@ -32,7 +32,7 @@ const session = require('express-session');
  * saveUninitialized: If a session is new, but hasn't been changed, save it.
  * We'll set this to true.
  */
- 
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -42,10 +42,11 @@ app.use(session({
 
 **.env**
 
-```
+```text
 SESSION_SECRET=uiohjknjuhbuttslouihknj
 ```
 
 ## Session finished
 
 To verify that this session works, we'll start setting up Passport and login functionality in the next section. There are no tests associated with the sessions right now.
+

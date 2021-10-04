@@ -1,9 +1,8 @@
-# Using Models 
+# Using Models With Async/Await
 
-*Updated for ECMAScript 2017 async/await and Sequelize 6*
+_Updated for ECMAScript 2017 async/await and Sequelize 6_
 
-Just like using express and the other modules, your models must be required in order to access them in your app.
-Let's start in our index.js and add the following code:
+Just like using express and the other modules, your models must be required in order to access them in your app. Let's start in our index.js and add the following code:
 
 ```javascript
 const db = require('./models')
@@ -11,7 +10,7 @@ const db = require('./models')
 
 ## Sequelize Promises
 
-Database operations can take a little bit of time, so they return *thenable promises* that resolve when the transaction is complete. It is possible to use `.then()` syntax with *callbacks* **OR** `async/await` where you `await` queries in `async functions`. The [sequelize 6 api docs](https://sequelize.org/master/index.html) use `async/await`.
+Database operations can take a little bit of time, so they return _thenable promises_ that resolve when the transaction is complete. It is possible to use `.then()` syntax with _callbacks_ **OR** `async/await` where you `await` queries in `async functions`. The [sequelize 6 api docs](https://sequelize.org/master/index.html) use `async/await`.
 
 ### `.then()` syntax:
 
@@ -81,7 +80,7 @@ createUser()
 
 ### Read
 
-`findAll()` returns more than one instance, which is useful if you need more than one record. 
+`findAll()` returns more than one instance, which is useful if you need more than one record.
 
 FindAll query docs can be found [here](https://sequelize.org/master/manual/model-querying-basics.html#simple-select-queries)
 
@@ -98,7 +97,7 @@ async function readAllUsers() {
 readAllUsers()
 ```
 
-By supplying a `WHERE` clause as a *query options* object, you can narrow the results:
+By supplying a `WHERE` clause as a _query options_ object, you can narrow the results:
 
 ```javascript
 async function findSpecificUser() {
@@ -170,14 +169,13 @@ destroyUser()
 
 ## Sequalize Finder Methods
 
-Sequelize has some useful *finder* methods that rely on combining SQL `SELECT` queries with common useful tasks. We have already seen the `findAll()` and `findByPk()` finders.
+Sequelize has some useful _finder_ methods that rely on combining SQL `SELECT` queries with common useful tasks. We have already seen the `findAll()` and `findByPk()` finders.
 
 Finder query docs can be found [here](https://sequelize.org/master/manual/model-querying-finders.html#-code-findone--code-)
 
-
 ### Find or Create
 
-In a `findOrCreate`, the promise returns back an array, instead of a single object. The syntax shown in called *array destructuring*. You can read more about it [here at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
+In a `findOrCreate`, the promise returns back an array, instead of a single object. The syntax shown in called _array destructuring_. You can read more about it [here at MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment).
 
 The method findOrCreate can be used to check if a certain element is already existing in the database. If that is the case the method will result in a respective instance. If the element does not yet exist, it will be created with the provided attributes \(a combination of `where` and `defaults`\)
 
@@ -222,7 +220,7 @@ async function readOneUser(){
       where: {firstName: 'Taylor'}
     })
     console.log(foundUser)
-    
+
   } catch (err) {
     console.log(err)
   }
@@ -247,7 +245,7 @@ const { Op } = require("sequelize") // add me to the top with your models requir
 
 When you specify an attribute in a the where options, you substitute a hardcoded value with an operator.
 
-Using an `[Op.gt]` (greater than) operator in a findAll's options:
+Using an `[Op.gt]` \(greater than\) operator in a findAll's options:
 
 ```javascript
 async function findOldUsers() {
@@ -295,13 +293,13 @@ findUserLike()
 
 ## Oh Sequlize, You Thought of Everything
 
-There are many, many other useful methods that sequelize provides to explore in the docs: 
+There are many, many other useful methods that sequelize provides to explore in the docs:
 
 [Limiting Results](https://sequelize.org/master/manual/model-querying-basics.html#limits-and-pagination) with a `limit` key in the query options
 
 [Ordering and Grouping Results](https://sequelize.org/master/manual/model-querying-basics.html#ordering) Ordering requires an `order` key in the query options that can take an array for the value, grouping is a simple key value pair `group: 'column'`.
 
-[Utility Methods](https://sequelize.org/master/manual/model-querying-basics.html#utility-methods) such as `count` and `max` 
+[Utility Methods](https://sequelize.org/master/manual/model-querying-basics.html#utility-methods) such as `count` and `max`
 
 [Bulk create](https://sequelize.org/master/manual/model-querying-basics.html#creating-in-bulk) with an array of objects, similar seeding databases. Less good for standard usage however because `bulkCreate()` doesn't run validations the way `create()` does unless you configure it to.
 
@@ -347,3 +345,4 @@ async function complexQuery(){
 
 complexQuery()
 ```
+
