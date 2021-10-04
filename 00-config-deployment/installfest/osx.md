@@ -10,9 +10,8 @@ For the first portion of the class, we'll be working exclusively inside of the b
 
 * Slack
 * Homebrew
-* X-code
+* X-code (only if necessary)
 * Git
-* Oh my ZSH
 * **I**ntegrated **D**evelopment **E**nvironment _\(VS Code\)_
 
 #### Slack
@@ -31,7 +30,7 @@ You may be prompted to installed XCode command line tools. When prompted, click 
 
 After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
 
-#### Xcode
+#### Xcode (if prompted)
 
 We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
 
@@ -62,34 +61,11 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
-**Setting up SSH Key**
+**Setting up SSH Key (if prompted)** 
 
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
-
-#### Install Oh My ZSH
-
-Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
-
-We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-Check that you have all the requirements:
-
-* A Unix-like operating system: macOS, Linux, BSD. On Windows: WSL2 is preferred, but cygwin or msys also mostly work.
-* Zsh should be installed \(v4.3.9 or more recent is fine but we prefer 5.0.8 and newer\). If not pre-installed \(run `zsh --version` in your terminal to confirm\), follow [these instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
-* curl or wget should be installed. If not \(run `curl --version` in your terminal to confirm\), run `brew install curl`.
-* git should be installed \(we just set up our git!\)
-
-Once you have all of those, simply run the following command in your terminal:
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-If it prompts you to change your default shell to zsh, select yes! When it asks you for your password, enter your computer user password \(it wont show characters, but terminal is keeping track of your keystrokes\).
-
-Restart Terminal, and you should see a brand new and colorful command prompt!
 
 #### Install VS Code
 
@@ -248,6 +224,29 @@ iPython makes it easy to write python code in your terminal. We may not use it a
 iTerm is a tricked out version of the Terminal app that is the default command line interface for Mac. It will help with the visuals of the command line navigation, especially with ohmyZSH.
 
 [Download here](https://www.iterm2.com/)
+
+#### Install Oh My ZSH (Only if your cohort is using zsh!)
+
+Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
+
+We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+Check that you have all the requirements:
+
+* A Unix-like operating system: macOS, Linux, BSD. On Windows: WSL2 is preferred, but cygwin or msys also mostly work.
+* Zsh should be installed \(v4.3.9 or more recent is fine but we prefer 5.0.8 and newer\). If not pre-installed \(run `zsh --version` in your terminal to confirm\), follow [these instructions](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH).
+* curl or wget should be installed. If not \(run `curl --version` in your terminal to confirm\), run `brew install curl`.
+* git should be installed \(we just set up our git!\)
+
+Once you have all of those, simply run the following command in your terminal:
+
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+If it prompts you to change your default shell to zsh, select yes! When it asks you for your password, enter your computer user password \(it wont show characters, but terminal is keeping track of your keystrokes\).
+
+Restart Terminal, and you should see a brand new and colorful command prompt!
 
 #### Other Code Editor Options
 
