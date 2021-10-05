@@ -79,14 +79,6 @@ To be able to open VS Code from any directory, open the Command Palette \(Shift+
 
 Restart the terminal for the new $PATH value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.
 
-Alternatively, you can achieve this functionality by adding VS Code to your path inside your ~/.zshrc file:
-
-```bash
-export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-```
-
-Save this file and then fully restart your terminal window \(quit and restart.\)
-
 ### Part 2
 
 #### Node
