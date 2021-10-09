@@ -105,19 +105,9 @@ To finish up your installation, run this command to allow for global installatio
 sudo chown -R $USER /usr/local/lib
 ```
 
-## Sublime 3
+---
 
-We'll be running **Sublime 3**, not Sublime 2 as our text editor of choice.
-
-Install via the package manager
-
-```text
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo apt-get update
-sudo apt-get install sublime-text-installer
-```
-
-If the above does not work, try installing via Sublime's website: [http://www.sublimetext.com/3](http://www.sublimetext.com/3) Download the `.deb` file and run it to install.
+# Part 2
 
 ## Postgres
 
@@ -202,6 +192,10 @@ Should enter psql terminal and have no error.
 \q
 ```
 
+---
+
+# Part 3
+
 ## Installing MongoDB
 
 Follow the official installation instructions on MongoDB.com:
@@ -226,6 +220,20 @@ We'll be using **RoboMongo**. Install here:
 ---
 
 # Archived Instructions for Tools No Longer In Use
+
+## Sublime 3
+
+We'll be running **Sublime 3**, not Sublime 2 as our text editor of choice.
+
+Install via the package manager
+
+```text
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+```
+
+If the above does not work, try installing via Sublime's website: [http://www.sublimetext.com/3](http://www.sublimetext.com/3) Download the `.deb` file and run it to install.
 
 ## Install Oh My ZSH
 
