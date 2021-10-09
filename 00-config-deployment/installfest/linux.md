@@ -1,4 +1,8 @@
-# Linux
+# SEI Installfest: Linux
+
+---
+
+# Part 1
 
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
@@ -28,15 +32,35 @@ Here is how you change the default shell to BASH (if the default is ZSH, for exa
 
 [More on available shells for Unix systems (Linux & Mac)](https://bigstep.com/blog/top-5-linux-shells-and-how-to-install-them)
 
+## Homebrew
+
+Homebrew is a package manager that we will use to install various command line tools in our class.
+
+Visit the [homebrew website](https://brew.sh/) for install instructions.
+
+You may be prompted to installed XCode command line tools. When prompted, click and install through that, and you're homebrew installation will continue.
+
+After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
+
 ## GIT
 
-Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
+Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com).
 
-To install GIT
+If you’re on Fedora (or any closely-related RPM-based distribution, such as RHEL or CentOS), you can use dnf:
 
-```text
-sudo apt-get install git-all
+```bash
+$ sudo dnf install git-all
 ```
+
+If you’re on a Debian-based distribution, such as Ubuntu, try apt:
+
+```bash
+$ sudo apt install git-all
+For more options, there are instructions for installing on several different Unix distributions on the Git website, at https://git-scm.com/download/linux.
+```
+
+_These instructions are pulled directly from the **Installing on Linux** section of [this page](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+_
 
 #### Configuring GIT
 
@@ -49,11 +73,14 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
-#### Setting up SSH Key
+#### Setting up SSH Key (only if necessary)
 
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
+
+---
+# Part 2
 
 ## Node
 
@@ -91,24 +118,6 @@ sudo apt-get install sublime-text-installer
 ```
 
 If the above does not work, try installing via Sublime's website: [http://www.sublimetext.com/3](http://www.sublimetext.com/3) Download the `.deb` file and run it to install.
-
-## Install Oh My ZSH
-
-Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
-
-We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-To install, we will run
-
-```text
-sudo apt-get update
-sudo apt-get install git-core zsh
-chsh -s /bin/zsh
-wget --no-check-certificate http://install.ohmyz.sh -O - | sh
-sudo shutdown -r 0
-```
-
-\(the last command will restart your computer\)
 
 ## Postgres
 
@@ -213,6 +222,28 @@ Press `control-c` to stop the server.
 We'll be using **RoboMongo**. Install here:
 
 [https://robomongo.org/](https://robomongo.org/)
+
+---
+
+# Archived Instructions for Tools No Longer In Use
+
+## Install Oh My ZSH
+
+Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
+
+We'll be using a shell and configuration package called [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh)
+
+To install, we will run
+
+```text
+sudo apt-get update
+sudo apt-get install git-core zsh
+chsh -s /bin/zsh
+wget --no-check-certificate http://install.ohmyz.sh -O - | sh
+sudo shutdown -r 0
+```
+
+\(the last command will restart your computer\)
 
 ## Installing Ruby on Rails
 
