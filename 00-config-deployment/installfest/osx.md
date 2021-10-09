@@ -9,8 +9,9 @@
 For the first portion of the class, we'll be working exclusively inside of the browser. We'll be installing the following tools.
 
 * Slack
+* Bash (if necessary)
 * Homebrew
-* X-code (only if necessary)
+* X-code (if necessary)
 * Git
 * **I**ntegrated **D**evelopment **E**nvironment _\(VS Code\)_
 
@@ -19,6 +20,23 @@ For the first portion of the class, we'll be working exclusively inside of the b
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
+
+#### Bash
+
+Open the Terminal app on your mac (it's built-in). This is a **command line interface (CLI)** called a **shell**. CLIs allow us to interact directly with our computuer via lines of text. A shell, is a CLI for talking to the operating system. There are different types of shells you can use, but BASH and ZSH are currently the most popular for Unix systems (Linux and Mac). We will use [BASH](https://www.howtogeek.com/726559/what-is-the-bash-shell-and-why-is-it-so-important-to-linux/) in this class. If your Terminal is running BASH, you'll see BASH at the top of the shell window.
+
+If your mac is running any of the following operating systems, your default shell is [ZSH](https://zsh.sourceforge.io/). 
+
+* macOS Catalina – 10.15
+* macOS Big Sur – 11
+* macOS Monterey – 12
+
+Here is how you chang the default shell from ZSH to Bash:
+
+* Run `cat /etc/shells` to see a list of the available shells on your OS.
+* Run `chsh -s /bin/bash` to change the default shell to Bash.
+* Quit the Terminal app and re-open it (the whole app, not just the window).
+* Verify that the window says BASH at the top now, instead of ZSH
 
 #### Homebrew
 
