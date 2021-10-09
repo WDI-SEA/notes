@@ -1,8 +1,6 @@
-# Mac OSX
+### SEI Seattle Install Fest [Mac OSX]
 
-## Mac OSX
-
-### SEI Seattle Install Fest
+---
 
 ### PART 1
 
