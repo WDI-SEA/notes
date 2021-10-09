@@ -3,14 +3,9 @@
 For the first portion of the class, we'll be working exclusively inside of the browser and Node. We'll be installing the following tools.
 
 * Slack
+* BASH
 * Homebrew
 * Git
-* Node
-* Oh my ZSH
-* iTerm
-* Postgres.app
-* Ruby
-* Rails
 
 **TIP:** Use `CTRL+SHIFT+V` to paste into terminal
 
@@ -20,11 +15,18 @@ We will be using slack to communicate throughout the course. You should've recei
 
 [Download Slack](https://slack.com/downloads)
 
-## GArnet
+## BASH
 
-~~We will be using GArnet to manage the course. You'll be able to see a list of assigned deliverables, submissions, evaluations, and your attendance record. Your managers will give you an invite link.~~
+Open the Terminal app on your mac (it's built-in). This is a **command line interface (CLI)** called a **shell**. CLIs allow us to interact directly with our computuer via lines of text. A shell, is a CLI for talking to the operating system. There are different types of shells you can use, but BASH and ZSH are currently the most popular for Unix systems (Linux and Mac). We will use [BASH](https://www.howtogeek.com/726559/what-is-the-bash-shell-and-why-is-it-so-important-to-linux/) in this class. If your Terminal is running BASH, you'll see BASH at the top of the shell window. If it *isn't* BASH, you'll need to change the default shell to BASH.
 
-GA Seattle isn't currently using this system - your homework progress and attendance will be reported to you regularly by your instructor and is also available on request.
+Here is how you change the default shell to BASH (if the default is ZSH, for example):
+
+* Run `cat /etc/shells` to see a list of the available shells on your OS.
+* Run `chsh -s /bin/bash` to change the default shell to Bash.
+* Quit the Terminal app and re-open it (the whole app, not just the window).
+* Verify that the window says BASH at the top now, instead of ZSH
+
+[More on available shells for Unix systems (Linux & Mac)](https://bigstep.com/blog/top-5-linux-shells-and-how-to-install-them)
 
 ## GIT
 
