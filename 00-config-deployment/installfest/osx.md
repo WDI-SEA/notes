@@ -31,7 +31,7 @@ If your mac is running any of the following operating systems, your default shel
 * macOS Big Sur – 11
 * macOS Monterey – 12
 
-Here is how you chang the default shell from ZSH to Bash:
+Here is how you change the default shell to Bash:
 
 * Run `cat /etc/shells` to see a list of the available shells on your OS.
 * Run `chsh -s /bin/bash` to change the default shell to Bash.
