@@ -1,8 +1,8 @@
-### SEI Seattle Install Fest [Mac OSX]
+# SEI Seattle Install Fest [Mac OSX]
 
 ---
 
-### PART 1
+## PART 1
 
 For the first portion of the class, we'll be working exclusively inside of the browser. We'll be installing the following tools.
 
@@ -13,13 +13,13 @@ For the first portion of the class, we'll be working exclusively inside of the b
 * Git
 * **I**ntegrated **D**evelopment **E**nvironment _\(VS Code\)_
 
-#### Slack
+### Slack
 
 We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
 
 [Download Slack](https://slack.com/downloads)
 
-#### Bash
+### Bash
 
 Open the Terminal app on your mac (it's built-in). This is a **command line interface (CLI)** called a **shell**. CLIs allow us to interact directly with our computuer via lines of text. A shell, is a CLI for talking to the operating system. There are different types of shells you can use, but BASH and ZSH are currently the most popular for Unix systems (Linux and Mac). We will use [BASH](https://www.howtogeek.com/726559/what-is-the-bash-shell-and-why-is-it-so-important-to-linux/) in this class. If your Terminal is running BASH, you'll see BASH at the top of the shell window.
 
@@ -38,7 +38,7 @@ Here is how you change the default shell to Bash:
 
 [More on available shells for Unix systems (Linux & Mac)](https://bigstep.com/blog/top-5-linux-shells-and-how-to-install-them)
 
-#### Homebrew
+### Homebrew
 
 Homebrew is a package manager that we will use to install various command line tools in our class.
 
@@ -48,7 +48,7 @@ You may be prompted to installed XCode command line tools. When prompted, click 
 
 After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
 
-#### Xcode (if prompted)
+### Xcode (if prompted)
 
 We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
 
@@ -58,7 +58,7 @@ xcode-select --install
 
 If you need to, you can install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
-#### GIT
+### GIT
 
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
 
@@ -85,7 +85,7 @@ You might find your self having to re-authenticate GIT every time you work on yo
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
-#### Install VS Code
+### VS Code
 
 Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
 
@@ -97,9 +97,11 @@ To be able to open VS Code from any directory, open the Command Palette \(Shift+
 
 Restart the terminal for the new $PATH value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.
 
-### Part 2
+---
 
-#### Node
+## Part 2
+
+### Node
 
 To install Node
 
@@ -122,7 +124,7 @@ To finish up your installation, run this command to allow for global installatio
 sudo chown -R $USER /usr/local/lib
 ```
 
-#### Postgres
+### Postgres
 
 **Postgres.app**
 
@@ -142,9 +144,11 @@ Save the file and either restart your terminal or write `source ~/.zshrc` to app
 /Applications/Postgres.app/Contents/Versions/9.5/bin/psql
 ```
 
-### Part 3
+---
 
-#### Installing MongoDB \(Updated 2/2021\)
+## Part 3
+
+### Installing MongoDB \(Updated 2/2021\)
 
 **Notes:** The name of the free version of MongoDB has changed to `mongodb-community` as of November 2019. Also, the Catalina version of MacOS \(version 10.15\) disallows folders being created at the root of the file system so you must create your MongoDB data folder inside your home folder
 
@@ -186,9 +190,11 @@ To stop the background process, you'll need to connect to your `admin` database 
 > exit
 ```
 
-### Part 4
+---
 
-#### Installing Python 3
+## Part 4
+
+### Installing Python 3
 
 Brew is also used to install Python 3. \(Python 2 is already installed on your Mac.\) To install Python 3 without errors, we first need to create a couple directories and change them to be owned by us:
 
@@ -227,15 +233,17 @@ pip3 install ipython
 
 iPython makes it easy to write python code in your terminal. We may not use it a huge amount but it is handy to have around.
 
-### Optional Tools
+---
 
-#### iTerm
+## Optional Tools
+
+### iTerm
 
 iTerm is a tricked out version of the Terminal app that is the default command line interface for Mac. It will help with the visuals of the command line navigation, especially with ohmyZSH.
 
 [Download here](https://www.iterm2.com/)
 
-#### Install Oh My ZSH (Only if your cohort is using zsh!)
+### Install Oh My ZSH (Only if your cohort is using zsh!)
 
 Oh my ZSH?!!! We will be tricking out commandline with another shell. A shell is an interface into our computer, and we will be using a lot to run commands.
 
