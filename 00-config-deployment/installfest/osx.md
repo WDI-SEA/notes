@@ -38,6 +38,8 @@ Here is how you chang the default shell from ZSH to Bash:
 * Quit the Terminal app and re-open it (the whole app, not just the window).
 * Verify that the window says BASH at the top now, instead of ZSH
 
+[More on available shells for Unix systems (Linux & Mac)](https://bigstep.com/blog/top-5-linux-shells-and-how-to-install-them)
+
 #### Homebrew
 
 Homebrew is a package manager that we will use to install various command line tools in our class.
