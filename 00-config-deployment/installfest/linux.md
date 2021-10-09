@@ -79,6 +79,22 @@ You might find your self having to re-authenticate GIT every time you work on yo
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
+## VS Code
+
+Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
+
+Download and install VS Code from [here](https://code.visualstudio.com/download).
+
+Set VS Code as your default text editor using [these instructions](https://code.visualstudio.com/docs/setup/linux#_setting-vs-code-as-the-default-text-editor).
+
+_The following set of instructions has not been verified on Linux - we will update this after installfest gives us this data._
+
+You're all good to go now, but for ease of use, let's make it so we can automatically open up any file or project in VS Code, from our command line. The following instructions are taken from [these docs](https://code.visualstudio.com/docs/setup/mac). 
+
+To be able to open VS Code from any directory, open the Command Palette \(Shift+⌘+P\) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command \(it will be the first one that comes up\).
+
+Restart the terminal for the new $PATH value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.
+
 ---
 # Part 2
 
