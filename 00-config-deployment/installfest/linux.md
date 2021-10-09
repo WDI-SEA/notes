@@ -1,4 +1,4 @@
-# SEI Installfest: Linux
+# SEI Installfest [Linux]
 
 ---
 
