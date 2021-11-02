@@ -69,6 +69,12 @@ How do we get our `count` function to run? Make this happen.
 
 Functions aren't the only things we can export! Try adding some other types of data to your module.
 
+### Mini-Lab: Make your own Module
+
+* Create a node module that stores an array of your favorite foods
+* Import that module into your index.js
+* Write code in your index.js so when you run your app, it loops through the array, printing all of your favorite foods to the console
+
 ### Further Reading
 
 To view a practical example of importing and exporting modules, read [this article](http://www.sitepoint.com/understanding-module-exports-exports-node-js/). You'll see that we can export multiple functions by assigning `module.exports` to an object. This is a pattern that we'll see frequently in Node.
@@ -105,7 +111,7 @@ For more on the `fs` module, see [w3schools](https://www.w3schools.com/nodejs/re
 
 Try adding to your story using `fs.write()` (try [these docs](https://node.readthedocs.io/en/latest/api/fs/#fswritefilefilename-data-options-callback) for reference).
 
-### Exercise: HTTP core module
+### Mini-Lab: HTTP core module
 
 In this excercise, you will make a Hello World app from scratch by using the the HTTP core module to spin up an HTTP server.
 
