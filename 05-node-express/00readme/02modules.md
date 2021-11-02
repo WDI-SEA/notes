@@ -88,7 +88,7 @@ Core modules just need to be imported using the `require` function.
 Write the following code to your entry point file:
 
 ```javascript
-var fs = require('fs');
+const fs = require('fs');
 
 fs.readFile('story.txt', 'utf8', function(err, data){
     if(err) {
