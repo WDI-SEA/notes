@@ -101,9 +101,9 @@ fs.readFile('story.txt', 'utf8', function(err, data){
 
 Run `index.js` to read your story in the terminal!
 
-For more on the `fs` module, see [w3schools](https://www.w3schools.com/nodejs/ref_fs.asp).
+For more on the `fs` module, see [w3schools](https://www.w3schools.com/nodejs/ref_fs.asp) or others.
 
-Try adding to your story using `fs.write()`.
+Try adding to your story using `fs.write()` (try [these docs](https://node.readthedocs.io/en/latest/api/fs/#fswritefilefilename-data-options-callback) for reference).
 
 ### Exercise: HTTP core module
 
