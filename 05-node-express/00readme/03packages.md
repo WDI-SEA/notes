@@ -16,7 +16,7 @@ Because developers are awesome, there are hundreds of thousands of already-writt
 
 NPM is the largest open-source software registry in the world. It includes a website, a registry of Node Packages, and a command line interface that allows us to easily incorporate packages into our programs.
 
-Check out this [NPM Intro Video](https://www.youtube.com/watch?v=x03fjb2VlGY)
+Check out this [NPM Intro Video](https://www.youtube.com/watch?v=pa4dc480Apo&list=PLQso55XhxkgBMeiYmFEHzz1axDUBjTLC6)
 
 The NPM CLI makes incorporating a node package into your program fairly easy, but you can refer to [this playlist](https://www.youtube.com/watch?v=pa4dc480Apo&list=PLQso55XhxkgBMeiYmFEHzz1axDUBjTLC6) if you ever get lost. It includes a whole series of videos that demonstrate the fundamentals of using NPM.
 
