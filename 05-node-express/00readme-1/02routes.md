@@ -10,7 +10,7 @@ Let's look at a more complex example. Go to reddit.com and search for "cute pupp
 
 Let's break this down:
 
-* Base URL \(consists of the protocol \(https\) and the domain \(www.reddit.com\)\):
+* Base URL \(consists of the protocol \(https\) and the domain \(www.reddit.com\):
 
   [_https://www.reddit.com_](https://www.reddit.com)
 
@@ -22,7 +22,7 @@ Let's break this down:
 
   _?q=cute%20puppies_
 
-In this situation, the URL pattern would look something like "/search". When the request arrived in our route handler function, we would have access to the query string key-value pairs as part of the `request` object. More on this a bit later...
+In this situation, the URL pattern would look something like "/search". When the request arrived in our route handler function (the callback in a route), we would have access to the query string key-value pairs as part of the `request` object. More on this a bit later...
 
 URL Patterns will become clearer as we get into some examples.
 
