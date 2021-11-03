@@ -4,7 +4,7 @@ _Express is a light-weight, web application framework for writing RESTful APIs i
 
 We'll get to the _RESTful API_ part soon, but for now, think of Express as a Node Package that gives us some extra tools for creating a web application using Node.
 
-Let's create our first Node/Express app!
+Let's create our first Node/Express app! First, we must create a Node application, exactly as we have been doing. Then, we install [Express](https://expressjs.com/) using NPM.
 
 ## Our first Express App
 
@@ -18,7 +18,7 @@ mkdir hello-express
 
 ```bash
 cd hello-express
-npm init
+npm init -y
 ```
 
 ### 3. Create the entry point file
@@ -27,7 +27,7 @@ npm init
 touch index.js
 ```
 
-### 4. Install Express
+### 4. Install Express *~NEW STEP~*
 
 ```bash
 npm i express
