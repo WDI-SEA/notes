@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-The URL pattern '/' simply denotes the base URL or root of the app. This is almost always the directory where you initialized npm and git but can be different when you deploy it to a platform service.
+The URL pattern '/' simply denotes the base URL or root of the app.
 
 The last line of code in our program, `app.listen(8000)` tells our app to listen to port 8000. This is the actual "place" in the network layers of our operating system where the request will come in. After this starts, the full base URL of our app will be [http://localhost:8000](http://localhost:8000).
 
@@ -79,7 +79,24 @@ const hello = (req, res) => {
 app.get('/', hello);
 ```
 
-By design, the express `get()` function will pass two arguments into the callback function: \(1\) the request object and \(2\) the response object. That is why we define a callback function with two parameters.
+By design, the express `get()` function will pass two arguments into the callback function:
+* the request object 
+* the response object 
+
+That is why we define a callback function with two parameters.
+
+## Anatamy of an Express Route
+
+```
+[express instance].[HTTP verb]([url pattern], [callback])
+```
+**And the callback looks like this:**
+```
+([request obj], [response obj]) => {
+    // handle data here, if needed
+    // call a method from the response object here
+}
+```
 
 ## The Request and Response Objects
 
