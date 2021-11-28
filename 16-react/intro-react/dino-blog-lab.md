@@ -26,7 +26,7 @@ function App() {
   return (
 ```
 
-4. Render a  `Home` component inside `App.js` in place of the original app content (you can leave the main `App` div). Feed each of the values from your post object to the Home components as props. For now, only include one of the comments, `comments[0]`.
+4. Render a `Post` component inside `App.js` in place of the original app content (you can leave the main `App` div). Feed each of the values from your post object to the Home components as props. For now, only include one of the comments, `comments[0]`.
 ```jsx
   return (
     <div className="App">
@@ -40,7 +40,7 @@ function App() {
   )
 ```
 
-5. Create your **Home** component! You decide how you want to display the title, author, body, and comment, or you can use the screenshot in the Solution section below as inspiration. Make sure to import the component into `App.js`.
+5. Create your **Post** component! You decide how you want to display the title, author, body, and comment, or you can use the screenshot in the Solution section below as inspiration. Make sure to import the component into `App.js`.
 
 
 ## Solution
