@@ -4,8 +4,8 @@
 
 Let's have some practice creating a React component from scratch. How about a blog post?
 
-1. Change directories back into the main directory where you want to keep your code.
-2. Referring to everything we've done up until now, create a new project using `create-react-app`. If you need to refresh your memory, refer to the Initial Setup section or view the official [`create-react-app` Github repository](https://github.com/facebookincubator/create-react-app).
+1. Change directories back into the main directory where you want to keep your lab code.
+2. Referring to everything we've done up until now, create a new project using `create-react-app`. If you need to refresh your memory, refer to the Initial [Setup section](https://gasei.gitbook.io/sei/16-react/intro-react/setup) or view the official [React docs](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app).
 
    > Note: If you are running something else on port 3000 - like a Node app or another React app, you may get prompted to use 3001 or specify a new port. You can do this or you can kill the process that's already running.
 
