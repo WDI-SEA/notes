@@ -4,7 +4,7 @@ Let's build something small to reinforce what you've learned so far. We're going
 
 We'll build a simple website that shows title and runtime information about the original Lord of the Rings Trilogy.
 
-Specifically, at the end of this lesson, your solution will look like this: ![Lord of the Rings movie info](https://github.com/WDI-SEA/notes/tree/5537c491fcc61eb363b9c34cc82a02076abf9fc7/16-react/images/lotr.png)
+Specifically, at the end of this lesson, your solution will look like this: ![Lord of the Rings movie info](https://imgur.com/crZunko.png)
 
 ### Setup
 
