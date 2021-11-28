@@ -49,8 +49,9 @@ If you get an error when running `npm start` that says `Error: error:0308010C:di
 to the following:
 
 ```json
-"start": "react-scripts --openssl-legacy-provider start"
+"start": "react-scripts --openssl-legacy-provider start",
 ```
+(See [this stack overflow](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported) post for more.)
 
 ## Stop / Catch Up / Investigate
 
