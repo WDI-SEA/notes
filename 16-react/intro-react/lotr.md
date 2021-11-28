@@ -44,71 +44,19 @@ class Movie extends Component {
 export default Movie
 ```
 
-or, we could write it as a functional component, like so:
-
-```javascript
-import React from 'react'
-
-const Movie = () => {
-   return (
-     // code goes here!
-   )
-}
-
-export default Movie
-```
-
 Let's add some JSX to the render function so this component will be visible in our application. Let's keep the JSX simple for now, and we'll make it more complex once we're sure it works.
 
 Remember, our goal is to display the movie title and runtime information.
 
-Let's add one `<h1>` for the movie title, and a `<p>` for the runtime. Remember, the JSX of each component in React ultimately must descend from just one parent element. Wrap the `<h1>` and `<p>` in a `<div>`.
+Let's add one `<h1>` for the movie title, and a `<p>` for the runtime. Remember, the JSX of each component in React ultimately must descend from just one parent element. Wrap the `<h1>` and `<p>` in a [React fragment](https://reactjs.org/docs/fragments.html#short-syntax).
 
 The JSX will look like this:
 
 ```markup
-<div>
+<>
   <h1>The Lord of the Rings: A Trilogy</h1>
   <p>4h 37min</p>
-</div>
-```
-
-Add this JSX to the component so that it's returned from the `render()` method.
-
-**src/Movie.js**
-
-```javascript
-import React, { Component } from 'react';
-
-class Movie extends Component {
-  render() {
-    return (
-      <div>
-        <h1>The Lord of the Rings: A Trilogy</h1>
-        <p>4h 37min</p>
-      </div>
-    )
-  }
-}
-
-export default Movie
-```
-
-so what does it look like as a functional component? I'm so glad you asked!
-
-```javascript
-import React from 'react'
-
-const Movie = () => {
-   return (
-      <div>
-         <h1>The Lord of the Rings: A Trilogy</h1>
-         <p>4h 37min</p>
-      </div>
-   )
-}
-
-export default Movie
+</>
 ```
 
 ### Viewing the Component
@@ -117,29 +65,16 @@ Let's make this component appear on the page. One great thing about using `creat
 
 Open `src/App.js`.
 
-Add our `<Movie />` component in place of the `<a>` tag just after the paragraph. Go back to the app and see if it appears.
+Erase all the JSX that is _inside of the header element_ in `App.js`. We're going to borrow the styling from the default code, but replace the content. In the now-empty header element, add a `<Movie />` component.
 
-### Dealing with Errors
+### Don't forget to import the component to the file in which you want to use it!
 
-Uh oh. There's an error.
-
-```text
-Failed to compile
-./src/App.js
-  Line 15:  'Movie' is not defined  react/jsx-no-undef
-```
-
-`'Movie'` is not defined? Ah.
-
-One does not simply refer to components in React. In our `src/App.js`, we're saying "Display what's returned from the `Movie` component." However - we haven't told `src/Apps.js` where to find the `Movie` component! We must import a component before using it.
-
-Add this import statement with the other imports at the top of the `src/App.js` file.
+Check your terminal. _Movie not defined, eh?_ That means the component hasn't been imported to this file yet!
 
 ```text
 import Movie from './Movie';
 ```
-
-Now you should see the page without the error message, and it should have the JSX from the Movie component.
+After adding the above code to the top lines of the file, you should see the page without the error message, and it should have the JSX from the Movie component.
 
 The entire `App.js` should look like this:
 
@@ -170,32 +105,7 @@ class App extends Component {
 export default App;
 ```
 
-or, if you're following along building a functional component, it will look like:
-
-```javascript
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Movie from './Movie';
-
-const App = () => {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <Movie />
-        </header>
-      </div>
-    );
-}
-
-export default App;
-```
-
-### Passing Information via Properties
+### Passing Information via Properties (Props)
 
 We need to make our Movie component accept information so we can use it to display different titles and runtimes. In the `src/App.js` file, add `title`, `hours`, and `minutes` props to the `<Movie>` tag. We'll be able to read the value of these props from inside the component. You can name props pretty much anything you want - but it's good practice to be descriptive!
 
@@ -203,7 +113,7 @@ We need to make our Movie component accept information so we can use it to displ
 <Movie title="The Fellowship of the Ring" hours="2" minutes="58" />
 ```
 
-We'll be able to read the value of these props from inside the component. You can name props pretty much anything you want - but it's good practice to be descriptive!
+### Reading the value of these props from inside the component. 
 
 React gathers all of the props we added to the call to `<Movie />` and makes them each available through the `this.props` object. This means that inside the `Movie` component, we can now access the values of props through `this.props.title`, `this.props.hours` and `this.props.minutes`. Remember, we use curly braces `{ }` to display the value of something.
 
@@ -222,40 +132,17 @@ The `render()` function ends up looking like this:
 **src/Movie.js**
 
 ```javascript
-import React, { Component } from 'react';
-
-class Movie extends Component {
-    render() {
-        return(
-            <div>
-                <h1>The Lord of the Rings: {this.props.title}</h1>
-                <p>{this.props.hours}h {this.props.minutes}min</p>
-            </div>
-        )
-    }
+render() {
+    return(
+        <div>
+            <h1>The Lord of the Rings: {this.props.title}</h1>
+            <p>{this.props.hours}h {this.props.minutes}min</p>
+        </div>
+    )
 }
-
-export default Movie;
 ```
 
-or, as functional:
-
-```javascript
-import React from 'react'
-
-const Movie = (props) => {
-  return(
-    <div>
-      <h1>The Lord of the Rings: {props.title}</h1>
-      <p>{props.hours}h {props.minutes}min</p>
-    </div>
-  )
-}
-
-export default Movie
-```
-
-Refresh the page and make sure everything works correctly.
+Make sure everything is working correctly in the browser.
 
 ### Reusing the Component
 
