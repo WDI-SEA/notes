@@ -39,6 +39,22 @@ After running `$ npm start`, you can view the app at `http://localhost:3000`
 
 > Note: If you ever need to stop the server, you can hit `ctrl-c` in the terminal window.
 
+#### Troubleshooting: 
+
+If you get an error when running `npm start` that says `Error: error:0308010C:digital envelope routines::unsupported`, you may be able to resolve the issue by changing the start script in your `package.json` from
+
+```json
+"start": "react-scripts start",
+```
+to the following:
+
+```json
+"start": "react-scripts --openssl-legacy-provider start"
+```
+
+## Stop / Catch Up / Investigate
+
+
 You'll notice the web page for our app automatically refreshes every time we save a file in the directory. This is an awesome feature of `create-react-app`!
 
 You can look in the directory and see the structure that `create-react-app` provides for us. It looks like this:
@@ -57,8 +73,6 @@ You can look in the directory and see the structure that `create-react-app` prov
     ├── index.js
     └── logo.svg
 ```
-
-## Stop / Catch Up / Investigate
 
 Take some time and look at what's been generated. Specifically pay attention to `src/App.js` and `src/index.js`
 
