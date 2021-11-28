@@ -47,7 +47,7 @@ function App() {
 
 Here's what the solution might look like:
 
-![Solution for Project](https://res.cloudinary.com/briezh/image/upload/v1556226300/props_solution_wawthy.png)
+![Solution for Project](https://i.imgur.com/FyRkYHw.png)
 
 ## Going forward
 
