@@ -30,11 +30,11 @@ function App() {
 ```jsx
   return (
     <div className="App">
-      <Home 
+      <Post 
         title={post.title} 
         author={post.author}  
         body={post.body}
-        comments={comments[0]}
+        comments={comments}
       />
     </div>
   )
