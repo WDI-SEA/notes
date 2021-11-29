@@ -1,4 +1,4 @@
-# Lab: LotR
+# Lab: Lord of the Props
 
 Let's build something small to reinforce what you've learned so far. We're going to practice creating components and passing information into them.
 
