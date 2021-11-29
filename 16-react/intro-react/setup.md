@@ -51,6 +51,12 @@ to the following:
 ```json
 "start": "react-scripts --openssl-legacy-provider start",
 ```
+_**If that worked:**_ run the following command in your terminal to fix it for all future instances:
+
+```bash
+export NODE_OPTIONS=--openssl-legacy-provider
+```
+
 (See [this stack overflow](https://stackoverflow.com/questions/69692842/error-message-error0308010cdigital-envelope-routinesunsupported) post for more.)
 
 ## Stop / Catch Up / Investigate
