@@ -14,6 +14,15 @@ This lab will provide some practice doing the following:
 
 - Create a new react app called `nested-students`
 
+## Plan
+We're going to use react to display information about students based on a given array of those students. This will be the final result:
+
+![End Result](https://res.cloudinary.com/doc2wnnmb/image/upload/v1638206056/Screen_Shot_2021-11-29_at_9.10.35_AM_a2z6bc.png)
+
+Here is our component diagram:
+
+![Component Diagram](https://res.cloudinary.com/doc2wnnmb/image/upload/v1638206204/Screen_Shot_2021-11-29_at_9.08.12_AM_hv12qu.png)
+
 ## Minimum Requirements
 
 **The layout and styling of the markup is left up to your discretion.**
