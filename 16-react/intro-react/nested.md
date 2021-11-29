@@ -27,6 +27,10 @@ To solve this problem, we will:
 1. Create a generic `Comment` component that receives the comment content as a prop.
 2. **nest** an instance of a Comment component within the `Post` component _for each_ comment in the `comments` prop array.
 
+Refer back to this diagram as needed:
+
+![component and content diagram](https://res.cloudinary.com/doc2wnnmb/image/upload/v1638206990/Screen_Shot_2021-11-29_at_9.29.01_AM_jakjnl.png)
+
 ## Modularize Comments: Nest Comment components inside of Post components
 
 In your Dino Blog code, create a `Comment` component:
