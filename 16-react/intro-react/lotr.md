@@ -6,6 +6,10 @@ We'll build a simple website that shows title and runtime information about the 
 
 Specifically, at the end of this lesson, your solution will look like this: ![Lord of the Rings movie info](https://imgur.com/crZunko.png)
 
+Before you start **ANY** React project, make sure you _plan out your components_ (and their data values like props!):
+
+![Lord of the Rings App Component Diagram](https://i.imgur.com/Wl2dY0H.png)
+
 ### Setup
 
 Create a new react app called `lord-of-the-rings`:
