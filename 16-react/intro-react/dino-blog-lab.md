@@ -4,6 +4,10 @@
 
 Let's have some practice creating a React component from scratch. How about a blog post?
 
+Here's our end game:
+
+![](https://res.cloudinary.com/doc2wnnmb/image/upload/v1638206990/Screen_Shot_2021-11-29_at_9.29.01_AM_jakjnl.png)
+
 1. Change directories back into the main directory where you want to keep your lab code.
 2. Referring to everything we've done up until now, create a new project using `create-react-app` and call it `dino-blog`. If you need to refresh your memory, refer to the Initial [Setup section](https://gasei.gitbook.io/sei/16-react/intro-react/setup) or view the official [React docs](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app).
 
@@ -41,13 +45,6 @@ function App() {
 ```
 
 5. Create your **Post** component! You decide how you want to display the title, author, body, and comment, or you can use the screenshot in the Solution section below as inspiration. Make sure to import the component into `App.js`.
-
-
-## Solution
-
-Here's what the solution might look like:
-
-![Solution for Project](https://i.imgur.com/FyRkYHw.png)
 
 ## Going forward
 
