@@ -60,7 +60,7 @@ import Comment from './Comment.js';
 Change your Post JSX to render a Comment component instead of directly rendering a paragraph.  Make sure you send through the `content` prop that the `Comment` component class needs:
 
 ```javascript
-<Comment content={this.props.comments} />
+<Comment content={this.props.comments[0]} />
 ```
 
 Let's reflect on what just happened. We rendered a component _inside another component_. Technically, we just **nested** components. Very much like how we imported `Post` into `App.js` and rendered a Post inside `App`, we've imported `Comment` from `Comment.js` into `Post.js` and rendered a Comment. **APP>POST>COMMENT**
@@ -71,29 +71,27 @@ Let's reflect on what just happened. We rendered a component _inside another com
 
 #### Here's how to nest a dynamic number of components inside another:
 
-1. Create a variable _**inside the Post render, but outside the return**_ called `allComments`. This will be an array of _**Comment components**_
-2. Use `map` to generate a new array that holds Comment _components_ instead of just the comment content:
+1. Use `map` to generate a new array called `allComments` that holds Comment _components_ for each of the comments, instead of just the comment content. Do this _**inside the render but above the return**_.
+2. Render `allComments` in Post, where we want the comments to appear.
 
 
-We can also simply pass a variable as a parameter. For example, we could pass the whole `comments` array with `<Comment body={comments} />`. We can also just write a JavaScript expression if we put it inside brackets. For example, if I had an object inside my `App.js`, each row of the object could individually call the `Comment` component.
-
-
-
-> Why is this variable declared in the `render` method? Because this calls the `Comment` component, which will render UI within it. The `render` method is where all UI goes!
-
-We could call then call this object inside our `return` JSX with `{allComments}`, which would then call all three of those &lt;`Comment />` statements:
-
-```markup
-<div>
-  <h1>{this.props.title}</h1>
-  <p>by {this.props.author}</p>
-  <div>
-    <p>{this.props.body}</p>
-  </div>
-  <h3>Comments:</h3>
-  {allComments}
-</div>
+```jsx
+class Post extends Component {
+    render() {
+        let allComments = this.props.comments.map((c)=>{
+            return <Comment content={c} />
+        })
+        return (
+            <>
+                <h1>{this.props.title}</h1>
+                <h2>{this.props.author}</h2>
+                <p>{this.props.body}</p>
+                <hr></hr>
+                <h3>Comments:</h3>
+                {allComments}
+            </>
+        )
+    }
+}
 ```
-
-* _Note: We could have put all of our code in one file, but it's a good practice to break components out into different files to help practice separation of concerns. The only downside is that we have to be extra conscious of remembering to **export / import** each component to the file where it's rendered._
 
