@@ -338,4 +338,4 @@ increaseMood = () => {
 * [Understanding `this.setState`](https://medium.com/@baphemot/understanding-reactjs-setstate-a4640451865b)
 * [Understanding `setState`](https://css-tricks.com/understanding-react-setstate/)
 * [React State FAQs](https://reactjs.org/docs/faq-state.html)
-
+* [What should & shouldn't go in state_](https://facebook.github.io/react/docs/state-and-lifecycle.html). 
