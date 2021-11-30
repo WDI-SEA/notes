@@ -12,16 +12,16 @@ Like usual, use `create-react-app` to make a new project.
 
 ## Step 1
 
-Start by creating a single component file in the `src` directory, and name it `Calculator.js`. In this file, create your `Calculator` class. Use the `App.js` as an example of how to create a basic component. Add the following JSX to your Calculator's `render()` function:
+Create a Calculator component. Add the following JSX to your Calculator's `render()` function:
 
 ```jsx
 <div className="container">
   <h1>Add with React!</h1>
 
   <div className="add">
-    <input type="text" />
+    <input type="number" />
     <span>+</span>
-    <input type="text" />
+    <input type="number" />
     <button>=</button>
     <h3>Addition results go here!</h3>
   </div>
@@ -32,7 +32,7 @@ Start by creating a single component file in the `src` directory, and name it `C
 
 Set up the initial state of your component. What state attributes will you need to track? What values should those state items start with? Where is that state displayed in the browser?
 
-> Hint: You will only need one state. That one state can hold as many key-value pairs as you need!
+> Remember: You will only need one state object. That one state can hold as many key-value pairs as you need!
 
 ## Step 3
 
@@ -41,7 +41,6 @@ You will want to trigger a function when the values in your textboxes change. Yo
 ```jsx
 <input type="number"
   name="num1"
-  placeholder="Enter your first number"
   value={this.state.num1}
   onChange={ (e) => this.setNum(e, 'num1') }
 />
