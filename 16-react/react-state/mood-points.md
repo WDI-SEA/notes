@@ -1,6 +1,4 @@
-# Code-Along: Mood Points
-
-## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) React State: Mood Points
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) React State: Mood Points
 
 ## Learning Objectives
 
@@ -31,16 +29,15 @@ In React, we are able to handle data in one of two ways:
 * Like props, which we access through the `this.props` object, we can access state using `this.state`.
 * As state has the ability to be changed, it is not quite as straightforward as props. However, once you get the hang of it, you'll be able to build really interactive apps!
 
+> Try it yourself alongside [this video](https://generalassembly.wistia.com/medias/3ldc3tnyv0) in [this codepen](https://codepen.io/susir/pen/GWONLp).
+
 ![](https://github.com/WDI-SEA/notes/tree/5537c491fcc61eb363b9c34cc82a02076abf9fc7/16-react/react-state/images/moodtracker-directories.png)
 
-**Talking Points:**
-
-* Let's use `create-react-app` to create a new `MoodTracker` component. Our `MoodTracker` will display a mood, and eventually a user will click a button to indicate on a scale of 1–10 how strongly they are feeling that mood.
-* In order to get started with our new `MoodTracker` component, let's first create a new file called `src/MoodTracker.js`.
-* Run the command `touch src/MoodTracker.js`
-* Your directory structure should now look something like what's shown here.
-
 ## MoodTracker
+
+* Use `create-react-app` to create a new `mood-tracker` app.
+* Create a `MoodTracker` component and render it inside `App`.
+
 
 ```jsx
 // ...
@@ -61,15 +58,11 @@ class App extends Component {
 export default App;
 ```
 
-**Directions:**
-
-* After creating the file, let's make sure to import our new component into `App.js` and put the component in our `render()` method.
-
 ## Initial State
 
 `constructor`
 
-When working with values that are dynamic and changing, it's a good idea to provide an initial value for the changing pieces of data. Just like classes in other programming languages, a good way to make initial values is by creating a `constructor`. Constructors say, "When you create an instance of a class, do this." Without explicitly defining a constructor, our components will use the default constructor inherited from the `Component` class. That's why we didn't need a constructor before — we weren't doing anything differently than the normal default for every component.
+When working with values that are dynamic and changing, you should always provide an initial value for the changing pieces of data. In React, you can do this in the class constructor. Constructors say, "When you create an instance of a class, do this." Without explicitly defining a constructor, our components will use the default constructor inherited from the `Component` class. That's why we didn't need a constructor before — we weren't doing anything differently than the normal default for every component.
 
 ## Initial State
 
@@ -97,7 +90,9 @@ export default MoodTracker;
 
 The first thing we always put in a constructor is a call to `super()`, which says, "You should still do the default initialization for this class."
 
-Finally, we will add `this.state = {}`. This sets the initial values for our data, which are changeable.
+Finally, we will add `this.state = {}`. This sets the initial values for our data, which are changeable. Like props, state is an object that belongs to the class.
+
+React has undergone a *lot* of updates. One of them is a simplified notation for setting initial state. Now, instead of writing out the whole constructor, you can simply assign a new object to state, like so:
 
 ## React Components \(in React v16+\)
 
@@ -119,11 +114,13 @@ class MoodTracker extends Component {
 export default MoodTracker;
 ```
 
-Even though you may see the `constructor` syntax used in some online resources, the best practices for how to write the initial state for components has changed in recent years. Instead, we can create a component and directly define the starting state without ever having to use a constructor as of React 16.
-
 Much cleaner, right? Throughout the course, we're going to use this newer way to define state, but you may run into the `constructor` syntax during your own research as this was the way it was done prior to the release of React version 16.
 
-## React Components in 2018
+### Initialize a moodPoints state
+
+Now that we've built the skeleton for our component, let's define our state's initial values. We can do this by giving a value to the `state` object. Inside of that object, we can define any variables we'd like.
+
+We'll start our state with just one key-value pair. The key or label will be `moodPoints`, and the initial value for the `moodPoints` key will be `1`.
 
 ```javascript
 class MoodTracker extends Component {
@@ -139,15 +136,9 @@ class MoodTracker extends Component {
 }
 ```
 
-Now that we've built the skeleton for our component, let's define our state's initial values. We can do this by giving a value to the `state` object. Inside of that object, we can define any variables we'd like.
-
-We'll start our state with just one key-value pair. The key or label will be `moodPoints`, and the initial value for the `moodPoints` key will be `1`.
-
 ## MoodTracker
 
-```markup
-<p>You are this happy: {this.state.moodPoints}</p>
-```
+Add some JSX to your `MoodTracker` component so it displays the `moodPoints` state!
 
 ```javascript
 return (
@@ -157,12 +148,6 @@ return (
   </div>
 )
 ```
-
-> Check it out! If you browse to `http://localhost:3000`, your state will be displayed.
-
-**Next Steps**:
-
-Next, let's make sure we display that information to the user. In your `MoodTracker.js` `render()` method, we'll let the user know how many mood points they have by adding in the line seen here.
 
 Note how similar this looks to using props. All React components include both `this.props` and `this.state`. All together, the code inside `render()` for our `MoodTracker.js` can now look as seen here:
 
@@ -183,11 +168,7 @@ class MoodTracker extends Component {
 }
 ```
 
-**Tips:**
-
-* Don't spend much time on the `constructor` syntax. It may help those who are familiar with other OOP patterns, but it is not commonly used now.
-* As you code along, make sure students `import` and `export` properly. Move the new component to a `components` directory if it will help with your organization.
-* Now that you have a value in your `state` object, this can be a good opportunity to show how React Developer Tools can update state to help with debugging.
+> Check it out! If you browse to `http://localhost:3000`, your state will be displayed.
 
 ## Changing State
 
