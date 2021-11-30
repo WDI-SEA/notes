@@ -6,7 +6,7 @@
 
 **Deliverable:**
 
-Let's implement state in our blog by making the `body` or `content` a mutable value.
+Let's implement state in our blog by making the `body` a mutable value.
 
 ## Steps to Achieve
 
@@ -16,12 +16,12 @@ Let's implement state in our blog by making the `body` or `content` a mutable va
 
 **Some things to note:**
 
-1. Set an initial state for our `App` component. The `state` object should have an attribute called `body`. Remove the prop we set for `App` and put it into the initial state instead. The value of `this.state.body` should be `Check out this body property!`.
-2. Modify `App`'s `render()` method so that it uses the `body` from state, not props.
+1. Set an initial state for our `Post` component. The `state` object should have an attribute called `body`. The value of `this.state.body` should be `Check out this body property!`.
+2. Modify `Post`'s `render()` method so that it uses the `body` from state, not props.
 3. Create a `changeBody()` method inside `App` that updates `body` based on a user's input.
    * You should use `setState` somewhere in this method.
    * How can you get user input? Keep it simple and start with `prompt`.
-4. Add a button to `App`'s `render()` method that triggers `changeBody()`.
+4. Add a button to `Post`'s `render()` method that triggers `changeBody()`.
 
 ## Solution Image
 
