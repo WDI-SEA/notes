@@ -25,6 +25,8 @@ Our data will be simple - a list of fruits. The app will end up looking somethin
 
 When building a React app, it's important to take time to define the app's structure before you start writing code. I'm going to define the **components** and the **state** I need before I write the code.
 
+![Fruit Filter data and component structure](https://res.cloudinary.com/doc2wnnmb/image/upload/v1638294756/Screen_Shot_2021-11-30_at_9.51.38_AM_vnsabh.png)
+
 #### Components
 
 This app needs two components:
