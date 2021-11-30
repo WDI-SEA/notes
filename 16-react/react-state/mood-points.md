@@ -152,20 +152,15 @@ return (
 Note how similar this looks to using props. All React components include both `this.props` and `this.state`. All together, the code inside `render()` for our `MoodTracker.js` can now look as seen here:
 
 ```javascript
-class MoodTracker extends Component {
-  // Define an initial state.
-  state = {
-    moodPoints: 1 // initialize this.state.moodPoints to be 1
-  };
-
-  // What should the component render?
-  render() {
-    <div>
-      <p>On a scale of 1-10</p>
-      <p>You are this happy: {this.state.moodPoints}</p>
-    </div>
-  }
-}
+    // What should the component render?
+    render() {
+        return (
+            <div>
+            <p>On a scale of 1-10</p>
+            <p>You are this happy: {this.state.moodPoints}</p>
+            </div>
+        )
+    }
 ```
 
 > Check it out! If you browse to `http://localhost:3000`, your state will be displayed.
@@ -174,25 +169,21 @@ class MoodTracker extends Component {
 
 #### Events in JavaScript
 
+The whole point of **state** is to capture/represent states of the application. When would the state of an app change? Usually a change of state is how an app responds to a user interaction (or other browser event, like the arrival of data).
+
 * Now that we have an initial value up on the page, let's learn how to change this value and make it more dynamic.
 * Step 1 in this process is to trigger an **event** — when the user interacts with the page in any way.
 * Think back to using regular JavaScript or jQuery. What is the purpose of an event listener? Can you show me how to create a click event in JavaScript?
 
-**Tips:**
+## Synthetic Events
 
-* If students do not have much experience with events, make sure to talk through the `event` keyword. A good way to explore the `event` keyword is to examine the object when adding this event listener to the DOM.
+**Events** in React are not the same as the normal events we're used to!
 
-```javascript
-  document.body.addEventListener('keypress', (e) => console.log(e))
-```
+From the [React Docs](https://reactjs.org/docs/events.html):
 
-* After running that code, type a letter into the DOM and you should see the `event` object. Explore this with students so that they can see things like `e.target.value` and `e.key`.
+_Your event handlers will be passed instances of SyntheticEvent, a cross-browser wrapper around the browser’s native event. It has the same interface as the browser’s native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers._
 
-&lt;/aside&gt;
-
-## Events in React
-
-**Talking Points:**
+Take a look at some of the other supported synthetic events!
 
 * Event listeners in React look very similar to adding events through HTML attributes. There are two main differences when working with React's synthetic events:
 * 1. React events are named using camelCase instead of lowercase:
@@ -202,19 +193,7 @@ class MoodTracker extends Component {
      * `<button onClick={this.doSomething}>Click Me</button>` \(React\)
      * `<button onclick="doSomething()">Click Me</button>` \(HTML\)
 
-Additionally, there are _tons_ of events available to React elements.
-
-**Things to Note:**
-
-* Event listeners in React look very similar to adding events through HTML attributes. There are two main differences when working with React's synthetic events:
-* 1. React events are named using camelCase instead of lowercase:
-     * `onClick` \(React\) vs. `onclick` \(HTML\)
-     * `onSubmit` \(React\) vs. `onsubmit` \(HTML\)
-* 1. In JSX, you pass the actual function in as the handler, rather than a string:
-     * `<button onClick={this.doSomething}>Click Me</button>` \(React\)
-     * `<button onclick="doSomething()">Click Me</button>` \(HTML\)
-
-## Turn and Talk: Synthetic Events
+### Pause to research: Synthetic Events
 
 Check out the [React documentation](https://reactjs.org/docs/events.html#supported-events) on supported events.
 
@@ -223,50 +202,29 @@ Think about the following:
 1. What events could you see yourself using often?
 2. What sort of events sound niche but interesting to play around with?
 
-**Note - Make sure to highlight the following commonly used events:**
-
-* `onClick`
-* `onChange`
-* `onSubmit`
-* `onKeyPress`
-* `onMouseOver`
-
-## Code-Along, Continued: Setting State
+## Code-Along, Continued: Button to Increase Mood
 
 We will create a button that the user can click, which will increase their mood by `1`.
 
-### Check Your Understanding
+### Helper Method
 
-> If we were just working with regular old JavaScript, what could we use to increase the value of a variable by `1`?
->
-> How would we add or remove an item from an array?
->
-> How about changing the value of a key-value pair in an object?
+First, we need to define a helper method that we will call when the button is clicked. Unless you have a good reason **not** to, _**always**_ use arrow functions within Reach components (otherwise, you may end up with a binding issue that requires additional code to rememdy).
 
-## Increase Mood
+Helper functions go above the render method and below the state object.
 
-```javascript
-increaseMood = () => {
-  this.setState({
-    moodPoints: this.state.moodPoints + 1
-  });
-};
+```jsx
+    // helper methods
+    increaseMood = () => {
+        console.log('Increasing mood!')
+    };
 ```
 
-Unfortunately, changing the value of `this.state` isn't quite as straightforward as something like `this.state.moodPoints++`. Instead, when we want to update a value in React, we will use a method called `this.setState()`. This method helps React update only certain parts of the DOM, resulting in a much faster website!
+### Trigger the Synthetic Event
 
-First, we will create a method to increase the mood. Above the `render()` method, add the method seen here.
-
-> ES6 update: We are going to be using arrow functions often in React. Check out [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) for more info.
->
-> Note that we call `this.setState` to change the state.
-
-## Finishing Increase Mood
+Now we need to add a button to our JSX that calls the helper method when it is clicked:
 
 ```javascript
 render () {
-  // Remember: This can only return one top-level element.
-
   return (
     <div>
       <p>You are this happy: {this.state.moodPoints}</p>
@@ -276,48 +234,57 @@ render () {
 }
 ```
 
-Now, we'll create the button to trigger calling this function. The button will be displayed to the user, so we'll add it to the `render()` function. When the user clicks it, we'll call the `increaseMood()` function.
-
 Why did we write `onClick={this.increaseMood}` rather than `onClick={this.increaseMood()}`?
 
 > More details on [function calls versus function references](https://stackoverflow.com/questions/15886272/what-is-the-difference-between-a-function-call-and-function-reference).
 
-## Mood Tracker
+**Test it!** See if you get the correct message in the console when you click the button.
 
-All together, your `App.js` file now looks like this:
+### Actually Change State
+
+Changing the value of `this.state` isn't quite as straightforward as something like `this.state.moodPoints++`. Instead, when we want to update a value in React, we will use a method called `this.setState()`. This method helps React update only certain parts of the DOM, resulting in a much faster website!
 
 ```javascript
-// Bring in React and Component from React.
-import React, { Component } from "react";
+increaseMood = () => {
+  this.setState({
+    moodPoints: this.state.moodPoints + 1
+  });
+};
+```
 
-// Define our MoodTracker component.
+## Mood Tracker
+
+All together, your `MoodTracker.js` file now looks like this:
+
+```javascript
+import React, { Component } from 'react'
+ 
 class MoodTracker extends Component {
-  state = {
-    moodPoints: 0 // Initialize this.state.moodPoints to be 0.
-  };
+    // Define an initial state.
+    state = {
+        moodPoints: 1 // initialize this.state.moodPoints to be 1
+    };
 
-  // Increase moodPoints by 1 in this.state.
-  increaseMood = () => {
-    this.setState({
-      moodPoints: this.state.moodPoints + 1
-    });
-  };
+    // helper methods
+    increaseMood = () => {
+        this.setState({
+          moodPoints: this.state.moodPoints + 1
+        });
+    };
 
-  // What should the component render?
-  render() {
-    // Make sure to return some UI.
-
-    return (
-      <div>
-        <p>On a scale of 1-10</p>
-        <p>You are this happy: {this.state.moodPoints}</p>
-        <button onClick={this.increaseMood}>Cheer up!</button>
-      </div>
-    );
-  }
+    // What should the component render?
+    render() {
+        return (
+            <div>
+                <p>On a scale of 1-10</p>
+                <p>You are this happy: {this.state.moodPoints}</p>
+                <button onClick={this.increaseMood}>Cheer up!</button>
+            </div>
+        )
+    }
 }
 
-export default MoodTracker;
+export default MoodTracker
 ```
 
 > Check it out! If you browse to `http://localhost:3000`, your button now changes the state whenever it is clicked.
