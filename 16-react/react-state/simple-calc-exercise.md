@@ -15,17 +15,25 @@ Like usual, use `create-react-app` to make a new project.
 Create a Calculator component. Add the following JSX to your Calculator's `render()` function:
 
 ```jsx
-<div className="container">
-  <h1>Add with React!</h1>
+            <div className="caclulator">
+                <h1>Add with React!</h1>
 
-  <div className="add">
-    <input type="number" />
-    <span>+</span>
-    <input type="number" />
-    <button>=</button>
-    <h3>Addition results go here!</h3>
-  </div>
-</div>
+                <form onSubmit={this.calculate}>
+                    <input type="number" 
+                        name="num1"
+                        value={this.state.num1}
+                        onChange={this.setNum}
+                    />
+                    <span>+</span>
+                    <input type="number" 
+                        name="num2"
+                        value={this.state.num2}
+                        onChange={this.setNum}
+                    />
+                    <button>=</button>
+                    <h3>{this.state.sum}</h3>
+                </form>
+            </div>
 ```
 
 ## Step 2
@@ -42,15 +50,15 @@ You will want to trigger a function when the values in your textboxes change. Yo
 <input type="number"
   name="num1"
   value={this.state.num1}
-  onChange={ (e) => this.setNum(e, 'num1') }
+  onChange={this.setNum}
 />
 ```
 
 I want to store this number as part of my state. Let's say I decided to call it `num1`. I could set my state like so:
 
 ```text
-setNum = (e, num) => {
-  this.setState({ [num]: e.target.value});
+setNum = (e) => {
+  this.setState({ [e.target.name]: e.target.value});
 }
 ```
 
