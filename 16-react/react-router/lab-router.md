@@ -60,5 +60,5 @@ _Fun Note:_ There's no reason you can't change the CSS, if you'd like! The CSS f
 
 Your solution should look something like as follows:
 
-![Solution for Project](https://github.com/WDI-SEA/react_router_global/blob/master/assets/router-solution.png)
+![Solution for Project](https://github.com/WDI-SEA/react_router_global/blob/master/assets/dino-blog-router.png)
 
