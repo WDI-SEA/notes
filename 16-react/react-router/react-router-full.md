@@ -2,6 +2,8 @@
 
 ## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) React Router
 
+***NOTE: THIS LESSON IS WRITTEN IN REACT ROUTER VERSION 5, UPDATE COMING SOON***
+
 #### Learning Objectives
 
 _After this code-along section, you will be able to:_
@@ -61,7 +63,7 @@ In the below codealong, we will walk through building this out together.
 
 You can see a live working copy of the site [here](https://dental-spa.vercel.app/).
 
-You are going to follow along, so that you have a locally working React Router application! However, if you'd like at any point to refer to the finished code, you can see all of the final code [here](https://github.com/009Kings/Dental-SPA).
+You are going to follow along, so that you have a locally working React Router application! However, if you'd like at any point to refer to the finished code, you can see all of the final code [here](https://github.com/WDI-SEA/v6-dental-spa).
 
 ### In Your Terminal
 
