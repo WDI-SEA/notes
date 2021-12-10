@@ -21,9 +21,7 @@ A forking workflow looks something like this. The idea is that...
 
 Let's practice this.
 
-## Forking Workflow Practice
-
-Practice the forking workflow in groups of 3-4.
+## How to pull (lol) it off
 
 ### Setting up the Repo
 
