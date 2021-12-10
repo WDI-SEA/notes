@@ -58,9 +58,20 @@ Practice making changes by creating new branches, switching to them, and making 
 
 ### Sample Practice App
 
-Work in your project groups to create a group home page. The homepage should have a main page showing a picture for each person in the team with their name. Additionally, the practice app should have a page for each person on the team. Clicking on someone's name or picture should lead to a page with a short bio for the team member.
+Work in your project groups.
 
-Work as a team to decide how the project will be set up. Will you create a simple static HTML page, or will you create a node or app? Everyone will work on their own bio pages individually. Each team member should add their own link to their bio page on the home page. Practice branching, merging and resolving merge conflicts.
+* Git Manager: Create a new react app. The App component should show your team name.
+* Non-manager members: 
+   * Fork and clone the main repo.
+   * Set the upstream to be your Manager's main repo. 
+   * Add a component to the /src folder titled with your name. The component should render your name and a photo of you (or a short bio).
+   * When you've finished writing your component, commit your changes, push to your fork, and make a pull request.
+* Git Manager:
+   * Review and merge each pull request.
+   * Pull down the newly merged code to your local repo.
+   * Edit App.js to render all the new components underneath your team name. Commit and push to the main remote repo.
+   * When you're finished merging and editting, notify you're teammates!
+* Non-manager members: When your Manager tells you it's ready, pull from the upstream to get the new changes!
 
 ### Merging Changes
 
