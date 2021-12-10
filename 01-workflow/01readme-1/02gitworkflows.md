@@ -12,7 +12,7 @@ We'll be focusing our time on the Forking Workflow. We've actually been using th
 
 A forking workflow looks something like this. The idea is that...
 
-1. One person acts as the **git master** and creates the main repo. He/she also manages the code that's merged into the repo.
+1. One person acts as the **git manager** and creates the main repo. He/she also manages the code that's merged into the repo.
 2. Everyone else **forks** the main repo so that they have a copy of it. This copy is **isolated** from the main repo.
 3. In the fork, work is done in branches known as **feature branches** until the feature is finished.
 4. Once the feature is finished, you'll want to do what's called an **upstream pull.** This will allow any changes from the main repo to be reflect in your fork. Assuming everyone works in separate branches, this should not create any merge conflicts.
@@ -27,7 +27,7 @@ Practice the forking workflow in groups of 3-4.
 
 ### Setting up the Repo
 
-* Choose one person to be the **git master**
+* Choose one person to be the **git manager**
   * This person should create a new repository. Let's call it `forking-test`
   * Once the repository is created, clone it to your computer
 * Once the repo is created by the git master, the other group members should get a link to the new repo and **fork it.**
@@ -37,17 +37,17 @@ Practice the forking workflow in groups of 3-4.
 
 Try running `git remote -v`. This will be a list of **remote** repositories. By default, `origin` is the remote of your fork on Github. We're going to add another remote to reference the main repo, so if there are any changes, they can be pulled from the main repo into the fork.
 
-* Group members other than the git master should follow these steps
-  * Go back to the main repo \(not the fork\) and copy the SSH link
+* All group members ***except the git manager*** should follow these steps
+  * Go back to the main repo \(not the fork\) and copy the HTTP link
   * `cd` into your cloned fork
-  * Add the remote by running in the terminal \(pasting the SSH link in lieu of the one provided\):
+  * Add the remote by running in the terminal \(pasting the HTTP link in lieu of the one provided\):
 
 ```text
 git remote add upstream git@github.com:gitmasterusername/forking-test.git
 ```
 
 * Testing the upstreams
-  * Have the git master create a change in the main repo on the `master` branch. Add the change, commit it, and push it to Github
+  * **Git Manager:** create a change in the main repo on the `main` branch. Add the change, commit it, and push it to Github.
   * Once the git master has pushed changes, group members should try running `git pull upstream master`
 
 If successful, group members should receive the change in their forks.
@@ -60,7 +60,7 @@ Practice making changes by creating new branches, switching to them, and making 
 
 Work in your project groups to create a group home page. The homepage should have a main page showing a picture for each person in the team with their name. Additionally, the practice app should have a page for each person on the team. Clicking on someone's name or picture should lead to a page with a short bio for the team member.
 
-Work as a team to decide how the project will be set up. Will you create a simple static HTML page, or will you create a node app, or will you use Ruby on Rails? Everyone will work on their own bio pages individually. Each team member should add their own link to their bio page on the home page. Practice branching, merging and resolving merge conflicts.
+Work as a team to decide how the project will be set up. Will you create a simple static HTML page, or will you create a node or app? Everyone will work on their own bio pages individually. Each team member should add their own link to their bio page on the home page. Practice branching, merging and resolving merge conflicts.
 
 ### Merging Changes
 
@@ -76,7 +76,7 @@ You may come across problems when working with git, such as merge conflicts and 
 
 ![XKCD Git](http://imgs.xkcd.com/comics/git.png)
 
-Indeed, git may take a lifetime to "master", but the only true way to master git is to use it. Here are some resources if you need help, or would like to learn about advanced tools beyond branching and rebasing.
+Indeed, it may take a whole lifetime to become a git pro, but the only true way to wrangle git flows into your bones is to use it. Here are some resources if you need help, or would like to learn about advanced tools beyond branching and rebasing.
 
 * [https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials)
 * [http://pcottle.github.io/learnGitBranching](http://pcottle.github.io/learnGitBranching)
