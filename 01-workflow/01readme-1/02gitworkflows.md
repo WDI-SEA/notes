@@ -12,8 +12,8 @@ We'll be focusing our time on the Forking Workflow. We've actually been using th
 
 A forking workflow looks something like this. The idea is that...
 
-1. One person acts as the **git manager** and creates the main repo. He/she also manages the code that's merged into the repo.
-2. Everyone else **forks** the main repo so that they have a copy of it. This copy is **isolated** from the main repo.
+1. One person acts as the **git manager** and creates the main repo. They also manage the code that's merged into the repo.
+2. Everyone else **forks** the main repo so that they have a copy of it.
 3. In the fork, work is done in branches known as **feature branches** until the feature is finished.
 4. Once the feature is finished, you'll want to do what's called an **upstream pull.** This will allow any changes from the main repo to be reflect in your fork. Assuming everyone works in separate branches, this should not create any merge conflicts.
 5. Once the upstream pull is finished, you can push your changes to the Github fork, and then create a pull request. This will allow the git master to merge the changes.
