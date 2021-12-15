@@ -63,7 +63,7 @@ Always use `python3`. Always.
 
 ```text
 python  --version         2.7.16
-python3 --version         3.9.2
+python3 --version         3.10.1
 ```
 
 #### Verify pip3
@@ -79,7 +79,7 @@ pip3 --version
 Should show this:
 
 ```text
-pip 21.0.1 from /usr/local/lib/python3.9/site-packages/pip (python 3.9)
+pip 21.2.4 from /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/pip (python 3.10)
 ```
 
 #### Install iPython
@@ -91,7 +91,7 @@ pip3 install ipython
 Verify the version:
 
 ```text
-ipython3 --version        7.20.0
+ipython3 --version        7.30.1
 ```
 
 Start `ipython` and verify it uses Python 3 by default:
@@ -100,14 +100,14 @@ Start `ipython` and verify it uses Python 3 by default:
 ipython
 ```
 
-We're looking for something like **Python 3.9.2** at the beginning of the first line here when IPython starts up:
+We're looking for something like **Python 3.10.1** at the beginning of the first line here when IPython starts up:
 
 ```text
-Python 3.9.2 (default, Feb 19 2021, 21:58:43) 
+Python 3.10.1 (v3.10.1:2cd268a3a9, Dec  6 2021, 14:28:59) [Clang 13.0.0 (clang-1300.0.29.3)]
 Type 'copyright', 'credits' or 'license' for more information
-IPython 7.20.0 -- An enhanced Interactive Python. Type '?' for help.
+IPython 7.30.1 -- An enhanced Interactive Python. Type '?' for help.
 
-In [1]:
+In [1]: 
 ```
 
 `ipython` and `ipython3` are both legitimate commands. If `ipython` looks like it's using Python 2 then run `ipython3` to be explicit.
