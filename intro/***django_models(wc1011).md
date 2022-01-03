@@ -1,3 +1,6 @@
+
+Django refers to the ORM functions available as its [database API](https://docs.djangoproject.com/en/2.1/topics/db/queries/). Additional documentation can be [found here](https://docs.djangoproject.com/en/2.1/ref/models/).
+
 #### Performing CRUD in a Python Interactive Shell
 
 After creating a new Model, you can take it for a test drive using a Python shell that loads the Django environment:
