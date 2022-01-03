@@ -749,3 +749,5 @@ Because your completed Finch Collector app will be fairly comprehensive and be a
 [Django Template Docs](https://docs.djangoproject.com/en/3.0/ref/templates/builtins/)
 
 [Django Static Files](https://docs.djangoproject.com/en/3.0/howto/static-files/)
+
+Kenneth Bushman 07/29/2020
