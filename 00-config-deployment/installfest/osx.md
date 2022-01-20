@@ -2,7 +2,7 @@
 
 ---
 
-## PART 1
+## Unit 1
 
 For the first portion of the class, we'll be working exclusively inside of the browser. We'll be installing the following tools.
 
@@ -19,32 +19,19 @@ We will be using slack to communicate throughout the course. You should've recei
 
 [Download Slack](https://slack.com/downloads)
 
-### Bash
-
-Open the Terminal app on your mac (it's built-in). This is a **command line interface (CLI)** called a **shell**. CLIs allow us to interact directly with our computuer via lines of text. A shell, is a CLI for talking to the operating system. There are different types of shells you can use, but BASH and ZSH are currently the most popular for Unix systems (Linux and Mac). We will use [BASH](https://www.howtogeek.com/726559/what-is-the-bash-shell-and-why-is-it-so-important-to-linux/) in this class. If your Terminal is running BASH, you'll see BASH at the top of the shell window.
-
-If your mac is running any of the following operating systems, your default shell is [ZSH](https://zsh.sourceforge.io/). 
-
-* macOS Catalina – 10.15
-* macOS Big Sur – 11
-* macOS Monterey – 12
-
-Here is how you change the default shell to Bash:
-
-* Run `cat /etc/shells` to see a list of the available shells on your OS.
-* Run `chsh -s /bin/bash` to change the default shell to Bash.
-* Quit the Terminal app and re-open it (the whole app, not just the window).
-* Verify that the window says BASH at the top now, instead of ZSH
-
-[More on available shells for Unix systems (Linux & Mac)](https://bigstep.com/blog/top-5-linux-shells-and-how-to-install-them)
 
 ### Homebrew
 
-Homebrew is a package manager that we will use to install various command line tools in our class.
+Homebrew is a command line interface package manager that we will use to install various development tools in our class.
 
-Visit the [homebrew website](https://brew.sh/) for install instructions.
+Open up your terminal app and paste the following command into it to install homebrew:
 
-You may be prompted to installed XCode command line tools. When prompted, click and install through that, and you're homebrew installation will continue.
+```text
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+If you need to, you can visit the [homebrew website](https://brew.sh/) for more details.
+
+You may be prompted to install XCode command line tools. When prompted, click yes and your homebrew installation will continue.
 
 After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
 
@@ -58,14 +45,64 @@ xcode-select --install
 
 If you need to, you can install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
+### zsh
+
+A shell is a text interface into our computer, and we will be using a lot to run commands.
+
+Zshell is the defualt mac shell these days, but if you don't have it (or aren't sure) you can install it with the command:
+
+```text
+brew install zsh
+```
+
+Don't worry, if homebrew noticed you already have it installed running this command won't cause any problems.
+
+If it prompts you to change your default shell to zsh, select yes! When it asks you for your password, enter your computer user password \(it wont show up, but iTerm is keeping track of your keystrokes\).
+
+If you are not asked about changing your shell, and you still have a `$` at the beginning of your prompt(meaning your shell is still bash), run the following command and then enter your password: 
+
+```text
+chsh -s /bin/zsh
+```
+
+You can check to see if it worked with this command:
+
+```text
+echo $SHELL
+```
+
+### oh-my-zsh
+
+Oh my ZSH?!!! We will be tricking out commandline even further with [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh). iTerm2 and zsh give you all the functionality your heart can desire, but oh-my-zsh is the real life of the party. It is used to easily configure the look and feel of your command line.
+
+Copy and past the following command into your terminal to install oh-my-zsh:
+
+```text
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+Restart your terminal, and you should see a brand new and colorful command prompt.
+
 ### GIT
 
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
 
-To install GIT
+We will be installing a version of git from homebrew.
 
 ```text
 brew install git
+```
+
+after git is installed run the following command to check your git version:
+
+```text
+git --version
+```
+
+If it is anything less than 2.30.0, run the following command to get the latest version:
+
+```text
+brew upgrade git
 ```
 
 **Configuring GIT**
@@ -85,17 +122,19 @@ You might find your self having to re-authenticate GIT every time you work on yo
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
 
-### VS Code
+### Install VS Code
 
 Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
 
-Download and install VS Code from [here](https://code.visualstudio.com/download)
+Run the following command to install vscode with homebrew:
 
-You're all good to go now, but for ease of use, let's make it so we can automatically open up any file or project in VS Code, from our command line. The following instructions are taken from [these docs](https://code.visualstudio.com/docs/setup/mac). If you're on a windows or linux, see the left-side menu to switch to the instructions for your machine.
+```text
+brew install --cask visual-studio-code
+```
 
-To be able to open VS Code from any directory, open the Command Palette \(Shift+⌘+P\) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command \(it will be the first one that comes up\).
+vscode will appear in your applications folder when the installation is completed 
 
-Restart the terminal for the new $PATH value to take effect. You'll be able to type 'code .' in any folder to start editing files in that folder.
+You can also download and install VS Code from [here](https://code.visualstudio.com/download)
 
 ---
 
@@ -473,4 +512,3 @@ rvm use X.X --default
 This does the same as the above command, but additionally sets this version of Ruby as the default for any new shells you might use.
 
 Refer to [RVM documentation](https://rvm.io/) for any further RVM questions.
-
