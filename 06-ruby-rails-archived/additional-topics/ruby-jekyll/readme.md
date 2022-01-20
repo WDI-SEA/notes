@@ -1,13 +1,13 @@
-#Static Sites with Jekyll
+# Static Sites with Jekyll
 
-##Objectives
+## Objectives
 
 * Identify and apply different frameworks to different problems
 * Compare and contrast full-stack web applications with static site generators
 * Identify the various components that are incorporated by Jekyll
 * Use Jekyll to create a portfolio/blog
 
-##Choosing Frameworks
+## Choosing Frameworks
 
 So far, we've utilized various different frontend and backend frameworks. Why so many? Why can't there be just one?
 
@@ -27,7 +27,7 @@ We'll be using **Jekyll** to create a static portfolio/blog. Jekyll uses **Markd
 
 Markdown -> Liquid (templating) + HTML + CSS + JS -> HTML pages
 
-##Setting up and Using Jekyll
+##S etting up and Using Jekyll
 
 [Jekyll Home Page](http://jekyllrb.com/)
 
@@ -47,7 +47,7 @@ jekyll new my-portfolio
 
 `cd` into the new directory created, and you'll see some files and folders that Jekyll pre-built for you.
 
-###Folders
+### Folders
 
 * `_includes` - Liquid partials, such as headers and footers
 * `_layouts` - page layouts that utilize partials from `_includes`. Jekyll can utilize many different layouts, which is handy for displaying different content
@@ -56,7 +56,7 @@ jekyll new my-portfolio
 * `_css` - Contains the main SASS file, which contains any variables and imports files from the `_sass` folder
 
 
-###Files
+### Files
 
 * `.gitignore`
 * `_config.yml` - this configuration file is YAML markup with site-wide settings, such as the name, email, description, URL, and other data
@@ -73,11 +73,11 @@ jekyll serve
 
 Jekyll will create a new folder called `_site` and host your site at `localhost:4000`. Any file changes, with the exception of configuration files, will prompt Jekyll to regenerate the folder.
 
-###Configuring and Editing Jekyll
+### Configuring and Editing Jekyll
 
 Jekyll contains various filters and tags that you can use to customize your site. The ones you'll find to be most handy:
 
-####Accessing posts
+#### Accessing posts
 
 ```liquid
 {% for post in site.posts %}
@@ -91,7 +91,7 @@ Jekyll contains various filters and tags that you can use to customize your site
 
 Notice that `title` and `date` are in the front matter for the post! This means you can include other variables in the front matter (such as image paths, categories, tags, etc.)
 
-####Accessing Site Variables
+#### Accessing Site Variables
 
 ```liquid
 
@@ -118,7 +118,7 @@ Again, notice that some of these variables have an explicit location (`config.ym
 
 Out-of-the-box, Jekyll has some other fun features, like RSS feed support and built-in code highlighting! For more information on the various liquid tags and filters used in templates, check out the [documentation](http://jekyllrb.com/docs/templates/).
 
-##Deploying
+## Deploying
 
 The benefit of having a static site is less configuration during deployment, since it's just static files (no database or other tasks).
 
@@ -128,9 +128,8 @@ To host a portfolio or blog, you can name the repository `yourgithubusername.git
 
 [Using Jekyll with Github Pages](https://help.github.com/articles/using-jekyll-with-pages/)
 
-##Other Options
+## Other Options
 
 * [Jekyll Themes](https://github.com/jekyll/jekyll/wiki/Themes)
 * [Other Jekyll Themes](http://jekyllthemes.org/)
 * [Jekyll Bootstrap](http://jekyllbootstrap.com/)
-
