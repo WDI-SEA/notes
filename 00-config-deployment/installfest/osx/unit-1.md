@@ -2,16 +2,28 @@
 
 ---
 
-## Unit 1
+We will be installing and conifguring the following tools to set up your development and classroom enviroments:
 
-For the first portion of the class, we'll be working exclusively inside of the browser. We'll be installing the following tools.
+* Homebrew - A command line package/installation manager 
+* zshell - a Unix login shell
+* oh-my-zsh - a framework for managing zshell's configuration 
+* GIT - everyone's favorite content management system
+* Vscode - a lightweight and flexible code editor designed for web development (and more)
+* If you are using an M1 chip mac, you will have to configure [Rosetta 2](https://www.computerworld.com/article/3597949/everything-you-need-to-know-about-rosetta-2-on-apple-silicon-macs.html) for compatibility with apps built for intel chips 
 
-* Slack
-* zsh (if necessary)
-* Homebrew
-* X-code (if necessary)
-* Git
-* **I**ntegrated **D**evelopment **E**nvironment _\(VS Code\)_
+
+## M1 Macs Only - Rosetta 2 
+
+[If you need to install Rosetta 2](https://osxdaily.com/2020/12/04/how-install-rosetta-2-apple-silicon-mac/) you can use the following command:
+
+```bash
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
+```
+
+The following methods have had the most success for M1 compatibility:
+
+* first try [this method](https://www.notion.so/Run-x86-Apps-including-homebrew-in-the-Terminal-on-Apple-Silicon-8350b43d97de4ce690f283277e958602) which creates a duplicate terminal that runs with Rosetta 2 for compatibility. You should use your Rosetta 2 for most brew installs.
+* If that doesn't work try [this](https://soffes.blog/homebrew-on-apple-silicon), which will allow you to install a compatibility mode version of homebrew.  
 
 ### Slack
 
@@ -20,7 +32,7 @@ We will be using slack to communicate throughout the course. You should've recei
 [Download Slack](https://slack.com/downloads)
 
 
-### Homebrew
+## Homebrew
 
 Homebrew is a command line interface package manager that we will use to install various development tools in our class.
 
@@ -35,7 +47,7 @@ You may be prompted to install XCode command line tools. When prompted, click ye
 
 After the installation process, run the command `brew doctor`. If any warnings or errors are displayed, we will need to resolve them before proceeding with the rest of the install fest.
 
-### Xcode (if prompted)
+## Xcode (if prompted)
 
 We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
 
@@ -45,7 +57,7 @@ xcode-select --install
 
 If you need to, you can install Xcode through the App Store. [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
-### zsh
+## zsh
 
 A shell is a text interface into our computer, and we will be using a lot to run commands.
 
@@ -71,7 +83,7 @@ You can check to see if it worked with this command:
 echo $SHELL
 ```
 
-### oh-my-zsh
+## oh-my-zsh
 
 Oh my ZSH?!!! We will be tricking out commandline even further with [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh). iTerm2 and zsh give you all the functionality your heart can desire, but oh-my-zsh is the real life of the party. It is used to easily configure the look and feel of your command line.
 
@@ -83,7 +95,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 Restart your terminal, and you should see a brand new and colorful command prompt.
 
-### GIT
+## GIT
 
 Before we do this process, please make sure you have signed up for an account on [Github](http://www.github.com). We will be installing a version of GIT from home brew and also configuring it.
 
