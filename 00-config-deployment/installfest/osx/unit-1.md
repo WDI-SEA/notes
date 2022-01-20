@@ -39,7 +39,7 @@ After the installation process, run the command `brew doctor`. If any warnings o
 
 We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
 
-```text
+```bash
 xcode-select --install
 ```
 
@@ -51,7 +51,7 @@ A shell is a text interface into our computer, and we will be using a lot to run
 
 Zshell is the defualt mac shell these days, but if you don't have it (or aren't sure) you can install it with the command:
 
-```text
+```bash
 brew install zsh
 ```
 
@@ -61,13 +61,13 @@ If it prompts you to change your default shell to zsh, select yes! When it asks 
 
 If you are not asked about changing your shell, and you still have a `$` at the beginning of your prompt(meaning your shell is still bash), run the following command and then enter your password: 
 
-```text
+```bash
 chsh -s /bin/zsh
 ```
 
 You can check to see if it worked with this command:
 
-```text
+```bash
 echo $SHELL
 ```
 
@@ -77,7 +77,7 @@ Oh my ZSH?!!! We will be tricking out commandline even further with [Oh-My-Zsh](
 
 Copy and past the following command into your terminal to install oh-my-zsh:
 
-```text
+```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
@@ -89,19 +89,25 @@ Before we do this process, please make sure you have signed up for an account on
 
 We will be installing a version of git from homebrew.
 
-```text
+```bash
 brew install git
 ```
 
 after git is installed run the following command to check your git version:
 
-```text
+```bash
 git --version
+```
+
+**NOTE:** if you installed git with homebrew and are still seeing a version of git that is less than 2.28 run the following command to get the newest version of git. 
+
+```bash
+brew link --overwrite git
 ```
 
 If it is anything less than 2.30.0, run the following command to get the latest version:
 
-```text
+```bash
 brew upgrade git
 ```
 
@@ -109,7 +115,7 @@ brew upgrade git
 
 Using your email credentials for GIT, run these commands with your user and email configured.
 
-```text
+```bash
 git config --global user.name "YOUR-USERNAME"
 git config --global user.email "YOUR-EMAIL-ADDRESS"
 git config --global push.default simple
@@ -138,12 +144,48 @@ Currently the most popular editor according to developer polls. This is Microsof
 
 Run the following command to install vscode with homebrew:
 
-```text
+```bash
 brew install --cask visual-studio-code
 ```
 
 vscode will appear in your applications folder when the installation is completed 
 
 You can also download and install VS Code from [here](https://code.visualstudio.com/download)
+
+**Adding the code Command to your Terminal**
+
+First lets configure vscode. For ease of use, let's make it so we can automatically open up any file or project in VS Code, from our command line. The following instructions are taken from [these docs](https://code.visualstudio.com/docs/setup/mac). If you're on a windows or linux, see the left-side menu to switch to the instructions for your machine.
+
+First open Vscode and then open the Command Palette with `Shift+⌘+P`. Type type 'shell command' to find the `Shell Command: Install 'code' command in PATH` command (it will be the first one that comes up).
+
+Alternatively, you can achieve this functionality by adding VS Code to your path inside your ~/.zshrc file (zshell config file):
+
+*NOTE: you don't need to do both*
+
+Open your zshell config file with the following command:
+```text
+open ~/.zshrc
+```
+add this to the file path and save:
+
+```bash
+export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+```
+
+Restart the terminal for the new $PATH value to take effect. You'll be able to type `code .` in any folder to start editing files in that folder. You can also open specific files with `code [filenname]`
+
+## OPTIONAL: Adding a Useful Color Theme with oh-my-zsh
+
+Now we will use oh-my-zsh to add a usefule color theme to our prompt. Use the command `code ~/.zshrc` to open your zsh config file in vscode. It lives in your root folder `~/` and is hidden, hence the `.` before the file name. 
+
+Add the following line in the theme section (near the top) to set the oh-my-zsh theme to a handy one called 'af-magic'. af-magic will convientently display your git information and working directory in your shell which is very helpful. It also display virtualenv information which will be helpful when we get into python in unit 4.
+
+```bash
+ZSH_THEME="af-magic"
+```
+
+You can of course experiment with different themes or even make your own! There are instructions in the .zshrc file to have a different theme shown in your console everytime your start it up to explore the different flavors. 
+
+Save your .zshrc file and restart the terminal to enjoy!
 
 ---
