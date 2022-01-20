@@ -11,6 +11,11 @@ We will be installing and conifguring the following tools to set up your develop
 * Vscode - a lightweight and flexible code editor designed for web development (and more)
 * If you are using an M1 chip mac, you will have to configure [Rosetta 2](https://www.computerworld.com/article/3597949/everything-you-need-to-know-about-rosetta-2-on-apple-silicon-macs.html) for compatibility with apps built for intel chips 
 
+## Slack
+
+We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
+
+[Download Slack](https://slack.com/downloads)
 
 ## M1 Macs Only - Rosetta 2 
 
@@ -24,13 +29,6 @@ The following methods have had the most success for M1 compatibility:
 
 * first try [this method](https://www.notion.so/Run-x86-Apps-including-homebrew-in-the-Terminal-on-Apple-Silicon-8350b43d97de4ce690f283277e958602) which creates a duplicate terminal that runs with Rosetta 2 for compatibility. You should use your Rosetta 2 for most brew installs.
 * If that doesn't work try [this](https://soffes.blog/homebrew-on-apple-silicon), which will allow you to install a compatibility mode version of homebrew.  
-
-### Slack
-
-We will be using slack to communicate throughout the course. You should've received an invite to our channels via e-mail. You can login via the web browser, but downloading / installing the app is highly recommended.
-
-[Download Slack](https://slack.com/downloads)
-
 
 ## Homebrew
 
@@ -186,7 +184,7 @@ export PATH=$PATH:"/Applications/Visual Studio Code.app/Contents/Resources/app/b
 
 Restart the terminal for the new $PATH value to take effect. You'll be able to type `code .` in any folder to start editing files in that folder. You can also open specific files with `code [filenname]`
 
-## OPTIONAL: Adding a Useful Color Theme with oh-my-zsh
+#### OPTIONAL: Adding a Useful Color Theme with oh-my-zsh
 
 Now we will use oh-my-zsh to add a usefule color theme to our prompt. Use the command `code ~/.zshrc` to open your zsh config file in vscode. It lives in your root folder `~/` and is hidden, hence the `.` before the file name. 
 
