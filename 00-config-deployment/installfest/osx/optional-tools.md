@@ -75,6 +75,88 @@ brew services stop postgres
 brew services restart postgres
 ```
 
+## MongoDB and Atlas
+
+This guide will help you set up a cloud mongodDB database and connect to it with your mongo shell.
+
+We will be installing and configuring [MongoDB](https://www.mongodb.com/) as well as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas). Mongo uses a 'document-oriented database' structure with very JSON-like documents and familiar javascript-like commands for database operations.
+
+MongoDB Atlas - a cloud database service that we configure online and can be used for both deployment and local development
+
+This installfest is adapted from Mongo DB's install instructions that can be found [here](https://docs.mongodb.com/manual/administration/install-community/) and also the [MongoDB Atlas setup instructions](https://fullstackopen.com/en/part3/saving_data_to_mongo_db#mongo-db) from [fullstackopen.com](https://fullstackopen.com/en/).
+
+**NOTE YOU MAST HAVE MONGODB INSTALLED ALREADY**
+
+## MongoDB Atlas
+
+> MongoDB Atlas is a cloud hosting service provided by MongoDB. We will have to sign up for an account and configure our local machines to connect to it.
+
+### Make an account
+
+Signup for account [here.](https://www.mongodb.com/cloud/atlas) Please note - you will have to use Google Account for OAuth.
+
+1. Select the "Shared Clusters" free tier. 
+2. For cloud provider, select AWS and for region, whichever region is physically closest to you \(example: People on the West Coast should choose `us-west-#` \). Leave all other settings on this page at their default. 
+3. You will be redirected to a Dashboard where your Clusters will be listed.
+
+### Create and configure a cluster
+
+\(cluster means a mongoDB that lives in the far, far away in the clouds ☁️\)
+
+this is our todo list:
+
+* [ ] Build your first cluster
+* [ ] Create your first database user along with a password
+* [ ] Whitelist your IP address
+* [ ] Connect your cluster
+* click the green **Create a New Cluster** button on the right hand side of the page. _PLEASE NOTE: It takes 3-5 min to make a new cluster._
+* On the left hand side of the screen there is a hamburger menu. Click on **Database Access** under **Security**  on the lefthand menu and then click the big green button that says  "Add New Database User".
+  * For the Authentication Method, leave it on Password. Declare a username and password under Password Authentication. This information will be hidden later in an env variable on your server. **IT IS SUPER IMPORTANT THAT YOU WRITE THIS INFORMATION DOWN**.  
+    * _PLEASE NOTE - the fewer special characters your password has, the easier it will be to format your URI call, but also the less secure your db will be_ 🤷  **JUST USE REGULAR CHARACTERS FOR THIS TUTORIAL -- THE SIMPLER THE PASSWORD IS THE BETTER**. 
+  * Leave all other defaults the same and add user. 
+* click on **Network Access** under **Security**  on the lefthand menu and then click the big green button that says  "Add IP Address".
+  * For the sake of this app we are going to allow for access from anywhere since you will each be doing your own Heroku deployments. Click "Allow Access from Anywhere" under "Whitelist a connection IP address." Leave the default `0.0.0.0/0` call, and click "Add IP Address."
+
+    ode example", and then copy the code MongoDB has created for you into a text file for use in just a moment. 
+
+### Connecting to Your Cluster from the terminal
+
+We are going to test the connection from our terminal to your Atlas cluster with a very long command, and then create a shell alias for this command.
+
+#### Connecting to your Cluster
+
+1. Return to the Clusters dashboard by clicking **Clusters** under **Data Storage** on the lefthand menu. 
+2. On your Cluster, click the Connect button. 
+   * Click "Choose a connection method", and on the next page choose "Connect with the mongo shell."
+   * Select 'I have the mongo shell installed' and if you need to check your mongo version, there are instructions on how to do so.
+3. Copy the command it gives you to connect to your mongo shell to your atlas cluster and paste it into your terminal
+   * the terminal will prompt you for a password **THIS IS THE PASSWORD FOR YOUR CLUSTER'S USER THAT YOU CREATED EARLIER**
+   * the command will look something like this:
+
+     ```bash
+     mongo "mongodb+srv://< your cluster name >.9hqnh.mongodb.net/< your database name >" --username < your user name >
+     ```
+
+If you are able to connect to your cluster, you are ready for the next step, otherwise take a second to debug before moving on.
+
+#### Alias the Atlas connection command
+
+That giant command to connect to Atlas is way to big, lets make a shorter command Alias for it in our zshell config file.
+
+1. Open yor zhell config file with in vscode with `code ~/.zshrc`
+2. Scroll down to the command alias section and add the following line, but replacing this generic command with the one you ran from the previous section:
+
+   ```bash
+   # alias for connecting to MondoDB Atlas
+   alias mongo-atlas='mongo "mongodb+srv://< your cluster name >.9hqnh.mongodb.net/< your database name >" --username super_cool_person'
+   ```
+
+   _NOTE:_ You must put single qoutes `' '` around the command like above
+
+3. Save your `.zshrc` file and restart your terminal. You can now use the command `mongo-atlas` to connect to your Atlas database.
+
+You can use the command `mongo` to connect to your local development database and the command `mongo-atlas` to connect to your Atlas cloud database.
+
 ## python 3 aliases
 
 We a going to alias the `python` command to point to python3 instead of python. We can do this by adding a few lines on code to our zshell config file.
@@ -119,6 +201,71 @@ ln -s /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /usr/local
 ```
 
 Restart terminal, and you should be able to open a folder to edit by typing `subl .`
+
+# Sublime Packages
+
+## Setting up User Settings
+
+* Open Sublime Text
+* Go to `Sublime Text -> Preferences -> Settings - User`
+* Replace the file with the settings object below:
+
+```text
+{
+  "rulers":
+  [
+    80
+  ],
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "scroll_past_end": true
+}
+```
+
+## Setting up Package Control in Sublime Text
+
+* Open Sublime Text
+* Bring up the console
+  * Use CTRL + \` on OSX
+  * or `View > Show Console`
+* Go to [https://packagecontrol.io/installation](https://packagecontrol.io/installation) and paste the appropriate code into your Terminal
+  * You should be using Sublime Text 3, so copy the Sublime Text 3 code.
+* Restart Sublime
+
+#### Install Sublime Packages
+
+* Type `COMMAND + SHIFT + P` to open the Command Palette
+  * `CTRL + SHIFT + P` on Linux
+* Type `Install Package` and select the first result \(by pressing `ENTER`\)
+* Type the package you want to install, and press `ENTER` to begin installation.
+
+### Useful Packages that you should install
+
+* ColorPicker \(pick colors by typing `COMMAND + SHIFT + c`, handy for CSS\)
+* Color Highlighter \(visually displays colors for hex/rgb values\)
+* EditorConfig \(reads configuration files for your editor\)
+* GitGutter \(shows git additions/deletions\)
+* Terminal \(launch a terminal window from a folder on the sidebar\)
+* BracketHighlighter \(highlight brackets and tabs\)
+* Bootstrap 3 Snippets \(tab snippets for Bootstrap 3 elements\)
+* EJS \(syntax definition, we'll use this when working with Node\)
+* Sass \(syntax definition, we'll use this when working with Rails\)
+* Babel \(syntax definition, we'll use this when working with React\)
+* JSX \(syntax definition, we'll use this when working with React\)
+
+Feel free to install any others, and we'll install others throughout the course.
+
+**Important Note: It is not recommended that you install anything that auto-formats or "prettifies" your code. These are generally hindersome to beginners for learning basic indentation and often are not built well which ends up causing a lot of errors. Do not use these!**
+
+### Creating a Snippet \(Optional\)
+
+We'll use a lot of snippets when working with Bootstrap, and you can make your own as well.
+
+* Go to `Tools > New Snippet`
+* Include the content of your snippet inside `<![CDATA[ ]]>` within the `<content>` element.
+* To define how to trigger the snippet, uncomment the `<tabTrigger>` line and type the keyword for your tab trigger.
+* To trigger the snippet only on certain files \(for example, only HTML, or only JavaScript\), uncomment the `<scope>` tag and change the scope to the language you need.
+* More details and advanced functionality can be found in [this handy blog post](http://www.hongkiat.com/blog/sublime-code-snippets/)
 
 **Atom**
 
