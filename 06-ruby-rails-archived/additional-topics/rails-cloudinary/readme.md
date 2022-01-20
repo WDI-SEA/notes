@@ -1,6 +1,6 @@
-#Cloudinary Uploads
+# Cloudinary Uploads
 
-##Objectives
+## Objectives
 
 * Discuss the benefits and drawbacks of using cloud-based storage
 * Use Cloudinary to upload images in Rails
@@ -9,7 +9,7 @@
 
 In Rails, file uploads can be done via the standard form helper or bootstrap form helper.
 
-####View
+#### View
 
 ```rb
 <%= form_for @person do |f| %>
@@ -21,7 +21,7 @@ In Rails, file uploads can be done via the standard form helper or bootstrap for
 
 Just by adding a file_field to a form in rails it automatically converts it to a multi-part form and handles the file upload.
 
-####Controller
+#### Controller
 
 In your controller you can access it like any other param. In this example it would be `params[:person][:picture]`.
 

@@ -1,6 +1,6 @@
-#Asset Pipeline and Front-end in Rails
+# Asset Pipeline and Front-end in Rails
 
-##Objectives
+## Objectives
 
 * Incorporate JavaScript, CSS, SCSS, images, and other static files into a Rails application
 * Describe the Asset Pipeline in laymans' terms
