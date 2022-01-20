@@ -116,11 +116,19 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
+**Setting up Github Personal Accress Token**
+
+We are going to to use need to generate a personal access token on github that will allow us to interact with github using the CLI more easily. 
+
+Follow the [directions found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a person access token.
+
+<!-- 
 **Setting up SSH Key (if prompted)** 
 
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
-* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/)
+* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/) 
+* -->
 
 ### Install VS Code
 
@@ -138,7 +146,7 @@ You can also download and install VS Code from [here](https://code.visualstudio.
 
 ---
 
-## Part 2
+## Unit 2
 
 ### Node
 
