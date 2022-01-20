@@ -1,7 +1,6 @@
 # Table of contents
 
-* [Introduction](readme.md)
-* [Intro to SEI](readme%20%281%29.md)
+* [About This Gitbook](readme.md)
 * [Schedule](calendar.md)
 * [Development Workflow](01-workflow/README.md)
   * [Command Line](01-workflow/01readme/README.md)
