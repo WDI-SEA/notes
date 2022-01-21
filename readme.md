@@ -87,7 +87,7 @@ Additionally, much of the original Python material \(locally\) was developed at 
 ### Recommended Prework
 
 * [GA Dash](https://dash.generalassemb.ly/)
-* [WDI Fundamentals](http://fundamentals.generalassemb.ly/)
+* [SEI Fundamentals](http://fundamentals.generalassemb.ly/)
 * [FreeCodeCamp](http://www.freecodecamp.com/)
 
 ### Front End Development
@@ -259,4 +259,3 @@ Additionally, much of the original Python material \(locally\) was developed at 
 
 1. All content is licensed under a CC-BY-NC-SA 4.0 license.
 2. All software code is licensed under GNU GPLv3. For commercial use or alternative licensing, please contact legal@ga.co.
-
