@@ -89,4 +89,3 @@ Indeed, it may take a whole lifetime to become a git pro, but the only true way 
 
 * [https://www.atlassian.com/git/tutorials](https://www.atlassian.com/git/tutorials)
 * [http://pcottle.github.io/learnGitBranching](http://pcottle.github.io/learnGitBranching)
-
