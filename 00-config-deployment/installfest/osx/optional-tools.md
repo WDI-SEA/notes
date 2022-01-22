@@ -4,9 +4,9 @@ in this Section:
 
 * iTerm, a fancy, tircked out terminal app
 * Node version Manager
-* Installing postgresql with homebrew
-* installing the postico postgres GUI
-* installing the mongoDB GUI
+* postgresql with homebrew
+* the postico postgres GUI
+* the mongoDB GUI
 * changing where your mongoDB is stored (for osx Catalina and above file permission fixes)
 * Setting up mongoDB Atlas and connecting to mongosh with command aliases 
 * creating python3 command aliases
