@@ -136,9 +136,24 @@ git config --global credential.helper cache
 
 We are going to to use need to generate a personal access token on github that will allow us to interact with github using the CLI more easily. 
 
-Follow the [directions found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a person access token.
+The official github instructions can be found here [directions found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a person access token.
 
 Once you have your personal access token, the next time git askes you for your password in your terminal, you can use the token instead to configure git.
+
+First, make sure your [gihtub email](https://github.com/settings/emails) has been verified.
+
+Once your email has been verified, navigate to the [New Person Access Token page](https://github.com/settings/tokens/new) and do the following.
+
+1. Give the Personal Access Token a memerable name that describes its funciton, such as **CLI-Access-Token**
+1. Click on the expiration drop-down menu and set it to **No Expiration**
+1. Scroll down and click every single scope checkbox
+1. Check that your persnal access token looks like this:
+
+<img width="500" src="./github-personal-access-token.png" />
+
+Now, click **Generate Personal Access Token** And you will be take to a page that displays a hash that starts with **ghp_**. Click the button to copy the hash, and save it someplace safe (such as slacking it to yourself), because github will never show you the hash again, and you will need to generate a new token if you lose it.
+
+Next time you to to push to github, supply this hash as your password to authenticate your computer's terminal.
 
 <!-- 
 **Setting up SSH Key (if prompted)** 
