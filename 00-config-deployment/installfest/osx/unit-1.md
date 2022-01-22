@@ -83,7 +83,7 @@ echo $SHELL
 
 ## oh-my-zsh
 
-Oh my ZSH?!!! We will be tricking out commandline even further with [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh). iTerm2 and zsh give you all the functionality your heart can desire, but oh-my-zsh is the real life of the party. It is used to easily configure the look and feel of your command line.
+Oh my ZSH?!!! We will be tricking out commandline even further with [Oh-My-Zsh](https://github.com/robbyrussell/oh-my-zsh). When it comes to the terminal oh-my-zsh is the real life of the party. It is used to easily configure the look and feel of your command line.
 
 Copy and past the following command into your terminal to install oh-my-zsh:
 
