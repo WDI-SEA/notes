@@ -2,7 +2,7 @@
 
 ---
 
-We will be installing and conifguring the following tools to set up your development and classroom enviroments:
+We will be installing and configuring the following tools to set up your development and classroom enviroments:
 
 * Homebrew - A command line package/installation manager 
 * zshell - a Unix login shell
@@ -59,7 +59,7 @@ If you need to, you can install Xcode through the App Store. [Link here](https:/
 
 A shell is a text interface into our computer, and we will be using a lot to run commands.
 
-Zshell is the defualt mac shell these days, but if you don't have it (or aren't sure) you can install it with the command:
+Zshell is the default mac shell these days, but if you don't have it (or aren't sure) you can install it with the command:
 
 ```bash
 brew install zsh
@@ -132,22 +132,22 @@ git config --global push.default simple
 git config --global credential.helper cache
 ```
 
-**Setting up Github Personal Accress Token**
+**Setting up Github Personal Access Token**
 
 We are going to to use need to generate a personal access token on github that will allow us to interact with github using the CLI more easily. 
 
 The official github instructions can be found here [directions found here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token) to create a person access token.
 
-Once you have your personal access token, the next time git askes you for your password in your terminal, you can use the token instead to configure git.
+Once you have your personal access token, the next time git asked you for your password in your terminal, you can use the token instead to configure git.
 
 First, make sure your [gihtub email](https://github.com/settings/emails) has been verified.
 
 Once your email has been verified, navigate to the [New Person Access Token page](https://github.com/settings/tokens/new) and do the following.
 
-1. Give the Personal Access Token a memerable name that describes its funciton, such as **CLI-Access-Token**
+1. Give the Personal Access Token a memorable name that describes its function, such as **CLI-Access-Token**
 1. Click on the expiration drop-down menu and set it to **No Expiration**
 1. Scroll down and click every single scope checkbox
-1. Check that your persnal access token looks like this:
+1. Check that your personal access token looks like this:
 
 <img width="500" src="./github-personal-access-token.png" />
 
@@ -201,15 +201,15 @@ Restart the terminal for the new $PATH value to take effect. You'll be able to t
 
 #### OPTIONAL: Adding a Useful Color Theme with oh-my-zsh
 
-Now we will use oh-my-zsh to add a usefule color theme to our prompt. Use the command `code ~/.zshrc` to open your zsh config file in vscode. It lives in your root folder `~/` and is hidden, hence the `.` before the file name. 
+Now we will use oh-my-zsh to add a useful color theme to our prompt. Use the command `code ~/.zshrc` to open your zsh config file in vscode. It lives in your root folder `~/` and is hidden, hence the `.` before the file name. 
 
-Add the following line in the theme section (near the top) to set the oh-my-zsh theme to a handy one called 'af-magic'. af-magic will convientently display your git information and working directory in your shell which is very helpful. It also display virtualenv information which will be helpful when we get into python in unit 4.
+Add the following line in the theme section (near the top) to set the oh-my-zsh theme to a handy one called 'af-magic'. af-magic will conveniently display your git information and working directory in your shell which is very helpful. It also display virtualenv information which will be helpful when we get into python in unit 4.
 
 ```bash
 ZSH_THEME="af-magic"
 ```
 
-You can of course experiment with different themes or even make your own! There are instructions in the .zshrc file to have a different theme shown in your console everytime your start it up to explore the different flavors. 
+You can of course experiment with different themes or even make your own! There are instructions in the .zshrc file to have a different theme shown in your console every-time your start it up to explore the different flavors. 
 
 Save your .zshrc file and restart the terminal to enjoy!
 
