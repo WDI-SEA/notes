@@ -1,5 +1,17 @@
 # Optional Tools
 
+in this Section:
+
+* iTerm, a fancy, tircked out terminal app
+* Node version Manager
+* Installing postgresql with homebrew
+* installing the postico postgres GUI
+* installing the mongoDB GUI
+* changing where your mongoDB is stored (for osx Catalina and above file permission fixes)
+* Setting up mongoDB Atlas and connecting to mongosh with command aliases 
+* creating python3 command aliases
+* other IDE options 
+
 ## iTerm
 
 iTerm is a tricked out version of the Terminal app that is the default command line interface for Mac. It will help with the visuals of the command line navigation, especially with ohmyZSH.
@@ -29,7 +41,7 @@ if not, add them.
 
 Postresql can also be installed by homebrew, and managed similarly to how we have done mongodb.
 
-Run the following commands in your termimal:
+Run the following commands in your terminal:
 
 ```bash
 #-------------------------------------------------------------------------------
@@ -75,6 +87,46 @@ brew services stop postgres
 brew services restart postgres
 ```
 
+## Install Postgres GUI
+
+Mac users can utilize **Postico**. Install here:
+
+[https://eggerapps.at/postico/](https://eggerapps.at/postico/)
+
+## Install MongoDB GUI
+
+One of the most common free MongoDB GUIs is **RoboMongo**. Install here:
+
+[https://robomongo.org/](https://robomongo.org/)
+
+## Change where your `mongodb` data is stored
+
+```text
+#make data directory
+sudo mkdir -p ~/mongodb-data
+```
+
+After creating the data directory in your home folder, it should be marked with your correct ownership permissions but if you find that it is owned by root instead, you can change it to be owned by you with the following commands:
+
+```bash
+#get your user name
+whoami
+
+#set data directory permissions (replacing USERNAME with the result from whoami above)
+sudo chown -R USERNAME:wheel ~/mongodb-data
+```
+
+Finally, to tell MongoDB to start using the data directory that you just created, you must start it with the following command:
+
+```bash
+mongod --dbpath ~/mongodb-data
+```
+
+To make a shortcut for this command, open your ~/.zshrc \(or ~/.bashrc if not using ZSH\) and add this line to the bottom:
+
+```bash
+alias mongod="mongod --dbpath ~/mongodb-data"
+```
 ## MongoDB and Atlas
 
 This guide will help you set up a cloud mongodDB database and connect to it with your mongo shell.
@@ -143,7 +195,7 @@ If you are able to connect to your cluster, you are ready for the next step, oth
 
 That giant command to connect to Atlas is way to big, lets make a shorter command Alias for it in our zshell config file.
 
-1. Open yor zhell config file with in vscode with `code ~/.zshrc`
+1. Open your zhell config file with in vscode with `code ~/.zshrc`
 2. Scroll down to the command alias section and add the following line, but replacing this generic command with the one you ran from the previous section:
 
    ```bash
@@ -151,7 +203,7 @@ That giant command to connect to Atlas is way to big, lets make a shorter comman
    alias mongo-atlas='mongo "mongodb+srv://< your cluster name >.9hqnh.mongodb.net/< your database name >" --username super_cool_person'
    ```
 
-   _NOTE:_ You must put single qoutes `' '` around the command like above
+   _NOTE:_ You must put single quotes `' '` around the command like above
 
 3. Save your `.zshrc` file and restart your terminal. You can now use the command `mongo-atlas` to connect to your Atlas database.
 
@@ -176,13 +228,6 @@ alias pip=pip3
 Afterwards, save the file and close vscode. Restart your terminal and use the command `python --version` and it should return `Python 3.9.2`.
 
 If it still says `Python 2.blah.blah` you probably forgot to restart your terminal.
-
-## All Systems
-
-Everyone needs to install the following things, regardless of thier operating system.
-
-1. install a couple global python packages with `pip3`
-1. install a vscode extension for python
 
 ### Other Code Editor Options
 
@@ -302,44 +347,3 @@ function zrefresh() {
 If you plan on using Sublime Text, replace `code` with `subl`. If you plan on using Atom, replace`code` with `atom`.
 
 Save the file and restart your terminal.
-
-#### Install Postgres GUI
-
-Mac users can utilize **Postico**. Install here:
-
-[https://eggerapps.at/postico/](https://eggerapps.at/postico/)
-
-#### Change where your `mongodb` data is stored
-
-```text
-#make data directory
-sudo mkdir -p ~/mongodb-data
-```
-
-After creating the data directory in your home folder, it should be marked with your correct ownership permissions but if you find that it is owned by root instead, you can change it to be owned by you with the following commands:
-
-```bash
-#get your user name
-whoami
-
-#set data directory permissions (replacing USERNAME with the result from whoami above)
-sudo chown -R USERNAME:wheel ~/mongodb-data
-```
-
-Finally, to tell MongoDB to start using the data directory that you just created, you must start it with the following command:
-
-```bash
-mongod --dbpath ~/mongodb-data
-```
-
-To make a shortcut for this command, open your ~/.zshrc \(or ~/.bashrc if not using ZSH\) and add this line to the bottom:
-
-```bash
-alias mongod="mongod --dbpath ~/mongodb-data"
-```
-
-**Install MongoDB GUI**
-
-One of the most common free MongoDB GUIs is **RoboMongo**. Install here:
-
-[https://robomongo.org/](https://robomongo.org/)
