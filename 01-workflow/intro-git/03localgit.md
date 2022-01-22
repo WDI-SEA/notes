@@ -11,7 +11,7 @@ Once you're done, we can start on the first git command.
 
 Inside the folder, you'll want to run the following command.
 
-```text
+```bash
 git init
 ```
 
@@ -21,7 +21,7 @@ You'll only need to do this once per project. If you're cloning a git repo, this
 
 ## `git status` - Checking your repo status
 
-```text
+```bash
 git status
 ```
 
@@ -33,7 +33,7 @@ Currently, there are no commits, so we'll want to put files under the management
 
 You can add files individually or the entire directory, including subfolders.
 
-```text
+```bash
 git add readme.md
 git add .
 ```
@@ -44,7 +44,7 @@ The second command will add everything in the current working directory. But try
 
 Let's say you're happy with your work and want to save a version. This is called **committing**:
 
-```text
+```bash
 git commit -m 'my first commit'
 ```
 
@@ -56,7 +56,7 @@ Now, the changes are permanently saved. The file now has a unique version in git
 
 Try making changes to the `readme.md` file. See what happens when you run:
 
-```text
+```bash
 git status
 ```
 
@@ -64,7 +64,7 @@ git status
 
 How do we find out what changed?
 
-```text
+```bash
 git diff readme.md
 ```
 
@@ -72,7 +72,7 @@ git diff readme.md
 
 When we're ready to save those changes
 
-```text
+```bash
 git add readme.md
 git commit -m 'added title'
 ```
@@ -81,7 +81,7 @@ git commit -m 'added title'
 
 Or, we can undo changes. If changes have been made before comitting, we can run `checkout` to reset the file back to its most recent commit state.
 
-```text
+```bash
 git checkout readme.md
 ```
 
@@ -89,7 +89,7 @@ git checkout readme.md
 
 Note that once you make a commit, you won't be able to unmodify those files. You can see a list of your commits by running:
 
-```text
+```bash
 git log
 ```
 
@@ -97,7 +97,7 @@ git log
 
 If a file has been added to git and it needs to be deleted, we can run `git rm` and commit the change.
 
-```text
+```bash
 git rm <file>
 git commit -am 'deleted file'
 ```
@@ -114,4 +114,3 @@ git commit -am 'deleted file'
 This is the most simple workflow, things get a bit more complex when you start sharing code and manage larger code bases. But this is a good start.
 
 **IMPORTANT NOTE: Avoid creating git repositories inside other git repositories.**
-
