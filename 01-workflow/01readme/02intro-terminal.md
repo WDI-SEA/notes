@@ -18,6 +18,7 @@ Although they technically mean slightly different things, the following terms ar
 * DOS Prompt \(on windows machines\)
 * SSH \(on remote machines\)
 * Bourne Shell
+* ZSH (z shell)
 * csh
 * ksh
 * sh
