@@ -191,6 +191,25 @@ var myString = "Greetings y'all!";
 
 The main note to make here is that these variables should always have the `var` keyword and use `camelCase`
 
+#### Piece on let and const vs. var
+
+Prior to ES6 JavaScript had one way of declaring variables: `var`. Now there
+are much better ways to declare variables: `let` and `const`. The basic rule of
+thumb should be to use `const` when you don't need to reassign that variable,
+and `let` when you do. You will continue to see `var` in legacy code bases and
+documentation online, but you shouldn't use in your own code.
+
+```javascript
+// this is the modern way to declare variables
+let myNum = 1
+myNum++
+const unchangeable = 'cannot change me'
+// this would be a syntax error
+// unchangeable = 'anything'
+```
+
+
+
 ## Objects Everywhere
 
 In Javascript we just discussed two types of values we can use. We call these values objects, which for now just means that in addition to storing some data you also get to use some helpful methods when you are working with them.
@@ -228,4 +247,3 @@ Note that most of these functions are called on an object, while functions like 
 [re-introduction to JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
 
 [MDN JavaScript documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
