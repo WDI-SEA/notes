@@ -87,7 +87,7 @@ HTML provides for us two 'empty' containers to store whatever content we want. O
 
 See the Pen [Divs vs Spans](http://codepen.io/bhague1281/pen/qbJREg/) by Brian Hague \([@bhague1281](http://codepen.io/bhague1281)\) on [CodePen](http://codepen.io).
 
- \#\#\# Text Tags
+### Text Tags
 
 See the Pen [Text Tags](http://codepen.io/bhague1281/pen/NxOddg/) by Brian Hague \([@bhague1281](http://codepen.io/bhague1281)\) on [CodePen](http://codepen.io).
 
@@ -95,7 +95,7 @@ See the Pen [Text Tags](http://codepen.io/bhague1281/pen/NxOddg/) by Brian Hague
 
 See the Pen [Lists](http://codepen.io/bhague1281/pen/XXxpMx/) by Brian Hague \([@bhague1281](http://codepen.io/bhague1281)\) on [CodePen](http://codepen.io).
 
- \#\#\# Tables
+### Tables
 
 See the Pen [Tables](http://codepen.io/bhague1281/pen/jWeyma/) by Brian Hague \([@bhague1281](http://codepen.io/bhague1281)\) on [CodePen](http://codepen.io).
 
@@ -119,7 +119,20 @@ Clone the repo and open instructions.html in your browser. Edit the basic data p
 
 See the Pen [Images and Links](http://codepen.io/bhague1281/pen/NxOdgv/) by Brian Hague \([@bhague1281](http://codepen.io/bhague1281)\) on [CodePen](http://codepen.io).
 
- \#\#\# Forms, Labels, Input Types \#\#\#\#Forms One of the most common ways to send data to a server is by using a form. A form has two essential attributes, action and method. \* \*\*Action\*\* - This specifies a route where you are going to. For example an action of '/test' will take you to the /test route \(something you have probably configured in your server side code\) \* \*\*Method\*\* - The HTTP Verb that this form will be using \(HTML only knows GET and POST, but there are ways to override this default which we will see when we use Node and Rails. The default method is GET so if you are making a GET request you can leave this empty. \#\#\#\#Labels Labels are text you place before/after inputs to tell the user what the input is for. The for attribute is for screen readers and if the ID of the input matches the ID of the for attribute then you can click on the label and have it automatically focus/check the input. \#\#\#\#Input Types By default, input elements will allow users to type in text. There's also a plethora of different input types, specified by a \`type\` attribute. Take a look at the Codepen below for some examples.
+### Forms, Labels, Input Types 
+
+#### Forms 
+
+One of the most common ways to send data to a server is by using a form. A form has two essential attributes, action and method. 
+
+* **Action** - This specifies a route where you are going to. For example an action of '/test' will take you to the /test route \(something you have probably configured in your server side code\) 
+* **Method** - The HTTP Verb that this form will be using \(HTML only knows GET and POST, but there are ways to override this default which we will see when we use Node and Rails. The default method is GET so if you are making a GET request you can leave this empty. 
+
+#### Labels 
+Labels are text you place before/after inputs to tell the user what the input is for. The for attribute is for screen readers and if the ID of the input matches the ID of the for attribute then you can click on the label and have it automatically focus/check the input. 
+
+#### Input Types 
+By default, input elements will allow users to type in text. There's also a plethora of different input types, specified by a \`type\` attribute. Take a look at the Codepen below for some examples.
 
 See the Pen [Form Elements](http://codepen.io/bhague1281/pen/xZygWo/) by Brian Hague \([@bhague1281](http://codepen.io/bhague1281)\) on [CodePen](http://codepen.io).
 
