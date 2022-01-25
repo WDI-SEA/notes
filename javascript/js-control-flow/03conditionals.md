@@ -39,12 +39,12 @@ console.log("Is the food tasty?", isTasty);
 ### `if/else if/else`
 
 ```javascript
-let course = "wdi";
+let course = "sei";
 if (course === "uxdi") {
   console.log("Hello, User Experience Designer!");
 } else if (course === "fewd") {
   console.log("Hello, Front-End Developer");
-} else if (course === "wdi") {
+} else if (course === "sei") {
   console.log("Hello, Immersed Developer")
 } else {
   console.log("Who are you?")
@@ -122,4 +122,3 @@ if (num) {
 ```
 
 More on this topic: [http://james.padolsey.com/javascript/truthy-falsey/](http://james.padolsey.com/javascript/truthy-falsey/)
-

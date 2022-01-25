@@ -85,7 +85,7 @@ What do you notice about the equality-only section?
 
 ### Additional Boolean Operators
 
-There are also ways to check if a value is greater than, greater than or equal to, less than, less thanor equal to, or not equal to another value. Note that the "not" \(!\) always takes the place of once set of equal bars. So, "!=" is the negation of "==" and "!==" is the negation of "===", \(and "!===" is just not a thing\).
+There are also ways to check if a value is greater than, greater than or equal to, less than, less than or equal to, or not equal to another value. Note that the "not" \(!\) always takes the place of once set of equal bars. So, "!=" is the negation of "==" and "!==" is the negation of "===", \(and "!===" is just not a thing\).
 
 ```javascript
 4 > 5
@@ -144,3 +144,40 @@ Turn to your partner and discuss the result of this statement:
 (5 < 4) || !(3 == 3) && true
 ```
 
+### Operator Round Up For Reference
+
+Operators come in three classes, unary, binary (the most common), and ternary
+(there is only one). These operators act on 1, 2, and 3 operands, respectively.
+
+```js
+// unary:
+!true
+// binary:
+4 + 5
+// ternary
+isVegetarian ? 'no meat for you' : 'eats meat'
+```
+
+Operator precedence determines the order in which operators are evaluated.
+Operators with higher precedence are evaluated first.
+
+Associativity determines the order in which operators of the same precedence are
+processed.
+
+The following table lists a subset of the JavaScript
+[operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
+from higher to lower precedence.
+
+| Type                                                 | Associativity | Operators                      |
+|:-----------------------------------------------------|:--------------|:-------------------------------|
+| grouping                                             | n/a           | `()`                           |
+| postfix increment                                    | n/a           | `++` `--`                      |
+| negation, numeric conversion, prefix increment, type | right-to-left | `!` `-` `+` `++` `--` `typeof` |
+| multiplication, division, modulo                     | left-to-right | `*` `/` `%`                    |
+| addition, subtraction                                | left-to-right | `+` `-`                        |
+| relation, instance                                   | left-to-right | `<` `<=` `>` `>=` `instanceof` |
+| strict equality                                      | left-to-right | `===` `!==`                    |
+| logical and                                          | left-to-right | `&&`                           |
+| logical or                                           | left-to-right | &#124;&#124;                   |
+| conditional                                          | right-to-left | `?:`                           |
+| assignment                                           | right-to-left | `=` `+=` `-=` `*=` `/=` `%=`   |
