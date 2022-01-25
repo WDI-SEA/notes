@@ -143,4 +143,3 @@ Documentation on input types: [https://developer.mozilla.org/en-US/docs/Web/HTML
 Clone the following repo and open instructions.html in your browser. Your goal is to work to turn the basic skeleton.html page into a webpage meeting the requirements described in the instructions that looks like the picture shown in solution.png. Good luck!
 
 [https://github.com/WDI-SEA/html\_user\_inputs](https://github.com/WDI-SEA/html_user_inputs)
-
