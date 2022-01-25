@@ -39,8 +39,8 @@ Or we can use **bracket notation** similar to the way we use arrays. While this 
 friend["firstName"]
 
 // Or we can use whatever value is in this variable...
-let myKey = "lastName";
-friend[myKey];
+let myKey = "lastName"
+friend[myKey]
 ```
 
 This gives us a lot of flexibility when accessing keys in an object so it a great one to remember.
@@ -129,7 +129,7 @@ let mySophisticatedObject = {
   name: "Linus Torvalds",
   knowFor: "Developing Linux and Git",
   sayHello: function() {
-    console.log("Hi!");
+    console.log("Hi!")
   }
 }
 ```
@@ -137,13 +137,13 @@ let mySophisticatedObject = {
 Or we can assign a function to a key after it has been declared:
 
 ```javascript
-mySophisticatedObject.sayGoodbye = function() { console.log("Bye!") };
+mySophisticatedObject.sayGoodbye = function() { console.log("Bye!") }
 ```
 
 To call them, we access the object and the key, but we call it like a function:
 
 ```javascript
-mySophisticatedObject.sayGoodBye();
+mySophisticatedObject.sayGoodBye()
 // ==> prints "Bye!" to the console
 ```
 
@@ -156,12 +156,11 @@ let firstProgrammer = {
   name: "Ada Lovelace",
   knownFor: "Being the first software engineer",
   brag: function () {
-    console.log("I'm " + this.name + " and I'm Known for " + this.knownFor);
+    console.log("I'm " + this.name + " and I'm Known for " + this.knownFor)
   }
 }
 
-firstProgrammer.brag();
-// ==> prints "I'm Ada Lovelace and I'm FIRST!!!"
+firstProgrammer.brag()
 ```
 
 ### Looping Over Objects
@@ -173,9 +172,9 @@ let car = {
   wheels: 4,
   doors: 2,
   seats: 5
-};
+}
 for (const thing in car) {
-  console.log("My car has " + car[thing] + " " + thing);
+  console.log("My car has " + car[thing] + " " + thing)
 }
 
 // Will print out:
