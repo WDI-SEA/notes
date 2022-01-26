@@ -25,17 +25,7 @@ let lastFriend = friends[2]
 // => 'Curly'
 ```
 
-## Group Exercise
-
-Grab the person next to you. One person, create a variable that equals a comma delimited string with at least four of your favorite foods.
-
-```javascript
-let favorites = "noodles,bread,cheese,filet mignon"
-```
-
-Have the second person turn that string into an array, then the first person should ask the second what their third favorite food is.
-
-## Group Exercise
+## Exercise
 
 Grab the person next to you. One person, create a variable that equals a comma delimited string with at least four of your favorite foods.
 
