@@ -13,7 +13,7 @@ We are going to start building a color palette picker.
 
 Create DOM elements:
 
-```markup
+```html
 <button id="generate">GENERATE</button>
 <div id="container">
     <div id="color-palette"></div>
@@ -135,4 +135,3 @@ const addcolor = (event) => {
     document.querySelector('#my-palette').appendChild(newSquare)
 }
 ```
-

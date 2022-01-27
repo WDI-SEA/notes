@@ -88,16 +88,16 @@ _**css**_
 _**js**_
 
 ```javascript
-var myDiv = document.getElementById('hello');
+const myDiv = document.getElementById('hello');
 
 console.log(myDiv);
 
-var theSquares = document.getElementsByClassName("square");
+const theSquares = document.getElementsByClassName("square");
 
 console.log(theSquares[0]);
 console.log(theSquares[1]);
 
-var theDivs = document.getElementsByTagName("div")
+const theDivs = document.getElementsByTagName("div")
 
 console.log(theDivs[0]);
 console.log(theDivs[1]);
@@ -111,17 +111,17 @@ console.log(theDivs[1]);
 _**js**_
 
 ```javascript
-var myDiv2 = document.querySelector('#gb');
+const myDiv2 = document.querySelector('#gb');
 
 console.log(myDiv2);
 
-var mySquares2 = document.querySelectorAll('.square')
+const mySquares2 = document.querySelectorAll('.square')
 ;
 
 console.log(mySquares2[0])
 console.log(mySquares2[1])
 
-var myDivs2 = document.querySelectorAll('div');
+const myDivs2 = document.querySelectorAll('div');
 
 console.log(myDivs2[0])
 console.log(myDivs2[1])
@@ -154,7 +154,7 @@ What if I want to do something to both divs at once?
 theSquares.style.border = "2px dashed black"
 
 // but this will
-for(var i = 0; i<theSquares.length; i++) {
+for(let i = 0; i< theSquares.length; i++) {
   theSquares[i].style.border ="dashed 2px black"
 }
 ```
@@ -174,7 +174,7 @@ What if I want to change an attribute, like the src on this img?
 There are 2 ways to get and set attributes of a DOM element. You can access the properties directly or use use get/setAttribute methods. It's important that you know both exist, but generally accessing the properties directly is more consistent across browsers.
 
 ```javascript
-var photo = document.querySelector("img");
+const photo = document.querySelector("img");
 
 //get using property
 console.log(photo.src);
@@ -208,7 +208,7 @@ console.log(document.querySelector('div').classList);
 And just like the HTML collection, we can access the values in the classList like an array.
 
 ```javascript
-var helloDiv = document.querySelector('div');
+const helloDiv = document.querySelector('div');
 console.log(helloDiv.classList[0]);
 ```
 

@@ -272,4 +272,3 @@ const generateQuilt = (numOfSquares) => {
 ```
 
 _Adapted from_ [_SEI-MAE_](https://git.generalassemb.ly/Software-Engineering-Immersive-Remote/SEIR-MAE-INSTRUCTORS/blob/master/unit_1/w06d1/instructor_notes/1.%20Programmatic%20DOM.md) _by Taylor Darneille_
-

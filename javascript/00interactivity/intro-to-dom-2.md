@@ -67,7 +67,7 @@ Title: Intro to the DOM
 2. `command option j` to open Chrome Developer Console
 3. Our html
 
-```markup
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -359,4 +359,3 @@ You might be asking: what is a **node**?
 A node is the generic name for any type of object in the DOM hierarchy. A node could be one of the built-in DOM elements such as document or document.body, it could be an HTML tag specified in the HTML such as `<input>` or `<p>` or it could be a text node that is created by the system to hold a block of text inside another element. So, in a nutshell, a node is any DOM object.
 
 Information about nodes was gathered from [here](https://stackoverflow.com/questions/9979172/difference-between-node-object-and-element-object)
-
