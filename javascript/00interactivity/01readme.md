@@ -8,7 +8,7 @@
 
 ## What is the DOM?
 
-When the broswer loads a webpage, it takes in all the information about what needs to be displayed on the page, and creates a bunch of Javascript objects that represent the elements on the page. These objects mirror the html hierarchy, where the highest order parent is the _document_ object.
+When the browser loads a webpage, it takes in all the information about what needs to be displayed on the page, and creates a bunch of Javascript objects that represent the elements on the page. These objects mirror the html hierarchy, where the highest order parent is the _document_ object.
 
 ![DOM](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSew-BsBdRn9RadAFC2626myd4j66yaFIWzSd6nkdvN-rbg14NX)
 
@@ -328,4 +328,3 @@ document.addEventListener('DOMContentLoaded', function() {
 ### References
 
 * [Event Developer Guide on MDN](https://developer.mozilla.org/en-US/docs/Web/Guide/Events)
-
