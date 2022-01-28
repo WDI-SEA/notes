@@ -4,7 +4,8 @@
 
 ## Recent Projects
 
-* [Unity](https://petefitton.github.io/UNITY/) - Pete Fitton \(SEI 29\)
+
+* [Mastermind](https://wonkatin.github.io) - Sarah Marie Coogan \(SEIR 125\)
 * [Ludo!](https://yboodhan.com/ludo/) - Yashoma Boodhan \(SEI 28\)
 * [Social Life Simulator](https://nickubed.github.io/social-life-sim/) - Nick Quandt \(SEI 28\)
 * [Pew Pew](https://justinrobertking.github.io/space-game/game/) - Justin King \(SEI 24\)
