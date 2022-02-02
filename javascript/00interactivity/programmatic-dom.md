@@ -29,7 +29,11 @@ Write a function that will add an `h2` with the text "Just getting started" to t
 
 ```javascript
 const addH2 = () => {
+    // create a new h2 element
     let h2 = document.createElement('h2')
+    // give the h2 some text
+    h2.innerText = 'Just getting started!'
+    // attach it to the body
     document.getElementsByTagName('body')[0].append(h2)
 }
 
@@ -80,6 +84,7 @@ First goal: add 1000 divs to the DOM
 document.addEventListener('DOMContentLoaded', ()=>{
     addH2()
     changeH2()
+    // add 1000 divs to the DOM
     for (let i=1; i<=1000; i++) {
         console.log(i)
     }
@@ -92,8 +97,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
 document.addEventListener('DOMContentLoaded', ()=>{
     addH2()
     changeH2()
-    for (let i=1; i<=1000; i++) {
+    // add 1000 divs to the DOM
+    for (let i=1; i<1000; i++) {
+        // create a new div
         const square = document.createElement('div')
+        // append that new div to the body
         document.querySelector('body').appendChild(square)
     }
 })
@@ -105,9 +113,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
 document.addEventListener('DOMContentLoaded', ()=>{
     addH2()
     changeH2()
-    for (let i=1; i<=1000; i++) {
+    // add 1000 divs to the DOM
+    for (let i=1; i<1000; i++) {
+        // create a new div
         const square = document.createElement('div')
+        // add a class to the div to giv it styles
         square.classList.add('square')
+        // append that new div to the body
         document.querySelector('body').appendChild(square)
     }
 })
@@ -123,11 +135,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
 }
 ```
 
-This is a DRY way to make a grid of 1000 divs.
-
 ### Add to the DOM using a function that runs a loop
 
-I would like a convenient way to generate more squares.
+Our code is starting to get a bit less readable. Comments help, but we can make it even more readable by transforming the loop into a strategically-named function:
 
 We can wrap this process in a function:
 
