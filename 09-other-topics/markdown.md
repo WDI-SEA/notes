@@ -12,18 +12,18 @@ Markdown is a 'markup language' that is designed to format plain text with simpl
 
 [Vscode](https://code.visualstudio.com/Docs/languages/markdown) will display formatted markdown when the hotkey `cmd + shift + v`(pc `cntrl + shift + v`) is pressed.
 
-
+Markdown has it's own syntax, but most valid html is also valid markdown.
 
 ## Paragraphs
 
 Paragraphs are on the same line. This sentence is still in the same paragraph as the last.
 
-Line breaks need a whole blank line in between paragraphs. Put a whole blank line between pretty much every new markdown thing (headers, code chunks, lists, ect). 
+Line breaks need a whole blank line in between paragraphs. Put a whole blank line between pretty much every new markdown thing (headers, code chunks, lists, etc). 
 
 ```markdown
 Paragraphs are one the same line. This sentance is still in the same paragraph as the last.
 
-Line breaks need a whole blank line inbetween paragraphs. Put a whole blank line between pretty much every new makrdown thing (headers, code chunks, lists, ect). 
+Line breaks need a whole blank line inbetween paragraphs. Put a whole blank line between pretty much every new makrdown thing (headers, code chunks, lists, etc). 
 ```
 
 ## Headers
@@ -87,11 +87,11 @@ ___
 
 ## Text Styles and Emphasis
 
-**Bold** text is wrapped in two astericks `**bold**` or two underscores `__bold__` on either side. 
+**Bold** text is wrapped in two asterisks `**bold**` or two underscores `__bold__` on either side. 
 
-_Italic_ text is wrapped in one asterick `*italic*` or one underscore `_italalic_`.
+_Italic_ text is wrapped in one asterisk `*italic*` or one underscore `_italalic_`.
 
-`Inline code snippets`, or highlights, use backticks ``code``. 
+`Inline code snippets`, or highlights, use back-ticks ``code``. 
 
 ~~Strike-through~~ uses two tildes on either side `~~strick-through~~``.
 
@@ -131,7 +131,7 @@ _You **can** `combine` ~~them~~_
 
 ## Lists
 
-You can make unordered lists with asterisks `*` hyphens `-` and plus signs `+` (all interchangable!). You can also make ordered lists with the number followed by a period `1.`. If you find your lists are buggin out (one list followed by anteher), giving an extra blank line between them usually fixes it.
+You can make unordered lists with asterisks `*` hyphens `-` and plus signs `+` (all interchangeable!). You can also make ordered lists with the number followed by a period `1.`. If you find your lists are buggin out (one list followed by another), giving an extra blank line between them usually fixes it.
 
 ```markdown
 * asterick
@@ -145,8 +145,8 @@ You can make unordered lists with asterisks `*` hyphens `-` and plus signs `+` (
 1. one
 ```
 
-* asterick
-* asterick
+* asterisk
+* asterisk
 - hyphen 
 - hyphen
 + plus
@@ -156,7 +156,7 @@ You can make unordered lists with asterisks `*` hyphens `-` and plus signs `+` (
 1. one
 1. one
 
-Todo lists are started with sqaure brackets after `[]` the list symbol: `- []` and checked off with an `x`: `- [x]` (some markdown versions don't support making done lists look extra cool)
+Todo lists are started with square brackets after `[]` the list symbol: `- []` and checked off with an `x`: `- [x]` (some markdown versions don't support making done lists look extra cool)
 
 ```markdown
 - [ ] need to do
@@ -168,7 +168,7 @@ Todo lists are started with sqaure brackets after `[]` the list symbol: `- []` a
 - [] need to do
 - [x] nailed it so done
 
-You can indent lists to make sub lists, but ordered lists, but unordered list need to be on different indentation levels! (*i.e. you can't have an unordered list turn into an ordered list halfway thorugh)
+You can indent lists to make sub lists, but ordered lists, but unordered list need to be on different indentation levels! (*i.e. you can't have an unordered list turn into an ordered list halfway through)
 
 ```markdown
 * asterick
@@ -184,8 +184,8 @@ You can indent lists to make sub lists, but ordered lists, but unordered list ne
   - [x] nailed it so done
 ```
 
-* asterick
-* asterick
+* asterisk
+* asterisk
   - hyphen 
   - hyphen
 + plus
@@ -198,7 +198,7 @@ You can indent lists to make sub lists, but ordered lists, but unordered list ne
 
 ## Block Quotes
 
-**Block qoutes** start with a wokka `>`  (greater than? less than? what is this thing called...). Subsequent lines that start with a block qoute will be grouped together, even with a space between lines.
+**Block quotes** start with a wokka `>`  (greater than? less than? what is this thing called...). Subsequent lines that start with a block quote will be grouped together, even with a space between lines.
 
 ```markdown
 > blockquote
@@ -210,7 +210,7 @@ You can indent lists to make sub lists, but ordered lists, but unordered list ne
 
 > blockqoute
 
-This will break wtihout the empty line:
+This will break without the empty line:
 
 ```markdown
 > blockquote
@@ -220,7 +220,7 @@ This will break wtihout the empty line:
 > blockquote
 > blockqoute
 
-If you want to combine lists and block qoutes, you can just use a wokka `>` on the first item in the list:
+If you want to combine lists and block quotes, you can just use a wokka `>` on the first item in the list:
 
 ```markdown
 > * blockqoute
@@ -249,7 +249,7 @@ let generic_demo = {
 
 ## Code blocks
 
-Open and close code blocks with three backticks **\`\`\`**. You can have a plaintext code block or specify the langauge for syntax highlighing after the opening backticks: **\`\`\`javascript**.
+Open and close code blocks with three backpacks **\`\`\`**. You can have a plaintext code block or specify the langauge for syntax highlighing after the opening backticks: **\`\`\`javascript**.
 
 <div>
 ``` 
@@ -309,7 +309,6 @@ function makeCodePretty() {
 
 ## Tables
 
-
 ```markdwon
 | Syntax | Description |
 | ------ | ----------- |
@@ -323,18 +322,18 @@ function makeCodePretty() {
 | ------ | ----------- |
 | Header | Title |
 | Paragraph | Text |
-| **Bold** | *Italalic* | `code` | 
+| **Bold** | *Italic* | `code` | 
 
 ## Escaping Characters:
 
-You can escape markdown formattign with a forward slash before the character: `\`.
+You can escape markdown formatting with a forward slash before the character: `\`.
 
 ```makrdwon
 hey look two backticks \`\` 
 hello asterisks \*hello\*
 ```
 
-hey look two backticks \`\`
+hey look two backpacks \`\`
 
 hello asterisks \*hello\*
 
@@ -362,7 +361,6 @@ Oh yea, you can do straight up HTML if you need to.
 
 </details>
 ```
-
 
 <details>
   <summary>Exciting! What if I click on this?</summary>
