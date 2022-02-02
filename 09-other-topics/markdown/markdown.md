@@ -177,14 +177,6 @@ These show as:
 <!-- image that lives on the internet -->
 ![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
 
-It is also possible to use an `html <img />` to make an image of a specific size:
-
-```markdown
-<img width="300" height="300" alt="just a little chonker" href="https://i.redd.it/y1s0l63llrf21.jpg" />
-```
-
-<img width="300" height="300" alt="just a little chonker" href="https://i.redd.it/y1s0l63llrf21.jpg" />
-
 Images can also be put in headers:
 
 ```markdown
