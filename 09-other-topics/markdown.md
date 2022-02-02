@@ -1,8 +1,24 @@
 # Markdown 
 
-Paragraphs are on the same line. This sentance is still in the same paragraph as the last.
+## Introduction
 
-Line breaks need a whole blank line in between paragraphs. Put a whole blank line between pretty much every new makrdown thing (headers, code chunks, lists, ect). 
+Markdown is a 'markup language' that is designed to format plain text with simple, easy syntax. It was created in 2004, and has become the defacto format for coders and use in their projects for instructions and project info. Markdown uses the `.md` file extension, and comes a few different 'flavors' or 'syntaxes'. This sheet is a reference for 'vanilla markdown', or markdown that will work most anywhere the format is used.
+
+### Markdown Tools and Links
+
+[Github](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates) will display formatted marked when it finds special file names, such as `README.md` which will be displayed on project landings and `PULL_REQUEST_TEMPLATE.md` for markdown to be displayed before pull request are made.
+
+[Hackmd](https://hackmd.io/) is a collaborative markdown site, that works similar to google docs but uses `md` instead.
+
+[Vscode](https://code.visualstudio.com/Docs/languages/markdown) will display formatted markdown when the hotkey `cmd + shift + v`(pc `cntrl + shift + v`) is pressed.
+
+
+
+## Paragraphs
+
+Paragraphs are on the same line. This sentence is still in the same paragraph as the last.
+
+Line breaks need a whole blank line in between paragraphs. Put a whole blank line between pretty much every new markdown thing (headers, code chunks, lists, ect). 
 
 ```markdown
 Paragraphs are one the same line. This sentance is still in the same paragraph as the last.
