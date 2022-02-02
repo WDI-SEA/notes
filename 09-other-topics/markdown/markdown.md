@@ -164,8 +164,8 @@ Todo lists are started with square brackets after `[]` the list symbol: `- []` a
 - [x] nailed it so done
 ```
 
-- [] need to do
-- [] need to do
+- [ ] need to do
+- [ ] need to do
 - [x] nailed it so done
 
 You can indent lists to make sub lists, but ordered lists, but unordered list need to be on different indentation levels! (*i.e. you can't have an unordered list turn into an ordered list halfway through)
@@ -179,8 +179,8 @@ You can indent lists to make sub lists, but ordered lists, but unordered list ne
   + plus
 1. one
 1. one
-  - [] need to do
-  - [] need to do
+  - [ ] need to do
+  - [ ] need to do
   - [x] nailed it so done
 ```
 
@@ -192,8 +192,8 @@ You can indent lists to make sub lists, but ordered lists, but unordered list ne
 + plus
   1. one
   1. one
-- [] need to do
-- [] need to do
+- [ ] need to do
+- [ ] need to do
 - [x] nailed it so done
 
 ## Block Quotes
