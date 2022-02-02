@@ -5,6 +5,8 @@
 ## Example Projects
 
 * [Mastermind (DOM)](https://wonkatin.github.io) - Sarah Marie Coogan, SEIR 125
+* [Word-cross'd Puzzler (DOM)](https://louisajohnston.github.io/) - Louisa Johnston, SEIR 125
+* [Unity (DOM)](https://petefitton.github.io/UNITY/) - Pete Fitton \(SEI 29\)
 * [Ludo!](https://yboodhan.com/ludo/) - Yashoma Boodhan, SEI 28
 * [Bee Free](https://009kings.github.io/beeFree/) - Sarah King, WDI 22 (Sarah made her own assets using adobe photoshop. [Her portfolio](https://hirethat.dev/) is cool too.)
 * [Chairman of the Board](http://seancswanson.com/chairman-of-the-board/) - Sean Swanson, WDI 16 (This one is a largely text-based RPG. [Here is the creator's portfolio](https://seancswanson.com/))
