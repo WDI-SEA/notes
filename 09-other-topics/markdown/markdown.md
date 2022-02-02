@@ -313,7 +313,7 @@ hey look two backticks \`\`
 hello asterisks \*hello\*
 ```
 
-hey look two backpacks \`\`
+hey look two backticks \`\`
 
 hello asterisks \*hello\*
 
