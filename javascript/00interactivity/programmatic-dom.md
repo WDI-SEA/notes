@@ -1,4 +1,8 @@
-# Programmatic DOM Manipulation
+# Color Quilt
+
+### Programmatic DOM Manipulation
+
+--- 
 
 ## Lesson objectives
 
@@ -10,11 +14,11 @@ _After this lesson students will be able to:_
 4. Add to the DOM with a loop
 5. Use data to populate the DOM
 
-We can use JavaScript control flow patterns like **functions**, **loops**, and **conditionals** in our DOM manipulation patterns to create some interesting things.
+**TLDR**: The point of this lesson is to see how we can use JavaScript control flow patterns like **functions**, **loops**, and **conditionals** to make our DOM manipulation more programmatic.
 
 ## Set Up
 
-* Make a new directory called `programmatic-dom-practice`
+* Make a new directory called `color-quilt`
 * Add three files, `index.html`, `main.css` and `app.js`, to this directory
 * Add the html boilerplate to `index.html` and link your css and javascript files to your html
 * Add a background color and a DOMContentLoaded event listener with a console log, then open your app up in the browser to check if the files are properly linked
