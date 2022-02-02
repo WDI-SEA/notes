@@ -150,6 +150,14 @@ function makeCodePretty() {
 }
 ```
 
+Code without a specified language is show without syntax highlights:
+
+```
+let generic_demo = {
+  code: block
+}
+```
+
 ## Links & Images
 
 Images and links are similar: a like is formatted like this:
@@ -224,7 +232,7 @@ Todo lists are started with square brackets after `[]` the list symbol: `- []` a
 - [ ] need to do
 - [x] nailed it so done
 
-You can indent lists to make sub lists, but ordered lists, but unordered list need to be on different indentation levels! (*i.e. you can't have an unordered list turn into an ordered list halfway through)
+You can indent lists to make sub lists the sub list just needs to be on different the nest indentation level! (*i.e. you can't have an unordered list turn into an ordered list halfway through)
 
 ```markdown
 * asterick
@@ -315,13 +323,6 @@ If you want to combine lists and block quotes, you can just use a wokka `>` on t
   2. ordered list
     * [ ] todos
     * [ ] todos
-
-```
-let generic_demo = {
-  code: block
-}
-```
-
 
 ## Escaping Characters:
 
