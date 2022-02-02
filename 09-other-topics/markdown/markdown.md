@@ -21,7 +21,7 @@ Paragraphs are on the same line. This sentence is still in the same paragraph as
 Line breaks need a whole blank line in between paragraphs. Put a whole blank line between pretty much every new markdown thing (headers, code chunks, lists, etc). 
 
 ```markdown
-Paragraphs are one the same line. This sentance is still in the same paragraph as the last.
+Paragraphs are on the same line. This sentance is still in the same paragraph as the last.
 
 Line breaks need a whole blank line inbetween paragraphs. Put a whole blank line between pretty much every new makrdown thing (headers, code chunks, lists, etc). 
 ```
@@ -129,6 +129,70 @@ _You **can** `combine` ~~them~~_
 
 ### _And **they** ~~work~~ in `headers`!_
 
+## Code blocks
+
+Open and close code blocks with three backpacks **\`\`\`**. You can have a plaintext code block or specify the langauge for syntax highlighing after the opening backticks: **\`\`\`javascript**.
+
+``` 
+plain text (no language specified)
+```
+
+```python
+# like this: ```python
+def python_code_chunk():
+  return 'syntax highlighting'
+```
+
+```javascript
+// like this: ```javascript
+function makeCodePretty() {
+  return 'all the pretty colors'
+}
+```
+
+## Links & Images
+
+Images and links are similar: a like is formatted like this:
+
+```markdown
+<!-- link to Google -->
+[Google](https://www.google.com/)
+```
+
+and a image is a link with a `!` in front of it. Don't forget the file extension! (here it is `.jpg`)
+
+```markdown
+<!-- local image -->
+![Cute Doggo](./images/cute-doggo.jpg)
+<!-- image that lives on the internet -->
+![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
+```
+
+These show as:
+
+<!-- link to Google -->
+[Google](https://www.google.com/)
+<!-- local image -->
+![Cute Doggo](./images/cute-doggo.jpg)
+<!-- image that lives on the internet -->
+![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
+
+It is also possible to use an `html <img />` to make an image of a specific size:
+
+```markdown
+<img width="300" height="300" alt="just a little chonker" href="https://i.redd.it/y1s0l63llrf21.jpg" />
+```
+
+<img width="300" height="300" alt="just a little chonker" href="https://i.redd.it/y1s0l63llrf21.jpg" />
+
+Images can also be put in headers:
+
+```markdown
+# ![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+```
+
+# ![GA Logo](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)
+
 ## Lists
 
 You can make unordered lists with asterisks `*` hyphens `-` and plus signs `+` (all interchangeable!). You can also make ordered lists with the number followed by a period `1.`. If you find your lists are buggin out (one list followed by another), giving an extra blank line between them usually fixes it.
@@ -196,6 +260,26 @@ You can indent lists to make sub lists, but ordered lists, but unordered list ne
 - [ ] need to do
 - [x] nailed it so done
 
+## Tables
+
+Tables have the top section that creates columns, `| Syntax | Description |` and `| ------ | ----------- |`, followed but items that fill up the columns, `| Paragraph | Text |`
+`| **Bold** | *Italalic* |`
+
+```markdown
+| Syntax | Description |
+| ------ | ----------- |
+| Header | Title |
+| Paragraph | Text |
+| **Bold** | *Italalic* |
+```
+
+
+| Syntax | Description |
+| ------ | ----------- |
+| Header | Title |
+| Paragraph | Text |
+| **Bold** | *Italic* |
+
 ## Block Quotes
 
 **Block quotes** start with a wokka `>`  (greater than? less than? what is this thing called...). Subsequent lines that start with a block quote will be grouped together, even with a space between lines.
@@ -228,8 +312,8 @@ If you want to combine lists and block quotes, you can just use a wokka `>` on t
 * blockqoute
   1. ordered list
   2. ordered list
-    * [] todos
-    * [] todos
+    * [ ] todos
+    * [ ] todos
 ```
 
 > * blockqoute
@@ -237,9 +321,8 @@ If you want to combine lists and block quotes, you can just use a wokka `>` on t
 * blockqoute
   1. ordered list
   2. ordered list
-    * [] todos
-    * [] todos
-
+    * [ ] todos
+    * [ ] todos
 
 ```
 let generic_demo = {
@@ -247,74 +330,6 @@ let generic_demo = {
 }
 ```
 
-## Code blocks
-
-Open and close code blocks with three backpacks **\`\`\`**. You can have a plaintext code block or specify the langauge for syntax highlighing after the opening backticks: **\`\`\`javascript**.
-
-
-``` 
-plain text (no language specified)
-```
-
-```python
-# like this: ```python
-def python_code_chunk():
-  return 'syntax highlighting'
-```
-
-```javascript
-// like this: ```javascript
-function makeCodePretty() {
-  return 'all the pretty colors'
-}
-```
-
-## Links & Images
-
-Images and links are similar: a like is formatted like this:
-
-```markdown
-<!-- link to Google -->
-[Google](https://www.google.com/)
-```
-
-and a image is a link with a `!` in front of it. Don't forget the file extension! (here it is `.jpg`)
-
-```markdown
-<!-- local image -->
-![Cute Doggo](./images/cute-doggo.jpg)
-<!-- image that lives on the internet -->
-![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
-```
-
-These show as:
-
-<!-- link to Google -->
-[Google](https://www.google.com/)
-<!-- local image -->
-![Cute Doggo](./images/cute-doggo.jpg)
-<!-- image that lives on the internet -->
-![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
-
-## Tables
-
-Tables have the top section that creates columns, `| Syntax | Description |` and `| ------ | ----------- |`, followed but items that fill up the columns, `| Paragraph | Text |`
-`| **Bold** | *Italalic* |  code |`
-
-```markdown
-| Syntax | Description |
-| ------ | ----------- |
-| Header | Title |
-| Paragraph | Text |
-| **Bold** | *Italalic* | `code` |
-```
-
-
-| Syntax | Description |
-| ------ | ----------- |
-| Header | Title |
-| Paragraph | Text |
-| **Bold** | *Italic* | `code` | 
 
 ## Escaping Characters:
 
