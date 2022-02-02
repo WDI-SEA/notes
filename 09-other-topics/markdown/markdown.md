@@ -21,7 +21,7 @@ Paragraphs are on the same line. This sentence is still in the same paragraph as
 Line breaks need a whole blank line in between paragraphs. Put a whole blank line between pretty much every new markdown thing (headers, code chunks, lists, etc). 
 
 ```markdown
-Paragraphs are one the same line. This sentance is still in the same paragraph as the last.
+Paragraphs are on the same line. This sentance is still in the same paragraph as the last.
 
 Line breaks need a whole blank line inbetween paragraphs. Put a whole blank line between pretty much every new makrdown thing (headers, code chunks, lists, etc). 
 ```
