@@ -1,9 +1,5 @@
 # Grids & Pyramids
 
-![ga](https://github.com/WDI-SEA/notes/tree/5537c491fcc61eb363b9c34cc82a02076abf9fc7/ga_cog.png)
-
-## Grids and Pyramids
-
 Title: Grids and Pyramids  
  Type: Lab   
  Duration: 45 - 60 mins  
