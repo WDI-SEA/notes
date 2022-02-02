@@ -304,26 +304,6 @@ This will break without the empty line:
 > blockquote
 > blockqoute
 
-If you want to combine lists and block quotes, you can just use a wokka `>` on the first item in the list:
-
-```markdown
-> * blockqoute
-* blockquote
-* blockqoute
-  1. ordered list
-  2. ordered list
-    * [ ] todos
-    * [ ] todos
-```
-
-> * blockqoute
-* blockquote
-* blockqoute
-  1. ordered list
-  2. ordered list
-    * [ ] todos
-    * [ ] todos
-
 ## Escaping Characters:
 
 You can escape markdown formatting with a forward slash before the character: `\`.
