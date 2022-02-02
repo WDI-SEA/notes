@@ -251,45 +251,19 @@ let generic_demo = {
 
 Open and close code blocks with three backpacks **\`\`\`**. You can have a plaintext code block or specify the langauge for syntax highlighing after the opening backticks: **\`\`\`javascript**.
 
-<div>
+
 ``` 
-<br />
-plain text
-<br />
-```
-<br />
-
-```python
-<br />
-def python_code_chunk():
-<br />
-  return 'syntax highlighting'
-<br />
-```
-<br />
-
-```javascript
-<br />
-function makeCodePretty() {
-<br />
-  return 'all the pretty colors'
-<br />
-}
-<br />
-```
-<br />
-</div>
-
-```
-plain text code
+plain text (no language specified)
 ```
 
 ```python
+# like this: ```python
 def python_code_chunk():
   return 'syntax highlighting'
 ```
 
 ```javascript
+// like this: ```javascript
 function makeCodePretty() {
   return 'all the pretty colors'
 }
@@ -297,19 +271,37 @@ function makeCodePretty() {
 
 ## Links & Images
 
-```markdown
-[title](https://www.example.com)
+Images and links are similar: a like is formatted like this:
 
-![alt text](image.jpg)
+```markdown
+<!-- link to Google -->
+[Google](https://www.google.com/)
 ```
 
-[title](https://www.example.com)
+and a image is a link with a `!` in front of it. Don't forget the file extension! (here it is `.jpg`)
 
-![alt text](image.jpg)
+```markdown
+<!-- local image -->
+![Cute Doggo](./images/cute-doggo.jpg)
+<!-- image that lives on the internet -->
+![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
+```
+
+These show as:
+
+<!-- link to Google -->
+[Google](https://www.google.com/)
+<!-- local image -->
+![Cute Doggo](./images/cute-doggo.jpg)
+<!-- image that lives on the internet -->
+![Frosted Chonker](https://i.redd.it/y1s0l63llrf21.jpg)
 
 ## Tables
 
-```markdwon
+Tables have the top section that creates columns, `| Syntax | Description |` and `| ------ | ----------- |`, followed but items that fill up the columns, `| Paragraph | Text |`
+`| **Bold** | *Italalic* |  code |`
+
+```markdown
 | Syntax | Description |
 | ------ | ----------- |
 | Header | Title |
@@ -328,7 +320,7 @@ function makeCodePretty() {
 
 You can escape markdown formatting with a forward slash before the character: `\`.
 
-```makrdwon
+```makrdown
 hey look two backticks \`\` 
 hello asterisks \*hello\*
 ```
