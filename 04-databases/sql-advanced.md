@@ -6,6 +6,45 @@
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
 
+## Working with `.sql` files in the `psql` shell
+
+`.sql` files can be written and ran like any other langauge. From within the `psql` the command `\i <relative path to file>.sql` will import and run a `.sql` file.
+
+* `mkdir advanced-sql` to create a folder for the sql files
+* `touch create-example-db.sql` to make your first `.sql` file to run
+* add the following `SQL` example:
+
+```sql
+-- comments in SQL start with tow dashes btw
+/*
+multiline line comments work like this 
+this file will create a db called example_books and connect to it, CREATE a book table, add CREATE information and then READ all 
+*/
+-- create the db
+CREATE DATABASE "example_books";
+
+-- connect to it (psql commands are valid)
+\connect example_books
+
+-- create the tables
+
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  author TEXT
+);
+
+-- CREATE some data
+INSERT INTO books (title, author) VALUES ('Do Androids Dream of Electric Sheep?', 'Phillip K. Dick');
+INSERT INTO books (title, author) VALUES ('Ubik', 'Phillip K. Dick');
+-- single qoutes are escaped by doubling them up ''
+INSERT INTO books (title, author) VALUES ('Cat''s Cradle', 'kurt Vonnegut');
+INSERT INTO books (title, author) VALUES ('Breakfast of Champions', 'kurt Vonnegut');
+
+-- READ some data
+SELECT * FROM books;
+```
+
 Let's create some data tables that we can run some queries on. Go to a terminal and run `psql`. Create a new database named 'advanced':
 
 ```sql
@@ -37,7 +76,7 @@ INSERT INTO customers (name, age, country, salary) VALUES ('Silvana', null, null
 
 You should be able to SELECT all the data and see this output:
 
-```text
+```sql
  id |  name   | age | country | salary 
 ----+---------+-----+---------+--------
   1 | Bira    |  32 | Brazil  |   2000
@@ -77,7 +116,7 @@ INSERT INTO orders (order_num, amount, customer_id) VALUES ('B7780B', 182.72 , 6
 
 Now `SELECT * FROM orders;` and you should see this table:
 
-```text
+```sql
  id | order_num | amount | customer_id 
 ----+-----------+--------+-------------
   1 | A2067O    | 104.09 |           1
@@ -241,7 +280,7 @@ There are four types of JOINs in SQL:
 
 Let's look at our table for customers and our table for orders. The customers table looks like this:
 
-```text
+```sql
  id |  name   | age | country | salary 
 ----+---------+-----+---------+--------
   1 | Bira    |  32 | Brazil  |   2000
@@ -255,7 +294,7 @@ Let's look at our table for customers and our table for orders. The customers ta
 
 And the orders table looks like this:
 
-```text
+```sql
  id | order_num | amount | customer_id 
 ----+-----------+--------+-------------
   1 | A2067O    | 104.09 |           1
@@ -283,7 +322,7 @@ ON c.id=o.customer_id;
 
 An `INNER JOIN` will return a dataset with all the matches from our customer and order tables where there is no NULL value on either side.
 
-```text
+```sql
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -313,7 +352,7 @@ _NOTE: The `OUTER` is optional_
 
 A `FULL OUTER JOIN` will do the opposite of an `INNER JOIN`, returning you a table with all possible combinations, even if NULL has to be placed in.
 
-```text
+```sql
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -342,7 +381,7 @@ ON c.id=o.customer_id;
 
 With a `LEFT JOIN` the table returned will have all values in the left table, even if there is no corresponding value on the right side.
 
-```text
+```sql
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -391,7 +430,7 @@ Unions display the results of two or more SELECT statements into one table, so t
 
 Here's a customers table:
 
-```text
+```sql
 id | name      
 ---+---------
  1 | Romesh  
@@ -402,7 +441,7 @@ id | name
 
 and a subscribers table:
 
-```text
+```sql
 id | name      
 ---+---------
  1 | Romesh  

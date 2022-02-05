@@ -63,9 +63,10 @@ A database server is a computer or group of computers that is dedicated to stori
 
 Before the notion of an RDBMS \(like PostreSQL\) and a standard language for querying that data was created \(SQL\), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard. Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
 
+## psql
+
 Today we're using [PostgreSQL](https://www.postgresql.org/download/macosx/), often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from.
 
-## psql
 
 **psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user and provides a `repl` for `SQL` commands.
 
@@ -85,7 +86,6 @@ username #\q
 
 Here is a handy cheatsheet for some of the most useful `psql` shell commands:
 
-
 | Function | Command | Description |
 | ------ | ------- | ---------- |
 | quit | `\q` | quit the shell |
@@ -98,21 +98,40 @@ Here is a handy cheatsheet for some of the most useful `psql` shell commands:
 | describe table | `\d table_name` | lists a table's columns and datatypes |
 | edit command | `\e` | opens last command in your shell's default editor |
 | expanded display | `\x off  (on or auto)` | will change the wrap behavior of column display |
-| shell command | `\!` | \! escapes to the shell to execute a shell command |
+| import  | `\i file-name.sql` | imports a `.sql` file and runs the commands |
 
-**CRUD**
+## SQL -- Acronyms and More Acronyms
 
-Stands for Create, Read, Update and Destroy. This is the lifecycle of data in an applicatoin. In SQL, CRUD can be mapped to the following **INSERT, SELECT, UPDATE, DELETE**. We will walk through examples in this section.
+### **CRUD**
+
+Database **CRUD** Describe the four basic types of database `transactions`
+
+Stands for `C`reate, `R`ead, `U`pdate and `D`estroy. This is the lifecycle of data in an applicatoin. In SQL, CRUD can be mapped to the following **INSERT, SELECT, UPDATE, DELETE**. We will walk through examples in this section.
+
+To `CREATE` something new in a SQL database an **INSERT** command is used
+To `READ` infomation from from a SQL databaes a **SELECT** command is used
+To `UPDATE` an item from in a SQL databaes an **UPDATE** command is used
+To `DESTROY` infomation from from a SQL databaes a **DELETE** command is used
+
+### SQL is known as an `ACID`ic database
+
+`ACID` is an acronym for `A`tomicity, `C`onsistency, `I`solation, and `D`urability
+
+`A`tomicity means a single database `transaction` will not interfere with another -- they are both isolated and `atomic`
+
+`C`onsistency guarantees that a transaction never leaves your database in a half-finished state.
+
+`I`solation keeps transactions separated from each other until they’re finished.
+
+`D`urability guarantees that the database will keep track of pending changes in such a way that the server can recover from an abnormal termination -- if it crashes it can uncrash.
 
 ### Creating a Database
 
 Most database products have the notion of separate databases. Lets create one for the lesson.
 
-```bash
+```sql
 CREATE DATABASE testdb;
 ```
-
-Remember that the default DBMS on a mac is PostgreSQL. Type `psql` to connect to PostgreSQL via the command line.
 
 To view all the databases that exist on your machine, type `\l`. You should see `testdb` in this list.
 
@@ -249,24 +268,22 @@ Similar to how Javascript has types of data, SQL defines types that can be store
 * Timestamp
 * Boolean \(True or False\)
 
-### Exercise Time
+All postgres datatypes can be found [here](https://www.postgresql.org/docs/9.5/datatype.html)
 
-Design a table for a movie database. Discuss a few things that a movie table may have. Choose the appropriate data type for the data. Make the `CREATE TABLE` command and execute it in psql. Use `\dt` to verify that the table was created. Once you're satisfied that the table is there, get rid of it using the DROP TABLE command. Use `\dt` again to make sure that the table has been dropped.
-
-### Selecting
+### READING with More Advanced SELECT Queires
 
 A select statement allows you to get data from the database. Here are the [docs on select](http://www.postgresql.org/docs/9.0/static/sql-select.html). Also, postgres has a good [tutorial on select](http://www.postgresql.org/docs/7.3/static/tutorial-select.html). I'd recommend looking at the tutorial sometime after the lesson.
 
 Create a new database to hold a movies table:
 
 ```sql
-CREATE DATABASE testdb;
+CREATE DATABASE movie_lesson;
 ```
 
 Connect to the new database:
 
 ```sql
-\connect testdb;
+\connect movie_lesson;
 ```
 
 Given this table:
@@ -368,6 +385,7 @@ We could also use compound statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
+<!-- thinking about moving entire discussion of FK to advanced section and adding a bit about using sql files before the lab
 ### Foreign Keys
 
 This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
@@ -379,7 +397,7 @@ What are some examples of when this would be useful?
 
 Let's build out the books and authors tables listed above:
 
-```text
+```sql
 CREATE TABLE authors (
   id SERIAL PRIMARY KEY,
   first_name TEXT,
@@ -410,7 +428,7 @@ Now practice planning out a more complex scenario! Use your own ideas, or try th
 Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
 
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
-* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro.
+* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro. -->
 
 ### LAB:
 
