@@ -57,47 +57,48 @@ For learning and testing purposes, we will be using Postgres on the same machine
 
 A database server is a computer or group of computers that is dedicated to storing your data and handling remote requests to retreive that data. Even in a very simple configuration, the database server will have at least 1 backup machine that keeps an exact copy of the database just in case the main database server goes down.
 
+### SQL: Structured Query Language
+
+**A Brief History of Databases**
+
+Before the notion of an RDBMS \(like PostreSQL\) and a standard language for querying that data was created \(SQL\), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard. Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
+
+Today we're using [PostgreSQL](https://www.postgresql.org/download/macosx/), often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from.
+
 ## psql
 
-Today we're using [PostgreSQL](https://www.postgresql.org/download/macosx/), often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from. We're using a "post-Ingres" database. PostgreSQL is the default database on macOS Server as of OS X Server version 10.7.
-
-If you install [Postgres.app](https://postgresapp.com/downloads.html), you will have access to psql from the elephant icon at the top of the screen:
-
-* ![image](../.gitbook/assets/Postgres.png)
-
-You can start and stop running the server from here.
-
-In order to access our server from our terminal, we need to install the path in our `.zshrc` or `.bashrc`. Open up your file from terminal by typing anywhere `open ~/.zshrc` and add this line to the bottom:
-
-```text
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-```
-
-To apply this, either restart your terminal or type `source ~/.zshrc` in your zshell. To check if it works,
-
-**psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user.
+**psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user and provides a `repl` for `SQL` commands.
 
 * In your terminal, type `psql` to begin using psql.
 
-psql has some of it's own commands.
+The psql shell has some of it's own commands.
 
 * type `\?` to view them all.
-
-Use `q` to exit the help screen \(or any other screen that doesn't self-terminate\)
 
 Note that all psql commands start with `\` except for `q`.
 
 To _quit_ psql and return to the home terminal:
 
 ```bash
-\q
+username #\q
 ```
 
-### SQL: Structured Query Language
+Here is a handy cheatsheet for some of the most useful `psql` shell commands:
 
-**A Brief History of Databases**
 
-Before the notion of an RDBMS \(like PostreSQL\) and a standard language for querying that data was created \(SQL\), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard. Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
+| Function | Command | Description |
+| ------ | ------- | ---------- |
+| quit | `\q` | quit the shell |
+| help | `\?` | list help for the psql shell |
+| help | `\h` | list all possible `SQL` commands |
+| help | `\h  SELECT` | get help for a specific SQL command  |
+| list | `\l` | lists all availible dbs found in the cluster |
+| connect | `\c` | connect to a database |
+| describe tables | `\dt` | list all the tables in the current database |
+| describe table | `\d table_name` | lists a table's columns and datatypes |
+| edit command | `\e` | opens last command in your shell's default editor |
+| expanded display | `\x off  (on or auto)` | will change the wrap behavior of column display |
+| shell command | `\!` | \! escapes to the shell to execute a shell command |
 
 **CRUD**
 
