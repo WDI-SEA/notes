@@ -6,44 +6,7 @@
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
 
-## Working with `.sql` files in the `psql` shell
-
-`.sql` files can be written and ran like any other langauge. From within the `psql` the command `\i <relative path to file>.sql` will import and run a `.sql` file.
-
-* `mkdir advanced-sql` to create a folder for the sql files
-* `touch create-example-db.sql` to make your first `.sql` file to run
-* add the following `SQL` example:
-
-```sql
--- comments in SQL start with tow dashes btw
-/*
-multiline line comments work like this 
-this file will create a db called example_books and connect to it, CREATE a book table, add CREATE information and then READ all 
-*/
--- create the db
-CREATE DATABASE "example_books";
-
--- connect to it (psql commands are valid)
-\connect example_books
-
--- create the tables
-
-CREATE TABLE books (
-  id SERIAL PRIMARY KEY,
-  title TEXT,
-  author TEXT
-);
-
--- CREATE some data
-INSERT INTO books (title, author) VALUES ('Do Androids Dream of Electric Sheep?', 'Phillip K. Dick');
-INSERT INTO books (title, author) VALUES ('Ubik', 'Phillip K. Dick');
--- single qoutes are escaped by doubling them up ''
-INSERT INTO books (title, author) VALUES ('Cat''s Cradle', 'kurt Vonnegut');
-INSERT INTO books (title, author) VALUES ('Breakfast of Champions', 'kurt Vonnegut');
-
--- READ some data
-SELECT * FROM books;
-```
+## Getting 
 
 Let's create some data tables that we can run some queries on. Go to a terminal and run `psql`. Create a new database named 'advanced':
 

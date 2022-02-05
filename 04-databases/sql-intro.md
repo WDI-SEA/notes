@@ -385,7 +385,8 @@ We could also use compound statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
-<!-- thinking about moving entire discussion of FK to advanced section and adding a bit about using sql files before the lab
+<!-- 
+thinking about moving entire discussion of FK to advanced section and adding a bit about using sql files before the lab
 ### Foreign Keys
 
 This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
@@ -428,7 +429,47 @@ Now practice planning out a more complex scenario! Use your own ideas, or try th
 Creating an ER diagram can be useful if you are designing a DB with lots of tables and relationships to one another. It may be useful to revist ER Diagrams after you have a firm understanding of databases. Here are some useful resources:
 
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
-* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro. -->
+* [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro. 
+-->
+
+## Working with `.sql` files in the `psql` shell
+
+`.sql` files can be written and ran like any other langauge. From within the `psql` the command `\i <relative path to file>.sql` will import and run a `.sql` file.
+
+* `mkdir advanced-sql` to create a folder for the sql files
+* `touch create-example-db.sql` to make your first `.sql` file to run
+* add the following `SQL` example:
+
+```sql
+-- comments in SQL start with tow dashes btw
+/*
+multiline line comments work like this 
+this file will create a db called example_books and connect to it, CREATE a book table, add CREATE information and then READ all 
+*/
+-- create the db
+CREATE DATABASE "example_books";
+
+-- connect to it (psql commands are valid)
+\connect example_books
+
+-- create the tables
+
+CREATE TABLE books (
+  id SERIAL PRIMARY KEY,
+  title TEXT,
+  author TEXT
+);
+
+-- CREATE some data
+INSERT INTO books (title, author) VALUES ('Do Androids Dream of Electric Sheep?', 'Phillip K. Dick');
+INSERT INTO books (title, author) VALUES ('Ubik', 'Phillip K. Dick');
+-- single qoutes are escaped by doubling them up ''
+INSERT INTO books (title, author) VALUES ('Cat''s Cradle', 'kurt Vonnegut');
+INSERT INTO books (title, author) VALUES ('Breakfast of Champions', 'kurt Vonnegut');
+
+-- READ some data
+SELECT * FROM books;
+```
 
 ### LAB:
 
