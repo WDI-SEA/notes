@@ -305,7 +305,7 @@ INSERT INTO movies (title, description, rating) VALUES('Back to the Future', 'an
 INSERT INTO movies (title, description, rating) VALUES('Dude Wheres My Car', 'probably a bad movie', 3);
 INSERT INTO movies (title, description, rating) VALUES('Godfather', 'good movie', 9);
 INSERT INTO movies (title, description, rating) VALUES('Mystic River', 'did not see it', 7);
-INSERT INTO movies (title, description, rating) VALUES('Jurassic Park', 'dinos and Jeff Goldblum', 10)
+INSERT INTO movies (title, description, rating) VALUES('Jurassic Park', 'dinos and Jeff Goldblum', 10);
 INSERT INTO movies (title, description, rating) VALUES('Argo', 'a movie', 8);
 INSERT INTO movies (title, description, rating) VALUES('Gigli', 'really bad movie', 1);
 ```
@@ -363,6 +363,8 @@ Write a query on the movie table to return the worst movie of all time. There sh
 
 The update statement is defined [here](http://www.postgresql.org/docs/9.1/static/sql-update.html) in the postgres docs. It is used to change existing data in our database.
 
+Update statements are formatted like this: `UPDATE FROM table WHERE boolean(condition)`
+
 For example, if we do not think Gigli was actually that bad, and we want to change the rating to a 2, we can use an update statement:
 
 ```sql
@@ -372,6 +374,8 @@ UPDATE movies SET rating=2 WHERE title='Gigli';
 ### Deleting
 
 Deleting works similarly to a select statement. Here are the [docs on delete](http://www.postgresql.org/docs/8.1/static/sql-delete.html)
+
+the syntax is `DELETE FROM table WHERE boolean(condition)`
 
 The statement below deletes the Dude Wheres My Car row from the database:
 
@@ -385,8 +389,6 @@ We could also use compound statements here:
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
 
-<!-- 
-thinking about moving entire discussion of FK to advanced section and adding a bit about using sql files before the lab
 ### Foreign Keys
 
 This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
@@ -399,30 +401,45 @@ What are some examples of when this would be useful?
 Let's build out the books and authors tables listed above:
 
 ```sql
-CREATE TABLE authors (
+-- a table that holds movie reviews
+CREATE TABLE movie_reviews (
   id SERIAL PRIMARY KEY,
-  first_name TEXT,
-  last_name INT
+  description TEXT,
+  reviewer TEXT,
+  score INT,
+  -- a foreing key that lets us find the movie that this review is for
+  movie_id INT REFERENCES movies(id)
 );
 
-CREATE TABLE books (
-  id SERIAL PRIMARY KEY,
-  title TEXT,
-  author_id INT references authors(id)
+-- nested queries to find movies and add reviews to them
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('Love them Dinos', 'The Critic', 10,  
+  (SELECT id FROM movies WHERE title='Jurassic Park')
 );
 
-INSERT INTO authors (first_name, last_name) VALUES ('Alexandre', 'Dumas');
-INSERT INTO books (title, author_id) VALUES ('The Three Musketeers', 1);
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('Cars p good', 'The Critic', 7,  
+  (SELECT id FROM movies WHERE title='Cars')
+);
+
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('Awesome for Sci-fi nerds', 'The Critic', 9,  
+  (SELECT id FROM movies WHERE title='Back to the Future')
+);
 ```
 
-Use select statements to view the tables and make sure everything worked as expected. Now try to delete the Hobbit book - what happened? If you delete the associated author, can you delete the book now?
+Use select statements to view the tables and make sure everything worked as expected.
 
-Now practice planning out a more complex scenario! Use your own ideas, or try the following:
+```sql
+SELECT * FROM movies;
+SELECT * FROM movie_reviews;
 
-* customers \(id, name, email\)
-* items
-* merch\_order \(id, num\_items, customer\_id\)
-* ordered\_items \(id, item\_id, quantity, merch\_order\)
+-- Use a JOIN to see all the data at once
+SELECT * FROM movies
+JOIN movie_reviews ON movies.id=movie_reviews.movie_id
+```
+
+How does the data displayed differ from the different select commands?
 
 ### ER Diagrams
 
@@ -430,7 +447,6 @@ Creating an ER diagram can be useful if you are designing a DB with lots of tabl
 
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
 * [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro. 
--->
 
 ## Working with `.sql` files in the `psql` shell
 
@@ -474,4 +490,3 @@ SELECT * FROM books;
 ### LAB:
 
 [Where in the world is Carmen San Diego?](https://github.com/WDI-SEA/sql-carmen-san-diego)
-
