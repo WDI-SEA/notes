@@ -1,3 +1,4 @@
+
 # Intro to SQL
 
 ## Introduction To SQL and Databases
@@ -174,7 +175,7 @@ Look at the table structure
  \d students
 ```
 
-#### INSERT-ing Data
+#### INSERT-ing Data **CREATE**RUD
 
 `INSERT INTO table_name (first_col, second_col) VALUES (first_col_data, second_col_data)`
 
@@ -188,7 +189,7 @@ INSERT INTO students
 VALUES ('Bob Jones', '(415)555-5555', 'bob@example.com');
 ```
 
-#### SELECT-ing Data
+#### SELECT-ing Data C**READ**UD
 
 `SELECT columns FROM table_name`
 
@@ -200,13 +201,21 @@ SELECT * FROM students WHERE name = 'Bob Jones';
 SELECT id, name FROM students;
 ```
 
-### UPDATE-ing Data
+### UPDATE-ing Data CR*UPDATE**D
+
+The update statement is defined [here](http://www.postgresql.org/docs/9.1/static/sql-update.html) in the postgres docs. It is used to change existing data in our database.
+
+Update statements are formatted like this: `UPDATE FROM table WHERE boolean(condition)`
 
 ```sql
 UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 ```
 
-### DELETE-ing Data
+### DELETE-ing Data CRU**DESTROY**
+
+Deleting works similarly to a select statement. Here are the [docs on delete](http://www.postgresql.org/docs/8.1/static/sql-delete.html)
+
+the syntax is `DELETE FROM table WHERE boolean(condition)`
 
 ```sql
 DELETE FROM students WHERE name = 'Mary';
@@ -363,12 +372,6 @@ SELECT title, rating FROM movies ORDER BY rating DESC LIMIT 5;
 
 Write a query on the movie table to return the worst movie of all time. There should be only 1 result returned. The result should include the title, description and rating of the movie.
 
-### Updating
-
-The update statement is defined [here](http://www.postgresql.org/docs/9.1/static/sql-update.html) in the postgres docs. It is used to change existing data in our database.
-
-Update statements are formatted like this: `UPDATE FROM table WHERE boolean(condition)`
-
 For example, if we do not think Gigli was actually that bad, and we want to change the rating to a 2, we can use an update statement:
 
 ```sql
@@ -376,10 +379,6 @@ UPDATE movies SET rating=2 WHERE title='Gigli';
 ```
 
 ### Deleting
-
-Deleting works similarly to a select statement. Here are the [docs on delete](http://www.postgresql.org/docs/8.1/static/sql-delete.html)
-
-the syntax is `DELETE FROM table WHERE boolean(condition)`
 
 The statement below deletes the Dude Wheres My Car row from the database:
 
@@ -415,6 +414,11 @@ CREATE TABLE movie_reviews (
   movie_id INT REFERENCES movies(id)
 );
 
+-- adds a review to which ever movie has an id o 5
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('pretty good', 'The Critic', 5); 
+
+
 -- nested queries to find movies and add reviews to them
 INSERT INTO movie_reviews (description, reviewer, score, movie_id)
 VALUES ('Love them Dinos', 'The Critic', 10,  
@@ -444,8 +448,6 @@ SELECT * FROM movies
 JOIN movie_reviews ON movies.id=movie_reviews.movie_id
 ```
 
-Join Syntax: `SELECT cols FROM table JOIN other_table ON table.id=other_table.foriegn_key`
-
 How does the data displayed differ from the different select commands?
 
 ### ER Diagrams
@@ -454,6 +456,7 @@ Creating an ER diagram can be useful if you are designing a DB with lots of tabl
 
 * [Wikipedia - ER Diagram](http://en.wikipedia.org/wiki/Entity-relationship_model)
 * [Ultimate Guide To ER Diagrams](http://creately.com/blog/diagrams/er-diagrams-tutorial/) - Not so ultimate, but a good intro. 
+
 ## Working with `.sql` files in the `psql` shell
 
 `.sql` files can be written and ran like any other langauge. From within the `psql` the command `\i <relative path to file>.sql` will import and run a `.sql` file.
@@ -486,8 +489,8 @@ CREATE TABLE books (
 INSERT INTO books (title, author) VALUES ('Do Androids Dream of Electric Sheep?', 'Phillip K. Dick');
 INSERT INTO books (title, author) VALUES ('Ubik', 'Phillip K. Dick');
 -- single qoutes are escaped by doubling them up ''
-INSERT INTO books (title, author) VALUES ('Cat''s Cradle', 'Kurt Vonnegut');
-INSERT INTO books (title, author) VALUES ('Breakfast of Champions', 'Kurt Vonnegut');
+INSERT INTO books (title, author) VALUES ('Cat''s Cradle', 'kurt Vonnegut');
+INSERT INTO books (title, author) VALUES ('Breakfast of Champions', 'kurt Vonnegut');
 
 -- READ some data
 SELECT * FROM books;
