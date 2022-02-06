@@ -6,8 +6,6 @@
 * Demonstrate ability to order data
 * Demonstrate ability to aggregate and combine data
 
-## Getting Set Up With Some Data
-
 Let's create some data tables that we can run some queries on. Go to a terminal and run `psql`. Create a new database named 'advanced':
 
 ```sql
