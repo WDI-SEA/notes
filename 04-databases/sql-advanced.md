@@ -22,11 +22,9 @@ CREATE TABLE customers (
   country TEXT,
   salary INTEGER
 );
-```
 
-Lastly, give it some data:
+-- give it some data:
 
-```sql
 INSERT INTO customers (name, age, country, salary) VALUES ('Bira', 32, 'Brazil', 2000);
 INSERT INTO customers (name, age, country, salary) VALUES ('Kaushik', 23, 'Kota', 2000);
 INSERT INTO customers (name, age, country, salary) VALUES ('Ramesh', 25, null, 1500);
@@ -58,11 +56,8 @@ CREATE TABLE orders (
   amount DECIMAL,
   customer_id INTEGER REFERENCES customers(id)
 );
-```
 
-Give it some data:
-
-```sql
+-- Give it some data
 INSERT INTO orders (order_num, amount, customer_id) VALUES ('A2067O', 104.09 , 1);
 INSERT INTO orders (order_num, amount, customer_id) VALUES ('J9899P', 50.54 , 1);
 INSERT INTO orders (order_num, amount, customer_id) VALUES ('N2337B', 954.66 , 1);
@@ -282,11 +277,12 @@ The defualt join type is is inner:
 SELECT * 
 FROM customers 
 JOIN orders
-ON customer.id=order.customer_id;
+ON customers.id=orders.customer_id;
 
 -- selection of only certain cols
 SELECT customers.name, orders.order_num
-FROM customers INNER JOIN orders
+FROM customers 
+INNER JOIN orders
 ON customers.id = orders.customer_id;
 
 -- selection using 'aliasing' so you don't have to type out column names
@@ -295,7 +291,8 @@ ON customers.id = orders.customer_id;
 -- aliases are refered to in the SELECT clause
 SELECT c.name, o.order_num
 -- here customers is alises as c and orders is alaised as o
-FROM customers c INNER JOIN orders o
+FROM customers c 
+INNER JOIN orders o
 -- aliases are refered to in the ON clause
 ON c.id = o.customer_id;
 ```
@@ -323,19 +320,14 @@ _NOTE: This is the default type of JOIN so if you don't specify the type, SQL wi
 **FULL \[OUTER\] JOIN**
 
 ```sql
--- select all outer join
-SELECT * 
-FROM customers 
-OUTER orders
-ON customer.id=order.customer_id;
-
--- selecte cols outer join
 SELECT customers.name, orders.order_num
-FROM customers OUTER JOIN orders
+FROM customers 
+FULL OUTER JOIN orders
 ON customers.id = orders.customer_id;
-
--- selecte cols outer join with aliases
-SELECT c.name, o.order_num FROM customers c
+-- OR 
+-- select cols outer join with aliases
+SELECT c.name, o.order_num 
+FROM customers c
 FULL OUTER JOIN orders o
 ON c.id=o.customer_id;
 ```
@@ -366,17 +358,10 @@ _TIP: The `LEFT JOIN` and `RIGHT JOIN` below can both be considered types of out
 **LEFT JOIN**
 
 ```sql
--- select all LEFT join
-SELECT * 
-FROM customers 
-LEFT JOIN orders
-ON customer.id=order.customer_id;
-
--- selecte cols LEFT join
 SELECT customers.name, orders.order_num
 FROM customers LEFT JOIN orders
 ON customers.id = orders.customer_id;
-
+-- OR
 SELECT c.name, o.order_num
 FROM customers c LEFT JOIN orders o
 ON c.id=o.customer_id;
@@ -423,19 +408,14 @@ With a `RIGHT JOIN` the table returned will have all values in the right table, 
 
 
 ```sql
--- select all RIGHT join
-SELECT * 
+SELECT customers.name, orders.order_num
 FROM customers 
 RIGHT JOIN orders
-ON customer.id=order.customer_id;
-
--- selecte cols RIGHT join
-SELECT customers.name, orders.order_num
-FROM customers RIGHT JOIN orders
 ON customers.id = orders.customer_id;
-
+-- OR
 SELECT c.name, o.order_num
-FROM customers c RIGHT JOIN orders o
+FROM customers c 
+RIGHT JOIN orders o
 ON c.id=o.customer_id;
 ```
 
@@ -454,7 +434,22 @@ id | name
  4 | Poppy
 ```
 
-and a subscribers table:
+```sql
+CREATE TABLE subscribers (
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+
+-- Give it some data
+INSERT INTO subscribers (name) VALUES ('Romish');
+INSERT INTO subscribers (name) VALUES ('Sally');
+INSERT INTO subscribers (name) VALUES ('Janice');
+INSERT INTO subscribers (name) VALUES ('Poopy');
+INSERT INTO subscribers (name) VALUES ('Katie');
+```
+
+Now `SELECT * FROM subscribers;` and you should see this table:
+
 
 ```sql
 id | name      
@@ -503,4 +498,6 @@ id | name
  4 | Janice
  5 | Kady
 ```
+
+## Data Relationships
 
