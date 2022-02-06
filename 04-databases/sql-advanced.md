@@ -275,10 +275,29 @@ As you can see, there are some customers who haven't placed orders. If we ask fo
 
 **INNER JOIN**
 
+The defualt join type is is inner:
+
 ```sql
+-- the simplist join possible
+SELECT * 
+FROM customers 
+JOIN orders
+ON customer.id=order.customer_id;
+
+-- selection of only certain cols
+SELECT customers.name, orders.order_num
+FROM customers INNER JOIN orders
+ON customers.id = orders.customer_id;
+
+-- selection using 'aliasing' so you don't have to type out column names
+-- aliases are defined in the FROM and JOIN clauses
+
+-- aliases are refered to in the SELECT clause
 SELECT c.name, o.order_num
+-- here customers is alises as c and orders is alaised as o
 FROM customers c INNER JOIN orders o
-ON c.id=o.customer_id;
+-- aliases are refered to in the ON clause
+ON c.id = o.customer_id;
 ```
 
 An `INNER JOIN` will return a dataset with all the matches from our customer and order tables where there is no NULL value on either side.
@@ -304,6 +323,18 @@ _NOTE: This is the default type of JOIN so if you don't specify the type, SQL wi
 **FULL \[OUTER\] JOIN**
 
 ```sql
+-- select all outer join
+SELECT * 
+FROM customers 
+OUTER orders
+ON customer.id=order.customer_id;
+
+-- selecte cols outer join
+SELECT customers.name, orders.order_num
+FROM customers OUTER JOIN orders
+ON customers.id = orders.customer_id;
+
+-- selecte cols outer join with aliases
 SELECT c.name, o.order_num FROM customers c
 FULL OUTER JOIN orders o
 ON c.id=o.customer_id;
@@ -335,6 +366,17 @@ _TIP: The `LEFT JOIN` and `RIGHT JOIN` below can both be considered types of out
 **LEFT JOIN**
 
 ```sql
+-- select all LEFT join
+SELECT * 
+FROM customers 
+LEFT JOIN orders
+ON customer.id=order.customer_id;
+
+-- selecte cols LEFT join
+SELECT customers.name, orders.order_num
+FROM customers LEFT JOIN orders
+ON customers.id = orders.customer_id;
+
 SELECT c.name, o.order_num
 FROM customers c LEFT JOIN orders o
 ON c.id=o.customer_id;
@@ -361,12 +403,6 @@ With a `LEFT JOIN` the table returned will have all values in the left table, ev
 
 **RIGHT JOIN**
 
-```sql
-SELECT c.name, o.order_num
-FROM customers c RIGHT JOIN orders o
-ON c.id=o.customer_id;
-```
-
 With a `RIGHT JOIN` the table returned will have all values in the right table, even if there is no corresponding value on the left side. This is a very rare join as it would require us to have orphaned records in the orders table. That is, orders that have no related customer. This is actually impossible with the way we have the tables set up. The foreign key constraint in the orders table basically says that you can't have a value in the `customer_id` column in the orders table if that `id` doesn't exist in the customers table. So when we run this, it looks exactly like our INNER JOIN above.
 
 ```sql
@@ -383,6 +419,24 @@ With a `RIGHT JOIN` the table returned will have all values in the right table, 
  Silvana | F9802B
  Silvana | B7780B
 (10 rows)
+```
+
+
+```sql
+-- select all RIGHT join
+SELECT * 
+FROM customers 
+RIGHT JOIN orders
+ON customer.id=order.customer_id;
+
+-- selecte cols RIGHT join
+SELECT customers.name, orders.order_num
+FROM customers RIGHT JOIN orders
+ON customers.id = orders.customer_id;
+
+SELECT c.name, o.order_num
+FROM customers c RIGHT JOIN orders o
+ON c.id=o.customer_id;
 ```
 
 ### Unions

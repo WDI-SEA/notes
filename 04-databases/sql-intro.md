@@ -913,6 +913,11 @@ CREATE TABLE movie_reviews (
   movie_id INT REFERENCES movies(id)
 );
 
+-- adds a review to which ever movie has an id o 5
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('pretty good', 'The Critic', 5); 
+
+
 -- nested queries to find movies and add reviews to them
 INSERT INTO movie_reviews (description, reviewer, score, movie_id)
 VALUES ('Love them Dinos', 'The Critic', 10,  
