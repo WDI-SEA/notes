@@ -58,6 +58,11 @@ For learning and testing purposes, we will be using Postgres on the same machine
 
 A database server is a computer or group of computers that is dedicated to storing your data and handling remote requests to retreive that data. Even in a very simple configuration, the database server will have at least 1 backup machine that keeps an exact copy of the database just in case the main database server goes down.
 
+### SQL: Structured Query Language
+
+**A Brief History of Databases**
+
+Before the notion of an RDBMS \(like PostreSQL\) and a standard language for querying that data was created \(SQL\), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard. Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
 ### SQL is known as an `ACID`ic database
 
 `ACID` is an acronym for `A`tomicity, `C`onsistency, `I`solation, and `D`urability
@@ -69,12 +74,6 @@ A database server is a computer or group of computers that is dedicated to stori
 `I`solation keeps transactions separated from each other until they’re finished.
 
 `D`urability guarantees that the database will keep track of pending changes in such a way that the server can recover from an abnormal termination -- if it crashes it can uncrash.
-
-### SQL: Structured Query Language
-
-**A Brief History of Databases**
-
-Before the notion of an RDBMS \(like PostreSQL\) and a standard language for querying that data was created \(SQL\), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard. Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
 
 ## psql
 
@@ -175,7 +174,7 @@ Look at the table structure
  \d students
 ```
 
-#### INSERT-ing Data **CREATE**RUD
+#### INSERT-ing Data
 
 `INSERT INTO table_name (first_col, second_col) VALUES (first_col_data, second_col_data)`
 
@@ -189,7 +188,7 @@ INSERT INTO students
 VALUES ('Bob Jones', '(415)555-5555', 'bob@example.com');
 ```
 
-#### SELECT-ing Data C**READ**UD
+#### SELECT-ing Data
 
 `SELECT columns FROM table_name`
 
@@ -201,7 +200,7 @@ SELECT * FROM students WHERE name = 'Bob Jones';
 SELECT id, name FROM students;
 ```
 
-### UPDATE-ing Data CR*UPDATE**D
+### UPDATE-ing Data
 
 The update statement is defined [here](http://www.postgresql.org/docs/9.1/static/sql-update.html) in the postgres docs. It is used to change existing data in our database.
 
@@ -211,7 +210,7 @@ Update statements are formatted like this: `UPDATE FROM table WHERE boolean(cond
 UPDATE students SET email='bobby@example.com' WHERE name = 'Bob Jones';
 ```
 
-### DELETE-ing Data CRU**DESTROY**
+### DELETE-ing Data
 
 Deleting works similarly to a select statement. Here are the [docs on delete](http://www.postgresql.org/docs/8.1/static/sql-delete.html)
 
@@ -367,7 +366,6 @@ We've gotten a list of movies back, but it's way too long for our uses. Let's in
 ```sql
 SELECT title, rating FROM movies ORDER BY rating DESC LIMIT 5;
 ```
-
 #### Exercise
 
 Write a query on the movie table to return the worst movie of all time. There should be only 1 result returned. The result should include the title, description and rating of the movie.
@@ -391,7 +389,6 @@ We could also use compound statements here:
 ```sql
 DELETE FROM movies WHERE id < 9 AND rating = 2;
 ```
-
 ### Foreign Keys
 
 This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
