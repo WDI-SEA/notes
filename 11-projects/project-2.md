@@ -26,7 +26,17 @@ Your app must:
 * A **working full-stack application, built by you**, hosted somewhere on the internet
 * A **link to your hosted working app** in the URL section of your Github repo
 * A **git repository hosted on Github**, with a link to your hosted project,  and frequent commits dating back to the **very beginning** of the project. Commit early, commit often.
-* **A `readme.md` file** with explanations of the technologies used, the approach taken, installation instructions, unsolved problems, and a link to the live site.
+* **A `readme.md` file** with the following: 
+  * a description of the app
+  * installation instructions
+  * a link to the deployed live site 
+  * the approach taken 
+  * explanations of the technologies used 
+  * wireframes 
+  * ERDs 
+  * a RESTful routing chart of all your app's routes 
+  * a post-project reflection with any unsolved problems or growth areas you may have had
+  * any sources used 
 
 ## Suggested Ways to Get Started
 
