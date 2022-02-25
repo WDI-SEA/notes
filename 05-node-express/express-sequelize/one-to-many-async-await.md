@@ -129,7 +129,7 @@ async function associatePets() {
       }
     }
     // remember that wierd 'array destructuring' thing with findorCreate?
-    const [pet, created]= await db.pet.findOrCreate(options)
+    const [pet, created] = await db.pet.findOrCreate(options)
     // lets find a user and give them this pet
     const user = await db.user.findOne()
     // you get a pet!

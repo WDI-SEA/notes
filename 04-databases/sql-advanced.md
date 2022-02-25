@@ -498,7 +498,8 @@ id | name
  4 | Janice
  5 | Kady
 ```
-
+<!-- 
 ## Data Relationships
 
-[gonna do this](https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de)
+[gonna do this](https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de) 
+-->
