@@ -56,6 +56,18 @@ Your app must:
 * [**Writing Good User Stories**](http://www.mariaemerson.com/user-stories/) _\(for a few user story tips\)_
 * [**Presenting Information Architecture**](http://webstyleguide.com/wsg3/3-information-architecture/4-presenting-information.html) _\(for more insight into wireframing\)_
 
+## Pitch Requirements
+
+Pitches will be a readme in the project repo that includes the following:
+
+* Project Idea and decription
+* choice of API you are going to use and a proof of concept (API keys -- hitting the api) 
+* ERDs
+* Restful Routing Chart
+* Wireframes of all user views
+* User Stories
+* MVP goals/Stretch Goals
+
 ## Project Feedback + Evaluation
 
 * **Project Workflow**: Did you spend an adequate amount of time on the planning process? Did you use source control as expected? Are your commit messages clear? Do you have a readme file?
