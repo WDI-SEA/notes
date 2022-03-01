@@ -186,7 +186,7 @@
     * [Components and JSX](16-react/intro-react/components.md)
     * [Virtual DOM](16-react/intro-react/virtual-dom.md)
     * [Props](16-react/intro-react/props.md)
-    * [Dino Blog](16-react/intro-react/dino-blog-lab.md)
+    * [Dino Blog](16-react/intro-react/dino-blog.md)
     * [Lord of the Props](16-react/intro-react/lotr.md)
     * [Nested Components](16-react/intro-react/nested.md)
     * [Nested Students Lab](16-react/intro-react/nested-students.md)
