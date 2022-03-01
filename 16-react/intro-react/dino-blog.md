@@ -1,6 +1,4 @@
-# Dino Blog Activity
-
-## ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Lab: Dino Blog
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Dino Blog
 
 Let's have some practice creating a React component from scratch. How about a blog post?
 
