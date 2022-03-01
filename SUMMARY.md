@@ -174,7 +174,7 @@
     * [Cloudinary](05-node-express/additional-topics/express-cloudinary.md)
     * [Websockets with Socket.io](05-node-express/additional-topics/express-socket-io.md)
     * [SASS](05-node-express/additional-topics/node-sass.md)
-* [React \(Updated 2019\)](16-react/README.md)
+* [React](16-react/README.md)
   * [ES6+/ESNext](16-react/es6-syntax/README.md)
     * [Const and Let](16-react/es6-syntax/const-let.md)
     * [Arrow Functions](16-react/es6-syntax/arrow.md)
