@@ -2,7 +2,7 @@
 
 ![react-logo](../../.gitbook/assets/react-white-logo.png)
 
-## Learning Objectives - James
+## Learning Objectives
 
 * Explain what a frontend framework is and why they can be helpful in writing more complex applications.
 * Explain what ReactJS is and where it fits in our applications' stack.
