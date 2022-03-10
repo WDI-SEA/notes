@@ -323,8 +323,18 @@ increaseMood = () => {
     return { 
       points: this.prevState.points + 1 
     }
-  }, () => console.log(this.state)) // oh snap! it works! And Looks Wierd!
+  }, () => console.log(this.state)) // oh snap! it works! And aooks weird!
 }
+```
+
+This of course works with using objects to set state too:
+
+```javascript
+this.setState({
+  ...
+  new state values
+  ...
+}, () => console.log(this.state)) // woot
 ```
 
 ## Mood Tracker
@@ -342,9 +352,11 @@ class MoodTracker extends Component {
 
     // helper methods
     increaseMood = () => {
-        this.setState({
-          moodPoints: this.state.moodPoints + 1
-        })
+      this.setState((prevState, props) => {
+        return { 
+          points: this.prevState.points + 1 
+        }
+      })
     }
 
     handleSetToTen = () => {
@@ -390,26 +402,17 @@ increaseMood = () => {
   let newMoodPoints; // Create new variable.
   if (this.state.moodPoints >= 10) {
     // Check to see if current state is greater than or equal to 10.
-    newMoodPoints = 0; // If true, set MoodPoints to 0.
+    // If true, set MoodPoints to 0.
+    this.setState({
+      moodPoints: 0 
+    })
   } else {
-    newMoodPoints = this.state.moodPoints + 1; // If false, increase MoodPOints by 1.
+    this.setState((prevState, props) => {
+      return { 
+        points: this.prevState.points + 1 
+      }
+    })
   }
-  this.setState({
-    moodPoints: newMoodPoints // Set state using new variable.
-  });
-};
-```
-
-## Challenge: Count to 10
-
-Or, using ternaries:
-
-```javascript
-increaseMood = () => {
-  let newMoodPoints = this.state.moodPoints >= 10 ? 0 : this.state.moodPoints + 1;
-  this.setState({
-    moodPoints: newMoodPoints
-  });
 };
 ```
 
