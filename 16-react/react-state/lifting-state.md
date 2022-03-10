@@ -57,7 +57,13 @@ Now that I know the components I need, the `state` I need, and where everything 
 
 ### The fruit filter app will look like this 
 
-![fruit filter app](./assets/fruit-filter.png)
+Before the user types, the app will look like this:
+
+![fruit filter app before typing](./assets/fruit-filter-1.png)
+
+Afterthe user types, the app will look like this:
+
+![fruit filter app after typing](./assets/fruit-filter-2.png)
 
 ## Child Components
 
