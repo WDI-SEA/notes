@@ -35,7 +35,7 @@ In React, we are able to handle data in one of two ways:
 
 ## MoodTracker
 
-* Use `create-react-app` to create a new `mood-tracker` app.
+* Use `npx create-react-app` to create a new `mood-tracker` app.
 * Create a `MoodTracker` component and render it inside `App`.
 
 
@@ -243,6 +243,34 @@ Why did we write `onClick={this.increaseMood}` rather than `onClick={this.increa
 ### Actually Change State
 
 Changing the value of `this.state` isn't quite as straightforward as something like `this.state.moodPoints++`. Instead, when we want to update a value in React, we will use a method called `this.setState()`. This method helps React update only certain parts of the DOM, resulting in a much faster website!
+
+`this.setState` works in two ways, if you need access to the previous that values, it will accapt a callback as a argument, if you just need to set the state without the previous state, it accapts an object. In this case, we need to use a callback. When using the callback, you must return an object, and that object will be set to the new state
+
+```javascript
+// supplying a callback gives access to two values -- the previous state and the current props, you don't have to use both of them
+this.setState((previousState, currentProps) => {
+  return {
+    ...
+    new state values
+    ...
+  }
+})
+
+// OR 
+// using an implicit return arrow function with a multiline expersssion return
+this.setState((previousState, currentProps) => (
+  ...
+  new state values
+  ...
+))
+
+// this is setting state withoud access to the previous state
+this.setState({
+  ...
+  new state values
+  ...
+})
+```
 
 ```javascript
 increaseMood = () => {
