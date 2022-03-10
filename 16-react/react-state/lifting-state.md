@@ -234,7 +234,88 @@ _Hint: Will you need to have a new state?_
 
 ### Solution - Unmatching Filter
 
-Coming Soon!
+Since we are going to display the fruits that were removed, we will need a list of removed fruits in state:
+
+```javascript
+  state = {
+    // initialize the fruit list to the full list passed in props
+    fruitsToDisplay: fruits,
+    // intialize the filter value to an empty string
+    filterValue: '',
+    // keep track of the frutis are filtered out
+    fruitsFiltered: [] // starts as an empty array -- gets filled with removed fruits
+  }
+```
+
+Next, we need a a way to fill up the list fruits in the state with fruits that don't match in the function that handles filter changes. We can you use the same `.filter()` method as before, but this time we just need to reverse the boolean logic, with the logical NOT operator, `!`:
+
+```javascript
+    // filter the reverse -- find everything that doesnt match
+    const removedFruitsList = this.props.fruits.filter(fruit => {
+      return !fruit.toLowerCase().includes(filterValue.toLowerCase())
+    })
+```
+
+That was a sinch! now we just need to add the `removedFruitsList` to statem in the `fruitsFiltered` state value. Here is the entire `handleFilterChange` funciton:
+
+```javascript
+  handleFilterChange = (e) => {
+    e.preventDefault()
+    const filterValue = e.target.value
+    // remove fruits that don't contain the filter value
+    const filteredFruitList = fruits.filter(fruit => {
+      return fruit.toLowerCase().includes(filterValue.toLowerCase())
+    })
+    // filter the reverse -- find everything that doesnt match
+    const removedFruitsList = fruits.filter(fruit => {
+      return !fruit.toLowerCase().includes(filterValue.toLowerCase())
+    })
+    this.setState({
+        fruitsToDisplay: filteredFruitList,
+        filterValue,
+        fruitsFiltered: removedFruitsList
+    })
+  }
+```
+
+Now, we need to pass the `fruitsFiltered` array to the `List` component, and map the list to `jsx` that can be rendered in an unordered list:
+
+```javascript
+// rendering the List component and passing fruitsFiltered from state as a prop 'removed'
+ <List  
+  fruits={this.state.fruitsToDisplay} 
+  removed={this.state.fruitsFiltered} 
+/>
+```
+
+Now to render the data, the `render` method of the `List` component becomes:
+
+```javascript
+  render() { 
+    // update the keys, to react doesn't become angry 🤬
+    const fruitItems = this.props.fruits.map((fruit, idx)=>{
+      return <li key={`fruit-${idx}`}>{fruit}</li>
+    })
+    // map the removed fruits into a list
+    const removed = this.props.removed.map((fruit, idx)=>{
+      return <li key={`removed-${idx}`}>{fruit}</li>
+    })
+    // render the two lists
+    return (
+      <>
+        <h3>frutis that match</h3>
+        <ul>
+            {fruitItems}
+        </ul>
+
+        <h3>frutis that where removed</h3>
+        <ul>
+            {removed}
+        </ul>
+      </>
+    )
+  }
+```
 
 ### Final Thoughts
 
