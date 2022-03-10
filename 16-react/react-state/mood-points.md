@@ -244,7 +244,7 @@ Why did we write `onClick={this.increaseMood}` rather than `onClick={this.increa
 
 Changing the value of `this.state` isn't quite as straightforward as something like `this.state.moodPoints++`. Instead, when we want to update a value in React, we will use a method called `this.setState()`. This method helps React update only certain parts of the DOM, resulting in a much faster website!
 
-`this.setState` works in two ways, if you need access to the previous that values, it will accapt a callback as a argument, if you just need to set the state without the previous state, it accapts an object. In this case, we need to use a callback. When using the callback, you must return an object, and that object will be set to the new state
+`this.setState` works in two ways, if you need access to the previous that values, it will accapt a callback as a argument, if you just need to set the state without the previous state, it accapts an object. When using the callback, you must return an object, and that object will be set to the new state
 
 ```javascript
 // supplying a callback gives access to two values -- the previous state and the current props, you don't have to use both of them
@@ -272,12 +272,59 @@ this.setState({
 })
 ```
 
+In this case, when we are increaseing the moodPoints in state we need to use a callback,[the react docs even have practially have this exact example](https://reactjs.org/docs/faq-state.html#why-is-setstate-giving-me-the-wrong-value) for when to use a callback with `this.setState`. If you were to decrease the mood, it would also need a callback. 
+
 ```javascript
 increaseMood = () => {
+  this.setState((prevState, props) => {
+    return { 
+      points: this.prevState.points + 1 
+    }
+  })
+}
+```
+
+What about when we use an object to set the state? Well that is actually alot of the time, lets do an example now. Suppose we had a button that set the moodPoints to `10`, this button would not rely on the previous state, it would just set the state.
+
+```jsx
+// add this button to the return on the MoodPoint's render method
+<button onClick={this.handleSetMoodToTen}>Good Mood 🌈</button>
+```
+
+The method `handleSetMoodToTen` doesn't exit yet, but lets create it now:
+
+```javascript
+handleSetToTen = () => {
+  // setting state with an object, does not need prev state, so function is not needed
   this.setState({
-    moodPoints: this.state.moodPoints + 1
-  });
-};
+    points: 10
+  })
+}
+```
+
+You may notice, that if you `console.log` the state, right after you set it, you will not see an updated value.  For example:
+
+```javascript
+increaseMood = () => {
+  this.setState((prevState, props) => {
+    return { 
+      points: this.prevState.points + 1 
+    }
+  })
+  console.log(this.state) // this will always lag behind the state
+}
+```
+
+The reason for this, is updating state is an[asyncronouse operation](https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous). In order to accurately `console.log` state, we can supply a second callback function to `this.setState` **that will be reliably invoked after the state is update:**
+
+```javascript
+increaseMood = () => {
+  this.setState((prevState, props) => {
+    return { 
+      points: this.prevState.points + 1 
+    }
+  }, () => console.log(this.state)) // oh snap! it works! And Looks Wierd!
+}
 ```
 
 ## Mood Tracker
@@ -291,14 +338,20 @@ class MoodTracker extends Component {
     // Define an initial state.
     state = {
         moodPoints: 1 // initialize this.state.moodPoints to be 1
-    };
+    }
 
     // helper methods
     increaseMood = () => {
         this.setState({
           moodPoints: this.state.moodPoints + 1
-        });
-    };
+        })
+    }
+
+    handleSetToTen = () => {
+      this.setState({
+        points: 10
+      })
+    }
 
     // What should the component render?
     render() {
@@ -307,6 +360,7 @@ class MoodTracker extends Component {
                 <p>On a scale of 1-10</p>
                 <p>You are this happy: {this.state.moodPoints}</p>
                 <button onClick={this.increaseMood}>Cheer up!</button>
+                <button onClick={this.handleSetMoodToTen}>Good Mood 🌈</button>
             </div>
         )
     }
