@@ -230,11 +230,7 @@ export default List;
 
 ## You do: Also display the fruits that do _not_ match the filter
 
-* Add another child component to the
-
-  `FruitContainer` that displays the fruits that do _not_ match the filter value
-
-  \(this should be all the items that are not in the `fruitsToDisplay` list\).
+> Add another child component to the `FruitContainer`, or update the `List` component that displays the fruits that do _not_ match the filter value (this should be all the items that are not in the `fruitsToDisplay` list\).
 
 _Hint: Will you need to have a new state?_
 
