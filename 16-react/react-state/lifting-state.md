@@ -55,6 +55,10 @@ How to achieve this, though? Using unidrectional data flow, of course! If I crea
 
 Now that I know the components I need, the `state` I need, and where everything needs to be, I can start writing some code.
 
+### The fruit filter app will look like this 
+
+![fruit filter app](./assets/fruit-filter.png)
+
 ## Child Components
 
 ```javascript
