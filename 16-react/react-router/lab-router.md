@@ -19,17 +19,14 @@ Now let's put that to the test!
 
 ## You Do: Implement Router
 
-Let's continue our blog project.
+Let's create the scaffolding for a restaurant website.
 
-Your blog needs to have five pages:
+Your site needs to have five pages:
 
-* Homepage
-* Main blog
-* Favorite movie
-* Favorite food
-* About page
-
-You already have the "Main blog" page, which renders the `Post` component! One down, four to go.
+* Home (landing page)
+* Menu 
+* About
+* Contact
 
 Task:
 
@@ -41,20 +38,10 @@ _Fun Note:_ There's no reason you can't change the CSS, if you'd like! The CSS f
 
 * Thought exercise: Why is that the only CSS file you need to change?
 
-**Hint**: You'll need multiple `.js` files
-
 **Hint**: Do you have `react-router-dom` installed for this project?
 
-**Hint**: You can instantiate a component with `props` inside of a `<Route>` element. An example is below:
-
-```javascript
-<Route path="/blog" component={
-    () => (<Blog title={post.title}
-              author={post.author}
-              body={post.body}
-              comments={post.comments} />
-)}/>
-```
+<!-- **Hint**: You can instantiate a component with `props` inside of a `<Route>` element. An example is below:
+ -->
 
 <!-- ## Solution
 
