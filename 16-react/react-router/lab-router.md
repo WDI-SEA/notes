@@ -19,7 +19,7 @@ Now let's put that to the test!
 
 ## You Do: Implement Router
 
-Let's create the scaffolding for a restaurant website.
+Let's create the scaffolding for a restaurant website called `restaurant_router`.
 
 Your site needs to have five pages:
 
