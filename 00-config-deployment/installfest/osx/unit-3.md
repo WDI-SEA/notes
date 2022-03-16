@@ -16,7 +16,7 @@ There are two ways to start your server: 1. As a macOS service 2. Manually as a 
 
 **As a Service**
 
-```text
+```bash
 # List all services and their status
 brew services ls
 
@@ -32,7 +32,7 @@ brew services restart mongodb-community
 
 **As a Background Process**
 
-```text
+```bash
 # For Mac running Intel processors
 mongod --config /usr/local/etc/mongod.conf --fork
 
@@ -42,7 +42,7 @@ mongod --config /opt/homebrew/etc/mongod.conf --fork
 
 To stop the background process, you'll need to connect to your `admin` database in your mongo shell and run `db.shutdownServer()`.
 
-```text
+```bash
 > use admin
 > db.shutdownServer()
 > exit
