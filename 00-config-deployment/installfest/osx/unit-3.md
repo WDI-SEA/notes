@@ -8,8 +8,8 @@
 # Download the official Homebrew formula for MongoDB and the Database Tools
 brew tap mongodb/brew
 
-#Install MongoDB
-brew install mongodb-community@4.4
+# Install MongoDB
+brew install mongodb-community
 ```
 
 There are two ways to start your server: 1. As a macOS service 2. Manually as a background process
@@ -17,11 +17,17 @@ There are two ways to start your server: 1. As a macOS service 2. Manually as a 
 **As a Service**
 
 ```text
+# List all services and their status
+brew services ls
+
 # Start
-brew services start mongodb-community@4.4
+brew services start mongodb-community
 
 # Stop
-brew services stop mongodb-community@4.4
+brew services stop mongodb-community
+
+# Restart
+brew services restart mongodb-community
 ```
 
 **As a Background Process**
