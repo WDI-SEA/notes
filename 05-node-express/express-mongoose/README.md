@@ -99,7 +99,8 @@ app.use(express.urlencoded({ extended: false }))
 
 // Mongoose stuff
 const mongoose = require('mongoose') 
-mongoose.connect('mongodb://localhost/familyTree') 
+mongoose.connect('mongodb://localhost/familyTree')
+// if the above URI doesn't work, try replacing localhost with 127.0.0.1
 
 app.get('/', function(req, res) {
   res.send('Hi!') 
