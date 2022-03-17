@@ -139,6 +139,8 @@ We set up an event listener to fire once when the connection 'opens' to console 
 
 Like the ORMs we've worked with previously, Mongoose allows us to define models, complete with attributes, validations, and middleware \(known as hooks in Sequelize\). Let's make a model.
 
+[Mongoose Schema Documentation](https://mongoosejs.com/docs/guide.html)
+
 From within our family-tree app:
 
 ```bash
