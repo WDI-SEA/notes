@@ -155,11 +155,18 @@ const mongoose = require('mongoose')
 
 // create a schema
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, required: true, unique: true },
-  age: Number,
-  website: String
+    name: String,
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    meta: {
+        age: Number,
+        website: String
+    }
 })
+
 ```
 
 MongoDB is schemaless, meaning: all the documents in a collection can have different fields, but for the purpose of a web app, often containing validations, we can still use a schema will cast and validate each type. Also note that we can have nested structures in a Mongoose model.
@@ -171,16 +178,21 @@ At the moment we only have the schema, representing the structure of the data we
 const mongoose = require('mongoose') 
 
 const userSchema = new mongoose.Schema({
-  name: String,
-  email: { type: String, required: true, unique: true },
-  meta: {
-    age: Number,
-    website: String
-  }
-}) 
+    name: String,
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    meta: {
+        age: Number,
+        website: String
+    }
+})
+
 
 // Here is where you actually name the model. NAME IT SINGULAR!
-const = User = mongoose.model('User', userSchema) 
+const User = mongoose.model('User', userSchema) 
 
 // make this available to our other files
 module.exports = User
@@ -206,16 +218,16 @@ Also, notice we create the Mongoose Model with `mongoose.model`. Remember, we ca
 Mongoose will add `createdAt` and add/update `updatedAt` fields if we set the `timestamps` option as follows in the schema:
 
 ```javascript
-    const userSchema = new mongoose.Schema({
-    name: String,
-    email: { type: String, required: true, unique: true },
-    meta: {
-      age: Number,
-      website: String
-    }
-    }, {
-      timestamps: true
-    })
+const userSchema = new mongoose.Schema({
+  name: String,
+  email: { type: String, required: true, unique: true },
+  meta: {
+    age: Number,
+    website: String
+  }
+  }, {
+    timestamps: true
+})
 ```
 
 #### Creating Custom Methods
