@@ -45,7 +45,7 @@ Your app must:
 * **Problem Solving**: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _\(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.\)_
 * **Total**: Your instructors will give you a total score on your project between:
 
-This project will be graded on a **Pass/Fail** baises.
+This project will be graded on a **Pass/Fail** basis
 
 This will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
 
@@ -53,7 +53,7 @@ This will serve as a helpful overall gauge of whether you met the project goals,
 
 Pitches will be a readme in the project repo that includes the following:
 
-* Project Idea and decription
+* Project Idea and descriptions
 * choice of API you are going to use and a proof of concept (API keys -- hitting the api) 
 * ERDs
 * Restful Routing Chart
