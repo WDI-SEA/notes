@@ -33,7 +33,7 @@ Your app must:
   * **Installation instructions** for any dependencies
   * Link to your **user stories** – who are your users, what do they want, and why?
   * Link to your **wireframes** – sketches of major views / interfaces in your application
-  * A **REASTful routing chart** that describes every route in your application and their CRUD functionality
+  * A **RESTful routing chart** that describes every route in your application and their CRUD functionality
   * Descriptions of any **unsolved problems** or **major hurdles** your team had to overcome
 
 ### Project Feedback + Evaluation
