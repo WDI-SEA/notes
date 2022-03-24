@@ -16,6 +16,7 @@
   * [Group Collaboration](01-workflow/01readme-1/README.md)
     * [Git Workflows](01-workflow/01readme-1/02gitworkflows.md)
     * [Project Roles and Tools](01-workflow/01readme-1/03rolestools.md)
+    * [Team Workflow Cheatsheet](01-workflow/01readme-1/04teamwork.md)
   * [VS Code Tips & Tricks](01-workflow/01-using-vscode.md)
 * [HTML/CSS](03-html-css/README.md)
   * [HTML](03-html-css/html-review.md)
