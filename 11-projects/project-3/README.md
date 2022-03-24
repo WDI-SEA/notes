@@ -6,7 +6,7 @@ You’ve already worked in small groups to accomplish various labs and exercises
 
 Not only will you be asked to **exercise additional creativity** in designing your own project, your instructors will partner you with other classmates to architect, design, and collaboratively build an application of your own design.
 
-**This is meant to push you both technically and collaboratively.** It’s a lot harder to work in a team than to work by yourself, but that's most likely what you'll be doing in your first development job after WDI, and **it's important to learn how to work together.**
+**This is meant to push you both technically and collaboratively.** It’s a lot harder to work in a team than to work by yourself, but that's most likely what you'll be doing in your first development job after SEI, and **it's important to learn how to work together.**
 
 Make it work, and make it awesome.
 
