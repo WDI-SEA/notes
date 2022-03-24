@@ -49,7 +49,7 @@ This project will be graded on a **Pass/Fail** baises.
 
 This will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
 
-## Pitch Requirements
+### Pitch Requirements
 
 Pitches will be a readme in the project repo that includes the following:
 
