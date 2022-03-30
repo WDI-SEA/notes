@@ -243,6 +243,7 @@
   * [Deploy - Github Pages](00-config-deployment/deploy-github-pages.md)
   * [Deploy - Node/Sequelize](00-config-deployment/deploy-node.md)
   * [Deploy - Node/MongoDB](00-config-deployment/deploy-node-mongo.md)
+  * [Deploy - React on Netlify](00-config-deployment/deploy-react-netlify.md)
   * [Deploy React](00-config-deployment/react-deploy.md)
   * [Deploy - Rails](00-config-deployment/deploy-rails/README.md)
     * [Foreman \(Environment Variables\)](00-config-deployment/deploy-rails/foreman.md)
