@@ -1,6 +1,8 @@
 # Netlify
 
-Netlify is PaaS (Platform as a Service) that provides a simple workflow for deploying react apps, and even when using the free tier of Netlify, your react app will serve up bery quickly (no more waiting for Heroku dynos to spinn up 🥴). Netlify cannot be used to deploy an express server in a meaningful way, so your backeend should be deployed to somewhere else in a 'Decoupled App' setup.
+Netlify is PaaS (Platform as a Service) that provides a simple workflow for deploying react apps, and even when using the free tier of Netlify, your react app will serve up very quickly (no more waiting for Heroku dynos to spin up 🥴). 
+
+Netlify cannot be used to deploy an express server in a meaningful way, so your backend should be deployed to somewhere else in a 'Decoupled App' setup.
 
 When using Netlify to deploy our React frontend, this frontend will be our Client that must make backend API calls.
 
