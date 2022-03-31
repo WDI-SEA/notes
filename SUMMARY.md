@@ -278,7 +278,6 @@
     * [Sorting Wrapup](08-cs/cs-sets/cs-sorting.md)
   * [Trees and Other Topics](08-cs/cs-trees-data-structures.md)
 * [Python](intro/README.md)
-  * [Python Installation](intro/python-installation.md)
   * [Crash Course](intro/crashcourse.md)
   * [Python Lists](intro/lists.md)
   * [Python Loops](intro/loops.md)

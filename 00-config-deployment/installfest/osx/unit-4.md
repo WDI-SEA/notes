@@ -4,6 +4,20 @@ We are going to need to:
 1. install `python3` and `pip3` with homebrew
 1. alias the `python` an `pip` commands in our `.zshrc` (zshell config file) to point to python3 instead of python2.
 
+### Python 2 vs. Python 3 -- A Auick Note
+
+Note: there are two versions of Python. There's Python 2 and Python 3. Python 3 was released in 2008 and included breaking changes. Breaking changes means that an upgrade changes the way some code works and old code won't always work with the way new code wants it to be written.
+
+Why did Python 3 introduce breaking changes? Well, it turns out there were some things in Python 2 that could have been designed better. Guido, and the Python community decided that it would be worth it, in the long haul, to fix those mistakes and get the language back on track for where they want it to be in the future. Upgrading to Python 3 is a good thing!
+
+Wait, so if upgrading to Python 3 is a good thing, why are some people still using Python 2?
+
+It turns out that converting some code from Python 2 to Python 3 is hard and requires lots of work. It's easy to convert small projects from Python 2 to Python 3, but it's hard to convert large, complex projects. In an ideal world everyone would be able to convert their projects and Python 2 would be laid down to rest. In reality, lots of large, popular projects started being written in Python 2 and they just don't have the resources \(or incentives\) to upgrade to Python 3.
+
+To us, the differences between Python 2 and Python 3 are minimal. They're very much still the same language. Anyone that knows either Python 2 or Python 3 is able to switch to using the other easily.
+
+Perhaps the most notable difference is how you print things.
+
 #### Installing `python3` and `pip3`
 
 We will be using homebrew to install and manage python3.
