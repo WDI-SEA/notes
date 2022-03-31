@@ -1,22 +1,16 @@
 # Unit 4  OSX installfest
 
-We are going to need to:
-1. install `python3` and `pip3` with homebrew
-1. alias the `python` an `pip` commands in our `.zshrc` (zshell config file) to point to python3 instead of python2.
+We are going to be installing and configuring [python3](https://www.python.org/) 
 
-### Python 2 vs. Python 3
+Some people may already have python2 installed -- but it is fully deprecated now and we will be exclusively using python3 in class. 
 
-Note: there are two versions of Python. There's Python 2 and Python 3. Python 3 was released in 2008 and included breaking changes. Breaking changes means that an upgrade changes the way some code works and old code won't always work with the way new code wants it to be written.
+Python3 might also be present on some systems as well, in which case we want to update it.
 
-Why did Python 3 introduce breaking changes? Well, it turns out there were some things in Python 2 that could have been designed better. Guido, and the Python community decided that it would be worth it, in the long haul, to fix those mistakes and get the language back on track for where they want it to be in the future. Upgrading to Python 3 is a good thing!
+*You should always just use python3 in general now -- the breaking changes when python updated from version 2 to version 3 are kind of this whole thing, but tldr; the world is now ~~switched~~ switching over to version 3 and so should we!*
 
-Wait, so if upgrading to Python 3 is a good thing, why are some people still using Python 2?
+We will also be using `pip3`, which is python's package manager, to install a couple tools and finally we will install a vscode extension to help use programing python in code.
 
-It turns out that converting some code from Python 2 to Python 3 is hard and requires lots of work. It's easy to convert small projects from Python 2 to Python 3, but it's hard to convert large, complex projects. In an ideal world everyone would be able to convert their projects and Python 2 would be laid down to rest. In reality, lots of large, popular projects started being written in Python 2 and they just don't have the resources \(or incentives\) to upgrade to Python 3.
-
-To us, the differences between Python 2 and Python 3 are minimal. They're very much still the same language. Anyone that knows either Python 2 or Python 3 is able to switch to using the other easily.
-
-Perhaps the most notable difference is how you print things.
+Our goal is to have everyone run the command `python --version` in the console and have it say `Python 3.9.2`
 
 ### Installing `python3` and `pip3`
 
