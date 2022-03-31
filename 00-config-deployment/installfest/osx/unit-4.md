@@ -10,7 +10,7 @@ Python3 might also be present on some systems as well, in which case we want to 
 
 We will also be using `pip3`, which is python's package manager, to install a couple tools and finally we will install a vscode extension to help use programing python in code.
 
-Our goal is to have everyone run the command `python --version` in the console and have it say `Python 3.9.2`
+Our goal is to have everyone run the command `python3 --version` in the console and have it say `Python 3.9.x`
 
 ### Installing `python3` and `pip3`
 
@@ -30,13 +30,13 @@ Afterwards, run the following command:
 python3 --version
 ```
 
-If this command returns a version lower than `Python 3.9.2`, tell homebrew to update python with this command:
+If this command returns a version lower than `Python 3.9.x`, tell homebrew to update python with this command:
 
 ```bash
 brew upgrade python
 ```
 
-Python uses `pip` as the package manager, similar to how node.js uses `npm`
+Python uses `pip3` as the package manager, similar to how node.js uses `npm`
 
 Double check that `pip3` has been installed on your system with the following command:
 
@@ -55,7 +55,7 @@ Everyone needs to install the following things, regardless of thier operating sy
 
 #### Installing Global Packages 
 
-We are going to make sure we have `virtualenv` installed, which is how `pip` manages package versioning in python projects.
+We are going to make sure we have `virtualenv` installed, which is how `pip3` manages package versioning in python projects.
 
 We also are going to install `ipython`, which is a tricked out version of the python shell.
 
@@ -68,7 +68,7 @@ check to make sure you have virtualenv installed with the following command:
 virtualenv --version
 ```
 
-if nothing is found, use `pip install virtualenv` ot install virtualenv
+if nothing is found, use `pip3 install virtualenv` ot install virtualenv
 
 run the following command to install ipython, which is a tricked out python shell:
 
