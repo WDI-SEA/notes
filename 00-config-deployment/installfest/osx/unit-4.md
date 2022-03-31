@@ -4,7 +4,7 @@ We are going to need to:
 1. install `python3` and `pip3` with homebrew
 1. alias the `python` an `pip` commands in our `.zshrc` (zshell config file) to point to python3 instead of python2.
 
-### Python 2 vs. Python 3 -- A Auick Note
+### Python 2 vs. Python 3
 
 Note: there are two versions of Python. There's Python 2 and Python 3. Python 3 was released in 2008 and included breaking changes. Breaking changes means that an upgrade changes the way some code works and old code won't always work with the way new code wants it to be written.
 
@@ -18,7 +18,7 @@ To us, the differences between Python 2 and Python 3 are minimal. They're very m
 
 Perhaps the most notable difference is how you print things.
 
-#### Installing `python3` and `pip3`
+### Installing `python3` and `pip3`
 
 We will be using homebrew to install and manage python3.
 
