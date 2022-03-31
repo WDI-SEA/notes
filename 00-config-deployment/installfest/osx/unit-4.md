@@ -1,42 +1,73 @@
 # Unit 4  OSX installfest
 
-## Installing Python 3
+We are going to need to:
+1. install `python3` and `pip3` with homebrew
+1. alias the `python` an `pip` commands in our `.zshrc` (zshell config file) to point to python3 instead of python2.
 
-Brew is also used to install Python 3. \(Python 2 is already installed on your Mac.\) To install Python 3 without errors, we first need to create a couple directories and change them to be owned by us:
+#### Installing `python3` and `pip3`
 
-```text
-mkdir /usr/local/lib
-mkdir /usr/local/Frameworks
-whoami
+We will be using homebrew to install and manage python3.
+
+___
+
+Tell homebrew to install python with the following command: 
+
+```bash
+brew install python
 ```
 
-Make a note of the username returned from `whoami`. Enter that username in place of USERNAME below:
+Afterwards, run the following command:
 
-```text
-sudo chown -R USERNAME:wheel /usr/local/lib
-sudo chown -R USERNAME:wheel /usr/local/Frameworks
+```bash
+python3 --version
 ```
 
-If you received no errors from those commands, then use this command to install version 3:
+If this command returns a version lower than `Python 3.9.2`, tell homebrew to update python with this command:
 
-```text
-brew install python3
+```bash
+brew upgrade python
 ```
 
-You can test the installation by running `python3 --version`.
+Python uses `pip` as the package manager, similar to how node.js uses `npm`
 
-This should also install `pip3`, a package installer for Python 3. You can verify that it is installed and working by updating it with the following command:
+Double check that `pip3` has been installed on your system with the following command:
 
-```text
-pip3 install --upgrade pip setuptools wheel
+```bash
+pip3 --version
 ```
 
-This should return some normal messages - no errors. Now that `pip3` is working, we can use it to install a useful Python shell:
+If zshell tells you `pip3` is a command not found, reach out to a dev to troubleshoot this bug. I am putting [this stack overflow](https://stackoverflow.com/questions/47255517/brew-install-python3-didnt-install-pip3) here in case it is helpful to debug this issue for anyone.
 
-```text
+### Additional Setup
+
+Everyone needs to install the following things, regardless of thier operating system.
+
+1. install a couple global python packages with `pip3`
+1. install a vscode extension for python
+
+#### Installing Global Packages 
+
+We are going to make sure we have `virtualenv` installed, which is how `pip` manages package versioning in python projects.
+
+We also are going to install `ipython`, which is a tricked out version of the python shell.
+
+___
+
+
+check to make sure you have virtualenv installed with the following command:
+
+```bash
+virtualenv --version
+```
+
+if nothing is found, use `pip install virtualenv` ot install virtualenv
+
+run the following command to install ipython, which is a tricked out python shell:
+
+```bash
 pip3 install ipython
 ```
 
-iPython makes it easy to write python code in your terminal. We may not use it a huge amount but it is handy to have around.
+#### Vscode python Extension
 
----
+everyone should install [this python vscode extension](https://marketplace.visualstudio.com/items?itemName=ms-python.vscode-pylance) 
