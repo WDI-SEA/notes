@@ -27,7 +27,7 @@ Sometimes when using then `react-router-dom` package, you will receive a 'Page N
 Never fear! We can resolve the issue easily by adding `_redirects` to the `/public` folder of your react app with instructions on where routes redirect `/*    index.html   200`
 
 * touch `./public/_redirects`
-* add `/*    index.html   200` to `./public/_redirects`
+* add `/*    /index.html   200` to `./public/_redirects`
 * git add, commit and push on your deployed branch, and wait for Netlify to build again 
 
 
