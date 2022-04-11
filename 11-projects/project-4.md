@@ -1,5 +1,7 @@
 # Project 4 Guidelines
 
+### Overview
+
 For your fourth project you are given the freedom of choice! Your goal is to develop an application in your languages of choice that demonstrates substantial effort towards an end goal.
 
 There are multiple broad end goals for this project, and you need to pick a *minimum* of one or more goals from the following list:
