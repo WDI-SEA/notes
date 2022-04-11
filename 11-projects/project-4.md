@@ -8,11 +8,11 @@ There are multiple broad end goals for this project, and you need to pick a *min
 
 Things you can do in P4:
 
-* Develop a MERN stack application to solidify knowledge of technologies we used in class. 
+* Try out a new technology you've been interested in using, but that we haven't used in class. **_Highly encouraged!_**
 * Create a highly polished product that can anchor your portfolio, illustrate your skills, and show substantial work in an area of interest.
-* Create an application in a new language that you wish to learn
+* Create an application in a new language that you wish to learn.
 * Develop an ambitious MVP that will serve as the basis for a larger project post-cohort.
-* Try out a new technology you've been interested in using, but that we haven't used in class. Highly encouraged!
+* Develop a MERN stack application to solidify knowledge of technologies we used in class. 
 
 You have the opportunity to work solo, or in groups of your choosing, with a max size of four.
 
@@ -33,14 +33,17 @@ You have the opportunity to work solo, or in groups of your choosing, with a max
 
 This is a non-exhaustive list and is based on previous student's P4s 
 
-* [Vue.js](https://vuejs.org/) (frontend framework). 
 * [GraphQL](https://graphql.org/) (frontend querying language. Would recommend using with Hasura so that you don't have to take on Apollo and Prisma breaking change errors). 
-* [Unity](https://unity.com/) (a game development platform in C#) 
+* [Unity](https://unity.com/) a game development platform in C#
 * Integrating a Stripe frontend and backup to build a test level functional ecommmerce site
-* [D3.js](https://d3js.org/) (a data visualization javascript library)
+* [D3.js](https://d3js.org/) a data visualization javascript library
+* [pyGame](https://www.pygame.org/news) python game framework
 * [React-Bootstrap-Table](https://react-bootstrap-table.github.io/react-bootstrap-table2/) or another React Table Library to create dynamic tables based on a database you create and seed
 * The [Typescript](https://www.typescriptlang.org/) programming language
-* Test-Driven Development with [Jest](https://jestjs.io/) or another testing framework
+* Test-Driven Development with [Jest](https://jestjs.io/) or another testing framework (such as [supertest](https://www.npmjs.com/package/supertest) with express or [mocha](https://mochajs.org/) along with [chai](https://www.chaijs.com/)).
+* [Next.js](https://nextjs.org/) frontend framework.
+* [PrismaORM](https://www.prisma.io/) ORM for node and typescript
+* [Vue.js](https://vuejs.org/) frontend framework. 
 * Web sockets with [socket.io](https://socket.io/)
 * Machine Learning with [Tensorflow](https://www.tensorflow.org/)
 * Creating map based interfaces with [mapbox](https://www.mapbox.com/)
@@ -74,7 +77,7 @@ Include project idea along with answers to the above questions in your README.md
 
 ## Necessary Deliverables
 
-* a **working app** created by you
+* a **working app** created by you, that implements your pitched project
 * **A `readme.md` file** with:
   * An embedded screenshot of the app
   * Explanations of the **technologies** used
@@ -82,7 +85,7 @@ Include project idea along with answers to the above questions in your README.md
   * **Installation instructions** for any dependencies
   * Link to your **user stories** – who are your users, what do they want, and why?
   * Link to your **wireframes** – sketches of major views / interfaces in your application
-  * Link to your **pitch deck** – documentation of your wireframes, user stories, and proposed architecture
+  * User Stories
   * Descriptions of any **unsolved problems** or **major hurdles** you had to overcome
   * **ERD**s if your project has a database
   * **RESTful** routing chart if your project has an API
@@ -94,11 +97,10 @@ Include project idea along with answers to the above questions in your README.md
 * **Creativity**: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user \(not just a login button and an index page\)?
 * **Code Quality**: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
 * **Problem Solving**: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _\(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.\)_
-* **Total**: Your instructors will give you a total score on your project between:
 
 This project will be graded on a **Pass/Fail** basis
 
-This will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
+The **Pass/Fail** score will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
 
 ### How to get Started
 
