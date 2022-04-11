@@ -33,14 +33,17 @@ You have the opportunity to work solo, or in groups of your choosing, with a max
 
 This is a non-exhaustive list and is based on previous student's P4s 
 
-* [Vue.js](https://vuejs.org/) (frontend framework). 
 * [GraphQL](https://graphql.org/) (frontend querying language. Would recommend using with Hasura so that you don't have to take on Apollo and Prisma breaking change errors). 
-* [Unity](https://unity.com/) (a game development platform in C#) 
+* [Unity](https://unity.com/) a game development platform in C#
 * Integrating a Stripe frontend and backup to build a test level functional ecommmerce site
-* [D3.js](https://d3js.org/) (a data visualization javascript library)
+* [D3.js](https://d3js.org/) a data visualization javascript library
+* [pyGame](https://www.pygame.org/news) python game framework
 * [React-Bootstrap-Table](https://react-bootstrap-table.github.io/react-bootstrap-table2/) or another React Table Library to create dynamic tables based on a database you create and seed
 * The [Typescript](https://www.typescriptlang.org/) programming language
-* Test-Driven Development with [Jest](https://jestjs.io/) or another testing framework
+* Test-Driven Development with [Jest](https://jestjs.io/) or another testing framework (such as [supertest](https://www.npmjs.com/package/supertest) with express or [mocha](https://mochajs.org/) along with [chai](https://www.chaijs.com/)).
+* [Next.js](https://nextjs.org/) frontend framework.
+* [PrismaORM](https://www.prisma.io/) ORM for node and typescript
+* [Vue.js](https://vuejs.org/) frontend framework. 
 * Web sockets with [socket.io](https://socket.io/)
 * Machine Learning with [Tensorflow](https://www.tensorflow.org/)
 * Creating map based interfaces with [mapbox](https://www.mapbox.com/)
