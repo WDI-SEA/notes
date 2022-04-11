@@ -68,9 +68,10 @@ When you come up with an idea, ask yourself the following questions:
 
 Include project idea along with answers to the above questions in your README.md, also include the following in your README: 
 
+* the technologies you plan on using
 * a description of the app
 * wireframes of the app
-* a description of the user flow for the app the app
+* a description of the user flow for the app the app along with user sotries
 * If you are planning to work in a team, include the members of your team
 * a breakdown of what you plan on working on each day (`sprints` for each day). This can be in either
 * additional links/images if they relate to the planning of your project, for example a rest API project will need `ERDs` of the data models and a `RESTful` routing chart of all the routes in the API
@@ -85,7 +86,6 @@ Include project idea along with answers to the above questions in your README.md
   * **Installation instructions** for any dependencies
   * Link to your **user stories** – who are your users, what do they want, and why?
   * Link to your **wireframes** – sketches of major views / interfaces in your application
-  * User Stories
   * Descriptions of any **unsolved problems** or **major hurdles** you had to overcome
   * **ERD**s if your project has a database
   * **RESTful** routing chart if your project has an API
