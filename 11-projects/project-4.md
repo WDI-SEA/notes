@@ -8,11 +8,11 @@ There are multiple broad end goals for this project, and you need to pick a *min
 
 Things you can do in P4:
 
-* Develop a MERN stack application to solidify knowledge of technologies we used in class. 
+* Try out a new technology you've been interested in using, but that we haven't used in class. **_Highly encouraged!_**
 * Create a highly polished product that can anchor your portfolio, illustrate your skills, and show substantial work in an area of interest.
-* Create an application in a new language that you wish to learn
+* Create an application in a new language that you wish to learn.
 * Develop an ambitious MVP that will serve as the basis for a larger project post-cohort.
-* Try out a new technology you've been interested in using, but that we haven't used in class. Highly encouraged!
+* Develop a MERN stack application to solidify knowledge of technologies we used in class. 
 
 You have the opportunity to work solo, or in groups of your choosing, with a max size of four.
 
