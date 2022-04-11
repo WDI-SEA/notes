@@ -94,11 +94,10 @@ Include project idea along with answers to the above questions in your README.md
 * **Creativity**: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user \(not just a login button and an index page\)?
 * **Code Quality**: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
 * **Problem Solving**: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _\(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.\)_
-* **Total**: Your instructors will give you a total score on your project between:
 
 This project will be graded on a **Pass/Fail** basis
 
-This will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
+The **Pass/Fail** score will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
 
 ### How to get Started
 
