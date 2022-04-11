@@ -74,7 +74,7 @@ Include project idea along with answers to the above questions in your README.md
 
 ## Necessary Deliverables
 
-* a **working app** created by you
+* a **working app** created by you, that implements your pitched project
 * **A `readme.md` file** with:
   * An embedded screenshot of the app
   * Explanations of the **technologies** used
@@ -82,7 +82,7 @@ Include project idea along with answers to the above questions in your README.md
   * **Installation instructions** for any dependencies
   * Link to your **user stories** – who are your users, what do they want, and why?
   * Link to your **wireframes** – sketches of major views / interfaces in your application
-  * Link to your **pitch deck** – documentation of your wireframes, user stories, and proposed architecture
+  * User Stories
   * Descriptions of any **unsolved problems** or **major hurdles** you had to overcome
   * **ERD**s if your project has a database
   * **RESTful** routing chart if your project has an API
