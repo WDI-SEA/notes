@@ -34,7 +34,7 @@ const addH2 = () => {
     // give the h2 some text
     h2.innerText = 'Just getting started!'
     // attach it to the body
-    document.getElementsByTagName('body')[0].append(h2)
+    document.querySelector('body').append(h2)
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
@@ -49,11 +49,11 @@ Write another function that will change the first existing `h2` in the DOM tree 
 ```javascript
 const addH2 = () => {
     let h2 = document.createElement('h2')
-    document.getElementsByTagName('body')[0].append(h2)
+    document.querySelector('body').append(h2)
 }
 
 const changeH2 = () => {
-    document.getElementsByTagName('h2')[0].innerText = 'Getting warmed up!'
+     document.querySelector('h2').innerText = 'Getting warmed up!'
 }
 
 document.addEventListener('DOMContentLoaded', ()=>{
