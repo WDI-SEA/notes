@@ -157,14 +157,6 @@ Now, click **Generate Personal Access Token** And you will be take to a page tha
 
 Next time you to to push to github, supply this hash as your password to authenticate your computer's terminal.
 
-<!-- 
-**Setting up SSH Key (if prompted)** 
-
-You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
-
-* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/) 
-* -->
-
 ### Install VS Code
 
 Currently the most popular editor according to developer polls. This is Microsoft's free version of Visual Studio.
@@ -214,5 +206,16 @@ ZSH_THEME="af-magic"
 You can of course experiment with different themes or even make your own! There are instructions in the .zshrc file to have a different theme shown in your console every-time your start it up to explore the different flavors. 
 
 Save your .zshrc file and restart the terminal to enjoy!
+
+### Optional Setting up an SSH key for Github
+
+**Setting up SSH Key (if prompted)** 
+
+You only need to do this if you had issues setting up a github token.
+
+You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
+
+* [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/) 
+*
 
 ---
