@@ -106,7 +106,7 @@ Give each square an event listener whose `addColor` handler will \(eventually\) 
 ```javascript
 const makePalette = () => {
     //...
-    square.addEventListener('click', addcolor)
+    square.addEventListener('click', addColor)
 }
 ```
 
@@ -127,7 +127,7 @@ const addColor = (event) => {
   * Append to the 'my palette' right div
 
 ```javascript
-const addcolor = (event) => {
+const addColor = (event) => {
     const color = event.target.style.backgroundColor
     const newSquare = document.createElement('div')
     newSquare.classList.add('square')
