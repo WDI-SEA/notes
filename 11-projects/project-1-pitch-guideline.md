@@ -28,7 +28,7 @@ Your pitch must include:
 Below are some example P1 pitches from previous students:
 
 * Dave Stach's [Garbage Boy Pitch](https://github.com/d4vves/garbage-boy/tree/3e81e21b420bd28c727a53faf881f7adc105176e)
-* Weston Bailey's [Hyperdrive Pitch](https://github.com/weston-bailey/Hyperdrive/tree/c04ed7263b539df1ff38c87f5b02cd17744f0fab)
+<!-- * Weston Bailey's [Hyperdrive Pitch](https://github.com/weston-bailey/Hyperdrive/tree/c04ed7263b539df1ff38c87f5b02cd17744f0fab) -->
 * Melissa Young's [Gradies Grueling Grind Pitch](https://github.com/melissay94/gradies-grueling-grind/tree/8bde73235007097ffa8e25a1d54c45d944405f40)
 
 Reminder, example finished projects are here for inspiration: [Example Projects](https://gawdiseattle.gitbook.io/wdi/11-projects/past-projects/project1)
