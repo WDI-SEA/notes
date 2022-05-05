@@ -68,21 +68,16 @@ Pitches will be a readme in the project repo that includes the following:
 * User Stories
 * MVP goals/Stretch Goals
 
-## Project Feedback + Evaluation
+### Project Feedback + Evaluation
 
-* **Project Workflow**: Did you spend an adequate amount of time on the planning process? Did you use source control as expected? Are your commit messages clear? Do you have a readme file?
+* **Project Workflow**: Did you complete the user stories, wireframes, task tracking, and/or ERDs, as specified above? Did you use source control as expected for the phase of the program you’re in \(detailed above\)?
 * **Technical Requirements**: Did you deliver a project that met all the technical requirements? Given what the class has covered so far, did you build something that was reasonably complex?
-* **Creativity**: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user \(not just an index page\)?
+* **Creativity**: Did you added a personal spin or creative element into your project submission? Did you deliver something of value to the end user \(not just a login button and an index page\)?
 * **Code Quality**: Did you follow code style guidance and best practices covered in class, such as spacing, modularity, and semantic naming? Did you comment your code as your instructors as we have in class?
 * **Problem Solving**: Are you able to defend why you implemented your solution in a certain way? Can you demonstrated that you thought through alternative implementations? _\(Note that this part of your feedback evaluation will take place during your one-on-one code review with your instructors, after you've completed the project.\)_
 * **Total**: Your instructors will give you a total score on your project between:
 
-| Score | Expectations |
-| :--- | :--- |
-| **0** | _Incomplete._ |
-| **1** | _Does not meet expectations._ |
-| **2** | _Meets expectations, good job!_ |
-| **3** | _Exceeds expectations, you wonderful creature, you!_ |
+This project will be graded on a **Pass/Fail** basis
 
 This will serve as a helpful overall gauge of whether you met the project goals, but **the more important scores are the individual ones** above, which can help you identify where to focus your efforts for the next project!
 
