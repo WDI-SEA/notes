@@ -158,7 +158,7 @@ SELECT country, AVG(salary) FROM customers GROUP BY country;
 Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query.
 
 ```sql
-SELECT country, avg(salary) AS avgSal FROM customers GROUP BY country;
+SELECT country, AVG(salary) AS avgSal FROM customers GROUP BY country;
 ```
 
 ### Alter Table Command
@@ -216,10 +216,12 @@ The CASE statement is used when you want to display different things depending o
 
 ```sql
 SELECT name, age, 
-    CASE WHEN age<25
-    THEN 'young adult'
-    ELSE 'adult' 
-    END AS age_group 
+  CASE 
+    WHEN age > 30 THEN 'boomer'
+    WHEN age > 23 THEN 'adult'
+    WHEN age > 18 THEN 'young adult'
+    ELSE 'baby' 
+  END AS age_group 
 FROM customers;
 ```
 
