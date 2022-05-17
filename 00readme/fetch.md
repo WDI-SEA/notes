@@ -91,36 +91,35 @@ Write an `addPerson` function that takes a `person` argument \(a single random u
 **script.js**
 
 ```javascript
-document.addEventListener("DOMContentLoaded", ()=>{
+document.addEventListener("DOMContentLoaded", () => {
+  const requestUrl = "https://randomuser.me/api/?results=10";
 
-    const requestUrl = "https://randomuser.me/api/?results=10";
+  const addPerson = (person) => {
+    let li = document.createElement("li")
+    li.textContent = `${person.name.first} ${person.name.last}`
+    peopleList.appendChild(li)
+  }
 
-    const addPerson = (person)=>{
-        let li = document.createElement("li");
-        li.textContent = `${person.name.first} ${person.name.last};
-        peopleList.appendChild(li);
-    }
-
-    fetch(requestUrl)
-    .then((responseData)=>{
-        // Fetch will package the response into an object with some methods that allow us to do some useful things with the response.
-        // Use the .json method to return the data in JSON format
-        return responseData.json();
+  fetch(requestUrl)
+    .then((responseData) => {
+      // Fetch will package the response into an object with some methods that allow us to do some useful things with the response.
+      // Use the .json method to return the data in JSON format
+      return responseData.json()
     })
-    .then((jsonData)=>{
-        // the above .then passed our returned data into this callback
-        console.log(jsonData);
-        // now we can see that the data we want is nested under an inner 'results'
-        console.log(jsonData.results)
-        // store this array of objects in a 'people' variable
-        let people = jsonData.results;
-        people.forEach(addPerson);
+    .then((jsonData) => {
+      // the above .then passed our returned data into this callback
+      console.log(jsonData)
+      // now we can see that the data we want is nested under an inner 'results'
+      console.log(jsonData.results)
+      // store this array of objects in a 'people' variable
+      let people = jsonData.results
+      people.forEach(addPerson)
     })
-    .catch((error)=>{
-        // If any error is sent bac, you will have access to it here.
-        console.log("error!!!:", error);
-    });
-});
+    .catch((error) => {
+      // If any error is sent bac, you will have access to it here.
+      console.log("error!!!:", error)
+    })
+})
 ```
 
 ### Exercise
