@@ -2,13 +2,16 @@
 
 ## Reading Diagrams
 In ERDs, so much information can be shared at a glance if you know how to read the specific arrows and shapes used. 
+
 ![Key to ERD entities and relationship arrows](https://i.imgur.com/tPU3Oxn.png)
 
 You can indicate entities, relationships, and attributes by differing their shapes, as shown below.
+
 ![Shapes in ERDs](https://i.imgur.com/AGkezz1.png)
 
 ### Arrows
 Crow's feet notation shows the maximum (*cardinality*) and minimum (*ordinality*) number of times an instance of an entity can relate to instances of another entity.
+
 ![ERD crows feet arrow notation](https://i.imgur.com/w1pV6YR.png)
 
 
