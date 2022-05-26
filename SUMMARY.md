@@ -117,6 +117,7 @@
     * [CRUD in MongoDB](04-databases/mongo-intro/crud.md)
     * [Data Modeling](04-databases/mongo-intro/data-modeling.md)
     * [Intermediate Mongo](04-databases/mongo-intro/intermediate.md)
+  * [Entity Relational Diagrams](04-databases/erd.md)
 * [Node/Express](05-node-express/README.md)
   * [Node](05-node-express/00readme/README.md)
     * [Intro to Node](05-node-express/00readme/01intro-to-node.md)
