@@ -14,12 +14,22 @@ Your app must:
 
 * **Have at** _**least**_ **2 models** \(more if they make sense\) that represents the main functional idea for your app. This doesn't include join tables or the user model which should be part of your class's boilerplate code.
   * Note: If your app idea doesn't really call for more models, let your instructors know and they can suggest ideas for other sufficiently difficult replacements for this requirement.
-* **Incorporate at least one API.** List of examples here: \(Public API List\)\[[https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis)\]. 
+* **Incorporate at least one API.** List of examples here: [Public API List](https://github.com/public-apis/public-apis](https://github.com/public-apis/public-apis) , Cloudinary for profile pictures, mapbox to show places, etc. 
 * **Have complete RESTful routes** for at least one of your resources with GET, POST, PUT, and DELETE
 * **Utilize an ORM to create a database table structure** and interact with your relationally-stored data
 * **Include a readme file** that explains how to use your app
 * Have **semantically clean HTML, CSS, and back-end code**
 * **Be deployed online** and accessible to the public
+
+## Example Concepts
+* Forum - have it themed around something that utilizes api data
+* Favorite and comment - books, movies, anime, sports players, hikes, plants, etc
+* Blog or journaling app - use a quote api to generate writing prompts
+* Photo sharing app - use cloudinary for your api so folks an upload photos
+* Nextdoor or Craigslist/OfferUp clone - cloudinary api
+* AllRecipes clone - recipe or food api
+* Workout or food tracker app
+* yoga app - use asana api to create sequences or favorite poses
 
 ## Necessary Deliverables
 
@@ -38,18 +48,9 @@ Your app must:
   * a post-project reflection with any unsolved problems or growth areas you may have had
   * any sources used 
 
-## Suggested Ways to Get Started
-
-* Start with wireframes and go through a project planning process. Consider what is your:
-  * Goals for each 'sprint'
-  * MVP
-  * Stretch Goals
-* **Begin with the end in mind.** Know where you want to go by planning with wireframes & user stories, so you don't waste time building things you don't need
-* **Don't hesitate to write throwaway code to solve short term problems**
-* **Read the docs for whatever technologies you use.** Most of the time, there is a tutorial that you can follow, but not always, and learning to read documentation is crucial to your success as a developer
-* **Commit early, commit often.** Don't be afraid to break something because you can always go back in time to a previous version.
-* **User stories define what a specific type of user wants to accomplish with your application**. It's tempting to just make them _todo lists_ for what needs to get done, but if you keep them small & focused on what a user cares about from their perspective, it'll help you know what ot build
-* **Write pseudocode before you write actual code.** Thinking through the logic of something helps.
+## Suggestions to meet requirements:
+* Can't figure out a good way to incorporate an API? Use cloudinary and have users upload profile photos!
+* Can't figure out where to put a PUT route? Let the user change their password!
 
 ## Useful Resources
 
@@ -62,8 +63,8 @@ Pitches will be a readme in the project repo that includes the following:
 
 * Project Idea and decription
 * choice of API you are going to use and a proof of concept (API keys -- hitting the api) 
-* ERDs
-* Restful Routing Chart
+* [ERDs](https://gasei.gitbook.io/sei/04-databases/erd)
+* [Restful Routing Chart](https://gasei.gitbook.io/sei/05-node-express/00readme-1/00readme)
 * Wireframes of all user views
 * User Stories
 * MVP goals/Stretch Goals
