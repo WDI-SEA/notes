@@ -1,5 +1,7 @@
 # ERDs
 
+Check out [this overview](https://www.youtube.com/watch?v=QpdhBUYk7Kk) from LucidCharts. Here is their [written guide](https://www.lucidchart.com/pages/er-diagrams).
+
 ## Reading Diagrams
 In ERDs, so much information can be shared at a glance if you know how to read the specific arrows and shapes used. 
 
