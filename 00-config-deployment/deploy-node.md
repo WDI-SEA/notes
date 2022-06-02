@@ -71,6 +71,7 @@ TL;DR: Don't have `node_modules` in your repo, you'll have a bad time.
 #### Get a Heroku account!
 
 1. Make sure you have an account with heroku: [https://www.heroku.com/](https://www.heroku.com/)
+  * **_YOU SHOULD SIGN UP WITH YUOR GITHUB ACCOUNT_**
 2. Make sure you have installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 #### Install Heroku CLI
@@ -96,7 +97,7 @@ We'll have the ability to create free applications using Heroku, but with limita
 #### To start:
 
 * Create a `Procfile` in the root of your Node application
-  * In terminal, run `touch Procfile`. Must be called with a capitol P
+  * In terminal, run `touch Procfile`. Must be called with a capitol `P`
   * make sure it is named "Procfile" \(no extention\)
   * make sure your Procfile is in the same folder as your index.js file
   * in terminal type `echo "web: node index.js" >> Procfile`
@@ -113,6 +114,14 @@ This ensures that when we set the PORT config variable, Heroku will run on it in
 * Before you create your app in Heroku, be sure your project is being tracked via a git repository.
 * Create a Heroku app via the command line \(or, if you prefer you can use the GUI to create it and follow its directions to connect it to your git repo\)
 
+### Git Integration
+
+There are two ways to handle git integration on heroku: the first is by creating a heroku git remote and pushing up to it. This way requires you to commit some changes and push up to trigger a redeploy, which can be a drawback. The second links your github repo to heroku in a `CI/CD` or _continuous integration/continuos deployment_ setup. Heroku will automatically deploy when it sees changes on github, and allows you to manually trigger a redeploy, which can be useful.
+
+**_YOU ONLY NEED TO DO ONE OF THESE_**
+
+#### First Way: Heroku Remote
+
 ```text
 heroku apps:create sitename
 ```
@@ -127,6 +136,20 @@ git push heroku main
 ```
 
 This should push all your code to Heroku and trigger a build.
+
+#### Second Way: `CI/CD`
+
+1. (if needed)  Navigate to the `Deploy` tab on your Heroku dashboard and click the 'Connect to Github' button if needed. Follow the prompts to integrate your github.
+
+![connect to gh](./imgs/connect-to-gh.png)
+
+2. Search for your repo name, and click the connect button once you find it. Choose a branch to deploy from the dropdown menu and click 'Enable Automatic Deploys'. It will look something like this:
+
+![all done](./imgs/all-done.png)
+
+If you ever need to manually trigger a redeploy, scroll to the bottom of the deploy tab and click the 'Deploy Branch' button.
+
+![manual deploy](./imgs/manual-deploy.png)
 
 ### Heroku Envionment variables
 
