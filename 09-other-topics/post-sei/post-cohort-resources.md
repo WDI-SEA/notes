@@ -1,4 +1,4 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Post-Cohort Resources 🎓
+# Post-Cohort Resources 🎓
 
 We have spent the last three months working hard and becoming software engineers, and all your hard work has paid off: now its time for the *really fun part!* Using your new skills as a coder, you can now continue to grow as your interests and passions guide your studies and career path.
 
@@ -16,7 +16,7 @@ Establishing good patterns for your post-cohort studies and job search is  _abso
 
 This document is meant to give a outline of how to succeed post-cohort with the `preparation` part of the equation and provide a ton of great resources for you to utilize. 
 
-<!-- _If you have any resources you would like to share with everyone or find to be super helpful in the future, submit a pull request to this repo and they will get merged in!_ -->
+_If you have any resources you would like to share with everyone or find to be super helpful in the future, submit a pull request to this repo and they will get merged in!_
 
 ## 📈 The Recipe for Success
 
