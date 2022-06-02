@@ -332,6 +332,7 @@
     * [Wireframing Exercise: Build an Idea](09-other-topics/user-stories-wireframing/exercise.md)
   * [Markdown](09-other-topics/markdown/markdown.md)
   * [Post SEI](09-other-topics/post-sei/README.md)
+    * [Post Cohort Resources](09-other-topics/post-sei/post-cohort-resources.md)
     * [Learning Resources](09-other-topics/post-sei/resources.md)
     * [Don't Build a Skyscraper](09-other-topics/post-sei/skyscraper.md)
 * [Projects](11-projects/README.md)
