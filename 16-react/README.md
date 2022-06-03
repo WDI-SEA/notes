@@ -9,6 +9,7 @@ React is an open source javascript library developed internally at Facebook to b
 
 ---
 # History of React
+
 React was developed internally at Facebook to lower development issues around UI structures on their frontend. 
 
 Frontend UIs are hard to test, making them hard to reuse accross teams. This became a larger point of interest for Facebook with the Instagram and WhatsApp acquitions, followed by the push for Facebook Messenger growth. The development team needed a way to better standardize not just their styling, but their UI rules and functionality.
@@ -48,6 +49,7 @@ React is a **Frontend Framework** - what does that even mean?
 - [Angular](https://angular.io/)
 
 ---
+
 # Class Based Components vs Functional Components
 
 With the release of React 16.8, there are now two ways to declare components in React: Class Based or Functionally.
@@ -58,11 +60,13 @@ This means a lot of companies are actively updating their React codebases to use
 
 Class Based Component | Functional Component
 --- | ---
-![Class Based Component Example](class_based_component.png) | ![Functional Component Example](functional_component.png)
+![Class Based Component Example](./imgs/class_based_component.png) | ![Functional Component Example](./imgs/functional_component.png)
 How components were written pre-release of hooks and functional components in React 16.8. |  Components declared in function declerations; able to use hooks. Introduced in 2018, popular adoption started Spring 2019.
  
 ---
+
 # Extra Resources
+
 Quick hit of extra resources for those interested in learning more about React (both the technical and the non-technical):
 - Mini-look at the current React team at Facebook: https://react.christmas/2020/24
 - React docs: https://reactjs.org/docs/getting-started.html
