@@ -58,7 +58,7 @@ Let's add one `<h1>` for the movie title, and a `<p>` for the runtime. Remember,
 
 The JSX will look like this:
 
-```markup
+```jsx
 <>
   <h1>The Lord of the Rings: A Trilogy</h1>
   <p>4h 37min</p>
