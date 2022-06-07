@@ -31,8 +31,6 @@ In React, we are able to handle data in one of two ways:
 
 > Try it yourself alongside [this video](https://generalassembly.wistia.com/medias/3ldc3tnyv0) in [this codepen](https://codepen.io/susir/pen/GWONLp).
 
-![](https://github.com/WDI-SEA/notes/tree/5537c491fcc61eb363b9c34cc82a02076abf9fc7/16-react/react-state/images/moodtracker-directories.png)
-
 ## MoodTracker
 
 * Use `npx create-react-app` to create a new `mood-tracker` app.
