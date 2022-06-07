@@ -61,7 +61,7 @@ The JSX will look like this:
 ```jsx
 <>
   <h1>The Lord of the Rings: A Trilogy</h1>
-  <p>4h 37min</p>
+  <p>9h 18min</p>
 </>
 ```
 
