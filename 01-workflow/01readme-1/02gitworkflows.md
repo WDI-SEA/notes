@@ -50,32 +50,44 @@ git remote add upstream git@github.com:gitmanagerusername/forking-test.git
 
 If successful, group members should receive the change in their forks.
 
-### Working on Changes
-
-Practice making changes by creating new branches, switching to them, and making commits. Note that the git manager should also be working in a separate branch, as not to pollute the `main` branch. Keep it sacred!
-
 ### Sample Practice App
 
 Work in your project groups.
 
-* Git Manager: Create a new react app. `npx creat-react-app fiking-flow-test` Edit the App component so it shows your team name.
+* Git Manager: 
+   * Create a new react app. `npx creat-react-app fiking-flow-test` 
+   * Edit the App component so it shows your team name.
+   * Create a new github repo for the project.
+   * Add, commit, and push to this new repo.
 * Non-manager members: 
    * Fork and clone the main repo.
-   * Set the upstream to be your Manager's main repo. git remote add upstream <>
-   * Add a component to the /src folder titled with your name. The component should render your name and a photo of you (or a short bio).
+   * Set the upstream to be your Manager's main repo. `it remote add upstream <manager's repo http>`
+   * Add a component to the /src folder titled with your name. The component should render your name and a photo of you (or a placeholder photo).
    * When you've finished writing your component, commit your changes, push to your fork, and make a pull request.
 * Git Manager:
    * Review and merge each pull request.
-   * Pull down the newly merged code to your local repo.
+   * Pull down the newly merged code to your local repo `git pull origin main`.
+   * Add a component to the /src folder titled with your name. The component should render your name and a photo of you (or a placeholder photo).
    * Edit App.js to render all the new components underneath your team name. Commit and push to the main remote repo.
    * When you're finished merging and editting, notify you're teammates!
 * Non-manager members: When your Manager tells you it's ready, pull from the upstream to get the new changes!
 
-### Merging Changes
+If done correctly, eveyone's local repo will now be the same!
 
-Once group members have made some changes in separate branches, push those changes to Github, then try making pull requests on Github.
+### Sample Practice App w/ Feature Branches
 
-Once pull requests have been made, the git manager should go to Github, view the pull requests, and merge them! Or, you can have a conversation about why the changes shouldn't be merged.
+* Everyone:
+   * Create a feature branch to work on new code in. `git checkout -b <your name>`
+   * Add a short bio into your component (the one with your name).
+   * Add, comment, and push these changes to your branch `git push origin <your name>`
+* Non-manager members:
+   * Create a pull request from the branch to the main repo and notify the git manager.
+* Git Manager
+   * After merging changes send out a notification to everyone on the team to pull down the new changes.
+   * Pull down the new changes to your own local. `git pull origin main`
+* Non-manager members:
+   * Switch back into the main brain `git checkout main`
+   * When the managers tells you to, pull down the changes from the main repo to your local main branch `git pull upstream main`
 
 ### Conclusion
 
