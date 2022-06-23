@@ -14,7 +14,7 @@ A forking workflow looks something like this. The idea is that...
 
 1. One person acts as the **git manager** and creates the main repo. They also manage the code that's merged into the repo.
 2. Everyone else **forks** the main repo so that they have a copy of it.
-3. In the forks, work may be done in branches known as **feature branches** until the feature is finished, or you can edit directly in your forked repo. ***It it highly recommended, however, that the git manager always work in feature branches before merging into the main branch.***
+3. In the forks, work may be done in branches known as **feature branches** until the feature is finished, or you can edit directly in your forked repo. ***It it recommended that the git manager always work in feature branches before merging into the main branch.***
 4. For the folks working on forks, once a feature is finished, you'll want to do what's called an **upstream pull.** This will allow any changes from the main repo to be reflected in your fork. Assuming everyone works in separate branches, this should not create any merge conflicts.
 5. Once the upstream pull is finished, you can push your changes to the Github fork, and then create a pull request. This will allow the git manager to merge the changes. ***Make sure to notify them so they can merge your changes right away.***
 6. Finally, once a pull request has been merged, **all non-git-managers shoud immediately pull from the upstream so the latest changes are in the fork***. Again, this shouldn't cause any issues if no one deletes or re-arranges files, and if no one works on the same file at the same time.
@@ -58,10 +58,10 @@ Practice making changes by creating new branches, switching to them, and making 
 
 Work in your project groups.
 
-* Git Manager: Create a new react app. The App component should show your team name.
+* Git Manager: Create a new react app. `npx creat-react-app fiking-flow-test` Edit the App component so it shows your team name.
 * Non-manager members: 
    * Fork and clone the main repo.
-   * Set the upstream to be your Manager's main repo. 
+   * Set the upstream to be your Manager's main repo. git remote add upstream <>
    * Add a component to the /src folder titled with your name. The component should render your name and a photo of you (or a short bio).
    * When you've finished writing your component, commit your changes, push to your fork, and make a pull request.
 * Git Manager:
