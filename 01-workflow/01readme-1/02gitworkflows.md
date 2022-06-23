@@ -61,7 +61,7 @@ Work in your project groups.
    * Add, commit, and push to this new repo.
 * Non-manager members: 
    * Fork and clone the main repo.
-   * Set the upstream to be your Manager's main repo. `it remote add upstream <manager's repo http>`
+   * Set the upstream to be your Manager's main repo. `git remote add upstream <manager's repo http>`
    * Add a component to the /src folder titled with your name. The component should render your name and a photo of you (or a placeholder photo).
    * When you've finished writing your component, commit your changes, push to your fork, and make a pull request.
 * Git Manager:
