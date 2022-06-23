@@ -76,6 +76,8 @@ If done correctly, eveyone's local repo will now be the same!
 
 ### Sample Practice App w/ Feature Branches
 
+A detailed explaination of this workflow can be found [here](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/)
+
 * Everyone:
    * Create a feature branch to work on new code in. `git checkout -b <your name>`
    * Add a short bio into your component (the one with your name).
@@ -88,6 +90,8 @@ If done correctly, eveyone's local repo will now be the same!
 * Non-manager members:
    * Switch back into the main brain `git checkout main`
    * When the managers tells you to, pull down the changes from the main repo to your local main branch `git pull upstream main`
+   * Update your fork on github (push the changes that you just pulled down up to your fork)`git push origin main`
+   * Clean up! aka delete your feature branch (both locally and remotely) `git push --delete origin <branch name>`
 
 ### Conclusion
 
