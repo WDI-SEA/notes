@@ -154,6 +154,7 @@ Sometimes the hardest part of a project is coming up with the idea.
 
 Open source projects are a great way to get experience, work in a collaborative enviroment, bulk up your portfolio and meet other nerds all at once.
 
+* [good first issues](https://goodfirstissues.com/) is a great place ot find issues that would be be a, well, _good first issue_
 * [First Timers only](https://www.firsttimersonly.com/) is great resource with lots of links for how to begin with open source collaboration
 * This [open source ideas](https://github.com/open-source-ideas/open-source-ideas) repo is a place where people pitch ideas and projects they want to see other make or need help on
 * [Up for Grabs](https://up-for-grabs.net/#/) offers a curated list of repos that need help and are ideal for open source newbies
