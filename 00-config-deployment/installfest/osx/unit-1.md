@@ -216,6 +216,5 @@ You only need to do this if you had issues setting up a github token.
 You might find your self having to re-authenticate GIT every time you work on your command line. Setup SSH Keys to let Github remember your machine in the future.
 
 * [Github Generating SSH Keys](https://help.github.com/articles/generating-ssh-keys/) 
-*
 
 ---

@@ -2,6 +2,49 @@
 
 **Stop!** The following instructions pertain to units 2-4 - revisit this section in unit 2!
 
+## Node.js
+
+We're going to install Node.js using a tool called Node Version Manager \(NVM for short\). Node has been around for a while and has many versions available for us to use. We're going to focus on the latest Longterm Support \(LTS\) version for our work in the course.
+
+1. Run the following command to download and run the `nvm` install script via `curl`:
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```
+
+* _**Important Note**_! If you've installed or plan to install Zsh and use that instead of bash, you will need to come back and run the following command after having installed Zsh:
+
+  ```bash
+  # Run this command instead if you're using Zsh
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
+  ```
+
+* Double check that NVM installed correctly with:
+
+```bash
+nvm --version
+```
+
+1. Finally we're ready to install Node. We want the latest LTS version. To get it and use it, run these commands:
+
+```bash
+nvm install --lts
+```
+
+> Your console should display a progress bar during installation. Wait for this to complete before continuing.
+
+1. Use the lts version of node.
+
+```bash
+nvm use --lts
+```
+
+1. Set the default Node version.
+
+   ```bash
+   nvm alias default node
+   ```
+
 ## Unit 2 - PostgresQL
 
 When it comes to installing database technologies - WSL has a handful of extra configuration steps as the installations will not work by default.
