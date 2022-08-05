@@ -66,48 +66,20 @@ If your git version comes back as 2.28 or above, then we are good to continue to
 git config --global init.defaultBranch main
 ```
 
-## Node.js
+Follow the instructions [here](https://gasei.gitbook.io/sei/00-config-deployment/installfest/osx/unit-1#optional-setting-up-an-ssh-key-for-github) to set up an SSH key for github. Add the SSH key to your [open source github](https://github.com/). 
 
-We're going to install Node.js using a tool called Node Version Manager \(NVM for short\). Node has been around for a while and has many versions available for us to use. We're going to focus on the latest Longterm Support \(LTS\) version for our work in the course.
+### Zsh Install
 
-1. Run the following command to download and run the `nvm` install script via `curl`:
+Open the Ubuntu terminal app In the terminal run the following commands: \(follow the prompts and press y to confirm yes when it prompts you to\)
 
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+```text
+sudo apt install zsh
+chsh -s $(which zsh)
 ```
 
-* _**Important Note**_! If you've installed or plan to install Zsh and use that instead of bash, you will need to come back and run the following command after having installed Zsh:
+Exit the ubuntu terminal and reopen it. It will prompt you with the Z Shell configuration menu - press 2 to populate zsh with the recommended defaults
 
-  ```bash
-  # Run this command instead if you're using Zsh
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | zsh
-  ```
 
-* Double check that NVM installed correctly with:
-
-```bash
-nvm --version
-```
-
-1. Finally we're ready to install Node. We want the latest LTS version. To get it and use it, run these commands:
-
-```bash
-nvm install --lts
-```
-
-> Your console should display a progress bar during installation. Wait for this to complete before continuing.
-
-1. Use the lts version of node.
-
-```bash
-nvm use --lts
-```
-
-1. Set the default Node version.
-
-   ```bash
-   nvm alias default node
-   ```
 
 ## Navigation
 
