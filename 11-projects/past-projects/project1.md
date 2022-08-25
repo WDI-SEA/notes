@@ -6,6 +6,7 @@
 
 * [Mastermind (DOM)](https://wonkatin.github.io) - Sarah Marie Coogan, SEIR 125
 * [Word-cross'd Puzzler (DOM)](https://louisajohnston.github.io/) - Louisa Johnston, SEIR 125
+* [Spellchecker (canvas)](https://elyssaw.github.io/spell-checkers/) -- Elyssa Winch, Supersonics 
 * [Unity (DOM)](https://petefitton.github.io/UNITY/) - Pete Fitton \(SEI 29\)
 * [Ludo!](https://yboodhan.com/ludo/) - Yashoma Boodhan, SEI 28
 * [Bee Free](https://009kings.github.io/beeFree/) - Sarah King, WDI 22 (Sarah made her own assets using adobe photoshop. [Her portfolio](https://hirethat.dev/) is cool too.)
