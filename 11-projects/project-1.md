@@ -22,6 +22,7 @@ Your app must:
 * Inlcude in game instructions on how to play 
 * Not use any alerts
 * Use **semantic markup** for HTML and CSS \(adhere to best practices\)
+* Have a way to reset the game on game over that does not rely on a page refresh
 
 \*\*We will be covering deployment before the end of the project.
 
