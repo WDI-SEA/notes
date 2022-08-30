@@ -41,7 +41,7 @@ These verbs represent a _method_ for the request. In other words, they tell the 
 | :--- | :---: | ---: |
 | GET | READ | Look at someone's profile on LinkedIn |
 | POST | CREATE | Post on LinkedIn |
-| PUT | UPDATE | Change your bio on LinkedIn |
+| PUT/PATCH | UPDATE | Change your bio on LinkedIn |
 | DELETE | DELETE | Delete a photo from LinkedIn |
 
 ## Backtrack: hello-express
@@ -195,7 +195,7 @@ Now let's try adding another route that has the URL pattern of a string after th
 
 ```javascript
 app.get('/', (req, res) => {
-  res.send('You've reached the home route!');
+  res.send('You\'ve reached the home route!');
 });
 
 app.get('/about', (req, res) => {
@@ -310,3 +310,6 @@ As you can see, we don't need to do anything special to our URL pattern. Any rou
 
 In this example, we focused on the URL patterns. The HTTP verbs will come into play more when we start working with true CRUD functionality. For now, everything is a GET request.
 
+## Lab
+
+Continue to the next page, or checkout the [express routes calculator](https://github.com/WDI-SEA/express-routes-calc), for labs on express routes.
