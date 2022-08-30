@@ -59,7 +59,8 @@ sudo chmod -R 0700 /usr/local/var/postgres
 sudo chown -R ${USER} /usr/local/var/postgres
 
 # launch postgres
-brew services start postgres
+brew services start postgresql
+brew services restart postgresql
 
 # create db matching user name so we can log in by just typing psql
 createdb ${USER}
