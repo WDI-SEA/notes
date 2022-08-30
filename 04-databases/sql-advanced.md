@@ -35,7 +35,7 @@ INSERT INTO customers (name, age, country, salary) VALUES ('Silvana', null, null
 
 You should be able to SELECT all the data and see this output:
 
-```sql
+```text
  id |  name   | age | country | salary 
 ----+---------+-----+---------+--------
   1 | Bira    |  32 | Brazil  |   2000
@@ -72,7 +72,7 @@ INSERT INTO orders (order_num, amount, customer_id) VALUES ('B7780B', 182.72 , 6
 
 Now `SELECT * FROM orders;` and you should see this table:
 
-```sql
+```text
  id | order_num | amount | customer_id 
 ----+-----------+--------+-------------
   1 | A2067O    | 104.09 |           1
@@ -164,10 +164,17 @@ SELECT country, AVG(salary) AS avgSal FROM customers GROUP BY country;
 ### Alter Table Command
 
 ```sql
+-- add a data column
 ALTER TABLE customers ADD COLUMN date DATE;
+```
 
+```sql
+-- set the name column to be required when a new entry is made
 ALTER TABLE customers ALTER COLUMN name SET NOT NULL;
+```
 
+```sql
+-- remove the data column
 ALTER TABLE customers DROP date;
 ```
 
@@ -238,7 +245,7 @@ There are four types of JOINs in SQL:
 
 Let's look at our table for customers and our table for orders. The customers table looks like this:
 
-```sql
+```text
  id |  name   | age | country | salary 
 ----+---------+-----+---------+--------
   1 | Bira    |  32 | Brazil  |   2000
@@ -252,7 +259,7 @@ Let's look at our table for customers and our table for orders. The customers ta
 
 And the orders table looks like this:
 
-```sql
+```text
  id | order_num | amount | customer_id 
 ----+-----------+--------+-------------
   1 | A2067O    | 104.09 |           1
@@ -280,13 +287,17 @@ SELECT *
 FROM customers 
 JOIN orders
 ON customers.id=orders.customer_id;
+```
 
+```sql
 -- selection of only certain cols
 SELECT customers.name, orders.order_num
 FROM customers 
 INNER JOIN orders
 ON customers.id = orders.customer_id;
+```
 
+```sql
 -- selection using 'aliasing' so you don't have to type out column names
 -- aliases are defined in the FROM and JOIN clauses
 
@@ -301,7 +312,7 @@ ON c.id = o.customer_id;
 
 An `INNER JOIN` will return a dataset with all the matches from our customer and order tables where there is no NULL value on either side.
 
-```sql
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -326,6 +337,9 @@ SELECT customers.name, orders.order_num
 FROM customers 
 FULL OUTER JOIN orders
 ON customers.id = orders.customer_id;
+```
+
+```sql
 -- OR 
 -- select cols outer join with aliases
 SELECT c.name, o.order_num 
@@ -338,7 +352,7 @@ _NOTE: The `OUTER` is optional_
 
 A `FULL OUTER JOIN` will do the opposite of an `INNER JOIN`, returning you a table with all possible combinations, even if NULL has to be placed in.
 
-```sql
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -363,7 +377,10 @@ _TIP: The `LEFT JOIN` and `RIGHT JOIN` below can both be considered types of out
 SELECT customers.name, orders.order_num
 FROM customers LEFT JOIN orders
 ON customers.id = orders.customer_id;
--- OR
+```
+
+```sql
+-- OR with aliases
 SELECT c.name, o.order_num
 FROM customers c LEFT JOIN orders o
 ON c.id=o.customer_id;
@@ -371,7 +388,7 @@ ON c.id=o.customer_id;
 
 With a `LEFT JOIN` the table returned will have all values in the left table, even if there is no corresponding value on the right side.
 
-```sql
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -392,7 +409,7 @@ With a `LEFT JOIN` the table returned will have all values in the left table, ev
 
 With a `RIGHT JOIN` the table returned will have all values in the right table, even if there is no corresponding value on the left side. This is a very rare join as it would require us to have orphaned records in the orders table. That is, orders that have no related customer. This is actually impossible with the way we have the tables set up. The foreign key constraint in the orders table basically says that you can't have a value in the `customer_id` column in the orders table if that `id` doesn't exist in the customers table. So when we run this, it looks exactly like our INNER JOIN above.
 
-```sql
+```text
   name   | order_num 
 ---------+-----------
  Bira    | A2067O
@@ -414,7 +431,10 @@ SELECT customers.name, orders.order_num
 FROM customers 
 RIGHT JOIN orders
 ON customers.id = orders.customer_id;
--- OR
+```
+
+```sql
+-- OR with aliasing
 SELECT c.name, o.order_num
 FROM customers c 
 RIGHT JOIN orders o
@@ -427,7 +447,7 @@ Unions display the results of two or more SELECT statements into one table, so t
 
 Here's a customers table:
 
-```sql
+```text
 id | name      
 ---+---------
  1 | Romesh  
@@ -453,7 +473,7 @@ INSERT INTO subscribers (name) VALUES ('Katie');
 Now `SELECT * FROM subscribers;` and you should see this table:
 
 
-```sql
+```text
 id | name      
 ---+---------
  1 | Romesh  
@@ -469,7 +489,7 @@ We could use this query to view the ids and names from both the customers and th
 SELECT id, name FROM customers UNION SELECT id, name FROM subscribers ORDER BY id;
 ```
 
-```sql
+```text
 id | name      
 ---+---------
  1 | Romesh  
@@ -487,7 +507,7 @@ Notice that the resulting table has fewer rows that the sum of the rows from eac
 SELECT id, name FROM customers UNION ALL SELECT id, name FROM subscribers ORDER BY id;
 ```
 
-```sql
+```text
 id | name      
 ---+---------
  1 | Romesh 
@@ -500,6 +520,7 @@ id | name
  4 | Janice
  5 | Kady
 ```
+
 <!-- 
 ## Data Relationships
 
