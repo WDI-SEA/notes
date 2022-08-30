@@ -182,7 +182,9 @@ Look at the table structure
 INSERT INTO students
 (name, phone, email)
 VALUES ('William Smith', '(415)555-5555', 'bill@example.com');
+```
 
+```sql
 INSERT INTO students
 (name, phone, email)
 VALUES ('Bob Jones', '(415)555-5555', 'bob@example.com');
@@ -194,9 +196,13 @@ VALUES ('Bob Jones', '(415)555-5555', 'bob@example.com');
 
 ```sql
 SELECT * FROM students;
+```
 
+```sql
 SELECT * FROM students WHERE name = 'Bob Jones';
+```
 
+```sql
 SELECT id, name FROM students;
 ```
 
@@ -218,13 +224,14 @@ the syntax is `DELETE FROM table WHERE boolean(condition)`
 
 ```sql
 DELETE FROM students WHERE name = 'Mary';
-->DELETE 0
 ```
+`->DELETE 0`
+
 
 ```sql
 DELETE FROM students WHERE email = 'bobby@example.com';
-->DELETE 1
 ```
+`->DELETE 1`
 
 #### DROP-ing a Table
 
@@ -409,24 +416,31 @@ CREATE TABLE movie_reviews (
   -- a foreing key that lets us find the movie that this review is for
   movie_id INT REFERENCES movies(id)
 );
+```
 
+```sql
 -- adds a review to which ever movie has an id o 5
 INSERT INTO movie_reviews (description, reviewer, score, movie_id)
 VALUES ('pretty good', 'The Critic', 5); 
+```
 
-
+```sql
 -- nested queries to find movies and add reviews to them
 INSERT INTO movie_reviews (description, reviewer, score, movie_id)
 VALUES ('Love them Dinos', 'The Critic', 10,  
   -- the parans  ()  allow one query to be inside another
   (SELECT id FROM movies WHERE title='Jurassic Park')
 );
+```
 
+```sql
 INSERT INTO movie_reviews (description, reviewer, score, movie_id)
 VALUES ('Cars p good', 'The Critic', 7,  
   (SELECT id FROM movies WHERE title='Cars')
 );
+```
 
+```sql
 INSERT INTO movie_reviews (description, reviewer, score, movie_id)
 VALUES ('Awesome for Sci-fi nerds', 'The Critic', 9,  
   (SELECT id FROM movies WHERE title='Back to the Future')
@@ -438,7 +452,9 @@ Use select statements to view the tables and make sure everything worked as expe
 ```sql
 SELECT * FROM movies;
 SELECT * FROM movie_reviews;
+```
 
+```sql
 -- Use a JOIN to see all the data at once
 SELECT * FROM movies
 JOIN movie_reviews ON movies.id=movie_reviews.movie_id
