@@ -29,7 +29,7 @@ The value in that param will be a UploadFile object which has several methods we
 
 [Details about UploadedFile object](http://api.rubyonrails.org/classes/ActionDispatch/Http/UploadedFile.html)
 
-##Cloudinary
+## Cloudinary
 
 Cloudinary can be setup by either adding it via a Heroku addon...
 
@@ -47,7 +47,7 @@ Either way, your config value should look like this in your .env file:
 CLOUDINARY_URL=cloudinary://xxxxx:xxxxx@xxxxxxx
 ```
 
-####Setting up the gem
+#### Setting up the gem
 
 Add the `cloudinary` gem to your Gemfile. The gem automatically looks for the `CLOUDINARY_URL` environment variable. As long as you have your .env file set up correctly, it will "just work™".
 
@@ -59,7 +59,7 @@ gem 'cloudinary'
 
 Run `bundle install` as well.
 
-####Processing the upload
+#### Processing the upload
 
 The `Cloudinary::Uploader.upload` method is used to upload a file. All we have to pass in to it is the path to the image that was uploaded to the server.
 
@@ -75,7 +75,7 @@ cloudnary_file = Cloudinary::Uploader.upload(uploaded_file)
 render json: cloudnary_file
 ```
 
-####Displaying the image
+#### Displaying the image
 
 To display the image we just need to use the `cl_image_tag` helper and pass it the (previously stored) `public_id`. This works exactly like the standard `image_tag` helper, but loads images from Cloudinary instead of images in the assets folder.
 
@@ -94,7 +94,7 @@ You can also pass in settings for width, height, etc to manipulate the image on 
 ```
 
 
-##Additional Resources
+## Additional Resources
 
 
 * [Cloudinary Rails docs](http://cloudinary.com/documentation/rails_integration)

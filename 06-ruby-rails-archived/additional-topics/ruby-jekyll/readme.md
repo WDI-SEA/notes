@@ -27,7 +27,7 @@ We'll be using **Jekyll** to create a static portfolio/blog. Jekyll uses **Markd
 
 Markdown -> Liquid (templating) + HTML + CSS + JS -> HTML pages
 
-##S etting up and Using Jekyll
+## Setting up and Using Jekyll
 
 [Jekyll Home Page](http://jekyllrb.com/)
 
@@ -64,7 +64,7 @@ jekyll new my-portfolio
 
 When you serve your site, Jekyll takes all these files, parses them as necessary, and renders a bunch of pages. The layouts/includes files serve as templates, while the Markdown/HTML uses these templates and injects the content.
 
-###Serving the site
+### Serving the site
 
 To serve the site, run
 ```

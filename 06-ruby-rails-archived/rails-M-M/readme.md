@@ -1,6 +1,6 @@
-#Many to Many Associations
+# Many to Many Associations
 
-##Objectives
+## Objectives
 
 * Implement many to many relationships through models in Rails
 * Describe the model ordering opinion used by Rails
@@ -12,7 +12,7 @@ Today we'll add rangers to the national park app using a many to many relationsh
 
 ![Database relationships](http://fms-itskills.ncl.ac.uk/db/ER.png)
 
-##What we need
+## What we need
 
 * Models
   * Park
@@ -28,7 +28,7 @@ Today we'll add rangers to the national park app using a many to many relationsh
   * rangers#show
     * list all parks with a specific ranger
 
-##Generating models
+## Generating models
 
 Review of **Parks**
 
@@ -53,7 +53,7 @@ The join table with the two models **must** be plural and in alphabetical order 
 
 Note that if you want to name your join table something different, you can specify your own join model with `through:`
 
-##Setting up associations
+## Setting up associations
 
 When you do `:references` it automatically creates the `belongs_to` relations on the join table, but we need to manually add the `has_and_belongs_to_many` to the ranger and park models.
 
@@ -69,10 +69,10 @@ has_and_belongs_to_many :rangers
 has_and_belongs_to_many :parks
 ```
 
-#ALSO IMPORTANT
+# ALSO IMPORTANT
 When creating the M:M associations, the name of the model is pluralized when adding the `has_and_belongs_to_many` method. In ParksRangers, the associations will be singular and generated for you.
 
-##Adding rangers
+## Adding rangers
 
 ```ruby
 # assume the following:
@@ -83,7 +83,7 @@ ranger = Ranger.first
 park.rangers << ranger
 ```
 
-##Removing rangers
+## Removing rangers
 
 ```ruby
 # assume the following:
@@ -101,7 +101,7 @@ c.rangers.first.destroy
 ```
 
 
-##Referencing and listing
+## Referencing and listing
 
 Because Park and Ranger reference each other with `has_and_belongs_to_many` they can reference each other.
 

@@ -1,6 +1,6 @@
-#Data Scraping with Nokogiri
+# Data Scraping with Nokogiri
 
-##Objectives
+## Objectives
 
 * Review `rest-client` and how it can be used to make HTTP requests
 * Discuss the process and need for data scraping
@@ -8,7 +8,7 @@
 
 Data scraping is the process of extracting data from a web site. This is used primarily when the data is not available from an existing API. Data is extracted by taking the HTML file and trying to extract certain blocks of text or data. We'll be using a Ruby gem called Nokogiri in order to scrape a page.
 
-##Nokogiri
+## Nokogiri
 
 Nokogiri is a parser for HTML and XML. It allows us to process a HTML file (locally or on a remote server) and extract the data from it using CSS selectors. This is handy because the process is analagous to selecting data using jQuery or `querySelectorAll`.
 
@@ -56,7 +56,7 @@ Let's analyze a few things we do here with Nokogiri
 * Can you only get text? Nope! There's other methods associated with Nokogiri.
   * http://www.nokogiri.org/tutorials/searching_a_xml_html_document.html
 
-##Using local data
+## Using local data
 
 When we are figuring out how to scrape a site we usually have to do a lot of trial and error. Which means reloading the data over and over. This could raise red flags with the site administrator and could possibly get your IP banned.
 
