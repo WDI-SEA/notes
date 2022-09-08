@@ -13,7 +13,7 @@ Today we're going to cover how to setup a one to many relationship, using more t
 
 ## Getting Started
 
-We're going to build off the `userapp` we created in the intro to sequelize. A bit of a recap on how to start an express sequelize app: 1. Create a directory for your app 2. `cd` into that directory 3. Create your express route entry point \(often `index.js`, `app.js`, or `server.js`\) 4. Initialize npm with `npm init -y` 5. Install your dependencies `npm i express pg sequelize` 6. Create your Database \(either using sequelize-cli or in your psql shell\) 7. Initialize Sequelize with `sequelize init` 8. Edit your `config.json` file
+We're going to build off the `userapp` we created in the intro to sequelize. A bit of a recap on how to start an express sequelize app: 1. Create a directory for your app 2. `cd` into that directory 3. Create your express route entry point \(often `index.js`, `app.js`, or `server.js`\) 4. Initialize npm with `npm init -y` 5. Install your dependencies `npm i pg sequelize` 6. Create your Database \(either using sequelize-cli or in your psql shell\) 7. Initialize Sequelize with `sequelize init` 8. Edit your `config.json` file
 
 ## Creating A Model
 
