@@ -1,6 +1,6 @@
-#Rails Authentication and 1:M Associations
+# Rails Authentication and 1:M Associations
 
-##Objectives
+## Objectives
 
 * Create users and store their passwords securely
 * Enable the ability to authenticate users and store sessions once logged in
@@ -9,11 +9,11 @@
 
 Remember all that hassle of setting up authentication in Node? Rails makes it easy.
 
-##Create a new project
+## Create a new project
 
 You should know how to do this now. If not, see notes from Intro to Rails.
 
-##Create a user model
+## Create a user model
 
 We need to first start creating a user model that has a username/email field and a `password_digest`. Note that you **have** to name the field this.
 
@@ -35,7 +35,7 @@ uniqueness: {case_sensitive: false}
 
 Note that we're only checking for presence and uniqueness of the email. Use [this gem](https://github.com/balexand/email_validator) if you'd like to actually validate the email address contents.
 
-##Add password hashing
+## Add password hashing
 
 * Add `has_secure_password` to the user model
 * uncomment `gem 'bcrypt'` on your Gemfile and run the bundler
@@ -43,13 +43,13 @@ Note that we're only checking for presence and uniqueness of the email. Use [thi
 ###Test out a user
 Now that we have `has_secure_password`, Rails gives out a password setter.
 
-###Add Validations for User
+### Add Validations for User
 
 ```ruby
 validates :password, length: { in: 8..72 }, on: :create
 ```
 
-###Let's test a real user
+### Let's test a real user
 
 ```ruby
 User.find_by_email('paul@gmail.com').try(:authenticate, '123')
@@ -57,7 +57,7 @@ User.find_by_email('paul@gmail.com').try(:authenticate, '123')
 
 This is nifty, but long. We can add a class method that will return true or false, based on the params from the controller.
 
-###Add a helper method to the class
+### Add a helper method to the class
 
 ```ruby
 def self.authenticate(params)
@@ -65,7 +65,7 @@ def self.authenticate(params)
 end
 ```
 
-###The finished User model
+### The finished User model
 
 ```ruby
 class User < ActiveRecord::Base
@@ -85,7 +85,7 @@ class User < ActiveRecord::Base
 end
 ```
 
-##Add the login pages
+## Add the login pages
 Let's create a session controller to handle logging in/out. We'll organize this by calling the controller `sessions`, because in reality, we're creating and destroying sessions on login and logout.
 
 ```
@@ -94,7 +94,7 @@ rails g controller sessions new
 
 add actions `create` and `destroy`
 
-###Lets create some routes
+### Lets create some routes
 
 ```ruby
 get "login" => "sessions#new"
@@ -146,7 +146,7 @@ def user_params
 end
 ```
 
-###Add current User capabilities
+### Add current User capabilities
 
 ```ruby
 class ApplicationController < ActionController::Base
@@ -169,7 +169,7 @@ class ApplicationController < ActionController::Base
 end
 ```
 
-###Adding Flash Messages
+### Adding Flash Messages
 
 The `flash` hash is accessible in every Rails controller and view. To access it, we'll need a way to iterate through the hash and print out the keys and values. The best way is to create a partial and include it on the layout (so it'll be on every page).
 
@@ -192,13 +192,13 @@ With a partial at **app/views/partials/_flash.html.erb**
 <% end %>
 ```
 
-###Protect a controller
+### Protect a controller
 
 `before_action :is_authenticated` on the controller you want to protect
 
 `@current_user` is now visible to all pages because the `current_user` function is invoked
 
-##Adding 1:M relationships with another model
+## Adding 1:M relationships with another model
 
 Let's first add another model to relate to the user. In order for the user to have many pets, we can create the model by including the model name and `references` as the type.
 

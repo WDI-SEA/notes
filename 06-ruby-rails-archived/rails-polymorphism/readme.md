@@ -1,13 +1,13 @@
-#Polymorphic Associations
+# Polymorphic Associations
 
-##Objectives
+## Objectives
 
 * Define polymorphism (in general)
 * Describe the purpose of polymorphic associations
 * Use the Rails model generator to generate a polymorphic model
 * Implement polymorphic associations
 
-##What are Polymorphic Associations?
+## What are Polymorphic Associations?
 
 To understand what polymorphic associations are, let's understand the first word, `polymorphism`.
 
@@ -51,7 +51,7 @@ Instead of giving the model attribute a specific name, we store the name of the 
 
 Let's setup a vote model in order to implement this functionality in our Link Board.
 
-###Setup the Vote Model
+### Setup the Vote Model
 
 ```
 rails g model vote value:integer user:references votable:references{polymorphic}
@@ -110,7 +110,7 @@ has_many :votes , as: :votable
 ```
 
 
-##Try it out
+## Try it out
 
 in terminal
 
@@ -136,7 +136,7 @@ User.first.ratings
 User.first.votes
 ```
 
-###Resources
+### Resources
 
 * [Rails guide - Polymorphic Models](http://guides.rubyonrails.org/association_basics.html#polymorphic-associations)
 * [Rails Advanced Generators](http://railsguides.net/advanced-rails-model-generators/)

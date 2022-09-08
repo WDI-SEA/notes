@@ -1,24 +1,24 @@
-#Action Mailers - Password Reset
+# Action Mailers - Password Reset
 
-##Objectives
+## Objectives
 
 * Describe in details the concepts behind Action Mailers
 * Identify situations where emails will need to be sent by your application
 * Use Action Mailers to implement a password reset system
 
-##Getting Started
+## Getting Started
 
 https://github.com/WDI-SEA/rails-password-reset
 
 Use this starter code in order to have an app with user authentication. We'll be building upon this app in order to add the ability to reset passwords.
 
-##What are Action Mailers?
+## What are Action Mailers?
 
 An Action Mailer is a class that allows you to send emails in Rails. They are very similar to controllers, where each mailer is a class with different methods. There are also views, which represent the content of the email.
 
 Let's try creating a mailer and identify some components.
 
-###Creating a Mailer
+### Creating a Mailer
 
 We'll be creating a mailer in order to send users a password reset link.
 
@@ -30,7 +30,7 @@ Note how the generator created layouts, views, test files, and a base class for 
 
 These mailers can be called from the console, but in development, we need to setup email delivery. Or, we can use a gem called `letter_opener` to view emails in the browser. Let's do that for now.
 
-###Letter Opener
+### Letter Opener
 
 Install `letter_opener` to view emails in the browser. Add the gem to your gem file in the development group.
 
@@ -56,7 +56,7 @@ UserMailer.password_reset.deliver_now
 
 Now that we've verified the functionality of `letter_opener` and our mailer, let's make some routes and a controller to add password reset functionality.
 
-##Create Routes and Controller
+## Create Routes and Controller
 
 In **routes.rb**
 
@@ -86,7 +86,7 @@ In **views/passwords/new.html.erb**
 <% end %>
 ```
 
-###Add Columns for a Reset Code and Expiration
+### Add Columns for a Reset Code and Expiration
 
 ```
 rails g migration AddResetToUsers reset_code expires_at:datetime
@@ -109,7 +109,7 @@ def set_password_reset
 end
 ```
   
-###Update the Password Controller
+### Update the Password Controller
 
 Make sure that we can find the user and set a reset code if found.
 
@@ -125,7 +125,7 @@ def create
 end
 ```
   
-###Alter the Password Reset Mailer
+### Alter the Password Reset Mailer
 
 Lastly, we need to alter our mailer so it accepts a user and prints out the right information to our mailer view.
 
@@ -186,7 +186,7 @@ In **views/passwords/edit.html.erb**
 <% end %>
 ```
 
-###Sendmail
+### Sendmail
 
 If you would like to test actually sending mail from your local machine, you can use a binary included with MacOSX/Linux called `sendmail`. In order to set up sendmail, you will need to set up some additional configuration in your project.
 
@@ -210,7 +210,7 @@ You can see there are some additional parameters you can change, along with some
 
 Simply calling `UserMailer.password_reset.deliver_now` will fire off an email to the address provided! Be sure to configure your from email address in `app/mailes/application_mailer.rb`.
 
-###Heroku
+### Heroku
 
 Sendmail, however, is not present on Heroku and you will need to use some external service for sending mail. [More information can be found here.](https://devcenter.heroku.com/articles/smtp)
 

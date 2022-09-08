@@ -1,10 +1,10 @@
-#Ruby on Rails
+# Ruby on Rails
 
 Rails is a framework that's used by startups and large companies across the globe. Examples of companies using Rails include Github, Airbnb, Kickstarter, and General Assembly. Twitter also used Rails in its early days.
 
 As we learn Rails, we'll notice that it adheres to specific ideas. Specifically...
 
-###Convention over Configuration
+### Convention over Configuration
 
 Using Node/Express involved a lot of **configuration.** We had to create folders, install packages, setup routes, setup a template engine, etc.
 

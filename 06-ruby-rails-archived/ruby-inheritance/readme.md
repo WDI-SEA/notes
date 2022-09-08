@@ -9,19 +9,19 @@
 * Utilize inheritance to model the world
 * Install `pry` using `gem`. Pry is an improved REPL for Ruby that allows for better debugging and lets you work interactively with pre-written scripts through the use of `binding.pry`
 
-####Quick Review
+#### Quick Review
 1. What is a method? What is a class?
 2. What is an instance method?
 3. Why do we use a class?
 
-##Inheritance
+## Inheritance
 
 Inheritance is used to indicate that one class will get most or all of its features from a parent class. Inheritance is useful for a couple reasons.
 
 * DRY - Don't Repeat Yourself & reuse code functionality
 * Faster implementation time
 
-###Example
+### Example
 
 ```ruby
 class Rectangle
@@ -174,11 +174,11 @@ class Person < Animal
 end
 ```
 
-####Single Inheritance vs Multiple Inheritance
+#### Single Inheritance vs Multiple Inheritance
 * In Ruby, a class can only inherit from a single other class. It **cannot** inherit from multiple classes.
   * Think about it. What are some benefits and disadvantages to single & multiple inheritance?
 
-####Exercise
+#### Exercise
 Create a Mammal class, Cat class, and Dog class. Have Cat and Dog inherit from Mammal. Include some attributes for each class and a method for mammal.
 
 Make cats fall asleep when they're fed tuna. Make dogs fall asleep when they're fed a bone. 
