@@ -18,6 +18,7 @@
     * [Project Roles and Tools](01-workflow/01readme-1/03rolestools.md)
     * [Team Workflow Cheatsheet](01-workflow/01readme-1/04teamwork.md)
   * [VS Code Tips & Tricks](01-workflow/01-using-vscode.md)
+  * [Submitting Deliverables](01-workflow/deliverable-submission.md)
 * [HTML/CSS](03-html-css/README.md)
   * [HTML](03-html-css/html-review.md)
   * [CSS Selectors](03-html-css/css-selectors.md)
