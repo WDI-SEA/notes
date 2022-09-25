@@ -1,6 +1,6 @@
 # How to Submit a Deliverable
 
-# ![](images/ga.png)
+# ![](./ga.png)
 
 ## Homework Submission Instructions
 
@@ -10,11 +10,11 @@
 
 1. Click Fork in the upper right hand of the repo
 
-![](images/fork1.JPG)
+![](./fork1.JPG)
 
 Now you should see the repo is under your personal account
 
-![](images/fork2.JPG)
+![](./fork2.JPG)
 
 2. Clone down the repo in terminal in your hoemwork folder using a command simliar to this:
 
@@ -51,13 +51,13 @@ $ git push origin master
 6. Now navigate to your forked repository.
 
 7. Once there, click on the `Pull Requests` button.
-![](./images/pr1.JPG)
+![](./pr1.JPG)
 
 8. At the top you see the two dropdowns that allow you to pick what repo you want to use to make a pull request as well as which repo to make that request to.
 You need to click on `compare across forks` to show your forked copy.
 
 9. Switch to the appropriate repos. (On the left, the original repo. On the right, your forked branch).
-![](./images/pr2.JPG)
+![](./pr2.JPG)
 
 10. Now click "Create Pull Request"
 
@@ -71,7 +71,7 @@ Completeness score: (1-5)
 Questions? Comments? Add them here:
 
 ```
-![](./images/pr3.JPG)
+![](./pr3.JPG)
 
 13. Then hit `Create pull requests` and you are done!
 
