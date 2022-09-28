@@ -337,6 +337,7 @@
     * [Learning Resources](09-other-topics/post-sei/resources.md)
     * [Don't Build a Skyscraper](09-other-topics/post-sei/skyscraper.md)
 * [Projects](11-projects/README.md)
+  * [Project 1](11-projects/bh-project1.md)
   * [Project 1](11-projects/project-1.md)
   * [Project 1 Pitch Guideline](11-projects/project-1-pitch-guideline.md)
   * [Project 2](11-projects/project-2.md)
