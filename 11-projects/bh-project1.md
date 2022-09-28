@@ -81,7 +81,7 @@ Persistent score-keeping is required. Consider adding other bonus features.
 
 ---
 
-## Project Feedback + Evaluation
+## Project Evaluation
 
 You will be asked to give a short presentation of your project at the end of the week. This presentatioh should include the following:
 * a demo of your game
