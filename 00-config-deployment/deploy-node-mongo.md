@@ -79,6 +79,9 @@ You should see in your terminal a message similar to:
 Mongoose connected to sei-shard-00-02.cqysw.mongodb.net:27017
 ```
 
+
+
+<!-- 
 ### Heroku
 
 #### Get a Heroku account and install the CLI tool!
@@ -175,4 +178,4 @@ Displays logs from the server in real-time.
 `heroku run bash`
 
 This command allows you to run a terminal shell _**on Heroku's server**_. This provides a handy way to poke around and run commands on the server side.
-
+-->
