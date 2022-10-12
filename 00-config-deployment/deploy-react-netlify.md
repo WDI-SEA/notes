@@ -6,9 +6,21 @@ Netlify cannot be used to deploy an express server in a meaningful way, so your 
 
 When using Netlify to deploy our React frontend, this frontend will be our Client that must make backend API calls.
 
+## Syncing with your team
+
 1. (if you are working in a team) -- At this point, double check that your own personal repo is up to date with the main git repo for your team, and that all your own personal most recent work has been committed and merged into the main git repo. 
-1. once your client repo is up to date, checkout to a deployment branch
+
+## Setting up the project locally for deployment
+
+1. once your client repo is up to date, checkout to a deployment branch (this step is optional).
 1. **If you currently have any non-breaking React errors on the terminal when you deploy the frontend:** We have to let Netlify know we are okay with these. Netlify, by default, is not. Longterm, you will want to correct all these errors and then undo the next bit of instructions, but for deployment today do the following. In your `package.json` on the frontend, replace the current `"build": "react-scripts-build",` with `"build": "CI= react-scripts build",`. Commit and push your changes. 
+1. we need to add a file that tells netlify how to handle incoming requests in since our apps are SPAs.
+	* touch `./public/_redirects`
+	* add `/*    /index.html   200` to `./public/_redirects`
+1. Add, commit and push your changes
+
+## Setting up netlify
+
 1. Use your Github to sign up for Netlify [here](https://www.netlify.com/).
 1. After login, on your dashboard, click "New site from Git" in the top right hand corner. 
 1. Under "Continuous Deployment" click "Github", and authorize Netlify to access your Github repositories. 
