@@ -153,32 +153,30 @@ Below is an implementation of Binary Search in Js:
 
 ```javascript
 function binarySearch(arr, search) {
-  var min = 0;
-  var max = arr.length - 1;
-  var index;
-  var elem;
+	var min = 0;
+	var max = arr.length - 1;
+	var index;
+	var elem;
 
-  while (min <= max) {
+	while (min <= max) {
 	index = Math.floor((min + max) / 2);
 	elem = arr[index];
 
 	if (elem < search) {
-	  min = index + 1;
+		min = index + 1;
 	}
 	else if (elem > search) {
-	  max = index - 1;
+		max = index - 1;
 	}
 	else {
-	  return index;
+		return index;
 	}
-  }
+	}
 
-  return -1;
+	return -1;
 }
-```
+		```
 -->
-
-
 ### O\(n log\(n\)\) - Efficient Sorting Algorithms
 
 This is one of the most common measures of complexity.
