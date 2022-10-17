@@ -147,33 +147,42 @@ One million can be split in half roughly twenty times before getting down to one
 
 1,000,000 pages left 500,000 pages left 250,000 pages left 125,000 pages left 64,000 pages left 32,000 pages left 16,000 pages left 8,000 pages left 4,000 pages left 2,000 pages left 1,000 pages left 500 pages left 250 pages left 125 pages left 64 pages left 32 pages left 16 pages left 8 pages left 4 pages left 2 pages left 1 page left
 
-Here's an actual implementation of using binary search to look for things efficiently in an array in JavaScript:
 
-```javascript
-function binarySearch(arr, search) {
-  var min = 0;
-  var max = arr.length - 1;
-  var index;
-  var elem;
+<details>
 
-  while (min <= max) {
-    index = Math.floor((min + max) / 2);
-    elem = arr[index];
+	<summary>Js implementation of Binary Search</summary>
 
-    if (elem < search) {
-      min = index + 1;
-    }
-    else if (elem > search) {
-      max = index - 1;
-    }
-    else {
-      return index;
-    }
-  }
+	<p>
 
-  return -1;
-}
-```
+		```javascript
+		function binarySearch(arr, search) {
+		  var min = 0;
+		  var max = arr.length - 1;
+		  var index;
+		  var elem;
+
+		  while (min <= max) {
+			index = Math.floor((min + max) / 2);
+			elem = arr[index];
+
+			if (elem < search) {
+			  min = index + 1;
+			}
+			else if (elem > search) {
+			  max = index - 1;
+			}
+			else {
+			  return index;
+			}
+		  }
+
+		  return -1;
+		}
+		```
+
+	</p>
+
+</details>
 
 ### O\(n log\(n\)\) - Efficient Sorting Algorithms
 
