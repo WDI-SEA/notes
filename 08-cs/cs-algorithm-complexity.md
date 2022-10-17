@@ -175,7 +175,7 @@ function binarySearch(arr, search) {
 
 	return -1;
 }
-		```
+```
 -->
 ### O\(n log\(n\)\) - Efficient Sorting Algorithms
 
