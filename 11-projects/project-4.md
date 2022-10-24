@@ -73,7 +73,7 @@ Include project idea along with answers to the above questions in your README.md
 * wireframes of the app
 * a description of the user flow for the app the app along with user stories
 * If you are planning to work in a team, include the members of your team
-* a breakdown of what you plan on working on each day (`sprints` for each day). This can be in either
+* a breakdown of what you plan on working on each day (`sprints` for each day).
 * additional links/images if they relate to the planning of your project, for example a rest API project will need `ERDs` of the data models and a `RESTful` routing chart of all the routes in the API
 
 ## Necessary Deliverables
