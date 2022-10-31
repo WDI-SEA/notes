@@ -135,6 +135,8 @@ For example, you could focus on linked lists and spend a week or two implementin
 * [TypeScript Exercises](https://typescript-exercises.github.io/#exercise=1&file=%2Findex.ts) is an app to practice your TS skills ([TypeScript Exercises app repo can be found here](https://github.com/typescript-exercises/typescript-exercises))
 * [Hacker Rank](https://www.hackerrank.com/) has many code challenges that are presented in a mathy kind of way
 * [Leet Code](https://leetcode.com/) has some of the most notoriously difficult algorithmic and coding challenges. 
+* [Pramp](http://pramp.com/) pairs you up with other devs to practice coding problems -- a must to find study buddies during a remote job search.
+* [Project Euler](https://projecteuler.net/about) is a classic resource with mathmatical focused coding problems.
 
 ## 🌈 Projects, Open Source and Dev Communties
 
@@ -185,7 +187,8 @@ Don't judge a book by its price, these are all excellent resources:
 * [Essential Javascript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) is an older but still relevant book that takes a deep dive into specific programming patterns in JS, many of which are still commonly used while others have been implemented as language features 
 * [API on Rails](https://github.com/madeindjs/api_on_rails) is a one-stop-shop for getting into rails backend
 * [Learn x in y Minutes](https://learnxinyminutes.com/) isn't exactly a book per se, its more like a collection of crashcourse type cheatsheets for coding topics. 'Take a whirlwind tour of your next favorite language. Community-driven!'
-
+* The [Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is the ultimate interview handbook, focused on preparing for a FAANG interview loop. It also has a schedule you can follow after graduation. 
+	
 ## 💰 Money Costing Books
 
 These cost monies, which is not ideal, but are worth it:
