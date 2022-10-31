@@ -85,8 +85,10 @@ Revisiting fundamental topics will prove to be enourmously benificial because wi
 
 ## 📝 Stack Overflow Developer Survey
 
-* The [Stack Overflow Developer Survey 2021](https://insights.stackoverflow.com/survey/2021) is a hugely insightful dataset that "examines all aspects of the developer experience from career satisfaction and job search to education and opinions on open source software"
-    * [Here is the 2020 (old) survey](https://insights.stackoverflow.com/survey/2020)  
+* The [Stack Overflow Developer Survey](https://survey.stackoverflow.co/2022/) is a hugely insightful dataset that "examines all aspects of the developer experience from career satisfaction and job search to education and opinions on open source software"
+	* here are some old surveys (also insightful) 
+		* [2021](https://insights.stackoverflow.com/survey/2021)
+		* [2020](https://insights.stackoverflow.com/survey/2020)  
 
 ## 🗺 Learning Paths and Interview Prep
 
