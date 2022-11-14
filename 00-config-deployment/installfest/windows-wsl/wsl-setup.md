@@ -10,6 +10,8 @@ This process involves restarting your computer at least once and downloading lar
 
 Before the first day of class, please:
 
+# NOTE: **INSTALL UBUNTU VERSION 20 -- NEWER VERSIONS CURRENTLY DON'T SUPPORT ALL OF THE TOOLS WE USE**
+
 1. Read [Microsoft's WSL introduction page](https://docs.microsoft.com/en-us/learn/modules/get-started-with-windows-subsystem-for-linux/1-introduction):
 2. Follow [Microsoft's WSL Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10#manual-installation-steps) to enable WSL and install a Linux distribution \(Ubuntu is recommended\)
    * _**IMPORTANT**_: Be sure to remember the password you use when setting up your first user account in Linux, it is something you will be using often! Choose something easy to type and remember.
