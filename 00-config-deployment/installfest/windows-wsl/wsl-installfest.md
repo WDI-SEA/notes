@@ -68,6 +68,16 @@ git config --global init.defaultBranch main
 
 Follow the instructions [here](https://gasei.gitbook.io/sei/00-config-deployment/installfest/osx/unit-1#optional-setting-up-an-ssh-key-for-github) to set up an SSH key for github. Add the SSH key to your [open source github](https://github.com/). 
 
+other git config settings that are optional, but reccomend:
+
+```bash
+# rebase by default on pull
+git config pull.rebase true
+# optional: set the default git editor to be vscode to aviod getting stuck in vim
+git config --global core.editor 'code -w'
+git config --global push.default simple
+```
+
 ### Zsh Install
 
 Open the Ubuntu terminal app In the terminal run the following commands: \(follow the prompts and press y to confirm yes when it prompts you to\)
