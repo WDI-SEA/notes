@@ -132,6 +132,7 @@ git config --global push.default simple
 git config --global credential.helper cache
 # optional: set the default git editor to be vscode to aviod getting stuck in vim
 git config --global core.editor 'code -w'
+git config pull.rebase true
 ```
 
 **Setting up Github Personal Access Token**
