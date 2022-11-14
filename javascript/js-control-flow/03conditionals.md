@@ -76,6 +76,8 @@ switch(grade) {
 
 Rewrite the `if/else if/else` example above using a switch statement.
 
+<!--
+
 ## Switch statements can evaluate inequalities too!
 
 ```javascript
@@ -95,6 +97,8 @@ switch(true) {
     break;
 }
 ```
+
+-->
 
 ## Truthy vs. Falsey
 
