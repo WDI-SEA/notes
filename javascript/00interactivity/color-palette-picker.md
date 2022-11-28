@@ -43,14 +43,6 @@ div {
 }
 ```
 
-Grab them with javascript:
-
-```javascript
-const colorPalette = document.querySelector('#color-palette')
-const myPalette = document.querySelector('#my-palette')
-const generate = document.querySelector('#generate')
-```
-
 Write a function `makePalette` that will generate 150 squares with the class 'square' and append them to the `color-palette` div
 
 ```javascript
@@ -69,9 +61,10 @@ document.addEventListener('DOMContentLoaded', ()=>{
 })
 ```
 
-Make it so each square will have a random color
+Make it so each square will have a random color, by adding this to the for loop in your `makePalette` function
 
 ```javascript
+// inside the for loop in the function makePalette
 const red = Math.floor(Math.random() * 255)
 const green = Math.floor(Math.random() * 255)
 const blue = Math.floor(Math.random() * 255)
@@ -83,10 +76,16 @@ Should look like this:
 
 ![](https://i.imgur.com/AX50GkX.png)
 
-Add an event listener to the `generate` button that will run the `makePalette` function
+Add an event listener to the `generate` button that will run the `makePalette` function, this needs to happen in your `DOMContentLoaded` event handler:
 
 ```javascript
-generate.addEventListener('click', makePalette)
+
+document.addEventListener('DOMContentLoaded', () => {
+...
+	const myPalette = document.querySelector('#my-palette')
+	generate.addEventListener('click', makePalette)
+...
+})
 ```
 
 Make it so the `makePalette` function will empty the previous palette of squares
