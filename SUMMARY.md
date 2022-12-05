@@ -112,6 +112,7 @@
   * [AJAX w/jQuery](00readme/ajax.md)
 * [Databases](04-databases/README.md)
   * [Intro to SQL](04-databases/sql-intro.md)
+  * [SQL Relationships](04-databases/sql-relationships/readme.md)
   * [Advanced SQL](04-databases/sql-advanced.md)
   * [MongoDB](04-databases/mongo-intro/README.md)
     * [Intro to NoSQL](04-databases/mongo-intro/intro-nosql.md)
