@@ -88,150 +88,6 @@ Now `SELECT * FROM orders;` and you should see this table:
 (10 rows)
 ```
 
-## Order of SQL Clauses
-
-![SQL Clauses](../.gitbook/assets/SQLClauses.png)
-
-## Selecting Specific Data
-
-It's great that we can select all records from a table but we frequently want to limit the results to a smaller set that meets some set of criteria. We saw the WHERE clause in the introduction to SQL lesson and saw how it can help us retrieve specific data. Here are a few more ways we can get more exclusive with our queries.
-
-Remember that in SQL, our comparison operators are a little different. Equality is a single equals `=` and inequality is represented by a "greater-than-or-less-than" symbol `<>`.
-
-```sql
-- LIKE - SELECT * FROM customers WHERE name LIKE '%';
-- DISTINCT - SELECT DISTINCT name FROM customers;
-- ORDER BY - SELECT * FROM customers ORDER BY name DESC;
-- COUNT - SELECT count(*) FROM customers;
-- MAX - SELECT max(age) FROM customers;
-- MIN - SELECT min(age) FROM customers;
-- AND - SELECT * from customers WHERE name = 'Kaushik' AND age = 25;
-- OR - SELECT * from customers WHERE name = 'Silvana' OR name = 'Bira';
-- IN - SELECT * FROM customers WHERE name IN ('Amelia', 'Ramesh');
-- NOT IN - SELECT * FROM customers WHERE name NOT IN ('Amelia', 'Ramesh');
-- LIMIT - SELECT * FROM customers LIMIT 2;
-- OFFSET - SELECT * FROM customers OFFSET 1;
-- LIMIT + OFFSET - SELECT * FROM customers LIMIT 2 OFFSET 1;
-- % - SELECT * FROM customers WHERE name LIKE '%a';
-```
-
-## COUNT\(\)
-
-COUNT\(\) is an _aggregate function_.
-
-"In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
-
-We use an aggregate function to get the total count of customers in a table.
-
-```sql
-SELECT COUNT(*) FROM customers;
-```
-
-What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint?
-
-```sql
-SELECT COUNT(age) FROM customers;
-```
-
-## GROUP BY
-
-GROUP BY is used to pull together identical data points. For example, say we just want to see the different ages we have in our customer table, without having to look through the duplicates too.
-
-```sql
-SELECT age FROM customers GROUP BY age;
-```
-
-What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT\(\):
-
-```sql
-SELECT age, COUNT(age) FROM customers GROUP BY age;
-```
-
-Or maybe we want the average salaries of the customers from each country:
-
-```sql
-SELECT country, AVG(salary) FROM customers GROUP BY country;
-```
-
-### Aliases
-
-Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query.
-
-```sql
-SELECT country, AVG(salary) AS avgSal FROM customers GROUP BY country;
-```
-
-### Alter Table Command
-
-```sql
--- add a data column
-ALTER TABLE customers ADD COLUMN date DATE;
-```
-
-```sql
--- set the name column to be required when a new entry is made
-ALTER TABLE customers ALTER COLUMN name SET NOT NULL;
-```
-
-```sql
--- remove the data column
-ALTER TABLE customers DROP date;
-```
-
-### Foreign Keys
-
-Remember our 'orders' table:
-
-```sql
-CREATE TABLE orders (
-  id SERIAL PRIMARY KEY,
-  order_num TEXT,
-  amount DECIMAL,
-  customer_id INTEGER REFERENCES customers(id)
-);
-```
-
-That last column we defined is called a **FOREIGN KEY**. Foreign keys and primary keys are related in that a foreign key is basically a reference to a primary key in another table. In this case, we have a column in our 'orders' table called `customer_id` that _references_ the primary key in the 'customers' table. This is the basis for making data relations with JOIN statements as we will see below. To summarize, the foreign key provides a sort of ownership link between the customer who has the primary key and all of that customer's orders in the related table where the `customer_id` matches the id from the 'customers' table.
-
-### Nested queries
-
-What if I want to get names of customers with the highest salary.
-
-Let's try it using WHERE
-
-```sql
-SELECT name, salary FROM customers
-WHERE salary = MAX(salary);
-```
-
-That will give us an error, because MAX is an aggregate function and can't be used in WHERE.
-
-This will return the maximum salary, which we need to feed into WHERE.
-
-```sql
-SELECT name, salary FROM customers
-WHERE salary = (
-    SELECT MAX(salary) FROM customers
-);
-```
-
-### Conditionals
-
-#### CASE Statement
-
-The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
-
-```sql
-SELECT name, age, 
-  CASE 
-    WHEN age > 30 THEN 'boomer'
-    WHEN age > 23 THEN 'adult'
-    WHEN age > 18 THEN 'young adult'
-    ELSE 'baby' 
-  END AS age_group 
-FROM customers;
-```
-
 ### JOINs
 
 There are four types of JOINs in SQL:
@@ -425,7 +281,6 @@ With a `RIGHT JOIN` the table returned will have all values in the right table, 
 (10 rows)
 ```
 
-
 ```sql
 SELECT customers.name, orders.order_num
 FROM customers 
@@ -441,7 +296,151 @@ RIGHT JOIN orders o
 ON c.id=o.customer_id;
 ```
 
-### Unions
+## Order of SQL Clauses
+
+![SQL Clauses](../.gitbook/assets/SQLClauses.png)
+
+## Selecting Specific Data
+
+It's great that we can select all records from a table but we frequently want to limit the results to a smaller set that meets some set of criteria. We saw the WHERE clause in the introduction to SQL lesson and saw how it can help us retrieve specific data. Here are a few more ways we can get more exclusive with our queries.
+
+Remember that in SQL, our comparison operators are a little different. Equality is a single equals `=` and inequality is represented by a "greater-than-or-less-than" symbol `<>`.
+
+```sql
+- LIKE - SELECT * FROM customers WHERE name LIKE '%';
+- DISTINCT - SELECT DISTINCT name FROM customers;
+- ORDER BY - SELECT * FROM customers ORDER BY name DESC;
+- COUNT - SELECT count(*) FROM customers;
+- MAX - SELECT max(age) FROM customers;
+- MIN - SELECT min(age) FROM customers;
+- AND - SELECT * from customers WHERE name = 'Kaushik' AND age = 25;
+- OR - SELECT * from customers WHERE name = 'Silvana' OR name = 'Bira';
+- IN - SELECT * FROM customers WHERE name IN ('Amelia', 'Ramesh');
+- NOT IN - SELECT * FROM customers WHERE name NOT IN ('Amelia', 'Ramesh');
+- LIMIT - SELECT * FROM customers LIMIT 2;
+- OFFSET - SELECT * FROM customers OFFSET 1;
+- LIMIT + OFFSET - SELECT * FROM customers LIMIT 2 OFFSET 1;
+- % - SELECT * FROM customers WHERE name LIKE '%a';
+```
+
+## COUNT\(\)
+
+COUNT\(\) is an _aggregate function_.
+
+"In database management an aggregate function is a function where the values of multiple rows are grouped together to form a single value of more significant meaning or measurement such as a set, a bag or a list." [Read more on wikipedia.](https://en.wikipedia.org/wiki/Aggregate_function)
+
+We use an aggregate function to get the total count of customers in a table.
+
+```sql
+SELECT COUNT(*) FROM customers;
+```
+
+What about getting the count of something more specific in customer, such as the number of rows that have the age datapoint?
+
+```sql
+SELECT COUNT(age) FROM customers;
+```
+
+## GROUP BY
+
+GROUP BY is used to pull together identical data points. For example, say we just want to see the different ages we have in our customer table, without having to look through the duplicates too.
+
+```sql
+SELECT age FROM customers GROUP BY age;
+```
+
+What if we just want to know how many different ages we have? We can combine GROUP BY and COUNT\(\):
+
+```sql
+SELECT age, COUNT(age) FROM customers GROUP BY age;
+```
+
+Or maybe we want the average salaries of the customers from each country:
+
+```sql
+SELECT country, AVG(salary) FROM customers GROUP BY country;
+```
+
+## Aliases
+
+Aliases are a piece of a SQL query that allows you to temporarily rename a table or column for the current query.
+
+```sql
+SELECT country, AVG(salary) AS avgSal FROM customers GROUP BY country;
+```
+
+## Alter Table Command
+
+```sql
+-- add a data column
+ALTER TABLE customers ADD COLUMN date DATE;
+```
+
+```sql
+-- set the name column to be required when a new entry is made
+ALTER TABLE customers ALTER COLUMN name SET NOT NULL;
+```
+
+```sql
+-- remove the data column
+ALTER TABLE customers DROP date;
+```
+
+## Foreign Keys
+
+Remember our 'orders' table:
+
+```sql
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  order_num TEXT,
+  amount DECIMAL,
+  customer_id INTEGER REFERENCES customers(id)
+);
+```
+
+That last column we defined is called a **FOREIGN KEY**. Foreign keys and primary keys are related in that a foreign key is basically a reference to a primary key in another table. In this case, we have a column in our 'orders' table called `customer_id` that _references_ the primary key in the 'customers' table. This is the basis for making data relations with JOIN statements as we will see below. To summarize, the foreign key provides a sort of ownership link between the customer who has the primary key and all of that customer's orders in the related table where the `customer_id` matches the id from the 'customers' table.
+
+## Nested queries
+
+What if I want to get names of customers with the highest salary.
+
+Let's try it using WHERE
+
+```sql
+SELECT name, salary FROM customers
+WHERE salary = MAX(salary);
+```
+
+That will give us an error, because MAX is an aggregate function and can't be used in WHERE.
+
+This will return the maximum salary, which we need to feed into WHERE.
+
+```sql
+SELECT name, salary FROM customers
+WHERE salary = (
+    SELECT MAX(salary) FROM customers
+);
+```
+
+## Conditionals
+
+### CASE Statement
+
+The CASE statement is used when you want to display different things depending on the data that you've queried from the database. There's two different ways to structure a CASE statement shown below. Note that in the first example you can only compare against single values while in the second example you can use actual expressions for evaluation. Also note that CASE statements require an ELSE statement.
+
+```sql
+SELECT name, age, 
+  CASE 
+    WHEN age > 30 THEN 'boomer'
+    WHEN age > 23 THEN 'adult'
+    WHEN age > 18 THEN 'young adult'
+    ELSE 'baby' 
+  END AS age_group 
+FROM customers;
+```
+
+## Unions
 
 Unions display the results of two or more SELECT statements into one table, so the SELECT statements must have the same number of columns with the same names/data types, in the same order.
 
