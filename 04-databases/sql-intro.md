@@ -1,4 +1,3 @@
-
 # Intro to SQL
 
 ## Introduction To SQL and Databases
@@ -63,6 +62,7 @@ A database server is a computer or group of computers that is dedicated to stori
 **A Brief History of Databases**
 
 Before the notion of an RDBMS \(like PostreSQL\) and a standard language for querying that data was created \(SQL\), there were many database vendors. Each vendor had different ways of storing data and very different ways of retreiving the data afterwards. Moving data from one system to another was very costly. Luckly, in the 1970s, SQL was created and later turned into a standard. Modern relational databases are now based on the SQL standard, so moving from Postgres to Oracle is not nearly as much of a challenge as it used to be.
+
 ### SQL is known as an `ACID`ic database
 
 `ACID` is an acronym for `A`tomicity, `C`onsistency, `I`solation, and `D`urability
@@ -78,7 +78,6 @@ Before the notion of an RDBMS \(like PostreSQL\) and a standard language for que
 ## psql
 
 Today we're using [PostgreSQL](https://www.postgresql.org/download/macosx/), often called Postgres. Postgres is based off an older database system called Ingres. That's where the name comes from.
-
 
 **psql** is a command line tool to interact with postgres databases, by default it connects to the localhost database with the name of the current user and provides a `repl` for `SQL` commands.
 
@@ -372,6 +371,7 @@ We've gotten a list of movies back, but it's way too long for our uses. Let's in
 ```sql
 SELECT title, rating FROM movies ORDER BY rating DESC LIMIT 5;
 ```
+
 #### Exercise
 
 Write a query on the movie table to return the worst movie of all time. There should be only 1 result returned. The result should include the title, description and rating of the movie.
