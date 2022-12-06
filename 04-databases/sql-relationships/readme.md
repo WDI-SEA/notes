@@ -1,25 +1,92 @@
 # SQL Relationships
 
 ## Objectives
+
 * Understand the purpose and results of different types of SQL joins
 * Design and normalize a database structure with 1:M and M:M relationships
 * Utilize the different types of JOINs to create multi-table SQL queries
 
-
-## Joins and Foreign Keys
-
-![SQL Joins](sql-joins.png)
-
 ## What is a foreign key?
 
-It provides a reference to a column (usually the primary key) in another table.
+This is where the **relational** part comes in! Foreign keys allow entries in one table to refer to entires in another table.
+
+What are some examples of when this would be useful?
+
+* \(library\) books table references an authors table
+* \(elementary school\) a students table refereces a classes table, which references teachers table, which references a schools table, which references a districts table, etc.
+
+Let's build out a movie review table that allows us to keep track of reviews on the movie table from the previous lesson's `movie_lesson` database:
+
+![Foreign Key](foreign_key.png)
 
 ```sql
+-- a table that holds movie reviews
+CREATE TABLE movie_reviews (
+  id SERIAL PRIMARY KEY,
+  description TEXT,
+  reviewer TEXT,
+  score INT,
+  -- a foreing key that lets us find the movie that this review is for
+  movie_id INT REFERENCES movies(id)
+);
+```
+
+```sql
+-- adds a review to which ever movie has an id of 5
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('pretty good', 'The Critic', 5); 
+```
+
+```sql
+-- nested queries to find movies and add reviews to them
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('Love them Dinos', 'The Critic', 10,  
+  -- the parans  ()  allow one query to be inside another
+  (SELECT id FROM movies WHERE title='Jurassic Park')
+);
+```
+
+```sql
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('Cars p good', 'The Critic', 7,  
+  (SELECT id FROM movies WHERE title='Cars')
+);
+```
+
+```sql
+INSERT INTO movie_reviews (description, reviewer, score, movie_id)
+VALUES ('Awesome for Sci-fi nerds', 'The Critic', 9,  
+  (SELECT id FROM movies WHERE title='Back to the Future')
+);
+```
+
+Use select statements to view the tables and make sure everything worked as expected.
+
+```sql
+SELECT * FROM movies;
+SELECT * FROM movie_reviews;
+```
+
+Here is an example of using a join to display all of the data at once:
+
+```sql
+-- Use a JOIN to see all the data at once
+SELECT * FROM movies
+JOIN movie_reviews ON movies.id=movie_reviews.movie_id
+```
+
+## Another Foriegn Key Example
+
+Here, we are creating a table of students, and each student will have have a `FORIEGN KEY` of a course that they are enrolled in:
+
+```sql
+-- create a courses table
 CREATE TABLE courses (
     id SERIAL PRIMARY KEY,
     course TEXT
 );
 
+-- create a students table with a foriegn key
 CREATE TABLE students (
     id SERIAL PRIMARY KEY,
     name TEXT,
@@ -27,11 +94,16 @@ CREATE TABLE students (
     email TEXT,
     course_id INTEGER REFERENCES courses(id)
 );
+
+-- alternatively, you could alter the table from the first lesson
+ALTER TABLE students ADD COLUMN course_id INTEGER REFERENCES courses(id);
 ```
 
-![Foreign Key](foreign_key.png)
+## SQL Joins
 
 ### Anatomy of a Join Statement
+
+![SQL Joins](sql-joins.png)
 
 ```sql
 	SELECT * FROM tableOne
@@ -48,20 +120,24 @@ Where `<Condition>` is a statement that usually indicates which two columns must
 ```
 
 ### Inner Join
+
 - Produces only the results from both tables that match the join condition.
 
 ### Full Join
+
 - Produces all the results from both tables regardless of whether or not there is any row in either table that matches the join condition. 
 
 ### Left Join
+
 - Produces all results from the left table regardless of whether or not there is a matching row in the right table and only results from the right table that have a matching row from the left table based on the join condition.
 
 ### Right Join
+
 - ***Opposite*** of a **Left Join**: Produces all results from the right table regardless of whether or not there is a matching row in the left table and only results from the left table that have a matching row in the right table based on the join condition.
 
 ### Cross Join
-- Produces a **cartesian product** of both joined tables (all rows in the left table match all rows in the right table, giving NxM results). There is **NO** join condition for a cross join.
 
+- Produces a **cartesian product** of both joined tables (all rows in the left table match all rows in the right table, giving NxM results). There is **NO** join condition for a cross join.
 
 ```sql
 CREATE TABLE authors (
@@ -121,7 +197,6 @@ Reminder:
 | Stuart | 17 | Maths |
 
 vs
-
 
 | Student | Age | Subject |
 |---------|-----|---------|
