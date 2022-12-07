@@ -133,6 +133,7 @@
     * [Views](05-node-express/00readme-1/03views.md)
     * [Templates](05-node-express/00readme-1/04templates.md)
     * [Layouts and Controllers](05-node-express/00readme-1/05layouts-controllers.md)
+    * [Layouts and Controllers (using partials)](05-node-express/00readme-1/06layouts-controllers-partials.md)
     * [CRUD & REST](05-node-express/00readme-1/00readme/README.md)
       * [Get and Post](05-node-express/00readme-1/00readme/01get-post.md)
       * [Get and Post Lab](05-node-express/00readme-1/00readme/get-post-lab.md)
