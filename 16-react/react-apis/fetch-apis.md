@@ -82,7 +82,6 @@ Or, in ES6 syntax:
 fetch(url)
   .then((response) => {
     // Here you get the data to modify or display as you please
-    })
   })
   .catch((ex) => {
     // If there is any error, you will catch it here
@@ -115,9 +114,9 @@ That's as simple as fetch is. While there are other ways to handle the response 
 
 > _Production Warning!_ It is important to note that while this is an ES6 standard, [some browsers such as Internet Explorer](http://caniuse.com/#search=fetch) do not support it; yet Edge does. You may need a polyfill for live projects. If you need a polyfill for a production project, [Github's polyfill is very popular](https://github.com/github/fetch).
 
-## Codealong - Kanye West Quotes
+## Codealong - Dad Jokes
 
-It is time for you to build a very simple component that shows a randomly generated Kanye West Quote. We'll do this using the [Kanye Rest](https://api.kanye.rest/). Before doing so, challenge yourself to a mini quiz.
+It is time for you to build a very simple component that shows a randomly generated Dad Joke. We'll do this using the [Dad Jokes](https://icanhazdadjoke.com/api). Before doing so, challenge yourself to a mini quiz.
 
 **Q: Which React.Component method should API calls be made from?**  
 
@@ -126,10 +125,8 @@ It is time for you to build a very simple component that shows a randomly genera
 
 **Q: What does it mean to make `GET` request?**  
 
-
 We are asking the server to send us data to read. To `GET` means to "read."
-
-## Fetching Kanye in a React Component
+## Fetching Dad Jokes in a React Component
 
 Let's go back to your blog project \(so make sure it's running!\).
 
@@ -139,7 +136,6 @@ The official [React documentation](https://facebook.github.io/react/docs/react-c
 
 * Start by changing the `Home` component to have an empty `componentDidMount()` method.
 * Set the stage for returning a quote in the `div` by changing the text to be an `<h1>` with the text "My favorite Kanyw quote:"
-
 ## Let's use axios instead!
 
 `fetch` is great and all... but let's take this opportunity to test out another common library! `axios` is Promise based HTTP client for the browser and node.js! More detailed information can be found in their [README on github](https://github.com/axios/axios).
@@ -156,7 +152,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h1>My favorite Kanye quote:</h1>
+        <h1><s>Bad</s> Dad Jokes</h1>
       </div>
     )
   }
@@ -178,13 +174,13 @@ const Home = () => {
 
    return (
       <div>
-        <h1>My favorite Kanye quote:</h1>
+        <h1><s>Bad</s> Dad Jokes</h1>
       </div>
    )
   }
 ```
 
-We can now tell our component to fetch a Kanye quote and then set it to our state. We do this by adding the `axios.get()` call inside of _componentDidMount\(\)_.
+We can now tell our component to fetch a Dad Joke and then set it to our state. We do this by adding the `axios.get()` call inside of _componentDidMount\(\)_.
 
 Calling `this.setState()` then triggers a re-_render_ inside of our component.
 
@@ -197,24 +193,32 @@ import axios from 'axios';
 class Home extends Component {
 
   state = {
-    kanye: ''
+    joke: ''
   }
 
   componentDidMount() {
-    let kanyeRest = 'https://api.kanye.rest/';
-    // fetch a poem
-    axios.get(kanyeRest).then( response => {
-      // set state
-      this.setState{kanye: response.data.quote}
-    }).catch(err => console.log(err))
+    const baseUrl = 'https://icanhazdadjoke.com/'
+	// we need to set headers for this api
+	const options = {
+      headers: {
+        Accept: "application/json"
+      }
+    }
+    // fetch a joke
+    axios.get(baseUrl, options)
+		.then(response => {
+		// set state
+		this.setState({ joke: response.data.joke )}
+		})
+		.catch(console.err)
   }
 
   render() {
-    let quote = this.state.kanye;
+    const { joke } = this.state;
     return (
       <div>
-        <h1>My favorite Kanye quote:</h1>
-        {quote}
+        <h1><s>Bad</s> Dad Jokes</h1>
+        <p>{joke}</p>
       </div>
      )
   }
@@ -228,18 +232,30 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 const Home = () => {
-   let [kanye, setKanye] = useState('')
+   const [joke, setJoke] = useState('')
 
    useEffect(() => {
-   let kanyeRest = 'https://api.kanye.rest/'
-   axios.get(kanyeRest)
-   .then( response => {
-        setKanye(response.data.quote)
-      })
-   .catch(err => console.log(err.message))
+    const baseUrl = 'https://icanhazdadjoke.com/'
+	// we need to set headers for this api
+	const options = {
+      headers: {
+        Accept: "application/json"
+      }
+    }
+    // fetch a joke
+    axios.get(baseUrl, options)
+		.then(response => {
+		// set state
+		this.setState({ joke: response.data.joke )}
+		})
+		.catch(console.err)
    }, [])
+
    return (
-        <div>{kanye}</div>
+      <div>
+        <h1><s>Bad</s> Dad Jokes</h1>
+        <p>{joke}</p>
+      </div>
    )
 }
 ```
@@ -247,54 +263,40 @@ const Home = () => {
 Let's test it out!
 
 * Add an `if` statement under `render`.
-  * This simply checks to be sure that `axios.get()` has completed before `render()` tries to return the movie - otherwise it returns "Loading...".
+  * This simply checks to be sure that `axios.get()` has completed before `render()` tries to return the joke - otherwise it returns "Loading...".
   * For this especially, it's important that the state is declared in the constructor. This way, the `if` statement does not fail if the asynchronous `setState()` hasn't completed the update yet.
 
 ```javascript
 render() {
-       let quote = this.state.kanye;
-     if (this.state.kanye){
-       return (
-         <div>
-           <h1>My favorite Kanye quote:</h1>
-           {quote}
-         </div>
-       )
-     }
-     return (
-       <div>
-         <h1>My favorite Kanye quote:</h1>
-         Loading...
-       </div>
-     )
-  }
+	const { joke } = this.state;
+	const jokeJsx = (	
+		  <div>
+			<h1><s>Bad</s> Dad Jokes</h1>
+			<p>{joke}</p>
+		  </div>
+	)
+	
+	return joke ? jokeJsx : 'Loading...'	
+}
 ```
 
 and one more time, as a functional component:
 
 ```javascript
-if(kanye){
-   return (
-   <div>
-      <h1>My favorite Kanye quote:</h1>
-      <div>{kanye}</div>
-      <p>Lo, my heart doth swoon... Such a way with words.</p>
-   </div>
-   )
-}
-return (
-   <div>
-      <h1>My favorite Kanye quote:</h1>
-      <div>Loading...</div>
-   </div>
+const jokeJsx = (	
+	  <div>
+		<h1><s>Bad</s> Dad Jokes</h1>
+		<p>{joke}</p>
+	  </div>
 )
+
+return joke ? jokeJsx : 'Loading...'	
 ```
 
-You're done! Your `home` page should load a random Kanye quote!
+You're done! Your `home` page should load a random Dad Joke quote!
 
 For more information than you probably ever wanted to know about fetching data in React, these articles by Robin Weiruch make for a pretty complete resource:
 
 * [How to Fetch Data in React](https://www.robinwieruch.de/react-fetching-data/)
 * [Fetching Data with React Hooks](https://www.robinwieruch.de/react-hooks-fetch-data/) 
   * 🏴‍☠️ BEWARE! There be HOOKS here!   🏴‍☠️ 
-
