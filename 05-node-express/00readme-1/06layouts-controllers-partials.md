@@ -231,7 +231,7 @@ In order to link up our stylesheet, we can add it to our header file like so:
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love It or Leave It</title>
-    <!-- when referencing static assets in our public folder, '/' refers to the public folder, it's very important not use './', or leave the slash '/' off of the front of the path  -->
+    <!-- when referencing static assets in our public folder, '/' refers to a url the public folder is being served from, it's very important not use './', or leave the slash '/' off of the front of the path, this is true of all static assets you serve with express (images, js, etc.)  -->	
     <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
