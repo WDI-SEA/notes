@@ -42,12 +42,6 @@ The sequelize CLI has a command called `createdb`. This performs the same action
 createdb userapp_development
 ```
 
-**For your historical reference...**
-
-**WARNING \(2017\) Edited \(2018\):** At one point, sequelize-cli, sequelize, and pg modules were not playing nicely with each other. Luckily, this issue \(for version Sequelize 4\) has been resolved and we can resume using the current versions of both. In the future, be mindful that many modules you use are maintained by individual third parties and issues like this may come up!
-
-If you used to use Sequelize 3, keep in mind that Sequelize 4 has breaking changes! If you need to upgrade your app, refer to these [docs](http://docs.sequelizejs.com/manual/tutorial/upgrade-to-v4.html#breaking-changes), which guide you in the update process.
-
 ## Setup part 3 - config.json, models and migrations:
 
 In the text editor we should now see a bunch of new folders. We now have config, migrations and models. This was created for us when we ran `sequelize init`.
@@ -82,9 +76,36 @@ Let's change the config.json so it looks like this.
 
 * If the dialects defaults to mySql, change them to postgres
 * change the database names
-* f you have a username and password for your Postgres server, you must include those as well
+* if you have a username and password for your Postgres server, you must include those as well
+
 
 When we deploy to Heroku, they will provide us a long url that contains password and login that will be secure when deployed. More on this later.
+
+#### A note for Linux and WSL users
+
+Since you need to provide a username and password in your `config.json`, the easiest way to configure this to work quickly and easily is to make a special sequelize user. Run the following commands in your `psql` shell:
+
+```sql
+CREATE USER sequelize WITH SUPERUSER PASSWORD 'sequelize';
+ALTER USER sequelize WITH SUPERUSER;
+```
+Now your `config.json` should look like this:
+
+```json
+{
+  "development": {
+    "username": "sequelize",
+    "password": "sequelize",
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
+```
+
+#### Create a database inside of Postgres
+
+Once your config.json has been populated with a `"database"` key, you can use the command `sequelize db:create`, and sequelize will check the `"database"` in the `config.json` and make the appropriate database. It is also possible to create the database using a `createdb` command in `zsh` or a `CREATE DATABASE` command in `psql`, but make sure the name lines up with your `config.json`.
 
 Once this is complete, let's shift our attention to "models".
 
