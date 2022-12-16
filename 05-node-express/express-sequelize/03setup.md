@@ -34,14 +34,6 @@ npm install pg sequelize
 sequelize init
 ```
 
-**Create a database inside of Postgres**
-
-The sequelize CLI has a command called `createdb`. This performs the same action as entering our psql shell and entering `CREATE DATABASE`.
-
-```text
-createdb userapp_development
-```
-
 ## Setup part 3 - config.json, models and migrations:
 
 In the text editor we should now see a bunch of new folders. We now have config, migrations and models. This was created for us when we ran `sequelize init`.
@@ -105,7 +97,14 @@ Now your `config.json` should look like this:
 
 #### Create a database inside of Postgres
 
-Once your config.json has been populated with a `"database"` key, you can use the command `sequelize db:create`, and sequelize will check the `"database"` in the `config.json` and make the appropriate database. It is also possible to create the database using a `createdb` command in `zsh` or a `CREATE DATABASE` command in `psql`, but make sure the name lines up with your `config.json`.
+Once your config.json has been populated with a `"database"` key, you can use the command 
+
+```bash
+sequelize db:create
+``` 
+and sequelize will check the `"database"`key definded the `config.json` and make the appropriate database. 
+
+It is also possible to create the database using a `createdb` command in `zsh` or a `CREATE DATABASE` command in `psql`, but make sure the name lines up with your `config.json`.
 
 Once this is complete, let's shift our attention to "models".
 
