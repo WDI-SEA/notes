@@ -73,6 +73,7 @@ TL;DR: Don't have `node_modules` in your repo, you'll have a bad time.
 1. Make sure you have an account with heroku: [https://www.heroku.com/](https://www.heroku.com/)
   * **_YOU SHOULD SIGN UP WITH YUOR GITHUB ACCOUNT_**
 2. Make sure you have installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+3. Follow this [link](https://devcenter.heroku.com/articles/eco-dyno-hours) to set up 'eco dyno hours' which is Heroku's least expensive postgres service tier.
 
 #### Install Heroku CLI
 
