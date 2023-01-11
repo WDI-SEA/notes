@@ -152,6 +152,8 @@ If you ever need to manually trigger a redeploy, scroll to the bottom of the dep
 
 ![manual deploy](./imgs/manual-deploy.png)
 
+Finllay, return to your local command line and in the project directory run the command `heroku git:remote -a < your heroku app name >` to link your command line with the app on heroku.
+
 ### Heroku Envionment variables
 
 Next we want to make sure we have config variables. This is Heroku's version of a `.env` file or environment variables. Any variable names that are found in your local `.env` file should have a corresponding variable on Heroku.
@@ -168,7 +170,7 @@ Alternatively, you can set these fields in the Heroku GUI under the settings tab
 
 You may notice that while you have a valid URL and the site is deployed, your site likely does not work when you visit it. This is because Heroku is not yet aware of our database and model structure. Let's make it aware. See [Heroku Postgres Docs](https://elements.heroku.com/addons/heroku-postgresql) for more.
 
-* In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:hobby-dev`
+* In terminal, install the add-on for postgres: `heroku addons:create heroku-postgresql:mini`
 * Make sure your production variables in `config/config.json` are set like this \(pay attention to the production setting\).
 
 **config/config.json**

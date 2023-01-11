@@ -276,7 +276,7 @@ In this case, when we are increaseing the moodPoints in state we need to use a c
 increaseMood = () => {
   this.setState((prevState, props) => {
     return { 
-      points: this.prevState.points + 1 
+      points: prevState.points + 1 
     }
   })
 }
@@ -306,7 +306,7 @@ You may notice, that if you `console.log` the state, right after you set it, you
 increaseMood = () => {
   this.setState((prevState, props) => {
     return { 
-      points: this.prevState.points + 1 
+      points: prevState.points + 1 
     }
   })
   console.log(this.state) // this will always lag behind the state
@@ -319,7 +319,7 @@ The reason for this, is updating state is an[asyncronouse operation](https://rea
 increaseMood = () => {
   this.setState((prevState, props) => {
     return { 
-      points: this.prevState.points + 1 
+      points: prevState.points + 1 
     }
   }, () => console.log(this.state)) // oh snap! it works! And aooks weird!
 }
@@ -352,7 +352,7 @@ class MoodTracker extends Component {
     increaseMood = () => {
       this.setState((prevState, props) => {
         return { 
-          points: this.prevState.points + 1 
+          points: prevState.points + 1 
         }
       })
     }
@@ -407,7 +407,7 @@ increaseMood = () => {
   } else {
     this.setState((prevState, props) => {
       return { 
-        points: this.prevState.points + 1 
+        points: prevState.points + 1 
       }
     })
   }
