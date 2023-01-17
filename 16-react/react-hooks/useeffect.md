@@ -8,6 +8,9 @@ _After this code-along section, you will be able to:_
 
 ## The `useEffect` hook
 
+
+Lets begin by watching [Dan Abramov's](https://youtu.be/dpw9EHDh2bM?t=2013) introduction to the `useEffect` hook at ReactConf 2018 (Watch until the 45 min mark).
+
 What is an _effect_? React uses this term to refer to "side effects" which is more or less anything outside the normal rendering process. Some common examples include fetching data from an API or other network requests, manually manipulating the DOM, or writing to log files. Previously, these kinds of actions were handled by the various component lifecycle methods so it is accurate to think of `useEffect` as `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` combined. That's a big change in the way we think about React components but, as you will see, it makes things easier and organizes our code in better ways.
 
 ### The problems with Lifecycle Methods
