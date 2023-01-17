@@ -14,7 +14,7 @@ _After this code-along section, you will be able to:_
 
 ## The `useState` hook
 
-Lets begin by watching [Dan Abramov's](https://youtu.be/dpw9EHDh2bM?t=1062)'s introduction to the `useState` hook at ReactConf 2018 (Watch until the 28 min mark) Dan is the one the creators of React hooks, along with create-react-app, and React Redux.
+Lets begin by watching [Dan Abramov's](https://youtu.be/dpw9EHDh2bM?t=1062) introduction to the `useState` hook at ReactConf 2018 (Watch until the 28 min mark) Dan is the one the creators of React hooks, along with create-react-app, and React Redux.
 
 The first hook we will learn is the one that allows us to add state to a component. It is called `useState` and it gives us the ability to declare initial state, update it, and access it all from a function-based component.
 
