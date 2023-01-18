@@ -122,17 +122,18 @@ Now, lets add a form that allows us to update hte `user.name` and `user.favFood`
 ```jsx
 
 <form>
-	<label for="name">user name:</label>
+	<label htmlFor="name">user name:</label>
 
 	<input
 	  id="name" 
 	  type="text"
 	  placeholder="name..."
-	  // we don't need to write an onChange event handler, we can just define an arrow function inline to handle the user's input
+	  // we don't need to write an onChange event handler, 
+      // we can just define an arrow function inline to handle the user's input
 	  onChange={e => setUser({ name: e.target.value})}
 	/>
 
-	<label for="fav-food">Fav Food:</label>
+	<label htmlFor="fav-food">Fav Food:</label>
 
 	<input
 	  id="fav-food" 
