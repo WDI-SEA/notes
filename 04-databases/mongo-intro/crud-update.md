@@ -218,33 +218,39 @@ db.people.find({}).sort({ firstName: 1 }).limit(2)
 
 MongoDb provides us with [query operators](https://www.mongodb.com/docs/manual/reference/operator/query/) that allow us to perform more specific queries. Here are some examples of using common query operators:
 
+Find all documents where the age field is greater than 29:
+
 ```javascript
-// find all documents where the age field is greater than 29
 db.people.find({age: {$gt: 29}})
 ```
 
+Find all documents where the age field is less than or equal to 30:
+
 ```javascript
-// find all documents where the age field is less than or equal to 30
 db.people.find({age: {$lte: 30}})
 ```
 
+Match a substring with regular expression:
+
 ```javascript
-// match a substring with regular expression
 db.people.find({email: {$regex: "general"}})
 ```
 
+Find all documents where the formerTeamMember field exists:
+
 ```javascript
-// Find all documents where the formerTeamMember field exists
 db.people.find({formerTeamMember: {$exists: true}})
 ```
 
+Find all documents that do not match a certain name:
+
 ```javascript
-// find all documents that do not match a certain name
 db.people.find({name: {$ne: "Weston"}})
 ```
 
+Find all documents with either one name or another:
+
 ```javascript
-// find all documents with either one name or another
 db.people.find({$or: [{firstName: "April"}, {firstName: "Gabe"}]})
 ```
 
@@ -258,20 +264,22 @@ The following methods are most useful for updating documents, however there are 
 
 When using `updateOne` and `updateMany` methods, we use the `$set` operator to provide new values to be updated in the db. They both have the same argument interface as well: `updateOne({ read query }, { update query }, { options })`. We will touch on the `{ options }` in a later section.
 
+
+Here we are finding one entry by name and updating the email field:
+
 ```javascript
-// here we are finding one entry by name and updating the email field
 db.people.updateOne({ firstName: "Weston" }, { $set: { email: "weston.bailey@protonmail.com" }  })
 ```
 
+Find all documents that are missing an age field and add an age of -1:
+
 ```javascript
-// find all documents that are missing an age field and add an age of -1
 db.people.updateMany({ age: { $exists: false } }, { $set: { age: -1 } })
 ```
 
-Replace one replaces an entire document, and does not need the `$set` operator:
+Replace one replaces an entire document, and does not need the `$set` operator. Here, we find a person by name and replace the entire document:
 
 ```javascript
-// find a person by name and replace the entire document
 db.people.replaceOne({firstName: "Taylor"}, {firstName: "T", lastName: "D", email: "t.d@generalassemb.ly", age: 29})
 ```
 
@@ -279,30 +287,33 @@ db.people.replaceOne({firstName: "Taylor"}, {firstName: "T", lastName: "D", emai
 
 Like `query operaters`, there are a variety of [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), and we have already seen one of these in action, the `$set` operator. Here are a few examples of some other common usages of `query operators`.
 
+Using the $inc operator to increment the age field by 5 for all people:
+
 ```javascript
-// Using the $inc operator to increment the age field by 5 for all people
 db.people.updateMany({}, {$inc: {age: 5}})
 ```
 
+Finding a person by name and multiplying their age by 2 with the $mul operator:
+
 ```javascript
-// finding a person by name and multiplying their age by 2 with the $mul operator
 db.people.updateOne({ firstName: "Gabe"}, {$mul: {age: 2}})
 ```
 
+Using the $rename operator to rename the firstName field to givenName:
+
 ```javascript
-// using the $rename operator to rename the firstName field to givenName
 db.people.updateMany({}, {$rename: {"firstName": "givenName"}})
 ```
 
+Using the $rename operator to rename fields:
+
 ```javascript
-// Using the $rename operator to rename fields
 db.people.updateMany({}, {$rename: {"lastName": "surname"}})
 ```
 
-Using the $min operator to update the age field to the minimum value between the current value and 25 for all users
+Using the $min operator to update the age field to the minimum value between the current value and 25 for all users:
 
 ```javascript
-// using the $min operator to update the age field to the minimum value between the current value and 25 for all users
 db.people.updateMany({}, {$min: {age: 25}})
 ```
 
@@ -337,8 +348,7 @@ db.people.updateOne(
 There are a few other methods to perform updates with, and they can be read about in the docs:
 
 * [db.collection.findOneAndReplace()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndReplace/#mongodb-method-db.collection.findOneAndReplace)
-* [db.collection.findOneAndUpdate()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndUpdate/#mongodb-method-db.collection.findOneAndUpdate)
-* [db.collection.findAndModify()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findAndModify/#mongodb-method-db.collection.findAndModify)
+* [db.collection.findOneAndUpdate()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndUpdate/#mongodb-method-db.collection.findOneAndUpdate) [db.collection.findAndModify()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findAndModify/#mongodb-method-db.collection.findAndModify)
 * [db.collection.bulkWrite()](https://www.mongodb.com/docs/manual/reference/update-methods/#std-label-additional-updates)
 
 ### Destroy
