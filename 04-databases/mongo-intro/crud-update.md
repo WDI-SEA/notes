@@ -250,9 +250,15 @@ db.people.find({$or: [{firstName: "April"}, {firstName: "Gabe"}]})
 
 ### Update
 
-* [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/#mongodb-method-db.collection.updateOne) New in version 3.2
-* [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/#mongodb-method-db.collection.updateMany) New in version 3.2
-* [db.collection.replaceOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.replaceOne/#mongodb-method-db.collection.replaceOne) New in version 3.2
+The following methods are most useful for updating documents, however there are some others that have more esoteric use cases, and are linked in a later section.
+
+* [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/#mongodb-method-db.collection.updateOne) update the individual fields of a document
+* [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/#mongodb-method-db.collection.updateMany) update individula fields of many documents
+* [db.collection.replaceOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.replaceOne/#mongodb-method-db.collection.replaceOne) completely replace an entire document
+
+When using `updateOne` and `updateMany` methods, we use the `$set` operator to provide new values to be updated in the db. They both have the same argument interface as well: `updateOne({ read query }, { update query }, { options })`. We will touch on the `{ options }` in a later section.
+
+
 
 #### Update Operators
 
