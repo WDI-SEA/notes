@@ -258,17 +258,83 @@ The following methods are most useful for updating documents, however there are 
 
 When using `updateOne` and `updateMany` methods, we use the `$set` operator to provide new values to be updated in the db. They both have the same argument interface as well: `updateOne({ read query }, { update query }, { options })`. We will touch on the `{ options }` in a later section.
 
+```javascript
+// here we are finding one entry by name and updating the email field
+db.people.updateOne({ firstName: "Weston" }, { $set: { email: "weston.bailey@protonmail.com" }  })
+```
 
+```javascript
+// find all documents that are missing an age field and add an age of -1
+db.people.updateMany({ age: { $exists: false } }, { $set: { age: -1 } })
+```
+
+Replace one replaces an entire document, and does not need the `$set` operator:
+
+```javascript
+// find a person by name and replace the entire document
+db.people.replaceOne({firstName: "Taylor"}, {firstName: "T", lastName: "D", email: "t.d@generalassemb.ly", age: 29})
+```
 
 #### Update Operators
 
-https://www.mongodb.com/docs/manual/reference/operator/update/
+Like `query operaters`, there are a variety of [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), and we have already seen one of these in action, the `$set` operator. Here are a few examples of some other common usages of `query operators`.
+
+```javascript
+// Using the $inc operator to increment the age field by 5 for all people
+db.people.updateMany({}, {$inc: {age: 5}})
+```
+
+```javascript
+// finding a person by name and multiplying their age by 2 with the $mul operator
+db.people.updateOne({ firstName: "Gabe"}, {$mul: {age: 2}})
+```
+
+```javascript
+// using the $rename operator to rename the firstName field to givenName
+db.people.updateMany({}, {$rename: {"firstName": "givenName"}})
+```
+
+```javascript
+// Using the $rename operator to rename fields
+db.people.updateMany({}, {$rename: {"lastName": "surname"}})
+```
+
+Using the $min operator to update the age field to the minimum value between the current value and 25 for all users
+
+```javascript
+// using the $min operator to update the age field to the minimum value between the current value and 25 for all users
+db.people.updateMany({}, {$min: {age: 25}})
+```
+
+Using the $max operator to update the age field to the maximum value between the current value and 30 for all users
+
+```javascript
+db.people.updateMany({}, {$max: {age: 30}})
+```
+
+Using the `$currentDate` operator to add a `lastModified` field with the current date and time:
+
+```javascript
+db.people.updateOne({ firstName: "April" }, {$currentDate: {lastModified: true}})
+```
 
 #### Upserting
 
-https://www.mongodb.com/docs/manual/reference/method/Bulk.find.upsert/
+MongoDB's `upsert` is an option that can be used when performing an update operation. It allows you to specify that if no documents match the query, MongoDB should insert a new document with the update data. This is somewhat similar to the  `findOrCreate` method in Sequelize, however upserting also allows a query to update an existing record, unline `findOrCreate`.
+
+The `upsert` option is provided as the third argument to either an `updateOne` or `updateMany` query.
+
+```javascript
+db.people.updateOne(
+   {firstName: "Jason", lastName: "Serafica"}, 
+   {$set: {email: "jason.serafica@generalassemb.ly", age: 25}}, 
+   {upsert: true}
+)
+```
 
 #### Others
+
+There are a few other methods to perform updates with, and they can be read about in the docs:
 
 * [db.collection.findOneAndReplace()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndReplace/#mongodb-method-db.collection.findOneAndReplace)
 * [db.collection.findOneAndUpdate()](https://www.mongodb.com/docs/manual/reference/method/db.collection.findOneAndUpdate/#mongodb-method-db.collection.findOneAndUpdate)
@@ -277,32 +343,25 @@ https://www.mongodb.com/docs/manual/reference/method/Bulk.find.upsert/
 
 ### Destroy
 
+The following can be used to destroy documents in a collection, and both work similarly to the `find` and `findOne` methods. 
+
 * [db.collection.deleteOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteOne/#mongodb-method-db.collection.deleteOne) 
 * [db.collection.deleteMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteMany/#mongodb-method-db.collection.deleteMany)
 
-## Working with Nested Objects and Arrays
+Using the `deleteOne` method to delete the first document that matches the query:
 
-## Data Modeling
+```javascript
+db.people.deleteOne({firstName: "Weston"})
+```
 
-### Embedded docs
+Using the `deleteMany` method to delete all documents that match a query operator:
 
-### Referenced Docs
+```javascript
+db.people.deleteMany({age: {$lt: 25}})
+```
 
-## Working with Embedded docs
+Using the `deleteMany` method to delete all documents in the collection:
 
-Crud on embedded work history
-
-https://www.mongodb.com/docs/manual/tutorial/query-embedded-documents/
-
-#### Using Array Update Operators
-
-https://www.mongodb.com/docs/manual/reference/operator/update/#array
-
-## Mongo References
-
-Crud on Bank Accounts
-
-
-
-
-
+```javascript
+db.people.deleteMany({})
+```
