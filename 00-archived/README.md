@@ -14,3 +14,6 @@ Angular version 1.5 \(AngularJS\). Discontinued after WDI 13 at the Seattle camp
 
 Node.js and Python backends are now taught exclusively at SEA SEI
 
+## Mongo
+
+Written 2015 or so. Replaced with mongo version 6 (2023) lessons.
