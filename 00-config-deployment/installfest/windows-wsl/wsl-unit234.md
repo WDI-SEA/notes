@@ -110,7 +110,7 @@ sudo apt install mongodb
 sudo service mongodb start
 ```
 
-* Test if it worked by running the `mongo` command. If you are in the mongo shell, then it worked!
+* Test if it worked by running the `mongo` command, and also try the `mongosh` command. If you are in the mongo shell, then it worked!
 * If it didn't work, and you get an error referring to `/data/db` - run the following:
 
 ```text
