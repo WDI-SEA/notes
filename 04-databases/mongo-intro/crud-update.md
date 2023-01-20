@@ -27,12 +27,12 @@ In MongoDB, a database is created automatically when you first insert data into 
 
 ### Executing basic JavaScript in `mongosh`
 
-Although most of the commands that you use in the `mongosh` shell are MongoDB-specific commands, `mongosh` can also execute basic js. This can be partiularly useful when working with arrays of MongoDB documents.
+Although most of the commands that you use in the `mongosh` shell are MongoDB-specific commands, `mongosh` can also execute basic js. This can be particularly useful when working with arrays of MongoDB documents.
 
 Here are some examples of executing basic JavaScript in the `mongosh` shell:
 
 ```javascript
-// Basic Arithmitic works
+// Basic Arithmetic works
 1 + 2 // 3
 5 * 10 // 50
 ```
@@ -45,7 +45,7 @@ x + y // 30
 ```
 
 ```javascript
-// there is no console, but we can use the print() funciton
+// there is no console, but we can use the print() function
 print("Hello, MongoDB!") // Hello, MongoDB!
 ```
 
@@ -259,7 +259,7 @@ db.people.find({$or: [{firstName: "April"}, {firstName: "Gabe"}]})
 The following methods are most useful for updating documents, however there are some others that have more esoteric use cases, and are linked in a later section.
 
 * [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/#mongodb-method-db.collection.updateOne) update the individual fields of a document
-* [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/#mongodb-method-db.collection.updateMany) update individula fields of many documents
+* [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/#mongodb-method-db.collection.updateMany) update individual fields of many documents
 * [db.collection.replaceOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.replaceOne/#mongodb-method-db.collection.replaceOne) completely replace an entire document
 
 When using `updateOne` and `updateMany` methods, we use the `$set` operator to provide new values to be updated in the db. They both have the same argument interface as well: `updateOne({ read query }, { update query }, { options })`. We will touch on the `{ options }` in a later section.
@@ -285,7 +285,7 @@ db.people.replaceOne({firstName: "Taylor"}, {firstName: "T", lastName: "D", emai
 
 #### Update Operators
 
-Like `query operaters`, there are a variety of [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), and we have already seen one of these in action, the `$set` operator. Here are a few examples of some other common usages of `query operators`.
+Like `query operators`, there are a variety of [update operators](https://www.mongodb.com/docs/manual/reference/operator/update/), and we have already seen one of these in action, the `$set` operator. Here are a few examples of some other common usages of `query operators`.
 
 Using the $inc operator to increment the age field by 5 for all people:
 
@@ -331,7 +331,7 @@ db.people.updateOne({ firstName: "April" }, {$currentDate: {lastModified: true}}
 
 #### Upserting
 
-MongoDB's `upsert` is an option that can be used when performing an update operation. It allows you to specify that if no documents match the query, MongoDB should insert a new document with the update data. This is somewhat similar to the  `findOrCreate` method in Sequelize, however upserting also allows a query to update an existing record, unline `findOrCreate`.
+MongoDB's `upsert` is an option that can be used when performing an update operation. It allows you to specify that if no documents match the query, MongoDB should insert a new document with the update data. This is somewhat similar to the  `findOrCreate` method in Sequelize, however upserting also allows a query to update an existing record, unlike `findOrCreate`.
 
 The `upsert` option is provided as the third argument to either an `updateOne` or `updateMany` query.
 
