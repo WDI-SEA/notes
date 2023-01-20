@@ -4,8 +4,8 @@
 
 There are two ways to modeling related data in MongoDB:
 
-* via **embedding**
-* via **referencing** \(linking\)
+* via [embedding](https://www.mongodb.com/basics/embedded-mongodb)
+* via [referencing](https://www.mongodb.com/docs/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/) \(linking\)
 
 Both approaches can be used simultaneously in the same document.
 
@@ -22,7 +22,7 @@ To demonstrate **embedding**, we will add another person to our _people_ collect
 Let's walk through this command by entering it together:
 
 ```javascript
-> db.people.insert({
+db.people.insertOne({
     name: "Manny",
     age: 33,
     contacts: [
@@ -55,7 +55,7 @@ It may help to think of this approach as _linking_ documents together by includi
 
 Let's create a _bankAccounts_ collection to demonstrate the **references** approach.
 
-```text
+```javascript
 db.bankAccounts.insert({
   amount: 4403
 })
@@ -70,7 +70,7 @@ In our app, we have decided that all bank accounts will be retrieved through a p
 Implementing the above scenario is as simple as assigning a _bankAccount_ document's _\_id_ to a new field in our person document:
 
 ```javascript
-> db.people.insert({
+db.people.insert({
     name: "Miguel",
     age: 46,
     bankAccount: db.bankAccounts.findOne()._id
@@ -78,6 +78,20 @@ Implementing the above scenario is as simple as assigning a _bankAccount_ docume
 ```
 
 Again, because there are no "joins" in MongoDB, retrieving a person's bank account information would require a separate query on the _bankAccounts_ collection.
+
+It is possible to 'join' refernces using mongo's [aggregate() pipeline](https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/) along with the `$match` operator and the `$lookup` operator.
+
+```javascript
+db.people.aggregate([
+   { $match: { name: "Miguel" }},  // what to search for
+   { $lookup: {
+        from: "bankAccounts",      // collection to join
+        localField: "bankAccount", // field from the input documents
+        foreignField: "_id",       // field from the documents of the "from" collection
+        as: "personBankAccount"   // ouput array
+   }}
+])
+```
 
 ## Data Modeling Best Practices - Discussion
 
