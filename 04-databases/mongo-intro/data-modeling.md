@@ -56,7 +56,7 @@ It may help to think of this approach as _linking_ documents together by includi
 Let's create a _bankAccounts_ collection to demonstrate the **references** approach.
 
 ```javascript
-db.bankAccounts.insert({
+db.bankAccounts.insertOne({
   amount: 4403
 })
 ```
@@ -70,7 +70,7 @@ In our app, we have decided that all bank accounts will be retrieved through a p
 Implementing the above scenario is as simple as assigning a _bankAccount_ document's _\_id_ to a new field in our person document:
 
 ```javascript
-db.people.insert({
+db.people.insertOne({
     name: "Miguel",
     age: 46,
     bankAccount: db.bankAccounts.findOne()._id
@@ -86,9 +86,9 @@ db.people.aggregate([
    { $match: { name: "Miguel" }},  // what to search for
    { $lookup: {
         from: "bankAccounts",      // collection to join
-        localField: "bankAccount", // field from the input documents
-        foreignField: "_id",       // field from the documents of the "from" collection
-        as: "personBankAccount"   // ouput array
+        localField: "bankAccount", // field from the document we match
+        foreignField: "_id",       // field from the documents we are joining
+        as: "personBankAccount"    // what to name the ouput array
    }}
 ])
 ```
