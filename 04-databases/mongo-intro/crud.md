@@ -22,6 +22,8 @@ Start the MongoDB shell by typing `mongosh` and pressing return. You can then us
 | `show collections`                      | Shows a list of all collections in the current database     |
 | `db.createCollection('collectionName')` | Creates a new collection with 'collectionName'              |
 | `db.collectionName.drop()`              | Deletes the collection 'collectionName'                     |
+| `help`                                  | opens `mongosh` help                                        |
+| `cntrl + c` (twice)                     | exits `mongosh`                                             |
 
 In MongoDB, a database is created automatically when you first insert data into it. So, there's no command to create a database explicitly. Its is also optional to create a collection prior to inserting documents into it. If you attempt to insert a document into a collection that does not exist, MongoDB will first create the collection and then insert the document into it.
 
