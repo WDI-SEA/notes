@@ -45,14 +45,14 @@ x + y // 30
 ```
 
 ```javascript
-// there is no console, but we can use the print() function
-print("Hello, MongoDB!") // Hello, MongoDB!
+// older versions of mongosh used the print() function
+console.log("Hello, MongoDB!") // Hello, MongoDB!
 ```
 
 ```javascript
 // Using the Date() constructor:
 var today = new Date()
-print(today) // ISODate("2022-08-07T20:45:09.908+03:00")
+console.log(today) // ISODate("2022-08-07T20:45:09.908+03:00")
 ```
 
 ```javascript
@@ -65,7 +65,7 @@ Math.round(Math.PI) // 3
 // using an array iteration method
 var myArray = [1, 2, 3, 4, 5]
 myArray // [ 1, 2, 3, 4, 5 ]
-myArray.forEach(element => print(element))
+myArray.forEach(element => console.log(element))
 // 1
 // 2
 // 3
