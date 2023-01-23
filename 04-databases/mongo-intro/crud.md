@@ -301,12 +301,6 @@ Finding a person by name and multiplying their age by 2 with the $mul operator:
 db.people.updateOne({ firstName: "Gabe"}, {$mul: {age: 2}})
 ```
 
-Using the $rename operator to rename the firstName field to givenName:
-
-```javascript
-db.people.updateMany({}, {$rename: {"firstName": "givenName"}})
-```
-
 Using the $rename operator to rename fields:
 
 ```javascript
