@@ -54,7 +54,10 @@ This will serve as a helpful overall gauge of whether you met the project goals,
 Pitches will be a readme in the project repo that includes the following:
 
 * Project Idea and descriptions
-* choice of API you are going to use and a proof of concept (API keys -- hitting the api) 
+* if your group is using an API
+    * choice of API you are going to use and a proof of concept (API keys -- hitting the api) 
+* If your group is using additional technologies/npm packages
+    * proof of concept with the new teachnology 
 * ERDs
 * Restful Routing Chart
 * Wireframes of all user views
