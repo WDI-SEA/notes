@@ -15,7 +15,7 @@ Make it work, and make it awesome.
 Your app must:
 
 * **Build a full-stack application** by making your own backend and your own front-end using the technologies we have studied this unit
-* **Have an interactive front-end**, preferably using a modern front-end framework
+* **Have an interactive front-end**, using a modern front-end framework
 * **Be a complete product**, which most likely means multiple relationships and CRUD functionality for at least a couple models. However, this is ultimately up to your discretion.
 * **Implement thoughtful user stories** that are significant enough to help you know which features to build and which to scrap
 * **Have a visually impressive design** to kick your portfolio up a notch and have something to wow future clients & employers
