@@ -235,47 +235,7 @@ print(p2.distance())
 
 ### Exercise: Create Your Own Class
 
-Write a `BankAccount` class.
-
-* Upon creation, accounts should have a type \(like savings, or checking\).
-* Upon creation, accounts should have a `balance` that can be set to a specific amount or default to `0`.
-* Each account should have access to a `deposit` method that adds a certain amount to the balance.
-* Each account should have a `withdraw` method that subtracts a certain amount from the balance and returns that amount
-* When an account is printed, it should show the current balancemy
-
-Create a checking account and a savings account. Withdraw money from the savings account and deposit that amount into the checking account.
-
-Bonus: start each account with an additional `overdraft_fees` property that starts at zero. If a call to `withdraw` ends with the `balance` below zero then `overdraft_fees` should be incremented by twenty. Overdraft fees should show when the account is printed.
-
-#### Bank Accounts Solution
-
-```python
-class BankAccount():
-    def __init__(self, acct_type, balance=0):
-        self.type = acct_type
-        self.balance = balance
-        self.overdraft_fees = 0
-
-    def __str__(self):
-        status = 'balance: {} \noverdraft fees: {}'.format(self.balance, self.overdraft_fees)
-        return status
-
-    def deposit(self, amount):
-        self.balance += amount
-
-    def withdraw(self, amount):
-        self.balance -= amount
-        if (self.balance < 0):
-            self.overdraft_fees += 20
-        return amount
-
-my_acct = BankAccount('checking', 6)
-my_acct.deposit(50)
-my_acct.withdraw(25)
-print(my_acct)
-my_acct.withdraw(35)
-print(my_acct)
-```
+TODO: add an exercise here
 
 ### Class Variables
 

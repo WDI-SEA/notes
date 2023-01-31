@@ -168,3 +168,6 @@ Write an `Android` class that inherits from `Phone`.
 * Add a `set_keyboard` method that accepts a keyboard
 * Write a `__str__` method that prints `This Android uses the <insert keyboard here> keyboard.`
 
+### Lab
+
+You are now ready for the [Bank Account Inheritance Lab](https://github.com/WDI-SEA/python-bank-account-inheritance)
