@@ -235,7 +235,34 @@ print(p2.distance())
 
 ### Exercise: Create Your Own Class
 
-TODO: add an exercise here
+#### Car Class
+
+Create a class called `Car` that has the following attributes:
+- `make` (string)
+- `model` (string)
+- `year` (int)
+- `speed` (int, default value 0)
+
+The class should have the following methods:
+- `accelerate(amount)` - Increases the speed by `amount`
+- `brake(amount)` - Decreases the speed by `amount`
+
+#### Solution
+
+```python
+class Car:
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.speed = 0
+
+    def accelerate(self, amount):
+        self.speed += amount
+
+    def brake(self, amount):
+        self.speed -= amount
+```
 
 ### Class Variables
 
