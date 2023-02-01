@@ -55,10 +55,9 @@ const mongoose = require('mongoose');
 
 // Fire off the connection to Mongo DB
 mongoose.connect(process.env.MONGODB_URI, {
+  // !IMPORTANT: these two options are mission critical for the deployment to work
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false
 });
 
 
@@ -79,68 +78,68 @@ You should see in your terminal a message similar to:
 Mongoose connected to sei-shard-00-02.cqysw.mongodb.net:27017
 ```
 
+#### Get a Heroku account!
 
+1. Make sure you have an account with heroku: [https://www.heroku.com/](https://www.heroku.com/)
+  * **_YOU SHOULD SIGN UP WITH YUOR GITHUB ACCOUNT_**
+2. Make sure you have installed the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+3. Follow this [link](https://devcenter.heroku.com/articles/eco-dyno-hours) to set up 'eco dyno hours' which is Heroku's least expensive postgres service tier.
 
-<!-- 
-### Heroku
-
-#### Get a Heroku account and install the CLI tool!
-
-1. [Create an account](https://www.heroku.com/) at heroku
-2. Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
-
-#### Log in
+#### Install Heroku CLI
 
 This is a command-line tool that allows us to use commands in the terminal, similar to the way that we use git.
 
 Once it is installed, you need to login with your heroku credentials:
 
-* You may see an option to login via your browser: ![heroku cli](../.gitbook/assets/heroku-cli.png) ![heroku website](../.gitbook/assets/heroku.png)
-* Or you may see an option to log in inside the cli
-
-  ```text
-  heroku login
-  Enter your Heroku credentials.
-  Email: name@example.com
-  Password (typing will be hidden):
-  Authentication successful.
-  ```
+```text
+heroku login
+Enter your Heroku credentials.
+Email: adam@example.com
+Password (typing will be hidden):
+Authentication successful.
+```
 
 We'll have the ability to create free applications using Heroku, but with limitations. Most of those limitations are related to the size of the databases, as well as uptime for the dynos. For free applications, dynos will "go to sleep" when unused for a period of time. This will lead to slow start times when restarting the dynos.
 
-## Deploy!
+### DEPLOY!
 
-![deploy](../.gitbook/assets/snail_deploy.gif)
+![deploy](../.gitbook/assets/snail_deploy%20%281%29.gif)
 
 #### To start:
 
 * Create a `Procfile` in the root of your Node application
-  * In terminal, run `touch Procfile`. Must be called with a capitol P
+  * In terminal, run `touch Procfile`. Must be called with a capitol `P`
   * make sure it is named "Procfile" \(no extention\)
-  * make sure your Procfile is at the same directory level as your server.js file
-  * in terminal type `echo "web: node server.js" >> Procfile` (this assumes your main entry point is called `server.js` - if it's `index.js` or something else, replace that part of the command accordingly)
-* In your `server.js` file, where you get your server started, include the port number in your app.listen function. Example:
+  * make sure your Procfile is in the same folder as your index.js file
+  * in terminal type `echo "web: node index.js" >> Procfile`
+* In your `index.js` file, where you get your server started, include the port number in your app.listen function. Example:
 
 ```javascript
-app.listen(process.env.PORT || 8000)
+app.listen(process.env.PORT || 3000)
 ```
 
 This ensures that when we set the PORT config variable, Heroku will run on it instead of the 3000 port \(Heroku automatically includes a port that's public-facing\).
 
-> Now git add, commit, and push all of your changes!
-
 * Your package.json file is **crucial** - when you deploy your application, Heroku will check the package.json file for all dependencies. You can always check your package.json to see if you are missing anything.
+* To migrate our live database we need a local version of `sequelize-cli` module in our package json. Add it by running `npm install sequelize-cli`
 * Before you create your app in Heroku, be sure your project is being tracked via a git repository.
-* Create a Heroku app via the command line \(or, if you prefer you can use the website GUI to create it, then follow directions on the website to connect it to your git repo\)
+* Create a Heroku app via the command line \(or, if you prefer you can use the GUI to create it and follow its directions to connect it to your git repo\)
+
+### Git Integration
+
+There are two ways to handle git integration on heroku: the first is by creating a heroku git remote and pushing up to it. This way requires you to commit some changes and push up to trigger a redeploy, which can be a drawback. The second links your github repo to heroku in a `CI/CD` or _continuous integration/continuos deployment_ setup. Heroku will automatically deploy when it sees changes on github, and allows you to manually trigger a redeploy, which can be useful.
+
+**_YOU ONLY NEED TO DO ONE OF THESE_**
+
+#### First Way: Heroku Remote
 
 ```text
-heroku apps:create <your_app_name>
+heroku apps:create sitename
 ```
 
-In this case, `your_app_name` is the name of your app. This will create a url like: `http://your_app_name.herokuapp.com`.
+In this case, `sitename` is the name of your app. This will create a url like: `http://sitename.herokuapp.com` - you'll find that you have to come up with a completely unique name.
 
-* This name needs to be completely unique!
-* `git add`, `commit` and `push` all your data at this point.
+* Commit and push all your data at this point \(`git push`\).
 * To push to Heroku, enter the following command
 
 ```text
@@ -149,12 +148,32 @@ git push heroku main
 
 This should push all your code to Heroku and trigger a build.
 
+#### Second Way: `CI/CD`
+
+1. (if needed)  Navigate to the `Deploy` tab on your Heroku dashboard and click the 'Connect to Github' button if needed. Follow the prompts to integrate your github.
+
+![connect to gh](./imgs/connect-to-gh.png)
+
+2. Search for your repo name, and click the connect button once you find it. Choose a branch to deploy from the dropdown menu and click 'Enable Automatic Deploys'. It will look something like this:
+
+![all done](./imgs/all-done.png)
+
+If you ever need to manually trigger a redeploy, scroll to the bottom of the deploy tab and click the 'Deploy Branch' button.
+
+![manual deploy](./imgs/manual-deploy.png)
+
+Finllay, return to your local command line and in the project directory run the command `heroku git:remote -a < your heroku app name >` to link your command line with the app on heroku.
+
 ### Heroku Envionment variables
 
 Next we want to make sure we have config variables. This is Heroku's version of a `.env` file or environment variables. Any variable names that are found in your local `.env` file should have a corresponding variable on Heroku.
 
 In your javascript code, you might have something like `process.env.GOOGLE_KEY`. In order to add environment variables to Heroku. We can run a Heroku command to set it per item in our .env file \(see [docs](https://devcenter.heroku.com/articles/config-vars#set-a-config-var) for more on configuring environment vars in heroku\)
 
+```text
+heroku config:set S3_KEY=8N029N81 S3_SECRET=9s83109d3+583493190
+```
+Run with 'code -' to read from stdin (e.g. 'ps aux | grep code | code -').
 In this case, let's add our `MONGODB_URI` environment variable to heroku
 
 ```text
@@ -178,4 +197,3 @@ Displays logs from the server in real-time.
 `heroku run bash`
 
 This command allows you to run a terminal shell _**on Heroku's server**_. This provides a handy way to poke around and run commands on the server side.
--->
