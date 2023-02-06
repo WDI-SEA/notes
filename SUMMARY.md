@@ -291,6 +291,7 @@
   * [Python OOP](intro/python-oop/README.md)
     * [Classes](intro/python-oop/python-classes.md)
     * [Python Class Inheritance](intro/python-oop/python-class-inheritance.md)
+    * [Python Classes Advanced](intro/python-oop/python-classes-advanced.md)
   * [Virtual Environments](15-python/python-virtual-enviroments/readme.md)
   * [Intro to Flask](intro/python-flask-intro.md)
   * [Flask Quickstart Setup](15-python/python-flask-intro/quickstart-setup.md)
