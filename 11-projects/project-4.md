@@ -56,7 +56,7 @@ This is a non-exhaustive list and is based on previous student's P4s
 * Integrating a [Stripe](https://stripe.com/) frontend and backup to build a test level functional ecommmerce site
 * Do some research in your locale's job market -- any tech stacks you keep seeing on job postings that are interesting to you? They might make a great capstone as you enter that job market.
 * A MERN stack app or PERN stack app (Postgres, Express, React, Node) app that uses advanced hooks such as [useContext](https://reactjs.org/docs/hooks-reference.html#usecontext) or [useReducer](https://reactjs.org/docs/hooks-reference.html#usereducer) for state management. You are welcome to use the class's auth templates if you choose this route.
-    * if you do this you could also use additional packages to style your app, such as [Sass](https://sass-lang.com/), or css superset language, or [styled components](https://styled-components.com/)
+    * if you do this you could also use additional packages to style your app, such as [Sass](https://sass-lang.com/), or antoher css superset language, or [styled components](https://styled-components.com/)
 
 * Create a webserver using Java and [Spring Boot](https://spring.io/projects/spring-boot). (A good scope for this project would be a simple Spring Boot backend that allowed for CRUD on a single model)
 
