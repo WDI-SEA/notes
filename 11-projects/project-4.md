@@ -51,7 +51,7 @@ This is a non-exhaustive list and is based on previous student's P4s
 * Use a PaaS for your backend such as [supabase](https://supabase.com/) or [firebase](https://firebase.google.com/)
 * Using [Django](https://www.djangoproject.com/) to make a full stack crud app in python, or along with React for a DR stack app
 * Using [Flask](https://flask.palletsprojects.com/en/1.1.x/) as a back end server instead of Express and [SQL Alchemey](https://www.sqlalchemy.org/) as your`ORM`, or [pyMongo](https://pymongo.readthedocs.io/en/stable/index.html) as an `ODM` 
-* [Sass](https://sass-lang.com/) or css superset language
+* Use [Rails](https://rubyonrails.org/) to make a webserver in [ruby](https://www.ruby-lang.org/en/). Rails servers can use templates, similar to ejs and jinja, or can serve json to a React app, similar to the DR stack with Django and React.
 * [Flutter](https://flutter.dev/) to create mobile apps
 * Integrating a [Stripe](https://stripe.com/) frontend and backup to build a test level functional ecommmerce site
 * Do some research in your locale's job market -- any tech stacks you keep seeing on job postings that are interesting to you? They might make a great capstone as you enter that job market.
@@ -59,6 +59,11 @@ This is a non-exhaustive list and is based on previous student's P4s
     * if you do this you could also use additional packages to style your app, such as [Sass](https://sass-lang.com/), or css superset language, or [styled components](https://styled-components.com/)
 
 * Create a webserver using Java and [Spring Boot](https://spring.io/projects/spring-boot). (A good scope for this project would be a simple Spring Boot backend that allowed for CRUD on a single model)
+
+#### Still having trouble coming up with an idea?
+
+* Do some research in your locale's job market -- any tech stacks you keep seeing on job postings that are interesting to you? They might make a great capstone as you enter that job market.
+* Talk to an instructor! Based on your interests they will be able to help guide you to techs that will be both exciting to work on and help you develop marketable skills in your area of interest.
 
 ## Pitches
 
