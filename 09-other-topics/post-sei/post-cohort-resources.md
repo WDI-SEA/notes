@@ -22,10 +22,8 @@ _If you have any resources you would like to share with everyone or find to be s
 
 Here are some answers for common situations you might find yourself in post-SEI:
 
-### I Feel like I need to review the entire course/I would like to dive deeper into Fullstack Web Engineering concepts
-
 <details>
-    <summary>Reveal</Summary>
+    <summary>I Feel like I need to review the entire course/I would like to dive deeper into Fullstack Web Engineering concepts</summary>
 
 #### Make your way through [fullstack open](https://fullstackopen.com/en/)
 
@@ -37,10 +35,8 @@ On top of reviewing the core concepts we have studied, fullstack open moves on t
 
 </details>
 
-### I Want to deep dive in DSA 
-
 <details>
-    <summary>Reveal</Summary>
+    <summary>I Want to deep dive in DSA</summary>
 
 #### Do [online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) and Study [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) 
 
@@ -49,10 +45,8 @@ On top of reviewing the core concepts we have studied, fullstack open moves on t
 
 </details>
 
-### I Want to prepare for technical interviews
-
 <details>
-    <summary>Reveal</Summary>
+    <summary>I Want to prepare for technical interviews</summary>
  
 #### Read [The Technical Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) and practice interviews with [Pramp]([this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
 
@@ -61,10 +55,9 @@ On top of reviewing the core concepts we have studied, fullstack open moves on t
 
 </details>
 
-### I want to learn a new technology
-
 <details>
-    <summary>Reveal</Summary>
+    <summary>I want to learn a new technology
+</summary>
  
 #### Build things with it!
 
@@ -80,7 +73,8 @@ Its always a good idea learn one new thing at a time, to isolate the concepts an
 ### I want to add something to my portfolio that is more meaningful than just a person project of mine
 
 <details>
-    <summary>Reveal</Summary>
+    <summary>I want to add something to my portfolio that is more meaningful than just a person project of mine
+</summary>
  
 #### Get involved in FOSS (free and open source software) development! []()
 
