@@ -20,7 +20,12 @@ _If you have any resources you would like to share with everyone or find to be s
 
 ## TLDR;
 
+Here are some answers for common situations you might find yourself in post-SEI:
+
 ### I Feel like I need to review the entire course/I would like to dive deeper into Fullstack Web Engineering concepts
+
+<details>
+    <summary>Reveal</Summary>
 
 #### Make your way through [fullstack open](https://fullstackopen.com/en/)
 
@@ -30,34 +35,70 @@ Fullstack open covers the basics of every topic we touched on, from a complete i
 
 On top of reviewing the core concepts we have studied, fullstack open moves on to teach *extremely* relevant skills and tools such as testing, toolchaining, advanced react hooks, typescript, graphQL and more. 
 
+</details>
+
 ### I Want to deep dive in DSA 
+
+<details>
+    <summary>Reveal</Summary>
 
 #### Do [online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) and Study [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) 
 
 * [This online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) is great. Its comprehensive, focuses on solving interview style problems, and follows the We do/You do format that we use class, so there are activities to do after lectures to practice. It will reinforce what we studied in class and introduce new concepts along the way.
 * [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) is a _great_ book the, and is essentially the standard DSA book for python currently. I (Weston) have a hard copy I thumb threw before unit 4 usually to brush up on things. [There is also a set a videos](https://www.youtube.com/watch?v=HdZHjXfvIEU&list=PLtbC5OfOR8aqA6CJwWTRUITgGpUy1Umr3) to accompany to the book that are nice.
 
+</details>
+
 ### I Want to prepare for technical interviews
 
+<details>
+    <summary>Reveal</Summary>
+ 
 #### Read [The Technical Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) and practice interviews with [Pramp]([this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
 
 * [this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is a study guide specifically written to help prep for FAANG interviews, but is quite appropriate for all technical interviews
 * [Pramp](http://pramp.com/) connects you with other folks to practice technicals
 
+</details>
+
 ### I want to learn a new technology
 
+<details>
+    <summary>Reveal</Summary>
+ 
 #### Build things with it!
 
 Its always a good idea learn one new thing at a time, to isolate the concepts and avoid watering down the learning process.
 
 * Start by reading the documentation, often times there will hello world examples and links to learning resources
-* Build serveral learning projects from tutorials to understand how the technology works
+* Build several learning projects from tutorials to understand how the technology works
 * Once you have baseline familiarity with the new tech, branch out and make your own small learning project with the tech
 * Integrate the technology into a larger project to see how it works with what you already know.
 
+</details>
+
 ### I want to add something to my portfolio that is more meaningful than just a person project of mine
 
+<details>
+    <summary>Reveal</Summary>
+ 
 #### Get involved in FOSS (free and open source software) development! []()
+
+Open source software is always looking for new contributes, and your contributions to projects can be put on your resume and portfolio.
+
+How do you get started?
+
+* Find a project you would like to contribute to
+* Read their community and contributing guidelines
+* Communicate with the maintainers and let them know you would like to help
+* Setup the codebase, take your time to understand how it works, along with testing and the best practices of the codebase
+* Read issues on github to find a bug or feature you would like to work on
+* Often times you can communicate with maintainers in the issues' comments. You can ask them to point you in the right direction, or run your ideas on how to implement your changes by them
+
+Getting started is usually the hardest part, but once you do it can be very worthwhile! Search for looking for help, welcoming to newcomers, and generally inclusive for the best initial experience.
+
+</details>
+
 
 ## 📈 The Recipe for Success
 
@@ -231,7 +272,7 @@ Don't judge a book by its price, these are all excellent resources:
 
 * [Problem Solving with Data Structures and Algorithms in Python](https://runestone.academy/ns/books/published/pythonds/index.html) is very thorough and approachable in its explanations, and also very popular.
 * [Eloquent Javascript](https://eloquentjavascript.net/) is a popular and modern study of JS fundamentals
-* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed) is a series of books that focus on fondational JS topics
+* [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed) is a series of books that focus on foundational JS topics
 * [Essential Javascript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) is an older but still relevant book that takes a deep dive into specific programming patterns in JS, many of which are still commonly used while others have been implemented as language features 
 * [API on Rails](https://github.com/madeindjs/api_on_rails) is a one-stop-shop for getting into rails backend
 * [Learn x in y Minutes](https://learnxinyminutes.com/) isn't exactly a book per se, its more like a collection of crashcourse type cheatsheets for coding topics. 'Take a whirlwind tour of your next favorite language. Community-driven!'
