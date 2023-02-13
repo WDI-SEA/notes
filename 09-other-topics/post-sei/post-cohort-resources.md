@@ -18,6 +18,47 @@ This document is meant to give a outline of how to succeed post-cohort with the 
 
 _If you have any resources you would like to share with everyone or find to be super helpful in the future, submit a pull request to this repo and they will get merged in!_
 
+## TLDR;
+
+### I Feel like I need to review the entire course/I would like to dive deeper into Fullstack Web Engineering concepts
+
+#### Make your way through [fullstack open](https://fullstackopen.com/en/)
+
+If you feel like you could use a solid review of the fundamentals *_OR_* you would like to build on the foundations you made in this course you should work your way through [fullstack open](https://fullstackopen.com/en/). It is a full course of software engineering that is very well maintained by the University of Helsinki.
+
+Fullstack open covers the basics of every topic we touched on, from a complete introduction to js, webservers, React and databases and more. It covers many topics from a new perspective, which will also be enormously beneficial. 
+
+On top of reviewing the core concepts we have studied, fullstack open moves on to teach *extremely* relevant skills and tools such as testing, toolchaining, advanced react hooks, typescript, graphQL and more. 
+
+### I Want to deep dive in DSA 
+
+#### Do [online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) and Study [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) 
+
+* [This online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) is great. Its comprehensive, focuses on solving interview style problems, and follows the We do/You do format that we use class, so there are activities to do after lectures to practice. It will reinforce what we studied in class and introduce new concepts along the way.
+* [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) is a _great_ book the, and is essentially the standard DSA book for python currently. I (Weston) have a hard copy I thumb threw before unit 4 usually to brush up on things. [There is also a set a videos](https://www.youtube.com/watch?v=HdZHjXfvIEU&list=PLtbC5OfOR8aqA6CJwWTRUITgGpUy1Umr3) to accompany to the book that are nice.
+
+### I Want to prepare for technical interviews
+
+#### Read [The Technical Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) and practice interviews with [Pramp]([this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
+
+* [this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is a study guide specifically written to help prep for FAANG interviews, but is quite appropriate for all technical interviews
+* [Pramp](http://pramp.com/) connects you with other folks to practice technicals
+
+### I want to learn a new technology
+
+#### Build things with it!
+
+Its always a good idea learn one new thing at a time, to isolate the concepts and avoid watering down the learning process.
+
+* Start by reading the documentation, often times there will hello world examples and links to learning resources
+* Build serveral learning projects from tutorials to understand how the technology works
+* Once you have baseline familiarity with the new tech, branch out and make your own small learning project with the tech
+* Integrate the technology into a larger project to see how it works with what you already know.
+
+### I want to add something to my portfolio that is more meaningful than just a person project of mine
+
+#### Get involved in FOSS (free and open source software) development! []()
+
 ## 📈 The Recipe for Success
 
 * treat your studies and employment search like a 9 - 5 job: *punch in at 9 am and spend all day until 5 pm studying and job searching*
@@ -70,27 +111,31 @@ Focus: Learning a New Tech
 
 | 9am - 10am | 10am - 11am | 11am - 12pm | 12pm - 1pm | 1pm - 3pm | 3pm - 5pm |
 |------------|-------------|-------------|------------|-----------|-----------|
-| Study One Algorithm/Data Structure | Code Challenges/White board practice related to the Algorithm/Data Structure | Start Job Search/Networking | Lunch | Jop Search, Job Apps, Networking | Study New Tech/Work on project with new Tech |
+| Study One Algorithm/Data Structure | Code Challenges/White board practice related to the Algorithm/Data Structure | Start Job Search/Networking | Lunch | Job Search, Job Apps, Networking | Study New Tech/Work on project with new Tech |
 
 ## 📓 Class Resources
 
 It is recommended that you take some time and review the materials from the cohort, focusing on any knowledge areas you need build up.
 
-Revisiting fundamental topics will prove to be enourmously benificial because with your current coding skills, you will be able to dive deeper and solidify your foundational knowledge even more. _**The more your know, the more you grow!**_ 
+Revisiting fundamental topics will prove to be hugely beneficial because with your current coding skills, you will be able to dive deeper and solidify your foundational knowledge even more. _**The more your know, the more you grow!**_ 
 
 * [GitBook](https://gawdiseattle.gitbook.io/wdi/) notes for all the topics we covered, and many more
 * [The Seattle WDI-SEI Github Organization](https://github.com/WDI-SEA) Has all the repos the Seattle curriculum draws from
 * your class recordings and calender
-* The Slack channels will remain open for you to use for a while, but they will dissapear eventually (a few months)
+* The Slack channels will remain open for you to use for a while, but they will disappear eventually (a few months)
 
-## 📝 Stack Overflow Developer Survey
+## 👍 Resource Recommendations
+
+These are resources recommended by the GA staff, former students, or are loved by the dev community generally
+
+### 📝 Stack Overflow Developer Survey
 
 * The [Stack Overflow Developer Survey](https://survey.stackoverflow.co/2022/) is a hugely insightful dataset that "examines all aspects of the developer experience from career satisfaction and job search to education and opinions on open source software"
 	* here are some old surveys (also insightful) 
 		* [2021](https://insights.stackoverflow.com/survey/2021)
 		* [2020](https://insights.stackoverflow.com/survey/2020)  
 
-## 🗺 Learning Paths and Interview Prep
+### 🗺 Learning Paths and Interview Prep
 
 Explore career roadmaps for different specializations. Use these to find areas to study and things to focus on with projects.
 
@@ -112,7 +157,7 @@ Congrats, you just got a technical interview! **Stop Panicking** and read these 
 * [This blog post](https://chrisdoescoding.com/posts/5/) from Chris Cordero for a holistic, realistic look a the job search process.
 * [The rest of the roadmaps](https://roadmap.sh/)
 
-## 🤖 Algorithms, Data Structures and Code Challenges
+### 🤖 Algorithms, Data Structures and Code Challenges
 
 Pick one type of algorithm or data structure at a time and spend some time understanding it and solving coding challenges related to it while you study. 
 
@@ -122,14 +167,14 @@ For example, you could focus on linked lists and spend a week or two implementin
 
 * Use this [cheatsheet](https://www.notion.so/What-to-Study-For-Technical-Interviews-8df96f6a272f4bf386785d5149a0477f) as a guide for which algorithms and datastructures to focus on for interview prep
 * [This blog](https://www.geeksforgeeks.org/how-to-approach-a-coding-problem/) breaks down how to logically approach coding problems 
-* Here are two articles on [getting ready to study coding challenges](https://medium.com/@alimirio/before-you-start-solving-problems-on-leetcode-prep-work-9d65fc964c6f) and [how to approach studying coding challeneges](https://medium.com/@alimirio/how-to-solve-problems-on-leetcode-to-prepare-for-technical-interviews-e74781b865d2)
+* Here are two articles on [getting ready to study coding challenges](https://medium.com/@alimirio/before-you-start-solving-problems-on-leetcode-prep-work-9d65fc964c6f) and [how to approach studying coding challenges](https://medium.com/@alimirio/how-to-solve-problems-on-leetcode-to-prepare-for-technical-interviews-e74781b865d2)
 
 #### Algorithms and Data Structures
 
 * [Searching, sorting and other algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/#SearchingandSorting)
-* [Data Structures](https://www.geeksforgeeks.org/data-structures/) and data structure related challange problems
+* [Data Structures](https://www.geeksforgeeks.org/data-structures/) and data structure related challenge problems
 * [Leet code's explore section](https://leetcode.com/explore/learn/) has some great lessons 
-* [This Awesome Repo](https://github.com/tayllan/awesome-algorithms) has tons of DSA resourses
+* [This Awesome Repo](https://github.com/tayllan/awesome-algorithms) has tons of DSA resources
 
 #### Coding Challenges
 
@@ -140,7 +185,7 @@ For example, you could focus on linked lists and spend a week or two implementin
 * [Pramp](http://pramp.com/) pairs you up with other devs to practice coding problems -- a must to find study buddies during a remote job search.
 * [Project Euler](https://projecteuler.net/about) is a classic resource with mathmatical focused coding problems.
 
-## 🌈 Projects, Open Source and Dev Communties
+### 🌈 Projects, Open Source and Dev Communties
 
 #### Project Ideas
 
@@ -154,7 +199,7 @@ Sometimes the hardest part of a project is coming up with the idea.
 * If you are ever feeling bored with the possibilities of a web app, checkout the [Non-exhaustive list of web browser APIs](https://github.com/luruke/browser-2020) to get some inspiration for what is possible
 * Go Through the [Full stack open](https://fullstackopen.com/en/) course: Learn React, Redux, Node.js, MongoDB, GraphQL and TypeScript in one go! This course will introduce you to modern JavaScript-based web development. The main focus is on building single page applications with ReactJS that use REST APIs built with Node.js.
 
-#### Getting involved in an open source  
+#### Getting involved in open source  
 
 Open source projects are a great way to get experience, work in a collaborative enviroment, bulk up your portfolio and meet other nerds all at once.
 
@@ -180,9 +225,10 @@ In particular, these communites deserve a spotlight for you to check out:
 * [TypeScript](https://discord.com/invite/typescript) -- server devoted to JavaScript's younger and angrier sibling
 * [Coding Den](https://discord.com/invite/code) -- general coding chat with language specific channels. Has many channel topics ranging from machine learning to UX design
 
-## 📚 Free Books
+### 📚 Free Books
 
 Don't judge a book by its price, these are all excellent resources:
+
 * [Problem Solving with Data Structures and Algorithms in Python](https://runestone.academy/ns/books/published/pythonds/index.html) is very thorough and approachable in its explanations, and also very popular.
 * [Eloquent Javascript](https://eloquentjavascript.net/) is a popular and modern study of JS fundamentals
 * [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed) is a series of books that focus on fondational JS topics
@@ -191,7 +237,7 @@ Don't judge a book by its price, these are all excellent resources:
 * [Learn x in y Minutes](https://learnxinyminutes.com/) isn't exactly a book per se, its more like a collection of crashcourse type cheatsheets for coding topics. 'Take a whirlwind tour of your next favorite language. Community-driven!'
 * The [Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is the ultimate interview handbook, focused on preparing for a FAANG interview loop. It also has a schedule you can follow after graduation. 
 	
-## 💰 Money Costing Books
+### 💰 Money Costing Books
 
 These cost monies, which is not ideal, but are worth it:
 
