@@ -38,19 +38,19 @@ On top of reviewing the core concepts we have studied, fullstack open moves on t
 <details>
     <summary>I Want to deep dive in DSA</summary>
 
-#### Do [online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) and Study [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) 
+#### Do [This online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) and Study [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) 
 
-* [This online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) is great. Its comprehensive, focuses on solving interview style problems, and follows the We do/You do format that we use class, so there are activities to do after lectures to practice. It will reinforce what we studied in class and introduce new concepts along the way.
-* [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) is a _great_ book the, and is essentially the standard DSA book for python currently. I (Weston) have a hard copy I thumb threw before unit 4 usually to brush up on things. [There is also a set a videos](https://www.youtube.com/watch?v=HdZHjXfvIEU&list=PLtbC5OfOR8aqA6CJwWTRUITgGpUy1Umr3) to accompany to the book that are nice.
+* [The online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) is great. Its comprehensive, focuses on solving interview style problems, and follows the We do/You do format that we use class, so there are activities to do after lectures to practice. It will reinforce what we studied in class and introduce new concepts along the way.
+* [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) is essentially the standard DSA book for python currently. I (Weston) have a hard copy I thumb threw before unit 4 usually to brush up on things. [There is also a set a videos](https://www.youtube.com/watch?v=HdZHjXfvIEU&list=PLtbC5OfOR8aqA6CJwWTRUITgGpUy1Umr3) to accompany to the book that are nice.
 
 </details>
 
 <details>
     <summary>I Want to prepare for technical interviews</summary>
  
-#### Read [The Technical Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) and practice interviews with [Pramp]([this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/)
+#### Read [The Technical Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) and practice interviews with [Pramp](https://www.pramp.com/#/)
 
-* [this interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is a study guide specifically written to help prep for FAANG interviews, but is quite appropriate for all technical interviews
+* [The interview handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is a study guide specifically written to help prep for FAANG interviews, but is quite appropriate for all technical interviews
 * [Pramp](http://pramp.com/) connects you with other folks to practice technicals
 
 </details>
@@ -70,13 +70,11 @@ Its always a good idea learn one new thing at a time, to isolate the concepts an
 
 </details>
 
-### I want to add something to my portfolio that is more meaningful than just a person project of mine
-
 <details>
-    <summary>I want to add something to my portfolio that is more meaningful than just a person project of mine
+    <summary>I want to add something to my portfolio that is more meaningful/impactful than just a personal project I have created
 </summary>
  
-#### Get involved in FOSS (free and open source software) development! []()
+#### Get involved in FOSS (free and open source software) development! [more info](https://gasei.gitbook.io/sei/09-other-topics/post-sei/post-cohort-resources#getting-involved-in-open-source) below
 
 Open source software is always looking for new contributes, and your contributions to projects can be put on your resume and portfolio.
 
@@ -158,6 +156,7 @@ Revisiting fundamental topics will prove to be hugely beneficial because with yo
 * [The Seattle WDI-SEI Github Organization](https://github.com/WDI-SEA) Has all the repos the Seattle curriculum draws from
 * your class recordings and calender
 * The Slack channels will remain open for you to use for a while, but they will disappear eventually (a few months)
+* The zoom recordings of class will exist for an indeterminate period of time, and can be downloaded if you with to save them. 
 
 ## 👍 Resource Recommendations
 
@@ -239,10 +238,12 @@ Sometimes the hardest part of a project is coming up with the idea.
 Open source projects are a great way to get experience, work in a collaborative enviroment, bulk up your portfolio and meet other nerds all at once.
 
 * [good first issues](https://goodfirstissues.com/) is a great place ot find issues that would be be a, well, _good first issue_
+* [good _first_ issue](https://goodfirstissue.dev/) Similar to above
 * [First Timers only](https://www.firsttimersonly.com/) is great resource with lots of links for how to begin with open source collaboration
 * This [open source ideas](https://github.com/open-source-ideas/open-source-ideas) repo is a place where people pitch ideas and projects they want to see other make or need help on
 * [Up for Grabs](https://up-for-grabs.net/#/) offers a curated list of repos that need help and are ideal for open source newbies
-* [Awesome Open Source Projects](https://awesomeopensource.com/projects/web-development) -- bigger DB of open source projects that you can filter by project type (link above takes you to all web dev open source projects).
+* [Awesome Open Source Projects](https://awesomeopensource.com/projects/web-development) -- bigger DB of open source projects that you can filter by project type (link above takes you to all web dev open source projects).A
+* Large open sourve projects such as [mozilla](https://firefox-source-docs.mozilla.org/contributing/contributing_to_mozilla.html) typically are more robust at helping newcomers.
 
 #### Discord servers
 
