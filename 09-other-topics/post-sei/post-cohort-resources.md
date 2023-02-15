@@ -18,14 +18,14 @@ This document is meant to give a outline of how to succeed post-cohort with the 
 
 _If you have any resources you would like to share with everyone or find to be super helpful in the future, submit a pull request to this repo and they will get merged in!_
 
-## TLDR;
+## 🙄 TL;DR
 
 Here are some answers for common situations you might find yourself in post-SEI:
 
 <details>
     <summary>I Feel like I need to review the entire course/I would like to dive deeper into Fullstack Web Engineering concepts</summary>
 
-#### Make your way through [fullstack open](https://fullstackopen.com/en/)
+#### Work through [Fullstack Open](https://fullstackopen.com/en/)
 
 If you feel like you could use a solid review of the fundamentals *_OR_* you would like to build on the foundations you made in this course you should work your way through [fullstack open](https://fullstackopen.com/en/). It is a full course of software engineering that is very well maintained by the University of Helsinki.
 
@@ -91,7 +91,6 @@ Getting started is usually the hardest part, but once you do it can be very wort
 
 </details>
 
-
 ## 📈 The Recipe for Success
 
 * treat your studies and employment search like a 9 - 5 job: *punch in at 9 am and spend all day until 5 pm studying and job searching*
@@ -107,17 +106,17 @@ Getting started is usually the hardest part, but once you do it can be very wort
         * collaborate on a project  
 * Get involved in other development communities or open source projects
   * Open Source is a great way to get collaborative coding experience, get things to put in your portfolio and meet new friends and colleagues! 
-  * Join GA Community slack channels such as _lounge_lurkers_ 
+  * Join GA Community slack channels
 * Stay active on your github -- make your github appealing to potential employers
   * Pin the projects you are most proud of on your github and keep active by submitting pull requests and making new repos -- employers look at this and will mention it!
 * Spend time focusing on knowledge areas you need to strengthen -- going over each unit and identifying the concepts you need more reps on is recommended.
 * [*Eat the Frog* (swallow the frog)](https://todoist.com/productivity-methods/eat-the-frog) -- every part of the recipe is as important as the others, so if there is one part you are avoiding -- *do it first*. **Everyday.** **_Eat the Frog first thing._** 
 
-## 🙌 Example Daily Study Plans
+### 🙌 Example Daily Study Plans
 
 When planning out your daily studies post cohort, it is helpful to identify what your frog is and the area you would like to focus your studies. After a week or two of using the same daily study plan, you should spend some time reflecting and then update your focus and frog to write a new study plan. 
 
-##### General Tips:
+#### General Tips:
 
 * Plan out daily sprints -- these can apply to non-coding activities too, such as _'I will have applied to two jobs by the end of my job search time today.'_
 * Put your projects/most fun things towards the end of the day so you can look forward to working on them and also spend some free time in the evening continuing to work on them if you wish.
@@ -126,7 +125,7 @@ When planning out your daily studies post cohort, it is helpful to identify what
 * Some people really thrive with the [pomodoro technique](https://todoist.com/productivity-methods/pomodoro-technique), especially when doing mentally taxing activities such as whiteboarding practice and code challenges.
 * Check your email first thing in the a.m. and set up email notifications so you can respond quickly to potential employers when they contact you. 
 
-##### Ex. 1
+#### Ex. 1
 
 Frog: Networking and Job Apps
 
@@ -136,7 +135,7 @@ Focus: Review and Portfolio Polishing
 |------------|------------|-----------|--------------|--------------|
 | Employment Search, Job Apps and Networking | Lunch | Whiteboard practice/code challenges | JavaScript Core Concepts and Fundamentals Review | Polishing and Debugging a portfolio project |
 
-##### Ex. 2
+#### Ex. 2
 
 Frog: Algorithms and Code Challenges
 
@@ -157,6 +156,7 @@ Revisiting fundamental topics will prove to be hugely beneficial because with yo
 * your class recordings and calender
 * The Slack channels will remain open for you to use for a while, but they will disappear eventually (a few months)
 * The zoom recordings of class will exist for an indeterminate period of time, and can be downloaded if you with to save them. 
+* Official GA materials such as your myGA dashboard and [the outcomes global experience](https://sites.google.com/generalassemb.ly/outcomesglobalexperience/home?authuser=0) dashboard (which is an awesome wealth of information, btw) will continue to exist for as long as they do. 
 
 ## 👍 Resource Recommendations
 
