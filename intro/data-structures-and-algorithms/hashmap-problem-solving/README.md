@@ -150,7 +150,7 @@ Congratulations, you are now ready to take on some problems of your own! 🥳
 
 You can head on over to [this lab](https://github.com/WDI-SEA/python-hash-table-challenges) to get started!
 
-## Addition resources
+## Additional resources
 
 [Leet code's](https://leetcode.com/explore/learn/card/hash-table/) introduction to hash tables
 
