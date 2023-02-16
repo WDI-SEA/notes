@@ -76,7 +76,7 @@ Its always a good idea learn one new thing at a time, to isolate the concepts an
  
 #### Get involved in FOSS (free and open source software) development! [more info](https://gasei.gitbook.io/sei/09-other-topics/post-sei/post-cohort-resources#getting-involved-in-open-source) below
 
-Open source software is always looking for new contributes, and your contributions to projects can be put on your resume and portfolio.
+Open source software is always looking for new contributors, and your contributions to projects can be put on your resume and portfolio.
 
 How do you get started?
 
@@ -173,6 +173,8 @@ These are resources recommended by the GA staff, former students, or are loved b
 
 Explore career roadmaps for different specializations. Use these to find areas to study and things to focus on with projects.
 
+* The [Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is the ultimate interview handbook, focused on preparing for a FAANG interview loop. It also has a schedule you can follow after graduation. 
+
 #### Preparing for a frontend position
 
 * [Frontend Roadmap](https://roadmap.sh/frontend)
@@ -205,6 +207,8 @@ For example, you could focus on linked lists and spend a week or two implementin
 
 #### Algorithms and Data Structures
 
+* [Problem Solving with Data Structures and Algorithms in Python](https://runestone.academy/ns/books/published/pythonds/index.html) is very thorough and approachable in its explanations, and also very popular.
+* [The online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) is great. Its comprehensive, focuses on solving interview style problems, and follows the We do/You do format that we use class, so there are activities to do after lectures to practice. It will reinforce what we studied in class and introduce new concepts along the way.
 * [Searching, sorting and other algorithms](https://www.geeksforgeeks.org/fundamentals-of-algorithms/#SearchingandSorting)
 * [Data Structures](https://www.geeksforgeeks.org/data-structures/) and data structure related challenge problems
 * [Leet code's explore section](https://leetcode.com/explore/learn/) has some great lessons 
@@ -265,13 +269,11 @@ In particular, these communites deserve a spotlight for you to check out:
 
 Don't judge a book by its price, these are all excellent resources:
 
-* [Problem Solving with Data Structures and Algorithms in Python](https://runestone.academy/ns/books/published/pythonds/index.html) is very thorough and approachable in its explanations, and also very popular.
 * [Eloquent Javascript](https://eloquentjavascript.net/) is a popular and modern study of JS fundamentals
 * [You Don't Know JS](https://github.com/getify/You-Dont-Know-JS/tree/1st-ed) is a series of books that focus on foundational JS topics
 * [Essential Javascript Design Patterns](https://addyosmani.com/resources/essentialjsdesignpatterns/book/) is an older but still relevant book that takes a deep dive into specific programming patterns in JS, many of which are still commonly used while others have been implemented as language features 
 * [API on Rails](https://github.com/madeindjs/api_on_rails) is a one-stop-shop for getting into rails backend
 * [Learn x in y Minutes](https://learnxinyminutes.com/) isn't exactly a book per se, its more like a collection of crashcourse type cheatsheets for coding topics. 'Take a whirlwind tour of your next favorite language. Community-driven!'
-* The [Tech Interview Handbook](https://www.techinterviewhandbook.org/software-engineering-interview-guide/) is the ultimate interview handbook, focused on preparing for a FAANG interview loop. It also has a schedule you can follow after graduation. 
 	
 ### 💰 Money Costing Books
 
