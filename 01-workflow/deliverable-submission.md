@@ -32,7 +32,7 @@ Go back to the root of your repository, so that you are the folder `hw1-cli`:
 
 "Add" your changes (prepare them to be "committed"):
 ```
-$ git add -A
+$ git add .
 ```
 
 "Commit" your changes—any time you make a commit, you can always restore the files in the repo to that point:
@@ -42,7 +42,7 @@ $ git commit -m "Completed homework assignment"
 
 "Push" your commits to github:
 ```bash
-$ git push origin master
+$ git push origin main
 ```
 
 

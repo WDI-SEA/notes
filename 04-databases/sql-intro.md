@@ -352,6 +352,12 @@ You can also have more complex queries to get data. The following query finds al
 SELECT title FROM movies WHERE rating > 4 AND title = 'Cars';
 ```
 
+### Exercise 
+
+Use SQL's `LIKE` operator to find all of the movies that strat with the letter `G`
+
+---
+
 SQL also supports an OR statement. The following query will return any movie with a rating greater than 4, or any movies with the title Gigli. In other words, if a movie called Gigli is found with a rating equal to 1, it will still be returned along with any movie with a rating greater than 4.
 
 ```sql
