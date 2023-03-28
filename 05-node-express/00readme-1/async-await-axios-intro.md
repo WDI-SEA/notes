@@ -41,9 +41,9 @@ Look in the `.then` to see another notable difference of using `axios` over fetc
   })
 ```
 
-We have to dot into the `response` object to get the api reponse data. _Axios always puts the information sent back to us in a key called `data`_. Try `console.log`ing just the `response`. What is all that stuff in there?
+We have to dot into the `response` object to get the api response data. _Axios always puts the information sent back to us in a key called `data`_. Try `console.log`ing just the `response`. What is all that stuff in there?
 
-Here's an example of how to use fetch to make the same GET request, for comparision:
+Here's an example of how to use fetch to make the same GET request, for comparison:
 
 ```javascript
 fetch('https://jsonplaceholder.typicode.com/posts')
@@ -64,7 +64,7 @@ While fetch is built into modern browsers and has a simple API, axios provides a
 
 ## `async/await` vs `.then`
 
-async/await was added to JavaScript in the ECMAScript 2017 (ES8) specification. It was introduced to make it easier to write asynchronous code using promises, which were introduced in ES6 (along with `.then`).
+`async/await` was added to JavaScript in the ECMAScript 2017 (ES8) specification. It was introduced to make it easier to write asynchronous code using promises, which were introduced in ES6 (along with `.then`).
 
 Before `async/await`, developers used promises or callbacks to handle asynchronous operations. Promises are a great improvement over callbacks, but they can still be difficult to use and understand, especially when dealing with complex or nested asynchronous operations.
 
@@ -79,9 +79,13 @@ async function fetchData() {
     console.error(error);
   }
 }
+
+fetchData()
 ```
 
-In this example, we're using the `async` keyword to define a function that fetches data from the https://jsonplaceholder.typicode.com/posts endpoint using axios.get. We're using `await` to wait for the response before continuing with the rest of the code. If there's an error, we catch it and log it to the console using the `try/catch` blocks, which act like `if/else` but only if an error is thrown. In javascript, `try/catch` can be used with any code, not just `async/await`.
+In this example, we're using the `async` keyword to define a function that fetches data from the `https://jsonplaceholder.typicode.com/posts` endpoint using `axios.get`. The `await` keyword can only be used in a function that has been defined as `async`. `async` functions must be invoked just like any other function, in order to run the code inside of them.  
+
+We're using `await` to wait for the response before continuing with the rest of the code. If there's an error, we catch it and log it to the console using the `try/catch` blocks, which act like `if/else` but only if an error is thrown. In javascript, `try/catch` can be used with any code, not just `async/await`.
 
 ```javascript
 try {
@@ -108,7 +112,7 @@ axios.get('https://jsonplaceholder.typicode.com/posts')
 
 The main difference between `async/await` and `.then` is in how they handle asynchronous code. `async/await` allows you to write asynchronous code that looks more like synchronous code, making it easier to read and understand. Originally `.then` syntax and promises where introduced to prevent [callback hell](http://callbackhell.com/), however nesting `.then`s can put you in a similar situation as callback hell, and `async/await` prevents this issue for the tradeoff of a little bit of boilerplate code.
 
-`.then` is still useful, and shouldn't just tossed in the garbage bin. It is wise to consider the context of the code when you choose one method of handling asyncronous code over another. For example, It might not be worth it to go through the trouble of a setting up an `async` function with a `try/catch` for one simple promise. `.then` also lets you handle _each promise_ resolution with a `.catch` instead of having one catch block handle every error case, which can also be useful. 
+`.then` is still useful, and shouldn't just tossed in the garbage bin. It is wise to consider the context of the code when you choose one method of handling asynchronous code over another. For example, It might not be worth it to go through the trouble of a setting up an `async` function with a `try/catch` for one simple promise. `.then` also lets you handle _each promise_ resolution with a `.catch` instead of having one catch block handle every error case, which can also be useful. 
 
 ### Callback hell
 
@@ -120,40 +124,40 @@ The main difference between `async/await` and `.then` is in how they handle asyn
 const axios = require('axios');
 
 axios.get('https://swapi.dev/api/people/1/')
-  .then(response => {
-    const homeworldURL = response.data.homeworld;
+    .then(response => {
+        const homeworldURL = response.data.homeworld;
 
-    axios.get(homeworldURL)
-      .then(response => {
-        const population = response.data.population;
+        axios.get(homeworldURL)
+            .then(response => {
+                const population = response.data.population;
 
-        axios.get(`https://swapi.dev/api/planets/?search=${response.data.name}`)
-          .then(response => {
-            const residentsURLs = response.data.results[0].residents;
+                axios.get(`https://swapi.dev/api/planets/?search=${response.data.name}`)
+                    .then(response => {
+                        const residentsURLs = response.data.results[0].residents;
 
-            axios.all(residentsURLs.map(url => axios.get(url)))
-              .then(responses => {
-                const residents = responses.map(res => res.data.name);
+                        Promise.all(residentsURLs.map(url => axios.get(url)))
+                            .then(responses => {
+                                const residents = responses.map(res => res.data.name);
 
-                console.log(`Name: ${response.data.name}`);
-                console.log(`Homeworld Population: ${population}`);
-                console.log(`Residents: ${residents.join(', ')}`);
-              })
-              .catch(error => {
-                console.log('Error fetching residents', error);
-              });
-          })
-          .catch(error => {
-            console.log('Error fetching planet', error);
-          });
-      })
-      .catch(error => {
-        console.log('Error fetching homeworld', error);
-      });
-  })
-  .catch(error => {
-    console.log('Error fetching character', error);
-  });
+                                console.log(`Name: ${response.data.name}`);
+                                console.log(`Homeworld Population: ${population}`);
+                                console.log(`Residents: ${residents.join(', ')}`);
+                            })
+                            .catch(error => {
+                                console.log('Error fetching residents', error);
+                            });
+                    })
+                    .catch(error => {
+                        console.log('Error fetching planet', error);
+                    });
+            })
+            .catch(error => {
+                console.log('Error fetching homeworld', error);
+            });
+    })
+    .catch(error => {
+        console.log('Error fetching character', error);
+    });
 ```
 
 #### `async/await` to the rescue! 🙌
@@ -162,25 +166,25 @@ axios.get('https://swapi.dev/api/people/1/')
 const axios = require('axios');
 
 async function fetchCharacterInfo() {
-  try {
-    const response = await axios.get('https://swapi.dev/api/people/1/');
-    const homeworldURL = response.data.homeworld;
-    
-    const homeworldResponse = await axios.get(homeworldURL);
-    const population = homeworldResponse.data.population;
-    
-    const planetResponse = await axios.get(`https://swapi.dev/api/planets/?search=${homeworldResponse.data.name}`);
-    const residentsURLs = planetResponse.data.results[0].residents;
-    
-    const residentsResponses = await axios.all(residentsURLs.map(url => axios.get(url)));
-    const residents = residentsResponses.map(res => res.data.name);
-    
-    console.log(`Name: ${response.data.name}`);
-    console.log(`Homeworld Population: ${population}`);
-    console.log(`Residents: ${residents.join(', ')}`);
-  } catch (error) {
-    console.log('Error fetching data', error);
-  }
+    try {
+        const response = await axios.get('https://swapi.dev/api/people/1/');
+        const homeworldURL = response.data.homeworld;
+
+        const homeworldResponse = await axios.get(homeworldURL);
+        const population = homeworldResponse.data.population;
+
+        const planetResponse = await axios.get(`https://swapi.dev/api/planets/?search=${homeworldResponse.data.name}`);
+        const residentsURLs = planetResponse.data.results[0].residents;
+
+        const residentsResponses = await Promise.all(residentsURLs.map(url => axios.get(url)));
+        const residents = residentsResponses.map(res => res.data.name);
+
+        console.log(`Name: ${response.data.name}`);
+        console.log(`Homeworld Population: ${population}`);
+        console.log(`Residents: ${residents.join(', ')}`);
+    } catch (error) {
+        console.log('Error fetching data', error);
+    }
 }
 
 fetchCharacterInfo();
