@@ -27,6 +27,10 @@
 Here's a simple example of how to use `axios` to make a GET request:
 
 ```javascript
+// require the package
+const axios = require('axios')
+
+// the syntax is axios.httpMethod("url")
 axios.get('https://jsonplaceholder.typicode.com/posts')
   .then(response => {
     console.log(response.data);
