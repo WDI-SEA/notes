@@ -64,6 +64,10 @@ While fetch is built into modern browsers and has a simple API, axios provides a
 
 ## `async/await` vs `.then`
 
+async/await was added to JavaScript in the ECMAScript 2017 (ES8) specification. It was introduced to make it easier to write asynchronous code using promises, which were introduced in ES6 (along with `.then`).
+
+Before `async/await`, developers used promises or callbacks to handle asynchronous operations. Promises are a great improvement over callbacks, but they can still be difficult to use and understand, especially when dealing with complex or nested asynchronous operations.
+
 `async/await` and `.then` are both ways to handle asynchronous code in JavaScript. `axios` supports both methods of handling asynchronous code, since axios requests return javascript [promise objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise). Here's an example of how to use async/await with axios.get:
 
 ```javascript
@@ -79,7 +83,7 @@ async function fetchData() {
 
 In this example, we're using the `async` keyword to define a function that fetches data from the https://jsonplaceholder.typicode.com/posts endpoint using axios.get. We're using `await` to wait for the response before continuing with the rest of the code. If there's an error, we catch it and log it to the console using the `try/catch` blocks, which act like `if/else` but only if an error is thrown. In javascript, `try/catch` can be used with any code, not just `async/await`.
 
-```javascript=
+```javascript
 try {
     // some code that might throw an error
     throw new Error('oops!') // uh-oh, something bad has happened!
@@ -89,7 +93,7 @@ try {
 }
 ```
 
-Here's the same example using .then:
+Here's the same example using `.then`:
 
 ```javascript
 axios.get('https://jsonplaceholder.typicode.com/posts')
