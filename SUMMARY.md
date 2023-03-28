@@ -139,6 +139,7 @@
       * [Get and Post Lab](05-node-express/00readme-1/00readme/get-post-lab.md)
       * [Put and Delete](05-node-express/00readme-1/00readme/02put-delete.md)
     * [APIs with Express \(request\)](05-node-express/00readme-1/02apis.md)
+    * [async/await + axios intro](05-node-express/00readme-1/async-await-axios-intro.md)
     * [APIs with Express \(axios\)](05-node-express/00readme-1/03apis-axios.md)
   * [Sequelize](05-node-express/express-sequelize/README.md)
     * [Terminology](05-node-express/express-sequelize/02terms.md)
