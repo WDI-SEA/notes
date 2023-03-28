@@ -173,6 +173,7 @@
   * [JSON Web Tokens](05-node-express/express-jwt/README.md)
     * [Codealong](05-node-express/express-jwt/codealong.md)
   * [Additional Topics](05-node-express/additional-topics/README.md)
+    * [async/await + axios intro](05-node-express/additional-topics/async-await-axios-intro.md)
     * [oAuth](05-node-express/additional-topics/express-oauth.md)
     * [Geocoding with Mapbox](05-node-express/additional-topics/geocode-mapbox.md)
     * [Geocoding and Google Maps](05-node-express/additional-topics/express-geocode.md)
