@@ -12,6 +12,18 @@
 
 [`axios`](https://www.npmjs.com/package/axios) is a popular library for making HTTP requests in node (and javascript). Since there is no `window` in `Node.js`, we don't have access to `window.fetch` out of the box. `Node.js` does have a built in [requests](https://nodejs.org/api/http.html#class-httpclientrequest) module and support for [XMLHttpRequests](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), they are quite clunky to use and `axios` is one of the most popular ways to make HTTP requests in node.
 
+### Getting Setup
+
+* `mkdir hello-axios` to create a directory for this lesson
+* `cd hello-axios` to enter the new directory
+* `npm init -y` to create a `package.json`
+* `npm i axios` to install the axios package
+* if you want to make this a repo tracked by git
+    * `echo node_modules >> .gitignore` to not track your installed packages
+    * `git init` to create a new repo
+
+### Using `axios`
+
 Here's a simple example of how to use `axios` to make a GET request:
 
 ```javascript
@@ -24,14 +36,11 @@ axios.get('https://jsonplaceholder.typicode.com/posts')
   });
 ```
 
-
 _Look, there is only one `.then`!_
 
 ![catbug happy](https://media4.giphy.com/media/3KYGq82Lb74TbVXLVc/giphy.gif?cid=ecf05e47i5po5dmlwgmem6aqndhkiyny3rrb5omes24bpote&rid=giphy.gif&ct=g)
 
-
 One of the benefits of using `axios` over `fetch` is that it supports automatic transformation of response data. This is why only one `.then` is needed. For example, if the response data is JSON, axios will automatically parse it and return a JavaScript object. With fetch, you have to manually call `response.json()` to parse the response data.
-
 
 Look in the `.then` to see another notable difference of using `axios` over fetch:
 
