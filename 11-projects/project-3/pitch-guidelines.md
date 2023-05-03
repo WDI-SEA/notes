@@ -14,23 +14,13 @@ Please read the guidelines below on what should be included in your pitch, and h
 
 **If you have any additional questions please reach out to instructional team over Slack**.
 
-## Written Memo Format:
-
-Your written memo should be provided to instructional staff before your pitch meeting \(you have up until ten minutes before your assigned pitch meeting time to send it\). This memo should be written in Google Docs, and then shared with the instructional staff's emails \(_anna.zocher@ga.co and sarah.king@ga.co_\).
-
-The memo should contain the following information in an outline format:
-
-1. Your team name
-2. Each team member's assigned role
-3. Your elevator pitch for your website
-4. Your user stories
-5. What tech stack you plan on using
-6. What your current status is on the project
-7. What your plan is for each day of the project work time, preferably broken down into daily sprints. 
-
 ## Pitch Meeting Format:
 
 Time Limit: 10 mins
+
+We would like your team to use your design documents
+(readme, wireframes, routing charts, etc) as the visual
+aid/guide for your groups pitch. 
 
 1\). **00:00 - 01:00: Elevator Pitch**
 
