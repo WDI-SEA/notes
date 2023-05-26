@@ -187,7 +187,9 @@ Explore career roadmaps for different specializations. Use these to find areas t
 
 #### Preparing for a technical interview
 
-Congrats, you just got a technical interview! **Stop Panicking** and read these documents:
+* [The neetcode roadmap](https://neetcode.io/roadmap) of DSA studies is considered the current standard roadmap of technical interview studyplans
+
+##### Congrats, you just got a technical interview! **Stop Panicking** and read these documents:
 
 * [Decoding the Technical Interview Process](https://www.notion.so/De-Coding-the-Technical-Interview-Process-08b1d2eb5b3148d792a246a02718dfab) which was written by GA Seattle SEI Instructional Lead Anna Zocher. (*actually you should read this doc even before you get a technical interview -- because it is really great. Read this doc alot.*
 * [This blog post](https://chrisdoescoding.com/posts/5/) from Chris Cordero for a holistic, realistic look a the job search process.
