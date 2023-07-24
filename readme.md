@@ -42,9 +42,9 @@ Something to know is that some of the lessons here are more historical and haven
 
 | Unit | Tech | Weeks | Topics |
 | :--- | :--- | :--- | :--- |
-| Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, DOM manipulation, \(3rd party APIs/asynch JS may come in this unit or the next\) |
-| Full-Stack w/ Templates | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs, EJS |
-| Front-End Framework | React/MongoDB \(MERN\) | 7 - 9 | JWT Token Auth, MongoDB |
+| Front-End Web Development | HTML/CSS/JS | 1 - 3 | Version control, HTML/CSS, Javascript, Programming fundamentals, DOM manipulation, HTTP, 3rd party APIs/async JS  |
+| Full-Stack w/ Templates | Node/Express/PostgreSQL | 4 - 6 | Local auth, RESTful routing, ORMs, EJS, node, Express, 3 tier web applications, Relational data modeling, CI/CD |
+| Front-End Framework | React/MongoDB \(MERN\) | 7 - 9 | JWT Token Auth, MongoDB, React, Hooks, SPAs |
 | Full-Stack Web Development | Python | 10 - 12 | Data Structures & Algorithms, Whiteboarding, Python fundamentals, OOP, \(optional Django or Flask\) |
 
 ### Connected Classroom Alteration \(Fall 2018\)
