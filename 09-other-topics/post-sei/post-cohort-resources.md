@@ -40,8 +40,10 @@ On top of reviewing the core concepts we have studied, fullstack open moves on t
 
 #### Do [This online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) and Study [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) 
 
+* Your [MyGA](https://accounts.generalassemb.ly/identify) has some introductory materials on DSA topics.
 * [The online course in python DSA from Freecodecamp/Jovian](https://jovian.com/learn/data-structures-and-algorithms-in-python) is great. Its comprehensive, focuses on solving interview style problems, and follows the We do/You do format that we use class, so there are activities to do after lectures to practice. It will reinforce what we studied in class and introduce new concepts along the way.
 * [Problem Solving with Algorithms and Data Structures using Python](https://runestone.academy/ns/books/published/pythonds/index.html) is essentially the standard DSA book for python currently. I (Weston) have a hard copy I thumb threw before unit 4 usually to brush up on things. [There is also a set a videos](https://www.youtube.com/watch?v=HdZHjXfvIEU&list=PLtbC5OfOR8aqA6CJwWTRUITgGpUy1Umr3) to accompany to the book that are nice.
+* [NeetCode](https://neetcode.io/) is presently considered a standard for DSA studies offering paid courses and curated leetcodes to accompany them.	
 
 </details>
 
@@ -152,8 +154,11 @@ It is recommended that you take some time and review the materials from the coho
 Revisiting fundamental topics will prove to be hugely beneficial because with your current coding skills, you will be able to dive deeper and solidify your foundational knowledge even more. _**The more your know, the more you grow!**_ 
 
 * [GitBook](https://gawdiseattle.gitbook.io/wdi/) notes for all the topics we covered, and many more
-* [The Seattle WDI-SEI Github Organization](https://github.com/WDI-SEA) Has all the repos the Seattle curriculum draws from
+* [The Seattle WDI-SEI Github Organization](https://github.com/WDI-SEA) Has all the repos the Seattle curriculum draws from (old)
+* [Here is the current iteration of the curriculum]()
 * your class recordings and calender
+* Videos From TI can be downloaded using [this](https://chrome.google.com/webstore/detail/wistia-video-downloader/acbiaofoeebeinacmcknopaikmecdehl) Chrome plugin.
+* TI access will last for a year or so.
 * The Slack channels will remain open for you to use for a while, but they will disappear eventually (a few months)
 * The zoom recordings of class will exist for an indeterminate period of time, and can be downloaded if you with to save them. 
 * Official GA materials such as your myGA dashboard and [the outcomes global experience](https://sites.google.com/generalassemb.ly/outcomesglobalexperience/home?authuser=0) dashboard (which is an awesome wealth of information, btw) will continue to exist for as long as they do. 
